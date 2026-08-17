@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Gupta's Dental Clinic | Precision Dentistry in South Extension, Delhi</title>
+<meta name="description" content="Dr. Tanupriya Gupta — 20 years of precision, magnification-guided restorative dentistry in South Extension, New Delhi. Ethical care, no over-treatment.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal-deep:#1F2D3D;   /* navy accent (was teal) */
+  --teal-dark:#141F2B;   /* navy deep, for dark sections */
+  --mint:#F2F1EC;        /* warm light gray (was mint) */
+  --ivory:#FDFBF7;
+  --charcoal:#222222;
+  --gold:#F6D34B;        /* bright gold/yellow, matches logo + old Call Now button */
+  --gray:#6B6B6B;
+  --gray-warm:#A8A8A8;   /* the warm gray header band from the old site */
+  --radius:14px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:var(--charcoal);background:var(--ivory);line-height:1.7;-webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;line-height:1.15;letter-spacing:.01em;}
+a{text-decoration:none;color:inherit;}
+img{max-width:100%;display:block;}
+.container{max-width:1180px;margin:0 auto;padding:0 24px;}
+section{padding:80px 0;}
+
+/* Header */
+header{position:sticky;top:0;z-index:100;background:rgba(253,251,247,0.96);backdrop-filter:blur(10px);border-bottom:1px solid #e7e2d8;box-shadow:0 1px 0 rgba(0,0,0,0.02);}
+.top-accent{height:4px;background:linear-gradient(90deg,var(--gold),#f0e3a8,var(--gold));}
+.nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 0;}
+.brand{display:flex;align-items:center;gap:12px;}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;color:var(--teal-dark);letter-spacing:.02em;}
+.brand-name small{display:block;font-family:'Inter',sans-serif;font-weight:500;font-size:0.68rem;color:var(--gray);letter-spacing:.12em;text-transform:uppercase;}
+nav ul{list-style:none;display:flex;gap:28px;}
+nav a{position:relative;font-size:0.92rem;font-weight:500;color:var(--charcoal);transition:color .2s;padding-bottom:4px;}
+nav a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--gold);transition:width .25s ease;}
+nav a:hover{color:var(--teal-deep);}
+nav a:hover::after{width:100%;}
+.cta-btn{background:var(--gold);color:var(--teal-dark);padding:12px 26px;border-radius:30px;font-weight:700;font-size:0.9rem;white-space:nowrap;transition:all .25s cubic-bezier(.4,0,.2,1);box-shadow:0 4px 14px rgba(246,211,75,0.35);}
+.cta-btn:hover{background:#e8c53a;transform:translateY(-2px);box-shadow:0 10px 24px rgba(246,211,75,0.45);}
+.nav-cta{display:flex;align-items:center;gap:14px;}
+.menu-toggle{display:none;background:none;border:none;font-size:1.6rem;color:var(--teal-dark);cursor:pointer;}
+
+/* Hero */
+.hero{background:radial-gradient(ellipse 80% 60% at 80% -10%,rgba(246,211,75,0.16),transparent),linear-gradient(135deg,var(--mint) 0%,var(--ivory) 60%);padding:84px 0 70px;position:relative;overflow:hidden;}
+.hero-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:50px;align-items:center;}
+.eyebrow{display:inline-block;background:var(--teal-deep);color:#fff;font-size:0.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:6px 14px;border-radius:20px;margin-bottom:18px;}
+.hero h1{font-size:3.2rem;color:var(--teal-dark);margin-bottom:20px;letter-spacing:0;}
+.hero h1 span{background:linear-gradient(90deg,#d9ad1e,var(--gold) 60%,#d9ad1e);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.hero p{font-size:1.12rem;color:var(--gray);max-width:520px;margin-bottom:32px;line-height:1.75;}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-outline{border:2px solid var(--teal-deep);color:var(--teal-deep);padding:10px 22px;border-radius:30px;font-weight:600;font-size:0.9rem;transition:all .25s ease;}
+.btn-outline:hover{background:var(--teal-deep);color:#fff;transform:translateY(-2px);}
+.trust-badge{display:inline-flex;align-items:center;gap:10px;margin-top:26px;font-size:0.88rem;color:var(--gray);}
+.trust-badge .tb-stars{color:var(--gold);letter-spacing:2px;font-size:1rem;}
+.trust-badge:hover{color:var(--teal-deep);}
+.hero-img{border-radius:var(--radius);overflow:hidden;box-shadow:0 30px 60px -12px rgba(20,31,43,0.35);position:relative;}
+.hero-img img{width:100%;height:440px;object-fit:cover;transition:transform .6s ease;}
+.hero-img:hover img{transform:scale(1.04);}
+
+/* Stats */
+.stats{background:var(--teal-dark);color:#fff;padding:44px 0;}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);text-align:center;gap:20px;}
+.stats-grid .num{font-family:'Cormorant Garamond',serif;font-size:2.6rem;color:var(--gold);font-weight:700;}
+.stats-grid .label{font-size:0.85rem;color:#cfe4e1;margin-top:4px;}
+
+/* Credentials strip */
+.credentials{background:#fff;padding:44px 0;border-bottom:1px solid #ece6d8;}
+.credentials .cred-label{text-align:center;font-size:0.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);margin-bottom:26px;}
+.cred-grid{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:36px;}
+.cred-item{display:flex;flex-direction:column;align-items:center;gap:8px;}
+.cred-badge{width:68px;height:68px;border-radius:50%;background:#fff;border:1px solid #e5e1d6;display:flex;align-items:center;justify-content:center;padding:10px;transition:all .25s ease;box-shadow:0 2px 8px rgba(0,0,0,0.04);}
+.cred-badge img{width:100%;height:100%;object-fit:contain;}
+.cred-item:hover .cred-badge{border-color:var(--gold);transform:translateY(-3px);box-shadow:0 8px 18px rgba(246,211,75,0.35);}
+.cred-item span.cred-name{font-size:0.76rem;color:var(--gray);text-align:center;max-width:110px;line-height:1.3;}
+
+/* Section headers */
+.sec-head{text-align:center;max-width:640px;margin:0 auto 48px;}
+.sec-head .eyebrow{background:transparent;color:var(--teal-deep);border:1px solid var(--teal-deep);}
+.sec-head h2{font-size:2rem;color:var(--teal-dark);margin-bottom:12px;}
+.sec-head p{color:var(--gray);}
+
+/* Differentiator */
+.diff{background:var(--mint);}
+.diff-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:50px;align-items:center;}
+.diff-img{border-radius:var(--radius);overflow:hidden;box-shadow:0 20px 50px rgba(15,107,102,0.15);}
+.diff-img img{width:100%;height:380px;object-fit:cover;}
+.diff-text h2{font-size:1.9rem;color:var(--teal-dark);margin-bottom:16px;}
+.diff-text p{color:var(--charcoal);margin-bottom:14px;}
+.diff-list{list-style:none;margin-top:20px;}
+.diff-list li{display:flex;gap:12px;margin-bottom:12px;font-weight:500;}
+.diff-list li::before{content:"✓";background:var(--teal-deep);color:#fff;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;flex-shrink:0;}
+
+/* Why choose us */
+.cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+.card{background:#fff;border:1px solid #ece6d8;border-radius:var(--radius);padding:30px 26px;transition:transform .2s,box-shadow .2s;}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(15,107,102,0.1);}
+.card-icon{width:48px;height:48px;background:var(--mint);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:16px;}
+.card h3{font-size:1.1rem;color:var(--teal-dark);margin-bottom:8px;}
+.card p{color:var(--gray);font-size:0.92rem;}
+
+/* About */
+.about{background:var(--mint);}
+.about-grid{display:grid;grid-template-columns:0.8fr 1.2fr;gap:50px;align-items:center;}
+.about-img{border-radius:var(--radius);overflow:hidden;box-shadow:0 20px 50px rgba(15,107,102,0.15);}
+.about-img img{width:100%;height:440px;object-fit:cover;}
+.about-text h2{font-size:1.9rem;color:var(--teal-dark);margin-bottom:6px;}
+.about-text .role{color:var(--gold);font-weight:600;margin-bottom:16px;display:block;}
+.about-text p{color:var(--charcoal);margin-bottom:14px;}
+
+/* Services */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.service-item{background:#fff;border:1px solid #ece6d8;border-radius:var(--radius);padding:24px;display:flex;align-items:center;gap:14px;transition:border-color .2s;}
+.service-item:hover{border-color:var(--teal-deep);}
+.service-dot{width:10px;height:10px;border-radius:50%;background:var(--teal-deep);flex-shrink:0;}
+.service-item span{font-weight:500;}
+
+/* Testimonials */
+.testi{background:var(--teal-dark);}
+.testi .sec-head h2, .testi .sec-head p{color:#fff;}
+.testi .sec-head .eyebrow{border-color:var(--gold);color:var(--gold);}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.testi-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius);padding:28px;color:#e7f0ee;}
+.testi-card .stars{color:var(--gold);margin-bottom:12px;font-size:1rem;}
+.testi-card p{font-size:0.94rem;margin-bottom:16px;}
+.testi-card .who{font-weight:700;color:#fff;font-size:0.9rem;}
+
+/* Gallery */
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.gallery-grid img{width:100%;height:220px;object-fit:cover;border-radius:10px;}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;}
+.contact-info h2{font-size:1.9rem;color:var(--teal-dark);margin-bottom:20px;}
+.info-row{display:flex;gap:16px;margin-bottom:22px;}
+.info-icon{width:42px;height:42px;background:var(--mint);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.1rem;}
+.info-row h4{font-size:0.95rem;color:var(--teal-dark);margin-bottom:3px;}
+.info-row p{color:var(--gray);font-size:0.92rem;}
+.map-wrap{border-radius:var(--radius);overflow:hidden;box-shadow:0 20px 50px rgba(15,107,102,0.12);height:100%;min-height:340px;}
+.map-wrap iframe{width:100%;height:100%;border:0;min-height:340px;}
+
+/* Final CTA */
+.final-cta{background:linear-gradient(135deg,var(--teal-deep),var(--teal-dark));color:#fff;text-align:center;}
+.final-cta h2{font-size:2rem;margin-bottom:14px;}
+.final-cta p{color:#cfe4e1;margin-bottom:28px;}
+.final-cta .cta-btn:hover{background:#e0bb2f;}
+
+/* Footer */
+footer{background:var(--charcoal);color:#c8cfc9;padding:50px 0 24px;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:36px;}
+.footer-grid h4{color:#fff;margin-bottom:14px;font-size:1rem;}
+.footer-grid p, .footer-grid a{font-size:0.88rem;color:#a9b3ac;display:block;margin-bottom:8px;}
+.footer-grid a:hover{color:var(--gold);}
+.footer-bottom{border-top:1px solid #3a453f;padding-top:20px;text-align:center;font-size:0.8rem;color:#8a948c;}
+
+/* WhatsApp float */
+.whatsapp-float{position:fixed;bottom:24px;right:24px;background:#25D366;color:#fff;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;box-shadow:0 8px 20px rgba(0,0,0,0.2);z-index:200;}
+
+/* Responsive */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.in{opacity:1;transform:translateY(0);}
+.gallery-grid img{transition:transform .5s ease,filter .5s ease;}
+.gallery-grid img:hover{transform:scale(1.03);filter:brightness(1.03);}
+.about-img img, .diff-img img{transition:transform .6s ease;}
+.about-img:hover img, .diff-img:hover img{transform:scale(1.03);}
+
+@media(max-width:900px){
+  nav ul{display:none;}
+  .menu-toggle{display:block;}
+  .hero-grid,.diff-grid,.about-grid,.contact-grid{grid-template-columns:1fr;}
+  .hero h1{font-size:2rem;}
+  .stats-grid{grid-template-columns:repeat(2,1fr);row-gap:24px;}
+  .cards-grid,.services-grid,.testi-grid{grid-template-columns:1fr 1fr;}
+  .gallery-grid{grid-template-columns:1fr 1fr;}
+  .footer-grid{grid-template-columns:1fr;}
+  section{padding:56px 0;}
+}
+@media(max-width:560px){
+  .cards-grid,.services-grid,.testi-grid,.gallery-grid{grid-template-columns:1fr;}
+  .hero-img img{height:280px;}
+}
+</style>
+</head>
+<body>
+<div class="top-accent"></div>
+<header>
+  <div class="container nav-wrap">
+    <div class="brand">
+      <img src="logo_trimmed.png" alt="Dr. Gupta's Dental Clinic logo" style="width:44px;height:44px;border-radius:10px;object-fit:cover;">
+      <div class="brand-name">Dr. Gupta's Dental Clinic<small>South Extension, New Delhi</small></div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#difference">Our Difference</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a href="tel:+919990880975" class="cta-btn">Call 99900 88975</a>
+      <button class="menu-toggle" aria-label="Menu">&#9776;</button>
+    </div>
+  </div>
+</header>
+
+<section id="home" class="reveal hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">South Extension, New Delhi · Est. 2013</span>
+      <h1>Precision dentistry, <span>done unhurried.</span></h1>
+      <p>Dr. Tanupriya Gupta treats every filling and restoration under high magnification — the same standard used in specialist microsurgery — so nothing is guessed at, and nothing is rushed. 20 years, 2000+ smiles, zero shortcuts.</p>
+      <div class="hero-ctas">
+        <a href="https://wa.me/919990880975" class="cta-btn">Book on WhatsApp</a>
+        <a href="tel:+919990880975" class="btn-outline">Call the Clinic</a>
+      </div>
+      <a href="https://www.google.com/maps/place/Dr.+Gupta's+Dental+Clinic/@28.5712336,77.2185971,17z/data=!3m1!4b1!4m6!3m5!1s0x390ce25ebe73cb59:0x56e9179e7dcfc73b!8m2!3d28.5712289!4d77.221172!16s%2Fg%2F11b6t0lkcx" target="_blank" rel="noopener" class="trust-badge">
+        <span class="tb-stars">★★★★★</span>
+        <span>Rated 5.0 on Google &middot; <u>See our reviews</u></span>
+      </a>
+    </div>
+    <div class="hero-img">
+      <img src="clinic_photos_shortlist/IMG_7465.JPG" alt="Dr. Tanupriya Gupta with dental technology">
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="container stats-grid">
+    <div><div class="num">20</div><div class="label">Years of Experience</div></div>
+    <div><div class="num">2000+</div><div class="label">Smiling Clients</div></div>
+    <div><div class="num">1500+</div><div class="label">Teeth Filled</div></div>
+    <div><div class="num">500+</div><div class="label">Root Canals Done</div></div>
+  </div>
+</div>
+
+<section class="credentials reveal">
+  <div class="container">
+    <div class="cred-label">Trained &amp; Credentialed At</div>
+    <div class="cred-grid">
+      <div class="cred-item"><div class="cred-badge"><img src="logos/aiims.png" alt="AIIMS New Delhi logo"></div><span class="cred-name">AIIMS, New Delhi</span></div>
+      <div class="cred-item"><div class="cred-badge"><img src="logos/pgi.png" alt="PGIMER Chandigarh logo"></div><span class="cred-name">PGI, Chandigarh</span></div>
+      <div class="cred-item"><div class="cred-badge"><img src="logos/jmi.png" alt="Jamia Millia Islamia logo"></div><span class="cred-name">Jamia Millia Islamia<br>Faculty of Dental Sciences</span></div>
+      <div class="cred-item"><div class="cred-badge"><img src="logos/manipal.png" alt="Manipal University logo"></div><span class="cred-name">Manipal University<br>(MDS)</span></div>
+      <div class="cred-item"><div class="cred-badge"><img src="logos/nhdc.png" alt="Nair Hospital Dental College logo"></div><span class="cred-name">Nair Hospital, Mumbai<br>(BDS)</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="difference" class="reveal diff">
+  <div class="container diff-grid">
+    <div class="diff-img">
+      <img src="clinic_photos_shortlist/IMG_7459.JPG" alt="Advanced dental technology">
+    </div>
+    <div class="diff-text">
+      <span class="eyebrow" style="background:transparent;color:var(--teal-deep);border:1px solid var(--teal-deep);">Why patients notice the difference</span>
+      <h2>Magnification-guided, composite-first dentistry</h2>
+      <p>Most fillings are done by feel. Dr. Gupta works under high magnification for every restorative procedure — spotting decay margins and shaping composite fillings with a precision that's simply not visible to the naked eye.</p>
+      <p>Combined with a strict "treat only what's needed" philosophy, it means fewer redos, longer-lasting fillings, and no procedures you didn't actually need.</p>
+      <ul class="diff-list">
+        <li>High-magnification precision on every restorative case</li>
+        <li>Ethical treatment planning — no over-treatment, ever</li>
+        <li>Premium, top-quality materials only</li>
+        <li>Stringent sterilisation protocol on every visit</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="why" class="reveal">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow" style="background:transparent;color:var(--teal-deep);border:1px solid var(--teal-deep);">Why Choose Us</span>
+      <h2>Care built around you, not the clock</h2>
+      <p>Six reasons patients stay with Dr. Gupta's Dental Clinic for decades, not just one visit.</p>
+    </div>
+    <div class="cards-grid">
+      <div class="card"><div class="card-icon">◈</div><h3>Quality over Quantity</h3><p>Fewer patients seen faster isn't the goal — getting it right the first time is.</p></div>
+      <div class="card"><div class="card-icon">♥</div><h3>Empathy &amp; Compassion</h3><p>Every treatment plan starts with listening, not a prescription.</p></div>
+      <div class="card"><div class="card-icon">⚖</div><h3>Ethical Behaviour</h3><p>You'll never be sold a treatment you don't actually need.</p></div>
+      <div class="card"><div class="card-icon">⚙</div><h3>Advanced Technology</h3><p>High-magnification tools and modern equipment on every case.</p></div>
+      <div class="card"><div class="card-icon">✚</div><h3>Stringent Sterilisation</h3><p>Hospital-grade sterilisation protocol, followed without exception.</p></div>
+      <div class="card"><div class="card-icon">⚲</div><h3>Centrally Located</h3><p>Easy to reach in South Extension Part 1, next to Bengali Sweet Centre.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="reveal about">
+  <div class="container about-grid">
+    <div class="about-img">
+      <img src="dr-tanupriya-headshot.jpg" alt="Dr. Tanupriya Gupta">
+    </div>
+    <div class="about-text">
+      <h2>Dr. Tanupriya Gupta</h2>
+      <span class="role">MDS &middot; Principal Dentist &middot; 20 Years of Experience</span>
+      <p>Dr. Tanupriya Gupta, MDS, founded Dr. Gupta's Dental Clinic in 2013 with a simple standard: treat every patient the way she'd want her own family treated. That means unhurried appointments, magnification-guided restorative work, and an unwavering rule against unnecessary treatment.</p>
+      <p>Before starting her own practice, she spent over five years at <strong>AIIMS, New Delhi</strong>, trained at <strong>PGI Chandigarh</strong>, and served as faculty at the <strong>Faculty of Dental Sciences, Jamia Millia Islamia</strong>. She completed her MDS at <strong>Manipal</strong> and her BDS at <strong>Nair Hospital, Mumbai</strong>.</p>
+      <p>She's known among patients for being soft-spoken, thorough, and scrupulously careful — walking every patient through their options before recommending the simplest one that actually solves the problem.</p>
+      <a href="https://wa.me/919990880975" class="cta-btn">Book an Appointment</a>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="reveal">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow" style="background:transparent;color:var(--teal-deep);border:1px solid var(--teal-deep);">Our Services</span>
+      <h2>Comprehensive dental care, under one roof</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-item"><span class="service-dot"></span><span>Restorative Procedures</span></div>
+      <div class="service-item"><span class="service-dot"></span><span>Root Canal Treatment</span></div>
+      <div class="service-item"><span class="service-dot"></span><span>Teeth Extraction</span></div>
+      <div class="service-item"><span class="service-dot"></span><span>Preventive Procedures</span></div>
+      <div class="service-item"><span class="service-dot"></span><span>Screening &amp; Diagnosis</span></div>
+      <div class="service-item"><span class="service-dot"></span><span>Dental Implants</span></div>
+      <div class="service-item"><span class="service-dot"></span><span>Replacement of Missing Teeth</span></div>
+      <div class="service-item"><span class="service-dot"></span><span>Cosmetic Dentistry</span></div>
+      <div class="service-item"><span class="service-dot"></span><span>Child Dental Care</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials" class="reveal testi">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Patient Stories</span>
+      <h2>What patients say</h2>
+      <p>Every single review Dr. Gupta's Dental Clinic has received on Google has been five stars — not one exception.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"Dr Tanupriya is the most knowledgeable, sincere and methodical dental surgeon I have come across. She's also very caring and compassionate and makes sure her patients are comfortable during and post procedure also. I recommend her to all my family and friends."</p>
+        <div class="who">Dr. Chhabir Gupta</div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"Fabulous doctor, a real healer. Best dental cleaning work I've had in over twenty years, very precise, very careful. Superb, and highly recommended."</p>
+        <div class="who">Anuraag Tiwari</div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"Had an amazing experience while having composite filling done here. Such a sweet and soft spoken lady as well a highly professional dentist who takes all precautions and utmost care taking into account all necessary protocols."</p>
+        <div class="who">Ayush Kushwaha</div>
+      </div>
+      <div style="text-align:center;margin-top:32px;">
+        <a href="https://www.google.com/maps/place/Dr.+Gupta's+Dental+Clinic/@28.5712336,77.2185971,17z/data=!3m1!4b1!4m6!3m5!1s0x390ce25ebe73cb59:0x56e9179e7dcfc73b!8m2!3d28.5712289!4d77.221172!16s%2Fg%2F11b6t0lkcx" target="_blank" rel="noopener" class="btn-outline" style="border-color:var(--gold);color:var(--gold);">Read All Reviews on Google</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" class="reveal">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow" style="background:transparent;color:var(--teal-deep);border:1px solid var(--teal-deep);">Our Cases</span>
+      <h2>The clinic, and the work</h2>
+    </div>
+    <div class="gallery-grid">
+      <img src="clinic_photos_shortlist/IMG_7427.JPG" alt="Clinic case">
+      <img src="clinic_photos_shortlist/IMG_7470.JPG" alt="Clinic case">
+      <img src="clinic_photos_shortlist/IMG_7420.JPG" alt="Clinic interior">
+      <img src="clinic_photos_shortlist/IMG_7467.JPG" alt="Sterilisation protocol">
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="reveal">
+  <div class="container contact-grid">
+    <div class="contact-info">
+      <h2>Visit or Book Online</h2>
+      <div class="info-row">
+        <div class="info-icon">⚲</div>
+        <div><h4>Address</h4><p>H-30, Upper Ground Floor, South Extension, Part 1<br>(Same lane as Bengali Sweet Centre)<br>New Delhi – 110049</p></div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon">☎</div>
+        <div><h4>Phone</h4><p>Mobile: 99908 80975<br>Landline: 011-4222-0392</p></div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon">⏱</div>
+        <div><h4>Hours</h4><p>Monday – Saturday, 10AM – 7PM</p></div>
+      </div>
+      <a href="https://wa.me/919990880975" class="cta-btn">Chat on WhatsApp</a>
+    </div>
+    <div class="map-wrap">
+      <iframe src="https://www.google.com/maps?q=Dr.+Gupta%27s+Dental+Clinic,+H-30+South+Extension+Part+1,+New+Delhi&ll=28.5712289,77.221172&z=17&output=embed" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<div class="final-cta">
+  <div class="container">
+    <h2>Your smile deserves careful hands.</h2>
+    <p>Book a consultation with Dr. Tanupriya Gupta today.</p>
+    <a href="https://wa.me/919990880975" class="cta-btn">Book on WhatsApp</a>
+  </div>
+</div>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <h4>Dr. Gupta's Dental Clinic</h4>
+      <p>Precision, magnification-guided dentistry in South Extension, New Delhi since 2013.</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <a href="tel:+919990880975">Mobile: 99908 80975</a>
+      <a href="tel:+911142220392">Landline: 011-4222-0392</a>
+      <a href="https://wa.me/919990880975">WhatsApp Us</a>
+      <p>H-30, South Extension Part 1, New Delhi</p>
+    </div>
+  </div>
+  <div class="container footer-bottom">© 2026 Dr. Gupta's Dental Clinic. All rights reserved.</div>
+</footer>
+
+<a href="https://wa.me/919990880975" class="whatsapp-float" aria-label="Chat on WhatsApp">💬</a>
+
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var els = document.querySelectorAll('.reveal');
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  },{threshold:0.12});
+  els.forEach(function(el){ io.observe(el); });
+});
+</script>
+</body>
+</html>
