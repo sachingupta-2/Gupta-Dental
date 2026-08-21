@@ -27,7 +27,7 @@
   --white:#FFFFFF;
   --navy:#222222;
   --gold:#FFEC71;
-  --light-gray:#F2F2F2;
+  --light-gray:#DCDCDC;
 
   --dark-navy:#2B2B2B;
   --text:#333333;
@@ -366,6 +366,12 @@ nav a:hover::after{
   letter-spacing:0.02em;
 }
 
+.slot-status{
+  color:var(--gray);
+  font-size:0.78rem;
+  line-height:1.4;
+}
+
 .form-group input,
 .form-group textarea,
 .form-group select{
@@ -426,6 +432,69 @@ nav a:hover::after{
   justify-content:flex-end;
   gap:12px;
   padding-top:8px;
+}
+
+.appointment-step{display:none;}
+.appointment-step.active{display:block;}
+.appointment-progress{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:0 0 24px;
+  padding:12px 14px;
+  background:var(--light-blue);
+  border-radius:12px;
+}
+.step-indicator{
+  flex:1;
+  text-align:center;
+  font-size:.78rem;
+  font-weight:700;
+  color:var(--gray);
+  padding:8px 10px;
+  border-radius:9px;
+}
+.step-indicator.active{background:var(--primary);color:var(--navy);}
+.step-actions{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  padding-top:18px;
+}
+.right-actions{display:flex;gap:12px;margin-left:auto;}
+.optional-note{font-size:.78rem;color:var(--gray);font-weight:500;margin-left:4px;}
+.clinical-intro{
+  background:var(--light-blue);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:14px 16px;
+  margin-bottom:18px;
+  color:var(--gray);
+  font-size:.9rem;
+}
+.clinical-intro strong{color:var(--navy);}
+.clinical-section{margin-top:24px;padding-top:20px;border-top:1px solid var(--border);}
+.clinical-section-title{color:var(--navy);font-size:1rem;font-weight:700;margin-bottom:14px;}
+.clinical-table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:12px;background:var(--white);}
+.clinical-table{width:100%;border-collapse:collapse;min-width:620px;}
+.clinical-table th,.clinical-table td{padding:11px 12px;border-bottom:1px solid var(--border);text-align:left;vertical-align:middle;}
+.clinical-table th{background:var(--light-blue);color:var(--navy);font-size:.8rem;}
+.clinical-table td{font-size:.86rem;}
+.clinical-table tr:last-child td{border-bottom:0;}
+.clinical-table select{width:100%;padding:9px 10px;border:1px solid var(--border);border-radius:9px;background:var(--white);font:inherit;color:var(--text);}
+.clinical-check{display:flex;align-items:center;gap:8px;color:var(--text);font-size:.88rem;font-weight:500;}
+.clinical-check input{width:auto;accent-color:var(--primary);}
+.option-grid{display:flex;flex-wrap:wrap;gap:10px 18px;padding:5px 0 8px;}
+.hygiene-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px;}
+.hygiene-grid .form-group.full{grid-column:1 / -1;}
+@media(max-width:600px){
+  .hygiene-grid{grid-template-columns:1fr;}
+  .hygiene-grid .form-group.full{grid-column:auto;}
+  .clinical-table{min-width:560px;}
+  .appointment-progress{flex-direction:column;align-items:stretch;}
+  .step-indicator{width:100%;}
+  .step-actions,.right-actions{flex-wrap:wrap;}
+  .right-actions{margin-left:0;}
 }
 
 
@@ -551,8 +620,8 @@ nav a:hover::after{
    ========================================================= */
 
 .stats{
-  background:var(--navy);
-  color:#fff;
+  background:var(--light-gray);
+  color:var(--navy);
   padding:44px 0;
 }
 
@@ -566,13 +635,13 @@ nav a:hover::after{
 .stats-grid .num{
   font-family:'Cormorant Garamond',serif;
   font-size:2.6rem;
-  color:var(--gold);
+  color:var(--accent-dark);
   font-weight:700;
 }
 
 .stats-grid .label{
   font-size:0.85rem;
-  color:#FFF4B8;
+  color:var(--gray);
   margin-top:4px;
 }
 
@@ -884,22 +953,22 @@ nav a:hover::after{
    ========================================================= */
 
 .testi{
-  background:var(--navy);
+  background:var(--light-gray);
 }
 
 .testi .sec-head h2,
 .testi .sec-head p{
-  color:#fff;
+  color:var(--navy);
 }
 
 .testi .sec-head .eyebrow{
-  border-color:var(--gold);
-  color:var(--gold);
+  border-color:var(--accent-dark);
+  color:var(--accent-dark);
 }
 
 .testi .reviews-btn{
-  border-color:var(--gold);
-  color:var(--gold);
+  border-color:var(--accent-dark);
+  color:var(--accent-dark);
 }
 
 .testi .reviews-btn:hover{
@@ -915,21 +984,21 @@ nav a:hover::after{
 }
 
 .testi-card{
-  background:rgba(255,255,255,0.07);
-  border:1px solid rgba(255,255,255,0.15);
+  background:var(--white);
+  border:1px solid var(--border);
   border-radius:var(--radius);
   padding:28px;
-  color:#FFF8D8;
+  color:var(--text);
   transition:all .25s ease;
 }
 
 .testi-card:hover{
-  background:rgba(255,255,255,0.11);
+  background:var(--white);
   transform:translateY(-3px);
 }
 
 .testi-card .stars{
-  color:var(--gold);
+  color:var(--accent-dark);
   margin-bottom:12px;
   font-size:1rem;
 }
@@ -941,7 +1010,7 @@ nav a:hover::after{
 
 .testi-card .who{
   font-weight:700;
-  color:#fff;
+  color:var(--navy);
   font-size:0.9rem;
 }
 
@@ -1043,11 +1112,12 @@ nav a:hover::after{
 .final-cta{
   background:linear-gradient(
     135deg,
-    var(--primary),
-    var(--navy)
+    #F4F5F2 0%,
+    #D1D4D0 100%
   );
-  color:#fff;
+  color:var(--navy);
   text-align:center;
+  border-top:4px solid var(--primary);
 }
 
 .final-cta h2{
@@ -1056,18 +1126,18 @@ nav a:hover::after{
 }
 
 .final-cta p{
-  color:#FFF8D8;
+  color:var(--text);
   margin-bottom:28px;
 }
 
 .final-cta .cta-btn{
-  background:#fff;
+  background:var(--primary-hover);
   color:var(--navy);
   box-shadow:0 8px 20px rgba(0,0,0,0.12);
 }
 
 .final-cta .cta-btn:hover{
-  background:var(--light-blue);
+  background:var(--primary);
   color:var(--navy);
 }
 
@@ -1077,8 +1147,8 @@ nav a:hover::after{
    ========================================================= */
 
 footer{
-  background:var(--dark-navy);
-  color:#FFF4B8;
+  background:var(--light-gray);
+  color:var(--text);
   padding:50px 0 24px;
 }
 
@@ -1090,7 +1160,7 @@ footer{
 }
 
 .footer-grid h4{
-  color:#fff;
+  color:var(--navy);
   margin-bottom:14px;
   font-size:1rem;
 }
@@ -1098,7 +1168,7 @@ footer{
 .footer-grid p,
 .footer-grid a{
   font-size:0.88rem;
-  color:#D5D0BC;
+  color:var(--gray);
   display:block;
   margin-bottom:8px;
 }
@@ -1108,11 +1178,11 @@ footer{
 }
 
 .footer-bottom{
-  border-top:1px solid rgba(255,255,255,0.15);
+  border-top:1px solid var(--border);
   padding-top:20px;
   text-align:center;
   font-size:0.8rem;
-  color:#B8B29D;
+  color:var(--gray);
 }
 
 
@@ -1442,245 +1512,66 @@ footer{
     </div>
 
 
-    <form
-      class="appointment-form"
-      id="appointmentForm"
-    >
-
-      <div class="form-grid">
-
-
-        <div class="form-group">
-
-          <label for="name">
-            Name
-          </label>
-
-          <input
-            id="name"
-            name="name"
-            type="text"
-            placeholder="Enter your name"
-            required
-          >
-
-        </div>
-
-
-        <div class="form-group">
-
-          <label for="age">
-            Age
-          </label>
-
-          <input
-            id="age"
-            name="age"
-            type="number"
-            min="1"
-            placeholder="Age"
-            required
-          >
-
-        </div>
-
-
-        <div class="form-group">
-
-          <label for="phone">
-            Phone No
-          </label>
-
-          <input
-            id="phone"
-            name="phone"
-            type="tel"
-            placeholder="Your phone number"
-            required
-          >
-
-        </div>
-
-
-        <div class="form-group">
-
-          <label for="email">
-            Email
-          </label>
-
-          <input
-            id="email"
-            name="email"
-            type="email"
-            placeholder="Your email address"
-            required
-          >
-
-        </div>
-
-
-        <div class="form-group full">
-
-          <label for="address">
-            Address
-          </label>
-
-          <input
-            id="address"
-            name="address"
-            type="text"
-            placeholder="Your address"
-            required
-          >
-
-        </div>
-
-
-        <div class="form-group">
-
-          <label for="appointmentDate">
-            Appointment Date
-          </label>
-
-          <input
-            type="date"
-            id="appointmentDate"
-            name="appointmentDate"
-            placeholder="Appointment Date"
-            required
-          >
-
-        </div>
-
-
-        <div class="form-group">
-
-          <label for="gender">
-            Gender
-          </label>
-
-          <select
-            id="gender"
-            name="gender"
-            required
-          >
-
-            <option value="">
-              Select gender
-            </option>
-
-            <option value="Male">
-              Male
-            </option>
-
-            <option value="Female">
-              Female
-            </option>
-
-            <option value="Other">
-              Other
-            </option>
-
-          </select>
-
-        </div>
-
-
-        <div class="form-group">
-
-          <label>
-            Current taking any medicine?
-          </label>
-
-          <div class="radio-row">
-
-            <label class="radio-option">
-
-              <input
-                type="radio"
-                name="medication"
-                value="yes"
-              >
-
-              Yes
-
-            </label>
-
-
-            <label class="radio-option">
-
-              <input
-                type="radio"
-                name="medication"
-                value="no"
-                checked
-              >
-
-              No
-
-            </label>
-
-          </div>
-
-        </div>
-
-
-        <div
-          class="form-group full medication-box"
-          id="medicationBox"
-        >
-
-          <label for="medicineDetails">
-            Medicine Details
-          </label>
-
-          <textarea
-            id="medicineDetails"
-            name="medicineDetails"
-            placeholder="Please write the medicines you are currently taking"
-          ></textarea>
-
-        </div>
-
-
-        <div class="form-group full">
-
-          <label for="medicalHistory">
-            Medical History
-          </label>
-
-          <textarea
-            id="medicalHistory"
-            name="medicalHistory"
-            placeholder="Please mention any relevant medical history"
-            required
-          ></textarea>
-
-        </div>
-
-
+    <form class="appointment-form" id="appointmentForm">
+      <div class="appointment-progress" aria-label="Appointment form progress">
+        <div class="step-indicator active" id="stepIndicator1">1. Patient Details</div>
+        <div class="step-indicator" id="stepIndicator2">2. Personal Details <span class="optional-note">(Optional)</span></div>
       </div>
 
-
-      <div class="form-actions">
-
-        <button
-          type="button"
-          class="secondary-btn"
-          id="closeAppointmentModal"
-        >
-          Cancel
-        </button>
-
-        <button
-          type="submit"
-          class="cta-btn"
-        >
-          Submit
-        </button>
-
+      <div class="appointment-step active" id="appointmentStep1">
+        <div class="form-grid">
+          <div class="form-group"><label for="name">Name</label><input id="name" name="name" type="text" placeholder="Enter your name" required></div>
+          <div class="form-group"><label for="age">Age</label><input id="age" name="age" type="number" min="1" placeholder="Age" required></div>
+          <div class="form-group"><label for="phone">Phone No</label><input id="phone" name="phone" type="tel" placeholder="Your phone number" required></div>
+          <div class="form-group"><label for="email">Email</label><input id="email" name="email" type="email" placeholder="Your email address" required></div>
+          <div class="form-group full"><label for="address">Address</label><input id="address" name="address" type="text" placeholder="Your address" required></div>
+          <div class="form-group"><label for="appointmentDate">Appointment Date</label><input type="date" id="appointmentDate" name="appointmentDate" required></div>
+          <div class="form-group"><label for="appointmentTime">Available Time Slot</label><select id="appointmentTime" name="appointmentTime" required disabled><option value="">Select a date first</option></select><small class="slot-status" id="slotStatus" aria-live="polite">Choose a date to see available slots.</small></div>
+          <div class="form-group"><label for="gender">Gender</label><select id="gender" name="gender" required><option value="">Select gender</option><option>Male</option><option>Female</option><option>Other</option></select></div>
+        </div>
+        <div class="step-actions">
+          <button type="button" class="secondary-btn" id="closeAppointmentModal">Cancel</button>
+          <button type="button" class="cta-btn" id="nextAppointmentStep">Next &rarr;</button>
+        </div>
       </div>
 
+      <div class="appointment-step" id="appointmentStep2">
+        <div class="clinical-intro"><strong>Personal details are optional.</strong> You can provide them to help the dentist understand your concern before the appointment, or skip this section and submit with your basic details.</div>
+        <div class="form-grid">
+          <div class="form-group full"><label for="reasonForVisit">Reason for Visit</label><textarea id="reasonForVisit" name="reasonForVisit" placeholder="Briefly describe the reason for your visit"></textarea></div>
+          <div class="form-group"><label for="dentalProblem">Current Dental Problem</label><select id="dentalProblem" name="dentalProblem"><option value="">Select if applicable</option><option>Tooth Pain</option><option>Sensitivity</option><option>Swelling</option><option>Bleeding Gums</option><option>Broken / Chipped Tooth</option><option>Cavity</option><option>Missing Tooth</option><option>Routine Check-up</option><option>Cleaning</option><option>Other</option></select></div>
+          <div class="form-group"><label for="painLevel">Pain / Discomfort</label><select id="painLevel" name="painLevel"><option value="">Select if applicable</option><option>None</option><option>Mild</option><option>Moderate</option><option>Severe</option></select></div>
+          <div class="form-group"><label for="previousDentalTreatment">Previous Dental Treatment</label><select id="previousDentalTreatment" name="previousDentalTreatment"><option value="">Select if applicable</option><option>No Previous Treatment</option><option>Filling</option><option>Root Canal</option><option>Extraction</option><option>Implant</option><option>Crown / Bridge</option><option>Other</option></select></div>
+          <div class="form-group"><label>Currently Taking Any Medicine?</label><div class="radio-row"><label class="radio-option"><input type="radio" name="medication" value="yes"> Yes</label><label class="radio-option"><input type="radio" name="medication" value="no" checked> No</label></div></div>
+          <div class="form-group full medication-box" id="medicationBox"><label for="medicineDetails">Medicine Details</label><textarea id="medicineDetails" name="medicineDetails" placeholder="List medicines you are currently taking"></textarea></div>
+          <div class="form-group full"><label for="allergies">Known Allergies</label><textarea id="allergies" name="allergies" placeholder="Mention any known medicine or other allergies"></textarea></div>
+          <div class="form-group full"><label for="medicalHistory">Medical History</label><textarea id="medicalHistory" name="medicalHistory" placeholder="Mention any relevant medical history"></textarea></div>
+          <div class="form-group full"><label for="additionalClinicalDetails">Additional Clinical Details</label><textarea id="additionalClinicalDetails" name="additionalClinicalDetails" placeholder="Anything else you would like the dentist to know"></textarea></div>
+        </div>
+
+        <div class="clinical-section">
+          <h4 class="clinical-section-title">Adverse Habits / Adverse Oral Habits</h4>
+          <div class="clinical-table-wrap"><table class="clinical-table"><thead><tr><th>Type</th><th>Frequency</th><th>Duration</th></tr></thead><tbody>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitSmoking" value="Smoking"> Smoking</label></td><td><select name="habitSmokingFrequency"><option value="">Select</option><option>Occasional</option><option>Once Daily</option><option>Twice Daily</option><option>More than Twice Daily</option></select></td><td><select name="habitSmokingDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitTobacco" value="Smokeless Tobacco/snuff"> Smokeless Tobacco / Snuff</label></td><td><select name="habitTobaccoFrequency"><option value="">Select</option><option>Occasional</option><option>Once Daily</option><option>Twice Daily</option><option>More than Twice Daily</option></select></td><td><select name="habitTobaccoDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitPaan" value="Paan chewing (gutka, paanmasala)"> Paan chewing (gutka, paanmasala)</label></td><td><select name="habitPaanFrequency"><option value="">Select</option><option>Occasional</option><option>Once Daily</option><option>Twice Daily</option><option>More than Twice Daily</option></select></td><td><select name="habitPaanDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitAlcohol" value="Alcohol"> Alcohol</label></td><td><select name="habitAlcoholFrequency"><option value="">Select</option><option>Occasional</option><option>Once Weekly</option><option>2-3 Times Weekly</option><option>Daily</option></select></td><td><select name="habitAlcoholDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+          </tbody></table></div>
+        </div>
+
+        <div class="clinical-section"><h4 class="clinical-section-title">Oral Hygiene Practices</h4><div class="hygiene-grid">
+          <div class="form-group full"><label>i) Type of Cleaning</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Toothbrush"> Toothbrush</label><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Finger"> Finger</label><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Stick"> Stick</label><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Others"> Others</label></div></div>
+          <div class="form-group full"><label>ii) Method of Cleaning</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="cleaningMethod" value="Vertical"> Vertical</label><label class="clinical-check"><input type="checkbox" name="cleaningMethod" value="Horizontal"> Horizontal</label><label class="clinical-check"><input type="checkbox" name="cleaningMethod" value="Circular"> Circular</label></div></div>
+          <div class="form-group full"><label>iii) Frequency of Cleaning / Brushing</label><div class="option-grid"><label class="clinical-check"><input type="radio" name="brushingFrequency" value="Once"> Once</label><label class="clinical-check"><input type="radio" name="brushingFrequency" value="Twice"> Twice</label><label class="clinical-check"><input type="radio" name="brushingFrequency" value="Thrice"> Thrice</label></div></div>
+          <div class="form-group full"><label>iv) Materials Used</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Toothpaste"> Toothpaste</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Tooth Powder"> Tooth Powder</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Charcoal"> Charcoal</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Sand"> Sand</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Brick Powder"> Brick Powder</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Any Other"> Any Other</label></div><input type="text" id="cleaningMaterialOther" name="cleaningMaterialOther" placeholder="If any other, please specify"></div>
+          <div class="form-group full"><label>v) Time of Brushing</label><div class="option-grid"><label class="clinical-check"><input type="radio" name="brushingTime" value="Before Meal"> Before Meal</label><label class="clinical-check"><input type="radio" name="brushingTime" value="After Meals"> After Meals</label></div></div>
+          <div class="form-group full"><label>vi) Frequency of Changing the Tooth Brush</label><div class="option-grid"><label class="clinical-check"><input type="radio" name="toothbrushChangeFrequency" value="Once"> Once</label><label class="clinical-check"><input type="radio" name="toothbrushChangeFrequency" value="Twice"> Twice</label><label class="clinical-check"><input type="radio" name="toothbrushChangeFrequency" value="Thrice"> Thrice</label></div></div>
+          <div class="form-group"><label for="durationOfCleaning">vii) Duration of Cleaning</label><input type="text" id="durationOfCleaning" name="durationOfCleaning" placeholder="e.g. 2 minutes"></div>
+          <div class="form-group full"><label>viii) Other Oral Hygiene Aids Used</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Flossing"> Flossing</label><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Interdental Aids"> Interdental Aids</label><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Oral Mouth Rinse"> Oral Mouth Rinse</label><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Tongue Cleaner"> Tongue Cleaner</label></div></div>
+        </div></div>
+
+        <div class="step-actions"><button type="button" class="secondary-btn" id="backAppointmentStep">&larr; Back</button><div class="right-actions"><button type="button" class="secondary-btn" id="skipClinicalStep">Skip &amp; Submit</button><button type="submit" class="cta-btn">Submit Appointment</button></div></div>
+      </div>
     </form>
 
   </div>
@@ -1717,29 +1608,14 @@ footer{
 
       <div class="hero-ctas">
 
-        <a
-          href="https://wa.me/919990880975"
-          class="cta-btn"
-        >
-          Book on WhatsApp
-        </a>
+        <a href="https://wa.me/919990880975" class="cta-btn" > Book on WhatsApp </a>
 
-        <a
-          href="tel:+919990880975"
-          class="btn-outline"
-        >
-          Call the Clinic
-        </a>
+        <a href="tel:+919990880975" class="btn-outline" > Call the Clinic </a>
 
       </div>
 
 
-      <a
-        href="https://www.google.com/maps/place/Dr.+Gupta's+Dental+Clinic/@28.5712336,77.2185971,17z/data=!3m1!4b1!4m6!3m5!1s0x390ce25ebe73cb59:0x56e9179e7dcfc73b!8m2!3d28.5712289!4d77.221172!16s%2Fg%2F11b6t0lkcx"
-        target="_blank"
-        rel="noopener"
-        class="trust-badge"
-      >
+      <a href="https://www.google.com/maps/place/Dr.+Gupta's+Dental+Clinic/@28.5712336,77.2185971,17z/data=!3m1!4b1!4m6!3m5!1s0x390ce25ebe73cb59:0x56e9179e7dcfc73b!8m2!3d28.5712289!4d77.221172!16s%2Fg%2F11b6t0lkcx" target="_blank" rel="noopener" class="trust-badge" >
 
         <span class="tb-stars">
           ★★★★★
@@ -1757,10 +1633,7 @@ footer{
 
     <div class="hero-img">
 
-      <img
-        src="clinic_photos_shortlist/IMG_7465.JPG"
-        alt="Dr. Tanupriya Gupta with dental technology"
-      >
+      <img src="clinic_photos_shortlist/IMG_7465.JPG" alt="Dr. Tanupriya Gupta with dental technology" >
 
     </div>
 
@@ -1822,10 +1695,7 @@ footer{
 
         <div class="cred-badge">
 
-          <img
-            src="logos/aiims.png"
-            alt="AIIMS New Delhi logo"
-          >
+          <img src="logos/aiims.png" alt="AIIMS New Delhi logo" >
 
         </div>
 
@@ -1840,10 +1710,7 @@ footer{
 
         <div class="cred-badge">
 
-          <img
-            src="logos/pgi.png"
-            alt="PGIMER Chandigarh logo"
-          >
+          <img src="logos/pgi.png" alt="PGIMER Chandigarh logo" >
 
         </div>
 
@@ -1858,10 +1725,7 @@ footer{
 
         <div class="cred-badge">
 
-          <img
-            src="logos/jmi.png"
-            alt="Jamia Millia Islamia logo"
-          >
+          <img src="logos/jmi.png" alt="Jamia Millia Islamia logo" >
 
         </div>
 
@@ -1877,10 +1741,7 @@ footer{
 
         <div class="cred-badge">
 
-          <img
-            src="logos/manipal.png"
-            alt="Manipal University logo"
-          >
+          <img src="logos/manipal.png" alt="Manipal University logo" >
 
         </div>
 
@@ -1896,10 +1757,7 @@ footer{
 
         <div class="cred-badge">
 
-          <img
-            src="logos/nhdc.png"
-            alt="Nair Hospital Dental College logo"
-          >
+          <img src="logos/nhdc.png" alt="Nair Hospital Dental College logo" >
 
         </div>
 
@@ -1922,20 +1780,14 @@ footer{
      DIFFERENCE
      ========================================================= -->
 
-<section
-  id="difference"
-  class="reveal diff"
->
+<section id="difference" class="reveal diff">
 
   <div class="container diff-grid">
 
 
     <div class="diff-img">
 
-      <img
-        src="clinic_photos_shortlist/IMG_7459.JPG"
-        alt="Advanced dental technology"
-      >
+      <img src="clinic_photos_shortlist/IMG_7459.JPG" alt="Advanced dental technology" >
 
     </div>
 
@@ -1990,10 +1842,7 @@ footer{
      WHY CHOOSE US
      ========================================================= -->
 
-<section
-  id="why"
-  class="reveal"
->
+<section id="why" class="reveal">
 
   <div class="container">
 
@@ -2130,20 +1979,14 @@ footer{
      ABOUT
      ========================================================= -->
 
-<section
-  id="about"
-  class="reveal about"
->
+<section id="about" class="reveal about">
 
   <div class="container about-grid">
 
 
     <div class="about-img">
 
-      <img
-        src="dr-tanupriya-headshot.jpg"
-        alt="Dr. Tanupriya Gupta"
-      >
+      <img src="dr-tanupriya-headshot.jpg" alt="Dr. Tanupriya Gupta">
 
     </div>
 
@@ -2170,12 +2013,7 @@ footer{
         She's known among patients for being soft-spoken, thorough, and scrupulously careful — walking every patient through their options before recommending the simplest one that actually solves the problem.
       </p>
 
-      <a
-        href="https://wa.me/919990880975"
-        class="cta-btn"
-      >
-        Book an Appointment
-      </a>
+      <a href="https://wa.me/919990880975" class="cta-btn"> Book an Appointment </a>
 
     </div>
 
@@ -2188,10 +2026,7 @@ footer{
      SERVICES
      ========================================================= -->
 
-<section
-  id="services"
-  class="reveal"
->
+<section id="services" class="reveal">
 
   <div class="container">
 
@@ -2379,10 +2214,7 @@ footer{
      GALLERY
      ========================================================= -->
 
-<section
-  id="gallery"
-  class="reveal"
->
+<section id="gallery" class="reveal">
 
   <div class="container">
 
@@ -2401,25 +2233,13 @@ footer{
 
     <div class="gallery-grid">
 
-      <img
-        src="clinic_photos_shortlist/IMG_7427.JPG"
-        alt="Clinic case"
-      >
+      <img src="clinic_photos_shortlist/IMG_7427.JPG" alt="Clinic case">
 
-      <img
-        src="clinic_photos_shortlist/IMG_7470.JPG"
-        alt="Clinic case"
-      >
+      <img src="clinic_photos_shortlist/IMG_7470.JPG" alt="Clinic case">
 
-      <img
-        src="clinic_photos_shortlist/IMG_7420.JPG"
-        alt="Clinic interior"
-      >
+      <img src="clinic_photos_shortlist/IMG_7420.JPG" alt="Clinic interior">
 
-      <img
-        src="clinic_photos_shortlist/IMG_7467.JPG"
-        alt="Sterilisation protocol"
-      >
+      <img src="clinic_photos_shortlist/IMG_7467.JPG" alt="Sterilisation protocol">
 
     </div>
 
@@ -2509,30 +2329,21 @@ footer{
           </p>
 
         </div>
-
       </div>
 
 
-      <a
-        href="https://wa.me/919990880975"
-        class="cta-btn"
-      >
-        Chat on WhatsApp
-      </a>
+      <a href="https://wa.me/919990880975" class="cta-btn"> Chat on WhatsApp </a>
 
     </div>
 
 
     <div class="map-wrap">
-
       <iframe
         src="https://www.google.com/maps?q=Dr.+Gupta%27s+Dental+Clinic,+H-30+South+Extension+Part+1,+New+Delhi&ll=28.5712289,77.221172&z=17&output=embed"
         allowfullscreen
         loading="lazy"
       ></iframe>
-
     </div>
-
 
   </div>
 
@@ -2555,12 +2366,7 @@ footer{
       Book a consultation with Dr. Tanupriya Gupta today.
     </p>
 
-    <a
-      href="https://wa.me/919990880975"
-      class="cta-btn"
-    >
-      Book on WhatsApp
-    </a>
+    <a href="https://wa.me/919990880975" class="cta-btn">  Book on WhatsApp</a>
 
   </div>
 
@@ -2632,13 +2438,9 @@ footer{
         WhatsApp Us
       </a>
 
-      <p>
-        H-30, South Extension Part 1, New Delhi
-      </p>
+      <p>   H-30, South Extension Part 1, New Delhi</p>
 
     </div>
-
-
   </div>
 
 
@@ -2653,13 +2455,7 @@ footer{
      WHATSAPP FLOAT
      ========================================================= -->
 
-<a
-  href="https://wa.me/919990880975"
-  class="whatsapp-float"
-  aria-label="Chat on WhatsApp"
->
-  💬
-</a>
+<a href="https://wa.me/919990880975" class="whatsapp-float" aria-label="Chat on WhatsApp"> 💬</a>
 
 
 <!-- =========================================================
@@ -2690,46 +2486,32 @@ document.addEventListener('DOMContentLoaded',function(){
   },{threshold:0.12});
 
 
-  els.forEach(function(el){
-
-    io.observe(el);
-
-  });
-
-
-  var modal =
-    document.getElementById('appointmentModal');
-
-  var openButton =
-    document.getElementById('openAppointmentModal');
-
+  els.forEach(function(el){io.observe(el);});
+  var modal = document.getElementById('appointmentModal');
+  var openButton = document.getElementById('openAppointmentModal');
   var closeButtons = [
-
     document.querySelector('.modal-close'),
-
     document.getElementById('closeAppointmentModal')
-
   ];
-
-
-  var medicationInputs =
-    document.querySelectorAll('input[name="medication"]');
-
-  var medicationBox =
-    document.getElementById('medicationBox');
-
-  var form =
-    document.getElementById('appointmentForm');
-
-  var header =
-    document.querySelector('header');
-
-  var menuToggle =
-    document.querySelector('.menu-toggle');
-
-  var navigationLinks =
-    document.querySelectorAll('nav a');
-
+  var medicationInputs = document.querySelectorAll('input[name="medication"]');
+  var medicationBox = document.getElementById('medicationBox');
+  var form = document.getElementById('appointmentForm');
+  var appointmentDate = document.getElementById('appointmentDate');
+  var appointmentTime = document.getElementById('appointmentTime');
+  var slotStatus = document.getElementById('slotStatus');
+  var scriptUrl = 'https://script.google.com/macros/s/AKfycbxnsEVOn7JUSTLJkm1QG50AJlkZyu1C4bGb6ArIB1JDbfo8BTgTIBG-SrnscNOrjfwm/exec';
+  var availableSlots = ['10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00'];
+  var bookedSlots = {};
+  var appointmentStep1 = document.getElementById('appointmentStep1');
+  var appointmentStep2 = document.getElementById('appointmentStep2');
+  var stepIndicator1 = document.getElementById('stepIndicator1');
+  var stepIndicator2 = document.getElementById('stepIndicator2');
+  var nextAppointmentStep = document.getElementById('nextAppointmentStep');
+  var backAppointmentStep = document.getElementById('backAppointmentStep');
+  var skipClinicalStep = document.getElementById('skipClinicalStep');
+  var header = document.querySelector('header');
+  var menuToggle = document.querySelector('.menu-toggle');
+  var navigationLinks = document.querySelectorAll('nav a');
 
   function closeMenu(){
 
@@ -2737,22 +2519,14 @@ document.addEventListener('DOMContentLoaded',function(){
 
     if (menuToggle)
 
-      menuToggle.setAttribute(
-        'aria-expanded',
-        'false'
-      );
-
+      menuToggle.setAttribute('aria-expanded', 'false');
   }
-
 
   if (menuToggle)
 
-    menuToggle.addEventListener(
-      'click',
+    menuToggle.addEventListener('click',
       function(){
-
-        var isOpen =
-          header.classList.toggle('menu-open');
+        var isOpen = header.classList.toggle('menu-open');
 
         menuToggle.setAttribute('aria-expanded',String(isOpen));
       }
@@ -2762,7 +2536,111 @@ document.addEventListener('DOMContentLoaded',function(){
     link.addEventListener('click', closeMenu);
   });
 
+  function showAppointmentStep(stepNumber){
+    var firstStep = stepNumber === 1;
+    appointmentStep1.classList.toggle('active', firstStep);
+    appointmentStep2.classList.toggle('active', !firstStep);
+    stepIndicator1.classList.toggle('active', firstStep);
+    stepIndicator2.classList.toggle('active', !firstStep);
+    modal.scrollTop = 0;
+  }
+
+  function validatePatientDetails(){
+    var requiredFields = ['name', 'age', 'phone', 'email', 'address', 'appointmentDate', 'appointmentTime', 'gender'];
+    for (var i = 0; i < requiredFields.length; i++) {
+      var field = document.getElementById(requiredFields[i]);
+      if (!field.checkValidity()) {
+        field.reportValidity();
+        return false;
+      }
+    }
+    return true;
+  }
+
+  function slotKey(date, time){
+    return date + '|' + time;
+  }
+
+  function readLocalBookedSlots(){
+    try {
+      return JSON.parse(localStorage.getItem('drGuptaBookedSlots') || '{}');
+    } catch (error) {
+      return {};
+    }
+  }
+
+  function formatSlotTime(time){
+    var parts = time.split(':');
+    var hour = Number(parts[0]);
+    var suffix = hour >= 12 ? 'PM' : 'AM';
+    var displayHour = hour % 12 || 12;
+    return displayHour + ':' + parts[1] + ' ' + suffix;
+  }
+
+  function renderAvailableSlots(){
+    var date = appointmentDate.value;
+    appointmentTime.innerHTML = '';
+
+    if (!date) {
+      appointmentTime.disabled = true;
+      appointmentTime.add(new Option('Select a date first', ''));
+      slotStatus.textContent = 'Choose a date to see available slots.';
+      return;
+    }
+
+    if (new Date(date + 'T00:00:00').getDay() === 0) {
+      appointmentTime.disabled = true;
+      appointmentTime.add(new Option('Clinic is closed on Sundays', ''));
+      slotStatus.textContent = 'Please choose Monday to Saturday.';
+      return;
+    }
+
+    appointmentTime.add(new Option('Select an available slot', ''));
+    var visibleSlots = availableSlots.filter(function(time){
+      return !bookedSlots[slotKey(date, time)];
+    });
+
+    visibleSlots.forEach(function(time){
+      appointmentTime.add(new Option(formatSlotTime(time), time));
+    });
+    appointmentTime.disabled = visibleSlots.length === 0;
+    slotStatus.textContent = visibleSlots.length
+      ? visibleSlots.length + ' slot' + (visibleSlots.length === 1 ? '' : 's') + ' available.'
+      : 'No slots are available on this date.';
+  }
+
+  function loadBookedSlots(){
+    bookedSlots = readLocalBookedSlots();
+    renderAvailableSlots();
+    fetch(scriptUrl + '?action=getBookedSlots')
+      .then(function(response){ return response.json(); })
+      .then(function(result){
+        var remoteSlots = result.bookedSlots || result.data || [];
+        if (Array.isArray(remoteSlots)) {
+          remoteSlots.forEach(function(slot){
+            if (slot.date && slot.time)
+              bookedSlots[slotKey(slot.date, slot.time)] = true;
+            else if (slot.appointmentDate && slot.appointmentTime)
+              bookedSlots[slotKey(slot.appointmentDate, slot.appointmentTime)] = true;
+          });
+          renderAvailableSlots();
+        }
+      })
+      .catch(function(){ /* Local bookings remain available if the shared endpoint is unavailable. */ });
+  }
+
+  appointmentDate.min = new Date().toISOString().split('T')[0];
+  appointmentDate.addEventListener('change', renderAvailableSlots);
+  loadBookedSlots();
+
+  function resetAppointmentSteps(){
+    showAppointmentStep(1);
+    medicationBox.classList.remove('visible');
+    renderAvailableSlots();
+  }
+
   function openModal(){
+    resetAppointmentSteps();
     modal.classList.add('open');
     modal.setAttribute('aria-hidden', 'false' );
     document.body.style.overflow = 'hidden';
@@ -2806,6 +2684,15 @@ document.addEventListener('DOMContentLoaded',function(){
     }
   );
 
+  nextAppointmentStep.addEventListener('click', function(){
+    if (validatePatientDetails())
+      showAppointmentStep(2);
+  });
+
+  backAppointmentStep.addEventListener('click', function(){
+    showAppointmentStep(1);
+  });
+
   medicationInputs.forEach(function(radio){
 
     radio.addEventListener(
@@ -2820,7 +2707,7 @@ document.addEventListener('DOMContentLoaded',function(){
 
           medicationBox.classList.remove( 'visible');
 
-          var textarea = document.getElementById( 'medicationDetails'  );
+          var textarea = document.getElementById('medicineDetails');
 
           if (textarea)  textarea.value = '';
         }
@@ -2829,72 +2716,67 @@ document.addEventListener('DOMContentLoaded',function(){
   });
 
 
-  form.addEventListener(
-    'submit',
-    function(event){
-      event.preventDefault();
-      var medicationRadio = document.querySelector('input[name="medication"]:checked' );
-      var medicationDetails = document.getElementById('medicineDetails');
-      var scriptUrl = 'https://script.google.com/macros/s/AKfycbxnsEVOn7JUSTLJkm1QG50AJlkZyu1C4bGb6ArIB1JDbfo8BTgTIBG-SrnscNOrjfwm/exec';
-
-      var formData = {
-        name:document.getElementById('name').value.trim(),
-        age:document.getElementById('age').value,
-        phone:document.getElementById('phone').value.trim(),
-        address:document.getElementById('address').value.trim(),
-        email:document.getElementById('email').value.trim(),
-        gender:document.getElementById('gender').value,
-        appointmentDate:document.getElementById('appointmentDate').value,
-        medicalHistory:document.getElementById('medicalHistory').value.trim(),
-        medicineDetails:
-          medicationRadio &&
-          medicationRadio.value === 'yes'  ? ( medicationDetails? medicationDetails.value.trim(): ''): ''
-      };
-
-
-      fetch(
-        scriptUrl,
-        {
-          method:'POST',
-          body:new URLSearchParams(formData)
-        }
-      )
-
-      .then(function(response){
-        return response.text();
-      })
-
+  function getCheckedValues(name){
+    return Array.from(document.querySelectorAll('input[name="' + name + '"]:checked'))
+      .map(function(input){ return input.value; })
+      .join(', ');
+  }
+  
+  function submitAppointment(){
+    var medicationRadio = document.querySelector('input[name="medication"]:checked');
+    var medicationDetails = document.getElementById('medicineDetails');
+    var appointmentId = 'APT-' + Date.now() + '-' + Math.random().toString(36).substring(2, 7).toUpperCase();
+    var value = function(id){
+      var field = document.getElementById(id);
+      return field ? field.value.trim() : '';
+    };
+    var selected = function(name){ var input = document.querySelector('input[name="' + name + '"]:checked'); return input ? input.value : ''; };
+    var formData = {
+      appointmentId:appointmentId,
+      name:value('name'), age:document.getElementById('age').value, phone:value('phone'), address:value('address'),
+      email:value('email'), gender:document.getElementById('gender').value, appointmentDate:document.getElementById('appointmentDate').value, appointmentTime:document.getElementById('appointmentTime').value,
+      reasonForVisit:value('reasonForVisit'), dentalProblem:document.getElementById('dentalProblem').value, painLevel:document.getElementById('painLevel').value,
+      previousDentalTreatment:document.getElementById('previousDentalTreatment').value,
+      medication:medicationRadio ? medicationRadio.value : 'no',
+      medicineDetails:medicationRadio && medicationRadio.value === 'yes' ? value('medicineDetails') : '',
+      allergies:value('allergies'), medicalHistory:value('medicalHistory'), additionalClinicalDetails:value('additionalClinicalDetails'),
+      smoking:document.querySelector('input[name="habitSmoking"]').checked ? 'Yes' : 'No',
+      smokingFrequency:document.querySelector('select[name="habitSmokingFrequency"]').value,
+      smokingDuration:document.querySelector('select[name="habitSmokingDuration"]').value,
+      smokelessTobacco:document.querySelector('input[name="habitTobacco"]').checked ? 'Yes' : 'No',
+      smokelessTobaccoFrequency:document.querySelector('select[name="habitTobaccoFrequency"]').value,
+      smokelessTobaccoDuration:document.querySelector('select[name="habitTobaccoDuration"]').value,
+      paanChewing:document.querySelector('input[name="habitPaan"]').checked ? 'Yes' : 'No',
+      paanChewingFrequency:document.querySelector('select[name="habitPaanFrequency"]').value,
+      paanChewingDuration:document.querySelector('select[name="habitPaanDuration"]').value,
+      alcohol:document.querySelector('input[name="habitAlcohol"]').checked ? 'Yes' : 'No',
+      alcoholFrequency:document.querySelector('select[name="habitAlcoholFrequency"]').value,
+      alcoholDuration:document.querySelector('select[name="habitAlcoholDuration"]').value,
+      cleaningType:getCheckedValues('cleaningType'), cleaningMethod:getCheckedValues('cleaningMethod'), brushingFrequency:selected('brushingFrequency'),
+      cleaningMaterial:getCheckedValues('cleaningMaterial'), cleaningMaterialOther:value('cleaningMaterialOther'), brushingTime:selected('brushingTime'),
+      toothbrushChangeFrequency:selected('toothbrushChangeFrequency'), durationOfCleaning:value('durationOfCleaning'), oralHygieneAid:getCheckedValues('oralHygieneAid')
+    };
+    fetch(scriptUrl,{method:'POST',body:new URLSearchParams(formData)})
+      .then(function(response){ return response.text(); })
       .then(function(text){
-        console.log('Google Apps Script response:', text );
         var result;
-        try{
-          result = JSON.parse(text);
-        }
-
-        catch(error){
-          console.error('Invalid JSON response:', text );
-          throw new Error('Invalid response from Google Apps Script.' );
-        }
-
-        if(result.status === 'success'){
+        try { result = JSON.parse(text); } catch(error) { throw new Error('Invalid response from Google Apps Script.'); }
+        if (result.status === 'success') {
+          bookedSlots[slotKey(appointmentDate.value, appointmentTime.value)] = true;
+          localStorage.setItem('drGuptaBookedSlots', JSON.stringify(bookedSlots));
           alert('Appointment submitted successfully!');
           form.reset();
-          medicationBox.classList.remove('visible' );
+          resetAppointmentSteps();
           closeModal();
-        }
-
-        else{
-          alert( 'Failed to submit: ' +(  result.message ||  'Unknown error' ) );
+        } else {
+          alert('Failed to submit: ' + (result.message || 'Unknown error'));
         }
       })
+      .catch(function(error){ console.error('Submit error:', error); alert('Failed to submit appointment. ' + error.message); });
+  }
 
-      .catch(function(error){
-
-        console.error('Submit error:',  error  );
-        alert('Failed to submit appointment. ' +  error.message  );
-      });
-    }
-  );
+  skipClinicalStep.addEventListener('click', submitAppointment);
+  form.addEventListener('submit', function(event){ event.preventDefault(); submitAppointment(); });
 });
 
 </script>
