@@ -13,1381 +13,28 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<style>
-
-/* =========================================================
-   COLOR SYSTEM
-   ========================================================= */
-
-:root{
-  --primary:#FFEC71;
-  --primary-hover:#FFD85A;
-  --accent-dark:#8A6A00;
-  --light-blue:#FFFBE0;
-  --white:#FFFFFF;
-  --navy:#222222;
-  --gold:#FFEC71;
-  --light-gray:#DCDCDC;
-
-  --dark-navy:#2B2B2B;
-  --text:#333333;
-  --gray:#707070;
-  --border:#D8D8D8;
-
-  --radius:14px;
-}
-
-
-/* =========================================================
-   GLOBAL
-   ========================================================= */
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  font-family:'Inter',system-ui,-apple-system,sans-serif;
-  color:var(--text);
-  background:var(--white);
-  line-height:1.7;
-  -webkit-font-smoothing:antialiased;
-}
-
-h1,h2,h3,h4{
-  font-family:'Cormorant Garamond',Georgia,serif;
-  font-weight:700;
-  line-height:1.15;
-  letter-spacing:.01em;
-}
-
-a{
-  text-decoration:none;
-  color:inherit;
-}
-
-img{
-  max-width:100%;
-  display:block;
-}
-
-.container{
-  max-width:1180px;
-  margin:0 auto;
-  padding:0 24px;
-}
-
-section{
-  padding:80px 0;
-}
-
-
-/* =========================================================
-   HEADER
-   ========================================================= */
-
-header{
-  position:sticky;
-  top:0;
-  z-index:100;
-  background:rgba(255,255,255,0.96);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--border);
-  box-shadow:0 2px 12px rgba(37,50,58,0.06);
-}
-
-.top-accent{
-  height:4px;
-  background:linear-gradient(
-    90deg,
-    var(--primary),
-    var(--gold),
-    var(--primary-hover),
-    var(--primary)
-  );
-}
-
-.nav-wrap{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:14px 0;
-}
-
-.brand{
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-
-.brand-name{
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.3rem;
-  font-weight:700;
-  color:var(--navy);
-  letter-spacing:.02em;
-}
-
-.brand-name small{
-  display:block;
-  font-family:'Inter',sans-serif;
-  font-weight:500;
-  font-size:0.68rem;
-  color:var(--gray);
-  letter-spacing:.12em;
-  text-transform:uppercase;
-}
-
-nav ul{
-  list-style:none;
-  display:flex;
-  gap:28px;
-}
-
-nav a{
-  position:relative;
-  font-size:0.92rem;
-  font-weight:500;
-  color:var(--text);
-  transition:color .2s;
-  padding-bottom:4px;
-}
-
-nav a::after{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:0;
-  width:0;
-  height:2px;
-  background:var(--primary);
-  transition:width .25s ease;
-}
-
-nav a:hover{
-  color:var(--accent-dark);
-}
-
-nav a:hover::after{
-  width:100%;
-}
-
-
-/* =========================================================
-   BUTTONS
-   ========================================================= */
-
-.cta-btn{
-  background:var(--primary-hover);
-  color:var(--navy);
-  padding:12px 26px;
-  border-radius:30px;
-  font-weight:700;
-  font-size:0.9rem;
-  white-space:nowrap;
-  transition:all .25s cubic-bezier(.4,0,.2,1);
-  box-shadow:0 5px 16px rgba(37,50,58,0.18);
-}
-
-.cta-btn:hover{
-  background:var(--primary-hover);
-  transform:translateY(-2px);
-  box-shadow:0 10px 24px rgba(37,50,58,0.22);
-}
-
-.appointment-trigger{
-  background:#C4C4C4;
-  color:var(--navy);
-  padding:12px 20px;
-  border:none;
-  border-radius:30px;
-  font-weight:700;
-  font-size:0.9rem;
-  white-space:nowrap;
-  cursor:pointer;
-  transition:all .25s ease;
-  box-shadow:0 4px 14px rgba(37,50,58,0.16);
-}
-
-.appointment-trigger:hover{
-  background:var(--primary-hover);
-  transform:translateY(-2px);
-}
-
-.nav-cta{
-  display:flex;
-  align-items:center;
-  gap:14px;
-}
-
-.menu-toggle{
-  display:none;
-  background:none;
-  border:none;
-  font-size:1.6rem;
-  color:var(--navy);
-  cursor:pointer;
-}
-
-.btn-outline{
-  border:2px solid var(--primary);
-  color:var(--navy);
-  padding:10px 22px;
-  border-radius:30px;
-  font-weight:600;
-  font-size:0.9rem;
-  transition:all .25s ease;
-}
-
-.btn-outline:hover{
-  background:var(--primary);
-  border-color:var(--primary);
-  color:var(--navy);
-  transform:translateY(-2px);
-}
-
-.secondary-btn{
-  border:1px solid var(--border);
-  background:#C4C4C4;
-  color:var(--navy);
-  padding:12px 22px;
-  border-radius:30px;
-  font-weight:700;
-  cursor:pointer;
-}
-
-.secondary-btn:hover{
-  background:var(--light-blue);
-  border-color:var(--primary);
-}
-
-
-/* =========================================================
-   APPOINTMENT MODAL
-   ========================================================= */
-
-.appointment-modal-overlay{
-  position:fixed;
-  inset:0;
-  background:rgba(37,50,58,0.68);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
-  z-index:999;
-  opacity:0;
-  visibility:hidden;
-  transition:opacity .25s ease,visibility .25s ease;
-}
-
-.appointment-modal-overlay.open{
-  opacity:1;
-  visibility:visible;
-}
-
-.appointment-modal{
-  width:min(760px,100%);
-  background:var(--white);
-  border-radius:20px;
-  box-shadow:0 28px 60px rgba(37,50,58,0.25);
-  padding:28px 28px 20px;
-  position:relative;
-  max-height:90vh;
-  overflow:auto;
-}
-
-.modal-close{
-  position:absolute;
-  top:16px;
-  right:16px;
-  border:none;
-  background:var(--light-blue);
-  width:36px;
-  height:36px;
-  border-radius:50%;
-  font-size:1.5rem;
-  color:var(--navy);
-  cursor:pointer;
-}
-
-.modal-close:hover{
-  background:var(--primary-hover);
-  color:var(--navy);
-}
-
-.modal-head{
-  margin-bottom:22px;
-  padding-right:42px;
-}
-
-.modal-head h3{
-  font-size:2rem;
-  color:var(--navy);
-  margin-bottom:8px;
-}
-
-.modal-head p{
-  color:var(--gray);
-  margin:0;
-}
-
-.appointment-form{
-  display:flex;
-  flex-direction:column;
-  gap:18px;
-}
-
-.form-grid{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:18px 20px;
-}
-
-.form-group{
-  display:flex;
-  flex-direction:column;
-  gap:8px;
-}
-
-.form-group.full{
-  grid-column:1 / -1;
-}
-
-.form-group label{
-  font-size:0.82rem;
-  font-weight:700;
-  color:var(--navy);
-  letter-spacing:0.02em;
-}
-
-.slot-status{
-  color:var(--gray);
-  font-size:0.78rem;
-  line-height:1.4;
-}
-
-.form-group input,
-.form-group textarea,
-.form-group select{
-  width:100%;
-  padding:12px 14px;
-  border:1px solid var(--border);
-  border-radius:12px;
-  background:#fff;
-  color:var(--text);
-  font:inherit;
-  resize:vertical;
-  transition:border-color .2s ease,box-shadow .2s ease;
-}
-
-.form-group input:focus,
-.form-group textarea:focus,
-.form-group select:focus{
-  outline:none;
-  border-color:var(--primary);
-  box-shadow:0 0 0 3px rgba(255,216,90,0.24);
-}
-
-.form-group textarea{
-  min-height:120px;
-}
-
-.radio-row{
-  display:flex;
-  gap:18px;
-  flex-wrap:wrap;
-  padding-top:6px;
-}
-
-.radio-option{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  font-weight:500;
-  color:var(--text);
-}
-
-.radio-option input{
-  width:auto;
-  accent-color:var(--primary);
-}
-
-.medication-box{
-  display:none;
-  margin-top:4px;
-}
-
-.medication-box.visible{
-  display:block;
-}
-
-.form-actions{
-  display:flex;
-  justify-content:flex-end;
-  gap:12px;
-  padding-top:8px;
-}
-
-.appointment-step{display:none;}
-.appointment-step.active{display:block;}
-.appointment-progress{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  margin:0 0 24px;
-  padding:12px 14px;
-  background:var(--light-blue);
-  border-radius:12px;
-}
-.step-indicator{
-  flex:1;
-  text-align:center;
-  font-size:.78rem;
-  font-weight:700;
-  color:var(--gray);
-  padding:8px 10px;
-  border-radius:9px;
-}
-.step-indicator.active{background:var(--primary);color:var(--navy);}
-.step-actions{
-  display:flex;
-  justify-content:space-between;
-  gap:12px;
-  padding-top:18px;
-}
-.right-actions{display:flex;gap:12px;margin-left:auto;}
-.optional-note{font-size:.78rem;color:var(--gray);font-weight:500;margin-left:4px;}
-.clinical-intro{
-  background:var(--light-blue);
-  border:1px solid var(--border);
-  border-radius:12px;
-  padding:14px 16px;
-  margin-bottom:18px;
-  color:var(--gray);
-  font-size:.9rem;
-}
-.clinical-intro strong{color:var(--navy);}
-.clinical-section{margin-top:24px;padding-top:20px;border-top:1px solid var(--border);}
-.clinical-section-title{color:var(--navy);font-size:1rem;font-weight:700;margin-bottom:14px;}
-.clinical-table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:12px;background:var(--white);}
-.clinical-table{width:100%;border-collapse:collapse;min-width:620px;}
-.clinical-table th,.clinical-table td{padding:11px 12px;border-bottom:1px solid var(--border);text-align:left;vertical-align:middle;}
-.clinical-table th{background:var(--light-blue);color:var(--navy);font-size:.8rem;}
-.clinical-table td{font-size:.86rem;}
-.clinical-table tr:last-child td{border-bottom:0;}
-.clinical-table select{width:100%;padding:9px 10px;border:1px solid var(--border);border-radius:9px;background:var(--white);font:inherit;color:var(--text);}
-.clinical-check{display:flex;align-items:center;gap:8px;color:var(--text);font-size:.88rem;font-weight:500;}
-.clinical-check input{width:auto;accent-color:var(--primary);}
-.option-grid{display:flex;flex-wrap:wrap;gap:10px 18px;padding:5px 0 8px;}
-.hygiene-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px;}
-.hygiene-grid .form-group.full{grid-column:1 / -1;}
-@media(max-width:600px){
-  .hygiene-grid{grid-template-columns:1fr;}
-  .hygiene-grid .form-group.full{grid-column:auto;}
-  .clinical-table{min-width:560px;}
-  .appointment-progress{flex-direction:column;align-items:stretch;}
-  .step-indicator{width:100%;}
-  .step-actions,.right-actions{flex-wrap:wrap;}
-  .right-actions{margin-left:0;}
-}
-
-
-/* =========================================================
-   HERO
-   ========================================================= */
-
-.hero{
-  background:
-    radial-gradient(
-      ellipse 70% 60% at 85% 0%,
-      rgba(255,236,113,0.28),
-      transparent
-    ),
-    linear-gradient(
-      135deg,
-      var(--light-blue) 0%,
-      var(--white) 70%
-    );
-  padding:84px 0 70px;
-  position:relative;
-  overflow:hidden;
-}
-
-.hero-grid{
-  display:grid;
-  grid-template-columns:1.1fr 0.9fr;
-  gap:50px;
-  align-items:center;
-}
-
-.eyebrow{
-  display:inline-block;
-  background:var(--primary);
-  color:var(--navy);
-  font-size:0.75rem;
-  font-weight:700;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  padding:6px 14px;
-  border-radius:20px;
-  margin-bottom:18px;
-}
-
-.eyebrow-outline{
-  background:transparent;
-  color:var(--accent-dark);
-  border:1px solid var(--primary-hover);
-}
-
-.hero h1{
-  font-size:3.2rem;
-  color:var(--navy);
-  margin-bottom:20px;
-  letter-spacing:0;
-}
-
-.hero h1 span{
-  background:linear-gradient(
-    90deg,
-    var(--primary),
-    var(--primary-hover)
-  );
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
-}
-
-.hero p{
-  font-size:1.12rem;
-  color:var(--gray);
-  max-width:520px;
-  margin-bottom:32px;
-  line-height:1.75;
-}
-
-.hero-ctas{
-  display:flex;
-  gap:14px;
-  flex-wrap:wrap;
-}
-
-.trust-badge{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  margin-top:26px;
-  font-size:0.88rem;
-  color:var(--gray);
-}
-
-.trust-badge .tb-stars{
-  color:var(--gold);
-  letter-spacing:2px;
-  font-size:1rem;
-}
-
-.trust-badge:hover{
-  color:var(--accent-dark);
-}
-
-.hero-img{
-  border-radius:var(--radius);
-  overflow:hidden;
-  box-shadow:0 30px 60px -12px rgba(37,50,58,0.28);
-  position:relative;
-}
-
-.hero-img img{
-  width:100%;
-  height:440px;
-  object-fit:cover;
-  transition:transform .6s ease;
-}
-
-.hero-img:hover img{
-  transform:scale(1.04);
-}
-
-
-/* =========================================================
-   STATS
-   ========================================================= */
-
-.stats{
-  background:var(--light-gray);
-  color:var(--navy);
-  padding:44px 0;
-}
-
-.stats-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  text-align:center;
-  gap:20px;
-}
-
-.stats-grid .num{
-  font-family:'Cormorant Garamond',serif;
-  font-size:2.6rem;
-  color:var(--accent-dark);
-  font-weight:700;
-}
-
-.stats-grid .label{
-  font-size:0.85rem;
-  color:var(--gray);
-  margin-top:4px;
-}
-
-
-/* =========================================================
-   CREDENTIALS
-   ========================================================= */
-
-.credentials{
-  background:var(--white);
-  padding:44px 0;
-  border-bottom:1px solid var(--border);
-}
-
-.credentials .cred-label{
-  text-align:center;
-  font-size:0.72rem;
-  font-weight:600;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:var(--gray);
-  margin-bottom:26px;
-}
-
-.cred-grid{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:36px;
-}
-
-.cred-item{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:8px;
-}
-
-.cred-badge{
-  width:68px;
-  height:68px;
-  border-radius:50%;
-  background:var(--white);
-  border:1px solid var(--border);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:10px;
-  transition:all .25s ease;
-  box-shadow:0 2px 8px rgba(37,50,58,0.05);
-}
-
-.cred-badge img{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-}
-
-.cred-item:hover .cred-badge{
-  border-color:var(--primary);
-  transform:translateY(-3px);
-  box-shadow:0 8px 18px rgba(37,50,58,0.14);
-}
-
-.cred-item span.cred-name{
-  font-size:0.76rem;
-  color:var(--gray);
-  text-align:center;
-  max-width:110px;
-  line-height:1.3;
-}
-
-
-/* =========================================================
-   SECTION HEADERS
-   ========================================================= */
-
-.sec-head{
-  text-align:center;
-  max-width:640px;
-  margin:0 auto 48px;
-}
-
-.sec-head .eyebrow{
-  background:transparent;
-  color:var(--accent-dark);
-  border:1px solid var(--primary-hover);
-}
-
-.sec-head h2{
-  font-size:2rem;
-  color:var(--navy);
-  margin-bottom:12px;
-}
-
-.sec-head p{
-  color:var(--gray);
-}
-
-
-/* =========================================================
-   DIFFERENCE
-   ========================================================= */
-
-.diff{
-  background:var(--light-blue);
-}
-
-.diff-grid{
-  display:grid;
-  grid-template-columns:0.9fr 1.1fr;
-  gap:50px;
-  align-items:center;
-}
-
-.diff-img{
-  border-radius:var(--radius);
-  overflow:hidden;
-  box-shadow:0 20px 50px rgba(37,50,58,0.15);
-}
-
-.diff-img img{
-  width:100%;
-  height:380px;
-  object-fit:cover;
-}
-
-.diff-text h2{
-  font-size:1.9rem;
-  color:var(--navy);
-  margin-bottom:16px;
-}
-
-.diff-text p{
-  color:var(--text);
-  margin-bottom:14px;
-}
-
-.diff-list{
-  list-style:none;
-  margin-top:20px;
-}
-
-.diff-list li{
-  display:flex;
-  gap:12px;
-  margin-bottom:12px;
-  font-weight:500;
-}
-
-.diff-list li::before{
-  content:"✓";
-  background:var(--primary-hover);
-  color:var(--navy);
-  width:22px;
-  height:22px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:0.75rem;
-  flex-shrink:0;
-}
-
-
-/* =========================================================
-   WHY CHOOSE US
-   ========================================================= */
-
-.cards-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:26px;
-}
-
-.card{
-  background:var(--white);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:30px 26px;
-  transition:transform .2s,box-shadow .2s,border-color .2s;
-}
-
-.card:hover{
-  transform:translateY(-4px);
-  border-color:var(--primary-hover);
-  box-shadow:0 14px 30px rgba(37,50,58,0.12);
-}
-
-.card-icon{
-  width:48px;
-  height:48px;
-  background:var(--light-blue);
-  color:var(--accent-dark);
-  border-radius:12px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:1.4rem;
-  margin-bottom:16px;
-}
-
-.card h3{
-  font-size:1.1rem;
-  color:var(--navy);
-  margin-bottom:8px;
-}
-
-.card p{
-  color:var(--gray);
-  font-size:0.92rem;
-}
-
-
-/* =========================================================
-   ABOUT
-   ========================================================= */
-
-.about{
-  background:var(--light-blue);
-}
-
-.about-grid{
-  display:grid;
-  grid-template-columns:0.8fr 1.2fr;
-  gap:50px;
-  align-items:center;
-}
-
-.about-img{
-  border-radius:var(--radius);
-  overflow:hidden;
-  box-shadow:0 20px 50px rgba(37,50,58,0.15);
-}
-
-.about-img img{
-  width:100%;
-  height:440px;
-  object-fit:cover;
-}
-
-.about-text h2{
-  font-size:1.9rem;
-  color:var(--navy);
-  margin-bottom:6px;
-}
-
-.about-text .role{
-  color:var(--accent-dark);
-  font-weight:600;
-  margin-bottom:16px;
-  display:block;
-}
-
-.about-text p{
-  color:var(--text);
-  margin-bottom:14px;
-}
-
-
-/* =========================================================
-   SERVICES
-   ========================================================= */
-
-.services-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-}
-
-.service-item{
-  background:var(--white);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:24px;
-  display:flex;
-  align-items:center;
-  gap:14px;
-  transition:all .2s ease;
-}
-
-.service-item:hover{
-  border-color:var(--primary-hover);
-  box-shadow:0 8px 20px rgba(37,50,58,0.10);
-  transform:translateY(-2px);
-}
-
-.service-item:hover .service-dot{
-  background:var(--accent-dark);
-}
-
-.service-dot{
-  width:10px;
-  height:10px;
-  border-radius:50%;
-  background:var(--primary);
-  flex-shrink:0;
-}
-
-.service-item span{
-  font-weight:500;
-  color:var(--navy);
-}
-
-
-/* =========================================================
-   TESTIMONIALS
-   ========================================================= */
-
-.testi{
-  background:var(--light-gray);
-}
-
-.testi .sec-head h2,
-.testi .sec-head p{
-  color:var(--navy);
-}
-
-.testi .sec-head .eyebrow{
-  border-color:var(--accent-dark);
-  color:var(--accent-dark);
-}
-
-.testi .reviews-btn{
-  border-color:var(--accent-dark);
-  color:var(--accent-dark);
-}
-
-.testi .reviews-btn:hover{
-  background:var(--primary-hover) !important;
-  border-color:var(--primary-hover) !important;
-  color:var(--navy) !important;
-}
-
-.testi-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
-}
-
-.testi-card{
-  background:var(--white);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:28px;
-  color:var(--text);
-  transition:all .25s ease;
-}
-
-.testi-card:hover{
-  background:var(--white);
-  transform:translateY(-3px);
-}
-
-.testi-card .stars{
-  color:var(--accent-dark);
-  margin-bottom:12px;
-  font-size:1rem;
-}
-
-.testi-card p{
-  font-size:0.94rem;
-  margin-bottom:16px;
-}
-
-.testi-card .who{
-  font-weight:700;
-  color:var(--navy);
-  font-size:0.9rem;
-}
-
-
-/* =========================================================
-   GALLERY
-   ========================================================= */
-
-.gallery-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:16px;
-}
-
-.gallery-grid img{
-  width:100%;
-  height:220px;
-  object-fit:cover;
-  border-radius:10px;
-  transition:transform .5s ease,filter .5s ease;
-}
-
-.gallery-grid img:hover{
-  transform:scale(1.03);
-  filter:brightness(1.03);
-}
-
-
-/* =========================================================
-   CONTACT
-   ========================================================= */
-
-#contact{
-  background:var(--light-gray);
-}
-
-.contact-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:50px;
-}
-
-.contact-info h2{
-  font-size:1.9rem;
-  color:var(--navy);
-  margin-bottom:20px;
-}
-
-.info-row{
-  display:flex;
-  gap:16px;
-  margin-bottom:22px;
-}
-
-.info-icon{
-  width:42px;
-  height:42px;
-  background:var(--light-blue);
-  color:var(--accent-dark);
-  border-radius:10px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-shrink:0;
-  font-size:1.1rem;
-}
-
-.info-row h4{
-  font-size:0.95rem;
-  color:var(--navy);
-  margin-bottom:3px;
-}
-
-.info-row p{
-  color:var(--gray);
-  font-size:0.92rem;
-}
-
-.map-wrap{
-  border-radius:var(--radius);
-  overflow:hidden;
-  box-shadow:0 20px 50px rgba(37,50,58,0.12);
-  height:100%;
-  min-height:340px;
-}
-
-.map-wrap iframe{
-  width:100%;
-  height:100%;
-  border:0;
-  min-height:340px;
-}
-
-
-/* =========================================================
-   FINAL CTA
-   ========================================================= */
-
-.final-cta{
-  background:linear-gradient(
-    135deg,
-    #F4F5F2 0%,
-    #D1D4D0 100%
-  );
-  color:var(--navy);
-  text-align:center;
-  border-top:4px solid var(--primary);
-}
-
-.final-cta h2{
-  font-size:2rem;
-  margin-bottom:14px;
-}
-
-.final-cta p{
-  color:var(--text);
-  margin-bottom:28px;
-}
-
-.final-cta .cta-btn{
-  background:var(--primary-hover);
-  color:var(--navy);
-  box-shadow:0 8px 20px rgba(0,0,0,0.12);
-}
-
-.final-cta .cta-btn:hover{
-  background:var(--primary);
-  color:var(--navy);
-}
-
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
-footer{
-  background:var(--light-gray);
-  color:var(--text);
-  padding:50px 0 24px;
-}
-
-.footer-grid{
-  display:grid;
-  grid-template-columns:2fr 1fr 1fr;
-  gap:40px;
-  margin-bottom:36px;
-}
-
-.footer-grid h4{
-  color:var(--navy);
-  margin-bottom:14px;
-  font-size:1rem;
-}
-
-.footer-grid p,
-.footer-grid a{
-  font-size:0.88rem;
-  color:var(--gray);
-  display:block;
-  margin-bottom:8px;
-}
-
-.footer-grid a:hover{
-  color:var(--primary-hover);
-}
-
-.footer-bottom{
-  border-top:1px solid var(--border);
-  padding-top:20px;
-  text-align:center;
-  font-size:0.8rem;
-  color:var(--gray);
-}
-
-
-/* =========================================================
-   WHATSAPP FLOAT
-   ========================================================= */
-
-.whatsapp-float{
-  position:fixed;
-  bottom:24px;
-  right:24px;
-  background:#25D366;
-  color:#fff;
-  width:58px;
-  height:58px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:1.6rem;
-  box-shadow:0 8px 20px rgba(0,0,0,0.2);
-  z-index:200;
-}
-
-
-/* =========================================================
-   ANIMATION
-   ========================================================= */
-
-.reveal{
-  opacity:0;
-  transform:translateY(24px);
-  transition:opacity .7s ease,transform .7s ease;
-}
-
-.reveal.in{
-  opacity:1;
-  transform:translateY(0);
-}
-
-.about-img img,
-.diff-img img{
-  transition:transform .6s ease;
-}
-
-.about-img:hover img,
-.diff-img:hover img{
-  transform:scale(1.03);
-}
-
-
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
-
-@media(max-width:900px){
-
-  nav ul{
-    display:none;
-    position:absolute;
-    top:100%;
-    left:0;
-    right:0;
-    flex-direction:column;
-    gap:0;
-    padding:8px 24px 16px;
-    background:rgba(255,255,255,0.98);
-    border-bottom:1px solid var(--border);
-    box-shadow:0 12px 24px rgba(34,34,34,0.12);
-  }
-
-  header.menu-open nav ul{
-    display:flex;
-  }
-
-  nav li{
-    border-bottom:1px solid var(--border);
-  }
-
-  nav li:last-child{
-    border-bottom:0;
-  }
-
-  nav a{
-    display:block;
-    padding:12px 0;
-  }
-
-  .menu-toggle{
-    display:block;
-  }
-
-  .hero-grid,
-  .diff-grid,
-  .about-grid,
-  .contact-grid{
-    grid-template-columns:1fr;
-  }
-
-  .hero h1{
-    font-size:2rem;
-  }
-
-  .stats-grid{
-    grid-template-columns:repeat(2,1fr);
-    row-gap:24px;
-  }
-
-  .cards-grid,
-  .services-grid,
-  .testi-grid{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .gallery-grid{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .footer-grid{
-    grid-template-columns:1fr;
-  }
-
-  section{
-    padding:56px 0;
-  }
-}
-
-
-@media(max-width:600px){
-
-  .container{
-    padding:0 16px;
-  }
-
-  .brand{
-    min-width:0;
-    gap:8px;
-  }
-
-  .brand img{
-    width:38px !important;
-    height:38px !important;
-  }
-
-  .brand-name{
-    font-size:1.05rem;
-    white-space:nowrap;
-  }
-
-  .brand-name small{
-    font-size:0.56rem;
-    letter-spacing:.08em;
-  }
-
-  .form-grid{
-    grid-template-columns:1fr;
-  }
-
-  .nav-cta{
-    gap:8px;
-  }
-
-  .appointment-trigger{
-    padding:10px 14px;
-    font-size:0.78rem;
-  }
-
-  .nav-cta .cta-btn{
-    display:none;
-  }
-
-  .modal-head h3{
-    font-size:1.7rem;
-  }
-}
-
-
-@media(max-width:560px){
-
-  .cards-grid,
-  .services-grid,
-  .testi-grid,
-  .gallery-grid{
-    grid-template-columns:1fr;
-  }
-
-  .hero-img img{
-    height:280px;
-  }
-}
-
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 
 
-<body>
-
-<div class="top-accent"></div>
-
-
-<!-- =========================================================
+<body><!-- =========================================================
      HEADER
      ========================================================= -->
 
 <header>
+
+  <div class="header-info">
+    <div class="container header-info-wrap">
+      <div class="availability" aria-label="Clinic availability">
+        <span><strong>Availability:</strong> <span class="availability-hours">Monday - Saturday, 10:00 AM - 7:00 PM</span></span>
+        <span class="sunday-closed">Sunday: CLOSED</span>
+      </div>
+      <div class="header-contact" aria-label="Clinic contact details">
+        <a href="tel:+919990880975">Call: +91 99908 80975</a>
+        <a href="https://wa.me/919990880975" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </div>
 
   <div class="container nav-wrap">
 
@@ -1401,7 +48,6 @@ footer{
 
       <div class="brand-name">
         Dr. Gupta's Dental Clinic
-        <small>South Extension, New Delhi</small>
       </div>
 
     </div>
@@ -1409,30 +55,30 @@ footer{
 
     <nav>
 
-      <ul>
+      <ul id="main-navigation">
 
         <li>
-          <a href="#home">Home</a>
+          <a href="index.html">Home</a>
         </li>
 
         <li>
-          <a href="#about">About</a>
+          <a href="about.html">About</a>
         </li>
 
         <li>
-          <a href="#difference">Our Difference</a>
+          <a href="difference.html">Our Difference</a>
         </li>
 
         <li>
-          <a href="#services">Services</a>
+          <a href="services.html">Services</a>
         </li>
 
         <li>
-          <a href="#testimonials">Reviews</a>
+          <a href="reviews.html">Reviews</a>
         </li>
 
         <li>
-          <a href="#contact">Contact</a>
+          <a href="contact.html">Contact</a>
         </li>
 
       </ul>
@@ -1450,18 +96,12 @@ footer{
         Book Appointment
       </button>
 
-      <a
-        href="tel:+919990880975"
-        class="cta-btn"
-      >
-        Call 99908 80975
-      </a>
-
       <button
         type="button"
         class="menu-toggle"
         aria-label="Menu"
         aria-expanded="false"
+        aria-controls="main-navigation"
       >
         &#9776;
       </button>
@@ -1585,7 +225,7 @@ footer{
 
 <section
   id="home"
-  class="reveal hero"
+  class="reveal hero home_bg"
 >
 
   <div class="container hero-grid">
@@ -1593,17 +233,117 @@ footer{
     <div>
 
       <span class="eyebrow">
-        South Extension, New Delhi · Est. 2013
+        Experience. Precision. Trust.
       </span>
 
       <h1>
-        Precision dentistry,
-        <span>done unhurried.</span>
+        Healthy smiles<br>                     
+        begin with<br>
+        <span>the right care.</span>
       </h1>
+       <!-- Providing ethical, evidence-based and comprehensive dental care with 20+ years of experience in dentistry. Your comfort, safety and long-term oral health are our priority. -->
 
       <p>
-        Dr. Tanupriya Gupta treats every filling and restoration under high magnification — the same standard used in specialist microsurgery — so nothing is guessed at, and nothing is rushed. 20 years, 2000+ smiles, zero shortcuts.
+       We believe great dentistry begins with trust. From your first consultation to your final result, we're dedicated to providing honest care, gentle treatment, and exceptional attention to detail.
       </p>
+
+
+  <!-- companies logoes and details start here  -->
+
+ <div class="home_logoes">
+
+    <div class="cred-grid">
+
+
+      <div class="cred-item">
+
+        <div class="cred-badge">
+
+          <img src="logos/aiims.png" alt="AIIMS New Delhi logo" >
+
+        </div>
+
+        <span class="cred-name">
+          AIIMS, New Delhi
+        </span>
+
+      </div>
+
+
+      <div class="cred-item">
+
+        <div class="cred-badge">
+
+          <img src="logos/pgi.png" alt="PGIMER Chandigarh logo" >
+
+        </div>
+
+        <span class="cred-name">
+          PGI, Chandigarh
+        </span>
+
+      </div>
+
+
+      <div class="cred-item">
+
+        <div class="cred-badge">
+
+          <img src="logos/jmi.png" alt="Jamia Millia Islamia logo" >
+
+        </div>
+
+        <span class="cred-name">
+          Jamia Millia Islamia<br>
+          Faculty of Dental Sciences
+        </span>
+
+      </div>
+
+
+      <div class="cred-item">
+
+        <div class="cred-badge">
+
+          <img src="logos/manipal.png" alt="Manipal University logo" >
+
+        </div>
+
+        <span class="cred-name">
+          Manipal University<br>
+          (MDS)
+        </span>
+
+      </div>
+
+
+      <div class="cred-item">
+
+        <div class="cred-badge">
+
+          <img src="logos/nhdc.png" alt="Nair Hospital Dental College logo" >
+
+        </div>
+
+        <span class="cred-name">
+          Nair Hospital, Mumbai<br>
+          (BDS)
+        </span>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+
+
+
+<!-- companies logoes and details Ends here  -->
+
+
 
 
       <div class="hero-ctas">
@@ -1614,28 +354,121 @@ footer{
 
       </div>
 
-
-      <a href="https://www.google.com/maps/place/Dr.+Gupta's+Dental+Clinic/@28.5712336,77.2185971,17z/data=!3m1!4b1!4m6!3m5!1s0x390ce25ebe73cb59:0x56e9179e7dcfc73b!8m2!3d28.5712289!4d77.221172!16s%2Fg%2F11b6t0lkcx" target="_blank" rel="noopener" class="trust-badge" >
-
-        <span class="tb-stars">
-          ★★★★★
-        </span>
-
-        <span>
-          Rated 5.0 on Google &middot;
-          <u>See our reviews</u>
-        </span>
-
-      </a>
+<!-- 20+exp with icons section  -->
+      <!-- <div class="hero-points" aria-label="Clinic highlights">
+        <div class="hero-point">
+          <span class="hero-point-icon"><img src="web_ready/icon-experience.svg" alt=""></span>
+          <div><strong>20+ Years</strong><span>of Experience</span></div>
+        </div>
+        <div class="hero-point">
+          <span class="hero-point-icon"><img src="web_ready/icon-dentist.svg" alt=""></span>
+          <div><strong>Public Health</strong><span>Dentist</span></div>
+        </div>
+        <div class="hero-point">
+          <span class="hero-point-icon"><img src="web_ready/icon-patients.svg" alt=""></span>
+          <div><strong>2000+ Happy</strong><span>Patients</span></div>
+        </div>
+        <div class="hero-point">
+          <span class="hero-point-icon"><img src="web_ready/icon-care.svg" alt=""></span>
+          <div><strong>Ethical &amp; Caring</strong><span>Patient Care</span></div>
+        </div>
+      </div> -->
 
     </div>
 
+<!-- image carouser  -->
+   <div class="hero-img">
 
-    <div class="hero-img">
+  <div class="hero-carousel" id="heroCarousel">
 
-      <img src="clinic_photos_shortlist/IMG_7465.JPG" alt="Dr. Tanupriya Gupta with dental technology" >
+    <!-- Slide 1 -->
+    <div class="hero-slide active">
+      <img
+        src="Meet your dentist/IMG_20170703_184133 (2).jpg"
+        alt="Dr. Tanupriya Gupta Dental Clinic"
+      >
+    </div>
+
+
+    <!-- Slide 2 -->
+    <div class="hero-slide">
+      <img
+        src="clinic_photos_shortlist/selected 2.jpeg"
+        alt="Dr. Gupta's Dental Clinic"
+      >
+    </div>
+
+
+    <!-- Slide 3 -->
+    <div class="hero-slide">
+      <img
+        src="clinic_photos_shortlist/selected 1.jpeg"
+        alt="Dental treatment at Dr. Gupta's Dental Clinic"
+      >
+    </div>
+
+
+    <!-- Slide 4 -->
+    <div class="hero-slide">
+      <img
+        src="clinic_photos/IMG_7437.JPG"
+        alt="Modern dental clinic"
+      >
+    </div>
+
+
+    <!-- Previous -->
+    <button
+      class="carousel-arrow carousel-prev"
+      type="button"
+      aria-label="Previous image"
+    >
+      &#10094;
+    </button>
+
+
+    <!-- Next -->
+    <button
+      class="carousel-arrow carousel-next"
+      type="button"
+      aria-label="Next image"
+    >
+      &#10095;
+    </button>
+
+
+    <!-- Dots -->
+    <div class="carousel-dots">
+
+      <button
+        class="carousel-dot active"
+        type="button"
+        aria-label="Show image 1"
+      ></button>
+
+      <button
+        class="carousel-dot"
+        type="button"
+        aria-label="Show image 2"
+      ></button>
+
+      <button
+        class="carousel-dot"
+        type="button"
+        aria-label="Show image 3"
+      ></button>
+
+      <button
+        class="carousel-dot"
+        type="button"
+        aria-label="Show image 4"
+      ></button>
 
     </div>
+
+  </div>
+
+</div>
 
   </div>
 
@@ -1650,25 +483,204 @@ footer{
 
   <div class="container stats-grid">
 
-    <div>
-      <div class="num">20</div>
+
+
+
+
+
+  <div class="stat-item">
+    <div class="stat-icon">
+      <!-- Award Icon -->
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="8" r="5"/>
+        <path d="M8.5 13.5L7 22l5-3 5 3-1.5-8.5"/>
+      </svg>
+    </div>
+    <div class="num" data-target="20">0</div>
+    <div class="label">Years of Experience</div>
+  </div>
+
+  <div class="stat-item">
+    <div class="stat-icon">
+      <!-- Smile Icon -->
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M8 15s1.5 2 4 2 4-2 4-2"/>
+        <circle cx="9" cy="10" r="1"/>
+        <circle cx="15" cy="10" r="1"/>
+      </svg>
+    </div>
+    <div class="num" data-target="2000" data-suffix="+">0+</div>
+    <div class="label">Smiling Clients</div>
+  </div>
+
+  <div class="stat-item">
+    <div class="stat-icon">
+      <!-- Tooth Icon -->
+<svg
+    viewBox="0 0 64 64"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+>
+    <path
+        d="M18 10
+           C13 12 10 17 10 23
+           C10 31 14 35 15 42
+           C16 49 17 56 21 56
+           C25 56 25 45 30 44
+           C35 43 35 56 40 56
+           C44 56 45 49 46 42
+           C47 35 54 31 54 23
+           C54 17 51 12 46 10
+           C41 8 37 12 32 12
+           C27 12 23 8 18 10Z"
+        stroke="currentColor"
+        stroke-width="3"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+    />
+</svg>
+    </div>
+    <div class="num" data-target="1500" data-suffix="+">0+</div>
+    <div class="label">Teeth Filled</div>
+  </div>
+
+  <div class="stat-item">
+    <div class="stat-icon">
+<!-- Root Canal Treatment Icon -->
+<svg
+    viewBox="0 0 100 100"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    aria-hidden="true"
+>
+
+    <!-- Tooth outline -->
+    <path
+        d="M27 22
+           C19 23 13 30 13 40
+           C13 48 18 53 19 61
+           C20 69 19 80 24 86
+           C27 89 31 88 33 83
+           L39 66
+           C40 62 43 60 50 60
+           C57 60 60 62 61 66
+           L67 83
+           C69 88 73 89 76 86
+           C81 80 80 69 81 61
+           C82 53 87 48 87 40
+           C87 30 81 23 73 22
+           C65 21 60 26 55 27
+           C53 28 52 28 50 28
+           C48 28 47 28 45 27
+           C40 26 35 21 27 22Z"
+
+        stroke="currentColor"
+        stroke-width="4"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+    />
+
+
+    <!-- Left root canal -->
+    <path
+        d="M43 42
+           C44 48 43 54 41 61
+           C39 68 37 75 36 82"
+
+        stroke="currentColor"
+        stroke-width="4"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+    />
+
+
+    <!-- Right root canal -->
+    <path
+        d="M57 42
+           C56 48 57 54 59 61
+           C61 68 63 75 64 82"
+
+        stroke="currentColor"
+        stroke-width="4"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+    />
+
+
+    <!-- Root canal instrument -->
+    <path
+        d="M50 8
+           L50 55
+           L45 68"
+
+        stroke="currentColor"
+        stroke-width="3.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+    />
+
+
+    <!-- File handle -->
+    <path
+        d="M44 8
+           L56 8
+           L58 13
+           L54 18
+           L46 18
+           L42 13
+           Z"
+
+        stroke="currentColor"
+        stroke-width="3.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+    />
+
+
+    <!-- File grip lines -->
+    <path
+        d="M44 20
+           L56 20
+
+           M43 24
+           L55 24
+
+           M42 28
+           L54 28"
+
+        stroke="currentColor"
+        stroke-width="3"
+        stroke-linecap="round"
+    />
+
+</svg>
+    </div>
+    <div class="num" data-target="500" data-suffix="+">0+</div>
+    <div class="label">Root Canals Done</div>
+  </div>
+
+
+    <!-- <div>
+      <div class="num" data-target="20">0</div>
       <div class="label">Years of Experience</div>
     </div>
 
     <div>
-      <div class="num">2000+</div>
+      <div class="num" data-target="2000" data-suffix="+">0+</div>
       <div class="label">Smiling Clients</div>
     </div>
 
     <div>
-      <div class="num">1500+</div>
+      <div class="num" data-target="1500" data-suffix="+">0+</div>
       <div class="label">Teeth Filled</div>
     </div>
 
     <div>
-      <div class="num">500+</div>
+      <div class="num" data-target="500" data-suffix="+">0+</div>
       <div class="label">Root Canals Done</div>
-    </div>
+    </div> -->
 
   </div>
 
@@ -1678,7 +690,7 @@ footer{
 <!-- =========================================================
      CREDENTIALS
      ========================================================= -->
-
+<!-- 
 <section class="credentials reveal">
 
   <div class="container">
@@ -1773,7 +785,7 @@ footer{
 
   </div>
 
-</section>
+</section> -->
 
 
 <!-- =========================================================
@@ -1787,7 +799,7 @@ footer{
 
     <div class="diff-img">
 
-      <img src="clinic_photos_shortlist/IMG_7459.JPG" alt="Advanced dental technology" >
+      <img src="clinic_photos_shortlist/selected 3.jpeg" alt="Advanced dental technology" >
 
     </div>
 
@@ -1799,34 +811,34 @@ footer{
       </span>
 
       <h2>
-        Magnification-guided, composite-first dentistry
+        Precision-led dentistry, designed around your natural teeth
       </h2>
 
       <p>
-        Most fillings are done by feel. Dr. Gupta works under high magnification for every restorative procedure — spotting decay margins and shaping composite fillings with a precision that's simply not visible to the naked eye.
+        Every tooth deserves careful attention to detail. High-magnification visualisation allows Dr. Gupta to work with enhanced clarity during restorative procedures, supporting meticulous treatment planning and precise execution.
       </p>
 
       <p>
-        Combined with a strict "treat only what's needed" philosophy, it means fewer redos, longer-lasting fillings, and no procedures you didn't actually need.
+        Our philosophy is conservative by design — preserving healthy tooth structure wherever possible and recommending treatment based on clinical need rather than convenience.
       </p>
 
 
       <ul class="diff-list">
 
         <li>
-          High-magnification precision on every restorative case
+          High-magnification visualisation for enhanced precision
         </li>
 
         <li>
-          Ethical treatment planning — no over-treatment, ever
+          Conservative approach focused on preserving natural teeth
         </li>
 
         <li>
-          Premium, top-quality materials only
+          Carefully selected, high-quality restorative materials
         </li>
 
         <li>
-          Stringent sterilisation protocol on every visit
+          Meticulous finishing and attention to detail
         </li>
 
       </ul>
@@ -1842,7 +854,7 @@ footer{
      WHY CHOOSE US
      ========================================================= -->
 
-<section id="why" class="reveal">
+<!-- <section id="why" class="reveal">
 
   <div class="container">
 
@@ -1972,8 +984,340 @@ footer{
 
   </div>
 
-</section>
+</section> -->
 
+
+
+<section id="why" class="reveal why-section">
+
+  <div class="container">
+
+    <!-- HEADER -->
+
+    <div class="sec-head why-head">
+
+      <span class="eyebrow">
+        Why Choose Us
+      </span>
+
+      <h2>
+        Care built around you,
+        <span>not the clock.</span>
+      </h2>
+
+      <p>
+        Thoughtful dentistry combining clinical experience,
+        precision, modern technology and genuine patient care.
+      </p>
+
+    </div>
+
+
+    <!-- =====================================================
+         01 — QUALITY
+    ====================================================== -->
+
+    <div class="why-feature">
+
+      <div class="why-feature-image">
+
+        <img
+          src="clinic_photos_shortlist/QualityoverQuantity.jpeg"
+          alt="Precision dental treatment"
+        >
+
+        <span class="why-image-number">
+          01
+        </span>
+
+      </div>
+
+
+      <div class="why-feature-content">
+
+        <span class="why-small-title">
+          QUALITY OVER QUANTITY
+        </span>
+
+        <h3>
+          Getting it right
+          <span>the first time.</span>
+        </h3>
+
+        <p>
+          Fewer patients seen faster isn't the goal.
+          We believe good dentistry requires time, attention
+          and precision. Every treatment is carefully planned
+          with the patient's long-term oral health in mind.
+        </p>
+
+        <div class="why-line"></div>
+
+        <div class="why-feature-bottom">
+          <span>01</span>
+          <strong>Precision-focused dentistry</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         02 — EMPATHY
+    ====================================================== -->
+
+    <div class="why-feature why-feature-reverse">
+
+      <div class="why-feature-image">
+
+        <img
+          src="clinic_photos_shortlist/empathy.jpeg"
+          alt="Patient centred dental care"
+        >
+
+        <span class="why-image-number">
+          02
+        </span>
+
+      </div>
+
+
+      <div class="why-feature-content">
+
+        <span class="why-small-title">
+          EMPATHY &amp; COMPASSION
+        </span>
+
+        <h3>
+          Dentistry that
+          <span>starts with listening.</span>
+        </h3>
+
+        <p>
+          Every treatment plan begins by understanding
+          the patient's concerns. We take the time to explain
+          the diagnosis, discuss options and make sure you
+          are comfortable with the treatment journey.
+        </p>
+
+        <div class="why-line"></div>
+
+        <div class="why-feature-bottom">
+          <span>02</span>
+          <strong>Patient-first approach</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         03 — ETHICAL DENTISTRY
+    ====================================================== -->
+
+    <div class="why-feature">
+
+      <div class="why-feature-image">
+
+        <img
+          src="clinic_photos_shortlist/dental ethics.png"
+          alt="Ethical dental treatment"
+        >
+
+        <span class="why-image-number">
+          03
+        </span>
+
+      </div>
+
+
+      <div class="why-feature-content">
+
+        <span class="why-small-title">
+          ETHICAL DENTISTRY
+        </span>
+
+        <h3>
+          Treatment guided by
+          <span>genuine clinical need.</span>
+        </h3>
+
+        <p>
+          We believe in transparent communication and
+          responsible treatment planning. Our recommendations
+          are based on clinical need, predictable outcomes
+          and your individual requirements.
+        </p>
+
+        <div class="why-line"></div>
+
+        <div class="why-feature-bottom">
+          <span>03</span>
+          <strong>Transparent treatment planning</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         04 — TECHNOLOGY
+    ====================================================== -->
+
+    <div class="why-feature why-feature-reverse ">
+
+      <div class="why-feature-image">
+
+        <img
+          src="clinic_photos_shortlist/Dentist_with_technology_use.jpeg"
+          alt="Advanced dental technology"
+        >
+
+        <span class="why-image-number">
+          04
+        </span>
+
+      </div>
+
+
+      <div class="why-feature-content">
+
+        <span class="why-small-title">
+          ADVANCED TECHNOLOGY
+        </span>
+
+        <h3>
+          Experience supported
+          by <span>precision technology.</span>
+        </h3>
+
+        <p>
+          Our clinical approach is supported by modern
+          dental technology and high-magnification 7.5×
+          dental loupes, helping us visualise and work
+          with greater precision during detailed procedures.
+        </p>
+
+        <div class="why-line"></div>
+
+        <div class="why-feature-bottom">
+          <span>04</span>
+          <strong>7.5× high-magnification loupes</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         05 — STERILISATION
+    ====================================================== -->
+
+    <div class="why-feature">
+
+      <div class="why-feature-image">
+
+        <img
+          src="clinic_photos_shortlist/autoclave.jpeg"
+          alt="Dental sterilisation and infection control"
+        >
+
+        <span class="why-image-number">
+          05
+        </span>
+
+      </div>
+
+
+      <div class="why-feature-content">
+
+        <span class="why-small-title">
+          STRINGENT STERILISATION
+        </span>
+
+        <h3>
+          Safety is part of
+          <span>every treatment.</span>
+        </h3>
+
+        <p>
+          We follow stringent sterilisation and infection-control
+          protocols designed to maintain a safe clinical environment
+          for every patient and every procedure.
+        </p>
+
+        <div class="why-line"></div>
+
+        <div class="why-feature-bottom">
+          <span>05</span>
+          <strong>Patient safety &amp; infection control</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         06 — LOCATION
+    ====================================================== -->
+
+    <div class="why-feature why-feature-reverse">
+
+      <div class="why-feature-image">
+
+        <img
+          src="clinic_photos_shortlist/location.jpeg"
+          alt="Dr. Gupta's Dental Clinic South Delhi"
+        >
+
+        <span class="why-image-number">
+          06
+        </span>
+
+      </div>
+
+
+      <div class="why-feature-content">
+
+        <span class="why-small-title">
+          CENTRALLY LOCATED
+        </span>
+
+        <h3>
+          Conveniently located
+          <span>in South Delhi.</span>
+        </h3>
+
+        <p>
+          Our clinic is located in South Extension Part 1,
+          making it convenient for patients travelling from
+          across South Delhi and other parts of the city.
+        </p>
+
+        <div class="why-line"></div>
+
+        <div class="why-feature-bottom">
+          <span>06</span>
+          <strong>South Extension, Part 1</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
 <!-- =========================================================
      ABOUT
@@ -1986,7 +1330,7 @@ footer{
 
     <div class="about-img">
 
-      <img src="dr-tanupriya-headshot.jpg" alt="Dr. Tanupriya Gupta">
+      <img src="Meet your dentist/IMG_20170703_184133 (2).jpg" alt="Dr. Tanupriya Gupta">
 
     </div>
 
@@ -2026,7 +1370,385 @@ footer{
      SERVICES
      ========================================================= -->
 
-<section id="services" class="reveal">
+
+     <!-- =========================================================
+     SERVICES — HORIZONTAL SLIDER
+========================================================= -->
+
+<section id="services" class="services-section reveal">
+
+    <div class="container">
+
+        <div class="sec-head">
+
+            <span class="eyebrow">
+                Our Services
+            </span>
+
+            <h2>
+                Better dentistry begins with better care
+            </h2>
+
+        </div>
+
+
+        <div class="services-slider-wrapper">
+
+            <!-- LEFT ARROW -->
+            <button
+                class="service-arrow service-prev"
+                type="button"
+                aria-label="Previous services"
+            >
+                &#10094;
+            </button>
+
+
+            <!-- SLIDER -->
+            <div class="services-slider">
+
+                <!-- CARD 1 -->
+                <article class="service-card">
+
+                    <div class="service-card-image">
+
+                        <img
+                            src="clinic_photos_shortlist/restoractive procedure.jpeg"
+                            alt="Restorative Procedures"
+                        >
+
+                    </div>
+
+                    <div class="service-card-content">
+
+                        <span class="service-card-number">
+                            01
+                        </span>
+
+                        <h3>
+                            Restorative Procedures
+                        </h3>
+
+                        <p>
+                            Restoring damaged or decayed teeth while
+                            preserving natural tooth structure.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CARD 2 -->
+                <article class="service-card">
+
+                    <div class="service-card-image">
+
+                        <img
+                            src="clinic_photos_shortlist/root-canal-treatment.jpg"
+                            alt="Root Canal Treatment"
+                        >
+
+                    </div>
+
+                    <div class="service-card-content">
+
+                        <span class="service-card-number">
+                            02
+                        </span>
+
+                        <h3>
+                            Root Canal Treatment
+                        </h3>
+
+                        <p>
+                            Precise root canal treatment focused on
+                            saving and maintaining natural teeth.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CARD 3 -->
+                <article class="service-card">
+
+                    <div class="service-card-image">
+
+                        <img
+                            src="clinic_photos_shortlist/Tooth-Extractions.jpg"
+                            alt="Teeth Extraction"
+                        >
+
+                    </div>
+
+                    <div class="service-card-content">
+
+                        <span class="service-card-number">
+                            03
+                        </span>
+
+                        <h3>
+                            Teeth Extraction
+                        </h3>
+
+                        <p>
+                            Gentle and carefully planned extraction
+                            when a tooth cannot be predictably saved.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CARD 4 -->
+                <article class="service-card">
+
+                    <div class="service-card-image">
+
+                        <img
+                            src="clinic_photos_shortlist/Preventive-procedure.jpg"
+                            alt="Preventive Procedures"
+                        >
+
+                    </div>
+
+                    <div class="service-card-content">
+
+                        <span class="service-card-number">
+                            04
+                        </span>
+
+                        <h3>
+                            Preventive Procedures
+                        </h3>
+
+                        <p>
+                            Professional preventive care designed to
+                            maintain healthy teeth and gums.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CARD 5 -->
+                <article class="service-card">
+
+                    <div class="service-card-image">
+
+                        <img
+                            src="clinic_photos_shortlist/screening and diagnosis.jpg"
+                            alt="Screening and Diagnosis"
+                        >
+
+                    </div>
+
+                    <div class="service-card-content">
+
+                        <span class="service-card-number">
+                            05
+                        </span>
+
+                        <h3>
+                            Screening &amp; Diagnosis
+                        </h3>
+
+                        <p>
+                            Detailed examination and diagnosis to
+                            identify dental problems at the right time.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CARD 6 -->
+                <article class="service-card">
+
+                    <div class="service-card-image">
+
+                        <img
+                            src="clinic_photos_shortlist/dental implant.jpg"
+                            alt="Dental Implants"
+                        >
+
+                    </div>
+
+                    <div class="service-card-content">
+
+                        <span class="service-card-number">
+                            06
+                        </span>
+
+                        <h3>
+                            Dental Implants
+                        </h3>
+
+                        <p>
+                            Natural-looking tooth replacement using
+                            carefully planned dental implants.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CARD 7 -->
+                <article class="service-card">
+
+                    <div class="service-card-image">
+
+                        <img
+                            src="clinic_photos_shortlist/replacement of missing teeth.jpg"
+                            alt="Replacement of Missing Teeth"
+                        >
+
+                    </div>
+
+                    <div class="service-card-content">
+
+                        <span class="service-card-number">
+                            07
+                        </span>
+
+                        <h3>
+                            Replacement of Missing Teeth
+                        </h3>
+
+                        <p>
+                            Comfortable and functional solutions for
+                            replacing missing teeth.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CARD 8 -->
+                <article class="service-card">
+
+                    <div class="service-card-image">
+
+                        <img
+                            src="clinic_photos_shortlist/cosmetic densitery.jpg"
+                            alt="Cosmetic Dentistry"
+                        >
+
+                    </div>
+
+                    <div class="service-card-content">
+
+                        <span class="service-card-number">
+                            08
+                        </span>
+
+                        <h3>
+                            Cosmetic Dentistry
+                        </h3>
+
+                        <p>
+                            Subtle aesthetic improvements for a more
+                            confident and natural-looking smile.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CARD 9 -->
+                <article class="service-card">
+
+                    <div class="service-card-image">
+
+                        <img
+                            src="clinic_photos_shortlist/kids dental.jpeg"
+                            alt="Child Dental Care"
+                        >
+
+                    </div>
+
+                    <div class="service-card-content">
+
+                        <span class="service-card-number">
+                            09
+                        </span>
+
+                        <h3>
+                            Child Dental Care
+                        </h3>
+
+                        <p>
+                            Gentle and comfortable dental care designed
+                            especially for children.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <!-- RIGHT ARROW -->
+            <button
+                class="service-arrow service-next"
+                type="button"
+                aria-label="Next services"
+            >
+                &#10095;
+            </button>
+
+        </div>
+
+
+        <!-- SLIDER DOTS -->
+
+        <div class="services-dots">
+
+            <button
+                class="service-dot active"
+                type="button"
+                aria-label="Slide 1"
+            ></button>
+
+            <button
+                class="service-dot"
+                type="button"
+                aria-label="Slide 2"
+            ></button>
+
+            <button
+                class="service-dot"
+                type="button"
+                aria-label="Slide 3"
+            ></button>
+
+            <button
+                class="service-dot"
+                type="button"
+                aria-label="Slide 4"
+            ></button>
+
+            <button
+                class="service-dot"
+                type="button"
+                aria-label="Slide 5"
+            ></button>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- <section id="services" class="reveal">
 
   <div class="container">
 
@@ -2104,7 +1826,7 @@ footer{
 
   </div>
 
-</section>
+</section> -->
 
 
 <!-- =========================================================
@@ -2211,9 +1933,9 @@ footer{
 
 
 <!-- =========================================================
-     GALLERY
+     GALLERY (Our Cases)
      ========================================================= -->
-
+<!-- 
 <section id="gallery" class="reveal">
 
   <div class="container">
@@ -2245,7 +1967,7 @@ footer{
 
   </div>
 
-</section>
+</section> -->
 
 
 <!-- =========================================================
@@ -2401,19 +2123,19 @@ footer{
         Quick Links
       </h4>
 
-      <a href="#about">
+      <a href="about.html">
         About
       </a>
 
-      <a href="#services">
+      <a href="services.html">
         Services
       </a>
 
-      <a href="#testimonials">
+      <a href="reviews.html">
         Reviews
       </a>
 
-      <a href="#contact">
+      <a href="contact.html">
         Contact
       </a>
 
@@ -2451,335 +2173,7 @@ footer{
 </footer>
 
 
-<!-- =========================================================
-     WHATSAPP FLOAT
-     ========================================================= -->
-
-<a href="https://wa.me/919990880975" class="whatsapp-float" aria-label="Chat on WhatsApp"> 💬</a>
-
-
-<!-- =========================================================
-     JAVASCRIPT
-     FUNCTIONALITY KEPT SAME
-     ========================================================= -->
-
-<script>
-
-document.addEventListener('DOMContentLoaded',function(){
-
-  var els = document.querySelectorAll('.reveal');
-
-  var io = new IntersectionObserver(function(entries){
-
-    entries.forEach(function(e){
-
-      if(e.isIntersecting){
-
-        e.target.classList.add('in');
-
-        io.unobserve(e.target);
-
-      }
-
-    });
-
-  },{threshold:0.12});
-
-
-  els.forEach(function(el){io.observe(el);});
-  var modal = document.getElementById('appointmentModal');
-  var openButton = document.getElementById('openAppointmentModal');
-  var closeButtons = [
-    document.querySelector('.modal-close'),
-    document.getElementById('closeAppointmentModal')
-  ];
-  var medicationInputs = document.querySelectorAll('input[name="medication"]');
-  var medicationBox = document.getElementById('medicationBox');
-  var form = document.getElementById('appointmentForm');
-  var appointmentDate = document.getElementById('appointmentDate');
-  var appointmentTime = document.getElementById('appointmentTime');
-  var slotStatus = document.getElementById('slotStatus');
-  var scriptUrl = 'https://script.google.com/macros/s/AKfycbxnsEVOn7JUSTLJkm1QG50AJlkZyu1C4bGb6ArIB1JDbfo8BTgTIBG-SrnscNOrjfwm/exec';
-  var availableSlots = ['10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00'];
-  var bookedSlots = {};
-  var appointmentStep1 = document.getElementById('appointmentStep1');
-  var appointmentStep2 = document.getElementById('appointmentStep2');
-  var stepIndicator1 = document.getElementById('stepIndicator1');
-  var stepIndicator2 = document.getElementById('stepIndicator2');
-  var nextAppointmentStep = document.getElementById('nextAppointmentStep');
-  var backAppointmentStep = document.getElementById('backAppointmentStep');
-  var skipClinicalStep = document.getElementById('skipClinicalStep');
-  var header = document.querySelector('header');
-  var menuToggle = document.querySelector('.menu-toggle');
-  var navigationLinks = document.querySelectorAll('nav a');
-
-  function closeMenu(){
-
-    header.classList.remove('menu-open');
-
-    if (menuToggle)
-
-      menuToggle.setAttribute('aria-expanded', 'false');
-  }
-
-  if (menuToggle)
-
-    menuToggle.addEventListener('click',
-      function(){
-        var isOpen = header.classList.toggle('menu-open');
-
-        menuToggle.setAttribute('aria-expanded',String(isOpen));
-      }
-    );
-
-  navigationLinks.forEach(function(link){
-    link.addEventListener('click', closeMenu);
-  });
-
-  function showAppointmentStep(stepNumber){
-    var firstStep = stepNumber === 1;
-    appointmentStep1.classList.toggle('active', firstStep);
-    appointmentStep2.classList.toggle('active', !firstStep);
-    stepIndicator1.classList.toggle('active', firstStep);
-    stepIndicator2.classList.toggle('active', !firstStep);
-    modal.scrollTop = 0;
-  }
-
-  function validatePatientDetails(){
-    var requiredFields = ['name', 'age', 'phone', 'email', 'address', 'appointmentDate', 'appointmentTime', 'gender'];
-    for (var i = 0; i < requiredFields.length; i++) {
-      var field = document.getElementById(requiredFields[i]);
-      if (!field.checkValidity()) {
-        field.reportValidity();
-        return false;
-      }
-    }
-    return true;
-  }
-
-  function slotKey(date, time){
-    return date + '|' + time;
-  }
-
-  function readLocalBookedSlots(){
-    try {
-      return JSON.parse(localStorage.getItem('drGuptaBookedSlots') || '{}');
-    } catch (error) {
-      return {};
-    }
-  }
-
-  function formatSlotTime(time){
-    var parts = time.split(':');
-    var hour = Number(parts[0]);
-    var suffix = hour >= 12 ? 'PM' : 'AM';
-    var displayHour = hour % 12 || 12;
-    return displayHour + ':' + parts[1] + ' ' + suffix;
-  }
-
-  function renderAvailableSlots(){
-    var date = appointmentDate.value;
-    appointmentTime.innerHTML = '';
-
-    if (!date) {
-      appointmentTime.disabled = true;
-      appointmentTime.add(new Option('Select a date first', ''));
-      slotStatus.textContent = 'Choose a date to see available slots.';
-      return;
-    }
-
-    if (new Date(date + 'T00:00:00').getDay() === 0) {
-      appointmentTime.disabled = true;
-      appointmentTime.add(new Option('Clinic is closed on Sundays', ''));
-      slotStatus.textContent = 'Please choose Monday to Saturday.';
-      return;
-    }
-
-    appointmentTime.add(new Option('Select an available slot', ''));
-    var visibleSlots = availableSlots.filter(function(time){
-      return !bookedSlots[slotKey(date, time)];
-    });
-
-    visibleSlots.forEach(function(time){
-      appointmentTime.add(new Option(formatSlotTime(time), time));
-    });
-    appointmentTime.disabled = visibleSlots.length === 0;
-    slotStatus.textContent = visibleSlots.length
-      ? visibleSlots.length + ' slot' + (visibleSlots.length === 1 ? '' : 's') + ' available.'
-      : 'No slots are available on this date.';
-  }
-
-  function loadBookedSlots(){
-    bookedSlots = readLocalBookedSlots();
-    renderAvailableSlots();
-    fetch(scriptUrl + '?action=getBookedSlots')
-      .then(function(response){ return response.json(); })
-      .then(function(result){
-        var remoteSlots = result.bookedSlots || result.data || [];
-        if (Array.isArray(remoteSlots)) {
-          remoteSlots.forEach(function(slot){
-            if (slot.date && slot.time)
-              bookedSlots[slotKey(slot.date, slot.time)] = true;
-            else if (slot.appointmentDate && slot.appointmentTime)
-              bookedSlots[slotKey(slot.appointmentDate, slot.appointmentTime)] = true;
-          });
-          renderAvailableSlots();
-        }
-      })
-      .catch(function(){ /* Local bookings remain available if the shared endpoint is unavailable. */ });
-  }
-
-  appointmentDate.min = new Date().toISOString().split('T')[0];
-  appointmentDate.addEventListener('change', renderAvailableSlots);
-  loadBookedSlots();
-
-  function resetAppointmentSteps(){
-    showAppointmentStep(1);
-    medicationBox.classList.remove('visible');
-    renderAvailableSlots();
-  }
-
-  function openModal(){
-    resetAppointmentSteps();
-    modal.classList.add('open');
-    modal.setAttribute('aria-hidden', 'false' );
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeModal(){
-    modal.classList.remove('open');
-    modal.setAttribute( 'aria-hidden', 'true' );
-    document.body.style.overflow = '';
-  }
-
-
-  if (openButton)
-
-  openButton.addEventListener( 'click', openModal);
-
-  closeButtons.forEach(function(button){
-    if (button)
-      button.addEventListener('click', closeModal );
-  });
-
-  modal.addEventListener('click',
-    function(event){
-      if (event.target === modal)
-        closeModal();
-    }
-  );
-
-
-  document.addEventListener('keydown',
-    function(event){
-
-      if (
-        event.key === 'Escape' && modal.classList.contains('open'))
-        {
-        closeModal();
-      }
-
-      if (event.key === 'Escape')
-        closeMenu();
-    }
-  );
-
-  nextAppointmentStep.addEventListener('click', function(){
-    if (validatePatientDetails())
-      showAppointmentStep(2);
-  });
-
-  backAppointmentStep.addEventListener('click', function(){
-    showAppointmentStep(1);
-  });
-
-  medicationInputs.forEach(function(radio){
-
-    radio.addEventListener(
-      'change',
-      function(){
-
-        if (this.value === 'yes') {
-
-          medicationBox.classList.add('visible');
-
-        } else {
-
-          medicationBox.classList.remove( 'visible');
-
-          var textarea = document.getElementById('medicineDetails');
-
-          if (textarea)  textarea.value = '';
-        }
-      }
-    );
-  });
-
-
-  function getCheckedValues(name){
-    return Array.from(document.querySelectorAll('input[name="' + name + '"]:checked'))
-      .map(function(input){ return input.value; })
-      .join(', ');
-  }
-  
-  function submitAppointment(){
-    var medicationRadio = document.querySelector('input[name="medication"]:checked');
-    var medicationDetails = document.getElementById('medicineDetails');
-    var appointmentId = 'APT-' + Date.now() + '-' + Math.random().toString(36).substring(2, 7).toUpperCase();
-    var value = function(id){
-      var field = document.getElementById(id);
-      return field ? field.value.trim() : '';
-    };
-    var selected = function(name){ var input = document.querySelector('input[name="' + name + '"]:checked'); return input ? input.value : ''; };
-    var formData = {
-      appointmentId:appointmentId,
-      name:value('name'), age:document.getElementById('age').value, phone:value('phone'), address:value('address'),
-      email:value('email'), gender:document.getElementById('gender').value, appointmentDate:document.getElementById('appointmentDate').value, appointmentTime:document.getElementById('appointmentTime').value,
-      reasonForVisit:value('reasonForVisit'), dentalProblem:document.getElementById('dentalProblem').value, painLevel:document.getElementById('painLevel').value,
-      previousDentalTreatment:document.getElementById('previousDentalTreatment').value,
-      medication:medicationRadio ? medicationRadio.value : 'no',
-      medicineDetails:medicationRadio && medicationRadio.value === 'yes' ? value('medicineDetails') : '',
-      allergies:value('allergies'), medicalHistory:value('medicalHistory'), additionalClinicalDetails:value('additionalClinicalDetails'),
-      smoking:document.querySelector('input[name="habitSmoking"]').checked ? 'Yes' : 'No',
-      smokingFrequency:document.querySelector('select[name="habitSmokingFrequency"]').value,
-      smokingDuration:document.querySelector('select[name="habitSmokingDuration"]').value,
-      smokelessTobacco:document.querySelector('input[name="habitTobacco"]').checked ? 'Yes' : 'No',
-      smokelessTobaccoFrequency:document.querySelector('select[name="habitTobaccoFrequency"]').value,
-      smokelessTobaccoDuration:document.querySelector('select[name="habitTobaccoDuration"]').value,
-      paanChewing:document.querySelector('input[name="habitPaan"]').checked ? 'Yes' : 'No',
-      paanChewingFrequency:document.querySelector('select[name="habitPaanFrequency"]').value,
-      paanChewingDuration:document.querySelector('select[name="habitPaanDuration"]').value,
-      alcohol:document.querySelector('input[name="habitAlcohol"]').checked ? 'Yes' : 'No',
-      alcoholFrequency:document.querySelector('select[name="habitAlcoholFrequency"]').value,
-      alcoholDuration:document.querySelector('select[name="habitAlcoholDuration"]').value,
-      cleaningType:getCheckedValues('cleaningType'), cleaningMethod:getCheckedValues('cleaningMethod'), brushingFrequency:selected('brushingFrequency'),
-      cleaningMaterial:getCheckedValues('cleaningMaterial'), cleaningMaterialOther:value('cleaningMaterialOther'), brushingTime:selected('brushingTime'),
-      toothbrushChangeFrequency:selected('toothbrushChangeFrequency'), durationOfCleaning:value('durationOfCleaning'), oralHygieneAid:getCheckedValues('oralHygieneAid')
-    };
-    fetch(scriptUrl,{method:'POST',body:new URLSearchParams(formData)})
-      .then(function(response){ return response.text(); })
-      .then(function(text){
-        var result;
-        try { result = JSON.parse(text); } catch(error) { throw new Error('Invalid response from Google Apps Script.'); }
-        if (result.status === 'success') {
-          bookedSlots[slotKey(appointmentDate.value, appointmentTime.value)] = true;
-          localStorage.setItem('drGuptaBookedSlots', JSON.stringify(bookedSlots));
-          alert('Appointment submitted successfully!');
-          form.reset();
-          resetAppointmentSteps();
-          closeModal();
-        } else {
-          alert('Failed to submit: ' + (result.message || 'Unknown error'));
-        }
-      })
-      .catch(function(error){ console.error('Submit error:', error); alert('Failed to submit appointment. ' + error.message); });
-  }
-
-  skipClinicalStep.addEventListener('click', submitAppointment);
-  form.addEventListener('submit', function(event){ event.preventDefault(); submitAppointment(); });
-});
-
-</script>
+<script src="script.js" defer></script>
 
 </body>
 </html>

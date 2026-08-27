@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About Dr. Tanupriya Gupta | Dr. Gupta's Dental Clinic</title>
+
+<meta name="description" content="Dr. Tanupriya Gupta — 20 years of precision, magnification-guided restorative dentistry in South Extension, New Delhi. Ethical care, no over-treatment.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<body><!-- =========================================================
+     HEADER
+     ========================================================= -->
+
+<header>
+
+  <div class="header-info">
+    <div class="container header-info-wrap">
+      <div class="availability" aria-label="Clinic availability">
+        <span><strong>Availability:</strong> <span class="availability-hours">Monday - Saturday, 10:00 AM - 7:00 PM</span></span>
+        <span class="sunday-closed">Sunday: CLOSED</span>
+      </div>
+      <div class="header-contact" aria-label="Clinic contact details">
+        <a href="tel:+919990880975">Call: +91 99908 80975</a>
+        <a href="https://wa.me/919990880975" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container nav-wrap">
+
+    <div class="brand">
+
+      <img
+        src="logo_trimmed.png"
+        alt="Dr. Gupta's Dental Clinic logo"
+        style="width:44px;height:44px;border-radius:10px;object-fit:cover;"
+      >
+
+      <div class="brand-name">
+        Dr. Gupta's Dental Clinic
+      </div>
+
+    </div>
+
+
+    <nav>
+
+      <ul id="main-navigation">
+
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+
+        <li>
+          <a href="about.html">About</a>
+        </li>
+
+        <li>
+          <a href="difference.html">Our Difference</a>
+        </li>
+
+        <li>
+          <a href="services.html">Services</a>
+        </li>
+
+        <li>
+          <a href="reviews.html">Reviews</a>
+        </li>
+
+        <li>
+          <a href="contact.html">Contact</a>
+        </li>
+
+      </ul>
+
+    </nav>
+
+
+    <div class="nav-cta">
+
+      <button
+        type="button"
+        class="appointment-trigger"
+        id="openAppointmentModal"
+      >
+        Book Appointment
+      </button>
+
+      <button
+        type="button"
+        class="menu-toggle"
+        aria-label="Menu"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >
+        &#9776;
+      </button>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- =========================================================
+     APPOINTMENT MODAL
+     ========================================================= -->
+
+<div
+  class="appointment-modal-overlay"
+  id="appointmentModal"
+  aria-hidden="true"
+>
+
+  <div
+    class="appointment-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="appointmentTitle"
+  >
+
+    <button
+      type="button"
+      class="modal-close"
+      aria-label="Close appointment form"
+    >
+      &times;
+    </button>
+
+
+    <div class="modal-head">
+
+      <h3 id="appointmentTitle">
+        Book an Appointment
+      </h3>
+
+      <p>
+        Please fill in your details and we will contact you shortly.
+      </p>
+
+    </div>
+
+
+    <form class="appointment-form" id="appointmentForm">
+      <div class="appointment-progress" aria-label="Appointment form progress">
+        <div class="step-indicator active" id="stepIndicator1">1. Patient Details</div>
+        <div class="step-indicator" id="stepIndicator2">2. Personal Details <span class="optional-note">(Optional)</span></div>
+      </div>
+
+      <div class="appointment-step active" id="appointmentStep1">
+        <div class="form-grid">
+          <div class="form-group"><label for="name">Name</label><input id="name" name="name" type="text" placeholder="Enter your name" required></div>
+          <div class="form-group"><label for="age">Age</label><input id="age" name="age" type="number" min="1" placeholder="Age" required></div>
+          <div class="form-group"><label for="phone">Phone No</label><input id="phone" name="phone" type="tel" placeholder="Your phone number" required></div>
+          <div class="form-group"><label for="email">Email</label><input id="email" name="email" type="email" placeholder="Your email address" required></div>
+          <div class="form-group full"><label for="address">Address</label><input id="address" name="address" type="text" placeholder="Your address" required></div>
+          <div class="form-group"><label for="appointmentDate">Appointment Date</label><input type="date" id="appointmentDate" name="appointmentDate" required></div>
+          <div class="form-group"><label for="appointmentTime">Available Time Slot</label><select id="appointmentTime" name="appointmentTime" required disabled><option value="">Select a date first</option></select><small class="slot-status" id="slotStatus" aria-live="polite">Choose a date to see available slots.</small></div>
+          <div class="form-group"><label for="gender">Gender</label><select id="gender" name="gender" required><option value="">Select gender</option><option>Male</option><option>Female</option><option>Other</option></select></div>
+        </div>
+        <div class="step-actions">
+          <button type="button" class="secondary-btn" id="closeAppointmentModal">Cancel</button>
+          <button type="button" class="cta-btn" id="nextAppointmentStep">Next &rarr;</button>
+        </div>
+      </div>
+
+      <div class="appointment-step" id="appointmentStep2">
+        <div class="clinical-intro"><strong>Personal details are optional.</strong> You can provide them to help the dentist understand your concern before the appointment, or skip this section and submit with your basic details.</div>
+        <div class="form-grid">
+          <div class="form-group full"><label for="reasonForVisit">Reason for Visit</label><textarea id="reasonForVisit" name="reasonForVisit" placeholder="Briefly describe the reason for your visit"></textarea></div>
+          <div class="form-group"><label for="dentalProblem">Current Dental Problem</label><select id="dentalProblem" name="dentalProblem"><option value="">Select if applicable</option><option>Tooth Pain</option><option>Sensitivity</option><option>Swelling</option><option>Bleeding Gums</option><option>Broken / Chipped Tooth</option><option>Cavity</option><option>Missing Tooth</option><option>Routine Check-up</option><option>Cleaning</option><option>Other</option></select></div>
+          <div class="form-group"><label for="painLevel">Pain / Discomfort</label><select id="painLevel" name="painLevel"><option value="">Select if applicable</option><option>None</option><option>Mild</option><option>Moderate</option><option>Severe</option></select></div>
+          <div class="form-group"><label for="previousDentalTreatment">Previous Dental Treatment</label><select id="previousDentalTreatment" name="previousDentalTreatment"><option value="">Select if applicable</option><option>No Previous Treatment</option><option>Filling</option><option>Root Canal</option><option>Extraction</option><option>Implant</option><option>Crown / Bridge</option><option>Other</option></select></div>
+          <div class="form-group"><label>Currently Taking Any Medicine?</label><div class="radio-row"><label class="radio-option"><input type="radio" name="medication" value="yes"> Yes</label><label class="radio-option"><input type="radio" name="medication" value="no" checked> No</label></div></div>
+          <div class="form-group full medication-box" id="medicationBox"><label for="medicineDetails">Medicine Details</label><textarea id="medicineDetails" name="medicineDetails" placeholder="List medicines you are currently taking"></textarea></div>
+          <div class="form-group full"><label for="allergies">Known Allergies</label><textarea id="allergies" name="allergies" placeholder="Mention any known medicine or other allergies"></textarea></div>
+          <div class="form-group full"><label for="medicalHistory">Medical History</label><textarea id="medicalHistory" name="medicalHistory" placeholder="Mention any relevant medical history"></textarea></div>
+          <div class="form-group full"><label for="additionalClinicalDetails">Additional Clinical Details</label><textarea id="additionalClinicalDetails" name="additionalClinicalDetails" placeholder="Anything else you would like the dentist to know"></textarea></div>
+        </div>
+
+        <div class="clinical-section">
+          <h4 class="clinical-section-title">Adverse Habits / Adverse Oral Habits</h4>
+          <div class="clinical-table-wrap"><table class="clinical-table"><thead><tr><th>Type</th><th>Frequency</th><th>Duration</th></tr></thead><tbody>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitSmoking" value="Smoking"> Smoking</label></td><td><select name="habitSmokingFrequency"><option value="">Select</option><option>Occasional</option><option>Once Daily</option><option>Twice Daily</option><option>More than Twice Daily</option></select></td><td><select name="habitSmokingDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitTobacco" value="Smokeless Tobacco/snuff"> Smokeless Tobacco / Snuff</label></td><td><select name="habitTobaccoFrequency"><option value="">Select</option><option>Occasional</option><option>Once Daily</option><option>Twice Daily</option><option>More than Twice Daily</option></select></td><td><select name="habitTobaccoDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitPaan" value="Paan chewing (gutka, paanmasala)"> Paan chewing (gutka, paanmasala)</label></td><td><select name="habitPaanFrequency"><option value="">Select</option><option>Occasional</option><option>Once Daily</option><option>Twice Daily</option><option>More than Twice Daily</option></select></td><td><select name="habitPaanDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitAlcohol" value="Alcohol"> Alcohol</label></td><td><select name="habitAlcoholFrequency"><option value="">Select</option><option>Occasional</option><option>Once Weekly</option><option>2-3 Times Weekly</option><option>Daily</option></select></td><td><select name="habitAlcoholDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+          </tbody></table></div>
+        </div>
+
+        <div class="clinical-section"><h4 class="clinical-section-title">Oral Hygiene Practices</h4><div class="hygiene-grid">
+          <div class="form-group full"><label>i) Type of Cleaning</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Toothbrush"> Toothbrush</label><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Finger"> Finger</label><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Stick"> Stick</label><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Others"> Others</label></div></div>
+          <div class="form-group full"><label>ii) Method of Cleaning</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="cleaningMethod" value="Vertical"> Vertical</label><label class="clinical-check"><input type="checkbox" name="cleaningMethod" value="Horizontal"> Horizontal</label><label class="clinical-check"><input type="checkbox" name="cleaningMethod" value="Circular"> Circular</label></div></div>
+          <div class="form-group full"><label>iii) Frequency of Cleaning / Brushing</label><div class="option-grid"><label class="clinical-check"><input type="radio" name="brushingFrequency" value="Once"> Once</label><label class="clinical-check"><input type="radio" name="brushingFrequency" value="Twice"> Twice</label><label class="clinical-check"><input type="radio" name="brushingFrequency" value="Thrice"> Thrice</label></div></div>
+          <div class="form-group full"><label>iv) Materials Used</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Toothpaste"> Toothpaste</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Tooth Powder"> Tooth Powder</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Charcoal"> Charcoal</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Sand"> Sand</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Brick Powder"> Brick Powder</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Any Other"> Any Other</label></div><input type="text" id="cleaningMaterialOther" name="cleaningMaterialOther" placeholder="If any other, please specify"></div>
+          <div class="form-group full"><label>v) Time of Brushing</label><div class="option-grid"><label class="clinical-check"><input type="radio" name="brushingTime" value="Before Meal"> Before Meal</label><label class="clinical-check"><input type="radio" name="brushingTime" value="After Meals"> After Meals</label></div></div>
+          <div class="form-group full"><label>vi) Frequency of Changing the Tooth Brush</label><div class="option-grid"><label class="clinical-check"><input type="radio" name="toothbrushChangeFrequency" value="Once"> Once</label><label class="clinical-check"><input type="radio" name="toothbrushChangeFrequency" value="Twice"> Twice</label><label class="clinical-check"><input type="radio" name="toothbrushChangeFrequency" value="Thrice"> Thrice</label></div></div>
+          <div class="form-group"><label for="durationOfCleaning">vii) Duration of Cleaning</label><input type="text" id="durationOfCleaning" name="durationOfCleaning" placeholder="e.g. 2 minutes"></div>
+          <div class="form-group full"><label>viii) Other Oral Hygiene Aids Used</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Flossing"> Flossing</label><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Interdental Aids"> Interdental Aids</label><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Oral Mouth Rinse"> Oral Mouth Rinse</label><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Tongue Cleaner"> Tongue Cleaner</label></div></div>
+        </div></div>
+
+        <div class="step-actions"><button type="button" class="secondary-btn" id="backAppointmentStep">&larr; Back</button><div class="right-actions"><button type="button" class="secondary-btn" id="skipClinicalStep">Skip &amp; Submit</button><button type="submit" class="cta-btn">Submit Appointment</button></div></div>
+      </div>
+    </form>
+
+  </div>
+
+</div>
+
+
+<!-- =========================================================
+     ABOUT
+     ========================================================= -->
+
+<section id="about" class="reveal about">
+
+  <div class="container about-grid">
+
+
+    <div class="about-img">
+
+      <img src="Meet your dentist/IMG_20170703_184133 (2).jpg" alt="Dr. Tanupriya Gupta">
+
+    </div>
+
+
+    <div class="about-text">
+
+      <h2>
+        Dr. Tanupriya Gupta
+      </h2>
+
+      <span class="role">
+        MDS &middot; Principal Dentist &middot; 20 Years of Experience
+      </span>
+
+      <p>
+        Dr. Tanupriya Gupta, MDS, founded Dr. Gupta's Dental Clinic in 2013 with a simple standard: treat every patient the way she'd want her own family treated. That means unhurried appointments, magnification-guided restorative work, and an unwavering rule against unnecessary treatment.
+      </p>
+
+      <p>
+        Before starting her own practice, she spent over five years at <strong>AIIMS, New Delhi</strong>, trained at <strong>PGI Chandigarh</strong>, and served as faculty at the <strong>Faculty of Dental Sciences, Jamia Millia Islamia</strong>. She completed her MDS at <strong>Manipal</strong> and her BDS at <strong>Nair Hospital, Mumbai</strong>.
+      </p>
+
+      <p>
+        She's known among patients for being soft-spoken, thorough, and careful — walking every patient through their options before recommending the simplest one that actually solves the problem.
+      </p>
+
+      <!-- <a href="https://wa.me/919990880975" class="cta-btn"> Book an Appointment </a> -->
+
+      <a href="about_Tanupriya.html" class="cta-btn"> Read more </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<section class="credentials">
+  <div class="credentials-inner">
+
+    <div class="credentials-head">
+      <span class="credentials-eyebrow">Credentials</span>
+      <h2>Education &amp; Experience</h2>
+      <p>Two decades of formal training and clinical practice at some of India's most respected dental institutions.</p>
+    </div>
+
+    <div class="timeline">
+
+      <div class="t-item">
+        <div class="t-marker"><svg viewBox="0 0 24 24"><path d="M12 2c-2.5 0-4.5 1.6-5.3 3.9-.6 1.7-.2 3.5.2 5.2.5 2.1 1 4.5 1.7 6.7.3 1 .8 2.2 2 2.2s1.6-1.2 1.8-2.1c.3-1.2.5-2.5.9-2.5s.6 1.3.9 2.5c.2.9.6 2.1 1.8 2.1s1.7-1.2 2-2.2c.7-2.2 1.2-4.6 1.7-6.7.4-1.7.8-3.5.2-5.2C16.5 3.6 14.5 2 12 2z"/></svg></div>
+        <div class="t-card">
+          <span class="t-badge edu">Education</span>
+          <h3>BDS</h3>
+          <div class="t-meta">Nair Hospital &amp; Dental College, Mumbai</div>
+          <p>Foundational training in general dentistry, building the clinical discipline that still shapes her approach today.</p>
+        </div>
+      </div>
+
+      <div class="t-item">
+        <div class="t-marker"><svg viewBox="0 0 24 24"><path d="M12 2c-2.5 0-4.5 1.6-5.3 3.9-.6 1.7-.2 3.5.2 5.2.5 2.1 1 4.5 1.7 6.7.3 1 .8 2.2 2 2.2s1.6-1.2 1.8-2.1c.3-1.2.5-2.5.9-2.5s.6 1.3.9 2.5c.2.9.6 2.1 1.8 2.1s1.7-1.2 2-2.2c.7-2.2 1.2-4.6 1.7-6.7.4-1.7.8-3.5.2-5.2C16.5 3.6 14.5 2 12 2z"/></svg></div>
+        <div class="t-card">
+          <span class="t-badge exp">Experience</span>
+          <h3>PGI Chandigarh</h3>
+          <div class="t-meta">Advanced Clinical Training</div>
+          <p>Further training at a premier postgraduate institute, deepening her expertise in complex restorative cases.</p>
+        </div>
+      </div>
+
+      <div class="t-item">
+        <div class="t-marker"><svg viewBox="0 0 24 24"><path d="M12 2c-2.5 0-4.5 1.6-5.3 3.9-.6 1.7-.2 3.5.2 5.2.5 2.1 1 4.5 1.7 6.7.3 1 .8 2.2 2 2.2s1.6-1.2 1.8-2.1c.3-1.2.5-2.5.9-2.5s.6 1.3.9 2.5c.2.9.6 2.1 1.8 2.1s1.7-1.2 2-2.2c.7-2.2 1.2-4.6 1.7-6.7.4-1.7.8-3.5.2-5.2C16.5 3.6 14.5 2 12 2z"/></svg></div>
+        <div class="t-card">
+          <span class="t-badge edu">Education</span>
+          <h3>MDS</h3>
+          <div class="t-meta">Manipal</div>
+          <p>Postgraduate specialization, sharpening the precision and diagnostic rigor behind her restorative work.</p>
+        </div>
+      </div>
+
+      <div class="t-item">
+        <div class="t-marker"><svg viewBox="0 0 24 24"><path d="M12 2c-2.5 0-4.5 1.6-5.3 3.9-.6 1.7-.2 3.5.2 5.2.5 2.1 1 4.5 1.7 6.7.3 1 .8 2.2 2 2.2s1.6-1.2 1.8-2.1c.3-1.2.5-2.5.9-2.5s.6 1.3.9 2.5c.2.9.6 2.1 1.8 2.1s1.7-1.2 2-2.2c.7-2.2 1.2-4.6 1.7-6.7.4-1.7.8-3.5.2-5.2C16.5 3.6 14.5 2 12 2z"/></svg></div>
+        <div class="t-card">
+          <span class="t-badge exp">Experience</span>
+          <h3>AIIMS, New Delhi</h3>
+          <div class="t-meta">5+ Years</div>
+          <p>Clinical practice at one of India's foremost medical institutions, working alongside leading specialists.</p>
+        </div>
+      </div>
+
+
+
+      <div class="t-item">
+        <div class="t-marker"><svg viewBox="0 0 24 24"><path d="M12 2c-2.5 0-4.5 1.6-5.3 3.9-.6 1.7-.2 3.5.2 5.2.5 2.1 1 4.5 1.7 6.7.3 1 .8 2.2 2 2.2s1.6-1.2 1.8-2.1c.3-1.2.5-2.5.9-2.5s.6 1.3.9 2.5c.2.9.6 2.1 1.8 2.1s1.7-1.2 2-2.2c.7-2.2 1.2-4.6 1.7-6.7.4-1.7.8-3.5.2-5.2C16.5 3.6 14.5 2 12 2z"/></svg></div>
+        <div class="t-card">
+          <span class="t-badge exp">Experience</span>
+          <h3>Faculty Member</h3>
+          <div class="t-meta">Faculty of Dental Sciences, Jamia Millia Islamia</div>
+          <p>Taught and mentored the next generation of dentists, staying close to the latest research and technique.</p>
+        </div>
+      </div>
+
+      <div class="t-item">
+        <div class="t-marker"><svg viewBox="0 0 24 24"><path d="M12 2c-2.5 0-4.5 1.6-5.3 3.9-.6 1.7-.2 3.5.2 5.2.5 2.1 1 4.5 1.7 6.7.3 1 .8 2.2 2 2.2s1.6-1.2 1.8-2.1c.3-1.2.5-2.5.9-2.5s.6 1.3.9 2.5c.2.9.6 2.1 1.8 2.1s1.7-1.2 2-2.2c.7-2.2 1.2-4.6 1.7-6.7.4-1.7.8-3.5.2-5.2C16.5 3.6 14.5 2 12 2z"/></svg></div>
+        <div class="t-card">
+          <span class="t-badge exp">Experience</span>
+          <h3>Founded Dr. Gupta's Dental Clinic</h3>
+          <div class="t-meta">South Extension, New Delhi &middot; 2013</div>
+          <p>Opened her own practice to deliver unhurried, magnification-guided care built entirely around the patient.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- =========================================================
+     FINAL CTA
+     ========================================================= -->
+
+<div class="final-cta">
+
+  <div class="container">
+
+    <h2>
+      Your smile deserves careful hands.
+    </h2>
+
+    <p>
+      Book a consultation with Dr. Tanupriya Gupta today.
+    </p>
+
+    <a href="https://wa.me/919990880975" class="cta-btn">  Book on WhatsApp</a>
+
+  </div>
+
+</div>
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer>
+
+  <div class="container footer-grid">
+
+
+    <div>
+
+      <h4>
+        Dr. Gupta's Dental Clinic
+      </h4>
+
+      <p>
+        Precision, magnification-guided dentistry in South Extension, New Delhi since 2013.
+      </p>
+
+    </div>
+
+
+    <div>
+
+      <h4>
+        Quick Links
+      </h4>
+
+      <a href="about.html">
+        About
+      </a>
+
+      <a href="services.html">
+        Services
+      </a>
+
+      <a href="reviews.html">
+        Reviews
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+    </div>
+
+
+    <div>
+
+      <h4>
+        Contact
+      </h4>
+
+      <a href="tel:+919990880975">
+        Mobile: 99908 80975
+      </a>
+
+      <a href="tel:+911142220392">
+        Landline: 011-4222-0392
+      </a>
+
+      <a href="https://wa.me/919990880975">
+        WhatsApp Us
+      </a>
+
+      <p>   H-30, South Extension Part 1, New Delhi</p>
+
+    </div>
+  </div>
+
+
+  <div class="container footer-bottom">
+    © 2026 Dr. Gupta's Dental Clinic. All rights reserved.
+  </div>
+
+</footer>
+
+
+<script src="script.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,1058 @@
+
+document.addEventListener('DOMContentLoaded',function(){
+
+  var els = document.querySelectorAll('.reveal');
+
+  var io = new IntersectionObserver(function(entries){
+
+    entries.forEach(function(e){
+
+      if(e.isIntersecting){
+
+        e.target.classList.add('in');
+
+        io.unobserve(e.target);
+
+      }
+
+    });
+
+  },{threshold:0.12});
+
+
+  els.forEach(function(el){io.observe(el);});
+
+  document.querySelectorAll('.stats-grid .num').forEach(function(counter){
+    var target = Number(counter.dataset.target);
+    var suffix = counter.dataset.suffix || '';
+    var startTime;
+    var duration = 1200;
+
+    function animateCounter(timestamp){
+      if (!startTime) startTime = timestamp;
+      var progress = Math.min((timestamp - startTime) / duration, 1);
+      var easedProgress = progress < 0.5
+        ? 4 * progress * progress * progress
+        : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+      counter.textContent = Math.round(target * easedProgress) + suffix;
+
+      if (progress < 1)
+        window.requestAnimationFrame(animateCounter);
+    }
+
+    window.requestAnimationFrame(animateCounter);
+  });
+
+  var modal = document.getElementById('appointmentModal');
+  var openButton = document.getElementById('openAppointmentModal');
+  var closeButtons = [
+    document.querySelector('.modal-close'),
+    document.getElementById('closeAppointmentModal')
+  ];
+  var medicationInputs = document.querySelectorAll('input[name="medication"]');
+  var medicationBox = document.getElementById('medicationBox');
+  var form = document.getElementById('appointmentForm');
+  var appointmentDate = document.getElementById('appointmentDate');
+  var appointmentTime = document.getElementById('appointmentTime');
+  var slotStatus = document.getElementById('slotStatus');
+  var scriptUrl = 'https://script.google.com/macros/s/AKfycbxnsEVOn7JUSTLJkm1QG50AJlkZyu1C4bGb6ArIB1JDbfo8BTgTIBG-SrnscNOrjfwm/exec';
+  var availableSlots = ['10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00'];
+  var bookedSlots = {};
+  var appointmentStep1 = document.getElementById('appointmentStep1');
+  var appointmentStep2 = document.getElementById('appointmentStep2');
+  var stepIndicator1 = document.getElementById('stepIndicator1');
+  var stepIndicator2 = document.getElementById('stepIndicator2');
+  var nextAppointmentStep = document.getElementById('nextAppointmentStep');
+  var backAppointmentStep = document.getElementById('backAppointmentStep');
+  var skipClinicalStep = document.getElementById('skipClinicalStep');
+  var header = document.querySelector('header');
+  var menuToggle = document.querySelector('.menu-toggle');
+  var navigationLinks = document.querySelectorAll('nav a');
+  function closeMenu(){
+
+    header.classList.remove('menu-open');
+
+    if (menuToggle)
+      menuToggle.innerHTML = '&#9776;';
+      menuToggle.setAttribute('aria-label', 'Open menu');
+      menuToggle.setAttribute('aria-expanded', 'false');
+  }
+
+  if (menuToggle)
+
+    menuToggle.addEventListener('click',
+      function(){
+        var isOpen = header.classList.toggle('menu-open');
+
+        menuToggle.innerHTML = isOpen ? '&times;' : '&#9776;';
+        menuToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+        menuToggle.setAttribute('aria-expanded',String(isOpen));
+      }
+    );
+
+  navigationLinks.forEach(function(link){
+    link.addEventListener('click', function(){
+      navigationLinks.forEach(function(item){
+        item.classList.remove('active');
+      });
+      link.classList.add('active');
+      closeMenu();
+    });
+  });
+
+  function updateActiveNavigationLink(){
+    var currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    navigationLinks.forEach(function(link){
+      var linkTarget = link.getAttribute('href');
+      var isCurrentPage = linkTarget === currentPage;
+      var isHomeHash = currentPage === 'index.html' && !window.location.hash && linkTarget === 'index.html';
+      link.classList.toggle('active', isCurrentPage || isHomeHash);
+    });
+  }
+
+  updateActiveNavigationLink();
+  window.addEventListener('hashchange', updateActiveNavigationLink);
+
+  document.addEventListener('click', function(event){
+    if (header.classList.contains('menu-open') && !header.contains(event.target))
+      closeMenu();
+  });
+
+  window.addEventListener('resize', function(){
+    if (window.innerWidth > 900)
+      closeMenu();
+  });
+
+  
+  function showAppointmentStep(stepNumber){
+    var firstStep = stepNumber === 1;
+    appointmentStep1.classList.toggle('active', firstStep);
+    appointmentStep2.classList.toggle('active', !firstStep);
+    stepIndicator1.classList.toggle('active', firstStep);
+    stepIndicator2.classList.toggle('active', !firstStep);
+    modal.scrollTop = 0;
+  }
+
+  function validatePatientDetails(){
+    var requiredFields = ['name', 'age', 'phone', 'email', 'address', 'appointmentDate', 'appointmentTime', 'gender'];
+    for (var i = 0; i < requiredFields.length; i++) {
+      var field = document.getElementById(requiredFields[i]);
+      if (!field.checkValidity()) {
+        field.reportValidity();
+        return false;
+      }
+    }
+    return true;
+  }
+
+  function slotKey(date, time){
+    return date + '|' + time;
+  }
+
+  function readLocalBookedSlots(){
+    try {
+      return JSON.parse(localStorage.getItem('drGuptaBookedSlots') || '{}');
+    } catch (error) {
+      return {};
+    }
+  }
+
+  function formatSlotTime(time){
+    var parts = time.split(':');
+    var hour = Number(parts[0]);
+    var suffix = hour >= 12 ? 'PM' : 'AM';
+    var displayHour = hour % 12 || 12;
+    return displayHour + ':' + parts[1] + ' ' + suffix;
+  }
+
+  function renderAvailableSlots(){
+    var date = appointmentDate.value;
+    appointmentTime.innerHTML = '';
+
+    if (!date) {
+      appointmentTime.disabled = true;
+      appointmentTime.add(new Option('Select a date first', ''));
+      slotStatus.textContent = 'Choose a date to see available slots.';
+      return;
+    }
+
+    if (new Date(date + 'T00:00:00').getDay() === 0) {
+      appointmentTime.disabled = true;
+      appointmentTime.add(new Option('Clinic is closed on Sundays', ''));
+      slotStatus.textContent = 'Please choose Monday to Saturday.';
+      return;
+    }
+
+    appointmentTime.add(new Option('Select an available slot', ''));
+    var visibleSlots = availableSlots.filter(function(time){
+      return !bookedSlots[slotKey(date, time)];
+    });
+
+    visibleSlots.forEach(function(time){
+      appointmentTime.add(new Option(formatSlotTime(time), time));
+    });
+    appointmentTime.disabled = visibleSlots.length === 0;
+    slotStatus.textContent = visibleSlots.length
+      ? visibleSlots.length + ' slot' + (visibleSlots.length === 1 ? '' : 's') + ' available.'
+      : 'No slots are available on this date.';
+  }
+
+  function loadBookedSlots(){
+    bookedSlots = readLocalBookedSlots();
+    renderAvailableSlots();
+    fetch(scriptUrl + '?action=getBookedSlots')
+      .then(function(response){ return response.json(); })
+      .then(function(result){
+        var remoteSlots = result.bookedSlots || result.data || [];
+        if (Array.isArray(remoteSlots)) {
+          remoteSlots.forEach(function(slot){
+            if (slot.date && slot.time)
+              bookedSlots[slotKey(slot.date, slot.time)] = true;
+            else if (slot.appointmentDate && slot.appointmentTime)
+              bookedSlots[slotKey(slot.appointmentDate, slot.appointmentTime)] = true;
+          });
+          renderAvailableSlots();
+        }
+      })
+      .catch(function(){ /* Local bookings remain available if the shared endpoint is unavailable. */ });
+  }
+
+  appointmentDate.min = new Date().toISOString().split('T')[0];
+  appointmentDate.addEventListener('change', renderAvailableSlots);
+  loadBookedSlots();
+
+  function resetAppointmentSteps(){
+    showAppointmentStep(1);
+    medicationBox.classList.remove('visible');
+    renderAvailableSlots();
+  }
+
+  function openModal(){
+    resetAppointmentSteps();
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false' );
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal(){
+    modal.classList.remove('open');
+    modal.setAttribute( 'aria-hidden', 'true' );
+    document.body.style.overflow = '';
+  }
+
+
+  if (openButton)
+
+  openButton.addEventListener( 'click', openModal);
+
+  closeButtons.forEach(function(button){
+    if (button)
+      button.addEventListener('click', closeModal );
+  });
+
+  modal.addEventListener('click',
+    function(event){
+      if (event.target === modal)
+        closeModal();
+    }
+  );
+
+
+  document.addEventListener('keydown',
+    function(event){
+
+      if (
+        event.key === 'Escape' && modal.classList.contains('open'))
+        {
+        closeModal();
+      }
+
+      if (event.key === 'Escape')
+        closeMenu();
+    }
+  );
+
+  nextAppointmentStep.addEventListener('click', function(){
+    if (validatePatientDetails())
+      showAppointmentStep(2);
+  });
+
+  backAppointmentStep.addEventListener('click', function(){
+    showAppointmentStep(1);
+  });
+
+  medicationInputs.forEach(function(radio){
+
+    radio.addEventListener(
+      'change',
+      function(){
+
+        if (this.value === 'yes') {
+
+          medicationBox.classList.add('visible');
+
+        } else {
+
+          medicationBox.classList.remove( 'visible');
+
+          var textarea = document.getElementById('medicineDetails');
+
+          if (textarea)  textarea.value = '';
+        }
+      }
+    );
+  });
+
+
+  function getCheckedValues(name){
+    return Array.from(document.querySelectorAll('input[name="' + name + '"]:checked'))
+      .map(function(input){ return input.value; })
+      .join(', ');
+  }
+  
+  function submitAppointment(){
+    var medicationRadio = document.querySelector('input[name="medication"]:checked');
+    var medicationDetails = document.getElementById('medicineDetails');
+    var appointmentId = 'APT-' + Date.now() + '-' + Math.random().toString(36).substring(2, 7).toUpperCase();
+    var value = function(id){
+      var field = document.getElementById(id);
+      return field ? field.value.trim() : '';
+    };
+    var selected = function(name){ var input = document.querySelector('input[name="' + name + '"]:checked'); return input ? input.value : ''; };
+    var formData = {
+      appointmentId:appointmentId,
+      name:value('name'), age:document.getElementById('age').value, phone:value('phone'), address:value('address'),
+      email:value('email'), gender:document.getElementById('gender').value, appointmentDate:document.getElementById('appointmentDate').value, appointmentTime:document.getElementById('appointmentTime').value,
+      reasonForVisit:value('reasonForVisit'), dentalProblem:document.getElementById('dentalProblem').value, painLevel:document.getElementById('painLevel').value,
+      previousDentalTreatment:document.getElementById('previousDentalTreatment').value,
+      medication:medicationRadio ? medicationRadio.value : 'no',
+      medicineDetails:medicationRadio && medicationRadio.value === 'yes' ? value('medicineDetails') : '',
+      allergies:value('allergies'), medicalHistory:value('medicalHistory'), additionalClinicalDetails:value('additionalClinicalDetails'),
+      smoking:document.querySelector('input[name="habitSmoking"]').checked ? 'Yes' : 'No',
+      smokingFrequency:document.querySelector('select[name="habitSmokingFrequency"]').value,
+      smokingDuration:document.querySelector('select[name="habitSmokingDuration"]').value,
+      smokelessTobacco:document.querySelector('input[name="habitTobacco"]').checked ? 'Yes' : 'No',
+      smokelessTobaccoFrequency:document.querySelector('select[name="habitTobaccoFrequency"]').value,
+      smokelessTobaccoDuration:document.querySelector('select[name="habitTobaccoDuration"]').value,
+      paanChewing:document.querySelector('input[name="habitPaan"]').checked ? 'Yes' : 'No',
+      paanChewingFrequency:document.querySelector('select[name="habitPaanFrequency"]').value,
+      paanChewingDuration:document.querySelector('select[name="habitPaanDuration"]').value,
+      alcohol:document.querySelector('input[name="habitAlcohol"]').checked ? 'Yes' : 'No',
+      alcoholFrequency:document.querySelector('select[name="habitAlcoholFrequency"]').value,
+      alcoholDuration:document.querySelector('select[name="habitAlcoholDuration"]').value,
+      cleaningType:getCheckedValues('cleaningType'), cleaningMethod:getCheckedValues('cleaningMethod'), brushingFrequency:selected('brushingFrequency'),
+      cleaningMaterial:getCheckedValues('cleaningMaterial'), cleaningMaterialOther:value('cleaningMaterialOther'), brushingTime:selected('brushingTime'),
+      toothbrushChangeFrequency:selected('toothbrushChangeFrequency'), durationOfCleaning:value('durationOfCleaning'), oralHygieneAid:getCheckedValues('oralHygieneAid')
+    };
+    fetch(scriptUrl,{method:'POST',body:new URLSearchParams(formData)})
+      .then(function(response){ return response.text(); })
+      .then(function(text){
+        var result;
+        try { result = JSON.parse(text); } catch(error) { throw new Error('Invalid response from Google Apps Script.'); }
+        if (result.status === 'success') {
+          bookedSlots[slotKey(appointmentDate.value, appointmentTime.value)] = true;
+          localStorage.setItem('drGuptaBookedSlots', JSON.stringify(bookedSlots));
+          alert('Appointment submitted successfully!');
+          form.reset();
+          resetAppointmentSteps();
+          closeModal();
+        } else {
+          alert('Failed to submit: ' + (result.message || 'Unknown error'));
+        }
+      })
+      .catch(function(error){ console.error('Submit error:', error); alert('Failed to submit appointment. ' + error.message); });
+  }
+
+  skipClinicalStep.addEventListener('click', submitAppointment);
+  form.addEventListener('submit', function(event){ event.preventDefault(); submitAppointment(); });
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const carousel = document.getElementById("heroCarousel");
+
+  if (!carousel) return;
+
+
+  const slides = carousel.querySelectorAll(".hero-slide");
+
+  const dots = carousel.querySelectorAll(".carousel-dot");
+
+  const previousButton =
+    carousel.querySelector(".carousel-prev");
+
+  const nextButton =
+    carousel.querySelector(".carousel-next");
+
+
+  let currentSlide = 0;
+
+  let autoPlay;
+
+
+  /* =====================================================
+     SHOW SLIDE
+  ===================================================== */
+
+  function showSlide(index) {
+
+    if (index >= slides.length) {
+      index = 0;
+    }
+
+    if (index < 0) {
+      index = slides.length - 1;
+    }
+
+
+    slides.forEach(function (slide) {
+
+      slide.classList.remove("active");
+
+    });
+
+
+    dots.forEach(function (dot) {
+
+      dot.classList.remove("active");
+
+    });
+
+
+    slides[index].classList.add("active");
+
+    dots[index].classList.add("active");
+
+
+    currentSlide = index;
+
+  }
+
+
+  /* =====================================================
+     NEXT
+  ===================================================== */
+
+  function nextSlide() {
+
+    showSlide(currentSlide + 1);
+
+  }
+
+
+  /* =====================================================
+     PREVIOUS
+  ===================================================== */
+
+  function previousSlide() {
+
+    showSlide(currentSlide - 1);
+
+  }
+
+
+  /* =====================================================
+     BUTTONS
+  ===================================================== */
+
+  nextButton.addEventListener(
+    "click",
+    function () {
+
+      nextSlide();
+
+      restartAutoPlay();
+
+    }
+  );
+
+
+  previousButton.addEventListener(
+    "click",
+    function () {
+
+      previousSlide();
+
+      restartAutoPlay();
+
+    }
+  );
+
+
+  /* =====================================================
+     DOTS
+  ===================================================== */
+
+  dots.forEach(function (dot, index) {
+
+    dot.addEventListener(
+      "click",
+      function () {
+
+        showSlide(index);
+
+        restartAutoPlay();
+
+      }
+    );
+
+  });
+
+
+  /* =====================================================
+     AUTO PLAY
+  ===================================================== */
+
+  function startAutoPlay() {
+
+    autoPlay = setInterval(
+      nextSlide,
+      4000
+    );
+
+  }
+
+
+  function restartAutoPlay() {
+
+    clearInterval(autoPlay);
+
+    startAutoPlay();
+
+  }
+
+
+  /* Start */
+
+  showSlide(0);
+
+  startAutoPlay();
+
+
+  /* =====================================================
+     PAUSE WHEN MOUSE IS OVER IMAGE
+  ===================================================== */
+
+  carousel.addEventListener(
+    "mouseenter",
+    function () {
+
+      clearInterval(autoPlay);
+
+    }
+  );
+
+
+  carousel.addEventListener(
+    "mouseleave",
+    function () {
+
+      startAutoPlay();
+
+    }
+  );
+
+
+});
+
+
+// service section slider starts here 
+
+/* =========================================================
+   SERVICES HORIZONTAL SLIDER
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const slider = document.querySelector(".services-slider");
+    const nextBtn = document.querySelector(".service-next");
+    const prevBtn = document.querySelector(".service-prev");
+    const dots = document.querySelectorAll(".service-dot");
+
+    if (!slider) return;
+
+
+    /* =====================================================
+       SETTINGS
+    ===================================================== */
+
+    const AUTO_SLIDE_TIME = 2000;   // 2 seconds
+    const SLIDE_DURATION = 800;    // smooth animation
+
+
+    /* =====================================================
+       GET ORIGINAL CARDS
+    ===================================================== */
+
+    let originalCards = Array.from(
+        slider.querySelectorAll(".service-card")
+    );
+
+    const totalCards = originalCards.length;
+
+    if (totalCards === 0) return;
+
+
+    /* =====================================================
+       CLONE CARDS
+       
+       We add clones after the original cards.
+       This allows the slider to continue moving smoothly
+       from the last card to the first card.
+    ===================================================== */
+
+    originalCards.forEach(function (card) {
+
+        const clone = card.cloneNode(true);
+
+        clone.classList.add("service-card-clone");
+
+        slider.appendChild(clone);
+
+    });
+
+
+    /* =====================================================
+       VARIABLES
+    ===================================================== */
+
+    let currentIndex = 0;
+
+    let autoSlide = null;
+
+    let isAnimating = false;
+
+
+    /* =====================================================
+       GET CARD STEP
+    ===================================================== */
+
+    function getCardStep() {
+
+        const card = slider.querySelector(".service-card");
+
+        if (!card) return 0;
+
+        const cardWidth = card.getBoundingClientRect().width;
+
+        const sliderStyle = window.getComputedStyle(slider);
+
+        const gap = parseFloat(sliderStyle.gap) || 0;
+
+        return cardWidth + gap;
+    }
+
+
+    /* =====================================================
+       UPDATE DOTS
+    ===================================================== */
+
+    function updateDots() {
+
+        if (!dots.length) return;
+
+        /*
+         * We have only 5 dots in the HTML.
+         * The dots represent the general slider position.
+         */
+
+        const dotIndex =
+            currentIndex % dots.length;
+
+        dots.forEach(function (dot, index) {
+
+            dot.classList.toggle(
+                "active",
+                index === dotIndex
+            );
+
+        });
+
+    }
+
+
+    /* =====================================================
+       MOVE TO SLIDE
+    ===================================================== */
+
+    function moveToSlide(index, smooth = true) {
+
+        const step = getCardStep();
+
+        if (!step) return;
+
+        slider.scrollTo({
+
+            left: step * index,
+
+            behavior: smooth
+                ? "smooth"
+                : "auto"
+
+        });
+
+        currentIndex = index;
+
+        updateDots();
+
+    }
+
+
+    /* =====================================================
+       NEXT SLIDE
+    ===================================================== */
+
+    function nextSlide() {
+
+        if (isAnimating) return;
+
+        isAnimating = true;
+
+        currentIndex++;
+
+        const step = getCardStep();
+
+        slider.scrollTo({
+
+            left: step * currentIndex,
+
+            behavior: "smooth"
+
+        });
+
+        updateDots();
+
+
+        /*
+         * After reaching the cloned first card,
+         * silently move back to the real first card.
+         */
+
+        if (currentIndex >= totalCards) {
+
+            setTimeout(function () {
+
+                slider.style.scrollBehavior = "auto";
+
+                currentIndex = 0;
+
+                slider.scrollLeft = 0;
+
+                updateDots();
+
+                /*
+                 * Restore smooth scrolling.
+                 */
+
+                requestAnimationFrame(function () {
+
+                    slider.style.scrollBehavior = "smooth";
+
+                });
+
+                isAnimating = false;
+
+            }, SLIDE_DURATION + 50);
+
+        } else {
+
+            setTimeout(function () {
+
+                isAnimating = false;
+
+            }, SLIDE_DURATION);
+
+        }
+
+    }
+
+
+    /* =====================================================
+       PREVIOUS SLIDE
+    ===================================================== */
+
+    function previousSlide() {
+
+        if (isAnimating) return;
+
+
+        /*
+         * If we're at the first real card,
+         * move to the last original card first.
+         */
+
+        if (currentIndex === 0) {
+
+            const step = getCardStep();
+
+            /*
+             * Temporarily position at the cloned
+             * last card.
+             */
+
+            slider.style.scrollBehavior = "auto";
+
+            currentIndex = totalCards;
+
+            slider.scrollLeft = step * currentIndex;
+
+
+            requestAnimationFrame(function () {
+
+                requestAnimationFrame(function () {
+
+                    slider.style.scrollBehavior = "smooth";
+
+                    currentIndex = totalCards - 1;
+
+                    slider.scrollTo({
+
+                        left: step * currentIndex,
+
+                        behavior: "smooth"
+
+                    });
+
+                    updateDots();
+
+                });
+
+            });
+
+        } else {
+
+            currentIndex--;
+
+            moveToSlide(currentIndex, true);
+
+        }
+
+    }
+
+
+    /* =====================================================
+       NEXT BUTTON
+    ===================================================== */
+
+    if (nextBtn) {
+
+        nextBtn.addEventListener(
+            "click",
+            function () {
+
+                nextSlide();
+
+                restartAutoSlide();
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       PREVIOUS BUTTON
+    ===================================================== */
+
+    if (prevBtn) {
+
+        prevBtn.addEventListener(
+            "click",
+            function () {
+
+                previousSlide();
+
+                restartAutoSlide();
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       DOT BUTTONS
+    ===================================================== */
+
+    dots.forEach(function (dot, index) {
+
+        dot.addEventListener(
+            "click",
+            function () {
+
+                /*
+                 * Stop current animation.
+                 */
+
+                isAnimating = false;
+
+                /*
+                 * Each dot moves approximately
+                 * two cards forward.
+                 */
+
+                const target =
+                    index * 2;
+
+                currentIndex =
+                    target % totalCards;
+
+                moveToSlide(
+                    currentIndex,
+                    true
+                );
+
+                restartAutoSlide();
+
+            }
+        );
+
+    });
+
+
+    /* =====================================================
+       AUTOMATIC SLIDE
+    ===================================================== */
+
+    function startAutoSlide() {
+
+        stopAutoSlide();
+
+        autoSlide = setInterval(
+            function () {
+
+                nextSlide();
+
+            },
+            AUTO_SLIDE_TIME
+        );
+
+    }
+
+
+    /* =====================================================
+       STOP AUTO SLIDE
+    ===================================================== */
+
+    function stopAutoSlide() {
+
+        if (autoSlide) {
+
+            clearInterval(autoSlide);
+
+            autoSlide = null;
+
+        }
+
+    }
+
+
+    /* =====================================================
+       RESTART AUTO SLIDE
+    ===================================================== */
+
+    function restartAutoSlide() {
+
+        stopAutoSlide();
+
+        startAutoSlide();
+
+    }
+
+
+    /* =====================================================
+       PAUSE WHEN MOUSE IS OVER SLIDER
+    ===================================================== */
+
+    slider.addEventListener(
+        "mouseenter",
+        function () {
+
+            stopAutoSlide();
+
+        }
+    );
+
+
+    slider.addEventListener(
+        "mouseleave",
+        function () {
+
+            startAutoSlide();
+
+        }
+    );
+
+
+    /* =====================================================
+       TOUCH SUPPORT
+    ===================================================== */
+
+    slider.addEventListener(
+        "touchstart",
+        function () {
+
+            stopAutoSlide();
+
+        },
+        {
+            passive: true
+        }
+    );
+
+
+    slider.addEventListener(
+        "touchend",
+        function () {
+
+            startAutoSlide();
+
+        },
+        {
+            passive: true
+        }
+    );
+
+
+    /* =====================================================
+       RESPONSIVE RESIZE
+    ===================================================== */
+
+    window.addEventListener(
+        "resize",
+        function () {
+
+            setTimeout(function () {
+
+                const step = getCardStep();
+
+                slider.style.scrollBehavior = "auto";
+
+                slider.scrollLeft =
+                    step * currentIndex;
+
+                slider.style.scrollBehavior = "smooth";
+
+            }, 100);
+
+        }
+    );
+
+
+    /* =====================================================
+       INITIAL POSITION
+    ===================================================== */
+
+    slider.style.scrollBehavior = "smooth";
+
+    slider.scrollLeft = 0;
+
+    updateDots();
+
+    startAutoSlide();
+
+});
+
+
+// service section slider ends here
