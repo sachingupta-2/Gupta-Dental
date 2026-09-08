@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dental Services | Dr. Gupta's Dental Clinic</title>
+
+<meta name="description" content="Dr. Tanupriya Gupta — 20 years of precision, magnification-guided restorative dentistry in South Extension, New Delhi. Ethical care, no over-treatment.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="emergency-care.css">
+</head>
+
+
+<body><!-- =========================================================
+     HEADER
+     ========================================================= -->
+
+<header>
+
+  <div class="header-info">
+    <div class="container header-info-wrap">
+      <div class="availability" aria-label="Clinic availability">
+        <span><strong>Availability:</strong> <span class="availability-hours">Monday - Saturday, 10:00 AM - 7:00 PM</span></span>
+        <span class="sunday-closed">Sunday: CLOSED</span>
+      </div>
+      <div class="header-contact" aria-label="Clinic contact details">
+        <a href="tel:+919990880975">Call: +91 99908 80975</a>
+        <a href="https://wa.me/919990880975" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container nav-wrap">
+
+    <div class="brand">
+
+      <img
+        src="logo_trimmed.png"
+        alt="Dr. Gupta's Dental Clinic logo"
+        style="width:44px;height:44px;border-radius:10px;object-fit:cover;"
+      >
+
+      <div class="brand-name">
+        Dr. Gupta's Dental Clinic
+      </div>
+
+    </div>
+
+
+    <nav>
+
+      <ul id="main-navigation">
+
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+
+        <li>
+          <a href="about.html">About</a>
+        </li>
+
+        <li>
+          <a href="difference.html">Our Difference</a>
+        </li>
+
+        <li>
+          <a href="services.html">Services</a>
+        </li>
+
+        <li>
+          <a href="reviews.html">Reviews</a>
+        </li>
+
+        <li>
+          <a href="contact.html">Contact</a>
+        </li>
+
+      </ul>
+
+    </nav>
+
+
+    <div class="nav-cta">
+
+      <button
+        type="button"
+        class="appointment-trigger"
+        id="openAppointmentModal"
+      >
+        Book Appointment
+      </button>
+
+      <button
+        type="button"
+        class="menu-toggle"
+        aria-label="Menu"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >
+        &#9776;
+      </button>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- =========================================================
+     APPOINTMENT MODAL
+     ========================================================= -->
+
+<div
+  class="appointment-modal-overlay"
+  id="appointmentModal"
+  aria-hidden="true"
+>
+
+  <div
+    class="appointment-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="appointmentTitle"
+  >
+
+    <button
+      type="button"
+      class="modal-close"
+      aria-label="Close appointment form"
+    >
+      &times;
+    </button>
+
+
+    <div class="modal-head">
+
+      <h3 id="appointmentTitle">
+        Book an Appointment
+      </h3>
+
+      <p>
+        Please fill in your details and we will contact you shortly.
+      </p>
+
+    </div>
+
+
+    <form class="appointment-form" id="appointmentForm">
+      <div class="appointment-progress" aria-label="Appointment form progress">
+        <div class="step-indicator active" id="stepIndicator1">1. Patient Details</div>
+        <div class="step-indicator" id="stepIndicator2">2. Personal Details <span class="optional-note">(Optional)</span></div>
+      </div>
+
+      <div class="appointment-step active" id="appointmentStep1">
+        <div class="form-grid">
+          <div class="form-group"><label for="name">Name</label><input id="name" name="name" type="text" placeholder="Enter your name" required></div>
+          <div class="form-group"><label for="age">Age</label><input id="age" name="age" type="number" min="1" placeholder="Age" required></div>
+          <div class="form-group"><label for="phone">Phone No</label><input id="phone" name="phone" type="tel" placeholder="Your phone number" required></div>
+          <div class="form-group"><label for="email">Email</label><input id="email" name="email" type="email" placeholder="Your email address" required></div>
+          <div class="form-group full"><label for="address">Address</label><input id="address" name="address" type="text" placeholder="Your address" required></div>
+          <div class="form-group"><label for="appointmentDate">Appointment Date</label><input type="date" id="appointmentDate" name="appointmentDate" required></div>
+          <div class="form-group"><label for="appointmentTime">Available Time Slot</label><select id="appointmentTime" name="appointmentTime" required disabled><option value="">Select a date first</option></select><small class="slot-status" id="slotStatus" aria-live="polite">Choose a date to see available slots.</small></div>
+          <div class="form-group"><label for="gender">Gender</label><select id="gender" name="gender" required><option value="">Select gender</option><option>Male</option><option>Female</option><option>Other</option></select></div>
+        </div>
+        <div class="step-actions">
+          <button type="button" class="secondary-btn" id="closeAppointmentModal">Cancel</button>
+          <button type="button" class="cta-btn" id="nextAppointmentStep">Next &rarr;</button>
+        </div>
+      </div>
+
+      <div class="appointment-step" id="appointmentStep2">
+        <div class="clinical-intro"><strong>Personal details are optional.</strong> You can provide them to help the dentist understand your concern before the appointment, or skip this section and submit with your basic details.</div>
+        <div class="form-grid">
+          <div class="form-group full"><label for="reasonForVisit">Reason for Visit</label><textarea id="reasonForVisit" name="reasonForVisit" placeholder="Briefly describe the reason for your visit"></textarea></div>
+          <div class="form-group"><label for="dentalProblem">Current Dental Problem</label><select id="dentalProblem" name="dentalProblem"><option value="">Select if applicable</option><option>Tooth Pain</option><option>Sensitivity</option><option>Swelling</option><option>Bleeding Gums</option><option>Broken / Chipped Tooth</option><option>Cavity</option><option>Missing Tooth</option><option>Routine Check-up</option><option>Cleaning</option><option>Other</option></select></div>
+          <div class="form-group"><label for="painLevel">Pain / Discomfort</label><select id="painLevel" name="painLevel"><option value="">Select if applicable</option><option>None</option><option>Mild</option><option>Moderate</option><option>Severe</option></select></div>
+          <div class="form-group"><label for="previousDentalTreatment">Previous Dental Treatment</label><select id="previousDentalTreatment" name="previousDentalTreatment"><option value="">Select if applicable</option><option>No Previous Treatment</option><option>Filling</option><option>Root Canal</option><option>Extraction</option><option>Implant</option><option>Crown / Bridge</option><option>Other</option></select></div>
+          <div class="form-group"><label>Currently Taking Any Medicine?</label><div class="radio-row"><label class="radio-option"><input type="radio" name="medication" value="yes"> Yes</label><label class="radio-option"><input type="radio" name="medication" value="no" checked> No</label></div></div>
+          <div class="form-group full medication-box" id="medicationBox"><label for="medicineDetails">Medicine Details</label><textarea id="medicineDetails" name="medicineDetails" placeholder="List medicines you are currently taking"></textarea></div>
+          <div class="form-group full"><label for="allergies">Known Allergies</label><textarea id="allergies" name="allergies" placeholder="Mention any known medicine or other allergies"></textarea></div>
+          <div class="form-group full"><label for="medicalHistory">Medical History</label><textarea id="medicalHistory" name="medicalHistory" placeholder="Mention any relevant medical history"></textarea></div>
+          <div class="form-group full"><label for="additionalClinicalDetails">Additional Clinical Details</label><textarea id="additionalClinicalDetails" name="additionalClinicalDetails" placeholder="Anything else you would like the dentist to know"></textarea></div>
+        </div>
+
+        <div class="clinical-section">
+          <h4 class="clinical-section-title">Adverse Habits / Adverse Oral Habits</h4>
+          <div class="clinical-table-wrap"><table class="clinical-table"><thead><tr><th>Type</th><th>Frequency</th><th>Duration</th></tr></thead><tbody>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitSmoking" value="Smoking"> Smoking</label></td><td><select name="habitSmokingFrequency"><option value="">Select</option><option>Occasional</option><option>Once Daily</option><option>Twice Daily</option><option>More than Twice Daily</option></select></td><td><select name="habitSmokingDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitTobacco" value="Smokeless Tobacco/snuff"> Smokeless Tobacco / Snuff</label></td><td><select name="habitTobaccoFrequency"><option value="">Select</option><option>Occasional</option><option>Once Daily</option><option>Twice Daily</option><option>More than Twice Daily</option></select></td><td><select name="habitTobaccoDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitPaan" value="Paan chewing (gutka, paanmasala)"> Paan chewing (gutka, paanmasala)</label></td><td><select name="habitPaanFrequency"><option value="">Select</option><option>Occasional</option><option>Once Daily</option><option>Twice Daily</option><option>More than Twice Daily</option></select></td><td><select name="habitPaanDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitAlcohol" value="Alcohol"> Alcohol</label></td><td><select name="habitAlcoholFrequency"><option value="">Select</option><option>Occasional</option><option>Once Weekly</option><option>2-3 Times Weekly</option><option>Daily</option></select></td><td><select name="habitAlcoholDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+          </tbody></table></div>
+        </div>
+
+        <div class="clinical-section"><h4 class="clinical-section-title">Oral Hygiene Practices</h4><div class="hygiene-grid">
+          <div class="form-group full"><label>i) Type of Cleaning</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Toothbrush"> Toothbrush</label><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Finger"> Finger</label><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Stick"> Stick</label><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Others"> Others</label></div></div>
+          <div class="form-group full"><label>ii) Method of Cleaning</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="cleaningMethod" value="Vertical"> Vertical</label><label class="clinical-check"><input type="checkbox" name="cleaningMethod" value="Horizontal"> Horizontal</label><label class="clinical-check"><input type="checkbox" name="cleaningMethod" value="Circular"> Circular</label></div></div>
+          <div class="form-group full"><label>iii) Frequency of Cleaning / Brushing</label><div class="option-grid"><label class="clinical-check"><input type="radio" name="brushingFrequency" value="Once"> Once</label><label class="clinical-check"><input type="radio" name="brushingFrequency" value="Twice"> Twice</label><label class="clinical-check"><input type="radio" name="brushingFrequency" value="Thrice"> Thrice</label></div></div>
+          <div class="form-group full"><label>iv) Materials Used</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Toothpaste"> Toothpaste</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Tooth Powder"> Tooth Powder</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Charcoal"> Charcoal</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Sand"> Sand</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Brick Powder"> Brick Powder</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Any Other"> Any Other</label></div><input type="text" id="cleaningMaterialOther" name="cleaningMaterialOther" placeholder="If any other, please specify"></div>
+          <div class="form-group full"><label>v) Time of Brushing</label><div class="option-grid"><label class="clinical-check"><input type="radio" name="brushingTime" value="Before Meal"> Before Meal</label><label class="clinical-check"><input type="radio" name="brushingTime" value="After Meals"> After Meals</label></div></div>
+          <div class="form-group full"><label>vi) Frequency of Changing the Tooth Brush</label><div class="option-grid"><label class="clinical-check"><input type="radio" name="toothbrushChangeFrequency" value="Once"> Once</label><label class="clinical-check"><input type="radio" name="toothbrushChangeFrequency" value="Twice"> Twice</label><label class="clinical-check"><input type="radio" name="toothbrushChangeFrequency" value="Thrice"> Thrice</label></div></div>
+          <div class="form-group"><label for="durationOfCleaning">vii) Duration of Cleaning</label><input type="text" id="durationOfCleaning" name="durationOfCleaning" placeholder="e.g. 2 minutes"></div>
+          <div class="form-group full"><label>viii) Other Oral Hygiene Aids Used</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Flossing"> Flossing</label><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Interdental Aids"> Interdental Aids</label><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Oral Mouth Rinse"> Oral Mouth Rinse</label><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Tongue Cleaner"> Tongue Cleaner</label></div></div>
+        </div></div>
+
+        <div class="step-actions"><button type="button" class="secondary-btn" id="backAppointmentStep">&larr; Back</button><div class="right-actions"><button type="button" class="secondary-btn" id="skipClinicalStep">Skip &amp; Submit</button><button type="submit" class="cta-btn">Submit Appointment</button></div></div>
+      </div>
+    </form>
+
+  </div>
+
+</div>
+
+
+<!-- =========================================================
+     EMERGENCY DENTAL CARE PAGE
+     Header & Footer are not included
+     Prefix: edc-
+========================================================= -->
+
+
+<!-- =========================
+     HERO SECTION
+========================= -->
+<section class="edc-hero">
+
+    <div class="edc-hero-inner">
+
+        <div class="edc-hero-content">
+
+            <span class="edc-eyebrow">
+                EMERGENCY DENTAL CARE
+            </span>
+
+            <h1>
+                When dental problems
+                <span>can't wait.</span>
+            </h1>
+
+            <p class="edc-hero-intro">
+                Sudden tooth pain, swelling, a broken tooth or a dental
+                injury can be distressing. Our approach to urgent dental
+                care begins with understanding the problem, relieving
+                discomfort where possible and deciding what treatment
+                should come next.
+            </p>
+
+            <div class="edc-hero-actions">
+
+                <a href="services.html#contact" class="edc-primary-btn">
+                    Request an Appointment
+                    <span>→</span>
+                </a>
+
+                <a href="#edc-problems" class="edc-secondary-btn">
+                    When should you seek care?
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="edc-hero-image">
+
+            <div class="edc-image-frame">
+
+                <img
+                    src="clinic_photos_shortlist/emergency dental1.jpeg"
+                    alt="Emergency dental care and urgent dental treatment"
+                >
+
+            </div>
+
+            <div class="edc-image-note">
+
+                <span class="edc-note-icon">+</span>
+
+                <div>
+                    <strong>Prompt attention matters.</strong>
+                    <span>Assessment before deciding what comes next.</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     INTRODUCTION
+========================= -->
+<section class="edc-intro">
+
+    <div class="edc-container">
+
+        <div class="edc-section-heading">
+
+            <span class="edc-eyebrow">
+                URGENT DENTAL PROBLEMS
+            </span>
+
+            <h2>
+                Not every dental problem
+                <span>should be put off.</span>
+            </h2>
+
+            <p>
+                Dental problems can sometimes develop suddenly or become
+                uncomfortable without warning. Prompt assessment can help
+                identify the cause of the problem and determine the most
+                appropriate next step.
+            </p>
+
+        </div>
+
+
+        <div class="edc-reasons-grid">
+
+            <div class="edc-reason-card">
+
+                <div class="edc-reason-number">
+                    01
+                </div>
+
+                <h3>
+                    Understand the Problem
+                </h3>
+
+                <p>
+                    A careful examination helps identify the likely source
+                    of pain, swelling, damage or other dental symptoms.
+                </p>
+
+            </div>
+
+
+            <div class="edc-reason-card">
+
+                <div class="edc-reason-number">
+                    02
+                </div>
+
+                <h3>
+                    Address Discomfort
+                </h3>
+
+                <p>
+                    Where appropriate, treatment focuses on addressing the
+                    immediate dental problem and helping restore comfort.
+                </p>
+
+            </div>
+
+
+            <div class="edc-reason-card">
+
+                <div class="edc-reason-number">
+                    03
+                </div>
+
+                <h3>
+                    Plan What Comes Next
+                </h3>
+
+                <p>
+                    Once the urgent concern has been assessed, further
+                    treatment can be planned according to the underlying
+                    dental condition.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     COMMON EMERGENCIES
+========================= -->
+<section class="edc-problems" id="edc-problems">
+
+    <div class="edc-container">
+
+        <div class="edc-section-heading">
+
+            <span class="edc-eyebrow">
+                COMMON DENTAL EMERGENCIES
+            </span>
+
+            <h2>
+                If something feels wrong,
+                <span>it's worth getting checked.</span>
+            </h2>
+
+            <p>
+                Urgent dental care may be appropriate for a range of
+                situations. The seriousness of a problem cannot always be
+                determined by symptoms alone, so an examination may be
+                recommended.
+            </p>
+
+        </div>
+
+
+        <div class="edc-problems-list">
+
+
+            <!-- PROBLEM 01 -->
+            <div class="edc-problem">
+
+                <div class="edc-problem-number">
+                    01
+                </div>
+
+                <div class="edc-problem-content">
+
+                    <h3>
+                        Severe or Sudden Toothache
+                    </h3>
+
+                    <p>
+                        Persistent, severe or suddenly developing tooth pain
+                        may have several causes, including decay, inflammation
+                        or problems affecting the tooth or surrounding
+                        tissues.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROBLEM 02 -->
+            <div class="edc-problem">
+
+                <div class="edc-problem-number">
+                    02
+                </div>
+
+                <div class="edc-problem-content">
+
+                    <h3>
+                        Dental Swelling
+                    </h3>
+
+                    <p>
+                        Swelling around a tooth, gum or face can require
+                        prompt assessment to determine its cause and the
+                        appropriate course of treatment.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROBLEM 03 -->
+            <div class="edc-problem">
+
+                <div class="edc-problem-number">
+                    03
+                </div>
+
+                <div class="edc-problem-content">
+
+                    <h3>
+                        Broken or Chipped Tooth
+                    </h3>
+
+                    <p>
+                        A damaged tooth may require timely assessment,
+                        particularly when there is pain, sensitivity or
+                        significant loss of tooth structure.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROBLEM 04 -->
+            <div class="edc-problem">
+
+                <div class="edc-problem-number">
+                    04
+                </div>
+
+                <div class="edc-problem-content">
+
+                    <h3>
+                        Lost Filling or Crown
+                    </h3>
+
+                    <p>
+                        A lost or damaged restoration can expose the underlying
+                        tooth and may require assessment and appropriate
+                        restorative care.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROBLEM 05 -->
+            <div class="edc-problem">
+
+                <div class="edc-problem-number">
+                    05
+                </div>
+
+                <div class="edc-problem-content">
+
+                    <h3>
+                        Dental Injury
+                    </h3>
+
+                    <p>
+                        An injury affecting a tooth or surrounding structures
+                        should be assessed promptly, particularly if the tooth
+                        has been displaced, fractured or knocked out.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROBLEM 06 -->
+            <div class="edc-problem">
+
+                <div class="edc-problem-number">
+                    06
+                </div>
+
+                <div class="edc-problem-content">
+
+                    <h3>
+                        Persistent Dental Sensitivity
+                    </h3>
+
+                    <p>
+                        New or significant sensitivity, especially when it
+                        persists or is associated with pain, may require
+                        clinical assessment.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     WHAT WE DO
+========================= -->
+<section class="edc-treatment">
+
+    <div class="edc-container">
+
+        <div class="edc-treatment-grid">
+
+            <div class="edc-treatment-image">
+
+                <img
+                    src="clinic_photos_shortlist/emergency dental2.jpeg"
+                    alt="Urgent dental examination and treatment"
+                >
+
+            </div>
+
+
+            <div class="edc-treatment-content">
+
+                <span class="edc-eyebrow">
+                    OUR APPROACH
+                </span>
+
+                <h2>
+                    First understand the cause,
+                    <span>then treat the problem.</span>
+                </h2>
+
+                <p>
+                    Emergency dental care is not simply about treating the
+                    symptom. We first try to understand what is causing the
+                    problem and assess the condition of the affected tooth
+                    and surrounding tissues.
+                </p>
+
+                <p>
+                    Depending on the diagnosis, treatment may focus on
+                    relieving the immediate problem, protecting the tooth
+                    or planning definitive treatment.
+                </p>
+
+
+                <div class="edc-treatment-list">
+
+                    <div class="edc-treatment-item">
+
+                        <span>✓</span>
+
+                        <div>
+
+                            <strong>Clinical examination</strong>
+
+                            <p>
+                                We assess the affected area and understand
+                                your symptoms and dental history.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="edc-treatment-item">
+
+                        <span>✓</span>
+
+                        <div>
+
+                            <strong>Diagnosis</strong>
+
+                            <p>
+                                The findings help determine the likely source
+                                of the dental problem.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="edc-treatment-item">
+
+                        <span>✓</span>
+
+                        <div>
+
+                            <strong>Immediate management</strong>
+
+                            <p>
+                                Where appropriate, treatment is directed
+                                towards managing the urgent dental concern.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="edc-treatment-item">
+
+                        <span>✓</span>
+
+                        <div>
+
+                            <strong>Definitive treatment planning</strong>
+
+                            <p>
+                                Further treatment is discussed once the
+                                underlying problem has been understood.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     TYPES OF TREATMENT
+========================= -->
+<section class="edc-options">
+
+    <div class="edc-container">
+
+        <div class="edc-section-heading">
+
+            <span class="edc-eyebrow">
+                TREATMENT MAY VARY
+            </span>
+
+            <h2>
+                The right treatment depends
+                <span>on the cause.</span>
+            </h2>
+
+            <p>
+                Once the dental problem has been assessed, the appropriate
+                treatment depends on what is causing the symptoms and the
+                condition of the affected tooth.
+            </p>
+
+        </div>
+
+
+        <div class="edc-options-grid">
+
+
+            <div class="edc-option-card">
+
+                <span class="edc-option-number">
+                    01
+                </span>
+
+                <h3>
+                    Restorative Treatment
+                </h3>
+
+                <p>
+                    Damaged or decayed teeth may require appropriate
+                    restorative treatment to rebuild and protect the
+                    remaining tooth structure.
+                </p>
+
+            </div>
+
+
+            <div class="edc-option-card">
+
+                <span class="edc-option-number">
+                    02
+                </span>
+
+                <h3>
+                    Root Canal Treatment
+                </h3>
+
+                <p>
+                    When the dental pulp is affected, root canal treatment
+                    may be considered where the tooth can be predictably
+                    saved and maintained.
+                </p>
+
+            </div>
+
+
+            <div class="edc-option-card">
+
+                <span class="edc-option-number">
+                    03
+                </span>
+
+                <h3>
+                    Dental Extraction
+                </h3>
+
+                <p>
+                    In some situations, a tooth may not be predictably
+                    restorable and extraction may need to be considered.
+                </p>
+
+            </div>
+
+
+            <div class="edc-option-card">
+
+                <span class="edc-option-number">
+                    04
+                </span>
+
+                <h3>
+                    Management of Dental Injury
+                </h3>
+
+                <p>
+                    Injured teeth require assessment to determine the extent
+                    of damage and whether the tooth can be protected or
+                    restored.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PROCESS
+========================= -->
+<section class="edc-process">
+
+    <div class="edc-container">
+
+        <div class="edc-section-heading">
+
+            <span class="edc-eyebrow">
+                WHAT TO EXPECT
+            </span>
+
+            <h2>
+                A calm and structured
+                <span>approach to urgent care.</span>
+            </h2>
+
+            <p>
+                Dental emergencies can feel stressful. Our aim is to keep the
+                process clear, focused and centred on understanding your
+                immediate concern.
+            </p>
+
+        </div>
+
+
+        <div class="edc-process-grid">
+
+
+            <div class="edc-process-card">
+
+                <span class="edc-process-number">
+                    01
+                </span>
+
+                <div class="edc-process-line"></div>
+
+                <h3>
+                    Listen
+                </h3>
+
+                <p>
+                    We understand what happened, when the symptoms began and
+                    what you are experiencing.
+                </p>
+
+            </div>
+
+
+            <div class="edc-process-card">
+
+                <span class="edc-process-number">
+                    02
+                </span>
+
+                <div class="edc-process-line"></div>
+
+                <h3>
+                    Examine
+                </h3>
+
+                <p>
+                    The affected tooth and surrounding structures are
+                    carefully examined.
+                </p>
+
+            </div>
+
+
+            <div class="edc-process-card">
+
+                <span class="edc-process-number">
+                    03
+                </span>
+
+                <div class="edc-process-line"></div>
+
+                <h3>
+                    Stabilise
+                </h3>
+
+                <p>
+                    Where appropriate, the immediate dental concern is
+                    managed to restore comfort and protect the area.
+                </p>
+
+            </div>
+
+
+            <div class="edc-process-card">
+
+                <span class="edc-process-number">
+                    04
+                </span>
+
+                <div class="edc-process-line"></div>
+
+                <h3>
+                    Restore
+                </h3>
+
+                <p>
+                    Further treatment is planned according to the diagnosis
+                    and the long-term needs of the tooth.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     IMPORTANT SECTION
+========================= -->
+<section class="edc-important">
+
+    <div class="edc-container">
+
+        <div class="edc-important-inner">
+
+            <div class="edc-important-content">
+
+                <span class="edc-eyebrow">
+                    WHEN TO SEEK URGENT HELP
+                </span>
+
+                <h2>
+                    Don't wait if symptoms
+                    <span>are getting worse.</span>
+                </h2>
+
+                <p>
+                    Severe or worsening dental pain, significant swelling,
+                    dental trauma or other rapidly developing symptoms should
+                    be assessed promptly.
+                </p>
+
+                <p>
+                    If there is significant facial swelling affecting
+                    breathing or swallowing, uncontrolled bleeding, or a
+                    serious injury, seek emergency medical care immediately.
+                </p>
+
+            </div>
+
+
+            <div class="edc-important-points">
+
+                <div class="edc-important-point">
+
+                    <span>01</span>
+
+                    <p>
+                        Severe or rapidly worsening pain
+                    </p>
+
+                </div>
+
+
+                <div class="edc-important-point">
+
+                    <span>02</span>
+
+                    <p>
+                        Significant swelling of the face or mouth
+                    </p>
+
+                </div>
+
+
+                <div class="edc-important-point">
+
+                    <span>03</span>
+
+                    <p>
+                        Significant dental injury or trauma
+                    </p>
+
+                </div>
+
+
+                <div class="edc-important-point">
+
+                    <span>04</span>
+
+                    <p>
+                        Difficulty breathing or swallowing
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FINAL CTA
+========================= -->
+<section class="edc-final-cta" id="contact">
+
+    <div class="edc-final-cta-inner">
+
+        <span class="edc-eyebrow">
+            NEED URGENT DENTAL CARE?
+        </span>
+
+        <h2>
+            Don't ignore a dental problem
+            <span>that needs attention.</span>
+        </h2>
+
+        <p>
+            If you are experiencing a sudden dental problem, contact the
+            clinic to discuss an appropriate appointment and next step.
+        </p>
+
+        <a
+            href="services.html#contact"
+            class="edc-primary-btn edc-cta-btn"
+        >
+            Request an Appointment
+            <span>→</span>
+        </a>
+
+    </div>
+
+</section>
+
+<footer>
+
+  <div class="container footer-grid">
+
+
+    <div>
+
+      <h4>
+        Dr. Gupta's Dental Clinic
+      </h4>
+
+      <p>
+        Precision, magnification-guided dentistry in South Extension, New Delhi since 2013.
+      </p>
+
+    </div>
+
+
+    <div>
+
+      <h4>
+        Quick Links
+      </h4>
+
+      <a href="about.html">
+        About
+      </a>
+
+      <a href="services.html">
+        Services
+      </a>
+
+      <a href="reviews.html">
+        Reviews
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+    </div>
+
+
+    <div>
+
+      <h4>
+        Contact
+      </h4>
+
+      <a href="tel:+919990880975">
+        Mobile: 99908 80975
+      </a>
+
+      <a href="tel:+911142220392">
+        Landline: 011-4222-0392
+      </a>
+
+      <a href="https://wa.me/919990880975">
+        WhatsApp Us
+      </a>
+
+      <p>   H-30, South Extension Part 1, New Delhi</p>
+
+    </div>
+  </div>
+
+
+  <div class="container footer-bottom">
+    © 2026 Dr. Gupta's Dental Clinic. All rights reserved.
+  </div>
+
+</footer>
+
+<script src="script.js" defer></script>
+
+</body>
+</html>

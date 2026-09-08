@@ -1,0 +1,1166 @@
+/* =========================================================
+   ORAL HEALTH EDUCATION
+   MIDDLE CONTENT ONLY
+========================================================= */
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+.oh-hero,
+.oh-intro-section,
+.oh-features,
+.oh-guidance,
+.oh-final-cta {
+
+    box-sizing: border-box;
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.oh-hero {
+
+    padding: 90px 24px 100px;
+
+    background: #FAF7F0;
+
+}
+
+
+.oh-hero-inner {
+
+    max-width: 1180px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+
+}
+
+
+.oh-hero-content {
+
+    max-width: 570px;
+
+}
+
+
+.oh-eyebrow {
+
+    display: block;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: .15em;
+
+    text-transform: uppercase;
+
+    color: #C9A227;
+
+    margin-bottom: 14px;
+
+}
+
+
+.oh-hero h1 {
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(48px, 5vw, 68px);
+
+    line-height: 1.02;
+
+    font-weight: 600;
+
+    color: #12213F;
+
+    margin: 0 0 25px;
+
+}
+
+
+.oh-hero h1 span {
+
+    display: block;
+
+    color: #C9A227;
+
+}
+
+
+.oh-hero-intro {
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    color: #5F6672;
+
+    max-width: 540px;
+
+    margin: 0 0 32px;
+
+}
+
+
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
+
+.oh-hero-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 24px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.oh-primary-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    padding: 15px 24px;
+
+    background: #C9A227;
+
+    color: #12213F;
+
+    text-decoration: none;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    border-radius: 4px;
+
+    transition:
+        transform .3s ease,
+        background .3s ease,
+        box-shadow .3s ease;
+
+}
+
+
+.oh-primary-btn span {
+
+    font-size: 20px;
+
+    line-height: 1;
+
+}
+
+
+.oh-primary-btn:hover {
+
+    transform: translateY(-2px);
+
+    background: #D5B33D;
+
+    box-shadow: 0 8px 22px rgba(18,33,63,.12);
+
+}
+
+
+.oh-secondary-btn {
+
+    position: relative;
+
+    color: #12213F;
+
+    text-decoration: none;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    padding-bottom: 5px;
+
+}
+
+
+.oh-secondary-btn::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 100%;
+
+    height: 1px;
+
+    background: #C9A227;
+
+    transform: scaleX(.4);
+
+    transform-origin: left;
+
+    transition: transform .3s ease;
+
+}
+
+
+.oh-secondary-btn:hover::after {
+
+    transform: scaleX(1);
+
+}
+
+
+/* =========================================================
+   HERO IMAGE
+========================================================= */
+
+.oh-hero-image {
+
+    position: relative;
+
+    padding-bottom: 30px;
+
+}
+
+
+.oh-image-frame {
+
+    width: 100%;
+
+    height: 570px;
+
+    overflow: hidden;
+
+    border-radius: 14px;
+
+    background: #E9E4D8;
+
+}
+
+
+.oh-image-frame img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    transition:
+        transform .8s cubic-bezier(.2,.8,.2,1);
+
+}
+
+
+.oh-image-frame:hover img {
+
+    transform: scale(1.03);
+
+}
+
+
+/* =========================================================
+   IMAGE NOTE
+========================================================= */
+
+.oh-image-note {
+
+    position: absolute;
+
+    left: -35px;
+
+    bottom: 0;
+
+    width: 290px;
+
+    padding: 20px 22px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 14px;
+
+    background: #FFFFFF;
+
+    border: 1px solid #E9E4D8;
+
+    border-radius: 9px;
+
+    box-shadow: 0 12px 35px rgba(18,33,63,.10);
+
+}
+
+
+.oh-note-icon {
+
+    width: 30px;
+
+    height: 30px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #EFE6C8;
+
+    color: #8A6D0E;
+
+    border-radius: 50%;
+
+    font-size: 20px;
+
+    line-height: 1;
+
+}
+
+
+.oh-image-note strong {
+
+    display: block;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 13px;
+
+    color: #12213F;
+
+    margin-bottom: 5px;
+
+}
+
+
+.oh-image-note span:not(.oh-note-icon) {
+
+    display: block;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    color: #6B7280;
+
+}
+
+
+/* =========================================================
+   INTRODUCTION
+========================================================= */
+
+.oh-intro-section {
+
+    padding: 105px 24px;
+
+    background: #FFFFFF;
+
+}
+
+
+.oh-section-inner {
+
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: .9fr 1.1fr;
+
+    gap: 80px;
+
+    align-items: start;
+
+}
+
+
+.oh-section-heading h2 {
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 44px;
+
+    line-height: 1.08;
+
+    font-weight: 600;
+
+    color: #12213F;
+
+    margin: 0;
+
+}
+
+
+.oh-intro-text {
+
+    padding-top: 5px;
+
+}
+
+
+.oh-intro-text p {
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.85;
+
+    color: #68707C;
+
+    margin: 0 0 20px;
+
+}
+
+
+.oh-intro-text p:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.oh-features {
+
+    padding: 105px 24px;
+
+    background: #FAF7F0;
+
+}
+
+
+.oh-features-inner {
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+}
+
+
+.oh-features-head {
+
+    max-width: 600px;
+
+    margin-bottom: 55px;
+
+}
+
+
+.oh-features-head h2 {
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 44px;
+
+    line-height: 1.08;
+
+    font-weight: 600;
+
+    color: #12213F;
+
+    margin: 0;
+
+}
+
+
+/* =========================================================
+   FEATURE GRID
+========================================================= */
+
+.oh-feature-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.oh-feature-card {
+
+    position: relative;
+
+    min-height: 250px;
+
+    padding: 32px;
+
+    background: #FFFFFF;
+
+    border: 1px solid #E9E4D8;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+
+}
+
+
+.oh-feature-card:hover {
+
+    transform: translateY(-5px);
+
+    border-color: #D8C58A;
+
+    box-shadow: 0 15px 35px rgba(18,33,63,.08);
+
+}
+
+
+.oh-card-number {
+
+    position: absolute;
+
+    top: 22px;
+
+    right: 25px;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 30px;
+
+    font-weight: 600;
+
+    color: #E9E0C5;
+
+}
+
+
+.oh-card-icon {
+
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #EFE6C8;
+
+    border-radius: 50%;
+
+    margin-bottom: 22px;
+
+}
+
+
+.oh-card-icon svg {
+
+    width: 21px;
+
+    height: 21px;
+
+    fill: #8A6D0E;
+
+}
+
+
+.oh-feature-card h3 {
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 25px;
+
+    line-height: 1.15;
+
+    font-weight: 700;
+
+    color: #12213F;
+
+    margin: 0 0 10px;
+
+}
+
+
+.oh-feature-card p {
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    color: #6B7280;
+
+    margin: 0;
+
+}
+
+
+/* =========================================================
+   GUIDANCE SECTION
+========================================================= */
+
+.oh-guidance {
+
+    padding: 110px 24px;
+
+    background: #FFFFFF;
+
+}
+
+
+.oh-guidance-inner {
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+
+}
+
+
+.oh-guidance-image {
+
+    height: 520px;
+
+    overflow: hidden;
+
+    border-radius: 12px;
+
+}
+
+
+.oh-guidance-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center;
+
+}
+
+
+.oh-guidance-content {
+
+    max-width: 500px;
+
+}
+
+
+.oh-guidance-content h2 {
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 44px;
+
+    line-height: 1.08;
+
+    font-weight: 600;
+
+    color: #12213F;
+
+    margin: 0 0 20px;
+
+}
+
+
+.oh-guidance-content > p {
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    color: #6B7280;
+
+    margin: 0 0 28px;
+
+}
+
+
+/* =========================================================
+   GUIDANCE LIST
+========================================================= */
+
+.oh-guidance-list {
+
+    list-style: none;
+
+    padding: 0;
+
+    margin: 0;
+
+}
+
+
+.oh-guidance-list li {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 14px 0;
+
+    border-bottom: 1px solid #E9E4D8;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    color: #4F5661;
+
+}
+
+
+.oh-guidance-list li:first-child {
+
+    border-top: 1px solid #E9E4D8;
+
+}
+
+
+.oh-guidance-list li span {
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    color: #C9A227;
+
+    letter-spacing: .08em;
+
+}
+
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.oh-final-cta {
+
+    position: relative;
+
+    padding: 105px 24px;
+
+    background: #12213F;
+
+    overflow: hidden;
+
+}
+
+
+.oh-final-cta::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+
+    height: 420px;
+
+    border-radius: 50%;
+
+    background: rgba(201,162,39,.12);
+
+    top: -250px;
+
+    right: -100px;
+
+}
+
+
+.oh-final-cta::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+
+    height: 300px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(231,203,107,.15);
+
+    bottom: -190px;
+
+    left: -100px;
+
+}
+
+
+.oh-final-cta-inner {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 720px;
+
+    margin: 0 auto;
+
+    text-align: center;
+
+}
+
+
+.oh-final-cta .oh-eyebrow {
+
+    color: #C9A227;
+
+}
+
+
+.oh-final-cta h2 {
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(40px, 5vw, 56px);
+
+    line-height: 1.05;
+
+    font-weight: 600;
+
+    color: #12213F;
+
+    margin: 0 0 20px;
+
+}
+
+
+.oh-final-cta p {
+
+    max-width: 600px;
+
+    margin: 0 auto 32px;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.75;
+
+    color: #4B5563;
+
+}
+
+
+.oh-cta-btn {
+
+    background: #C9A227;
+
+    color: #12213F;
+
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+.oh-feature-card,
+.oh-guidance-image,
+.oh-guidance-content,
+.oh-section-heading,
+.oh-intro-text {
+
+    opacity: 0;
+
+    transform: translateY(25px);
+
+    transition:
+        opacity .7s ease,
+        transform .7s ease;
+
+}
+
+
+.oh-feature-card.oh-visible,
+.oh-guidance-image.oh-visible,
+.oh-guidance-content.oh-visible,
+.oh-section-heading.oh-visible,
+.oh-intro-text.oh-visible {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .oh-hero-inner {
+
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+
+    }
+
+
+    .oh-hero-content {
+
+        max-width: 700px;
+
+    }
+
+
+    .oh-hero-image {
+
+        max-width: 700px;
+
+        width: 100%;
+
+        margin: 0 auto;
+
+    }
+
+
+    .oh-section-inner {
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+    }
+
+
+    .oh-guidance-inner {
+
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+
+    }
+
+
+    .oh-guidance-content {
+
+        max-width: 700px;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .oh-hero {
+
+        padding: 65px 18px 80px;
+
+    }
+
+
+    .oh-hero h1 {
+
+        font-size: 46px;
+
+    }
+
+
+    .oh-hero-intro {
+
+        font-size: 15px;
+
+    }
+
+
+    .oh-hero-actions {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 18px;
+
+    }
+
+
+    .oh-image-frame {
+
+        height: 430px;
+
+    }
+
+
+    .oh-image-note {
+
+        position: relative;
+
+        left: 15px;
+
+        width: calc(100% - 30px);
+
+        margin-top: -20px;
+
+    }
+
+
+    .oh-intro-section,
+    .oh-features,
+    .oh-guidance {
+
+        padding: 75px 18px;
+
+    }
+
+
+    .oh-section-heading h2,
+    .oh-features-head h2,
+    .oh-guidance-content h2 {
+
+        font-size: 38px;
+
+    }
+
+
+    .oh-feature-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .oh-feature-card {
+
+        min-height: auto;
+
+        padding: 28px;
+
+    }
+
+
+    .oh-guidance-image {
+
+        height: 400px;
+
+    }
+
+
+    .oh-final-cta {
+
+        padding: 80px 20px;
+
+    }
+
+
+    .oh-final-cta h2 {
+
+        font-size: 40px;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .oh-hero h1 {
+
+        font-size: 40px;
+
+    }
+
+
+    .oh-image-frame {
+
+        height: 370px;
+
+    }
+
+
+    .oh-primary-btn {
+
+        width: 100%;
+
+    }
+
+
+    .oh-secondary-btn {
+
+        margin-left: 2px;
+
+    }
+
+}

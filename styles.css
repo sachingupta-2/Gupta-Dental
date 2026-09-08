@@ -1279,65 +1279,6 @@ stroke-width: 1.8;
   flex-shrink:0;
 }
 
-
-/* =========================================================
-   WHY CHOOSE US
-   ========================================================= */
-
-.cards-grid{
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:26px;
-}
-
-
-/*Prev version
-.cards-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:26px;
-}
-  */
-
-.card{
-  background:var(--white);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:30px 26px;
-  transition:transform .2s,box-shadow .2s,border-color .2s;
-}
-
-.card:hover{
-  transform:translateY(-4px);
-  border-color:var(--primary-hover);
-  box-shadow:0 14px 30px rgba(37,50,58,0.12);
-}
-
-.card-icon{
-  width:48px;
-  height:48px;
-  background:var(--light-blue);
-  color:var(--accent-dark);
-  border-radius:12px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:1.4rem;
-  margin-bottom:16px;
-}
-
-.card h3{
-  font-size:1.1rem;
-  color:var(--navy);
-  margin-bottom:8px;
-}
-
-.card p{
-  color:var(--gray);
-  font-size:0.92rem;
-}
-
-
 /* =========================================================
    ABOUT
    ========================================================= */
@@ -3092,410 +3033,7 @@ footer .footer-bottom{
   line-height:1.3;
 }
 
-
-/* =========================================================
-   WHY CHOOSE US
-   ONE BOX PER ROW
-========================================================= */
-
-.why-features-grid {
-    width: 100%;
-
-    display: flex;
-    flex-direction: column;
-
-    gap: 30px;
-}
-
-
-/* =========================================================
-   FEATURE BOX
-========================================================= */
-
-.why-feature {
-    position: relative;
-
-    display: grid;
-
-    grid-template-columns: 45% 55%;
-
-    width: 100%;
-
-    height: 390px;
-    min-height: 390px;
-    max-height: 390px;
-
-    margin: 0;
-
-    background: #ffffff;
-
-    border: 1px solid #e5e3dc;
-
-    border-radius: 22px;
-
-    overflow: hidden;
-
-    box-shadow:
-        0 8px 30px rgba(0, 0, 0, 0.05);
-
-    transition:
-        transform 0.45s cubic-bezier(.2,.8,.2,1),
-        box-shadow 0.45s ease,
-        border-color 0.45s ease;
-}
-
-
-/* =========================================================
-   HOVER
-========================================================= */
-
-.why-feature:hover {
-    transform: scale(1.012) translateY(-5px);
-
-    border-color: #e8c15a;
-
-    box-shadow:
-        0 22px 55px rgba(0, 0, 0, 0.12);
-}
-
-
-/* =========================================================
-   IMAGE
-========================================================= */
-
-.why-feature-image {
-    position: relative;
-
-    width: 100%;
-    height: 100%;
-
-    overflow: hidden;
-}
-
-
-.why-feature-image img {
-    display: block;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: fill;
-
-    object-position: center;
-
-    transform: scale(1);
-
-    transition:
-        transform 0.8s cubic-bezier(.2,.8,.2,1);
-}
-
-
-/* Image comes closer on hover */
-
-.why-feature:hover .why-feature-image img {
-    transform: scale(1.10);
-}
-
-
-/* =========================================================
-   NUMBER
-========================================================= */
-
-.why-image-number {
-    position: absolute;
-
-    left: 22px;
-    top: 22px;
-
-    z-index: 5;
-
-    width: 46px;
-    height: 46px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    background: #e8c15a;
-
-    color: #30343b;
-
-    font-size: 12px;
-
-    font-weight: 800;
-}
-
-
-/* =========================================================
-   TEXT
-========================================================= */
-
-.why-feature-content {
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    width: 100%;
-    height: 100%;
-
-    padding: 50px 60px;
-
-    min-width: 0;
-
-    overflow: hidden;
-}
-
-
-/* =========================================================
-   SMALL TITLE
-========================================================= */
-
-.why-small-title {
-    display: block;
-
-    margin-bottom: 16px;
-
-    color: #a88600;
-
-    font-size: 12px;
-
-    font-weight: 800;
-
-    letter-spacing: 2.2px;
-
-    line-height: 1.4;
-}
-
-
-/* =========================================================
-   MAIN HEADING
-========================================================= */
-
-.why-feature-content h3 {
-    margin: 0 0 20px;
-
-    color: #30343b;
-
-    font-size: 32px;
-
-    font-weight: 700;
-
-    line-height: 1.15;
-
-    letter-spacing: -0.4px;
-}
-
-
-.why-feature-content h3 span {
-    color: #a88600;
-}
-
-
-/* =========================================================
-   DESCRIPTION
-========================================================= */
-
-.why-feature-content p {
-    max-width: 600px;
-
-    margin: 0;
-
-    color: #686a6d;
-
-    font-size: 15px;
-
-    line-height: 1.8;
-}
-
-
-/* =========================================================
-   DIVIDER
-========================================================= */
-
-.why-line {
-    width: 100%;
-
-    max-width: 600px;
-
-    height: 1px;
-
-    margin: 25px 0 17px;
-
-    background: #e4e2dc;
-}
-
-
-/* =========================================================
-   BOTTOM
-========================================================= */
-
-.why-feature-bottom {
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-}
-
-
-.why-feature-bottom span {
-    color: #b18c00;
-
-    font-size: 12px;
-
-    font-weight: 800;
-}
-
-
-.why-feature-bottom strong {
-    color: #414347;
-
-    font-size: 12px;
-
-    font-weight: 600;
-}
-
-
-/* =========================================================
-   IMAGE ALWAYS LEFT, TEXT ALWAYS RIGHT
-========================================================= */
-
-.why-feature-reverse {
-    grid-template-columns: 45% 55%;
-}
-
-
-.why-feature-reverse .why-feature-image {
-    order: 1;
-}
-
-
-.why-feature-reverse .why-feature-content {
-    order: 2;
-}
-
-
-
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media (max-width: 900px) {
-
-    .why-feature {
-        height: 350px;
-
-        min-height: 350px;
-
-        max-height: 350px;
-
-        grid-template-columns: 45% 55%;
-    }
-
-        .why-feature-reverse {
-        grid-template-columns: 45% 55%;
-    }
-
-    .why-feature-content {
-        padding: 35px 40px;
-    }
-
-    .why-feature-content h3 {
-        font-size: 28px;
-    }
-
-    .why-feature-content p {
-        font-size: 14px;
-    }
-
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 600px) {
-
-    .why-features-grid {
-        gap: 22px;
-    }
-
-
-    .why-feature,
-    .why-feature-reverse {
-        display: flex;
-
-        flex-direction: column;
-
-        height: auto;
-
-        min-height: 0;
-
-        max-height: none;
-    }
-
-
-    /* Image */
-
-    .why-feature-image,
-    .why-feature-reverse .why-feature-image {
-        order: 1;
-
-        width: 100%;
-
-        height: 250px;
-
-        min-height: 250px;
-
-        max-height: 250px;
-    }
-
-
-    /* Text */
-
-    .why-feature-content,
-    .why-feature-reverse .why-feature-content {
-        order: 2;
-
-        width: 100%;
-
-        height: auto;
-
-        padding: 32px 25px 35px;
-
-        overflow: visible;
-    }
-
-
-    .why-feature-content h3 {
-        font-size: 27px;
-    }
-
-
-    .why-feature-content p {
-        font-size: 14px;
-
-        line-height: 1.75;
-    }
-
-
-    .why-small-title {
-        font-size: 10px;
-
-        letter-spacing: 1.8px;
-    }
-
-}
-
-
-/* ream moere for about page sarts here and end at line no 3662 */
+/* read more for about page sarts here and end at line no 3662 */
 
 /* =========================================================
    ABOUT DR. TANUPRIYA GUPTA
@@ -4493,8 +4031,432 @@ footer .footer-bottom{
 
 /* about us page education and experience starts here */
 
+/* =========================================================
+   CREDENTIALS
+========================================================= */
 
-.credentials{ padding:96px 24px; background:#FAF7F0; }
+.credentials {
+    padding: 96px 24px;
+    background: #FAF7F0;
+}
+
+.credentials-inner {
+    max-width: 920px;
+    margin: 0 auto;
+}
+
+.credentials-head {
+    text-align: center;
+    margin-bottom: 64px;
+}
+
+.credentials-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: #C9A227;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.credentials-head h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 600;
+    color: #12213F;
+    margin: 0 0 14px;
+}
+
+.credentials-head p {
+    font-size: 16px;
+    color: #6B7280;
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   TIMELINE
+========================================================= */
+
+.timeline {
+    position: relative;
+}
+
+.timeline::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+
+    left: 50%;
+
+    width: 2px;
+
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        #C9A227 6%,
+        #C9A227 94%,
+        transparent
+    );
+
+    transform: translateX(-50%);
+}
+
+
+/* =========================================================
+   TIMELINE ITEM
+========================================================= */
+
+.t-item {
+    position: relative;
+
+    width: 50%;
+
+    padding: 0 48px 56px;
+}
+
+.t-item:nth-child(odd) {
+    left: 0;
+    text-align: right;
+}
+
+.t-item:nth-child(even) {
+    left: 50%;
+    text-align: left;
+}
+
+.t-item:last-child {
+    padding-bottom: 0;
+}
+
+
+/* =========================================================
+   TIMELINE MARKER
+========================================================= */
+
+.t-marker {
+    position: absolute;
+
+    top: 2px;
+
+    width: 34px;
+    height: 34px;
+
+    border-radius: 50%;
+
+    background: #12213F;
+
+    border: 3px solid #C9A227;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.t-item:nth-child(odd) .t-marker {
+    right: -17px;
+}
+
+.t-item:nth-child(even) .t-marker {
+    left: -17px;
+}
+
+.t-marker svg {
+    width: 15px;
+    height: 15px;
+
+    fill: #E7CB6B;
+}
+
+
+/* =========================================================
+   TIMELINE CARD
+========================================================= */
+
+.t-card {
+    background: #fff;
+
+    border: 1px solid #E9E4D8;
+
+    border-radius: 10px;
+
+    padding: 22px 26px;
+
+    box-shadow:
+        0 4px 18px rgba(18, 33, 63, 0.05);
+}
+
+
+/* =========================================================
+   CARD HEADER
+========================================================= */
+
+.t-card-header {
+    display: flex;
+
+    align-items: flex-start;
+
+    width: 100%;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   LEFT-SIDE CARDS
+   Logo appears on LEFT beside badge
+========================================================= */
+
+.t-item:nth-child(odd) .t-card-header {
+    justify-content: space-between;
+}
+
+.t-item:nth-child(odd) .t-card-logo {
+    order: -1;
+
+    margin-right: 12px;
+    margin-left: 0;
+}
+
+
+/* =========================================================
+   RIGHT-SIDE CARDS
+   Logo appears on RIGHT beside badge
+========================================================= */
+
+.t-item:nth-child(even) .t-card-header {
+    justify-content: space-between;
+}
+
+.t-item:nth-child(even) .t-card-logo {
+    order: 2;
+
+    margin-left: 15px;
+    margin-right: 0;
+}
+
+
+/* =========================================================
+   BADGE
+========================================================= */
+
+.t-badge {
+    display: inline-block;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: .06em;
+
+    text-transform: uppercase;
+
+    padding: 4px 10px;
+
+    border-radius: 20px;
+
+    margin-bottom: 0;
+}
+
+.t-badge.edu {
+    background: #EFE6C8;
+    color: #8A6D0E;
+}
+
+.t-badge.exp {
+    background: #DDE3EE;
+    color: #12213F;
+}
+
+
+/* =========================================================
+   INSTITUTION LOGO
+========================================================= */
+
+.t-card-logo {
+    width: 52px;
+    height: 52px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 6px;
+
+    background: #FFFFFF;
+
+    border: 1px solid #E5E3DC;
+
+    border-radius: 9px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   LOGO IMAGE
+========================================================= */
+
+.t-card-logo img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   CARD HEADING
+========================================================= */
+
+.t-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    color: #12213F;
+
+    margin: 0 0 4px;
+}
+
+
+/* =========================================================
+   CARD META
+========================================================= */
+
+.t-card .t-meta {
+    font-size: 13px;
+
+    color: #C9A227;
+
+    font-weight: 600;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   CARD DESCRIPTION
+========================================================= */
+
+.t-card p {
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    color: #6B7280;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 720px) {
+
+    .credentials {
+        padding: 70px 18px;
+    }
+
+
+    .credentials-head {
+        margin-bottom: 45px;
+    }
+
+
+    .credentials-head h2 {
+        font-size: 36px;
+    }
+
+
+    .credentials-head p {
+        font-size: 15px;
+    }
+
+
+    /* Timeline moves to left */
+
+    .timeline::before {
+        left: 20px;
+    }
+
+
+    /* All cards become single column */
+
+    .t-item {
+        width: 100%;
+
+        left: 0 !important;
+
+        text-align: left !important;
+
+        padding: 0 0 40px 56px;
+    }
+
+
+    /* Marker */
+
+    .t-item:nth-child(odd) .t-marker,
+    .t-item:nth-child(even) .t-marker {
+
+        left: 3px;
+
+        right: auto;
+    }
+
+
+    /* On mobile logo always stays on RIGHT */
+
+    .t-card-header {
+        justify-content: space-between !important;
+    }
+
+
+    .t-card-logo {
+        order: 2 !important;
+
+        margin-left: 12px !important;
+
+        margin-right: 0 !important;
+    }
+
+
+    .t-card {
+        padding: 20px 22px;
+    }
+
+
+    .t-card-logo {
+        width: 46px;
+        height: 46px;
+    }
+
+
+    .t-card h3 {
+        font-size: 21px;
+    }
+
+}
+
+
+/* .credentials{ padding:96px 24px; background:#FAF7F0; }
 .credentials-inner{ max-width:920px; margin:0 auto; }
 .credentials-head{ text-align:center; margin-bottom:64px; }
 .credentials-eyebrow{ font-family:'Inter',sans-serif; font-size:13px; letter-spacing:.14em; text-transform:uppercase; color:#C9A227; font-weight:600; display:block; margin-bottom:10px; }
@@ -4523,11 +4485,61 @@ footer .footer-bottom{
 .t-card .t-meta{ font-size:13px; color:#C9A227; font-weight:600; margin-bottom:10px; }
 .t-card p{ font-size:14px; line-height:1.6; color:#6B7280; margin:0; }
 
+
+.t-card-header {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    width: 100%;
+
+    margin-bottom: 10px;
+}
+
+.t-card-logo {
+
+    width: 52px;
+    height: 52px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-left: 15px;
+
+    padding: 6px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e3dc;
+
+    border-radius: 9px;
+
+    box-sizing: border-box;
+}
+
+
+.t-card-logo img {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+}
+
 @media (max-width:720px){
   .timeline::before{ left:20px; }
   .t-item{ width:100%; left:0 !important; text-align:left !important; padding:0 0 40px 56px; }
   .t-item:nth-child(odd) .t-marker, .t-item:nth-child(even) .t-marker{ left:3px; right:auto; }
-}
+} */
 
 /* about us page education and experience ends here */
 
@@ -5092,3 +5104,1006 @@ footer .footer-bottom{
 }
 
 /* service section css ends here  */
+
+/* style for page service.html  */
+
+/* =========================================================
+   SERVICES PAGE
+========================================================= */
+
+.services-page {
+    background: #f8f7f3;
+    color: #30343b;
+    overflow: hidden;
+}
+
+
+.services-container {
+    width: min(1180px, calc(100% - 50px));
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   SERVICES INTRO
+========================================================= */
+
+.services-intro {
+    padding: 110px 0 80px;
+    text-align: center;
+}
+
+
+.services-intro-label {
+    display: inline-block;
+
+    margin-bottom: 18px;
+
+    color: #a88600;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 2.5px;
+}
+
+
+.services-intro h1 {
+    max-width: 850px;
+
+    margin: 0 auto 25px;
+
+    color: #30343b;
+
+    font-size: clamp(42px, 5vw, 68px);
+
+    line-height: 1.05;
+
+    font-weight: 500;
+
+    letter-spacing: -1.5px;
+}
+
+
+.services-intro h1 span {
+    color: #a88600;
+}
+
+
+.services-intro p {
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    color: #686a6d;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   FEATURED SERVICES
+========================================================= */
+
+.featured-services {
+    padding: 30px 0 110px;
+}
+
+
+.service-feature {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    min-height: 470px;
+
+    margin-bottom: 40px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e3dc;
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.045);
+
+    transition:
+        transform 0.45s cubic-bezier(.2,.8,.2,1),
+        box-shadow 0.45s ease;
+}
+
+
+.service-feature:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 25px 55px rgba(0, 0, 0, 0.11);
+}
+
+
+/* =========================================================
+   REVERSE SERVICE
+========================================================= */
+
+.service-reverse .service-feature-image {
+    order: 2;
+}
+
+.service-reverse .service-feature-content {
+    order: 1;
+}
+
+
+/* =========================================================
+   FEATURE IMAGE
+========================================================= */
+
+.service-feature-image {
+    position: relative;
+
+    min-height: 470px;
+
+    overflow: hidden;
+}
+
+
+.service-feature-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.08),
+            transparent
+        );
+
+    pointer-events: none;
+}
+
+
+.service-feature-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: fill;
+
+    transition:
+        transform 0.8s cubic-bezier(.2,.8,.2,1);
+}
+
+
+.service-feature:hover
+.service-feature-image img {
+    transform: scale(1.07);
+}
+
+
+/* =========================================================
+   SERVICE NUMBER
+========================================================= */
+
+.service-number {
+    position: absolute;
+
+    top: 22px;
+    left: 22px;
+
+    z-index: 2;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #e8c15a;
+
+    color: #30343b;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   FEATURE CONTENT
+========================================================= */
+
+.service-feature-content {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 60px;
+}
+
+
+.service-label {
+    margin-bottom: 15px;
+
+    color: #a88600;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+.service-feature-content h2 {
+    margin: 0 0 20px;
+
+    color: #30343b;
+
+    font-size: clamp(30px, 3vw, 42px);
+
+    line-height: 1.12;
+
+    font-weight: 500;
+}
+
+
+.service-feature-content p {
+    margin: 0 0 25px;
+
+    color: #686a6d;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   SERVICE LIST
+========================================================= */
+
+.service-feature-content ul {
+    margin: 0 0 28px;
+
+    padding: 0;
+
+    list-style: none;
+}
+
+
+.service-feature-content li {
+    position: relative;
+
+    padding-left: 22px;
+
+    margin-bottom: 10px;
+
+    color: #4d5054;
+
+    font-size: 13px;
+}
+
+
+.service-feature-content li::before {
+    content: "✓";
+
+    position: absolute;
+
+    left: 0;
+
+    color: #a88600;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   SERVICE LINK
+========================================================= */
+
+.service-link {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    width: fit-content;
+
+    color: #30343b;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    transition: gap 0.3s ease;
+}
+
+
+.service-link span {
+    color: #a88600;
+
+    font-size: 18px;
+
+    line-height: 1;
+}
+
+
+.service-link:hover {
+    gap: 16px;
+}
+
+
+/* =========================================================
+   OTHER SERVICES
+========================================================= */
+
+.other-services {
+    padding: 110px 0;
+
+    background: #ffffff;
+}
+
+
+.other-services-heading {
+    margin-bottom: 55px;
+}
+
+
+.other-services-heading h2 {
+    max-width: 650px;
+
+    margin: 0;
+
+    color: #30343b;
+
+    font-size: clamp(34px, 4vw, 52px);
+
+    line-height: 1.1;
+
+    font-weight: 500;
+}
+
+
+.other-services-heading h2 span {
+    color: #a88600;
+}
+
+
+/* =========================================================
+   SMALL SERVICE GRID
+========================================================= */
+
+.services-small-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+
+.service-small-card {
+    position: relative;
+
+    min-height: 300px;
+
+    padding: 35px 28px;
+
+    background: #f8f7f3;
+
+    border: 1px solid #e5e3dc;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        background 0.4s ease;
+}
+
+
+.service-small-card:hover {
+    transform: translateY(-8px);
+
+    background: #ffffff;
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,0.09);
+}
+
+
+.small-card-number {
+    position: absolute;
+
+    top: 20px;
+    right: 22px;
+
+    color: #c4c1b8;
+
+    font-size: 11px;
+
+    font-weight: 800;
+}
+
+
+.small-card-icon {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 35px;
+
+    border-radius: 50%;
+
+    background: #e8c15a;
+
+    color: #30343b;
+
+    font-size: 18px;
+}
+
+
+.service-small-card h3 {
+    margin: 0 0 15px;
+
+    color: #30343b;
+
+    font-size: 21px;
+
+    line-height: 1.25;
+}
+
+
+.service-small-card p {
+    margin: 0;
+
+    color: #686a6d;
+
+    font-size: 13px;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   CLINICAL PHILOSOPHY
+========================================================= */
+
+.services-philosophy {
+    padding: 110px 0;
+}
+
+
+.philosophy-box {
+    position: relative;
+
+    max-width: 950px;
+
+    margin: 0 auto;
+
+    padding: 75px 80px;
+
+    text-align: center;
+
+    background: #30343b;
+
+    border-radius: 25px;
+
+    overflow: hidden;
+}
+
+
+.philosophy-mark {
+    position: absolute;
+
+    top: 15px;
+    left: 35px;
+
+    color: #e8c15a;
+
+    font-family: Georgia, serif;
+
+    font-size: 120px;
+
+    line-height: 1;
+
+    opacity: 0.2;
+}
+
+
+.philosophy-box .services-intro-label {
+    color: #e8c15a;
+}
+
+
+.philosophy-box h2 {
+    position: relative;
+
+    margin: 0 auto 25px;
+
+    max-width: 760px;
+
+    color: #ffffff;
+
+    font-size: clamp(30px, 4vw, 48px);
+
+    line-height: 1.2;
+
+    font-weight: 500;
+}
+
+
+.philosophy-box h2 span {
+    color: #e8c15a;
+}
+
+
+.philosophy-box p {
+    position: relative;
+
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    color: #d8d8d8;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.services-cta {
+    padding: 110px 0;
+
+    background: #e8c15a;
+}
+
+
+.services-cta-content {
+    max-width: 750px;
+}
+
+
+.services-cta .services-intro-label {
+    color: #5b4a00;
+}
+
+
+.services-cta h2 {
+    margin: 0 0 20px;
+
+    color: #30343b;
+
+    font-size: clamp(40px, 5vw, 62px);
+
+    line-height: 1.05;
+
+    font-weight: 500;
+}
+
+
+.services-cta h2 span {
+    color: #ffffff;
+}
+
+
+.services-cta p {
+    max-width: 650px;
+
+    margin: 0 0 35px;
+
+    color: #4e4b3f;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+.services-cta-buttons {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+
+.services-primary-btn,
+.services-secondary-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 50px;
+
+    padding: 0 25px;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.5px;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.services-primary-btn {
+    background: #30343b;
+
+    color: #ffffff;
+}
+
+
+.services-secondary-btn {
+    background: #ffffff;
+
+    color: #30343b;
+}
+
+
+.services-primary-btn:hover,
+.services-secondary-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.15);
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .services-small-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    .service-feature-content {
+        padding: 45px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .services-container {
+        width: min(100% - 30px, 1180px);
+    }
+
+
+    .services-intro {
+        padding: 75px 0 55px;
+    }
+
+
+    .services-intro h1 {
+        font-size: 40px;
+
+        letter-spacing: -1px;
+    }
+
+
+    .services-intro p {
+        font-size: 14px;
+    }
+
+
+    /* FEATURE */
+
+    .featured-services {
+        padding: 10px 0 70px;
+    }
+
+
+    .service-feature {
+        grid-template-columns: 1fr;
+
+        margin-bottom: 25px;
+    }
+
+
+    .service-feature-image {
+        min-height: 280px;
+
+        height: 280px;
+    }
+
+
+    .service-reverse .service-feature-image {
+        order: 1;
+    }
+
+
+    .service-reverse .service-feature-content {
+        order: 2;
+    }
+
+
+    .service-feature-content {
+        padding: 35px 28px;
+    }
+
+
+    .service-feature-content h2 {
+        font-size: 30px;
+    }
+
+
+    .service-feature-content p {
+        font-size: 14px;
+    }
+
+
+    /* SMALL SERVICES */
+
+    .other-services {
+        padding: 75px 0;
+    }
+
+
+    .services-small-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .service-small-card {
+        min-height: auto;
+
+        padding: 30px;
+    }
+
+
+    /* PHILOSOPHY */
+
+    .services-philosophy {
+        padding: 70px 0;
+    }
+
+
+    .philosophy-box {
+        padding: 55px 28px;
+    }
+
+
+    .philosophy-box h2 {
+        font-size: 30px;
+    }
+
+
+    .philosophy-box p {
+        font-size: 14px;
+    }
+
+
+    /* CTA */
+
+    .services-cta {
+        padding: 75px 0;
+    }
+
+
+    .services-cta h2 {
+        font-size: 42px;
+    }
+
+
+    .services-cta-buttons {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .services-primary-btn,
+    .services-secondary-btn {
+        width: 100%;
+    }
+
+}
+/* =========================================================
+   SERVICES SCROLL ANIMATION
+========================================================= */
+
+.service-hidden {
+    opacity: 0;
+
+    transform: translateY(35px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s cubic-bezier(.2,.8,.2,1);
+}
+
+
+.service-visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+/* style for service.html ends here  */
+
+
+/* why us section css home page starts here */
+
+
+/* =========================================================================
+   WHY US — interactive flip cards
+   ========================================================================= */
+
+.why-us{
+  overflow:hidden;
+}
+
+.why-us .sec-head h2,
+.why-us .sec-head p{
+  color:var(--white);
+}
+
+.why-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+
+.why-card{
+  appearance:none;
+  border:none;
+  background:none;
+  padding:0;
+  cursor:pointer;
+  perspective:1200px;
+  height:230px;
+  font-family:inherit;
+}
+
+.why-card-inner{
+  position:relative;
+  display:block;
+  width:100%;
+  height:100%;
+  transition:transform .6s cubic-bezier(.4,.2,.2,1);
+  transform-style:preserve-3d;
+}
+
+.why-card.is-flipped .why-card-inner{
+  transform:rotateY(180deg);
+}
+
+.why-card-face{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:26px 22px;
+  border-radius:22px;
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
+}
+
+.why-card-front{
+  background:var(--white);
+  border:2px solid var(--light-gray);
+  box-shadow:0 6px 0 rgba(0,0,0,.18);
+}
+
+.why-card-icon{
+  font-size:2.1rem;
+  margin-bottom:14px;
+  display:block;
+}
+
+.why-card-title{
+  font-family:var(--font-display);
+  font-size:1.05rem;
+  font-weight:600;
+  color:var(--navy);
+  line-height:1.25;
+  margin-bottom:10px;
+}
+
+.why-flip-hint{
+  font-size:.7rem;
+  font-weight:700;
+  letter-spacing:.03em;
+  color:var(--teal-deep);
+}
+
+.why-card-back{
+  background:linear-gradient(135deg,var(--primary),var(--gold));
+  transform:rotateY(180deg);
+  box-shadow:0 6px 0 rgba(0,0,0,.22);
+}
+
+.why-card-back-text{
+  color:var(--navy);
+  font-size:.88rem;
+  line-height:1.6;
+  font-weight:500;
+}
+
+.why-card:hover .why-card-inner{
+  transform:rotateY(180deg);
+}
+
+.why-card:focus-visible .why-card-front{
+  outline:3px solid var(--gold);
+  outline-offset:3px;
+}
+
+@media(max-width:900px){
+  .why-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:560px){
+  .why-grid{
+    grid-template-columns:1fr;
+  }
+  .why-card{
+    height:200px;
+  }
+  /* Hover-flip doesn't make sense on touch; tap relies on the JS-toggled class instead. */
+  .why-card:hover .why-card-inner{
+    transform:none;
+  }
+  .why-card.is-flipped .why-card-inner{
+    transform:rotateY(180deg);
+  }
+}
+
+/* why us section css home page ends here */

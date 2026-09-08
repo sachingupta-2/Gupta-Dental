@@ -1,0 +1,740 @@
+
+// //Home Page section Why choose us HTML
+
+<!-- =========================================================
+     WHY CHOOSE US
+     ========================================================= -->
+
+
+<section id="why" class="reveal why-section">
+
+  <div class="container">
+
+    <div class="sec-head why-head">
+
+      <span class="eyebrow">
+        Why Choose Us
+      </span>
+
+      <h2>
+        Care built around you,
+        <span>not the clock.</span>
+      </h2>
+
+      <p>
+        Thoughtful dentistry combining clinical experience,
+        precision, modern technology and genuine patient care.
+      </p>
+
+    </div>
+
+    <!-- =====================================================
+         01 — QUALITY
+    ====================================================== -->
+
+    <div class="why-feature">
+
+      <div class="why-feature-image">
+
+        <img
+          src="clinic_photos_shortlist/QualityoverQuantity.jpeg"
+          alt="Precision dental treatment"
+        >
+
+        <span class="why-image-number">
+          01
+        </span>
+
+      </div>
+
+
+      <div class="why-feature-content">
+
+        <span class="why-small-title">
+          QUALITY OVER QUANTITY
+        </span>
+
+        <h3>
+          Getting it right
+          <span>the first time.</span>
+        </h3>
+
+        <p>
+          Fewer patients seen faster isn't the goal.
+          We believe good dentistry requires time, attention
+          and precision. Every treatment is carefully planned
+          with the patient's long-term oral health in mind.
+        </p>
+
+        <div class="why-line"></div>
+
+        <div class="why-feature-bottom">
+          <span>01</span>
+          <strong>Precision-focused dentistry</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         02 — EMPATHY
+    ====================================================== -->
+
+    <div class="why-feature why-feature-reverse">
+
+      <div class="why-feature-image">
+
+        <img
+          src="clinic_photos_shortlist/empathy.jpeg"
+          alt="Patient centred dental care"
+        >
+
+        <span class="why-image-number">
+          02
+        </span>
+
+      </div>
+
+
+      <div class="why-feature-content">
+
+        <span class="why-small-title">
+          EMPATHY &amp; COMPASSION
+        </span>
+
+        <h3>
+          Dentistry that
+          <span>starts with listening.</span>
+        </h3>
+
+        <p>
+          Every treatment plan begins by understanding
+          the patient's concerns. We take the time to explain
+          the diagnosis, discuss options and make sure you
+          are comfortable with the treatment journey.
+        </p>
+
+        <div class="why-line"></div>
+
+        <div class="why-feature-bottom">
+          <span>02</span>
+          <strong>Patient-first approach</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         03 — ETHICAL DENTISTRY
+    ====================================================== -->
+
+    <div class="why-feature">
+
+      <div class="why-feature-image">
+
+        <img
+          src="clinic_photos_shortlist/dental ethics.png"
+          alt="Ethical dental treatment"
+        >
+
+        <span class="why-image-number">
+          03
+        </span>
+
+      </div>
+
+
+      <div class="why-feature-content">
+
+        <span class="why-small-title">
+          ETHICAL DENTISTRY
+        </span>
+
+        <h3>
+          Treatment guided by
+          <span>genuine clinical need.</span>
+        </h3>
+
+        <p>
+          We believe in transparent communication and
+          responsible treatment planning. Our recommendations
+          are based on clinical need, predictable outcomes
+          and your individual requirements.
+        </p>
+
+        <div class="why-line"></div>
+
+        <div class="why-feature-bottom">
+          <span>03</span>
+          <strong>Transparent treatment planning</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         04 — TECHNOLOGY
+    ====================================================== -->
+
+    <div class="why-feature why-feature-reverse ">
+
+      <div class="why-feature-image">
+
+        <img
+          src="clinic_photos_shortlist/dentist with tech.png"
+          alt="Advanced dental technology"
+        >
+
+        <span class="why-image-number">
+          04
+        </span>
+
+      </div>
+
+
+      <div class="why-feature-content">
+
+        <span class="why-small-title">
+          ADVANCED TECHNOLOGY
+        </span>
+
+        <h3>
+          Experience supported
+          by <span>precision technology.</span>
+        </h3>
+
+        <p>
+          Our clinical approach is supported by modern
+          dental technology and high-magnification 7.5×
+          dental loupes, helping us visualise and work
+          with greater precision during detailed procedures.
+        </p>
+
+        <div class="why-line"></div>
+
+        <div class="why-feature-bottom">
+          <span>04</span>
+          <strong>7.5× high-magnification loupes</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         05 — STERILISATION
+    ====================================================== -->
+
+    <div class="why-feature">
+
+      <div class="why-feature-image">
+
+        <img
+          src="clinic_photos_shortlist/autoclave.png"
+          alt="Dental sterilisation and infection control"
+        >
+
+        <span class="why-image-number">
+          05
+        </span>
+
+      </div>
+
+
+      <div class="why-feature-content">
+
+        <span class="why-small-title">
+          STRINGENT STERILISATION
+        </span>
+
+        <h3>
+          Safety is part of
+          <span>every treatment.</span>
+        </h3>
+
+        <p>
+          We follow stringent sterilisation and infection-control
+          protocols designed to maintain a safe clinical environment
+          for every patient and every procedure.
+        </p>
+
+        <div class="why-line"></div>
+
+        <div class="why-feature-bottom">
+          <span>05</span>
+          <strong>Patient safety &amp; infection control</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         06 — LOCATION
+    ====================================================== -->
+
+    <div class="why-feature why-feature-reverse">
+
+      <div class="why-feature-image">
+
+        <img
+          src="clinic_photos_shortlist/location.jpeg"
+          alt="Dr. Gupta's Dental Clinic South Delhi"
+        >
+
+        <span class="why-image-number">
+          06
+        </span>
+
+      </div>
+
+
+      <div class="why-feature-content">
+
+        <span class="why-small-title">
+          CENTRALLY LOCATED
+        </span>
+
+        <h3>
+          Conveniently located
+          <span>in South Delhi.</span>
+        </h3>
+
+        <p>
+          Our clinic is located in South Extension Part 1,
+          making it convenient for patients travelling from
+          across South Delhi and other parts of the city.
+        </p>
+
+        <div class="why-line"></div>
+
+        <div class="why-feature-bottom">
+          <span>06</span>
+          <strong>South Extension, Part 1</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+// //Home Page Why Choose Us CSS 
+
+/* =========================================================
+   WHY CHOOSE US
+   ONE BOX PER ROW
+========================================================= */
+
+.why-features-grid {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 30px;
+}
+
+
+/* =========================================================
+   FEATURE BOX
+========================================================= */
+
+.why-feature {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 45% 55%;
+
+    width: 100%;
+
+    height: 390px;
+    min-height: 390px;
+    max-height: 390px;
+
+    margin: 0;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e3dc;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.05);
+
+    transition:
+        transform 0.45s cubic-bezier(.2,.8,.2,1),
+        box-shadow 0.45s ease,
+        border-color 0.45s ease;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.why-feature:hover {
+    transform: scale(1.012) translateY(-5px);
+
+    border-color: #e8c15a;
+
+    box-shadow:
+        0 22px 55px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.why-feature-image {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+}
+
+
+.why-feature-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: fill;
+
+    object-position: center;
+
+    transform: scale(1);
+
+    transition:
+        transform 0.8s cubic-bezier(.2,.8,.2,1);
+}
+
+
+/* Image comes closer on hover */
+
+.why-feature:hover .why-feature-image img {
+    transform: scale(1.10);
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.why-image-number {
+    position: absolute;
+
+    left: 22px;
+    top: 22px;
+
+    z-index: 5;
+
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #e8c15a;
+
+    color: #30343b;
+
+    font-size: 12px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+.why-feature-content {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 50px 60px;
+
+    min-width: 0;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   SMALL TITLE
+========================================================= */
+
+.why-small-title {
+    display: block;
+
+    margin-bottom: 16px;
+
+    color: #a88600;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 2.2px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   MAIN HEADING
+========================================================= */
+
+.why-feature-content h3 {
+    margin: 0 0 20px;
+
+    color: #30343b;
+
+    font-size: 32px;
+
+    font-weight: 700;
+
+    line-height: 1.15;
+
+    letter-spacing: -0.4px;
+}
+
+
+.why-feature-content h3 span {
+    color: #a88600;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.why-feature-content p {
+    max-width: 600px;
+
+    margin: 0;
+
+    color: #686a6d;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.why-line {
+    width: 100%;
+
+    max-width: 600px;
+
+    height: 1px;
+
+    margin: 25px 0 17px;
+
+    background: #e4e2dc;
+}
+
+
+/* =========================================================
+   BOTTOM
+========================================================= */
+
+.why-feature-bottom {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.why-feature-bottom span {
+    color: #b18c00;
+
+    font-size: 12px;
+
+    font-weight: 800;
+}
+
+
+.why-feature-bottom strong {
+    color: #414347;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   IMAGE ALWAYS LEFT, TEXT ALWAYS RIGHT
+========================================================= */
+
+.why-feature-reverse {
+    grid-template-columns: 45% 55%;
+}
+
+
+.why-feature-reverse .why-feature-image {
+    order: 1;
+}
+
+
+.why-feature-reverse .why-feature-content {
+    order: 2;
+}
+
+
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .why-feature {
+        height: 350px;
+
+        min-height: 350px;
+
+        max-height: 350px;
+
+        grid-template-columns: 45% 55%;
+    }
+
+        .why-feature-reverse {
+        grid-template-columns: 45% 55%;
+    }
+
+    .why-feature-content {
+        padding: 35px 40px;
+    }
+
+    .why-feature-content h3 {
+        font-size: 28px;
+    }
+
+    .why-feature-content p {
+        font-size: 14px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .why-features-grid {
+        gap: 22px;
+    }
+
+
+    .why-feature,
+    .why-feature-reverse {
+        display: flex;
+
+        flex-direction: column;
+
+        height: auto;
+
+        min-height: 0;
+
+        max-height: none;
+    }
+
+
+    /* Image */
+
+    .why-feature-image,
+    .why-feature-reverse .why-feature-image {
+        order: 1;
+
+        width: 100%;
+
+        height: 250px;
+
+        min-height: 250px;
+
+        max-height: 250px;
+    }
+
+
+    /* Text */
+
+    .why-feature-content,
+    .why-feature-reverse .why-feature-content {
+        order: 2;
+
+        width: 100%;
+
+        height: auto;
+
+        padding: 32px 25px 35px;
+
+        overflow: visible;
+    }
+
+
+    .why-feature-content h3 {
+        font-size: 27px;
+    }
+
+
+    .why-feature-content p {
+        font-size: 14px;
+
+        line-height: 1.75;
+    }
+
+
+    .why-small-title {
+        font-size: 10px;
+
+        letter-spacing: 1.8px;
+    }
+
+}
+

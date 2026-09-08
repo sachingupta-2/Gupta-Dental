@@ -1,0 +1,1243 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dental Services | Dr. Gupta's Dental Clinic</title>
+
+<meta name="description" content="Dr. Tanupriya Gupta — 20 years of precision, magnification-guided restorative dentistry in South Extension, New Delhi. Ethical care, no over-treatment.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="screening-diagnosis.css">
+</head>
+
+
+<body><!-- =========================================================
+     HEADER
+     ========================================================= -->
+
+<header>
+
+  <div class="header-info">
+    <div class="container header-info-wrap">
+      <div class="availability" aria-label="Clinic availability">
+        <span><strong>Availability:</strong> <span class="availability-hours">Monday - Saturday, 10:00 AM - 7:00 PM</span></span>
+        <span class="sunday-closed">Sunday: CLOSED</span>
+      </div>
+      <div class="header-contact" aria-label="Clinic contact details">
+        <a href="tel:+919990880975">Call: +91 99908 80975</a>
+        <a href="https://wa.me/919990880975" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container nav-wrap">
+
+    <div class="brand">
+
+      <img
+        src="logo_trimmed.png"
+        alt="Dr. Gupta's Dental Clinic logo"
+        style="width:44px;height:44px;border-radius:10px;object-fit:cover;"
+      >
+
+      <div class="brand-name">
+        Dr. Gupta's Dental Clinic
+      </div>
+
+    </div>
+
+
+    <nav>
+
+      <ul id="main-navigation">
+
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+
+        <li>
+          <a href="about.html">About</a>
+        </li>
+
+        <li>
+          <a href="difference.html">Our Difference</a>
+        </li>
+
+        <li>
+          <a href="services.html">Services</a>
+        </li>
+
+        <li>
+          <a href="reviews.html">Reviews</a>
+        </li>
+
+        <li>
+          <a href="contact.html">Contact</a>
+        </li>
+
+      </ul>
+
+    </nav>
+
+
+    <div class="nav-cta">
+
+      <button
+        type="button"
+        class="appointment-trigger"
+        id="openAppointmentModal"
+      >
+        Book Appointment
+      </button>
+
+      <button
+        type="button"
+        class="menu-toggle"
+        aria-label="Menu"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >
+        &#9776;
+      </button>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- =========================================================
+     APPOINTMENT MODAL
+     ========================================================= -->
+
+<div
+  class="appointment-modal-overlay"
+  id="appointmentModal"
+  aria-hidden="true"
+>
+
+  <div
+    class="appointment-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="appointmentTitle"
+  >
+
+    <button
+      type="button"
+      class="modal-close"
+      aria-label="Close appointment form"
+    >
+      &times;
+    </button>
+
+
+    <div class="modal-head">
+
+      <h3 id="appointmentTitle">
+        Book an Appointment
+      </h3>
+
+      <p>
+        Please fill in your details and we will contact you shortly.
+      </p>
+
+    </div>
+
+
+    <form class="appointment-form" id="appointmentForm">
+      <div class="appointment-progress" aria-label="Appointment form progress">
+        <div class="step-indicator active" id="stepIndicator1">1. Patient Details</div>
+        <div class="step-indicator" id="stepIndicator2">2. Personal Details <span class="optional-note">(Optional)</span></div>
+      </div>
+
+      <div class="appointment-step active" id="appointmentStep1">
+        <div class="form-grid">
+          <div class="form-group"><label for="name">Name</label><input id="name" name="name" type="text" placeholder="Enter your name" required></div>
+          <div class="form-group"><label for="age">Age</label><input id="age" name="age" type="number" min="1" placeholder="Age" required></div>
+          <div class="form-group"><label for="phone">Phone No</label><input id="phone" name="phone" type="tel" placeholder="Your phone number" required></div>
+          <div class="form-group"><label for="email">Email</label><input id="email" name="email" type="email" placeholder="Your email address" required></div>
+          <div class="form-group full"><label for="address">Address</label><input id="address" name="address" type="text" placeholder="Your address" required></div>
+          <div class="form-group"><label for="appointmentDate">Appointment Date</label><input type="date" id="appointmentDate" name="appointmentDate" required></div>
+          <div class="form-group"><label for="appointmentTime">Available Time Slot</label><select id="appointmentTime" name="appointmentTime" required disabled><option value="">Select a date first</option></select><small class="slot-status" id="slotStatus" aria-live="polite">Choose a date to see available slots.</small></div>
+          <div class="form-group"><label for="gender">Gender</label><select id="gender" name="gender" required><option value="">Select gender</option><option>Male</option><option>Female</option><option>Other</option></select></div>
+        </div>
+        <div class="step-actions">
+          <button type="button" class="secondary-btn" id="closeAppointmentModal">Cancel</button>
+          <button type="button" class="cta-btn" id="nextAppointmentStep">Next &rarr;</button>
+        </div>
+      </div>
+
+      <div class="appointment-step" id="appointmentStep2">
+        <div class="clinical-intro"><strong>Personal details are optional.</strong> You can provide them to help the dentist understand your concern before the appointment, or skip this section and submit with your basic details.</div>
+        <div class="form-grid">
+          <div class="form-group full"><label for="reasonForVisit">Reason for Visit</label><textarea id="reasonForVisit" name="reasonForVisit" placeholder="Briefly describe the reason for your visit"></textarea></div>
+          <div class="form-group"><label for="dentalProblem">Current Dental Problem</label><select id="dentalProblem" name="dentalProblem"><option value="">Select if applicable</option><option>Tooth Pain</option><option>Sensitivity</option><option>Swelling</option><option>Bleeding Gums</option><option>Broken / Chipped Tooth</option><option>Cavity</option><option>Missing Tooth</option><option>Routine Check-up</option><option>Cleaning</option><option>Other</option></select></div>
+          <div class="form-group"><label for="painLevel">Pain / Discomfort</label><select id="painLevel" name="painLevel"><option value="">Select if applicable</option><option>None</option><option>Mild</option><option>Moderate</option><option>Severe</option></select></div>
+          <div class="form-group"><label for="previousDentalTreatment">Previous Dental Treatment</label><select id="previousDentalTreatment" name="previousDentalTreatment"><option value="">Select if applicable</option><option>No Previous Treatment</option><option>Filling</option><option>Root Canal</option><option>Extraction</option><option>Implant</option><option>Crown / Bridge</option><option>Other</option></select></div>
+          <div class="form-group"><label>Currently Taking Any Medicine?</label><div class="radio-row"><label class="radio-option"><input type="radio" name="medication" value="yes"> Yes</label><label class="radio-option"><input type="radio" name="medication" value="no" checked> No</label></div></div>
+          <div class="form-group full medication-box" id="medicationBox"><label for="medicineDetails">Medicine Details</label><textarea id="medicineDetails" name="medicineDetails" placeholder="List medicines you are currently taking"></textarea></div>
+          <div class="form-group full"><label for="allergies">Known Allergies</label><textarea id="allergies" name="allergies" placeholder="Mention any known medicine or other allergies"></textarea></div>
+          <div class="form-group full"><label for="medicalHistory">Medical History</label><textarea id="medicalHistory" name="medicalHistory" placeholder="Mention any relevant medical history"></textarea></div>
+          <div class="form-group full"><label for="additionalClinicalDetails">Additional Clinical Details</label><textarea id="additionalClinicalDetails" name="additionalClinicalDetails" placeholder="Anything else you would like the dentist to know"></textarea></div>
+        </div>
+
+        <div class="clinical-section">
+          <h4 class="clinical-section-title">Adverse Habits / Adverse Oral Habits</h4>
+          <div class="clinical-table-wrap"><table class="clinical-table"><thead><tr><th>Type</th><th>Frequency</th><th>Duration</th></tr></thead><tbody>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitSmoking" value="Smoking"> Smoking</label></td><td><select name="habitSmokingFrequency"><option value="">Select</option><option>Occasional</option><option>Once Daily</option><option>Twice Daily</option><option>More than Twice Daily</option></select></td><td><select name="habitSmokingDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitTobacco" value="Smokeless Tobacco/snuff"> Smokeless Tobacco / Snuff</label></td><td><select name="habitTobaccoFrequency"><option value="">Select</option><option>Occasional</option><option>Once Daily</option><option>Twice Daily</option><option>More than Twice Daily</option></select></td><td><select name="habitTobaccoDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitPaan" value="Paan chewing (gutka, paanmasala)"> Paan chewing (gutka, paanmasala)</label></td><td><select name="habitPaanFrequency"><option value="">Select</option><option>Occasional</option><option>Once Daily</option><option>Twice Daily</option><option>More than Twice Daily</option></select></td><td><select name="habitPaanDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitAlcohol" value="Alcohol"> Alcohol</label></td><td><select name="habitAlcoholFrequency"><option value="">Select</option><option>Occasional</option><option>Once Weekly</option><option>2-3 Times Weekly</option><option>Daily</option></select></td><td><select name="habitAlcoholDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+          </tbody></table></div>
+        </div>
+
+        <div class="clinical-section"><h4 class="clinical-section-title">Oral Hygiene Practices</h4><div class="hygiene-grid">
+          <div class="form-group full"><label>i) Type of Cleaning</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Toothbrush"> Toothbrush</label><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Finger"> Finger</label><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Stick"> Stick</label><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Others"> Others</label></div></div>
+          <div class="form-group full"><label>ii) Method of Cleaning</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="cleaningMethod" value="Vertical"> Vertical</label><label class="clinical-check"><input type="checkbox" name="cleaningMethod" value="Horizontal"> Horizontal</label><label class="clinical-check"><input type="checkbox" name="cleaningMethod" value="Circular"> Circular</label></div></div>
+          <div class="form-group full"><label>iii) Frequency of Cleaning / Brushing</label><div class="option-grid"><label class="clinical-check"><input type="radio" name="brushingFrequency" value="Once"> Once</label><label class="clinical-check"><input type="radio" name="brushingFrequency" value="Twice"> Twice</label><label class="clinical-check"><input type="radio" name="brushingFrequency" value="Thrice"> Thrice</label></div></div>
+          <div class="form-group full"><label>iv) Materials Used</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Toothpaste"> Toothpaste</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Tooth Powder"> Tooth Powder</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Charcoal"> Charcoal</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Sand"> Sand</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Brick Powder"> Brick Powder</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Any Other"> Any Other</label></div><input type="text" id="cleaningMaterialOther" name="cleaningMaterialOther" placeholder="If any other, please specify"></div>
+          <div class="form-group full"><label>v) Time of Brushing</label><div class="option-grid"><label class="clinical-check"><input type="radio" name="brushingTime" value="Before Meal"> Before Meal</label><label class="clinical-check"><input type="radio" name="brushingTime" value="After Meals"> After Meals</label></div></div>
+          <div class="form-group full"><label>vi) Frequency of Changing the Tooth Brush</label><div class="option-grid"><label class="clinical-check"><input type="radio" name="toothbrushChangeFrequency" value="Once"> Once</label><label class="clinical-check"><input type="radio" name="toothbrushChangeFrequency" value="Twice"> Twice</label><label class="clinical-check"><input type="radio" name="toothbrushChangeFrequency" value="Thrice"> Thrice</label></div></div>
+          <div class="form-group"><label for="durationOfCleaning">vii) Duration of Cleaning</label><input type="text" id="durationOfCleaning" name="durationOfCleaning" placeholder="e.g. 2 minutes"></div>
+          <div class="form-group full"><label>viii) Other Oral Hygiene Aids Used</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Flossing"> Flossing</label><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Interdental Aids"> Interdental Aids</label><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Oral Mouth Rinse"> Oral Mouth Rinse</label><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Tongue Cleaner"> Tongue Cleaner</label></div></div>
+        </div></div>
+
+        <div class="step-actions"><button type="button" class="secondary-btn" id="backAppointmentStep">&larr; Back</button><div class="right-actions"><button type="button" class="secondary-btn" id="skipClinicalStep">Skip &amp; Submit</button><button type="submit" class="cta-btn">Submit Appointment</button></div></div>
+      </div>
+    </form>
+
+  </div>
+
+</div>
+
+<!-- =========================================================
+     SCREENING & DIAGNOSIS PAGE
+     MIDDLE CONTENT ONLY
+========================================================= -->
+
+<main class="sd-page">
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="sd-hero">
+
+        <div class="sd-hero-inner">
+
+            <!-- LEFT CONTENT -->
+
+            <div class="sd-hero-content">
+
+                <span class="sd-eyebrow">
+                    SCREENING &amp; DIAGNOSIS
+                </span>
+
+                <h1>
+                    Understand the problem
+                    <span>before treating it.</span>
+                </h1>
+
+                <p class="sd-hero-intro">
+                    Accurate treatment begins with an accurate understanding
+                    of your dental health. Our approach focuses on careful
+                    clinical examination and diagnosis to identify existing
+                    concerns and detect potential problems at an early stage.
+                </p>
+
+                <div class="sd-hero-actions">
+
+                    <a href="services.html#contact" class="sd-primary-btn">
+                        Book a Consultation
+                        <span>→</span>
+                    </a>
+
+                    <a href="#sd-process" class="sd-secondary-btn">
+                        Understand our approach
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT IMAGE -->
+
+            <!-- RIGHT VIDEO -->
+
+<div class="sd-hero-image">
+
+    <div class="sd-image-frame">
+
+        <img
+            src="clinic_photos_shortlist/screening page 1.jpeg"
+           alt="Screening and diagnosis"
+        >
+
+    </div>
+
+    <div class="sd-image-note">
+
+        <span class="sd-note-icon">+</span>
+
+        <div>
+            <strong>
+                Care begins with clarity.
+            </strong>
+
+            <span>
+                Careful examination before treatment.
+            </span>
+        </div>
+
+    </div>
+
+</div>
+
+            <!-- <div class="sd-hero-image">
+
+                <div class="sd-image-frame">
+
+                    <img
+                        src="services/screening-diagnosis.jpg"
+                        alt="Dental screening and clinical diagnosis"
+                    >
+
+                </div>
+
+                <div class="sd-image-note">
+
+                    <span class="sd-note-icon">+</span>
+
+                    <div>
+                        <strong>
+                            Care begins with clarity.
+                        </strong>
+
+                        <span>
+                            Careful examination before treatment.
+                        </span>
+                    </div>
+
+                </div>
+
+            </div> -->
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         INTRODUCTION
+    ====================================================== -->
+
+    <section class="sd-introduction">
+
+        <div class="sd-intro-inner">
+
+            <div class="sd-section-heading">
+
+                <span class="sd-eyebrow">
+                    A THOUGHTFUL START
+                </span>
+
+                <h2>
+                    Good dentistry begins
+                    with the right diagnosis.
+                </h2>
+
+            </div>
+
+
+            <div class="sd-intro-content">
+
+                <p>
+                    Dental problems do not always announce themselves with
+                    pain. Some conditions can develop gradually while remaining
+                    unnoticed during everyday life.
+                </p>
+
+                <p>
+                    A careful examination allows us to understand what is
+                    happening, identify areas that may require attention and
+                    determine the most appropriate course of care.
+                </p>
+
+                <p>
+                    Our goal is not simply to find a problem, but to understand
+                    its cause, extent and significance before recommending
+                    treatment.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         WHAT WE ASSESS
+    ====================================================== -->
+
+    <section class="sd-assessment">
+
+        <div class="sd-assessment-inner">
+
+
+            <div class="sd-assessment-heading">
+
+                <span class="sd-eyebrow">
+                    COMPREHENSIVE ASSESSMENT
+                </span>
+
+                <h2>
+                    Looking beyond
+                    the obvious.
+                </h2>
+
+                <p>
+                    A dental examination is more than checking for cavities.
+                    We consider the overall condition of your teeth, gums,
+                    bite and oral environment.
+                </p>
+
+            </div>
+
+
+
+            <div class="sd-assessment-grid">
+
+
+                <!-- ITEM 01 -->
+
+                <article class="sd-assessment-card">
+
+                    <span class="sd-card-number">
+                        01
+                    </span>
+
+                    <div class="sd-card-icon">
+
+                        <svg viewBox="0 0 64 64" aria-hidden="true">
+
+                            <path
+                                d="M18 10
+                                   C13 12 10 17 10 23
+                                   C10 31 14 35 15 42
+                                   C16 49 17 56 21 56
+                                   C25 56 25 45 30 44
+                                   C35 43 35 56 40 56
+                                   C44 56 45 49 46 42
+                                   C47 35 54 31 54 23
+                                   C54 17 51 12 46 10
+                                   C41 8 37 12 32 12
+                                   C27 12 23 8 18 10Z"
+                                stroke="currentColor"
+                                stroke-width="3"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+
+                        </svg>
+
+                    </div>
+
+                    <h3>
+                        Teeth &amp; Restorations
+                    </h3>
+
+                    <p>
+                        Assessment of existing teeth, fillings, crowns and
+                        other restorations to identify areas requiring
+                        attention.
+                    </p>
+
+                </article>
+
+
+
+                <!-- ITEM 02 -->
+
+                <article class="sd-assessment-card">
+
+                    <span class="sd-card-number">
+                        02
+                    </span>
+
+                    <div class="sd-card-icon">
+
+                        <svg viewBox="0 0 64 64" aria-hidden="true">
+
+                            <path
+                                d="M12 32
+                                   C19 20 24 16 32 16
+                                   C40 16 45 20 52 32
+                                   C45 44 40 48 32 48
+                                   C24 48 19 44 12 32Z"
+                                stroke="currentColor"
+                                stroke-width="3"
+                                fill="none"
+                            />
+
+                            <circle
+                                cx="32"
+                                cy="32"
+                                r="7"
+                                stroke="currentColor"
+                                stroke-width="3"
+                                fill="none"
+                            />
+
+                        </svg>
+
+                    </div>
+
+                    <h3>
+                        Gum Health
+                    </h3>
+
+                    <p>
+                        Evaluation of gum health and supporting tissues to
+                        identify signs of inflammation or periodontal concerns.
+                    </p>
+
+                </article>
+
+
+
+                <!-- ITEM 03 -->
+
+                <article class="sd-assessment-card">
+
+                    <span class="sd-card-number">
+                        03
+                    </span>
+
+                    <div class="sd-card-icon">
+
+                        <svg viewBox="0 0 64 64" aria-hidden="true">
+
+                            <path
+                                d="M15 22
+                                   H49
+                                   M15 32
+                                   H49
+                                   M15 42
+                                   H49"
+                                stroke="currentColor"
+                                stroke-width="3"
+                                stroke-linecap="round"
+                            />
+
+                            <path
+                                d="M22 15
+                                   V49
+                                   M32 15
+                                   V49
+                                   M42 15
+                                   V49"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                            />
+
+                        </svg>
+
+                    </div>
+
+                    <h3>
+                        Bite &amp; Function
+                    </h3>
+
+                    <p>
+                        Consideration of how the teeth meet and function
+                        together as part of the overall oral assessment.
+                    </p>
+
+                </article>
+
+
+
+                <!-- ITEM 04 -->
+
+                <article class="sd-assessment-card">
+
+                    <span class="sd-card-number">
+                        04
+                    </span>
+
+                    <div class="sd-card-icon">
+
+                        <svg viewBox="0 0 64 64" aria-hidden="true">
+
+                            <circle
+                                cx="28"
+                                cy="28"
+                                r="15"
+                                stroke="currentColor"
+                                stroke-width="3"
+                                fill="none"
+                            />
+
+                            <path
+                                d="M39 39
+                                   L51 51"
+                                stroke="currentColor"
+                                stroke-width="3"
+                                stroke-linecap="round"
+                            />
+
+                        </svg>
+
+                    </div>
+
+                    <h3>
+                        Early Detection
+                    </h3>
+
+                    <p>
+                        Identifying developing concerns early can help guide
+                        timely preventive care and appropriate treatment.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         DIAGNOSTIC PROCESS
+    ====================================================== -->
+
+    <section class="sd-process" id="sd-process">
+
+        <div class="sd-process-inner">
+
+
+            <div class="sd-process-header">
+
+                <span class="sd-eyebrow">
+                    OUR DIAGNOSTIC PROCESS
+                </span>
+
+                <h2>
+                    From examination
+                    to understanding.
+                </h2>
+
+                <p>
+                    Every diagnosis begins with listening, examination and
+                    careful clinical judgement.
+                </p>
+
+            </div>
+
+
+
+            <div class="sd-process-list">
+
+
+                <!-- STEP 01 -->
+
+                <div class="sd-process-item">
+
+                    <div class="sd-process-number">
+                        01
+                    </div>
+
+                    <div class="sd-process-content">
+
+                        <h3>
+                            Listen &amp; Understand
+                        </h3>
+
+                        <p>
+                            We begin by understanding your concerns, dental
+                            history and any symptoms you may be experiencing.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- STEP 02 -->
+
+                <div class="sd-process-item">
+
+                    <div class="sd-process-number">
+                        02
+                    </div>
+
+                    <div class="sd-process-content">
+
+                        <h3>
+                            Clinical Examination
+                        </h3>
+
+                        <p>
+                            A detailed clinical examination helps assess the
+                            condition of your teeth, gums and surrounding oral
+                            structures.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- STEP 03 -->
+
+                <div class="sd-process-item">
+
+                    <div class="sd-process-number">
+                        03
+                    </div>
+
+                    <div class="sd-process-content">
+
+                        <h3>
+                            Investigate When Needed
+                        </h3>
+
+                        <p>
+                            Where appropriate, additional diagnostic
+                            information may be used to understand a concern
+                            more clearly.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- STEP 04 -->
+
+                <div class="sd-process-item">
+
+                    <div class="sd-process-number">
+                        04
+                    </div>
+
+                    <div class="sd-process-content">
+
+                        <h3>
+                            Explain &amp; Plan
+                        </h3>
+
+                        <p>
+                            Findings are discussed with you before deciding
+                            whether treatment, monitoring or preventive care
+                            is appropriate.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         DIAGNOSIS PHILOSOPHY
+    ====================================================== -->
+
+    <section class="sd-philosophy">
+
+        <div class="sd-philosophy-inner">
+
+
+            <div class="sd-philosophy-image">
+
+                <img
+                    src="clinic_photos_shortlist/screening 2.jpeg"
+                    alt="Dentist performing a careful clinical examination"
+                >
+
+            </div>
+
+
+
+            <div class="sd-philosophy-content">
+
+                <span class="sd-eyebrow">
+                    CLINICAL JUDGEMENT
+                </span>
+
+                <h2>
+                    Not every problem
+                    needs immediate treatment.
+                </h2>
+
+                <p>
+                    A diagnosis is not simply a list of things that could be
+                    treated. It is an understanding of what needs attention,
+                    what can be monitored and what may benefit from prevention.
+                </p>
+
+                <p>
+                    We believe treatment decisions should be based on careful
+                    assessment and individual circumstances rather than a
+                    one-size-fits-all approach.
+                </p>
+
+
+                <div class="sd-philosophy-quote">
+
+                    <span class="sd-quote-mark">
+                        “
+                    </span>
+
+                    <p>
+                        Understand first. Treat thoughtfully.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         DIAGNOSTIC APPROACH
+    ====================================================== -->
+
+    <section class="sd-approach">
+
+        <div class="sd-approach-inner">
+
+
+            <div class="sd-approach-heading">
+
+                <span class="sd-eyebrow">
+                    OUR APPROACH
+                </span>
+
+                <h2>
+                    Precision supported
+                    by experience.
+                </h2>
+
+                <p>
+                    Modern dental technology can support clinical examination,
+                    but technology works best when combined with experience
+                    and careful judgement.
+                </p>
+
+            </div>
+
+
+
+            <div class="sd-approach-box">
+
+
+                <div class="sd-approach-main">
+
+                    <span class="sd-approach-icon">
+                        ✦
+                    </span>
+
+                    <h3>
+                        Clinical assessment first
+                    </h3>
+
+                    <p>
+                        Our approach combines careful examination,
+                        magnification and appropriate diagnostic tools to
+                        build a clearer understanding of your dental health.
+                    </p>
+
+                </div>
+
+
+
+                <div class="sd-approach-points">
+
+                    <div class="sd-approach-point">
+
+                        <span>01</span>
+
+                        <div>
+
+                            <strong>
+                                Careful Examination
+                            </strong>
+
+                            <p>
+                                Detailed clinical assessment before treatment
+                                recommendations.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="sd-approach-point">
+
+                        <span>02</span>
+
+                        <div>
+
+                            <strong>
+                                Magnification
+                            </strong>
+
+                            <p>
+                                High-magnification loupes supporting detailed
+                                visualisation during examination.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="sd-approach-point">
+
+                        <span>03</span>
+
+                        <div>
+
+                            <strong>
+                                Individualised Planning
+                            </strong>
+
+                            <p>
+                                Treatment recommendations based on individual
+                                clinical findings and needs.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FAQ
+    ====================================================== -->
+
+    <section class="sd-faq">
+
+        <div class="sd-faq-inner">
+
+
+            <div class="sd-faq-heading">
+
+                <span class="sd-eyebrow">
+                    COMMON QUESTIONS
+                </span>
+
+                <h2>
+                    Before your
+                    examination.
+                </h2>
+
+                <p>
+                    A few common questions about dental screening and diagnosis.
+                </p>
+
+            </div>
+
+
+
+            <div class="sd-faq-list">
+
+
+                <div class="sd-faq-item">
+
+                    <button
+                        class="sd-faq-question"
+                        type="button"
+                        aria-expanded="false"
+                    >
+
+                        <span>
+                            What happens during a dental examination?
+                        </span>
+
+                        <span class="sd-faq-plus">
+                            +
+                        </span>
+
+                    </button>
+
+                    <div class="sd-faq-answer">
+
+                        <p>
+                            The examination begins with understanding your
+                            concerns and dental history, followed by a clinical
+                            assessment of your teeth, gums and overall oral
+                            health. Additional diagnostic information may be
+                            considered when appropriate.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="sd-faq-item">
+
+                    <button
+                        class="sd-faq-question"
+                        type="button"
+                        aria-expanded="false"
+                    >
+
+                        <span>
+                            Do I need a dental check-up if I have no pain?
+                        </span>
+
+                        <span class="sd-faq-plus">
+                            +
+                        </span>
+
+                    </button>
+
+                    <div class="sd-faq-answer">
+
+                        <p>
+                            Pain is not always present when a dental problem
+                            begins. Regular examinations can help identify
+                            concerns that may otherwise remain unnoticed.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="sd-faq-item">
+
+                    <button
+                        class="sd-faq-question"
+                        type="button"
+                        aria-expanded="false"
+                    >
+
+                        <span>
+                            Will I need treatment after the examination?
+                        </span>
+
+                        <span class="sd-faq-plus">
+                            +
+                        </span>
+
+                    </button>
+
+                    <div class="sd-faq-answer">
+
+                        <p>
+                            Not necessarily. The purpose of an examination is
+                            to understand your oral health and determine what,
+                            if anything, requires attention. Preventive care or
+                            monitoring may sometimes be appropriate.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="sd-faq-item">
+
+                    <button
+                        class="sd-faq-question"
+                        type="button"
+                        aria-expanded="false"
+                    >
+
+                        <span>
+                            Can early dental problems be detected during screening?
+                        </span>
+
+                        <span class="sd-faq-plus">
+                            +
+                        </span>
+
+                    </button>
+
+                    <div class="sd-faq-answer">
+
+                        <p>
+                            A careful examination can help identify existing
+                            concerns and areas that may require further
+                            assessment or preventive attention.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FINAL CTA
+    ====================================================== -->
+
+    <section class="sd-final-cta" id="contact">
+
+        <div class="sd-final-cta-inner">
+
+            <span class="sd-eyebrow">
+                START WITH AN EXAMINATION
+            </span>
+
+            <h2>
+                Your dental health
+                deserves a closer look.
+            </h2>
+
+            <p>
+                Begin with a careful examination and understand your dental
+                health before deciding what comes next.
+            </p>
+
+            <a
+                href="services.html#contact"
+                class="sd-primary-btn sd-cta-btn"
+            >
+                Book a Consultation
+                <span>→</span>
+            </a>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<footer>
+
+  <div class="container footer-grid">
+
+
+    <div>
+
+      <h4>
+        Dr. Gupta's Dental Clinic
+      </h4>
+
+      <p>
+        Precision, magnification-guided dentistry in South Extension, New Delhi since 2013.
+      </p>
+
+    </div>
+
+
+    <div>
+
+      <h4>
+        Quick Links
+      </h4>
+
+      <a href="about.html">
+        About
+      </a>
+
+      <a href="services.html">
+        Services
+      </a>
+
+      <a href="reviews.html">
+        Reviews
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+    </div>
+
+
+    <div>
+
+      <h4>
+        Contact
+      </h4>
+
+      <a href="tel:+919990880975">
+        Mobile: 99908 80975
+      </a>
+
+      <a href="tel:+911142220392">
+        Landline: 011-4222-0392
+      </a>
+
+      <a href="https://wa.me/919990880975">
+        WhatsApp Us
+      </a>
+
+      <p>   H-30, South Extension Part 1, New Delhi</p>
+
+    </div>
+  </div>
+
+
+  <div class="container footer-bottom">
+    © 2026 Dr. Gupta's Dental Clinic. All rights reserved.
+  </div>
+
+</footer>
+
+
+<script src="script.js" defer></script>
+
+</body>
+</html>

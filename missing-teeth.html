@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dental Services | Dr. Gupta's Dental Clinic</title>
+
+<meta name="description" content="Dr. Tanupriya Gupta — 20 years of precision, magnification-guided restorative dentistry in South Extension, New Delhi. Ethical care, no over-treatment.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="missing-teeth.css">
+</head>
+
+
+<body><!-- =========================================================
+     HEADER
+     ========================================================= -->
+
+<header>
+
+  <div class="header-info">
+    <div class="container header-info-wrap">
+      <div class="availability" aria-label="Clinic availability">
+        <span><strong>Availability:</strong> <span class="availability-hours">Monday - Saturday, 10:00 AM - 7:00 PM</span></span>
+        <span class="sunday-closed">Sunday: CLOSED</span>
+      </div>
+      <div class="header-contact" aria-label="Clinic contact details">
+        <a href="tel:+919990880975">Call: +91 99908 80975</a>
+        <a href="https://wa.me/919990880975" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container nav-wrap">
+
+    <div class="brand">
+
+      <img
+        src="logo_trimmed.png"
+        alt="Dr. Gupta's Dental Clinic logo"
+        style="width:44px;height:44px;border-radius:10px;object-fit:cover;"
+      >
+
+      <div class="brand-name">
+        Dr. Gupta's Dental Clinic
+      </div>
+
+    </div>
+
+
+    <nav>
+
+      <ul id="main-navigation">
+
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+
+        <li>
+          <a href="about.html">About</a>
+        </li>
+
+        <li>
+          <a href="difference.html">Our Difference</a>
+        </li>
+
+        <li>
+          <a href="services.html">Services</a>
+        </li>
+
+        <li>
+          <a href="reviews.html">Reviews</a>
+        </li>
+
+        <li>
+          <a href="contact.html">Contact</a>
+        </li>
+
+      </ul>
+
+    </nav>
+
+
+    <div class="nav-cta">
+
+      <button
+        type="button"
+        class="appointment-trigger"
+        id="openAppointmentModal"
+      >
+        Book Appointment
+      </button>
+
+      <button
+        type="button"
+        class="menu-toggle"
+        aria-label="Menu"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >
+        &#9776;
+      </button>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- =========================================================
+     APPOINTMENT MODAL
+     ========================================================= -->
+
+<div
+  class="appointment-modal-overlay"
+  id="appointmentModal"
+  aria-hidden="true"
+>
+
+  <div
+    class="appointment-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="appointmentTitle"
+  >
+
+    <button
+      type="button"
+      class="modal-close"
+      aria-label="Close appointment form"
+    >
+      &times;
+    </button>
+
+
+    <div class="modal-head">
+
+      <h3 id="appointmentTitle">
+        Book an Appointment
+      </h3>
+
+      <p>
+        Please fill in your details and we will contact you shortly.
+      </p>
+
+    </div>
+
+
+    <form class="appointment-form" id="appointmentForm">
+      <div class="appointment-progress" aria-label="Appointment form progress">
+        <div class="step-indicator active" id="stepIndicator1">1. Patient Details</div>
+        <div class="step-indicator" id="stepIndicator2">2. Personal Details <span class="optional-note">(Optional)</span></div>
+      </div>
+
+      <div class="appointment-step active" id="appointmentStep1">
+        <div class="form-grid">
+          <div class="form-group"><label for="name">Name</label><input id="name" name="name" type="text" placeholder="Enter your name" required></div>
+          <div class="form-group"><label for="age">Age</label><input id="age" name="age" type="number" min="1" placeholder="Age" required></div>
+          <div class="form-group"><label for="phone">Phone No</label><input id="phone" name="phone" type="tel" placeholder="Your phone number" required></div>
+          <div class="form-group"><label for="email">Email</label><input id="email" name="email" type="email" placeholder="Your email address" required></div>
+          <div class="form-group full"><label for="address">Address</label><input id="address" name="address" type="text" placeholder="Your address" required></div>
+          <div class="form-group"><label for="appointmentDate">Appointment Date</label><input type="date" id="appointmentDate" name="appointmentDate" required></div>
+          <div class="form-group"><label for="appointmentTime">Available Time Slot</label><select id="appointmentTime" name="appointmentTime" required disabled><option value="">Select a date first</option></select><small class="slot-status" id="slotStatus" aria-live="polite">Choose a date to see available slots.</small></div>
+          <div class="form-group"><label for="gender">Gender</label><select id="gender" name="gender" required><option value="">Select gender</option><option>Male</option><option>Female</option><option>Other</option></select></div>
+        </div>
+        <div class="step-actions">
+          <button type="button" class="secondary-btn" id="closeAppointmentModal">Cancel</button>
+          <button type="button" class="cta-btn" id="nextAppointmentStep">Next &rarr;</button>
+        </div>
+      </div>
+
+      <div class="appointment-step" id="appointmentStep2">
+        <div class="clinical-intro"><strong>Personal details are optional.</strong> You can provide them to help the dentist understand your concern before the appointment, or skip this section and submit with your basic details.</div>
+        <div class="form-grid">
+          <div class="form-group full"><label for="reasonForVisit">Reason for Visit</label><textarea id="reasonForVisit" name="reasonForVisit" placeholder="Briefly describe the reason for your visit"></textarea></div>
+          <div class="form-group"><label for="dentalProblem">Current Dental Problem</label><select id="dentalProblem" name="dentalProblem"><option value="">Select if applicable</option><option>Tooth Pain</option><option>Sensitivity</option><option>Swelling</option><option>Bleeding Gums</option><option>Broken / Chipped Tooth</option><option>Cavity</option><option>Missing Tooth</option><option>Routine Check-up</option><option>Cleaning</option><option>Other</option></select></div>
+          <div class="form-group"><label for="painLevel">Pain / Discomfort</label><select id="painLevel" name="painLevel"><option value="">Select if applicable</option><option>None</option><option>Mild</option><option>Moderate</option><option>Severe</option></select></div>
+          <div class="form-group"><label for="previousDentalTreatment">Previous Dental Treatment</label><select id="previousDentalTreatment" name="previousDentalTreatment"><option value="">Select if applicable</option><option>No Previous Treatment</option><option>Filling</option><option>Root Canal</option><option>Extraction</option><option>Implant</option><option>Crown / Bridge</option><option>Other</option></select></div>
+          <div class="form-group"><label>Currently Taking Any Medicine?</label><div class="radio-row"><label class="radio-option"><input type="radio" name="medication" value="yes"> Yes</label><label class="radio-option"><input type="radio" name="medication" value="no" checked> No</label></div></div>
+          <div class="form-group full medication-box" id="medicationBox"><label for="medicineDetails">Medicine Details</label><textarea id="medicineDetails" name="medicineDetails" placeholder="List medicines you are currently taking"></textarea></div>
+          <div class="form-group full"><label for="allergies">Known Allergies</label><textarea id="allergies" name="allergies" placeholder="Mention any known medicine or other allergies"></textarea></div>
+          <div class="form-group full"><label for="medicalHistory">Medical History</label><textarea id="medicalHistory" name="medicalHistory" placeholder="Mention any relevant medical history"></textarea></div>
+          <div class="form-group full"><label for="additionalClinicalDetails">Additional Clinical Details</label><textarea id="additionalClinicalDetails" name="additionalClinicalDetails" placeholder="Anything else you would like the dentist to know"></textarea></div>
+        </div>
+
+        <div class="clinical-section">
+          <h4 class="clinical-section-title">Adverse Habits / Adverse Oral Habits</h4>
+          <div class="clinical-table-wrap"><table class="clinical-table"><thead><tr><th>Type</th><th>Frequency</th><th>Duration</th></tr></thead><tbody>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitSmoking" value="Smoking"> Smoking</label></td><td><select name="habitSmokingFrequency"><option value="">Select</option><option>Occasional</option><option>Once Daily</option><option>Twice Daily</option><option>More than Twice Daily</option></select></td><td><select name="habitSmokingDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitTobacco" value="Smokeless Tobacco/snuff"> Smokeless Tobacco / Snuff</label></td><td><select name="habitTobaccoFrequency"><option value="">Select</option><option>Occasional</option><option>Once Daily</option><option>Twice Daily</option><option>More than Twice Daily</option></select></td><td><select name="habitTobaccoDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitPaan" value="Paan chewing (gutka, paanmasala)"> Paan chewing (gutka, paanmasala)</label></td><td><select name="habitPaanFrequency"><option value="">Select</option><option>Occasional</option><option>Once Daily</option><option>Twice Daily</option><option>More than Twice Daily</option></select></td><td><select name="habitPaanDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitAlcohol" value="Alcohol"> Alcohol</label></td><td><select name="habitAlcoholFrequency"><option value="">Select</option><option>Occasional</option><option>Once Weekly</option><option>2-3 Times Weekly</option><option>Daily</option></select></td><td><select name="habitAlcoholDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+          </tbody></table></div>
+        </div>
+
+        <div class="clinical-section"><h4 class="clinical-section-title">Oral Hygiene Practices</h4><div class="hygiene-grid">
+          <div class="form-group full"><label>i) Type of Cleaning</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Toothbrush"> Toothbrush</label><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Finger"> Finger</label><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Stick"> Stick</label><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Others"> Others</label></div></div>
+          <div class="form-group full"><label>ii) Method of Cleaning</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="cleaningMethod" value="Vertical"> Vertical</label><label class="clinical-check"><input type="checkbox" name="cleaningMethod" value="Horizontal"> Horizontal</label><label class="clinical-check"><input type="checkbox" name="cleaningMethod" value="Circular"> Circular</label></div></div>
+          <div class="form-group full"><label>iii) Frequency of Cleaning / Brushing</label><div class="option-grid"><label class="clinical-check"><input type="radio" name="brushingFrequency" value="Once"> Once</label><label class="clinical-check"><input type="radio" name="brushingFrequency" value="Twice"> Twice</label><label class="clinical-check"><input type="radio" name="brushingFrequency" value="Thrice"> Thrice</label></div></div>
+          <div class="form-group full"><label>iv) Materials Used</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Toothpaste"> Toothpaste</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Tooth Powder"> Tooth Powder</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Charcoal"> Charcoal</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Sand"> Sand</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Brick Powder"> Brick Powder</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Any Other"> Any Other</label></div><input type="text" id="cleaningMaterialOther" name="cleaningMaterialOther" placeholder="If any other, please specify"></div>
+          <div class="form-group full"><label>v) Time of Brushing</label><div class="option-grid"><label class="clinical-check"><input type="radio" name="brushingTime" value="Before Meal"> Before Meal</label><label class="clinical-check"><input type="radio" name="brushingTime" value="After Meals"> After Meals</label></div></div>
+          <div class="form-group full"><label>vi) Frequency of Changing the Tooth Brush</label><div class="option-grid"><label class="clinical-check"><input type="radio" name="toothbrushChangeFrequency" value="Once"> Once</label><label class="clinical-check"><input type="radio" name="toothbrushChangeFrequency" value="Twice"> Twice</label><label class="clinical-check"><input type="radio" name="toothbrushChangeFrequency" value="Thrice"> Thrice</label></div></div>
+          <div class="form-group"><label for="durationOfCleaning">vii) Duration of Cleaning</label><input type="text" id="durationOfCleaning" name="durationOfCleaning" placeholder="e.g. 2 minutes"></div>
+          <div class="form-group full"><label>viii) Other Oral Hygiene Aids Used</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Flossing"> Flossing</label><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Interdental Aids"> Interdental Aids</label><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Oral Mouth Rinse"> Oral Mouth Rinse</label><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Tongue Cleaner"> Tongue Cleaner</label></div></div>
+        </div></div>
+
+        <div class="step-actions"><button type="button" class="secondary-btn" id="backAppointmentStep">&larr; Back</button><div class="right-actions"><button type="button" class="secondary-btn" id="skipClinicalStep">Skip &amp; Submit</button><button type="submit" class="cta-btn">Submit Appointment</button></div></div>
+      </div>
+    </form>
+
+  </div>
+
+</div>
+
+
+<!-- =========================================================
+     REPLACEMENT OF MISSING TEETH PAGE
+     Header & Footer are not included
+========================================================= -->
+
+
+<!-- =========================
+     HERO SECTION
+========================= -->
+<section class="rmt-hero">
+
+    <div class="rmt-hero-inner">
+
+        <div class="rmt-hero-content">
+
+            <span class="rmt-eyebrow">
+                REPLACEMENT OF MISSING TEETH
+            </span>
+
+            <h1>
+                Restore your smile,
+                <span>comfort and function.</span>
+            </h1>
+
+            <p class="rmt-hero-intro">
+                Missing teeth can affect the way you chew, speak and feel
+                about your smile. We offer carefully planned tooth replacement
+                options based on your oral health, individual needs and
+                long-term goals.
+            </p>
+
+            <div class="rmt-hero-actions">
+
+                <a href="services.html#contact" class="rmt-primary-btn">
+                    Book a Consultation
+                    <span>→</span>
+                </a>
+
+                <a href="#rmt-options" class="rmt-secondary-btn">
+                    Explore your options
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="rmt-hero-image">
+
+            <div class="rmt-image-frame">
+
+                <img
+                    src="clinic_photos_shortlist/missing teeth1.jpeg"
+                    alt="Replacement of missing teeth"
+                >
+
+            </div>
+
+            <div class="rmt-image-note">
+
+                <span class="rmt-note-icon">+</span>
+
+                <div>
+                    <strong>Every smile needs a plan.</strong>
+                    <span>Replacement designed around you.</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     INTRODUCTION
+========================= -->
+<section class="rmt-intro">
+
+    <div class="rmt-container">
+
+        <div class="rmt-section-heading">
+
+            <span class="rmt-eyebrow">
+                REPLACING MISSING TEETH
+            </span>
+
+            <h2>
+                One missing tooth or several,
+                <span>the approach is individual.</span>
+            </h2>
+
+            <p>
+                Tooth replacement is not a one-size-fits-all treatment.
+                The right solution depends on the number and position of
+                missing teeth, the condition of the surrounding teeth and
+                gums, your bite, your preferences and your overall oral
+                health.
+            </p>
+
+        </div>
+
+
+        <div class="rmt-reasons-grid">
+
+            <div class="rmt-reason-card">
+
+                <div class="rmt-reason-number">
+                    01
+                </div>
+
+                <h3>
+                    Restore Function
+                </h3>
+
+                <p>
+                    Replacing missing teeth can help restore comfortable
+                    chewing and support everyday oral function.
+                </p>
+
+            </div>
+
+
+            <div class="rmt-reason-card">
+
+                <div class="rmt-reason-number">
+                    02
+                </div>
+
+                <h3>
+                    Support Your Smile
+                </h3>
+
+                <p>
+                    A well-planned replacement can help restore the appearance
+                    of your smile while complementing your remaining teeth.
+                </p>
+
+            </div>
+
+
+            <div class="rmt-reason-card">
+
+                <div class="rmt-reason-number">
+                    03
+                </div>
+
+                <h3>
+                    Protect What Remains
+                </h3>
+
+                <p>
+                    Appropriate tooth replacement can form part of a broader
+                    plan to maintain oral function and the health of your
+                    remaining teeth.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     TREATMENT OPTIONS
+========================= -->
+<section class="rmt-options" id="rmt-options">
+
+    <div class="rmt-container">
+
+        <div class="rmt-section-heading">
+
+            <span class="rmt-eyebrow">
+                YOUR OPTIONS
+            </span>
+
+            <h2>
+                Different ways to replace
+                <span>missing teeth.</span>
+            </h2>
+
+            <p>
+                Depending on your individual situation, there may be several
+                ways to replace a missing tooth or multiple teeth. We discuss
+                the advantages, limitations and suitability of each option
+                before treatment.
+            </p>
+
+        </div>
+
+
+        <div class="rmt-options-list">
+
+
+            <!-- OPTION 01 -->
+            <div class="rmt-option">
+
+                <div class="rmt-option-number">
+                    01
+                </div>
+
+                <div class="rmt-option-content">
+
+                    <h3>
+                        Dental Implants
+                    </h3>
+
+                    <p>
+                        Dental implants can provide a stable foundation for
+                        a replacement tooth or other implant-supported
+                        restoration. Suitability depends on factors such as
+                        oral health, bone availability and the planned
+                        restoration.
+                    </p>
+
+                    <a href="dental-implant.html">
+                        Explore Dental Implants
+                        <span>→</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- OPTION 02 -->
+            <div class="rmt-option">
+
+                <div class="rmt-option-number">
+                    02
+                </div>
+
+                <div class="rmt-option-content">
+
+                    <h3>
+                        Fixed Dental Bridges
+                    </h3>
+
+                    <p>
+                        A dental bridge can replace one or more missing teeth
+                        by using the neighbouring teeth or suitable supporting
+                        structures to hold the replacement in position.
+                    </p>
+
+                    <a href="#contact">
+                        Discuss Bridge Options
+                        <span>→</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- OPTION 03 -->
+            <div class="rmt-option">
+
+                <div class="rmt-option-number">
+                    03
+                </div>
+
+                <div class="rmt-option-content">
+
+                    <h3>
+                        Removable Dentures
+                    </h3>
+
+                    <p>
+                        Removable partial or complete dentures can provide a
+                        practical option for replacing multiple or all missing
+                        teeth, depending on the individual case.
+                    </p>
+
+                    <a href="#contact">
+                        Discuss Denture Options
+                        <span>→</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- OPTION 04 -->
+            <div class="rmt-option">
+
+                <div class="rmt-option-number">
+                    04
+                </div>
+
+                <div class="rmt-option-content">
+
+                    <h3>
+                        Implant-Supported Solutions
+                    </h3>
+
+                    <p>
+                        In selected cases, implants may be used to support
+                        certain types of bridges or dentures, providing an
+                        alternative approach to conventional removable
+                        replacements.
+                    </p>
+
+                    <a href="#contact">
+                        Explore Your Options
+                        <span>→</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PLANNING SECTION
+========================= -->
+<section class="rmt-planning">
+
+    <div class="rmt-container">
+
+        <div class="rmt-planning-grid">
+
+            <div class="rmt-planning-image">
+
+                <img
+                    src="clinic_photos_shortlist/mising teeth.png"
+                    alt="Dental treatment planning for missing teeth"
+                >
+
+            </div>
+
+
+            <div class="rmt-planning-content">
+
+                <span class="rmt-eyebrow">
+                    CAREFUL PLANNING
+                </span>
+
+                <h2>
+                    The replacement should fit
+                    <span>your mouth, not just the gap.</span>
+                </h2>
+
+                <p>
+                    Replacing a missing tooth is about more than filling an
+                    empty space. We consider your existing teeth, gums, bite,
+                    available support and the way your teeth work together.
+                </p>
+
+                <p>
+                    This allows us to discuss treatment options that are
+                    appropriate for your individual circumstances rather than
+                    recommending the same solution for everyone.
+                </p>
+
+
+                <div class="rmt-planning-list">
+
+                    <div class="rmt-planning-item">
+
+                        <span>✓</span>
+
+                        <div>
+                            <strong>Assessment of remaining teeth</strong>
+
+                            <p>
+                                The condition and position of surrounding
+                                teeth are considered during planning.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="rmt-planning-item">
+
+                        <span>✓</span>
+
+                        <div>
+                            <strong>Evaluation of gums and supporting tissues</strong>
+
+                            <p>
+                                The supporting tissues are assessed as part
+                                of the overall treatment plan.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="rmt-planning-item">
+
+                        <span>✓</span>
+
+                        <div>
+                            <strong>Bite and function</strong>
+
+                            <p>
+                                The replacement is planned with your bite and
+                                everyday oral function in mind.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="rmt-planning-item">
+
+                        <span>✓</span>
+
+                        <div>
+                            <strong>Your preferences</strong>
+
+                            <p>
+                                Your expectations, priorities and treatment
+                                preferences are part of the discussion.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     TREATMENT PROCESS
+========================= -->
+<section class="rmt-process">
+
+    <div class="rmt-container">
+
+        <div class="rmt-section-heading">
+
+            <span class="rmt-eyebrow">
+                OUR APPROACH
+            </span>
+
+            <h2>
+                From assessment
+                <span>to a confident smile.</span>
+            </h2>
+
+            <p>
+                We take the time to understand your situation before
+                recommending a replacement option.
+            </p>
+
+        </div>
+
+
+        <div class="rmt-process-grid">
+
+
+            <div class="rmt-process-card">
+
+                <span class="rmt-process-number">
+                    01
+                </span>
+
+                <div class="rmt-process-line"></div>
+
+                <h3>
+                    Understand
+                </h3>
+
+                <p>
+                    We discuss your concerns, expectations and dental history
+                    before examining your oral health.
+                </p>
+
+            </div>
+
+
+            <div class="rmt-process-card">
+
+                <span class="rmt-process-number">
+                    02
+                </span>
+
+                <div class="rmt-process-line"></div>
+
+                <h3>
+                    Assess
+                </h3>
+
+                <p>
+                    Your teeth, gums, bite and supporting structures are
+                    assessed to understand the available treatment options.
+                </p>
+
+            </div>
+
+
+            <div class="rmt-process-card">
+
+                <span class="rmt-process-number">
+                    03
+                </span>
+
+                <div class="rmt-process-line"></div>
+
+                <h3>
+                    Plan
+                </h3>
+
+                <p>
+                    We explain suitable replacement options and develop a
+                    treatment plan based on your individual needs.
+                </p>
+
+            </div>
+
+
+            <div class="rmt-process-card">
+
+                <span class="rmt-process-number">
+                    04
+                </span>
+
+                <div class="rmt-process-line"></div>
+
+                <h3>
+                    Restore
+                </h3>
+
+                <p>
+                    Your selected restoration is provided and adjusted with
+                    attention to comfort, function and appearance.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     WHY REPLACE MISSING TEETH
+========================= -->
+<section class="rmt-benefits">
+
+    <div class="rmt-container">
+
+        <div class="rmt-benefits-grid">
+
+            <div class="rmt-benefits-content">
+
+                <span class="rmt-eyebrow">
+                    WHY REPLACEMENT MATTERS
+                </span>
+
+                <h2>
+                    Restoring more than
+                    <span>just your smile.</span>
+                </h2>
+
+                <p>
+                    A missing tooth can change the way your mouth functions.
+                    The appropriate replacement can help restore comfort,
+                    function and confidence while forming part of your
+                    long-term dental care.
+                </p>
+
+            </div>
+
+
+            <div class="rmt-benefits-list">
+
+                <div class="rmt-benefit-item">
+
+                    <span class="rmt-benefit-icon">
+                        01
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Comfortable chewing
+                        </h3>
+
+                        <p>
+                            Replacing missing teeth can help restore
+                            comfortable everyday chewing.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="rmt-benefit-item">
+
+                    <span class="rmt-benefit-icon">
+                        02
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Improved appearance
+                        </h3>
+
+                        <p>
+                            A carefully designed restoration can complement
+                            your natural teeth and smile.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="rmt-benefit-item">
+
+                    <span class="rmt-benefit-icon">
+                        03
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Support for oral function
+                        </h3>
+
+                        <p>
+                            Replacing missing teeth can help restore balance
+                            and function within the dental arch.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="rmt-benefit-item">
+
+                    <span class="rmt-benefit-icon">
+                        04
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Greater confidence
+                        </h3>
+
+                        <p>
+                            Restoring a missing tooth can help you feel more
+                            comfortable when smiling, speaking and eating.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     INDIVIDUAL TREATMENT
+========================= -->
+<section class="rmt-individual">
+
+    <div class="rmt-container">
+
+        <div class="rmt-section-heading">
+
+            <span class="rmt-eyebrow">
+                YOUR TREATMENT, YOUR NEEDS
+            </span>
+
+            <h2>
+                There is no single answer
+                <span>for every missing tooth.</span>
+            </h2>
+
+            <p>
+                The best replacement option depends on your specific
+                circumstances. During your consultation, we can explain
+                the available choices and help you understand what each
+                option involves.
+            </p>
+
+        </div>
+
+
+        <div class="rmt-individual-grid">
+
+            <div class="rmt-individual-card">
+
+                <span class="rmt-individual-number">
+                    01
+                </span>
+
+                <h3>
+                    One Missing Tooth
+                </h3>
+
+                <p>
+                    Depending on the surrounding teeth and supporting tissues,
+                    options may include an implant-supported crown or a
+                    fixed bridge.
+                </p>
+
+            </div>
+
+
+            <div class="rmt-individual-card">
+
+                <span class="rmt-individual-number">
+                    02
+                </span>
+
+                <h3>
+                    Several Missing Teeth
+                </h3>
+
+                <p>
+                    Multiple missing teeth may be replaced using bridges,
+                    implants, removable dentures or combinations of
+                    treatment options.
+                </p>
+
+            </div>
+
+
+            <div class="rmt-individual-card">
+
+                <span class="rmt-individual-number">
+                    03
+                </span>
+
+                <h3>
+                    Complete Tooth Loss
+                </h3>
+
+                <p>
+                    Where all teeth are missing, complete dentures or
+                    selected implant-supported solutions may be considered.
+                </p>
+
+            </div>
+
+
+            <div class="rmt-individual-card">
+
+                <span class="rmt-individual-number">
+                    04
+                </span>
+
+                <h3>
+                    Existing Dental Work
+                </h3>
+
+                <p>
+                    Existing crowns, bridges, fillings and other dental work
+                    are considered when developing an overall treatment plan.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FINAL CTA
+========================= -->
+<section class="rmt-final-cta" id="contact">
+
+    <div class="rmt-final-cta-inner">
+
+        <span class="rmt-eyebrow">
+            MISSING TEETH?
+        </span>
+
+        <h2>
+            Let's find the right
+            <span>way forward for you.</span>
+        </h2>
+
+        <p>
+            Start with a careful examination and understand the options
+            available for replacing your missing teeth before deciding
+            what comes next.
+        </p>
+
+        <a
+            href="services.html#contact"
+            class="rmt-primary-btn rmt-cta-btn"
+        >
+            Book a Consultation
+            <span>→</span>
+        </a>
+
+    </div>
+
+</section>
+
+<footer>
+
+  <div class="container footer-grid">
+
+
+    <div>
+
+      <h4>
+        Dr. Gupta's Dental Clinic
+      </h4>
+
+      <p>
+        Precision, magnification-guided dentistry in South Extension, New Delhi since 2013.
+      </p>
+
+    </div>
+
+
+    <div>
+
+      <h4>
+        Quick Links
+      </h4>
+
+      <a href="about.html">
+        About
+      </a>
+
+      <a href="services.html">
+        Services
+      </a>
+
+      <a href="reviews.html">
+        Reviews
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+    </div>
+
+
+    <div>
+
+      <h4>
+        Contact
+      </h4>
+
+      <a href="tel:+919990880975">
+        Mobile: 99908 80975
+      </a>
+
+      <a href="tel:+911142220392">
+        Landline: 011-4222-0392
+      </a>
+
+      <a href="https://wa.me/919990880975">
+        WhatsApp Us
+      </a>
+
+      <p>   H-30, South Extension Part 1, New Delhi</p>
+
+    </div>
+  </div>
+
+
+  <div class="container footer-bottom">
+    © 2026 Dr. Gupta's Dental Clinic. All rights reserved.
+  </div>
+
+</footer>
+
+
+<script src="script.js" defer></script>
+
+</body>
+</html>

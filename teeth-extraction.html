@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dental Services | Dr. Gupta's Dental Clinic</title>
+
+<meta name="description" content="Dr. Tanupriya Gupta — 20 years of precision, magnification-guided restorative dentistry in South Extension, New Delhi. Ethical care, no over-treatment.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="teeth-extraction.css">
+</head>
+
+
+<body><!-- =========================================================
+     HEADER
+     ========================================================= -->
+
+<header>
+
+  <div class="header-info">
+    <div class="container header-info-wrap">
+      <div class="availability" aria-label="Clinic availability">
+        <span><strong>Availability:</strong> <span class="availability-hours">Monday - Saturday, 10:00 AM - 7:00 PM</span></span>
+        <span class="sunday-closed">Sunday: CLOSED</span>
+      </div>
+      <div class="header-contact" aria-label="Clinic contact details">
+        <a href="tel:+919990880975">Call: +91 99908 80975</a>
+        <a href="https://wa.me/919990880975" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container nav-wrap">
+
+    <div class="brand">
+
+      <img
+        src="logo_trimmed.png"
+        alt="Dr. Gupta's Dental Clinic logo"
+        style="width:44px;height:44px;border-radius:10px;object-fit:cover;"
+      >
+
+      <div class="brand-name">
+        Dr. Gupta's Dental Clinic
+      </div>
+
+    </div>
+
+
+    <nav>
+
+      <ul id="main-navigation">
+
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+
+        <li>
+          <a href="about.html">About</a>
+        </li>
+
+        <li>
+          <a href="difference.html">Our Difference</a>
+        </li>
+
+        <li>
+          <a href="services.html">Services</a>
+        </li>
+
+        <li>
+          <a href="reviews.html">Reviews</a>
+        </li>
+
+        <li>
+          <a href="contact.html">Contact</a>
+        </li>
+
+      </ul>
+
+    </nav>
+
+
+    <div class="nav-cta">
+
+      <button
+        type="button"
+        class="appointment-trigger"
+        id="openAppointmentModal"
+      >
+        Book Appointment
+      </button>
+
+      <button
+        type="button"
+        class="menu-toggle"
+        aria-label="Menu"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >
+        &#9776;
+      </button>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- =========================================================
+     APPOINTMENT MODAL
+     ========================================================= -->
+
+<div
+  class="appointment-modal-overlay"
+  id="appointmentModal"
+  aria-hidden="true"
+>
+
+  <div
+    class="appointment-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="appointmentTitle"
+  >
+
+    <button
+      type="button"
+      class="modal-close"
+      aria-label="Close appointment form"
+    >
+      &times;
+    </button>
+
+
+    <div class="modal-head">
+
+      <h3 id="appointmentTitle">
+        Book an Appointment
+      </h3>
+
+      <p>
+        Please fill in your details and we will contact you shortly.
+      </p>
+
+    </div>
+
+
+    <form class="appointment-form" id="appointmentForm">
+      <div class="appointment-progress" aria-label="Appointment form progress">
+        <div class="step-indicator active" id="stepIndicator1">1. Patient Details</div>
+        <div class="step-indicator" id="stepIndicator2">2. Personal Details <span class="optional-note">(Optional)</span></div>
+      </div>
+
+      <div class="appointment-step active" id="appointmentStep1">
+        <div class="form-grid">
+          <div class="form-group"><label for="name">Name</label><input id="name" name="name" type="text" placeholder="Enter your name" required></div>
+          <div class="form-group"><label for="age">Age</label><input id="age" name="age" type="number" min="1" placeholder="Age" required></div>
+          <div class="form-group"><label for="phone">Phone No</label><input id="phone" name="phone" type="tel" placeholder="Your phone number" required></div>
+          <div class="form-group"><label for="email">Email</label><input id="email" name="email" type="email" placeholder="Your email address" required></div>
+          <div class="form-group full"><label for="address">Address</label><input id="address" name="address" type="text" placeholder="Your address" required></div>
+          <div class="form-group"><label for="appointmentDate">Appointment Date</label><input type="date" id="appointmentDate" name="appointmentDate" required></div>
+          <div class="form-group"><label for="appointmentTime">Available Time Slot</label><select id="appointmentTime" name="appointmentTime" required disabled><option value="">Select a date first</option></select><small class="slot-status" id="slotStatus" aria-live="polite">Choose a date to see available slots.</small></div>
+          <div class="form-group"><label for="gender">Gender</label><select id="gender" name="gender" required><option value="">Select gender</option><option>Male</option><option>Female</option><option>Other</option></select></div>
+        </div>
+        <div class="step-actions">
+          <button type="button" class="secondary-btn" id="closeAppointmentModal">Cancel</button>
+          <button type="button" class="cta-btn" id="nextAppointmentStep">Next &rarr;</button>
+        </div>
+      </div>
+
+      <div class="appointment-step" id="appointmentStep2">
+        <div class="clinical-intro"><strong>Personal details are optional.</strong> You can provide them to help the dentist understand your concern before the appointment, or skip this section and submit with your basic details.</div>
+        <div class="form-grid">
+          <div class="form-group full"><label for="reasonForVisit">Reason for Visit</label><textarea id="reasonForVisit" name="reasonForVisit" placeholder="Briefly describe the reason for your visit"></textarea></div>
+          <div class="form-group"><label for="dentalProblem">Current Dental Problem</label><select id="dentalProblem" name="dentalProblem"><option value="">Select if applicable</option><option>Tooth Pain</option><option>Sensitivity</option><option>Swelling</option><option>Bleeding Gums</option><option>Broken / Chipped Tooth</option><option>Cavity</option><option>Missing Tooth</option><option>Routine Check-up</option><option>Cleaning</option><option>Other</option></select></div>
+          <div class="form-group"><label for="painLevel">Pain / Discomfort</label><select id="painLevel" name="painLevel"><option value="">Select if applicable</option><option>None</option><option>Mild</option><option>Moderate</option><option>Severe</option></select></div>
+          <div class="form-group"><label for="previousDentalTreatment">Previous Dental Treatment</label><select id="previousDentalTreatment" name="previousDentalTreatment"><option value="">Select if applicable</option><option>No Previous Treatment</option><option>Filling</option><option>Root Canal</option><option>Extraction</option><option>Implant</option><option>Crown / Bridge</option><option>Other</option></select></div>
+          <div class="form-group"><label>Currently Taking Any Medicine?</label><div class="radio-row"><label class="radio-option"><input type="radio" name="medication" value="yes"> Yes</label><label class="radio-option"><input type="radio" name="medication" value="no" checked> No</label></div></div>
+          <div class="form-group full medication-box" id="medicationBox"><label for="medicineDetails">Medicine Details</label><textarea id="medicineDetails" name="medicineDetails" placeholder="List medicines you are currently taking"></textarea></div>
+          <div class="form-group full"><label for="allergies">Known Allergies</label><textarea id="allergies" name="allergies" placeholder="Mention any known medicine or other allergies"></textarea></div>
+          <div class="form-group full"><label for="medicalHistory">Medical History</label><textarea id="medicalHistory" name="medicalHistory" placeholder="Mention any relevant medical history"></textarea></div>
+          <div class="form-group full"><label for="additionalClinicalDetails">Additional Clinical Details</label><textarea id="additionalClinicalDetails" name="additionalClinicalDetails" placeholder="Anything else you would like the dentist to know"></textarea></div>
+        </div>
+
+        <div class="clinical-section">
+          <h4 class="clinical-section-title">Adverse Habits / Adverse Oral Habits</h4>
+          <div class="clinical-table-wrap"><table class="clinical-table"><thead><tr><th>Type</th><th>Frequency</th><th>Duration</th></tr></thead><tbody>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitSmoking" value="Smoking"> Smoking</label></td><td><select name="habitSmokingFrequency"><option value="">Select</option><option>Occasional</option><option>Once Daily</option><option>Twice Daily</option><option>More than Twice Daily</option></select></td><td><select name="habitSmokingDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitTobacco" value="Smokeless Tobacco/snuff"> Smokeless Tobacco / Snuff</label></td><td><select name="habitTobaccoFrequency"><option value="">Select</option><option>Occasional</option><option>Once Daily</option><option>Twice Daily</option><option>More than Twice Daily</option></select></td><td><select name="habitTobaccoDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitPaan" value="Paan chewing (gutka, paanmasala)"> Paan chewing (gutka, paanmasala)</label></td><td><select name="habitPaanFrequency"><option value="">Select</option><option>Occasional</option><option>Once Daily</option><option>Twice Daily</option><option>More than Twice Daily</option></select></td><td><select name="habitPaanDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitAlcohol" value="Alcohol"> Alcohol</label></td><td><select name="habitAlcoholFrequency"><option value="">Select</option><option>Occasional</option><option>Once Weekly</option><option>2-3 Times Weekly</option><option>Daily</option></select></td><td><select name="habitAlcoholDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+          </tbody></table></div>
+        </div>
+
+        <div class="clinical-section"><h4 class="clinical-section-title">Oral Hygiene Practices</h4><div class="hygiene-grid">
+          <div class="form-group full"><label>i) Type of Cleaning</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Toothbrush"> Toothbrush</label><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Finger"> Finger</label><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Stick"> Stick</label><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Others"> Others</label></div></div>
+          <div class="form-group full"><label>ii) Method of Cleaning</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="cleaningMethod" value="Vertical"> Vertical</label><label class="clinical-check"><input type="checkbox" name="cleaningMethod" value="Horizontal"> Horizontal</label><label class="clinical-check"><input type="checkbox" name="cleaningMethod" value="Circular"> Circular</label></div></div>
+          <div class="form-group full"><label>iii) Frequency of Cleaning / Brushing</label><div class="option-grid"><label class="clinical-check"><input type="radio" name="brushingFrequency" value="Once"> Once</label><label class="clinical-check"><input type="radio" name="brushingFrequency" value="Twice"> Twice</label><label class="clinical-check"><input type="radio" name="brushingFrequency" value="Thrice"> Thrice</label></div></div>
+          <div class="form-group full"><label>iv) Materials Used</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Toothpaste"> Toothpaste</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Tooth Powder"> Tooth Powder</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Charcoal"> Charcoal</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Sand"> Sand</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Brick Powder"> Brick Powder</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Any Other"> Any Other</label></div><input type="text" id="cleaningMaterialOther" name="cleaningMaterialOther" placeholder="If any other, please specify"></div>
+          <div class="form-group full"><label>v) Time of Brushing</label><div class="option-grid"><label class="clinical-check"><input type="radio" name="brushingTime" value="Before Meal"> Before Meal</label><label class="clinical-check"><input type="radio" name="brushingTime" value="After Meals"> After Meals</label></div></div>
+          <div class="form-group full"><label>vi) Frequency of Changing the Tooth Brush</label><div class="option-grid"><label class="clinical-check"><input type="radio" name="toothbrushChangeFrequency" value="Once"> Once</label><label class="clinical-check"><input type="radio" name="toothbrushChangeFrequency" value="Twice"> Twice</label><label class="clinical-check"><input type="radio" name="toothbrushChangeFrequency" value="Thrice"> Thrice</label></div></div>
+          <div class="form-group"><label for="durationOfCleaning">vii) Duration of Cleaning</label><input type="text" id="durationOfCleaning" name="durationOfCleaning" placeholder="e.g. 2 minutes"></div>
+          <div class="form-group full"><label>viii) Other Oral Hygiene Aids Used</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Flossing"> Flossing</label><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Interdental Aids"> Interdental Aids</label><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Oral Mouth Rinse"> Oral Mouth Rinse</label><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Tongue Cleaner"> Tongue Cleaner</label></div></div>
+        </div></div>
+
+        <div class="step-actions"><button type="button" class="secondary-btn" id="backAppointmentStep">&larr; Back</button><div class="right-actions"><button type="button" class="secondary-btn" id="skipClinicalStep">Skip &amp; Submit</button><button type="submit" class="cta-btn">Submit Appointment</button></div></div>
+      </div>
+    </form>
+
+  </div>
+
+</div>
+
+
+<!-- =========================================================
+     TEETH EXTRACTION PAGE
+========================================================= -->
+
+<main class="te-page">
+
+
+    <!-- =====================================================
+         HERO SECTION
+    ====================================================== -->
+
+    <section class="te-hero">
+
+        <div class="te-hero-inner">
+
+            <!-- LEFT CONTENT -->
+
+            <div class="te-hero-content">
+
+                <span class="te-eyebrow">
+                    TEETH EXTRACTION
+                </span>
+
+                <h1>
+                    Removing a tooth
+                    <span>when it is no longer the best option.</span>
+                </h1>
+
+                <p class="te-hero-intro">
+                    Tooth extraction is sometimes recommended when a tooth
+                    cannot be predictably restored or is causing pain,
+                    infection or other dental problems. Our approach focuses
+                    on careful assessment, appropriate planning and
+                    comfortable treatment.
+                </p>
+
+
+                <div class="te-hero-actions">
+
+                    <a
+                        href="services.html#contact"
+                        class="te-primary-btn"
+                    >
+                        Book a Consultation
+                        <span>→</span>
+                    </a>
+
+
+                    <a
+                        href="#te-approach"
+                        class="te-secondary-btn"
+                    >
+                        Understand the treatment
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT IMAGE -->
+
+            <div class="te-hero-image">
+
+                <div class="te-image-frame">
+
+                    <img
+                        src="clinic_photos_shortlist/teeth extraction2.jpeg"
+                        alt="Teeth extraction treatment"
+                    >
+
+                </div>
+
+
+                <div class="te-image-note">
+
+                    <span class="te-note-icon">
+                        +
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Treatment begins with assessment.
+                        </strong>
+
+                        <span>
+                            Extraction is considered when a tooth
+                            cannot be predictably saved.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         INTRODUCTION
+    ====================================================== -->
+
+    <section class="te-introduction">
+
+        <div class="te-container">
+
+            <div class="te-section-heading">
+
+                <span class="te-eyebrow">
+                    A CAREFUL DECISION
+                </span>
+
+                <h2>
+                    Extraction is not always the first choice.
+                </h2>
+
+                <p>
+                    Whenever possible, the goal is to preserve a natural
+                    tooth. However, there are situations where removing
+                    a tooth may be the most appropriate treatment for
+                    protecting your oral health.
+                </p>
+
+            </div>
+
+
+            <div class="te-intro-grid">
+
+                <div class="te-intro-card">
+
+                    <span class="te-card-number">
+                        01
+                    </span>
+
+                    <h3>
+                        Assess
+                    </h3>
+
+                    <p>
+                        We first examine the tooth and surrounding tissues
+                        to understand the condition and determine whether
+                        the tooth can be predictably treated.
+                    </p>
+
+                </div>
+
+
+                <div class="te-intro-card">
+
+                    <span class="te-card-number">
+                        02
+                    </span>
+
+                    <h3>
+                        Plan
+                    </h3>
+
+                    <p>
+                        If extraction is appropriate, the procedure is
+                        planned according to the position and condition
+                        of the tooth.
+                    </p>
+
+                </div>
+
+
+                <div class="te-intro-card">
+
+                    <span class="te-card-number">
+                        03
+                    </span>
+
+                    <h3>
+                        Care
+                    </h3>
+
+                    <p>
+                        Clear instructions are provided after treatment
+                        to support healing and help you understand the
+                        next steps for your dental health.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         WHEN EXTRACTION MAY BE REQUIRED
+    ====================================================== -->
+
+    <section class="te-conditions" id="te-approach">
+
+        <div class="te-container">
+
+            <div class="te-two-column">
+
+                <!-- IMAGE -->
+
+                <div class="te-content-image">
+
+                    <img
+                        src="clinic_photos_shortlist/teeth extraction 3.jpeg"
+                        alt="Dental examination before tooth extraction"
+                    >
+
+                </div>
+
+
+                <!-- CONTENT -->
+
+                <div class="te-content-text">
+
+                    <span class="te-eyebrow">
+                        WHEN EXTRACTION MAY BE REQUIRED
+                    </span>
+
+                    <h2>
+                        When removing a tooth may be appropriate.
+                    </h2>
+
+                    <p>
+                        A tooth may sometimes require extraction when
+                        restorative treatment is no longer predictable
+                        or when the tooth is affecting surrounding
+                        oral tissues.
+                    </p>
+
+
+                    <ul class="te-check-list">
+
+                        <li>
+                            <span>✓</span>
+                            A tooth is severely damaged or extensively
+                            decayed.
+                        </li>
+
+                        <li>
+                            <span>✓</span>
+                            The tooth cannot be predictably restored.
+                        </li>
+
+                        <li>
+                            <span>✓</span>
+                            Infection or significant dental pain is
+                            associated with the tooth.
+                        </li>
+
+                        <li>
+                            <span>✓</span>
+                            A problematic wisdom tooth requires removal.
+                        </li>
+
+                        <li>
+                            <span>✓</span>
+                            Removal is recommended as part of a broader
+                            treatment plan.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         OUR APPROACH
+    ====================================================== -->
+
+    <section class="te-process">
+
+        <div class="te-container">
+
+            <div class="te-section-heading centered">
+
+                <span class="te-eyebrow">
+                    OUR APPROACH
+                </span>
+
+                <h2>
+                    Calm, planned and clinically focused.
+                </h2>
+
+                <p>
+                    Every extraction begins with understanding the
+                    individual tooth and the patient's overall
+                    dental condition.
+                </p>
+
+            </div>
+
+
+            <div class="te-process-grid">
+
+                <div class="te-process-item">
+
+                    <div class="te-process-icon">
+                        01
+                    </div>
+
+                    <h3>
+                        Clinical Examination
+                    </h3>
+
+                    <p>
+                        The tooth and surrounding structures are carefully
+                        assessed before deciding whether extraction is
+                        appropriate.
+                    </p>
+
+                </div>
+
+
+                <div class="te-process-item">
+
+                    <div class="te-process-icon">
+                        02
+                    </div>
+
+                    <h3>
+                        Treatment Planning
+                    </h3>
+
+                    <p>
+                        The procedure is planned according to the tooth's
+                        condition, position and the patient's individual
+                        requirements.
+                    </p>
+
+                </div>
+
+
+                <div class="te-process-item">
+
+                    <div class="te-process-icon">
+                        03
+                    </div>
+
+                    <h3>
+                        Comfortable Treatment
+                    </h3>
+
+                    <p>
+                        The procedure is carried out with appropriate
+                        anaesthesia and careful clinical technique.
+                    </p>
+
+                </div>
+
+
+                <div class="te-process-item">
+
+                    <div class="te-process-icon">
+                        04
+                    </div>
+
+                    <h3>
+                        Aftercare
+                    </h3>
+
+                    <p>
+                        Post-treatment instructions are explained clearly
+                        to support healing and reduce avoidable
+                        complications.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         TOOTH PRESERVATION
+    ====================================================== -->
+
+    <section class="te-preservation">
+
+        <div class="te-container">
+
+            <div class="te-preservation-box">
+
+                <div class="te-preservation-content">
+
+                    <span class="te-eyebrow">
+                        PRESERVING NATURAL TEETH
+                    </span>
+
+                    <h2>
+                        The first question is always:
+                        <span>Can the tooth be saved?</span>
+                    </h2>
+
+                    <p>
+                        At Dr. Gupta's Dental Clinic, preservation of
+                        natural teeth is an important part of treatment
+                        planning. Extraction is considered when a tooth
+                        cannot be predictably saved or when removing it
+                        is the more appropriate option for long-term
+                        oral health.
+                    </p>
+
+                    <p>
+                        Where suitable, alternatives such as restorative
+                        treatment or root canal therapy may be considered
+                        before deciding on extraction.
+                    </p>
+
+                </div>
+
+
+                <div class="te-preservation-mark">
+
+                    <div class="te-mark-circle">
+                        ✓
+                    </div>
+
+                    <span>
+                        Natural tooth<br>
+                        preservation
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         AFTERCARE
+    ====================================================== -->
+
+    <section class="te-aftercare">
+
+        <div class="te-container">
+
+            <div class="te-section-heading centered">
+
+                <span class="te-eyebrow">
+                    AFTER EXTRACTION
+                </span>
+
+                <h2>
+                    Understanding your aftercare.
+                </h2>
+
+                <p>
+                    Good aftercare plays an important role in comfortable
+                    healing. You will receive specific instructions
+                    based on your treatment.
+                </p>
+
+            </div>
+
+
+            <div class="te-aftercare-grid">
+
+                <div class="te-aftercare-card">
+
+                    <span class="te-aftercare-number">
+                        01
+                    </span>
+
+                    <h3>
+                        Protect the area
+                    </h3>
+
+                    <p>
+                        Follow the instructions provided after the
+                        procedure and avoid disturbing the extraction site.
+                    </p>
+
+                </div>
+
+
+                <div class="te-aftercare-card">
+
+                    <span class="te-aftercare-number">
+                        02
+                    </span>
+
+                    <h3>
+                        Follow oral-care advice
+                    </h3>
+
+                    <p>
+                        Maintain appropriate oral hygiene while taking
+                        care around the treated area during healing.
+                    </p>
+
+                </div>
+
+
+                <div class="te-aftercare-card">
+
+                    <span class="te-aftercare-number">
+                        03
+                    </span>
+
+                    <h3>
+                        Contact us if concerned
+                    </h3>
+
+                    <p>
+                        If you experience unexpected symptoms or have
+                        concerns during healing, contact the clinic
+                        for appropriate guidance.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FAQ
+    ====================================================== -->
+
+    <section class="te-faq">
+
+        <div class="te-container">
+
+            <div class="te-section-heading centered">
+
+                <span class="te-eyebrow">
+                    COMMON QUESTIONS
+                </span>
+
+                <h2>
+                    Teeth extraction — explained simply.
+                </h2>
+
+            </div>
+
+
+            <div class="te-faq-list">
+
+
+                <div class="te-faq-item">
+
+                    <button class="te-faq-question">
+
+                        <span>
+                            Is extraction always necessary for a painful tooth?
+                        </span>
+
+                        <span class="te-faq-plus">
+                            +
+                        </span>
+
+                    </button>
+
+                    <div class="te-faq-answer">
+
+                        <p>
+                            No. Pain does not automatically mean that a
+                            tooth needs to be removed. The tooth should
+                            first be examined to determine whether it can
+                            be predictably treated and preserved.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="te-faq-item">
+
+                    <button class="te-faq-question">
+
+                        <span>
+                            Can a tooth be saved instead of extracted?
+                        </span>
+
+                        <span class="te-faq-plus">
+                            +
+                        </span>
+
+                    </button>
+
+                    <div class="te-faq-answer">
+
+                        <p>
+                            In some cases, yes. Depending on the condition
+                            of the tooth, restorative treatment or root
+                            canal therapy may provide an alternative to
+                            extraction.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="te-faq-item">
+
+                    <button class="te-faq-question">
+
+                        <span>
+                            What happens after a tooth is removed?
+                        </span>
+
+                        <span class="te-faq-plus">
+                            +
+                        </span>
+
+                    </button>
+
+                    <div class="te-faq-answer">
+
+                        <p>
+                            Aftercare instructions are provided to support
+                            healing. Depending on the location and
+                            importance of the missing tooth, replacement
+                            options may also be discussed.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="te-faq-item">
+
+                    <button class="te-faq-question">
+
+                        <span>
+                            What about wisdom teeth?
+                        </span>
+
+                        <span class="te-faq-plus">
+                            +
+                        </span>
+
+                    </button>
+
+                    <div class="te-faq-answer">
+
+                        <p>
+                            Wisdom tooth removal may be recommended when
+                            a wisdom tooth is causing problems or is
+                            considered unsuitable to retain. An examination
+                            is required to determine the appropriate
+                            approach.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FINAL CTA
+    ====================================================== -->
+
+    <section class="te-final-cta" id="contact">
+
+        <div class="te-final-cta-inner">
+
+            <span class="te-eyebrow">
+                START WITH AN EXAMINATION
+            </span>
+
+            <h2>
+                Sometimes the best treatment
+                begins with a careful assessment.
+            </h2>
+
+            <p>
+                If you are experiencing dental pain or have been advised
+                to consider extraction, begin with a consultation to
+                understand your options.
+            </p>
+
+            <a
+                href="services.html#contact"
+                class="te-primary-btn te-cta-btn"
+            >
+                Book a Consultation
+                <span>→</span>
+            </a>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<footer>
+
+  <div class="container footer-grid">
+
+
+    <div>
+
+      <h4>
+        Dr. Gupta's Dental Clinic
+      </h4>
+
+      <p>
+        Precision, magnification-guided dentistry in South Extension, New Delhi since 2013.
+      </p>
+
+    </div>
+
+
+    <div>
+
+      <h4>
+        Quick Links
+      </h4>
+
+      <a href="about.html">
+        About
+      </a>
+
+      <a href="services.html">
+        Services
+      </a>
+
+      <a href="reviews.html">
+        Reviews
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+    </div>
+
+
+    <div>
+
+      <h4>
+        Contact
+      </h4>
+
+      <a href="tel:+919990880975">
+        Mobile: 99908 80975
+      </a>
+
+      <a href="tel:+911142220392">
+        Landline: 011-4222-0392
+      </a>
+
+      <a href="https://wa.me/919990880975">
+        WhatsApp Us
+      </a>
+
+      <p>   H-30, South Extension Part 1, New Delhi</p>
+
+    </div>
+  </div>
+
+
+  <div class="container footer-bottom">
+    © 2026 Dr. Gupta's Dental Clinic. All rights reserved.
+  </div>
+
+</footer>
+
+
+<script src="script.js" defer></script>
+
+</body>
+</html>

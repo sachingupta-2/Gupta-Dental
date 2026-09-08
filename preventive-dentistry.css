@@ -1,0 +1,776 @@
+/* =========================================================
+   PREVENTIVE DENTISTRY PAGE
+========================================================= */
+
+.pd-page {
+    background: #FAF7F0;
+    color: #12213F;
+}
+
+
+/* =========================================================
+   COMMON
+========================================================= */
+
+.pd-container {
+    width: min(1120px, calc(100% - 48px));
+    margin: 0 auto;
+}
+
+.pd-label,
+.pd-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: #C9A227;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.pd-hero {
+    padding: 90px 24px 110px;
+    background: #FAF7F0;
+}
+
+.pd-hero-inner {
+    width: min(1160px, 100%);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+    align-items: center;
+}
+
+
+/* HERO CONTENT */
+
+.pd-hero-content {
+    max-width: 570px;
+}
+
+.pd-eyebrow {
+    display: block;
+    margin-bottom: 18px;
+}
+
+.pd-hero-content h1 {
+    margin: 0 0 25px;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(48px, 5vw, 70px);
+    line-height: .98;
+    font-weight: 600;
+
+    color: #12213F;
+}
+
+.pd-hero-content h1 span {
+    display: block;
+    color: #C9A227;
+}
+
+.pd-hero-intro {
+    max-width: 540px;
+
+    margin: 0 0 34px;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+
+    color: #687080;
+}
+
+
+/* HERO BUTTONS */
+
+.pd-hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.pd-primary-btn,
+.pd-secondary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 50px;
+    padding: 0 22px;
+
+    border-radius: 4px;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        background .3s ease;
+}
+
+.pd-primary-btn {
+    background: #12213F;
+    color: #ffffff;
+}
+
+.pd-primary-btn span {
+    margin-left: 12px;
+    font-size: 18px;
+}
+
+.pd-primary-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(18, 33, 63, .18);
+}
+
+.pd-secondary-btn {
+    border: 1px solid #D7D0C2;
+    color: #12213F;
+    background: transparent;
+}
+
+.pd-secondary-btn:hover {
+    background: #ffffff;
+    transform: translateY(-3px);
+}
+
+
+/* HERO IMAGE */
+
+.pd-hero-image {
+    position: relative;
+}
+
+.pd-image-frame {
+    position: relative;
+
+    width: 100%;
+    height: 560px;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 20px 55px rgba(18, 33, 63, .12);
+}
+
+.pd-image-frame img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition:
+        transform .8s cubic-bezier(.2,.8,.2,1);
+}
+
+.pd-image-frame:hover img {
+    transform: scale(1.04);
+}
+
+
+/* IMAGE NOTE */
+
+.pd-image-note {
+    position: absolute;
+
+    left: -28px;
+    bottom: 35px;
+
+    width: 280px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 18px 20px;
+
+    background: #ffffff;
+
+    border: 1px solid #E8E2D7;
+    border-radius: 10px;
+
+    box-shadow:
+        0 15px 40px rgba(18, 33, 63, .12);
+}
+
+.pd-note-icon {
+    width: 36px;
+    height: 36px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #EFE6C8;
+    color: #9B7A13;
+
+    font-size: 20px;
+}
+
+.pd-image-note strong {
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+
+    color: #12213F;
+}
+
+.pd-image-note span:not(.pd-note-icon) {
+    display: block;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    line-height: 1.5;
+
+    color: #777D88;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.pd-intro-section {
+    padding: 100px 0;
+
+    background: #ffffff;
+}
+
+.pd-intro-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+    align-items: start;
+}
+
+.pd-section-heading h2 {
+    margin: 15px 0 0;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 44px;
+    line-height: 1.05;
+    font-weight: 600;
+
+    color: #12213F;
+}
+
+.pd-intro-content {
+    padding-top: 28px;
+}
+
+.pd-intro-content p {
+    margin: 0 0 20px;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.85;
+
+    color: #687080;
+}
+
+.pd-intro-content p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   APPROACH
+========================================================= */
+
+.pd-approach-section {
+    padding: 110px 0;
+
+    background: #F4F0E7;
+}
+
+.pd-section-head {
+    max-width: 700px;
+
+    margin: 0 auto 60px;
+
+    text-align: center;
+}
+
+.pd-section-head h2 {
+    margin: 15px 0;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 46px;
+    line-height: 1.05;
+
+    font-weight: 600;
+
+    color: #12213F;
+}
+
+.pd-section-head p {
+    margin: 0 auto;
+
+    max-width: 600px;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+
+    color: #707681;
+}
+
+
+/* CARE GRID */
+
+.pd-care-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 22px;
+}
+
+.pd-care-card {
+    position: relative;
+
+    padding: 38px 36px 40px;
+
+    background: #ffffff;
+
+    border: 1px solid #E5DFD2;
+    border-radius: 14px;
+
+    box-shadow:
+        0 7px 25px rgba(18, 33, 63, .04);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+}
+
+.pd-care-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 18px 40px rgba(18, 33, 63, .10);
+}
+
+.pd-card-number {
+    position: absolute;
+
+    top: 25px;
+    right: 28px;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: .1em;
+
+    color: #C9A227;
+}
+
+.pd-card-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 25px;
+
+    color: #C9A227;
+
+    background: #F4EEDC;
+
+    border-radius: 50%;
+}
+
+.pd-card-icon svg {
+    width: 27px;
+    height: 27px;
+}
+
+.pd-care-card h3 {
+    margin: 0 0 12px;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 27px;
+    line-height: 1.1;
+
+    color: #12213F;
+}
+
+.pd-care-card p {
+    margin: 0;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.75;
+
+    color: #6C7380;
+}
+
+
+/* =========================================================
+   FOCUS SECTION
+========================================================= */
+
+.pd-focus-section {
+    padding: 110px 0;
+
+    background: #ffffff;
+}
+
+.pd-focus-grid {
+    display: grid;
+
+    grid-template-columns: .95fr 1.05fr;
+
+    gap: 75px;
+
+    align-items: center;
+}
+
+.pd-focus-image {
+    height: 560px;
+
+    overflow: hidden;
+
+    border-radius: 16px;
+}
+
+.pd-focus-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform .8s cubic-bezier(.2,.8,.2,1);
+}
+
+.pd-focus-image:hover img {
+    transform: scale(1.05);
+}
+
+.pd-focus-content h2 {
+    margin: 15px 0 22px;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 46px;
+    line-height: 1.05;
+
+    color: #12213F;
+}
+
+.pd-focus-content > p {
+    margin: 0 0 30px;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+
+    color: #6C7380;
+}
+
+
+/* FOCUS LIST */
+
+.pd-focus-list {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    border-top: 1px solid #E5E0D7;
+}
+
+.pd-focus-list li {
+    display: flex;
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid #E5E0D7;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #303A4D;
+}
+
+.pd-focus-list li span {
+    width: 30px;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    color: #C9A227;
+}
+
+
+/* =========================================================
+   EDUCATION
+========================================================= */
+
+.pd-education-section {
+    padding: 100px 0;
+
+    background: #F4F0E7;
+}
+
+.pd-education-box {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+
+    padding: 65px;
+
+    background: #12213F;
+
+    border-radius: 16px;
+}
+
+.pd-education-heading h2 {
+    margin: 16px 0 0;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 44px;
+    line-height: 1.05;
+
+    color: #ffffff;
+}
+
+.pd-education-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.pd-education-content p {
+    margin: 0 0 20px;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+
+    color: #D8DDE7;
+}
+
+.pd-education-content p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.pd-final-cta {
+    padding: 105px 24px;
+
+    background: #E8C15A;
+
+    text-align: center;
+}
+
+.pd-final-cta-inner {
+    max-width: 700px;
+
+    margin: 0 auto;
+}
+
+.pd-final-cta .pd-eyebrow {
+    color: #6D5600;
+}
+
+.pd-final-cta h2 {
+    margin: 15px 0 18px;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(42px, 5vw, 58px);
+    line-height: 1;
+
+    color: #12213F;
+}
+
+.pd-final-cta p {
+    max-width: 600px;
+
+    margin: 0 auto 30px;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+
+    color: #3E4653;
+}
+
+.pd-cta-btn {
+    background: #C9A227;
+    color: #12213F;
+}
+.pd-cta-btn:hover {
+    background: #E7CB6B;
+    transform: translateY(-3px);
+    box-shadow:
+        0 12px 25px rgba(18, 33, 63, .18);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .pd-hero-inner {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .pd-hero-content {
+        max-width: 700px;
+    }
+
+    .pd-image-frame {
+        height: 500px;
+    }
+
+    .pd-intro-grid,
+    .pd-focus-grid,
+    .pd-education-box {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .pd-focus-image {
+        height: 500px;
+    }
+
+    .pd-education-box {
+        padding: 45px;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .pd-container {
+        width: min(100% - 32px, 1120px);
+    }
+
+    .pd-hero {
+        padding: 65px 16px 80px;
+    }
+
+    .pd-hero-content h1 {
+        font-size: 48px;
+    }
+
+    .pd-hero-intro {
+        font-size: 14px;
+    }
+
+    .pd-image-frame {
+        height: 420px;
+    }
+
+    .pd-image-note {
+        left: 15px;
+        bottom: 20px;
+
+        width: calc(100% - 30px);
+    }
+
+    .pd-intro-section,
+    .pd-approach-section,
+    .pd-focus-section {
+        padding: 75px 0;
+    }
+
+    .pd-section-heading h2,
+    .pd-section-head h2,
+    .pd-focus-content h2 {
+        font-size: 38px;
+    }
+
+    .pd-care-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pd-care-card {
+        padding: 30px;
+    }
+
+    .pd-focus-image {
+        height: 420px;
+    }
+
+    .pd-education-box {
+        padding: 35px 28px;
+    }
+
+    .pd-education-heading h2 {
+        font-size: 38px;
+    }
+
+    .pd-final-cta {
+        padding: 80px 20px;
+    }
+
+}
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+.pd-reveal {
+    opacity: 0;
+    transform: translateY(25px);
+
+    transition:
+        opacity .7s ease,
+        transform .7s cubic-bezier(.2,.8,.2,1);
+}
+
+.pd-visible {
+    opacity: 1;
+    transform: translateY(0);
+}

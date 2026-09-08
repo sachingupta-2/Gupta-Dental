@@ -1,0 +1,860 @@
+/* =========================================================
+   DENTAL IMPLANTS PAGE
+   Prefix: di-
+========================================================= */
+
+.di-hero,
+.di-intro,
+.di-explained,
+.di-process,
+.di-benefits,
+.di-candidates,
+.di-maintenance,
+.di-final-cta {
+    box-sizing: border-box;
+}
+
+.di-hero *,
+.di-intro *,
+.di-explained *,
+.di-process *,
+.di-benefits *,
+.di-candidates *,
+.di-maintenance *,
+.di-final-cta * {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   COMMON
+========================================================= */
+
+.di-container {
+    width: min(1180px, calc(100% - 48px));
+    margin: 0 auto;
+}
+
+.di-eyebrow {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: #C9A227;
+    margin-bottom: 14px;
+}
+
+.di-section-heading {
+    max-width: 720px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+.di-section-heading h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 46px;
+    line-height: 1.08;
+    font-weight: 600;
+    color: #12213F;
+    margin: 0 0 18px;
+}
+
+.di-section-heading h2 span {
+    display: block;
+    color: #C9A227;
+}
+
+.di-section-heading p {
+    margin: 0 auto;
+    max-width: 650px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+    color: #6B7280;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.di-primary-btn,
+.di-secondary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    min-height: 52px;
+    padding: 0 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    transition:
+        transform .3s ease,
+        background .3s ease,
+        color .3s ease,
+        border-color .3s ease;
+}
+
+.di-primary-btn {
+    background: #12213F;
+    color: #ffffff;
+    border: 1px solid #12213F;
+}
+
+.di-primary-btn span {
+    font-size: 19px;
+    line-height: 1;
+    color: #E7CB6B;
+}
+
+.di-primary-btn:hover {
+    transform: translateY(-2px);
+    background: #1b2e50;
+}
+
+.di-secondary-btn {
+    color: #12213F;
+    border: 1px solid #D8D4CA;
+    background: transparent;
+}
+
+.di-secondary-btn:hover {
+    transform: translateY(-2px);
+    border-color: #C9A227;
+    color: #8A6D0E;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.di-hero {
+    background: #FAF7F0;
+    padding: 92px 24px 110px;
+    overflow: hidden;
+}
+
+.di-hero-inner {
+    width: min(1180px, 100%);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.di-hero-content {
+    max-width: 570px;
+}
+
+.di-hero-content h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(50px, 5vw, 72px);
+    line-height: .98;
+    font-weight: 600;
+    color: #12213F;
+    margin: 0 0 26px;
+}
+
+.di-hero-content h1 span {
+    display: block;
+    color: #C9A227;
+}
+
+.di-hero-intro {
+    max-width: 560px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #6B7280;
+    margin: 0 0 34px;
+}
+
+.di-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.di-hero-image {
+    position: relative;
+}
+
+.di-image-frame {
+    position: relative;
+    width: 100%;
+    height: 590px;
+    overflow: hidden;
+    border-radius: 3px;
+    background: #E9E4D8;
+}
+
+.di-image-frame img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    transition: transform .8s cubic-bezier(.2,.8,.2,1);
+}
+
+.di-image-frame:hover img {
+    transform: scale(1.04);
+}
+
+.di-image-note {
+    position: absolute;
+    left: -32px;
+    bottom: 35px;
+
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    padding: 17px 20px;
+
+    background: #ffffff;
+    border: 1px solid #E9E4D8;
+    box-shadow: 0 12px 35px rgba(18,33,63,.10);
+}
+
+.di-note-icon {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: #12213F;
+    color: #E7CB6B;
+
+    font-size: 20px;
+}
+
+.di-image-note strong {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: #12213F;
+    margin-bottom: 3px;
+}
+
+.di-image-note span:not(.di-note-icon) {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: #6B7280;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.di-intro {
+    padding: 105px 24px;
+    background: #ffffff;
+}
+
+.di-reasons-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.di-reason-card {
+    padding: 34px 32px;
+    background: #FAF7F0;
+    border: 1px solid #E9E4D8;
+    border-radius: 8px;
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.di-reason-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(18,33,63,.07);
+}
+
+.di-reason-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: #C9A227;
+    margin-bottom: 18px;
+}
+
+.di-reason-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 27px;
+    color: #12213F;
+    margin: 0 0 10px;
+}
+
+.di-reason-card p {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #6B7280;
+    margin: 0;
+}
+
+
+/* =========================================================
+   EXPLAINED
+========================================================= */
+
+.di-explained {
+    padding: 105px 24px;
+    background: #FAF7F0;
+}
+
+.di-explained-grid {
+    display: grid;
+    grid-template-columns: .92fr 1.08fr;
+    gap: 75px;
+    align-items: center;
+}
+
+.di-explained-image {
+    height: 590px;
+    overflow: hidden;
+    border-radius: 3px;
+}
+
+.di-explained-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+.di-explained-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    line-height: 1.05;
+    font-weight: 600;
+    color: #12213F;
+    margin: 0 0 22px;
+}
+
+.di-explained-content h2 span {
+    display: block;
+    color: #C9A227;
+}
+
+.di-explained-content > p {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #6B7280;
+    margin: 0 0 17px;
+}
+
+.di-feature-list {
+    margin-top: 30px;
+}
+
+.di-feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 17px 0;
+    border-top: 1px solid #E2DED4;
+}
+
+.di-feature-item:last-child {
+    border-bottom: 1px solid #E2DED4;
+}
+
+.di-feature-icon {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: #12213F;
+    color: #E7CB6B;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.di-feature-item strong {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #12213F;
+    margin-bottom: 5px;
+}
+
+.di-feature-item p {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #6B7280;
+}
+
+
+/* =========================================================
+   PROCESS
+========================================================= */
+
+.di-process {
+    padding: 110px 24px;
+    background: #ffffff;
+}
+
+.di-process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.di-process-card {
+    position: relative;
+    padding: 32px 26px;
+    border: 1px solid #E9E4D8;
+    border-radius: 8px;
+    background: #ffffff;
+}
+
+.di-process-number {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    font-weight: 600;
+    color: #C9A227;
+    margin-bottom: 18px;
+}
+
+.di-process-line {
+    width: 36px;
+    height: 2px;
+    background: #C9A227;
+    margin-bottom: 20px;
+}
+
+.di-process-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: #12213F;
+    margin: 0 0 10px;
+}
+
+.di-process-card p {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    line-height: 1.7;
+    color: #6B7280;
+    margin: 0;
+}
+
+
+/* =========================================================
+   BENEFITS
+========================================================= */
+
+.di-benefits {
+    padding: 105px 24px;
+    background: #12213F;
+}
+
+.di-benefits-grid {
+    display: grid;
+    grid-template-columns: .85fr 1.15fr;
+    gap: 90px;
+    align-items: start;
+}
+
+.di-benefits-content .di-eyebrow {
+    color: #E7CB6B;
+}
+
+.di-benefits-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    line-height: 1.05;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0 0 20px;
+}
+
+.di-benefits-content h2 span {
+    display: block;
+    color: #E7CB6B;
+}
+
+.di-benefits-content > p {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #D5D9E2;
+    margin: 0;
+}
+
+.di-benefits-list {
+    border-top: 1px solid rgba(255,255,255,.18);
+}
+
+.di-benefit-item {
+    display: grid;
+    grid-template-columns: 55px 1fr;
+    gap: 20px;
+    padding: 23px 0;
+    border-bottom: 1px solid rgba(255,255,255,.18);
+}
+
+.di-benefit-icon {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    color: #E7CB6B;
+}
+
+.di-benefit-item h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 25px;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0 0 6px;
+}
+
+.di-benefit-item p {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    line-height: 1.65;
+    color: #C6CBD5;
+    margin: 0;
+}
+
+
+/* =========================================================
+   CANDIDATES
+========================================================= */
+
+.di-candidates {
+    padding: 110px 24px;
+    background: #FAF7F0;
+}
+
+.di-candidates-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.di-candidate-card {
+    position: relative;
+    padding: 34px;
+    background: #ffffff;
+    border: 1px solid #E9E4D8;
+    border-radius: 8px;
+}
+
+.di-candidate-icon {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    color: #C9A227;
+    margin-bottom: 17px;
+}
+
+.di-candidate-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 27px;
+    color: #12213F;
+    margin: 0 0 9px;
+}
+
+.di-candidate-card p {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #6B7280;
+    margin: 0;
+}
+
+
+/* =========================================================
+   MAINTENANCE
+========================================================= */
+
+.di-maintenance {
+    padding: 100px 24px;
+    background: #ffffff;
+}
+
+.di-maintenance-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.di-maintenance-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 47px;
+    line-height: 1.05;
+    font-weight: 600;
+    color: #12213F;
+    margin: 0 0 20px;
+}
+
+.di-maintenance-content h2 span {
+    display: block;
+    color: #C9A227;
+}
+
+.di-maintenance-content > p {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #6B7280;
+    margin: 0;
+}
+
+.di-maintenance-points {
+    border-top: 1px solid #E9E4D8;
+}
+
+.di-maintenance-point {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 19px 0;
+    border-bottom: 1px solid #E9E4D8;
+}
+
+.di-maintenance-point span {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: #EFE6C8;
+    color: #8A6D0E;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.di-maintenance-point p {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #4B5563;
+}
+
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.di-final-cta {
+    padding: 105px 24px;
+    background: #FAF7F0;
+    border-top: 1px solid #E9E4D8;
+}
+
+.di-final-cta-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.di-final-cta .di-eyebrow {
+    color: #C9A227;
+}
+
+.di-final-cta h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    line-height: 1.03;
+    font-weight: 600;
+    color: #12213F;
+    margin: 0 0 20px;
+}
+
+.di-final-cta h2 span {
+    display: block;
+    color: #C9A227;
+}
+
+.di-final-cta p {
+    max-width: 620px;
+    margin: 0 auto 30px;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #6B7280;
+}
+
+.di-cta-btn {
+    display: inline-flex;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .di-hero-inner {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .di-hero-content {
+        max-width: 700px;
+    }
+
+    .di-hero-image {
+        max-width: 760px;
+    }
+
+    .di-image-note {
+        left: 20px;
+    }
+
+    .di-reasons-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .di-explained-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .di-explained-image {
+        max-width: 700px;
+    }
+
+    .di-process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .di-benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .di-maintenance-inner {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+}
+
+
+@media (max-width: 720px) {
+
+    .di-container {
+        width: min(100% - 32px, 600px);
+    }
+
+    .di-hero {
+        padding: 65px 16px 75px;
+    }
+
+    .di-hero-content h1 {
+        font-size: 48px;
+    }
+
+    .di-hero-intro {
+        font-size: 14px;
+        line-height: 1.75;
+    }
+
+    .di-hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .di-primary-btn,
+    .di-secondary-btn {
+        width: 100%;
+    }
+
+    .di-image-frame {
+        height: 430px;
+    }
+
+    .di-image-note {
+        position: relative;
+        left: 0;
+        bottom: auto;
+        margin-top: -25px;
+        margin-left: 15px;
+        margin-right: 15px;
+        z-index: 2;
+    }
+
+    .di-intro,
+    .di-explained,
+    .di-process,
+    .di-benefits,
+    .di-candidates,
+    .di-maintenance,
+    .di-final-cta {
+        padding: 75px 16px;
+    }
+
+    .di-section-heading {
+        margin-bottom: 40px;
+    }
+
+    .di-section-heading h2 {
+        font-size: 38px;
+    }
+
+    .di-explained-image {
+        height: 420px;
+    }
+
+    .di-explained-content h2,
+    .di-benefits-content h2,
+    .di-maintenance-content h2 {
+        font-size: 39px;
+    }
+
+    .di-process-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .di-candidates-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .di-final-cta h2 {
+        font-size: 42px;
+    }
+
+    .di-final-cta p {
+        font-size: 14px;
+    }
+}

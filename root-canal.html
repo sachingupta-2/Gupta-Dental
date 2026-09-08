@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dental Services | Dr. Gupta's Dental Clinic</title>
+
+<meta name="description" content="Dr. Tanupriya Gupta — 20 years of precision, magnification-guided restorative dentistry in South Extension, New Delhi. Ethical care, no over-treatment.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="root-canal.css">
+</head>
+
+
+<body><!-- =========================================================
+     HEADER
+     ========================================================= -->
+
+<header>
+
+  <div class="header-info">
+    <div class="container header-info-wrap">
+      <div class="availability" aria-label="Clinic availability">
+        <span><strong>Availability:</strong> <span class="availability-hours">Monday - Saturday, 10:00 AM - 7:00 PM</span></span>
+        <span class="sunday-closed">Sunday: CLOSED</span>
+      </div>
+      <div class="header-contact" aria-label="Clinic contact details">
+        <a href="tel:+919990880975">Call: +91 99908 80975</a>
+        <a href="https://wa.me/919990880975" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container nav-wrap">
+
+    <div class="brand">
+
+      <img
+        src="logo_trimmed.png"
+        alt="Dr. Gupta's Dental Clinic logo"
+        style="width:44px;height:44px;border-radius:10px;object-fit:cover;"
+      >
+
+      <div class="brand-name">
+        Dr. Gupta's Dental Clinic
+      </div>
+
+    </div>
+
+
+    <nav>
+
+      <ul id="main-navigation">
+
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+
+        <li>
+          <a href="about.html">About</a>
+        </li>
+
+        <li>
+          <a href="difference.html">Our Difference</a>
+        </li>
+
+        <li>
+          <a href="services.html">Services</a>
+        </li>
+
+        <li>
+          <a href="reviews.html">Reviews</a>
+        </li>
+
+        <li>
+          <a href="contact.html">Contact</a>
+        </li>
+
+      </ul>
+
+    </nav>
+
+
+    <div class="nav-cta">
+
+      <button
+        type="button"
+        class="appointment-trigger"
+        id="openAppointmentModal"
+      >
+        Book Appointment
+      </button>
+
+      <button
+        type="button"
+        class="menu-toggle"
+        aria-label="Menu"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >
+        &#9776;
+      </button>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- =========================================================
+     APPOINTMENT MODAL
+     ========================================================= -->
+
+<div
+  class="appointment-modal-overlay"
+  id="appointmentModal"
+  aria-hidden="true"
+>
+
+  <div
+    class="appointment-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="appointmentTitle"
+  >
+
+    <button
+      type="button"
+      class="modal-close"
+      aria-label="Close appointment form"
+    >
+      &times;
+    </button>
+
+
+    <div class="modal-head">
+
+      <h3 id="appointmentTitle">
+        Book an Appointment
+      </h3>
+
+      <p>
+        Please fill in your details and we will contact you shortly.
+      </p>
+
+    </div>
+
+
+    <form class="appointment-form" id="appointmentForm">
+      <div class="appointment-progress" aria-label="Appointment form progress">
+        <div class="step-indicator active" id="stepIndicator1">1. Patient Details</div>
+        <div class="step-indicator" id="stepIndicator2">2. Personal Details <span class="optional-note">(Optional)</span></div>
+      </div>
+
+      <div class="appointment-step active" id="appointmentStep1">
+        <div class="form-grid">
+          <div class="form-group"><label for="name">Name</label><input id="name" name="name" type="text" placeholder="Enter your name" required></div>
+          <div class="form-group"><label for="age">Age</label><input id="age" name="age" type="number" min="1" placeholder="Age" required></div>
+          <div class="form-group"><label for="phone">Phone No</label><input id="phone" name="phone" type="tel" placeholder="Your phone number" required></div>
+          <div class="form-group"><label for="email">Email</label><input id="email" name="email" type="email" placeholder="Your email address" required></div>
+          <div class="form-group full"><label for="address">Address</label><input id="address" name="address" type="text" placeholder="Your address" required></div>
+          <div class="form-group"><label for="appointmentDate">Appointment Date</label><input type="date" id="appointmentDate" name="appointmentDate" required></div>
+          <div class="form-group"><label for="appointmentTime">Available Time Slot</label><select id="appointmentTime" name="appointmentTime" required disabled><option value="">Select a date first</option></select><small class="slot-status" id="slotStatus" aria-live="polite">Choose a date to see available slots.</small></div>
+          <div class="form-group"><label for="gender">Gender</label><select id="gender" name="gender" required><option value="">Select gender</option><option>Male</option><option>Female</option><option>Other</option></select></div>
+        </div>
+        <div class="step-actions">
+          <button type="button" class="secondary-btn" id="closeAppointmentModal">Cancel</button>
+          <button type="button" class="cta-btn" id="nextAppointmentStep">Next &rarr;</button>
+        </div>
+      </div>
+
+      <div class="appointment-step" id="appointmentStep2">
+        <div class="clinical-intro"><strong>Personal details are optional.</strong> You can provide them to help the dentist understand your concern before the appointment, or skip this section and submit with your basic details.</div>
+        <div class="form-grid">
+          <div class="form-group full"><label for="reasonForVisit">Reason for Visit</label><textarea id="reasonForVisit" name="reasonForVisit" placeholder="Briefly describe the reason for your visit"></textarea></div>
+          <div class="form-group"><label for="dentalProblem">Current Dental Problem</label><select id="dentalProblem" name="dentalProblem"><option value="">Select if applicable</option><option>Tooth Pain</option><option>Sensitivity</option><option>Swelling</option><option>Bleeding Gums</option><option>Broken / Chipped Tooth</option><option>Cavity</option><option>Missing Tooth</option><option>Routine Check-up</option><option>Cleaning</option><option>Other</option></select></div>
+          <div class="form-group"><label for="painLevel">Pain / Discomfort</label><select id="painLevel" name="painLevel"><option value="">Select if applicable</option><option>None</option><option>Mild</option><option>Moderate</option><option>Severe</option></select></div>
+          <div class="form-group"><label for="previousDentalTreatment">Previous Dental Treatment</label><select id="previousDentalTreatment" name="previousDentalTreatment"><option value="">Select if applicable</option><option>No Previous Treatment</option><option>Filling</option><option>Root Canal</option><option>Extraction</option><option>Implant</option><option>Crown / Bridge</option><option>Other</option></select></div>
+          <div class="form-group"><label>Currently Taking Any Medicine?</label><div class="radio-row"><label class="radio-option"><input type="radio" name="medication" value="yes"> Yes</label><label class="radio-option"><input type="radio" name="medication" value="no" checked> No</label></div></div>
+          <div class="form-group full medication-box" id="medicationBox"><label for="medicineDetails">Medicine Details</label><textarea id="medicineDetails" name="medicineDetails" placeholder="List medicines you are currently taking"></textarea></div>
+          <div class="form-group full"><label for="allergies">Known Allergies</label><textarea id="allergies" name="allergies" placeholder="Mention any known medicine or other allergies"></textarea></div>
+          <div class="form-group full"><label for="medicalHistory">Medical History</label><textarea id="medicalHistory" name="medicalHistory" placeholder="Mention any relevant medical history"></textarea></div>
+          <div class="form-group full"><label for="additionalClinicalDetails">Additional Clinical Details</label><textarea id="additionalClinicalDetails" name="additionalClinicalDetails" placeholder="Anything else you would like the dentist to know"></textarea></div>
+        </div>
+
+        <div class="clinical-section">
+          <h4 class="clinical-section-title">Adverse Habits / Adverse Oral Habits</h4>
+          <div class="clinical-table-wrap"><table class="clinical-table"><thead><tr><th>Type</th><th>Frequency</th><th>Duration</th></tr></thead><tbody>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitSmoking" value="Smoking"> Smoking</label></td><td><select name="habitSmokingFrequency"><option value="">Select</option><option>Occasional</option><option>Once Daily</option><option>Twice Daily</option><option>More than Twice Daily</option></select></td><td><select name="habitSmokingDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitTobacco" value="Smokeless Tobacco/snuff"> Smokeless Tobacco / Snuff</label></td><td><select name="habitTobaccoFrequency"><option value="">Select</option><option>Occasional</option><option>Once Daily</option><option>Twice Daily</option><option>More than Twice Daily</option></select></td><td><select name="habitTobaccoDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitPaan" value="Paan chewing (gutka, paanmasala)"> Paan chewing (gutka, paanmasala)</label></td><td><select name="habitPaanFrequency"><option value="">Select</option><option>Occasional</option><option>Once Daily</option><option>Twice Daily</option><option>More than Twice Daily</option></select></td><td><select name="habitPaanDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitAlcohol" value="Alcohol"> Alcohol</label></td><td><select name="habitAlcoholFrequency"><option value="">Select</option><option>Occasional</option><option>Once Weekly</option><option>2-3 Times Weekly</option><option>Daily</option></select></td><td><select name="habitAlcoholDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+          </tbody></table></div>
+        </div>
+
+        <div class="clinical-section"><h4 class="clinical-section-title">Oral Hygiene Practices</h4><div class="hygiene-grid">
+          <div class="form-group full"><label>i) Type of Cleaning</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Toothbrush"> Toothbrush</label><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Finger"> Finger</label><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Stick"> Stick</label><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Others"> Others</label></div></div>
+          <div class="form-group full"><label>ii) Method of Cleaning</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="cleaningMethod" value="Vertical"> Vertical</label><label class="clinical-check"><input type="checkbox" name="cleaningMethod" value="Horizontal"> Horizontal</label><label class="clinical-check"><input type="checkbox" name="cleaningMethod" value="Circular"> Circular</label></div></div>
+          <div class="form-group full"><label>iii) Frequency of Cleaning / Brushing</label><div class="option-grid"><label class="clinical-check"><input type="radio" name="brushingFrequency" value="Once"> Once</label><label class="clinical-check"><input type="radio" name="brushingFrequency" value="Twice"> Twice</label><label class="clinical-check"><input type="radio" name="brushingFrequency" value="Thrice"> Thrice</label></div></div>
+          <div class="form-group full"><label>iv) Materials Used</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Toothpaste"> Toothpaste</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Tooth Powder"> Tooth Powder</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Charcoal"> Charcoal</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Sand"> Sand</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Brick Powder"> Brick Powder</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Any Other"> Any Other</label></div><input type="text" id="cleaningMaterialOther" name="cleaningMaterialOther" placeholder="If any other, please specify"></div>
+          <div class="form-group full"><label>v) Time of Brushing</label><div class="option-grid"><label class="clinical-check"><input type="radio" name="brushingTime" value="Before Meal"> Before Meal</label><label class="clinical-check"><input type="radio" name="brushingTime" value="After Meals"> After Meals</label></div></div>
+          <div class="form-group full"><label>vi) Frequency of Changing the Tooth Brush</label><div class="option-grid"><label class="clinical-check"><input type="radio" name="toothbrushChangeFrequency" value="Once"> Once</label><label class="clinical-check"><input type="radio" name="toothbrushChangeFrequency" value="Twice"> Twice</label><label class="clinical-check"><input type="radio" name="toothbrushChangeFrequency" value="Thrice"> Thrice</label></div></div>
+          <div class="form-group"><label for="durationOfCleaning">vii) Duration of Cleaning</label><input type="text" id="durationOfCleaning" name="durationOfCleaning" placeholder="e.g. 2 minutes"></div>
+          <div class="form-group full"><label>viii) Other Oral Hygiene Aids Used</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Flossing"> Flossing</label><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Interdental Aids"> Interdental Aids</label><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Oral Mouth Rinse"> Oral Mouth Rinse</label><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Tongue Cleaner"> Tongue Cleaner</label></div></div>
+        </div></div>
+
+        <div class="step-actions"><button type="button" class="secondary-btn" id="backAppointmentStep">&larr; Back</button><div class="right-actions"><button type="button" class="secondary-btn" id="skipClinicalStep">Skip &amp; Submit</button><button type="submit" class="cta-btn">Submit Appointment</button></div></div>
+      </div>
+    </form>
+
+  </div>
+
+</div>
+    <!-- =========================================================
+     ROOT CANAL TREATMENT PAGE
+     MIDDLE CONTENT ONLY
+========================================================= -->
+
+<main class="rct-page">
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="rct-hero">
+
+        <div class="rct-container">
+
+            <div class="rct-hero-grid">
+
+
+                <!-- LEFT CONTENT -->
+
+                <div class="rct-hero-content">
+
+                    <span class="rct-eyebrow">
+                        ENDODONTICS
+                    </span>
+
+                    <h1>
+                        Root Canal Treatment
+                        <span>with precision.</span>
+                    </h1>
+
+                    <p class="rct-hero-lead">
+                        When a natural tooth can be predictably saved,
+                        preserving it is often the best long-term choice.
+                        Our approach combines careful diagnosis,
+                        magnification, modern technology and meticulous
+                        clinical care.
+                    </p>
+
+
+                    <div class="rct-hero-buttons">
+
+                        <a
+                            href="https://wa.me/919990880975"
+                            class="rct-primary-btn"
+                        >
+                            Book a Consultation
+                        </a>
+
+                        <a
+                            href="tel:+919990880975"
+                            class="rct-outline-btn"
+                        >
+                            Call the Clinic
+                        </a>
+
+                    </div>
+
+
+                    <div class="rct-hero-trust">
+
+                        <div class="rct-trust-item">
+
+                            <strong>
+                                7.5×
+                            </strong>
+
+                            <span>
+                                Magnification
+                            </span>
+
+                        </div>
+
+
+                        <div class="rct-trust-divider"></div>
+
+
+                        <div class="rct-trust-item">
+
+                            <strong>
+                                Modern
+                            </strong>
+
+                            <span>
+                                Endodontic Technology
+                            </span>
+
+                        </div>
+
+
+                        <div class="rct-trust-divider"></div>
+
+
+                        <div class="rct-trust-item">
+
+                            <strong>
+                                Natural
+                            </strong>
+
+                            <span>
+                                Tooth Preservation
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RIGHT IMAGE -->
+
+                <div class="rct-hero-image">
+
+                    <div class="rct-image-wrapper">
+
+                        <img
+                            src="clinic_photos_shortlist/root canal treatment.png"
+                            alt="Root canal treatment at Dr. Gupta's Dental Clinic"
+                        >
+
+                        <div class="rct-image-badge">
+
+                            <span>
+                                OUR APPROACH
+                            </span>
+
+                            <strong>
+                                Precision over speed.
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         INTRODUCTION
+    ====================================================== -->
+
+    <section class="rct-introduction">
+
+        <div class="rct-container">
+
+            <div class="rct-intro-grid">
+
+
+                <div class="rct-section-label">
+
+                    <span>
+                        UNDERSTANDING
+                    </span>
+
+                    <strong>
+                        Root Canal Treatment
+                    </strong>
+
+                </div>
+
+
+                <div class="rct-intro-content">
+
+                    <h2>
+                        Saving the tooth
+                        <span>whenever possible.</span>
+                    </h2>
+
+                    <p>
+                        Root canal treatment is a procedure used to treat
+                        a tooth when the tissue inside it becomes inflamed
+                        or infected. Rather than removing the tooth,
+                        treatment can allow the natural tooth to be
+                        cleaned, treated and restored.
+                    </p>
+
+                    <p>
+                        At our clinic, the focus is not simply on completing
+                        a root canal. We believe that careful diagnosis,
+                        precision during treatment and appropriate
+                        restoration are all important parts of giving a
+                        natural tooth the best possible opportunity for
+                        long-term function.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         WHEN DO YOU NEED RCT
+    ====================================================== -->
+
+    <section class="rct-signs">
+
+        <div class="rct-container">
+
+
+            <div class="rct-section-heading">
+
+                <span class="rct-eyebrow">
+                    KNOW THE SIGNS
+                </span>
+
+                <h2>
+                    When might a tooth
+                    <span>need root canal treatment?</span>
+                </h2>
+
+                <p>
+                    Not every toothache requires a root canal.
+                    A proper clinical examination and diagnosis are
+                    essential before deciding on treatment.
+                </p>
+
+            </div>
+
+
+            <div class="rct-signs-grid">
+
+
+                <article class="rct-sign-card">
+
+                    <div class="rct-sign-number">
+                        01
+                    </div>
+
+                    <h3>
+                        Persistent Tooth Pain
+                    </h3>
+
+                    <p>
+                        Pain that persists or returns, particularly
+                        after eating or drinking, may require further
+                        dental assessment.
+                    </p>
+
+                </article>
+
+
+                <article class="rct-sign-card">
+
+                    <div class="rct-sign-number">
+                        02
+                    </div>
+
+                    <h3>
+                        Sensitivity
+                    </h3>
+
+                    <p>
+                        Prolonged sensitivity to hot or cold may indicate
+                        that the inner tissues of a tooth need evaluation.
+                    </p>
+
+                </article>
+
+
+                <article class="rct-sign-card">
+
+                    <div class="rct-sign-number">
+                        03
+                    </div>
+
+                    <h3>
+                        Deep Decay
+                    </h3>
+
+                    <p>
+                        Extensive decay can affect the inner part of a
+                        tooth and may eventually require endodontic care.
+                    </p>
+
+                </article>
+
+
+                <article class="rct-sign-card">
+
+                    <div class="rct-sign-number">
+                        04
+                    </div>
+
+                    <h3>
+                        Dental Trauma
+                    </h3>
+
+                    <p>
+                        An injured tooth may sometimes develop internal
+                        problems even after the initial injury has settled.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         OUR APPROACH
+    ====================================================== -->
+
+    <section class="rct-approach">
+
+        <div class="rct-container">
+
+            <div class="rct-approach-box">
+
+
+                <!-- IMAGE -->
+
+                <div class="rct-approach-image">
+
+                    <img
+                        src="clinic_photos_shortlist/RCT.png"
+                        alt="High magnification dental treatment"
+                    >
+
+                    <div class="rct-magnification-badge">
+
+                        <strong>
+                            7.5×
+                        </strong>
+
+                        <span>
+                            HIGH MAGNIFICATION
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONTENT -->
+
+                <div class="rct-approach-content">
+
+                    <span class="rct-eyebrow">
+                        OUR APPROACH
+                    </span>
+
+                    <h2>
+                        Precision matters
+                        <span>in the details.</span>
+                    </h2>
+
+                    <p>
+                        Root canal treatment involves working within very
+                        small anatomical spaces. Good visualisation can
+                        help the clinician work with greater precision
+                        during detailed procedures.
+                    </p>
+
+                    <p>
+                        We use high-magnification dental loupes with
+                        <strong>7.5× magnification</strong> to enhance
+                        visualisation during treatment.
+                    </p>
+
+
+                    <div class="rct-approach-points">
+
+                        <div class="rct-approach-point">
+
+                            <span class="rct-point-icon">
+                                ✓
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Enhanced Visualisation
+                                </strong>
+
+                                <span>
+                                    Greater magnification during
+                                    detailed clinical procedures.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="rct-approach-point">
+
+                            <span class="rct-point-icon">
+                                ✓
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Modern Technology
+                                </strong>
+
+                                <span>
+                                    Technology used to support
+                                    clinical judgement.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="rct-approach-point">
+
+                            <span class="rct-point-icon">
+                                ✓
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Tooth Preservation
+                                </strong>
+
+                                <span>
+                                    A focus on saving natural teeth
+                                    whenever predictably possible.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         TREATMENT JOURNEY
+    ====================================================== -->
+
+    <section class="rct-journey">
+
+        <div class="rct-container">
+
+
+            <div class="rct-section-heading centered">
+
+                <span class="rct-eyebrow">
+                    THE TREATMENT JOURNEY
+                </span>
+
+                <h2>
+                    What happens during
+                    <span>root canal treatment?</span>
+                </h2>
+
+            </div>
+
+
+            <div class="rct-timeline">
+
+
+                <div class="rct-timeline-line"></div>
+
+
+                <article class="rct-timeline-item">
+
+                    <div class="rct-timeline-number">
+                        01
+                    </div>
+
+                    <div class="rct-timeline-content">
+
+                        <span>
+                            STEP ONE
+                        </span>
+
+                        <h3>
+                            Examination &amp; Diagnosis
+                        </h3>
+
+                        <p>
+                            The tooth is carefully examined to understand
+                            the source of the problem and determine the
+                            appropriate treatment approach.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="rct-timeline-item">
+
+                    <div class="rct-timeline-number">
+                        02
+                    </div>
+
+                    <div class="rct-timeline-content">
+
+                        <span>
+                            STEP TWO
+                        </span>
+
+                        <h3>
+                            Cleaning &amp; Treatment
+                        </h3>
+
+                        <p>
+                            The affected internal tissues are treated
+                            and the root canal system is carefully cleaned
+                            and prepared.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="rct-timeline-item">
+
+                    <div class="rct-timeline-number">
+                        03
+                    </div>
+
+                    <div class="rct-timeline-content">
+
+                        <span>
+                            STEP THREE
+                        </span>
+
+                        <h3>
+                            Sealing the Tooth
+                        </h3>
+
+                        <p>
+                            Once appropriately treated, the canal system
+                            is sealed to help protect the treated tooth.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="rct-timeline-item">
+
+                    <div class="rct-timeline-number">
+                        04
+                    </div>
+
+                    <div class="rct-timeline-content">
+
+                        <span>
+                            STEP FOUR
+                        </span>
+
+                        <h3>
+                            Final Restoration
+                        </h3>
+
+                        <p>
+                            The tooth may require an appropriate final
+                            restoration to help restore its function and
+                            protect it from further damage.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         WHY THIS APPROACH
+    ====================================================== -->
+
+    <section class="rct-benefits">
+
+        <div class="rct-container">
+
+            <div class="rct-benefits-grid">
+
+
+                <div class="rct-benefits-heading">
+
+                    <span class="rct-eyebrow">
+                        WHY OUR APPROACH
+                    </span>
+
+                    <h2>
+                        Treatment planned
+                        <span>for the long term.</span>
+                    </h2>
+
+                    <p>
+                        Our philosophy combines experience, technology
+                        and careful clinical judgement rather than
+                        treating every tooth in exactly the same way.
+                    </p>
+
+                </div>
+
+
+                <div class="rct-benefit-list">
+
+
+                    <div class="rct-benefit">
+
+                        <span class="rct-benefit-icon">
+                            01
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Preserve Natural Teeth
+                            </h3>
+
+                            <p>
+                                When a tooth can be predictably saved,
+                                preserving the natural tooth is an
+                                important part of our treatment philosophy.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="rct-benefit">
+
+                        <span class="rct-benefit-icon">
+                            02
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Clinical Precision
+                            </h3>
+
+                            <p>
+                                High-magnification loupes and modern
+                                technology support detailed clinical work.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="rct-benefit">
+
+                        <span class="rct-benefit-icon">
+                            03
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Evidence-Based Care
+                            </h3>
+
+                            <p>
+                                Treatment decisions are based on careful
+                                diagnosis and appropriate clinical
+                                assessment.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="rct-benefit">
+
+                        <span class="rct-benefit-icon">
+                            04
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Sterilisation &amp; Safety
+                            </h3>
+
+                            <p>
+                                Stringent sterilisation and infection
+                                control practices are an integral part
+                                of clinical care.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FAQ
+    ====================================================== -->
+
+    <section class="rct-faq">
+
+        <div class="rct-container">
+
+            <div class="rct-section-heading centered">
+
+                <span class="rct-eyebrow">
+                    COMMON QUESTIONS
+                </span>
+
+                <h2>
+                    Root canal treatment
+                    <span>questions, answered.</span>
+                </h2>
+
+            </div>
+
+
+            <div class="rct-faq-list">
+
+
+                <div class="rct-faq-item">
+
+                    <button
+                        class="rct-faq-question"
+                        type="button"
+                    >
+
+                        <span>
+                            Is root canal treatment painful?
+                        </span>
+
+                        <strong>
+                            +
+                        </strong>
+
+                    </button>
+
+
+                    <div class="rct-faq-answer">
+
+                        <p>
+                            Modern dental techniques and appropriate
+                            anaesthesia are used to make treatment as
+                            comfortable as possible. Your dentist will
+                            assess your individual situation and discuss
+                            what to expect before treatment.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="rct-faq-item">
+
+                    <button
+                        class="rct-faq-question"
+                        type="button"
+                    >
+
+                        <span>
+                            How do I know if I need a root canal?
+                        </span>
+
+                        <strong>
+                            +
+                        </strong>
+
+                    </button>
+
+
+                    <div class="rct-faq-answer">
+
+                        <p>
+                            Symptoms such as persistent pain, prolonged
+                            sensitivity, swelling or a deeply damaged
+                            tooth can indicate the need for further
+                            assessment. A proper examination is required
+                            before deciding whether root canal treatment
+                            is appropriate.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="rct-faq-item">
+
+                    <button
+                        class="rct-faq-question"
+                        type="button"
+                    >
+
+                        <span>
+                            Can my natural tooth be saved?
+                        </span>
+
+                        <strong>
+                            +
+                        </strong>
+
+                    </button>
+
+
+                    <div class="rct-faq-answer">
+
+                        <p>
+                            In many situations, root canal treatment can
+                            allow a damaged or infected tooth to be
+                            retained. However, whether a tooth can be
+                            predictably saved depends on its condition
+                            and requires an individual clinical assessment.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="rct-faq-item">
+
+                    <button
+                        class="rct-faq-question"
+                        type="button"
+                    >
+
+                        <span>
+                            Why is magnification used during treatment?
+                        </span>
+
+                        <strong>
+                            +
+                        </strong>
+
+                    </button>
+
+
+                    <div class="rct-faq-answer">
+
+                        <p>
+                            Dental procedures can involve very small
+                            anatomical structures. High magnification
+                            can enhance visualisation and help support
+                            precision during detailed treatment.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="rct-faq-item">
+
+                    <button
+                        class="rct-faq-question"
+                        type="button"
+                    >
+
+                        <span>
+                            Will the tooth need further restoration?
+                        </span>
+
+                        <strong>
+                            +
+                        </strong>
+
+                    </button>
+
+
+                    <div class="rct-faq-answer">
+
+                        <p>
+                            A root-filled tooth may require an appropriate
+                            final restoration depending on the amount of
+                            remaining tooth structure and its clinical
+                            condition. Your dentist can recommend the
+                            appropriate restoration after assessment.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FINAL CTA
+    ====================================================== -->
+
+    <section class="rct-final-cta">
+
+        <div class="rct-container">
+
+            <div class="rct-final-cta-box">
+
+                <div>
+
+                    <span class="rct-eyebrow">
+                        CONSIDERING ROOT CANAL TREATMENT?
+                    </span>
+
+                    <h2>
+                        Let's first understand
+                        <span>your tooth.</span>
+                    </h2>
+
+                    <p>
+                        A consultation allows us to examine your tooth,
+                        understand the problem and discuss the appropriate
+                        treatment options with you.
+                    </p>
+
+                </div>
+
+
+                <div class="rct-final-buttons">
+
+                    <a
+                        href="https://wa.me/919990880975"
+                        class="rct-final-primary"
+                    >
+                        Book on WhatsApp
+                    </a>
+
+                    <a
+                        href="tel:+919990880975"
+                        class="rct-final-secondary"
+                    >
+                        Call the Clinic
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+<footer>
+
+  <div class="container footer-grid">
+
+
+    <div>
+
+      <h4>
+        Dr. Gupta's Dental Clinic
+      </h4>
+
+      <p>
+        Precision, magnification-guided dentistry in South Extension, New Delhi since 2013.
+      </p>
+
+    </div>
+
+
+    <div>
+
+      <h4>
+        Quick Links
+      </h4>
+
+      <a href="about.html">
+        About
+      </a>
+
+      <a href="services.html">
+        Services
+      </a>
+
+      <a href="reviews.html">
+        Reviews
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+    </div>
+
+
+    <div>
+
+      <h4>
+        Contact
+      </h4>
+
+      <a href="tel:+919990880975">
+        Mobile: 99908 80975
+      </a>
+
+      <a href="tel:+911142220392">
+        Landline: 011-4222-0392
+      </a>
+
+      <a href="https://wa.me/919990880975">
+        WhatsApp Us
+      </a>
+
+      <p>   H-30, South Extension Part 1, New Delhi</p>
+
+    </div>
+  </div>
+
+
+  <div class="container footer-bottom">
+    © 2026 Dr. Gupta's Dental Clinic. All rights reserved.
+  </div>
+
+</footer>
+
+
+<script src="script.js" defer></script>
+
+</body>
+</html>

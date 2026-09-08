@@ -556,6 +556,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+/* =========================================================
+   WHY US — tap-to-flip cards (works alongside CSS hover-flip)
+   ========================================================= */
+
+document.addEventListener('click', function(event){
+
+  var card = event.target.closest('.why-card');
+  if (!card) return;
+
+  var isFlipped = card.classList.toggle('is-flipped');
+  card.setAttribute('aria-pressed', String(isFlipped));
+
+});
+
 
 // service section slider starts here 
 
@@ -1056,3 +1070,1146 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // service section slider ends here
+
+
+// js for service.html starts here  
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const revealElements =
+        document.querySelectorAll(".services-page .service-feature, .services-page .service-small-card, .services-page .philosophy-box");
+
+    const revealObserver =
+        new IntersectionObserver(
+            function (entries) {
+
+                entries.forEach(function (entry) {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("service-visible");
+
+                        revealObserver.unobserve(entry.target);
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.12
+            }
+        );
+
+
+    revealElements.forEach(function (element) {
+
+        element.classList.add("service-hidden");
+
+        revealObserver.observe(element);
+
+    });
+
+});
+// js for ServiceWorker.html ends here
+
+
+/* =========================================================
+   ROOT CANAL PAGE JAVASCRIPT
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+
+    /* =====================================================
+       FAQ ACCORDION
+    ====================================================== */
+
+    const faqItems =
+        document.querySelectorAll(".rct-faq-item");
+
+
+    faqItems.forEach(function (item) {
+
+        const question =
+            item.querySelector(".rct-faq-question");
+
+
+        question.addEventListener("click", function () {
+
+            const isActive =
+                item.classList.contains("active");
+
+
+            /* Close all other questions */
+
+            faqItems.forEach(function (otherItem) {
+
+                otherItem.classList.remove("active");
+
+            });
+
+
+            /* Open clicked question */
+
+            if (!isActive) {
+
+                item.classList.add("active");
+
+            }
+
+        });
+
+    });
+
+
+
+    /* =====================================================
+       SCROLL REVEAL
+    ====================================================== */
+
+    const revealElements =
+        document.querySelectorAll(
+            ".rct-sign-card, " +
+            ".rct-approach-box, " +
+            ".rct-timeline-item, " +
+            ".rct-benefit, " +
+            ".rct-faq-item, " +
+            ".rct-final-cta-box"
+        );
+
+
+    revealElements.forEach(function (element) {
+
+        element.classList.add("rct-hidden");
+
+    });
+
+
+    const revealObserver =
+        new IntersectionObserver(
+            function (entries) {
+
+                entries.forEach(function (entry) {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add(
+                            "rct-visible"
+                        );
+
+                        revealObserver.unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.12
+            }
+        );
+
+
+    revealElements.forEach(function (element) {
+
+        revealObserver.observe(element);
+
+    });
+
+});
+
+/* =========================================================
+   RESTORATIVE DENTISTRY PAGE
+   ========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    /* ---------------------------------------------------------
+       SCROLL REVEAL
+    --------------------------------------------------------- */
+
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const revealObserver = new IntersectionObserver(
+        function (entries, observer) {
+
+            entries.forEach(function (entry) {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("active");
+
+                    observer.unobserve(entry.target);
+
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.12
+        }
+    );
+
+    revealElements.forEach(function (element) {
+
+        revealObserver.observe(element);
+
+    });
+
+
+    /* ---------------------------------------------------------
+       SMOOTH SCROLL
+    --------------------------------------------------------- */
+
+    document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+
+        link.addEventListener("click", function (event) {
+
+            const targetId = this.getAttribute("href");
+
+            if (targetId === "#") {
+                return;
+            }
+
+            const target = document.querySelector(targetId);
+
+            if (target) {
+
+                event.preventDefault();
+
+                target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+            }
+
+        });
+
+    });
+
+
+    /* ---------------------------------------------------------
+       IMAGE LOADING EFFECT
+    --------------------------------------------------------- */
+
+    const images = document.querySelectorAll(
+        ".restorative-image img"
+    );
+
+    images.forEach(function (image) {
+
+        image.addEventListener("load", function () {
+
+            image.classList.add("loaded");
+
+        });
+
+    });
+
+
+    /* ---------------------------------------------------------
+       FAQ ACCORDION
+    --------------------------------------------------------- */
+
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach(function (item) {
+
+        const question = item.querySelector(".faq-question");
+
+        if (!question) {
+            return;
+        }
+
+        question.addEventListener("click", function () {
+
+            const isOpen = item.classList.contains("open");
+
+            /* Close other FAQ items */
+
+            faqItems.forEach(function (otherItem) {
+
+                otherItem.classList.remove("open");
+
+            });
+
+            /* Open selected item */
+
+            if (!isOpen) {
+
+                item.classList.add("open");
+
+            }
+
+        });
+
+    });
+
+});
+
+// SCREENING AND DIAGNOSIS PAGE
+
+/* =========================================================
+   SCREENING & DIAGNOSIS PAGE JS
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+
+    /* =====================================================
+       FAQ ACCORDION
+    ====================================================== */
+
+    const faqItems = document.querySelectorAll(".sd-faq-item");
+
+    faqItems.forEach(function (item) {
+
+        const button = item.querySelector(".sd-faq-question");
+
+        button.addEventListener("click", function () {
+
+            const isActive = item.classList.contains("active");
+
+
+            // Close all other FAQ items
+
+            faqItems.forEach(function (otherItem) {
+
+                otherItem.classList.remove("active");
+
+                const otherButton =
+                    otherItem.querySelector(".sd-faq-question");
+
+                otherButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            });
+
+
+            // Open clicked item
+
+            if (!isActive) {
+
+                item.classList.add("active");
+
+                button.setAttribute(
+                    "aria-expanded",
+                    "true"
+                );
+
+            }
+
+        });
+
+    });
+
+
+
+    /* =====================================================
+       SCROLL REVEAL
+    ====================================================== */
+
+    const revealElements = document.querySelectorAll(
+        ".sd-assessment-card, " +
+        ".sd-process-item, " +
+        ".sd-approach-box, " +
+        ".sd-faq-item"
+    );
+
+
+    const revealObserver = new IntersectionObserver(
+
+        function (entries, observer) {
+
+            entries.forEach(function (entry) {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("sd-visible");
+
+                    observer.unobserve(entry.target);
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold: 0.12
+        }
+
+    );
+
+
+    revealElements.forEach(function (element, index) {
+
+        element.style.transitionDelay =
+            (index * 0.07) + "s";
+
+        revealObserver.observe(element);
+
+    });
+
+
+
+    /* =====================================================
+       SMOOTH INTERNAL LINKS
+    ====================================================== */
+
+    const internalLinks =
+        document.querySelectorAll(
+            '.sd-page a[href^="#"]'
+        );
+
+
+    internalLinks.forEach(function (link) {
+
+        link.addEventListener("click", function (event) {
+
+            const targetId =
+                this.getAttribute("href");
+
+            if (
+                targetId &&
+                targetId !== "#"
+            ) {
+
+                const target =
+                    document.querySelector(targetId);
+
+                if (target) {
+
+                    event.preventDefault();
+
+                    target.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+
+                }
+
+            }
+
+        });
+
+    });
+
+
+});
+
+// Oral health education page javascipt starts here 
+/* =========================================================
+   ORAL HEALTH EDUCATION
+   PAGE JAVASCRIPT ONLY
+========================================================= */
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+
+    /* =====================================================
+       SMOOTH SCROLL
+    ===================================================== */
+
+    document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+
+        link.addEventListener("click", function (event) {
+
+            const targetId = this.getAttribute("href");
+
+            if (!targetId || targetId === "#") {
+                return;
+            }
+
+            const target = document.querySelector(targetId);
+
+            if (!target) {
+                return;
+            }
+
+            event.preventDefault();
+
+            target.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        });
+
+    });
+
+
+    /* =====================================================
+       SCROLL REVEAL
+    ===================================================== */
+
+    const revealElements = document.querySelectorAll(
+        ".oh-feature-card, " +
+        ".oh-guidance-image, " +
+        ".oh-guidance-content, " +
+        ".oh-section-heading, " +
+        ".oh-intro-text"
+    );
+
+
+    if ("IntersectionObserver" in window) {
+
+        const observer = new IntersectionObserver(
+            function (entries, observer) {
+
+                entries.forEach(function (entry) {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("oh-visible");
+
+                        observer.unobserve(entry.target);
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.12
+            }
+        );
+
+
+        revealElements.forEach(function (element) {
+
+            observer.observe(element);
+
+        });
+
+    } else {
+
+        revealElements.forEach(function (element) {
+
+            element.classList.add("oh-visible");
+
+        });
+
+    }
+
+
+    /* =====================================================
+       STAGGER FEATURE CARDS
+    ===================================================== */
+
+    const cards = document.querySelectorAll(".oh-feature-card");
+
+    cards.forEach(function (card, index) {
+
+        card.style.transitionDelay = (index * 80) + "ms";
+
+    });
+
+});
+
+// oral health education page javascipt ends here
+
+
+// cosmetric dentistiry javascript file starts here
+
+/* =========================================================
+   COSMETIC DENTISTRY PAGE
+   FAQ ACCORDION
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const faqItems = document.querySelectorAll(".cd-faq-item");
+
+    faqItems.forEach(function (item) {
+
+        const question = item.querySelector(".cd-faq-question");
+
+        question.addEventListener("click", function () {
+
+            /* Close other FAQ items */
+
+            faqItems.forEach(function (otherItem) {
+
+                if (otherItem !== item) {
+                    otherItem.classList.remove("active");
+                }
+
+            });
+
+
+            /* Toggle current item */
+
+            item.classList.toggle("active");
+
+        });
+
+    });
+
+});
+
+// cosmetric dentistry javascript file ends here
+
+// teeth extraction page javascript starts here
+
+/* =========================================================
+   TEETH EXTRACTION PAGE JAVASCRIPT
+========================================================= */
+
+
+/* =========================================================
+   FAQ ACCORDION
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const faqItems = document.querySelectorAll(".te-faq-item");
+
+    faqItems.forEach(function (item) {
+
+        const question = item.querySelector(".te-faq-question");
+
+        question.addEventListener("click", function () {
+
+            const isActive = item.classList.contains("active");
+
+
+            /* Close all other FAQ items */
+
+            faqItems.forEach(function (otherItem) {
+
+                otherItem.classList.remove("active");
+
+            });
+
+
+            /* Open clicked item */
+
+            if (!isActive) {
+
+                item.classList.add("active");
+
+            }
+
+        });
+
+    });
+
+
+    /* =====================================================
+       SCROLL REVEAL
+    ====================================================== */
+
+    const revealElements = document.querySelectorAll(
+        ".te-intro-card, " +
+        ".te-process-item, " +
+        ".te-aftercare-card, " +
+        ".te-content-image, " +
+        ".te-content-text"
+    );
+
+
+    const revealObserver = new IntersectionObserver(
+
+        function (entries, observer) {
+
+            entries.forEach(function (entry) {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("te-visible");
+
+                    observer.unobserve(entry.target);
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold: 0.15
+        }
+
+    );
+
+
+    revealElements.forEach(function (element, index) {
+
+        /* Slight stagger effect */
+
+        element.style.transitionDelay =
+            (index % 4) * 0.08 + "s";
+
+        revealObserver.observe(element);
+
+    });
+
+
+    /* =====================================================
+       SMOOTH INTERNAL SCROLL
+    ====================================================== */
+
+    document.querySelectorAll(
+        '.te-page a[href^="#"]'
+    ).forEach(function (link) {
+
+        link.addEventListener("click", function (event) {
+
+            const targetId =
+                this.getAttribute("href");
+
+            if (
+                targetId &&
+                targetId !== "#"
+            ) {
+
+                const target =
+                    document.querySelector(targetId);
+
+                if (target) {
+
+                    event.preventDefault();
+
+                    target.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+
+                }
+
+            }
+
+        });
+
+    });
+
+});
+
+// teeeth extraction page javascript ends here
+
+// preventive dentistry page javascript starts here
+
+/* =========================================================
+   PREVENTIVE DENTISTRY PAGE JS
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    /* =====================================================
+       SMOOTH SCROLL
+    ====================================================== */
+
+    document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+
+        link.addEventListener("click", function (event) {
+
+            const targetId = this.getAttribute("href");
+
+            if (!targetId || targetId === "#") {
+                return;
+            }
+
+            const target = document.querySelector(targetId);
+
+            if (!target) {
+                return;
+            }
+
+            event.preventDefault();
+
+            target.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        });
+
+    });
+
+
+
+    /* =====================================================
+       SCROLL REVEAL
+    ====================================================== */
+
+    const revealElements = document.querySelectorAll(
+        ".pd-care-card, .pd-focus-content, .pd-focus-image, .pd-intro-grid, .pd-education-box"
+    );
+
+    if ("IntersectionObserver" in window) {
+
+        const observer = new IntersectionObserver(
+            function (entries, observer) {
+
+                entries.forEach(function (entry) {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("pd-visible");
+
+                        observer.unobserve(entry.target);
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.12
+            }
+        );
+
+
+        revealElements.forEach(function (element) {
+
+            element.classList.add("pd-reveal");
+
+            observer.observe(element);
+
+        });
+
+    }
+
+});
+
+// preventive dentistry page javascript ends here
+
+// dental implants page javascript starts here
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const revealItems = document.querySelectorAll(
+        ".di-reason-card, " +
+        ".di-explained-content, " +
+        ".di-explained-image, " +
+        ".di-process-card, " +
+        ".di-benefit-item, " +
+        ".di-candidate-card, " +
+        ".di-maintenance-content, " +
+        ".di-maintenance-point"
+    );
+
+    if (!("IntersectionObserver" in window)) {
+        revealItems.forEach(item => {
+            item.style.opacity = "1";
+            item.style.transform = "none";
+        });
+        return;
+    }
+
+    revealItems.forEach(item => {
+        item.style.opacity = "0";
+        item.style.transform = "translateY(25px)";
+        item.style.transition =
+            "opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1)";
+    });
+
+    const observer = new IntersectionObserver(
+        (entries, obs) => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+
+                    obs.unobserve(entry.target);
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.12
+        }
+    );
+
+    revealItems.forEach(item => {
+        observer.observe(item);
+    });
+
+});
+
+
+// dental implants page javascript ends here
+
+
+// missing teeth page javascript starts here
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const revealItems = document.querySelectorAll(
+        ".rmt-reason-card, " +
+        ".rmt-option, " +
+        ".rmt-planning-content, " +
+        ".rmt-planning-image, " +
+        ".rmt-process-card, " +
+        ".rmt-benefit-item, " +
+        ".rmt-individual-card"
+    );
+
+    if (!("IntersectionObserver" in window)) {
+
+        revealItems.forEach(item => {
+            item.style.opacity = "1";
+            item.style.transform = "none";
+        });
+
+        return;
+    }
+
+    revealItems.forEach(item => {
+
+        item.style.opacity = "0";
+
+        item.style.transform =
+            "translateY(25px)";
+
+        item.style.transition =
+            "opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1)";
+
+    });
+
+
+    const observer = new IntersectionObserver(
+        (entries, obs) => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.style.opacity = "1";
+
+                    entry.target.style.transform =
+                        "translateY(0)";
+
+                    obs.unobserve(entry.target);
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.12
+        }
+    );
+
+
+    revealItems.forEach(item => {
+        observer.observe(item);
+    });
+
+});
+
+// missing teeth page javascript ends here
+
+// emergency dentistry page javascript starts here
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const revealItems = document.querySelectorAll(
+        ".edc-reason-card, " +
+        ".edc-problem, " +
+        ".edc-treatment-content, " +
+        ".edc-treatment-image, " +
+        ".edc-option-card, " +
+        ".edc-process-card, " +
+        ".edc-important-content, " +
+        ".edc-important-point"
+    );
+
+
+    if (!("IntersectionObserver" in window)) {
+
+        revealItems.forEach(item => {
+
+            item.style.opacity = "1";
+
+            item.style.transform = "none";
+
+        });
+
+        return;
+    }
+
+
+    revealItems.forEach(item => {
+
+        item.style.opacity = "0";
+
+        item.style.transform =
+            "translateY(25px)";
+
+        item.style.transition =
+            "opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1)";
+
+    });
+
+
+    const observer = new IntersectionObserver(
+
+        (entries, obs) => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.style.opacity = "1";
+
+                    entry.target.style.transform =
+                        "translateY(0)";
+
+                    obs.unobserve(entry.target);
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold: 0.12
+        }
+
+    );
+
+
+    revealItems.forEach(item => {
+
+        observer.observe(item);
+
+    });
+
+});
+
+// emergency dentistry page javascript ends here
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    /* =====================================================
+       SCROLL REVEAL
+    ====================================================== */
+
+    const revealElements = document.querySelectorAll(
+        ".diff-section-heading, " +
+        ".diff-feature-card, " +
+        ".diff-safety-content, " +
+        ".diff-rubber-content, " +
+        ".diff-guideline-content, " +
+        ".diff-prevention-card, " +
+        ".diff-female-content, " +
+        ".diff-step, " +
+        ".diff-statement-inner, " +
+        ".diff-final-inner"
+    );
+
+
+    revealElements.forEach(function (element) {
+
+        element.style.opacity = "0";
+
+        element.style.transform = "translateY(30px)";
+
+        element.style.transition =
+            "opacity .8s ease, transform .8s ease";
+
+    });
+
+
+    const observer = new IntersectionObserver(
+        function (entries, observer) {
+
+            entries.forEach(function (entry) {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.style.opacity = "1";
+
+                    entry.target.style.transform =
+                        "translateY(0)";
+
+                    observer.unobserve(entry.target);
+
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.12
+        }
+    );
+
+
+    revealElements.forEach(function (element) {
+
+        observer.observe(element);
+
+    });
+
+
+    /* =====================================================
+       STAGGER TECHNOLOGY CARDS
+    ====================================================== */
+
+    const featureCards =
+        document.querySelectorAll(".diff-feature-card");
+
+
+    featureCards.forEach(function (card, index) {
+
+        card.style.transitionDelay =
+            (index * 0.08) + "s";
+
+    });
+
+
+    /* =====================================================
+       STAGGER PREVENTIVE CARDS
+    ====================================================== */
+
+    const preventionCards =
+        document.querySelectorAll(".diff-prevention-card");
+
+
+    preventionCards.forEach(function (card, index) {
+
+        card.style.transitionDelay =
+            (index * 0.08) + "s";
+
+    });
+
+
+    /* =====================================================
+       STAGGER EXPERIENCE STEPS
+    ====================================================== */
+
+    const steps =
+        document.querySelectorAll(".diff-step");
+
+
+    steps.forEach(function (step, index) {
+
+        step.style.transitionDelay =
+            (index * 0.07) + "s";
+
+    });
+
+});

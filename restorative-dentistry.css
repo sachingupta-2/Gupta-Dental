@@ -1,0 +1,1348 @@
+/* =========================================================
+   RESTORATIVE DENTISTRY PAGE
+   Dr. Gupta's Dental Clinic
+   Yellow + Grey Theme
+========================================================= */
+
+.treatment-page {
+    --rest-gold: #c29a32;
+    --rest-gold-light: #e8c15a;
+    --rest-grey: #30343b;
+    --rest-text: #55585d;
+    --rest-light: #f6f5f1;
+    --rest-border: #e4e1d8;
+    --rest-white: #ffffff;
+
+    color: var(--rest-grey);
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   COMMON CONTAINER
+========================================================= */
+
+.treatment-container,
+.treatment-hero-container {
+    width: min(1180px, 92%);
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   COMMON EYEBROW
+========================================================= */
+
+.treatment-eyebrow {
+    display: inline-block;
+
+    margin-bottom: 16px;
+
+    color: var(--rest-gold);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 2.2px;
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.treatment-hero {
+    position: relative;
+
+    padding: 100px 0 90px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #f5f4ef 0%,
+            #f8f7f3 55%,
+            #efeee9 100%
+        );
+
+    overflow: hidden;
+}
+
+
+.treatment-hero-container {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 0.95fr)
+        minmax(0, 1.05fr);
+
+    align-items: center;
+
+    gap: 70px;
+}
+
+
+.treatment-hero-content {
+    max-width: 570px;
+}
+
+
+.treatment-hero-content h1 {
+
+    margin: 0 0 26px;
+
+    color: #30343b;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: clamp(42px, 5vw, 68px);
+
+    font-weight: 500;
+
+    line-height: 1.04;
+
+    letter-spacing: -1.5px;
+}
+
+
+.treatment-hero-content h1 span {
+    color: var(--rest-gold);
+}
+
+
+.treatment-hero-content p {
+
+    max-width: 540px;
+
+    margin: 0 0 17px;
+
+    color: #686a6d;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+.treatment-hero-content .treatment-intro {
+
+    color: #45484d;
+
+    font-size: 18px;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
+
+.treatment-hero-buttons {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 14px;
+
+    margin-top: 32px;
+}
+
+
+.treatment-btn,
+.treatment-btn-outline {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 50px;
+
+    padding: 0 25px;
+
+    border-radius: 4px;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: .5px;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        background .3s ease;
+}
+
+
+.treatment-btn {
+
+    background: var(--rest-gold);
+
+    color: #ffffff;
+
+    box-shadow:
+        0 8px 20px rgba(194,154,50,.18);
+}
+
+
+.treatment-btn:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 14px 28px rgba(194,154,50,.28);
+}
+
+
+.treatment-btn-outline {
+
+    border: 1px solid #b9b7b0;
+
+    color: #3f4247;
+
+    background: transparent;
+}
+
+
+.treatment-btn-outline:hover {
+
+    background: #ffffff;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   HERO IMAGE
+========================================================= */
+
+.treatment-hero-image {
+
+    position: relative;
+
+    min-width: 0;
+}
+
+
+.treatment-image-frame {
+
+    position: relative;
+
+    aspect-ratio: 1.08 / 1;
+
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    background: #ddd;
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.13);
+}
+
+
+.treatment-image-frame::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(194,154,50,.08),
+            transparent 55%
+        );
+
+    pointer-events: none;
+}
+
+
+.treatment-image-frame img {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform .8s cubic-bezier(.2,.8,.2,1);
+}
+
+
+.treatment-image-frame:hover img {
+
+    transform: scale(1.04);
+}
+
+
+.treatment-image-badge {
+
+    position: absolute;
+
+    left: -22px;
+    bottom: 28px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 18px 24px;
+
+    background: #ffffff;
+
+    border-left: 4px solid var(--rest-gold);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.12);
+}
+
+
+.treatment-image-badge strong {
+
+    color: #30343b;
+
+    font-size: 14px;
+}
+
+
+.treatment-image-badge span {
+
+    margin-top: 4px;
+
+    color: #777;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   INTRODUCTION
+========================================================= */
+
+.treatment-introduction {
+
+    padding: 100px 0;
+
+    background: #ffffff;
+}
+
+
+.treatment-section-heading {
+
+    max-width: 760px;
+
+    margin-bottom: 50px;
+}
+
+
+.treatment-section-heading.centered {
+
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: center;
+}
+
+
+.treatment-section-heading h2 {
+
+    margin: 0;
+
+    color: #30343b;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: clamp(34px, 4vw, 50px);
+
+    font-weight: 500;
+
+    line-height: 1.15;
+}
+
+
+.treatment-section-heading h2 span {
+    color: var(--rest-gold);
+}
+
+
+.treatment-section-heading > p {
+
+    max-width: 680px;
+
+    margin: 20px auto 0;
+
+    color: #6b6d70;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+.treatment-introduction-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.2fr)
+        minmax(300px, .8fr);
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+
+.treatment-introduction-grid > div:first-child p {
+
+    margin: 0 0 20px;
+
+    color: #66696d;
+
+    font-size: 16px;
+
+    line-height: 1.9;
+}
+
+
+.treatment-highlight {
+
+    padding: 35px;
+
+    border: 1px solid var(--rest-border);
+
+    border-top: 4px solid var(--rest-gold);
+
+    background: #faf9f5;
+}
+
+
+.highlight-icon {
+
+    display: block;
+
+    margin-bottom: 20px;
+
+    color: var(--rest-gold);
+
+    font-size: 25px;
+}
+
+
+.treatment-highlight h3 {
+
+    margin: 0 0 12px;
+
+    font-size: 22px;
+}
+
+
+.treatment-highlight p {
+
+    margin: 0;
+
+    color: #6c6d70;
+
+    font-size: 14px;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   RESTORATIVE SERVICES
+========================================================= */
+
+.restorative-services {
+
+    padding: 100px 0;
+
+    background: #f6f5f1;
+}
+
+
+.restorative-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 22px;
+}
+
+
+.restorative-card {
+
+    position: relative;
+
+    min-height: 270px;
+
+    padding: 38px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--rest-border);
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    transition:
+        transform .4s cubic-bezier(.2,.8,.2,1),
+        box-shadow .4s ease;
+}
+
+
+.restorative-card:hover {
+
+    transform:
+        translateY(-8px)
+        scale(1.015);
+
+    box-shadow:
+        0 22px 45px rgba(0,0,0,.10);
+}
+
+
+.restorative-number {
+
+    position: absolute;
+
+    top: 20px;
+    right: 24px;
+
+    color: #d5d2c8;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+.restorative-icon {
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 25px;
+
+    border-radius: 50%;
+
+    background: #f3e9c8;
+
+    color: var(--rest-gold);
+
+    font-size: 22px;
+}
+
+
+.restorative-card h3 {
+
+    margin: 0 0 13px;
+
+    color: #30343b;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 25px;
+
+    font-weight: 500;
+}
+
+
+.restorative-card p {
+
+    margin: 0;
+
+    color: #686a6d;
+
+    font-size: 14px;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   PRESERVATION
+========================================================= */
+
+.preservation-section {
+
+    padding: 110px 0;
+
+    background: #ffffff;
+}
+
+
+.preservation-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, .9fr)
+        minmax(0, 1.1fr);
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+
+.preservation-image {
+
+    min-height: 540px;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+}
+
+
+.preservation-image img {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform .8s ease;
+}
+
+
+.preservation-image:hover img {
+
+    transform: scale(1.04);
+}
+
+
+.preservation-content h2 {
+
+    margin: 0 0 22px;
+
+    color: #30343b;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: clamp(36px, 4vw, 52px);
+
+    font-weight: 500;
+
+    line-height: 1.1;
+}
+
+
+.preservation-content h2 span {
+    color: var(--rest-gold);
+}
+
+
+.preservation-content > p {
+
+    margin: 0 0 18px;
+
+    color: #686a6d;
+
+    font-size: 15px;
+
+    line-height: 1.85;
+}
+
+
+/* =========================================================
+   PRESERVATION POINTS
+========================================================= */
+
+.preservation-points {
+
+    margin-top: 35px;
+
+    border-top: 1px solid var(--rest-border);
+}
+
+
+.preservation-point {
+
+    display: grid;
+
+    grid-template-columns: 50px 1fr;
+
+    gap: 16px;
+
+    padding: 20px 0;
+
+    border-bottom: 1px solid var(--rest-border);
+}
+
+
+.preservation-point > span {
+
+    color: var(--rest-gold);
+
+    font-size: 12px;
+
+    font-weight: 800;
+}
+
+
+.preservation-point strong {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #3d4045;
+
+    font-size: 14px;
+}
+
+
+.preservation-point p {
+
+    margin: 0;
+
+    color: #777;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   TECHNOLOGY
+========================================================= */
+
+.restorative-technology {
+
+    padding: 100px 0;
+
+    background: #30343b;
+
+    color: #ffffff;
+}
+
+
+.technology-layout {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.2fr)
+        minmax(300px, .8fr);
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+
+.restorative-technology .treatment-eyebrow {
+    color: var(--rest-gold-light);
+}
+
+
+.technology-content h2 {
+
+    margin: 0 0 25px;
+
+    color: #ffffff;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: clamp(36px, 4vw, 52px);
+
+    font-weight: 500;
+
+    line-height: 1.12;
+}
+
+
+.technology-content h2 span {
+
+    color: var(--rest-gold-light);
+}
+
+
+.technology-content > p {
+
+    max-width: 680px;
+
+    margin: 0 0 18px;
+
+    color: #d3d4d5;
+
+    font-size: 15px;
+
+    line-height: 1.85;
+}
+
+
+.technology-content strong {
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   TECHNOLOGY STATS
+========================================================= */
+
+.technology-stats {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-top: 35px;
+}
+
+
+.technology-stat {
+
+    padding: 20px;
+
+    border: 1px solid rgba(255,255,255,.12);
+
+    background: rgba(255,255,255,.04);
+}
+
+
+.technology-stat strong {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: var(--rest-gold-light);
+
+    font-size: 24px;
+}
+
+
+.technology-stat span {
+
+    color: #c8c9cb;
+
+    font-size: 11px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   TECHNOLOGY VISUAL
+========================================================= */
+
+.technology-visual {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+.technology-circle {
+
+    width: min(320px, 80vw);
+    aspect-ratio: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(232,193,90,.45);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 0 20px rgba(232,193,90,.04),
+        0 0 0 40px rgba(232,193,90,.025);
+}
+
+
+.technology-circle span {
+
+    color: var(--rest-gold-light);
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 64px;
+
+    line-height: 1;
+}
+
+
+.technology-circle small {
+
+    margin-top: 12px;
+
+    color: #bfc0c2;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   PROCESS
+========================================================= */
+
+.treatment-process {
+
+    padding: 100px 0;
+
+    background: #ffffff;
+}
+
+
+.process-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    border-top: 1px solid var(--rest-border);
+
+    border-bottom: 1px solid var(--rest-border);
+}
+
+
+.process-item {
+
+    position: relative;
+
+    padding: 35px 28px;
+
+    border-right: 1px solid var(--rest-border);
+}
+
+
+.process-item:last-child {
+    border-right: none;
+}
+
+
+.process-number {
+
+    display: block;
+
+    margin-bottom: 35px;
+
+    color: var(--rest-gold);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+.process-item h3 {
+
+    margin: 0 0 12px;
+
+    color: #30343b;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 21px;
+
+    font-weight: 500;
+}
+
+
+.process-item p {
+
+    margin: 0;
+
+    color: #707276;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.treatment-final-cta {
+
+    padding: 80px 0 100px;
+
+    background: #f6f5f1;
+}
+
+
+.final-cta-box {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 40px;
+
+    padding: 55px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--rest-border);
+
+    border-left: 5px solid var(--rest-gold);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.06);
+}
+
+
+.final-cta-box h2 {
+
+    max-width: 700px;
+
+    margin: 0 0 14px;
+
+    color: #30343b;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: clamp(30px, 4vw, 45px);
+
+    font-weight: 500;
+
+    line-height: 1.15;
+}
+
+
+.final-cta-box h2 span {
+    color: var(--rest-gold);
+}
+
+
+.final-cta-box p {
+
+    max-width: 620px;
+
+    margin: 0;
+
+    color: #707276;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .treatment-hero-container {
+
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+
+    .treatment-hero-content {
+        max-width: 700px;
+    }
+
+
+    .treatment-introduction-grid,
+    .preservation-grid,
+    .technology-layout {
+
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+
+    .preservation-image {
+
+        min-height: 450px;
+    }
+
+
+    .process-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .process-item:nth-child(2) {
+        border-right: none;
+    }
+
+
+    .process-item:nth-child(-n+2) {
+        border-bottom: 1px solid var(--rest-border);
+    }
+
+
+    .final-cta-box {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .treatment-hero {
+
+        padding: 65px 0;
+    }
+
+
+    .treatment-hero-content h1 {
+
+        font-size: 40px;
+
+        letter-spacing: -1px;
+    }
+
+
+    .treatment-hero-content .treatment-intro {
+
+        font-size: 16px;
+    }
+
+
+    .treatment-hero-content p {
+
+        font-size: 14px;
+    }
+
+
+    .treatment-hero-buttons {
+
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .treatment-btn,
+    .treatment-btn-outline {
+
+        width: 100%;
+    }
+
+
+    .treatment-image-badge {
+
+        left: 15px;
+
+        bottom: 15px;
+    }
+
+
+    .treatment-introduction,
+    .restorative-services,
+    .preservation-section,
+    .restorative-technology,
+    .treatment-process {
+
+        padding: 70px 0;
+    }
+
+
+    .treatment-section-heading h2,
+    .preservation-content h2,
+    .technology-content h2 {
+
+        font-size: 34px;
+    }
+
+
+    .restorative-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .restorative-card {
+
+        min-height: auto;
+
+        padding: 30px;
+    }
+
+
+    .preservation-image {
+
+        min-height: 380px;
+    }
+
+
+    .technology-stats {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .technology-circle {
+
+        width: 250px;
+    }
+
+
+    .technology-circle span {
+
+        font-size: 52px;
+    }
+
+
+    .process-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .process-item {
+
+        border-right: none;
+
+        border-bottom: 1px solid var(--rest-border);
+    }
+
+
+    .process-item:last-child {
+
+        border-bottom: none;
+    }
+
+
+    .final-cta-box {
+
+        padding: 35px 25px;
+    }
+
+}
+
+/* =========================================================
+   REVEAL ANIMATION
+========================================================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s cubic-bezier(.2,.8,.2,1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   IMAGE LOADING
+========================================================= */
+
+.restorative-image img {
+    opacity: 0;
+    transform: scale(1.04);
+    transition:
+        opacity 0.8s ease,
+        transform 1s ease;
+}
+
+.restorative-image img.loaded {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+
+    transition:
+        max-height 0.4s ease,
+        opacity 0.3s ease;
+}
+
+.faq-item.open .faq-answer {
+    max-height: 300px;
+    opacity: 1;
+}
+
+.faq-question {
+    cursor: pointer;
+}
