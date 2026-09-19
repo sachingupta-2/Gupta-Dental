@@ -1,0 +1,2023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our Difference | Dr. Gupta's Dental Clinic</title>
+
+<meta name="description" content="Dr. Tanupriya Gupta — 20 years of precision, magnification-guided restorative dentistry in South Extension, New Delhi. Ethical care, no over-treatment.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="prevention.css">
+</head>
+
+
+<body><!-- =========================================================
+     HEADER
+     ========================================================= -->
+
+<header>
+
+  <div class="header-info">
+    <div class="container header-info-wrap">
+      <div class="availability" aria-label="Clinic availability">
+        <span><strong>Availability:</strong> <span class="availability-hours">Monday - Saturday, 10:00 AM - 7:00 PM</span></span>
+        <span class="sunday-closed">Sunday: CLOSED</span>
+      </div>
+      <div class="header-contact" aria-label="Clinic contact details">
+        <a href="tel:+919990880975">Call: +91 99908 80975</a>
+        <a href="https://wa.me/919990880975" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container nav-wrap">
+
+    <a href="index.html" class="brand" style="text-decoration:none; color:inherit;" aria-label="Dr. Gupta's Dental Clinic — Home">
+
+      <img
+        src="logos/web_logo.png"
+        alt="Dr. Gupta's Dental Clinic logo"
+        style="width:44px;height:44px;border-radius:10px;object-fit:cover;"
+      >
+
+      <div class="brand-name">
+        Dr. Gupta's Dental Clinic
+      </div>
+
+    </a>
+
+
+    <nav>
+
+      <ul id="main-navigation">
+
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+
+        <li>
+          <a href="about.html">About</a>
+        </li>
+
+        <li>
+          <a href="difference.html" aria-current="page">Our Difference</a>
+        </li>
+
+        <li>
+          <a href="services.html">Services</a>
+        </li>
+
+        <li>
+          <a href="reviews.html">Reviews</a>
+        </li>
+
+        <li>
+          <a href="faq.html">FAQ</a>
+        </li>
+
+        <li>
+          <a href="contact.html">Contact</a>
+        </li>
+
+      </ul>
+
+    </nav>
+
+
+    <div class="nav-cta">
+
+      <button
+        type="button"
+        class="appointment-trigger"
+        id="openAppointmentModal"
+      >
+        Book Appointment
+      </button>
+
+      <button
+        type="button"
+        class="menu-toggle"
+        aria-label="Menu"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >
+        &#9776;
+      </button>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- =========================================================
+     APPOINTMENT MODAL
+     ========================================================= -->
+
+<div
+  class="appointment-modal-overlay"
+  id="appointmentModal"
+  aria-hidden="true"
+>
+
+  <div
+    class="appointment-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="appointmentTitle"
+  >
+
+    <button
+      type="button"
+      class="modal-close"
+      aria-label="Close appointment form"
+    >
+      &times;
+    </button>
+
+
+    <div class="modal-head">
+
+      <h3 id="appointmentTitle">
+        Book an Appointment
+      </h3>
+
+      <p>
+        Please fill in your details and we will contact you shortly.
+      </p>
+
+    </div>
+
+
+    <form class="appointment-form" id="appointmentForm">
+      <div class="appointment-progress" aria-label="Appointment form progress">
+        <div class="step-indicator active" id="stepIndicator1">1. Patient Details</div>
+        <div class="step-indicator" id="stepIndicator2">2. Personal Details <span class="optional-note">(Optional)</span></div>
+      </div>
+
+      <div class="appointment-step active" id="appointmentStep1">
+        <div class="form-grid">
+          <div class="form-group"><label for="name">Name</label><input id="name" name="name" type="text" placeholder="Enter your name" required></div>
+          <div class="form-group"><label for="age">Age</label><input id="age" name="age" type="number" min="1" placeholder="Age" required></div>
+          <div class="form-group"><label for="phone">Phone No</label><input id="phone" name="phone" type="tel" placeholder="Your phone number" required></div>
+          <div class="form-group"><label for="email">Email</label><input id="email" name="email" type="email" placeholder="Your email address" required></div>
+          <div class="form-group full"><label for="address">Address</label><input id="address" name="address" type="text" placeholder="Your address" required></div>
+          <div class="form-group"><label for="appointmentDate">Appointment Date</label><input type="date" id="appointmentDate" name="appointmentDate" required></div>
+          <div class="form-group"><label for="appointmentTime">Available Time Slot</label><select id="appointmentTime" name="appointmentTime" required disabled><option value="">Select a date first</option></select><small class="slot-status" id="slotStatus" aria-live="polite">Choose a date to see available slots.</small></div>
+          <div class="form-group"><label for="gender">Gender</label><select id="gender" name="gender" required><option value="">Select gender</option><option>Male</option><option>Female</option><option>Other</option></select></div>
+        </div>
+        <div class="step-actions">
+          <button type="button" class="secondary-btn" id="closeAppointmentModal">Cancel</button>
+          <button type="button" class="cta-btn" id="nextAppointmentStep">Next &rarr;</button>
+        </div>
+      </div>
+
+      <div class="appointment-step" id="appointmentStep2">
+        <div class="clinical-intro"><strong>Personal details are optional.</strong> You can provide them to help the dentist understand your concern before the appointment, or skip this section and submit with your basic details.</div>
+        <div class="form-grid">
+          <div class="form-group full"><label for="reasonForVisit">Reason for Visit</label><textarea id="reasonForVisit" name="reasonForVisit" placeholder="Briefly describe the reason for your visit"></textarea></div>
+          <div class="form-group"><label for="dentalProblem">Current Dental Problem</label><select id="dentalProblem" name="dentalProblem"><option value="">Select if applicable</option><option>Tooth Pain</option><option>Sensitivity</option><option>Swelling</option><option>Bleeding Gums</option><option>Broken / Chipped Tooth</option><option>Cavity</option><option>Missing Tooth</option><option>Routine Check-up</option><option>Cleaning</option><option>Other</option></select></div>
+          <div class="form-group"><label for="painLevel">Pain / Discomfort</label><select id="painLevel" name="painLevel"><option value="">Select if applicable</option><option>None</option><option>Mild</option><option>Moderate</option><option>Severe</option></select></div>
+          <div class="form-group"><label for="previousDentalTreatment">Previous Dental Treatment</label><select id="previousDentalTreatment" name="previousDentalTreatment"><option value="">Select if applicable</option><option>No Previous Treatment</option><option>Filling</option><option>Root Canal</option><option>Extraction</option><option>Implant</option><option>Crown / Bridge</option><option>Other</option></select></div>
+          <div class="form-group"><label>Currently Taking Any Medicine?</label><div class="radio-row"><label class="radio-option"><input type="radio" name="medication" value="yes"> Yes</label><label class="radio-option"><input type="radio" name="medication" value="no" checked> No</label></div></div>
+          <div class="form-group full medication-box" id="medicationBox"><label for="medicineDetails">Medicine Details</label><textarea id="medicineDetails" name="medicineDetails" placeholder="List medicines you are currently taking"></textarea></div>
+          <div class="form-group full"><label for="allergies">Known Allergies</label><textarea id="allergies" name="allergies" placeholder="Mention any known medicine or other allergies"></textarea></div>
+          <div class="form-group full"><label for="medicalHistory">Medical History</label><textarea id="medicalHistory" name="medicalHistory" placeholder="Mention any relevant medical history"></textarea></div>
+          <div class="form-group full"><label for="additionalClinicalDetails">Additional Clinical Details</label><textarea id="additionalClinicalDetails" name="additionalClinicalDetails" placeholder="Anything else you would like the dentist to know"></textarea></div>
+        </div>
+
+        <div class="clinical-section">
+          <h4 class="clinical-section-title">Adverse Habits / Adverse Oral Habits</h4>
+          <div class="clinical-table-wrap"><table class="clinical-table"><thead><tr><th>Type</th><th>Frequency</th><th>Duration</th></tr></thead><tbody>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitSmoking" value="Smoking"> Smoking</label></td><td><select name="habitSmokingFrequency"><option value="">Select</option><option>Occasional</option><option>Once Daily</option><option>Twice Daily</option><option>More than Twice Daily</option></select></td><td><select name="habitSmokingDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitTobacco" value="Smokeless Tobacco/snuff"> Smokeless Tobacco / Snuff</label></td><td><select name="habitTobaccoFrequency"><option value="">Select</option><option>Occasional</option><option>Once Daily</option><option>Twice Daily</option><option>More than Twice Daily</option></select></td><td><select name="habitTobaccoDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitPaan" value="Paan chewing (gutka, paanmasala)"> Paan chewing (gutka, paanmasala)</label></td><td><select name="habitPaanFrequency"><option value="">Select</option><option>Occasional</option><option>Once Daily</option><option>Twice Daily</option><option>More than Twice Daily</option></select></td><td><select name="habitPaanDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitAlcohol" value="Alcohol"> Alcohol</label></td><td><select name="habitAlcoholFrequency"><option value="">Select</option><option>Occasional</option><option>Once Weekly</option><option>2-3 Times Weekly</option><option>Daily</option></select></td><td><select name="habitAlcoholDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+          </tbody></table></div>
+        </div>
+
+        <div class="clinical-section"><h4 class="clinical-section-title">Oral Hygiene Practices</h4><div class="hygiene-grid">
+          <div class="form-group full"><label>i) Type of Cleaning</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Toothbrush"> Toothbrush</label><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Finger"> Finger</label><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Stick"> Stick</label><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Others"> Others</label></div></div>
+          <div class="form-group full"><label>ii) Method of Cleaning</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="cleaningMethod" value="Vertical"> Vertical</label><label class="clinical-check"><input type="checkbox" name="cleaningMethod" value="Horizontal"> Horizontal</label><label class="clinical-check"><input type="checkbox" name="cleaningMethod" value="Circular"> Circular</label></div></div>
+          <div class="form-group full"><label>iii) Frequency of Cleaning / Brushing</label><div class="option-grid"><label class="clinical-check"><input type="radio" name="brushingFrequency" value="Once"> Once</label><label class="clinical-check"><input type="radio" name="brushingFrequency" value="Twice"> Twice</label><label class="clinical-check"><input type="radio" name="brushingFrequency" value="Thrice"> Thrice</label></div></div>
+          <div class="form-group full"><label>iv) Materials Used</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Toothpaste"> Toothpaste</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Tooth Powder"> Tooth Powder</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Charcoal"> Charcoal</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Sand"> Sand</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Brick Powder"> Brick Powder</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Any Other"> Any Other</label></div><input type="text" id="cleaningMaterialOther" name="cleaningMaterialOther" placeholder="If any other, please specify"></div>
+          <div class="form-group full"><label>v) Time of Brushing</label><div class="option-grid"><label class="clinical-check"><input type="radio" name="brushingTime" value="Before Meal"> Before Meal</label><label class="clinical-check"><input type="radio" name="brushingTime" value="After Meals"> After Meals</label></div></div>
+          <div class="form-group full"><label>vi) Frequency of Changing the Tooth Brush</label><div class="option-grid"><label class="clinical-check"><input type="radio" name="toothbrushChangeFrequency" value="Once"> Once</label><label class="clinical-check"><input type="radio" name="toothbrushChangeFrequency" value="Twice"> Twice</label><label class="clinical-check"><input type="radio" name="toothbrushChangeFrequency" value="Thrice"> Thrice</label></div></div>
+          <div class="form-group"><label for="durationOfCleaning">vii) Duration of Cleaning</label><input type="text" id="durationOfCleaning" name="durationOfCleaning" placeholder="e.g. 2 minutes"></div>
+          <div class="form-group full"><label>viii) Other Oral Hygiene Aids Used</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Flossing"> Flossing</label><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Interdental Aids"> Interdental Aids</label><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Oral Mouth Rinse"> Oral Mouth Rinse</label><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Tongue Cleaner"> Tongue Cleaner</label></div></div>
+        </div></div>
+
+        <div class="step-actions"><button type="button" class="secondary-btn" id="backAppointmentStep">&larr; Back</button><div class="right-actions"><button type="button" class="secondary-btn" id="skipClinicalStep">Skip &amp; Submit</button><button type="submit" class="cta-btn">Submit Appointment</button></div></div>
+      </div>
+    </form>
+
+  </div>
+
+</div>
+
+<main class="pr-page">
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="pr-hero">
+
+        <div class="pr-hero-content">
+
+            <span class="pr-eyebrow">
+                PREVENTION & LONG-TERM CARE
+            </span>
+
+            <h1>
+                Keep your teeth healthy
+                <span>for longer.</span>
+            </h1>
+
+            <p class="pr-hero-text">
+
+                Good dental care is not only about treating problems
+                after they appear. Prevention focuses on maintaining
+                oral health, identifying changes early and addressing
+                small problems before they become more complicated.
+
+            </p>
+
+            <p class="pr-hero-text">
+
+                With regular examinations, professional cleaning,
+                personalised oral-hygiene guidance and appropriate
+                follow-up, the aim is to help you maintain your natural
+                teeth and oral health over the long term.
+
+            </p>
+
+
+            <div class="pr-hero-actions">
+
+                <a href="#prevention"
+                   class="pr-btn pr-btn-primary">
+                    Explore Prevention
+                </a>
+
+                <a href="https://wa.me/919990880975"
+                   target="_blank"
+                   rel="noopener"
+                   class="pr-btn pr-btn-outline">
+
+                    Book a Consultation
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="pr-hero-visual">
+
+            <div class="pr-orbit">
+
+                <div class="pr-orbit-ring ring-one"></div>
+
+                <div class="pr-orbit-ring ring-two"></div>
+
+                <div class="pr-tooth">
+
+                    <div class="pr-tooth-crown"></div>
+
+                    <div class="pr-tooth-root"></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="pr-hero-note">
+
+                <strong>
+                    Prevention starts early
+                </strong>
+
+                <span>
+                    Small changes are often easier to manage
+                    when they are identified early.
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         INTRODUCTION
+    ====================================================== -->
+
+    <section class="pr-section pr-introduction"
+             id="prevention">
+
+        <div class="pr-section-heading">
+
+            <span class="pr-eyebrow">
+                THE PREVENTIVE APPROACH
+            </span>
+
+            <h2>
+                Prevention is about protecting
+                what is already healthy.
+            </h2>
+
+            <p>
+
+                Preventive dentistry aims to reduce the risk of dental
+                problems and identify developing issues before they
+                require more extensive treatment.
+
+            </p>
+
+        </div>
+
+
+        <div class="pr-intro-grid">
+
+
+            <div class="pr-intro-main">
+
+                <h3>
+                    Dental health is an ongoing process.
+                </h3>
+
+                <p>
+
+                    Teeth and gums change over time. Oral hygiene,
+                    diet, existing restorations, habits, age and other
+                    factors can all influence dental health.
+
+                </p>
+
+                <p>
+
+                    Regular dental care provides an opportunity to
+                    monitor these changes rather than waiting until
+                    pain or a visible problem appears.
+
+                </p>
+
+                <p>
+
+                    The purpose of preventive care is therefore not to
+                    recommend treatment unnecessarily. It is to
+                    understand the current condition of your mouth,
+                    identify genuine risks and take appropriate steps
+                    to maintain health.
+
+                </p>
+
+            </div>
+
+
+            <div class="pr-intro-cards">
+
+
+                <article class="pr-mini-card">
+
+                    <span class="pr-mini-number">
+                        01
+                    </span>
+
+                    <h3>
+                        Prevent
+                    </h3>
+
+                    <p>
+
+                        Reduce avoidable risks through good oral hygiene,
+                        professional care and healthy daily habits.
+
+                    </p>
+
+                </article>
+
+
+                <article class="pr-mini-card">
+
+                    <span class="pr-mini-number">
+                        02
+                    </span>
+
+                    <h3>
+                        Detect Early
+                    </h3>
+
+                    <p>
+
+                        Regular examinations can help identify changes
+                        before they develop into larger dental problems.
+
+                    </p>
+
+                </article>
+
+
+                <article class="pr-mini-card">
+
+                    <span class="pr-mini-number">
+                        03
+                    </span>
+
+                    <h3>
+                        Maintain
+                    </h3>
+
+                    <p>
+
+                        Continued care helps maintain treated and
+                        untreated teeth over the long term.
+
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         WHY PREVENTION
+    ====================================================== -->
+
+    <section class="pr-section pr-why">
+
+        <div class="pr-section-heading">
+
+            <span class="pr-eyebrow">
+                WHY PREVENTION MATTERS
+            </span>
+
+            <h2>
+                Prevention can make dental care
+                simpler over time.
+            </h2>
+
+            <p>
+
+                Many dental problems develop gradually. Regular care
+                can help identify them while they are still limited.
+
+            </p>
+
+        </div>
+
+
+        <div class="pr-three-columns">
+
+
+            <article class="pr-feature-card">
+
+                <div class="pr-card-number">
+                    01
+                </div>
+
+                <h3>
+                    Identify Problems Early
+                </h3>
+
+                <p>
+
+                    Dental decay, gum problems, worn restorations and
+                    other changes may not always cause symptoms in
+                    their early stages.
+
+                </p>
+
+                <p>
+
+                    Regular examinations provide an opportunity to
+                    identify changes before they become painful or
+                    require more extensive treatment.
+
+                </p>
+
+            </article>
+
+
+
+            <article class="pr-feature-card">
+
+                <div class="pr-card-number">
+                    02
+                </div>
+
+                <h3>
+                    Protect Natural Teeth
+                </h3>
+
+                <p>
+
+                    Preventive care supports the long-term health of
+                    your natural teeth and gums.
+
+                </p>
+
+                <p>
+
+                    Maintaining good oral hygiene and addressing
+                    problems appropriately can help reduce the risk of
+                    avoidable damage to teeth.
+
+                </p>
+
+            </article>
+
+
+
+            <article class="pr-feature-card">
+
+                <div class="pr-card-number">
+                    03
+                </div>
+
+                <h3>
+                    Avoid Unnecessary Complexity
+                </h3>
+
+                <p>
+
+                    When a problem is identified early, the treatment
+                    required may sometimes be simpler than it would be
+                    after the problem has progressed.
+
+                </p>
+
+                <p>
+
+                    Prevention therefore forms an important part of a
+                    long-term approach to dental care.
+
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CORE AREAS
+    ====================================================== -->
+
+    <section class="pr-section pr-core">
+
+        <div class="pr-section-heading">
+
+            <span class="pr-eyebrow">
+                THE BUILDING BLOCKS
+            </span>
+
+            <h2>
+                What does preventive dental care involve?
+            </h2>
+
+            <p>
+
+                Prevention is not one procedure. It is a combination
+                of regular assessment, professional care and habits
+                that support oral health between appointments.
+
+            </p>
+
+        </div>
+
+
+        <div class="pr-four-columns">
+
+
+            <!-- 01 -->
+
+            <article class="pr-core-card">
+
+                <span class="pr-core-number">
+                    01
+                </span>
+
+                <h3>
+                    Regular Dental Examinations
+                </h3>
+
+                <p>
+
+                    Regular examinations allow the condition of the
+                    teeth, gums and existing restorations to be
+                    monitored over time.
+
+                </p>
+
+                <p>
+
+                    They can also provide an opportunity to identify
+                    changes that may not yet be causing noticeable
+                    symptoms.
+
+                </p>
+
+            </article>
+
+
+
+            <!-- 02 -->
+
+            <article class="pr-core-card">
+
+                <span class="pr-core-number">
+                    02
+                </span>
+
+                <h3>
+                    Professional Cleaning
+                </h3>
+
+                <p>
+
+                    Professional cleaning can help remove plaque and
+                    deposits that may be difficult to remove
+                    completely through routine brushing alone.
+
+                </p>
+
+                <p>
+
+                    The frequency of professional cleaning depends on
+                    individual oral-health needs rather than a single
+                    schedule that applies to everyone.
+
+                </p>
+
+            </article>
+
+
+
+            <!-- 03 -->
+
+            <article class="pr-core-card">
+
+                <span class="pr-core-number">
+                    03
+                </span>
+
+                <h3>
+                    Oral Hygiene Guidance
+                </h3>
+
+                <p>
+
+                    Effective prevention depends heavily on what
+                    happens at home every day.
+
+                </p>
+
+                <p>
+
+                    Personalised guidance can help patients understand
+                    how to clean their teeth and gums effectively and
+                    where their current routine may need improvement.
+
+                </p>
+
+            </article>
+
+
+
+            <!-- 04 -->
+
+            <article class="pr-core-card">
+
+                <span class="pr-core-number">
+                    04
+                </span>
+
+                <h3>
+                    Early Detection
+                </h3>
+
+                <p>
+
+                    Detecting changes early can help determine whether
+                    an area needs treatment, preventive attention or
+                    simply monitoring.
+
+                </p>
+
+                <p>
+
+                    The aim is to respond appropriately rather than
+                    waiting until a dental problem becomes more
+                    advanced.
+
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         DAILY CARE
+    ====================================================== -->
+
+    <section class="pr-section pr-daily">
+
+        <div class="pr-section-heading">
+
+            <span class="pr-eyebrow">
+                EVERYDAY ORAL CARE
+            </span>
+
+            <h2>
+                What you do between dental visits
+                matters too.
+            </h2>
+
+            <p>
+
+                Professional dental care works together with daily
+                habits. Small, consistent steps can have an important
+                role in maintaining oral health.
+
+            </p>
+
+        </div>
+
+
+        <div class="pr-daily-grid">
+
+
+            <article class="pr-daily-card">
+
+                <div class="pr-daily-number">
+                    01
+                </div>
+
+                <h3>
+                    Brush Regularly
+                </h3>
+
+                <p>
+
+                    Regular toothbrushing helps remove plaque from the
+                    tooth surfaces and supports healthy gums.
+
+                </p>
+
+                <p>
+
+                    The technique, duration and consistency of
+                    brushing are important, not simply the act of
+                    brushing itself.
+
+                </p>
+
+            </article>
+
+
+
+            <article class="pr-daily-card">
+
+                <div class="pr-daily-number">
+                    02
+                </div>
+
+                <h3>
+                    Clean Between Teeth
+                </h3>
+
+                <p>
+
+                    Toothbrush bristles cannot effectively reach every
+                    surface between teeth.
+
+                </p>
+
+                <p>
+
+                    Appropriate interdental cleaning can help remove
+                    plaque from these areas and support gum health.
+
+                </p>
+
+            </article>
+
+
+
+            <article class="pr-daily-card">
+
+                <div class="pr-daily-number">
+                    03
+                </div>
+
+                <h3>
+                    Be Mindful of Your Diet
+                </h3>
+
+                <p>
+
+                    The frequency of exposure to sugars and other
+                    dietary factors can influence the risk of dental
+                    decay.
+
+                </p>
+
+                <p>
+
+                    Understanding eating and drinking habits can
+                    therefore be an important part of preventive
+                    advice.
+
+                </p>
+
+            </article>
+
+
+
+            <article class="pr-daily-card">
+
+                <div class="pr-daily-number">
+                    04
+                </div>
+
+                <h3>
+                    Don't Wait for Pain
+                </h3>
+
+                <p>
+
+                    Pain is not always the first sign that something
+                    has changed in the mouth.
+
+                </p>
+
+                <p>
+
+                    Regular assessment can sometimes identify a
+                    problem before it becomes uncomfortable or
+                    disruptive.
+
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         RISK FACTORS
+    ====================================================== -->
+
+    <section class="pr-section pr-risk">
+
+        <div class="pr-section-heading">
+
+            <span class="pr-eyebrow">
+                INDIVIDUAL RISK
+            </span>
+
+            <h2>
+                Preventive care should be
+                personalised.
+            </h2>
+
+            <p>
+
+                Everyone does not have the same dental risks.
+                Preventive care should take your individual oral
+                health and circumstances into account.
+
+            </p>
+
+        </div>
+
+
+        <div class="pr-risk-grid">
+
+
+            <article class="pr-risk-card">
+
+                <span>
+                    01
+                </span>
+
+                <div>
+
+                    <h3>
+                        Previous Dental Problems
+                    </h3>
+
+                    <p>
+
+                        A history of cavities, gum problems or repeated
+                        dental treatment may influence the level of
+                        preventive attention that is appropriate.
+
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="pr-risk-card">
+
+                <span>
+                    02
+                </span>
+
+                <div>
+
+                    <h3>
+                        Existing Restorations
+                    </h3>
+
+                    <p>
+
+                        Fillings, crowns and other restorations can
+                        change over time. Monitoring them can help
+                        identify wear, damage or other changes.
+
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="pr-risk-card">
+
+                <span>
+                    03
+                </span>
+
+                <div>
+
+                    <h3>
+                        Oral Hygiene
+                    </h3>
+
+                    <p>
+
+                        Individual brushing and interdental cleaning
+                        habits can influence plaque accumulation and
+                        gum health.
+
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="pr-risk-card">
+
+                <span>
+                    04
+                </span>
+
+                <div>
+
+                    <h3>
+                        Lifestyle & Habits
+                    </h3>
+
+                    <p>
+
+                        Diet, tobacco use, oral habits and other
+                        lifestyle factors can influence oral health and
+                        may be discussed during preventive care.
+
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         LONG TERM CARE
+    ====================================================== -->
+
+    <section class="pr-section pr-long-term">
+
+        <div class="pr-section-heading">
+
+            <span class="pr-eyebrow">
+                LONG-TERM CARE
+            </span>
+
+            <h2>
+                Dental care does not end
+                when treatment is completed.
+            </h2>
+
+            <p>
+
+                Maintaining the results of treatment and protecting
+                your remaining natural teeth requires continued
+                attention.
+
+            </p>
+
+        </div>
+
+
+        <div class="pr-long-grid">
+
+
+            <article class="pr-long-card">
+
+                <div class="pr-long-number">
+                    01
+                </div>
+
+                <h3>
+                    Review
+                </h3>
+
+                <p>
+
+                    Follow-up appointments provide an opportunity to
+                    assess treated teeth, existing restorations and
+                    overall oral health.
+
+                </p>
+
+            </article>
+
+
+
+            <article class="pr-long-card">
+
+                <div class="pr-long-number">
+                    02
+                </div>
+
+                <h3>
+                    Monitor
+                </h3>
+
+                <p>
+
+                    Not every finding requires immediate treatment.
+                    In appropriate situations, monitoring can help
+                    determine whether an area is stable or changing.
+
+                </p>
+
+            </article>
+
+
+
+            <article class="pr-long-card">
+
+                <div class="pr-long-number">
+                    03
+                </div>
+
+                <h3>
+                    Maintain
+                </h3>
+
+                <p>
+
+                    Good daily oral hygiene and professional preventive
+                    care help support the health of teeth and gums
+                    between appointments.
+
+                </p>
+
+            </article>
+
+
+
+            <article class="pr-long-card">
+
+                <div class="pr-long-number">
+                    04
+                </div>
+
+                <h3>
+                    Adapt
+                </h3>
+
+                <p>
+
+                    Preventive recommendations may change over time as
+                    your dental condition, habits and needs change.
+
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SIMPLE TIMELINE
+    ====================================================== -->
+
+    <section class="pr-section pr-timeline-section">
+
+        <div class="pr-section-heading">
+
+            <span class="pr-eyebrow">
+                THINK LONG TERM
+            </span>
+
+            <h2>
+                From prevention to maintenance
+            </h2>
+
+            <p>
+
+                Good dental care can be viewed as a continuous cycle
+                rather than a series of isolated appointments.
+
+            </p>
+
+        </div>
+
+
+        <div class="pr-timeline">
+
+
+            <div class="pr-timeline-item">
+
+                <div class="pr-timeline-number">
+                    01
+                </div>
+
+                <div class="pr-timeline-content">
+
+                    <h3>
+                        Assess
+                    </h3>
+
+                    <p>
+
+                        Understand the current condition of your teeth
+                        and gums and identify areas that may need
+                        attention.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="pr-timeline-item">
+
+                <div class="pr-timeline-number">
+                    02
+                </div>
+
+                <div class="pr-timeline-content">
+
+                    <h3>
+                        Prevent
+                    </h3>
+
+                    <p>
+
+                        Address risk factors and establish habits that
+                        support good oral health.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="pr-timeline-item">
+
+                <div class="pr-timeline-number">
+                    03
+                </div>
+
+                <div class="pr-timeline-content">
+
+                    <h3>
+                        Treat When Needed
+                    </h3>
+
+                    <p>
+
+                        If a genuine dental problem is identified,
+                        treat it appropriately rather than allowing it
+                        to progress.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="pr-timeline-item">
+
+                <div class="pr-timeline-number">
+                    04
+                </div>
+
+                <div class="pr-timeline-content">
+
+                    <h3>
+                        Maintain
+                    </h3>
+
+                    <p>
+
+                        Continue regular care and monitoring to protect
+                        the health achieved through treatment and
+                        prevention.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         WHAT WE BELIEVE
+    ====================================================== -->
+
+    <section class="pr-section pr-belief">
+
+        <div class="pr-belief-inner">
+
+            <span class="pr-eyebrow">
+                OUR APPROACH
+            </span>
+
+            <h2>
+                Prevention should be thoughtful,
+                not automatic.
+            </h2>
+
+            <p>
+
+                Preventive dentistry is about understanding your
+                individual needs, identifying genuine risks and
+                recommending care that has a clear purpose.
+
+            </p>
+
+            <p>
+
+                The goal is to help you maintain your natural teeth,
+                recognise problems early and avoid treatment that may
+                not be necessary.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FAQ
+    ====================================================== -->
+
+    <section class="pr-section pr-faq">
+
+        <div class="pr-section-heading">
+
+            <span class="pr-eyebrow">
+                COMMON QUESTIONS
+            </span>
+
+            <h2>
+                Prevention & Long-Term Care — FAQs
+            </h2>
+
+            <p>
+
+                Some common questions about maintaining dental health
+                over the long term.
+
+            </p>
+
+        </div>
+
+
+        <div class="pr-faq-list">
+
+
+            <!-- FAQ 1 -->
+
+            <div class="pr-faq-item">
+
+                <button class="pr-faq-question"
+                        type="button">
+
+                    <span>
+                        Why should I visit a dentist if I don't have
+                        any pain?
+                    </span>
+
+                    <span class="pr-faq-icon">
+                        +
+                    </span>
+
+                </button>
+
+                <div class="pr-faq-answer">
+
+                    <p>
+
+                        Some dental problems can develop without obvious
+                        symptoms in their early stages. Regular
+                        examinations provide an opportunity to monitor
+                        the condition of your teeth and gums and identify
+                        changes before they become more significant.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FAQ 2 -->
+
+            <div class="pr-faq-item">
+
+                <button class="pr-faq-question"
+                        type="button">
+
+                    <span>
+                        How often should I have a dental examination?
+                    </span>
+
+                    <span class="pr-faq-icon">
+                        +
+                    </span>
+
+                </button>
+
+                <div class="pr-faq-answer">
+
+                    <p>
+
+                        There is no single interval that is appropriate
+                        for everyone. The frequency of examinations can
+                        depend on your oral-health condition, previous
+                        dental problems, existing restorations and
+                        individual risk factors.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FAQ 3 -->
+
+            <div class="pr-faq-item">
+
+                <button class="pr-faq-question"
+                        type="button">
+
+                    <span>
+                        Is professional cleaning necessary if I brush
+                        every day?
+                    </span>
+
+                    <span class="pr-faq-icon">
+                        +
+                    </span>
+
+                </button>
+
+                <div class="pr-faq-answer">
+
+                    <p>
+
+                        Daily brushing is essential, but some plaque and
+                        deposits can remain in areas that are difficult
+                        to clean completely at home. Professional
+                        cleaning may be recommended depending on your
+                        individual oral-health needs.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FAQ 4 -->
+
+            <div class="pr-faq-item">
+
+                <button class="pr-faq-question"
+                        type="button">
+
+                    <span>
+                        Does preventive dentistry mean I will need
+                        more treatments?
+                    </span>
+
+                    <span class="pr-faq-icon">
+                        +
+                    </span>
+
+                </button>
+
+                <div class="pr-faq-answer">
+
+                    <p>
+
+                        The purpose of preventive dentistry is not to
+                        increase treatment. It is to maintain oral
+                        health, identify genuine problems early and
+                        avoid unnecessary progression of dental disease
+                        wherever possible.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FAQ 5 -->
+
+            <div class="pr-faq-item">
+
+                <button class="pr-faq-question"
+                        type="button">
+
+                    <span>
+                        What can I do at home to protect my teeth?
+                    </span>
+
+                    <span class="pr-faq-icon">
+                        +
+                    </span>
+
+                </button>
+
+                <div class="pr-faq-answer">
+
+                    <p>
+
+                        Consistent oral hygiene, cleaning between teeth,
+                        being mindful of dietary habits and attending
+                        appropriate dental reviews all contribute to
+                        long-term oral health. Your individual routine
+                        can be adjusted according to your dental needs.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FINAL CTA
+    ====================================================== -->
+
+    <section class="pr-final-cta">
+
+        <div class="pr-final-content">
+
+            <span class="pr-eyebrow">
+                LOOK AFTER YOUR SMILE FOR THE LONG TERM
+            </span>
+
+            <h2>
+                Prevention today can make
+                tomorrow's dental care simpler.
+            </h2>
+
+            <p>
+
+                Regular assessment and personalised preventive care
+                can help you understand your oral health, identify
+                problems early and maintain your natural teeth over
+                time.
+
+            </p>
+
+
+            <div class="pr-final-actions">
+
+                <a href="https://wa.me/919990880975"
+                   target="_blank"
+                   rel="noopener"
+                   class="pr-btn pr-btn-primary">
+
+                    Book on WhatsApp
+
+                </a>
+
+
+                <a href="tel:+919990880975"
+                   class="pr-btn pr-btn-outline">
+
+                    Call the Clinic
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
+<footer>
+
+  <div class="container footer-grid">
+
+
+    <div>
+
+      <h4>
+        Dr. Gupta's Dental Clinic
+      </h4>
+
+      <p>
+        Precision, magnification-guided dentistry in South Extension, New Delhi since 2013.
+      </p>
+
+    </div>
+
+
+    <div>
+
+      <h4>
+        Quick Links
+      </h4>
+
+      <a href="about.html">
+        About
+      </a>
+      <a href="difference.html">
+        Our Difference
+      </a>
+
+      <a href="services.html">
+        Services
+      </a>
+
+      <a href="reviews.html">
+        Reviews
+      </a>
+
+      <a href="faq.html">
+        FAQ
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+    </div>
+
+
+    <div>
+
+      <h4>
+        Contact
+      </h4>
+
+      <a href="tel:+919990880975">
+        Mobile: 99908 80975
+      </a>
+
+      <a href="tel:+911142220392">
+        Landline: 011-4222-0392
+      </a>
+
+      <a href="https://wa.me/919990880975">
+        WhatsApp Us
+      </a>
+
+      <p>   H-30, South Extension Part 1, New Delhi</p>
+
+    </div>
+  </div>
+
+
+  <div class="container footer-bottom">
+    © 2026 Dr. Gupta's Dental Clinic. All rights reserved.
+  </div>
+
+</footer>
+
+<script>
+    /* =========================================================
+   PREVENTION & LONG-TERM CARE
+   Dr. Gupta's Dental Clinic
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+
+    /* =====================================================
+       SCROLL REVEAL
+    ====================================================== */
+
+    const revealElements =
+        document.querySelectorAll(
+            ".pr-section-heading, " +
+            ".pr-feature-card, " +
+            ".pr-core-card, " +
+            ".pr-daily-card, " +
+            ".pr-long-card, " +
+            ".pr-risk-card, " +
+            ".pr-timeline-item, " +
+            ".pr-mini-card"
+        );
+
+
+    if ("IntersectionObserver" in window) {
+
+        const observer =
+            new IntersectionObserver(
+
+                function (entries, observer) {
+
+                    entries.forEach(function (entry) {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add(
+                                "pr-visible"
+                            );
+
+                            observer.unobserve(
+                                entry.target
+                            );
+
+                        }
+
+                    });
+
+                },
+
+                {
+                    threshold: 0.12
+                }
+
+            );
+
+
+        revealElements.forEach(
+            function (element, index) {
+
+                element.style.transitionDelay =
+                    (index % 5) * 0.08 + "s";
+
+                observer.observe(element);
+
+            }
+        );
+
+    } else {
+
+        revealElements.forEach(
+            function (element) {
+
+                element.classList.add(
+                    "pr-visible"
+                );
+
+            }
+        );
+
+    }
+
+
+
+    /* =====================================================
+       FAQ ACCORDION
+    ====================================================== */
+
+    const faqQuestions =
+        document.querySelectorAll(
+            ".pr-faq-question"
+        );
+
+
+    faqQuestions.forEach(
+        function (question) {
+
+            question.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+
+            question.addEventListener(
+                "click",
+                function () {
+
+                    const currentItem =
+                        question.closest(
+                            ".pr-faq-item"
+                        );
+
+                    if (!currentItem) {
+                        return;
+                    }
+
+
+                    const wasOpen =
+                        currentItem.classList.contains(
+                            "open"
+                        );
+
+
+                    /* Close other FAQ items */
+
+                    document
+                        .querySelectorAll(
+                            ".pr-faq-item.open"
+                        )
+                        .forEach(
+                            function (item) {
+
+                                if (
+                                    item !== currentItem
+                                ) {
+
+                                    item.classList.remove(
+                                        "open"
+                                    );
+
+                                    const otherButton =
+                                        item.querySelector(
+                                            ".pr-faq-question"
+                                        );
+
+                                    if (otherButton) {
+
+                                        otherButton.setAttribute(
+                                            "aria-expanded",
+                                            "false"
+                                        );
+
+                                    }
+
+                                }
+
+                            }
+                        );
+
+
+                    /* Toggle selected FAQ */
+
+                    currentItem.classList.toggle(
+                        "open"
+                    );
+
+
+                    question.setAttribute(
+                        "aria-expanded",
+                        String(!wasOpen)
+                    );
+
+                }
+            );
+
+        }
+    );
+
+
+
+    /* =====================================================
+       SMOOTH INTERNAL LINKS
+    ====================================================== */
+
+    const internalLinks =
+        document.querySelectorAll(
+            'a[href^="#"]'
+        );
+
+
+    internalLinks.forEach(
+        function (link) {
+
+            link.addEventListener(
+                "click",
+                function (event) {
+
+                    const targetId =
+                        link.getAttribute(
+                            "href"
+                        );
+
+
+                    if (
+                        !targetId ||
+                        targetId === "#"
+                    ) {
+                        return;
+                    }
+
+
+                    const target =
+                        document.querySelector(
+                            targetId
+                        );
+
+
+                    if (!target) {
+                        return;
+                    }
+
+
+                    event.preventDefault();
+
+
+                    target.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+
+                }
+            );
+
+        }
+    );
+
+
+
+    /* =====================================================
+       HERO VISUAL MOVEMENT
+    ====================================================== */
+
+    const heroVisual =
+        document.querySelector(
+            ".pr-hero-visual"
+        );
+
+    const tooth =
+        document.querySelector(
+            ".pr-tooth"
+        );
+
+
+    if (
+        heroVisual &&
+        tooth &&
+        window.matchMedia(
+            "(pointer: fine)"
+        ).matches
+    ) {
+
+        heroVisual.addEventListener(
+            "mousemove",
+            function (event) {
+
+                const rect =
+                    heroVisual.getBoundingClientRect();
+
+
+                const x =
+                    (
+                        event.clientX -
+                        rect.left
+                    ) / rect.width - .5;
+
+
+                const y =
+                    (
+                        event.clientY -
+                        rect.top
+                    ) / rect.height - .5;
+
+
+                tooth.style.transform =
+                    `translate(${x * 12}px, ${y * 12}px)`;
+
+
+            }
+        );
+
+
+        heroVisual.addEventListener(
+            "mouseleave",
+            function () {
+
+                tooth.style.transform =
+                    "translate(0, 0)";
+
+            }
+        );
+
+    }
+
+
+
+    /* =====================================================
+       KEYBOARD ACCESSIBILITY
+    ====================================================== */
+
+    faqQuestions.forEach(
+        function (button) {
+
+            button.addEventListener(
+                "keydown",
+                function (event) {
+
+                    if (
+                        event.key === "Enter" ||
+                        event.key === " "
+                    ) {
+
+                        event.preventDefault();
+
+                        button.click();
+
+                    }
+
+                }
+            );
+
+        }
+    );
+
+
+
+    /* =====================================================
+       PAGE READY
+    ====================================================== */
+
+    document.documentElement.classList.add(
+        "pr-js-ready"
+    );
+
+});
+</script>
+</body>
+</html>

@@ -6,7 +6,7 @@
 
 <title>Patient Reviews | Dr. Gupta's Dental Clinic</title>
 
-<meta name="description" content="Dr. Tanupriya Gupta — 20 years of precision, magnification-guided restorative dentistry in South Extension, New Delhi. Ethical care, no over-treatment.">
+<meta name="description" content="Read real patient reviews of Dr. Gupta's Dental Clinic in South Extension, New Delhi, and share your own experience.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,6 +14,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="reviews.css">
+
 </head>
 
 
@@ -38,10 +40,10 @@
 
   <div class="container nav-wrap">
 
-    <div class="brand">
+    <a href="index.html" class="brand" style="text-decoration:none; color:inherit;" aria-label="Dr. Gupta's Dental Clinic — Home">
 
       <img
-        src="logo_trimmed.png"
+        src="logos/web_logo.png"
         alt="Dr. Gupta's Dental Clinic logo"
         style="width:44px;height:44px;border-radius:10px;object-fit:cover;"
       >
@@ -50,7 +52,7 @@
         Dr. Gupta's Dental Clinic
       </div>
 
-    </div>
+    </a>
 
 
     <nav>
@@ -75,6 +77,10 @@
 
         <li>
           <a href="reviews.html">Reviews</a>
+        </li>
+
+        <li>
+          <a href="faq.html">FAQ</a>
         </li>
 
         <li>
@@ -220,106 +226,172 @@
 
 
 <!-- =========================================================
-     TESTIMONIALS
+     REVIEWS HERO
      ========================================================= -->
 
-<section
-  id="testimonials"
-  class="reveal testi"
->
+<section class="reviews-hero">
+  <div class="reviews-hero-img">
+    <img src="clinic_photos_shortlist/img-reviews-hero.svg" alt="Illustration of a speech bubble with a quote mark above five stars">
+  </div>
+  <span class="reviews-eyebrow">Patient Reviews</span>
+  <h1>What Our Patients Say</h1>
+  <p>Every review below is genuine — read what patients have said about their visits, and share your own experience with us.</p>
+</section>
 
-  <div class="container">
 
-    <div class="sec-head">
+<!-- =========================================================
+     REVIEWS BODY
+     ========================================================= -->
 
-      <span class="eyebrow">
-        Patient Stories
-      </span>
+<div class="reviews-body">
 
-      <h2>
-        What patients say
-      </h2>
+  <!-- Rating summary -->
+  <div class="rating-summary">
 
-      <p>
-        Every single review Dr. Gupta's Dental Clinic has received on Google has been five stars — not one exception.
-      </p>
-
+    <div class="rating-summary-score">
+      <div class="rating-summary-num">5.0</div>
+      <div class="rating-summary-stars">★★★★★</div>
+      <div class="rating-summary-count">Based on our Google Reviews</div>
     </div>
 
-
-    <div class="testi-grid">
-
-
-      <div class="testi-card">
-
-        <div class="stars">
-          ★★★★★
-        </div>
-
-        <p>
-          "Dr Tanupriya is the most knowledgeable, sincere and methodical dental surgeon I have come across. She's also very caring and compassionate and makes sure her patients are comfortable during and post procedure also. I recommend her to all my family and friends."
-        </p>
-
-        <div class="who">
-          Dr. Chhabir Gupta
-        </div>
-
+    <div class="rating-bars">
+      <div class="rating-bar-row">
+        <span>5 stars</span>
+        <div class="rating-bar-track"><div class="rating-bar-fill" style="width:100%"></div></div>
+        <span>100%</span>
       </div>
-
-
-      <div class="testi-card">
-
-        <div class="stars">
-          ★★★★★
-        </div>
-
-        <p>
-          "Fabulous doctor, a real healer. Best dental cleaning work I've had in over twenty years, very precise, very careful. Superb, and highly recommended."
-        </p>
-
-        <div class="who">
-          Anuraag Tiwari
-        </div>
-
+      <div class="rating-bar-row">
+        <span>4 stars</span>
+        <div class="rating-bar-track"><div class="rating-bar-fill" style="width:0%"></div></div>
+        <span>0%</span>
       </div>
-
-
-      <div class="testi-card">
-
-        <div class="stars">
-          ★★★★★
-        </div>
-
-        <p>
-          "Had an amazing experience while having composite filling done here. Such a sweet and soft spoken lady as well a highly professional dentist who takes all precautions and utmost care taking into account all necessary protocols."
-        </p>
-
-        <div class="who">
-          Ayush Kushwaha
-        </div>
-
+      <div class="rating-bar-row">
+        <span>3 stars</span>
+        <div class="rating-bar-track"><div class="rating-bar-fill" style="width:0%"></div></div>
+        <span>0%</span>
       </div>
-
-
-      <div style="text-align:center;margin-top:32px;grid-column:1 / -1;">
-
-        <a
-          href="https://www.google.com/maps/place/Dr.+Gupta's+Dental+Clinic/@28.5712336,77.2185971,17z/data=!3m1!4b1!4m6!3m5!1s0x390ce25ebe73cb59:0x56e9179e7dcfc73b!8m2!3d28.5712289!4d77.221172!16s%2Fg%2F11b6t0lkcx"
-          target="_blank"
-          rel="noopener"
-          class="btn-outline reviews-btn"
-        >
-          Read All Reviews on Google
-        </a>
-
+      <div class="rating-bar-row">
+        <span>2 stars</span>
+        <div class="rating-bar-track"><div class="rating-bar-fill" style="width:0%"></div></div>
+        <span>0%</span>
       </div>
+      <div class="rating-bar-row">
+        <span>1 star</span>
+        <div class="rating-bar-track"><div class="rating-bar-fill" style="width:0%"></div></div>
+        <span>0%</span>
+      </div>
+    </div>
 
-
+    <div class="rating-summary-cta">
+      <a
+        href="https://www.google.com/maps/place/Dr.+Gupta's+Dental+Clinic/@28.5712336,77.2185971,17z/data=!3m1!4b1!4m6!3m5!1s0x390ce25ebe73cb59:0x56e9179e7dcfc73b!8m2!3d28.5712289!4d77.221172!16s%2Fg%2F11b6t0lkcx"
+        target="_blank"
+        rel="noopener"
+        class="btn-outline"
+      >
+        Read All Reviews on Google
+      </a>
     </div>
 
   </div>
 
-</section>
+  <!-- Existing reviews -->
+  <div class="reviews-section-head">
+    <h2>Recent Reviews</h2>
+    <p>A few of the reviews our patients have left us on Google.</p>
+  </div>
+
+  <div class="reviews-grid" id="reviewsGrid">
+
+    <div class="review-card">
+      <div class="review-card-stars">★★★★★</div>
+      <p>"Dr Tanupriya is the most knowledgeable, sincere and methodical dental surgeon I have come across. She's also very caring and compassionate and makes sure her patients are comfortable during and post procedure also. I recommend her to all my family and friends."</p>
+      <div class="review-card-who">
+        <div class="review-card-avatar">CG</div>
+        <div>
+          <div class="review-card-name">Dr. Chhabir Gupta</div>
+          <div class="review-card-source">Google Review</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-card-stars">★★★★★</div>
+      <p>"Fabulous doctor, a real healer. Best dental cleaning work I've had in over twenty years, very precise, very careful. Superb, and highly recommended."</p>
+      <div class="review-card-who">
+        <div class="review-card-avatar">AT</div>
+        <div>
+          <div class="review-card-name">Anuraag Tiwari</div>
+          <div class="review-card-source">Google Review</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-card-stars">★★★★★</div>
+      <p>"Had an amazing experience while having composite filling done here. Such a sweet and soft spoken lady as well a highly professional dentist who takes all precautions and utmost care taking into account all necessary protocols."</p>
+      <div class="review-card-who">
+        <div class="review-card-avatar">AK</div>
+        <div>
+          <div class="review-card-name">Ayush Kushwaha</div>
+          <div class="review-card-source">Google Review</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Write a review -->
+  <div class="reviews-section-head">
+    <h2>Share Your Experience</h2>
+    <p>Had a visit with us? We'd love to hear how it went.</p>
+  </div>
+
+  <div class="write-review">
+
+    <form id="reviewForm">
+
+      <div id="starPicker" class="star-picker" aria-label="Select a star rating">
+        <button type="button" data-value="1" aria-label="1 star">☆</button>
+        <button type="button" data-value="2" aria-label="2 stars">☆</button>
+        <button type="button" data-value="3" aria-label="3 stars">☆</button>
+        <button type="button" data-value="4" aria-label="4 stars">☆</button>
+        <button type="button" data-value="5" aria-label="5 stars">☆</button>
+      </div>
+      <input type="hidden" id="reviewRating" value="0">
+
+      <div class="review-form-grid">
+
+        <div class="form-group">
+          <label for="reviewerName">Your Name</label>
+          <input type="text" id="reviewerName" placeholder="Enter your name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="reviewerPhone">Phone (optional)</label>
+          <input type="tel" id="reviewerPhone" placeholder="For us to follow up if needed">
+        </div>
+
+        <div class="form-group full">
+          <label for="reviewText">Your Review</label>
+          <textarea id="reviewText" placeholder="Tell us about your visit..." required></textarea>
+        </div>
+
+        <div class="review-form-submit-msg" id="reviewFormMsg"></div>
+
+        <div class="review-form-actions">
+          <button type="submit" class="cta-btn">Submit Review</button>
+        </div>
+
+      </div>
+
+    </form>
+
+    <p class="review-form-note">Your review is sent to us directly for verification before it's posted publicly — this helps keep every review on this page genuine.</p>
+
+  </div>
+
+</div>
 
 
 <!-- =========================================================
@@ -376,6 +448,9 @@
       <a href="about.html">
         About
       </a>
+      <a href="difference.html">
+        Our Difference
+      </a>
 
       <a href="services.html">
         Services
@@ -383,6 +458,10 @@
 
       <a href="reviews.html">
         Reviews
+      </a>
+
+      <a href="faq.html">
+        FAQ
       </a>
 
       <a href="contact.html">
@@ -424,6 +503,120 @@
 
 
 <script src="script.js" defer></script>
+<script>
+  /* =========================================================
+   REVIEWS PAGE — STAR PICKER + SUBMISSION
+========================================================= */
+
+document.addEventListener('DOMContentLoaded', function () {
+
+  var starButtons = document.querySelectorAll('.star-picker button');
+  var ratingInput = document.getElementById('reviewRating');
+  var currentRating = 0;
+
+  function paintStars(rating) {
+    starButtons.forEach(function (btn) {
+      var val = parseInt(btn.getAttribute('data-value'), 10);
+      btn.classList.toggle('active', val <= rating);
+      btn.textContent = val <= rating ? '★' : '☆';
+    });
+  }
+
+  starButtons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      currentRating = parseInt(btn.getAttribute('data-value'), 10);
+      ratingInput.value = currentRating;
+      paintStars(currentRating);
+    });
+
+    btn.addEventListener('mouseenter', function () {
+      paintStars(parseInt(btn.getAttribute('data-value'), 10));
+    });
+  });
+
+  var starPicker = document.getElementById('starPicker');
+  if (starPicker) {
+    starPicker.addEventListener('mouseleave', function () {
+      paintStars(currentRating);
+    });
+  }
+
+  // ---------------------------------------------------------
+  // Form submission
+  // ---------------------------------------------------------
+
+  var form = document.getElementById('reviewForm');
+  var reviewsGrid = document.getElementById('reviewsGrid');
+  var submitMsg = document.getElementById('reviewFormMsg');
+  var whatsappNumber = '919990880975';
+
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      var name = document.getElementById('reviewerName').value.trim();
+      var text = document.getElementById('reviewText').value.trim();
+      var rating = parseInt(ratingInput.value, 10) || 0;
+
+      if (!name || !text || rating === 0) {
+        submitMsg.textContent = 'Please add your name, a rating, and your review before submitting.';
+        submitMsg.style.color = '#B03A2E';
+        submitMsg.classList.add('show');
+        return;
+      }
+
+      // Build a card showing the submission immediately, marked as pending
+      var card = document.createElement('div');
+      card.className = 'review-card';
+
+      var starsHtml = '';
+      for (var i = 0; i < 5; i++) {
+        starsHtml += i < rating ? '★' : '☆';
+      }
+
+      var initials = name
+        .split(' ')
+        .map(function (w) { return w.charAt(0); })
+        .join('')
+        .slice(0, 2)
+        .toUpperCase();
+
+      card.innerHTML =
+        '<div class="review-card-stars">' + starsHtml + '</div>' +
+        '<p>"' + text.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '"</p>' +
+        '<div class="review-card-who">' +
+          '<div class="review-card-avatar">' + initials + '</div>' +
+          '<div><div class="review-card-name">' + name.replace(/</g, '&lt;') + '</div>' +
+          '<div class="review-card-source">Submitted just now</div></div>' +
+        '</div>' +
+        '<span class="review-card-pending">Pending Approval</span>';
+
+      reviewsGrid.insertBefore(card, reviewsGrid.firstChild);
+
+      // Send the review to the clinic via WhatsApp for verification and posting
+      var message =
+        'New website review submitted:\n\n' +
+        'Name: ' + name + '\n' +
+        'Rating: ' + rating + '/5\n' +
+        'Review: ' + text;
+
+      var waUrl = 'https://wa.me/' + whatsappNumber + '?text=' + encodeURIComponent(message);
+      window.open(waUrl, '_blank', 'noopener');
+
+      submitMsg.textContent = 'Thank you! Your review has been sent to us on WhatsApp and will appear here once approved.';
+      submitMsg.style.color = '#2E7D4F';
+      submitMsg.classList.add('show');
+
+      form.reset();
+      currentRating = 0;
+      ratingInput.value = 0;
+      paintStars(0);
+    });
+  }
+
+});
+
+</script>
 
 </body>
 </html>

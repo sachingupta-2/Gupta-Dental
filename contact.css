@@ -1,0 +1,1238 @@
+/* =========================================================
+   CONTACT PAGE — MAIN SECTION ONLY
+========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --yellow: #f5c62f;
+    --yellow-dark: #dca900;
+    --ink: #252a38;
+    --grey: #697080;
+    --light: #f5f5f2;
+    --white: #ffffff;
+    --border: #e6e6e1;
+    --shadow: 0 15px 45px rgba(40, 43, 52, 0.09);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+main {
+    width: 100%;
+    overflow: hidden;
+    background: #f7f7f4;
+    color: var(--ink);
+    font-family: "DM Sans", Arial, sans-serif;
+    line-height: 1.5;
+}
+
+main a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================================================
+   COMMON BUTTON
+========================================================= */
+
+main .btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    border-radius: 50px;
+    padding: 14px 24px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+main .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+main .btn-yellow {
+    background: var(--yellow);
+    color: #171a22;
+}
+
+main .btn-yellow:hover {
+    background: #f8cf45;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+main .hero {
+    width: 100%;
+    min-height: 430px;
+    display: grid;
+    grid-template-columns: 43% 57%;
+    background: #ecece8;
+    overflow: hidden;
+    position: relative;
+}
+
+main .hero-copy {
+    padding: 58px 7%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+main .eyebrow {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #d39d00;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+main h1,
+main h2 {
+    line-height: 1.1;
+}
+
+main h1 {
+    font-family: "DM Sans", sans-serif;
+    font-size: clamp(40px, 4.2vw, 52px);
+    font-weight: 700;
+    letter-spacing: -2px;
+    color: var(--ink);
+}
+
+main h1 span,
+main h2 span {
+    color: #e1ad08;
+}
+
+main h1 i {
+    font-style: normal;
+    color: #e1ad08;
+    font-size: 48px;
+}
+
+main .hero-text {
+    max-width: 560px;
+    margin: 22px 0 26px;
+    color: #5e6572;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   HERO QUICK LINKS
+========================================================= */
+
+main .quick-links {
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+}
+
+main .quick-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    transition: transform 0.25s ease;
+}
+
+main .quick-link:hover {
+    transform: translateY(-2px);
+}
+
+main .quick-link b {
+    display: block;
+    color: var(--ink);
+}
+
+main .quick-link small {
+    display: block;
+    color: var(--grey);
+    font-size: 11px;
+    margin-top: 2px;
+}
+
+main .icon,
+main .round-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--yellow);
+    color: #252a38;
+    font-size: 20px;
+    box-shadow: 0 4px 0 #ffffff;
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   HERO IMAGE
+========================================================= */
+
+main .hero-image-wrap {
+    min-height: 430px;
+    position: relative;
+    overflow: hidden;
+}
+
+main .hero-image-wrap img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.8s cubic-bezier(.2, .8, .2, 1);
+}
+
+main .hero-image-wrap:hover img {
+    transform: scale(1.025);
+}
+
+main .hero-image-wrap::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(236, 236, 232, 0.45),
+        transparent 30%
+    );
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   YELLOW HERO NOTE
+========================================================= */
+
+main .yellow-note {
+    position: absolute;
+    z-index: 3;
+    left: 7%;
+    top: 55px;
+
+    width: 170px;
+    height: 170px;
+
+    border-radius: 50%;
+    background: var(--yellow);
+
+    display: grid;
+    place-content: center;
+
+    text-align: center;
+
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    line-height: 1.15;
+
+    transform: rotate(-7deg);
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+
+    transition: transform 0.3s ease;
+}
+
+main .yellow-note:hover {
+    transform: rotate(-3deg) scale(1.03);
+}
+
+main .yellow-note span {
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   CONTACT GRID
+========================================================= */
+
+main .contact-grid {
+    width: min(1400px, 94%);
+    margin: -36px auto 0;
+
+    position: relative;
+    z-index: 5;
+
+    display: grid;
+    grid-template-columns: 1fr 1.08fr 1fr;
+    gap: 18px;
+}
+
+
+/* =========================================================
+   GENERAL CARD
+========================================================= */
+
+main .card {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: var(--shadow);
+}
+
+main .card h2 {
+    font-size: 25px;
+    font-weight: 700;
+    color: var(--ink);
+}
+
+main .card-subtitle {
+    color: #747a86;
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 8px 0;
+}
+
+main .yellow-line {
+    width: 48px;
+    height: 3px;
+    background: var(--yellow);
+    margin: 12px 0 20px;
+}
+
+
+/* =========================================================
+   INFORMATION CARD
+========================================================= */
+
+main .info-card {
+    background: linear-gradient(
+        145deg,
+        #fffdf5,
+        #ffffff
+    );
+}
+
+main .info-item {
+    display: flex;
+    gap: 15px;
+    margin: 19px 0;
+    align-items: flex-start;
+}
+
+main .info-item .round-icon {
+    width: 43px;
+    height: 43px;
+    font-size: 17px;
+}
+
+main .info-item b {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    color: #6d7280;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+main .info-item strong {
+    display: block;
+    font-size: 14px;
+    margin-top: 2px;
+    color: var(--ink);
+    line-height: 1.45;
+}
+
+main .info-item small {
+    display: block;
+    color: var(--grey);
+    font-size: 11px;
+    margin-top: 3px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   QUOTE
+========================================================= */
+
+main .quote-box {
+    background: #f1f1ed;
+    border-radius: 50px;
+    padding: 15px 20px;
+    margin-top: 23px;
+
+    font-family: "Playfair Display", serif;
+    font-size: 16px;
+    line-height: 1.4;
+
+    color: #444955;
+}
+
+
+/* =========================================================
+   CONTACT FORM
+========================================================= */
+
+main .form-card {
+    position: relative;
+}
+
+main #contactForm {
+    width: 100%;
+}
+
+main .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 13px;
+}
+
+main label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    color: #343946;
+}
+
+main input,
+main select,
+main textarea {
+    width: 100%;
+
+    border: 1px solid #d9dce0;
+    border-radius: 10px;
+
+    padding: 13px 14px;
+
+    font-family: inherit;
+    font-size: 13px;
+
+    margin-top: 7px;
+
+    outline: none;
+
+    background: #ffffff;
+    color: #333;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+main input::placeholder,
+main textarea::placeholder {
+    color: #a0a5ad;
+}
+
+main input:focus,
+main select:focus,
+main textarea:focus {
+    border-color: var(--yellow-dark);
+    box-shadow: 0 0 0 3px rgba(245, 198, 47, 0.18);
+}
+
+main input:hover,
+main select:hover,
+main textarea:hover {
+    border-color: #c8cbd0;
+}
+
+main textarea {
+    height: 112px;
+    resize: vertical;
+    min-height: 112px;
+}
+
+main .submit-btn {
+    width: 100%;
+    margin-top: 4px;
+    background: var(--yellow);
+    color: #171a22;
+    font-size: 14px;
+}
+
+main .submit-btn:hover {
+    background: #f8cf45;
+}
+
+main .privacy {
+    text-align: center;
+    color: #8a8e96;
+    font-size: 11px;
+    margin-top: 12px;
+}
+
+main .form-message {
+    min-height: 20px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+
+/* =========================================================
+   MAP CARD
+========================================================= */
+
+/* main .map-card {
+    overflow: hidden;
+}
+
+main .map-placeholder {
+    height: 265px;
+    border-radius: 14px;
+    overflow: hidden;
+
+    position: relative;
+
+    background-color: #dfe3dc;
+
+    background-image:
+        linear-gradient(
+            28deg,
+            transparent 46%,
+            rgba(255,255,255,.9) 47%,
+            rgba(255,255,255,.9) 50%,
+            transparent 51%
+        ),
+        linear-gradient(
+            90deg,
+            transparent 45%,
+            rgba(255,255,255,.75) 46%,
+            rgba(255,255,255,.75) 49%,
+            transparent 50%
+        );
+
+    background-size:
+        110px 110px,
+        130px 130px;
+}
+
+main .map-grid {
+    position: absolute;
+    inset: 0;
+
+    background:
+        repeating-linear-gradient(
+            22deg,
+            transparent 0 42px,
+            rgba(255,255,255,.8) 43px 48px
+        );
+}
+
+main .map-label {
+    position: absolute;
+
+    left: 16px;
+    top: 16px;
+
+    background: #ffffff;
+
+    border-radius: 10px;
+
+    padding: 13px 15px;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,.12);
+
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    font-size: 12px;
+
+    max-width: 190px;
+}
+
+main .map-label b {
+    font-size: 12px;
+    color: var(--ink);
+}
+
+main .map-label span {
+    color: #555b66;
+    line-height: 1.4;
+}
+
+main .map-label small {
+    color: #777;
+    font-size: 10px;
+}
+
+main .pin {
+    position: absolute;
+
+    left: 53%;
+    top: 53%;
+
+    font-size: 43px;
+    line-height: 1;
+
+    color: #dfb000;
+
+    text-shadow: 0 2px 5px #777;
+
+    transform: translate(-50%, -50%);
+}
+
+main .pin-text {
+    position: absolute;
+
+    left: 59%;
+    top: 67%;
+
+    font-weight: 700;
+    font-size: 12px;
+
+    color: #353943;
+
+    white-space: nowrap;
+}
+
+main .directions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 14px auto 0;
+
+    border: 1px solid var(--yellow);
+    border-radius: 30px;
+
+    padding: 10px;
+
+    width: 220px;
+
+    font-weight: 700;
+    font-size: 13px;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+main .directions:hover {
+    background: var(--yellow);
+    color: #171a22;
+    transform: translateY(-2px);
+} */
+
+
+/* =========================================================
+   MAP SECTION — FULL MAP BACKGROUND
+========================================================= */
+
+main .map-section {
+    position: relative;
+    width: 100%;
+    min-height: 460px;
+
+    overflow: hidden;
+
+    background: #e9e9e5;
+
+    /* One continuous section with a soft outer curve */
+    border-radius: 0 70px 70px 0;
+}
+
+
+/* =========================================================
+   GOOGLE MAP — BACKGROUND
+========================================================= */
+
+main .map-background {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    border: 0;
+
+    display: block;
+
+    /* z-index: 1; */
+    pointer-events: none;
+}
+
+/* =========================================================
+   CLICKABLE MAP
+========================================================= */
+
+main .map-frame {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+}
+/* Invisible clickable layer */
+
+main .map-click-area {
+    position: absolute;
+    inset: 0;
+
+    z-index: 4;
+
+    display: block;
+
+    cursor: pointer;
+
+    background: transparent;
+}
+
+
+/* =========================================================
+   MAP OVERLAY
+========================================================= */
+
+main .map-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        90deg,
+        rgba(18, 33, 63, 0.70) 0%,
+        rgba(18, 33, 63, 0.48) 38%,
+        rgba(18, 33, 63, 0.16) 70%,
+        rgba(18, 33, 63, 0.05) 100%
+    );
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   TEXT OVER MAP
+========================================================= */
+
+main .map-content {
+    position: relative;
+    z-index: 3;
+
+    width: min(520px, 90%);
+
+    padding: 70px 60px;
+
+    color: #ffffff;
+}
+
+
+/* Small heading */
+
+main .map-eyebrow {
+    display: inline-block;
+
+    margin-bottom: 14px;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    color: var(--yellow);
+}
+
+
+/* Main heading */
+
+main .map-content h2 {
+    margin: 0 0 18px;
+
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.1;
+    font-weight: 700;
+
+    color: #ffffff;
+}
+
+
+/* Address */
+
+main .map-content p {
+    margin: 0;
+
+    font-size: 17px;
+    line-height: 1.7;
+
+    color: rgba(255, 255, 255, 0.94);
+}
+
+
+/* Additional location note */
+
+main .map-note {
+    display: inline-block;
+
+    margin-top: 18px;
+
+    padding: 9px 14px;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    backdrop-filter: blur(5px);
+
+    font-size: 13px;
+
+    color: rgba(255, 255, 255, 0.92);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    main .map-section {
+        min-height: 420px;
+
+        border-radius: 0 40px 40px 0;
+    }
+
+    main .map-content {
+        width: 92%;
+
+        padding: 55px 28px;
+    }
+
+    main .map-content h2 {
+        font-size: 34px;
+    }
+
+    main .map-content p {
+        font-size: 15px;
+    }
+
+    main .map-overlay {
+        background: linear-gradient(
+            90deg,
+            rgba(18, 33, 63, 0.78),
+            rgba(18, 33, 63, 0.35)
+        );
+    }
+}
+
+/* =========================================================
+   BENEFITS
+========================================================= */
+
+main .benefits {
+    width: min(1400px, 94%);
+
+    margin: 25px auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    background: #ffffff;
+
+    border: 1px solid var(--border);
+    border-radius: 50px;
+
+    box-shadow: var(--shadow);
+
+    overflow: hidden;
+}
+
+main .benefits > div {
+    padding: 22px;
+
+    display: grid;
+
+    grid-template-columns: 48px 1fr;
+
+    column-gap: 12px;
+
+    align-items: center;
+
+    border-right: 1px solid #e5e5e1;
+
+    transition: background 0.25s ease;
+}
+
+main .benefits > div:last-child {
+    border-right: 0;
+}
+
+main .benefits > div:hover {
+    background: #fffdf3;
+}
+
+main .benefits span {
+    grid-row: span 2;
+
+    width: 43px;
+    height: 43px;
+
+    border-radius: 50%;
+
+    background: var(--yellow);
+
+    display: grid;
+    place-items: center;
+
+    font-weight: 800;
+    color: #252a38;
+}
+
+main .benefits b {
+    font-size: 13px;
+    line-height: 1.3;
+}
+
+main .benefits small {
+    font-size: 11px;
+    color: #777;
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+main .cta {
+    width: min(1400px, 94%);
+
+    margin: 30px auto;
+
+    padding: 35px 55px;
+
+    border-radius: 24px;
+
+    background: #292d37;
+    color: #ffffff;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 30px;
+}
+
+main .cta .eyebrow {
+    color: var(--yellow);
+    margin-bottom: 8px;
+}
+
+main .cta h2 {
+    font-size: 34px;
+    color: #ffffff;
+}
+
+main .cta h2 span {
+    color: var(--yellow);
+}
+
+main .big-btn {
+    padding: 16px 28px;
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    main .hero {
+        grid-template-columns: 1fr;
+    }
+
+    main .hero-copy {
+        padding: 55px 7%;
+    }
+
+    main .hero-image-wrap {
+        height: 390px;
+        min-height: 390px;
+    }
+
+    main .contact-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    main .map-card {
+        grid-column: span 2;
+    }
+
+    main .benefits {
+        grid-template-columns: 1fr 1fr;
+        border-radius: 25px;
+    }
+
+    main .benefits > div:nth-child(2) {
+        border-right: 0;
+    }
+
+    main .benefits > div:nth-child(-n+2) {
+        border-bottom: 1px solid #e5e5e1;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+
+    main .hero {
+        min-height: 0;
+        display: block;
+    }
+
+    main .hero-copy {
+        padding: 42px 6% 35px;
+    }
+
+    main h1 {
+        font-size: 42px;
+        letter-spacing: -1.5px;
+    }
+
+    main h1 i {
+        font-size: 38px;
+    }
+
+    main .hero-text {
+        font-size: 14px;
+        line-height: 1.65;
+    }
+
+    main .quick-links {
+        gap: 14px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    main .quick-link {
+        width: 100%;
+    }
+
+    main .hero-image-wrap {
+        height: 330px;
+        min-height: 330px;
+    }
+
+    main .yellow-note {
+        width: 125px;
+        height: 125px;
+
+        left: 6%;
+        top: 25px;
+
+        font-size: 15px;
+    }
+
+    main .yellow-note span {
+        font-size: 13px;
+    }
+
+
+    /* Contact cards */
+
+    main .contact-grid {
+        width: 92%;
+
+        margin: -20px auto 0;
+
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+    }
+
+    main .map-card {
+        grid-column: auto;
+    }
+
+    main .card {
+        padding: 24px;
+        border-radius: 18px;
+    }
+
+    main .card h2 {
+        font-size: 23px;
+    }
+
+
+    /* Form */
+
+    main .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+
+    /* Map */
+
+    main .map-placeholder {
+        height: 240px;
+    }
+
+    main .pin-text {
+        left: 55%;
+        top: 69%;
+        font-size: 10px;
+    }
+
+
+    /* Benefits */
+
+    main .benefits {
+        width: 92%;
+
+        grid-template-columns: 1fr 1fr;
+
+        border-radius: 20px;
+
+        margin: 20px auto;
+    }
+
+    main .benefits > div {
+        padding: 18px 14px;
+
+        grid-template-columns: 40px 1fr;
+
+        column-gap: 8px;
+    }
+
+    main .benefits span {
+        width: 37px;
+        height: 37px;
+        font-size: 13px;
+    }
+
+    main .benefits b {
+        font-size: 12px;
+    }
+
+    main .benefits small {
+        font-size: 10px;
+    }
+
+
+    /* CTA */
+
+    main .cta {
+        width: 92%;
+
+        padding: 30px 25px;
+
+        display: block;
+
+        text-align: center;
+
+        border-radius: 20px;
+    }
+
+    main .cta h2 {
+        font-size: 29px;
+    }
+
+    main .big-btn {
+        margin-top: 22px;
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 450px) {
+
+    main h1 {
+        font-size: 36px;
+    }
+
+    main .hero-copy {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    main .hero-image-wrap {
+        height: 300px;
+        min-height: 300px;
+    }
+
+    main .card {
+        padding: 20px;
+    }
+
+    main .benefits {
+        grid-template-columns: 1fr;
+    }
+
+    main .benefits > div {
+        border-right: 0 !important;
+        border-bottom: 1px solid #e5e5e1;
+    }
+
+    main .benefits > div:last-child {
+        border-bottom: 0;
+    }
+
+    main .map-placeholder {
+        height: 220px;
+    }
+
+    main .directions {
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+main button:focus-visible,
+main a:focus-visible,
+main input:focus-visible,
+main select:focus-visible,
+main textarea:focus-visible {
+    outline: 3px solid rgba(245, 198, 47, 0.45);
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    main *,
+    main *::before,
+    main *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+}

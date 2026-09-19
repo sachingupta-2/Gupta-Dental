@@ -1,0 +1,1636 @@
+/* =========================================================
+   PERSONALISED CARE
+   MAIN CONTENT ONLY
+
+   Header / Navigation / Footer are NOT included
+   ========================================================= */
+
+
+/* =========================================================
+   PAGE VARIABLES
+   ========================================================= */
+
+.pc-page {
+
+    --pc-yellow: #C9A227;
+    --pc-gold-light: #E7CB6B;
+
+    --pc-ink: #12213F;
+    --pc-dark: #0C172D;
+
+    --pc-muted: #697080;
+
+    --pc-soft: #FAF7F0;
+    --pc-pale: #F5EBC8;
+
+    --pc-white: #FFFFFF;
+
+    --pc-line: #E4E1D8;
+
+    width: 100%;
+    min-width: 0;
+
+    overflow: hidden;
+
+    background: var(--pc-soft);
+    color: var(--pc-ink);
+
+    font-family: "DM Sans", Arial, sans-serif;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+.pc-page *,
+.pc-page *::before,
+.pc-page *::after {
+    box-sizing: border-box;
+}
+
+.pc-page img {
+    display: block;
+    max-width: 100%;
+}
+
+.pc-page a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.pc-page h1,
+.pc-page h2,
+.pc-page h3,
+.pc-page p {
+    margin-top: 0;
+}
+
+
+/* =========================================================
+   BUTTON
+   ========================================================= */
+
+.pc-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: fit-content;
+
+    gap: 15px;
+
+    padding: 13px 21px;
+
+    border: 0;
+    border-radius: 9px;
+
+    background: var(--pc-yellow);
+    color: var(--pc-dark);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    box-shadow:
+        0 6px 18px rgba(18, 33, 63, 0.12);
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.pc-btn span {
+    font-size: 19px;
+    line-height: 1;
+}
+
+.pc-btn:hover {
+
+    background: var(--pc-gold-light);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(18, 33, 63, 0.16);
+}
+
+
+/* =========================================================
+   COMMON LINE
+   ========================================================= */
+
+.pc-line {
+
+    width: 48px;
+    height: 3px;
+
+    margin: 8px 0 18px;
+
+    background: var(--pc-yellow);
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.pc-hero {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 44%)
+        minmax(0, 56%);
+
+    width: 100%;
+
+    min-height: 430px;
+
+    background: var(--pc-soft);
+}
+
+
+/* =========================================================
+   HERO COPY
+   ========================================================= */
+
+.pc-hero-copy {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    min-width: 0;
+
+    padding:
+        55px
+        clamp(30px, 7vw, 105px);
+}
+
+
+.pc-eyebrow {
+
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: var(--pc-ink);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+
+    text-transform: uppercase;
+}
+
+
+.pc-hero h1 {
+
+    margin: 0 0 14px;
+
+    color: var(--pc-ink);
+
+    font-size:
+        clamp(40px, 4.5vw, 58px);
+
+    line-height: 1.02;
+
+    letter-spacing: -2px;
+}
+
+
+.pc-hero h2 {
+
+    margin: 0 0 14px;
+
+    color: var(--pc-ink);
+
+    font-size:
+        clamp(20px, 2vw, 25px);
+
+    line-height: 1.25;
+
+    font-weight: 500;
+}
+
+
+.pc-hero p {
+
+    max-width: 570px;
+
+    margin: 0 0 24px;
+
+    color: var(--pc-muted);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   HERO IMAGE
+   ========================================================= */
+
+.pc-hero-image {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 430px;
+
+    overflow: hidden;
+
+    background: var(--pc-dark);
+}
+
+
+.pc-hero-image img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    transition:
+        transform 0.7s ease;
+}
+
+
+.pc-hero-image:hover img {
+
+    transform: scale(1.025);
+}
+
+
+/* =========================================================
+   HERO NOTE
+   ========================================================= */
+
+.pc-hero-note {
+
+    position: absolute;
+
+    z-index: 2;
+
+    top: 17%;
+    right: 8%;
+
+    color: var(--pc-white);
+
+    font-family: Georgia, serif;
+
+    font-size:
+        clamp(18px, 2vw, 25px);
+
+    font-style: italic;
+
+    line-height: 1.05;
+
+    text-align: center;
+
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.28);
+
+    pointer-events: none;
+
+    transform: rotate(-5deg);
+}
+
+.pc-hero-note span {
+    color: var(--pc-gold-light);
+}
+
+
+/* =========================================================
+   FEATURE GRID
+   ========================================================= */
+
+.pc-feature-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 20px;
+
+    width: 100%;
+
+    padding:
+        42px
+        clamp(5%, 5vw, 7%);
+
+    background: var(--pc-white);
+}
+
+
+/* =========================================================
+   FEATURE CARD
+   ========================================================= */
+
+.pc-feature-card {
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-width: 0;
+
+    min-height: 285px;
+
+    overflow: hidden;
+
+    padding:
+        25px 23px 23px;
+
+    background: var(--pc-pale);
+
+    border:
+        1px solid rgba(201, 162, 39, 0.16);
+
+    border-radius: 13px;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.pc-feature-card:hover {
+
+    transform: translateY(-5px);
+
+    border-color:
+        rgba(201, 162, 39, 0.42);
+
+    box-shadow:
+        0 14px 32px rgba(18, 33, 63, 0.10);
+}
+
+
+/* =========================================================
+   FEATURE ICON
+   ========================================================= */
+
+.pc-feature-icon {
+
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: var(--pc-yellow);
+
+    font-size: 34px;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   FEATURE CARD HEADING
+   ========================================================= */
+
+.pc-feature-card h2 {
+
+    margin: 0 0 13px;
+
+    color: var(--pc-ink);
+
+    font-size: 19px;
+
+    line-height: 1.18;
+}
+
+
+/* =========================================================
+   FEATURE CARD TEXT
+   ========================================================= */
+
+.pc-feature-card p {
+
+    flex: 1;
+
+    margin: 0 0 18px;
+
+    color: var(--pc-muted);
+
+    font-size: 13px;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   FEATURE CARD LINK
+   ========================================================= */
+
+.pc-feature-card > a {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    width: fit-content;
+
+    color: var(--pc-yellow);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    transition:
+        gap 0.25s ease,
+        color 0.25s ease;
+}
+
+
+.pc-feature-card > a span {
+
+    font-size: 16px;
+}
+
+
+.pc-feature-card > a:hover {
+
+    gap: 13px;
+
+    color: var(--pc-ink);
+}
+
+
+/* =========================================================
+   FEATURE CARD NOTE
+   ========================================================= */
+
+.pc-card-note {
+
+    position: absolute;
+
+    right: 12px;
+    bottom: 10px;
+
+    color: var(--pc-yellow);
+
+    font-family: Georgia, serif;
+
+    font-size: 17px;
+
+    font-style: italic;
+
+    line-height: 1;
+
+    text-align: center;
+
+    pointer-events: none;
+
+    transform: rotate(-6deg);
+}
+
+
+/* =========================================================
+   JOURNEY HEADING
+   ========================================================= */
+
+.pc-journey-head {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(180px, 28%)
+        minmax(220px, 35%)
+        minmax(200px, 37%);
+
+    align-items: center;
+
+    gap: 20px;
+
+    width: 100%;
+
+    padding:
+        35px
+        clamp(5%, 5vw, 7%)
+        10px;
+
+    background: var(--pc-soft);
+}
+
+
+.pc-journey-title h2 {
+
+    margin: 0;
+
+    color: var(--pc-ink);
+
+    font-size:
+        clamp(25px, 2.5vw, 32px);
+
+    line-height: 1.15;
+}
+
+
+.pc-journey-title .pc-line {
+
+    margin-bottom: 0;
+}
+
+
+.pc-journey-head > p {
+
+    margin: 0;
+
+    padding-left: 25px;
+
+    border-left:
+        1px solid var(--pc-line);
+
+    color: var(--pc-muted);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+.pc-journey-scribble {
+
+    color: var(--pc-yellow);
+
+    font-family: Georgia, serif;
+
+    font-size: 20px;
+
+    font-style: italic;
+
+    line-height: 1.1;
+
+    text-align: center;
+
+    transform: rotate(-5deg);
+}
+
+
+/* =========================================================
+   JOURNEY
+   ========================================================= */
+
+.pc-journey {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        28px
+        minmax(0, 1fr)
+        28px
+        minmax(0, 1fr)
+        28px
+        minmax(0, 1fr)
+        28px
+        minmax(0, 1fr);
+
+    gap: 10px;
+
+    align-items: start;
+
+    width: 100%;
+
+    padding:
+        15px
+        clamp(5%, 5vw, 7%)
+        45px;
+
+    background: var(--pc-soft);
+}
+
+
+/* =========================================================
+   JOURNEY STEP
+   ========================================================= */
+
+.pc-journey-step {
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   JOURNEY IMAGE
+   ========================================================= */
+
+.pc-journey-image {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 125px;
+
+    margin-bottom: 17px;
+
+    overflow: visible;
+}
+
+
+.pc-journey-image img {
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 10px;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    transition:
+        transform 0.5s ease;
+}
+
+
+.pc-journey-step:hover
+.pc-journey-image img {
+
+    transform: scale(1.035);
+}
+
+
+/* =========================================================
+   STEP NUMBER
+   ========================================================= */
+
+.pc-step-number {
+
+    position: absolute;
+
+    left: 10px;
+    bottom: -12px;
+
+    display: grid;
+
+    place-items: center;
+
+    width: 31px;
+    height: 31px;
+
+    border:
+        3px solid var(--pc-soft);
+
+    border-radius: 50%;
+
+    background: var(--pc-yellow);
+
+    color: var(--pc-dark);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 3px 10px rgba(18, 33, 63, 0.12);
+}
+
+
+/* =========================================================
+   JOURNEY TEXT
+   ========================================================= */
+
+.pc-journey-step h3 {
+
+    margin:
+        0 0 5px;
+
+    color: var(--pc-ink);
+
+    font-size: 14px;
+
+    line-height: 1.3;
+}
+
+
+.pc-journey-step p {
+
+    margin: 0;
+
+    color: var(--pc-muted);
+
+    font-size: 11.5px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   JOURNEY ARROW
+   ========================================================= */
+
+.pc-journey-arrow {
+
+    align-self: center;
+
+    color: var(--pc-yellow);
+
+    font-size: 25px;
+
+    line-height: 1;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   LOWER SECTION
+   ========================================================= */
+
+.pc-lower {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.15fr)
+        minmax(300px, 1fr);
+
+    gap:
+        clamp(30px, 5vw, 70px);
+
+    width: 100%;
+
+    padding:
+        50px
+        clamp(5%, 5vw, 7%);
+
+    background: var(--pc-white);
+}
+
+
+.pc-lower h2 {
+
+    margin: 0;
+
+    color: var(--pc-ink);
+
+    font-size:
+        clamp(25px, 2.5vw, 32px);
+
+    line-height: 1.15;
+}
+
+
+/* =========================================================
+   BENEFITS
+   ========================================================= */
+
+.pc-benefits {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+
+.pc-benefit {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 125px;
+
+    padding:
+        15px 8px;
+
+    text-align: center;
+
+    background: var(--pc-white);
+
+    border:
+        1px solid var(--pc-line);
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 3px 12px rgba(18, 33, 63, 0.045);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.pc-benefit:hover {
+
+    transform: translateY(-4px);
+
+    border-color:
+        rgba(201, 162, 39, 0.50);
+
+    box-shadow:
+        0 9px 22px rgba(18, 33, 63, 0.09);
+}
+
+
+.pc-benefit-icon {
+
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: var(--pc-yellow);
+
+    font-size: 29px;
+
+    line-height: 1;
+}
+
+
+.pc-benefit p {
+
+    margin: 0;
+
+    color: var(--pc-ink);
+
+    font-size: 11px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   PROMISE
+   ========================================================= */
+
+.pc-promise {
+
+    position: relative;
+
+    min-width: 0;
+
+    padding-left: 35px;
+
+    border-left:
+        1px solid var(--pc-line);
+}
+
+
+.pc-promise ul {
+
+    padding: 0;
+
+    margin: 18px 0 0;
+
+    list-style: none;
+}
+
+
+.pc-promise li {
+
+    position: relative;
+
+    padding:
+        7px 0 7px 28px;
+
+    color: var(--pc-muted);
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+.pc-promise li::before {
+
+    content: "✓";
+
+    position: absolute;
+
+    left: 0;
+    top: 8px;
+
+    display: grid;
+
+    place-items: center;
+
+    width: 18px;
+    height: 18px;
+
+    border-radius: 50%;
+
+    background: var(--pc-yellow);
+
+    color: var(--pc-dark);
+
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   PROMISE NOTE
+   ========================================================= */
+
+.pc-promise-note {
+
+    width: fit-content;
+
+    margin:
+        20px
+        0
+        0
+        auto;
+
+    color: var(--pc-yellow);
+
+    font-family: Georgia, serif;
+
+    font-size: 18px;
+
+    font-style: italic;
+
+    line-height: 1.05;
+
+    text-align: center;
+
+    transform: rotate(-5deg);
+}
+
+
+/* =========================================================
+   FINAL CTA
+   ========================================================= */
+
+.pc-cta {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 35px;
+
+    width: 100%;
+
+    padding:
+        40px
+        clamp(5%, 8vw, 10%);
+
+    background: var(--pc-dark);
+
+    color: var(--pc-white);
+}
+
+
+.pc-cta-content {
+
+    max-width: 720px;
+}
+
+
+.pc-cta h2 {
+
+    margin: 0 0 8px;
+
+    color: var(--pc-white);
+
+    font-size:
+        clamp(24px, 2.5vw, 32px);
+
+    line-height: 1.15;
+}
+
+
+.pc-cta p {
+
+    margin: 0;
+
+    color:
+        rgba(255, 255, 255, 0.72);
+
+    font-size: 13.5px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   LARGE TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .pc-hero-copy {
+
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+
+    .pc-feature-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+
+    .pc-lower {
+
+        grid-template-columns: 1fr;
+
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+
+    .pc-promise {
+
+        padding:
+            30px
+            0
+            0;
+
+        border-left: 0;
+
+        border-top:
+            1px solid var(--pc-line);
+    }
+
+
+    .pc-journey {
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            28px
+            minmax(0, 1fr)
+            28px
+            minmax(0, 1fr);
+
+        gap:
+            25px
+            18px;
+    }
+
+
+    .pc-journey-step:nth-of-type(n+4),
+    .pc-journey-arrow:nth-of-type(n+6) {
+
+        display: none;
+    }
+
+
+    .pc-benefits {
+
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .pc-hero {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .pc-hero-copy {
+
+        padding:
+            55px
+            7%;
+    }
+
+
+    .pc-hero-image {
+
+        min-height: 390px;
+
+        max-height: 480px;
+    }
+
+
+    .pc-hero h1 {
+
+        font-size:
+            clamp(40px, 7vw, 54px);
+    }
+
+
+    .pc-journey-head {
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap: 25px;
+    }
+
+
+    .pc-journey-scribble {
+
+        display: none;
+    }
+
+
+    .pc-journey-head > p {
+
+        padding-left: 20px;
+    }
+
+
+    .pc-journey {
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            28px
+            minmax(0, 1fr);
+
+        gap:
+            30px
+            18px;
+    }
+
+
+    .pc-journey-step:nth-of-type(n+3),
+    .pc-journey-arrow:nth-of-type(n+4) {
+
+        display: none;
+    }
+
+
+    .pc-benefits {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 620px) {
+
+    .pc-page {
+
+        overflow-x: hidden;
+    }
+
+
+    /* HERO */
+
+    .pc-hero-copy {
+
+        padding:
+            42px
+            6%;
+    }
+
+
+    .pc-hero h1 {
+
+        font-size: 39px;
+
+        letter-spacing: -1.3px;
+    }
+
+
+    .pc-hero h2 {
+
+        font-size: 20px;
+    }
+
+
+    .pc-hero p {
+
+        font-size: 13.5px;
+
+        line-height: 1.65;
+    }
+
+
+    .pc-hero-image {
+
+        min-height: 310px;
+
+        max-height: none;
+    }
+
+
+    .pc-hero-note {
+
+        top: 15%;
+        right: 6%;
+
+        font-size: 17px;
+    }
+
+
+    .pc-btn {
+
+        width: fit-content;
+
+        padding:
+            12px
+            18px;
+
+        font-size: 12.5px;
+    }
+
+
+    /* FEATURES */
+
+    .pc-feature-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+
+        padding:
+            35px
+            6%;
+    }
+
+
+    .pc-feature-card {
+
+        min-height: 0;
+
+        padding:
+            24px
+            21px;
+    }
+
+
+    .pc-feature-card h2 {
+
+        font-size: 19px;
+    }
+
+
+    .pc-feature-card p {
+
+        font-size: 13px;
+    }
+
+
+    /* JOURNEY HEADING */
+
+    .pc-journey-head {
+
+        grid-template-columns: 1fr;
+
+        gap: 8px;
+
+        padding:
+            40px
+            6%
+            12px;
+    }
+
+
+    .pc-journey-head > p {
+
+        padding-left: 0;
+
+        border-left: 0;
+
+        font-size: 12.5px;
+    }
+
+
+    /* JOURNEY */
+
+    .pc-journey {
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+        padding:
+            15px
+            6%
+            45px;
+    }
+
+
+    .pc-journey-step:nth-of-type(n),
+    .pc-journey-arrow:nth-of-type(n) {
+
+        display: block;
+    }
+
+
+    .pc-journey-arrow {
+
+        display: none !important;
+    }
+
+
+    .pc-journey-image {
+
+        height: 210px;
+
+        margin-bottom: 18px;
+    }
+
+
+    .pc-journey-step h3 {
+
+        font-size: 16px;
+    }
+
+
+    .pc-journey-step p {
+
+        font-size: 12.5px;
+    }
+
+
+    /* LOWER */
+
+    .pc-lower {
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+        padding:
+            40px
+            6%;
+    }
+
+
+    .pc-lower h2 {
+
+        font-size: 26px;
+    }
+
+
+    /* BENEFITS */
+
+    .pc-benefits {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+    }
+
+
+    .pc-benefit {
+
+        min-height: 115px;
+    }
+
+
+    .pc-benefit-icon {
+
+        font-size: 27px;
+    }
+
+
+    .pc-benefit p {
+
+        font-size: 10.5px;
+    }
+
+
+    /* PROMISE */
+
+    .pc-promise {
+
+        padding-top: 30px;
+    }
+
+
+    .pc-promise li {
+
+        font-size: 12.5px;
+    }
+
+
+    .pc-promise-note {
+
+        display: none;
+    }
+
+
+    /* CTA */
+
+    .pc-cta {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 22px;
+
+        padding:
+            35px
+            6%;
+    }
+
+
+    .pc-cta h2 {
+
+        font-size: 27px;
+    }
+
+
+    .pc-cta p {
+
+        font-size: 13px;
+    }
+
+
+    .pc-cta .pc-btn {
+
+        width: 100%;
+
+        justify-content: center;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .pc-hero-copy {
+
+        padding:
+            35px
+            5%;
+    }
+
+
+    .pc-hero h1 {
+
+        font-size: 34px;
+    }
+
+
+    .pc-hero h2 {
+
+        font-size: 18px;
+    }
+
+
+    .pc-hero-image {
+
+        min-height: 260px;
+    }
+
+
+    .pc-hero-note {
+
+        font-size: 14px;
+    }
+
+
+    .pc-feature-grid {
+
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+
+    .pc-feature-card {
+
+        padding:
+            21px
+            18px;
+    }
+
+
+    .pc-feature-card p {
+
+        font-size: 12.5px;
+    }
+
+
+    .pc-journey-head {
+
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+
+    .pc-journey {
+
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+
+    .pc-journey-image {
+
+        height: 190px;
+    }
+
+
+    .pc-lower {
+
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+
+    .pc-benefits {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    .pc-benefit {
+
+        min-height: 105px;
+    }
+
+
+    .pc-benefit-icon {
+
+        font-size: 25px;
+    }
+
+
+    .pc-benefit p {
+
+        font-size: 9.5px;
+    }
+
+
+    .pc-cta {
+
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+
+    .pc-cta h2 {
+
+        font-size: 24px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .pc-page *,
+    .pc-page *::before,
+    .pc-page *::after {
+
+        scroll-behavior: auto !important;
+
+        transition-duration:
+            0.01ms !important;
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+    }
+}

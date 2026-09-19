@@ -14,6 +14,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="faq.css">
 
 </head>
 
@@ -37,12 +38,12 @@
     </div>
   </div>
 
-  <div class="container nav-wrap">
+  <div class="container nav-wrap" >
 
-    <div class="brand">
+    <a href="index.html" class="brand" style="text-decoration:none; color:inherit;" aria-label="Dr. Gupta's Dental Clinic — Home">
 
       <img
-        src="logo_trimmed.png"
+        src="logos/web_logo.png"
         alt="Dr. Gupta's Dental Clinic logo"
         style="width:44px;height:44px;border-radius:10px;object-fit:cover;"
       >
@@ -51,7 +52,7 @@
         Dr. Gupta's Dental Clinic
       </div>
 
-    </div>
+    </a>
 
 
     <nav>
@@ -76,6 +77,10 @@
 
         <li>
           <a href="reviews.html">Reviews</a>
+        </li>
+
+        <li>
+          <a href="faq.html">FAQ</a>
         </li>
 
         <li>
@@ -394,7 +399,7 @@
     <!-- Slide 2 -->
     <div class="hero-slide">
       <img
-        src="clinic_photos_shortlist/selected 2.jpeg"
+        src="clinic_photos_shortlist/2nd image.png"
         alt="Dr. Gupta's Dental Clinic"
       >
     </div>
@@ -790,10 +795,204 @@
 
 
 <!-- =========================================================
+     WHAT MAKES US DIFFERENT
+========================================================= -->
+
+<section class="our-difference" id="our-difference">
+
+    <div class="difference-heading">
+        <h2>What Makes Us Different?</h2>
+
+        <div class="heading-line"></div>
+
+        <p>
+            It's the little details that make a big difference.
+            Here's what you can expect at our clinic.
+        </p>
+    </div>
+
+
+    <div class="difference-features">
+
+        <!-- 01 -->
+        <div class="difference-feature">
+
+            <div class="feature-image">
+
+                <!-- Replace with your actual loupe image -->
+                <img src="clinic_photos_shortlist/1st different.png"
+                     alt="7.5x dental loupes">
+
+                <span class="magnification-badge">
+                    7.5x
+                </span>
+
+            </div>
+
+            <h3>High Magnification</h3>
+
+            <p>
+                7.5x loupes for<br>
+                greater precision
+            </p>
+
+        </div>
+
+
+        <!-- 02 -->
+        <div class="difference-feature">
+
+            <div class="feature-image">
+
+                <img src="clinic_photos_shortlist/orchid-light-admetec-800x.jpg"
+                     alt="High illumination dental light">
+
+            </div>
+
+            <h3>Brighter Visibility</h3>
+
+            <p>
+                High-illumination<br>
+                for clearer, safer care
+            </p>
+
+        </div>
+
+
+        <!-- 03 -->
+        <div class="difference-feature">
+
+            <div class="feature-image">
+
+                <img src="clinic_photos_shortlist/selected 2.jpeg"
+                     alt="Advanced endomotor">
+
+            </div>
+
+            <h3>Advanced Endodontics</h3>
+
+            <p>
+                Endomotor for<br>
+                safer, efficient treatment
+            </p>
+
+        </div>
+
+
+        <!-- 04 -->
+        <div class="difference-feature">
+
+            <div class="feature-image">
+
+                <img src="clinic_photos_shortlist/rubberdam.png"
+                     alt="Rubber dam dental treatment">
+
+            </div>
+
+            <h3>Rubber Dam</h3>
+
+            <p>
+                A cleaner, safer<br>
+                treatment experience
+            </p>
+
+        </div>
+
+
+        <!-- 05 -->
+        <div class="difference-feature">
+
+            <div class="feature-image">
+
+                <img src="clinic_photos_shortlist/vaccum sterlisation.png"
+                     alt="Vacuum autoclave sterilization">
+
+            </div>
+
+            <h3>Strict Sterilization</h3>
+
+            <p>
+                Vacuum autoclave<br>
+                for your safety
+            </p>
+
+        </div>
+
+
+        <!-- 06 -->
+        <div class="difference-feature">
+
+            <div class="feature-image">
+
+                <img src="clinic_photos_shortlist/digital dentastery.png"
+                     alt="Digital dentistry equipment">
+
+            </div>
+
+            <h3>Digital Dentistry</h3>
+
+            <p>
+                Modern diagnostics<br>
+                for accurate treatment
+            </p>
+
+        </div>
+
+
+        <!-- 07 -->
+        <div class="difference-feature">
+
+            <div class="feature-image">
+
+                <img src="clinic_photos_shortlist/continuous learning.jpg"
+                     alt="Continuing dental education">
+
+            </div>
+
+            <h3>Continuous Learning</h3>
+
+            <p>
+                Regular training &amp; workshops<br>
+                to stay updated
+            </p>
+
+        </div>
+
+
+        <!-- 08 -->
+        <div class="difference-feature">
+
+            <div class="feature-image">
+
+                <img src="clinic_photos_shortlist/personalised care.png"
+                     alt="Personalised dental care">
+
+            </div>
+
+            <h3>Personalised Care</h3>
+
+            <p>
+                Treatment planned<br>
+                around you
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+<!-- =========================================================
      DIFFERENCE
      ========================================================= -->
 
-<section id="difference" class="reveal diff">
+<!-- <section id="difference" class="reveal diff">
 
   <div class="container diff-grid">
 
@@ -848,7 +1047,7 @@
 
   </div>
 
-</section>
+</section> -->
 
 <!-- =========================================================
      WHY US — interactive flip cards
@@ -937,7 +1136,7 @@
         </span>
       </a>
 
-      <button type="button" class="why-card" aria-pressed="false">
+      <a href="unhurried-appointment.html" class="why-card" aria-label="Unhurried Appointments — learn more">
         <span class="why-card-inner">
           <span class="why-card-face why-card-front">
             <span class="why-card-icon">⏱️</span>
@@ -950,9 +1149,9 @@
             </span>
           </span>
         </span>
-      </button>
+      </a>
 
-      <button type="button" class="why-card" aria-pressed="false">
+      <a href="rating.html" class="why-card" aria-label="5.0 Rating, Zero Exceptions — learn more">
         <span class="why-card-inner">
           <span class="why-card-face why-card-front">
             <span class="why-card-icon">⭐</span>
@@ -965,7 +1164,7 @@
             </span>
           </span>
         </span>
-      </button>
+      </a>
 
     </div>
 
@@ -976,42 +1175,87 @@
 <!-- =========================================================
      ABOUT
      ========================================================= -->
-
 <section id="about" class="reveal about">
 
-  <div class="container about-grid">
+  <div class="container">
 
+    <!-- SECTION HEADING -->
+    <div class="about-heading">
 
-    <div class="about-img">
+      <h2 class="about-eyebrow">
+        MEET YOUR DENTIST
+      </h2>
 
-      <img src="Meet your dentist/dr tanupriya gupta.png" alt="Dr. Tanupriya Gupta">
+    
+
+      <p>
+        Get to know the dentist behind Dr. Gupta's Dental Clinic
+      </p>
+
+      <div class="about-line"></div>
 
     </div>
 
 
-    <div class="about-text">
+    <!-- ABOUT CONTENT -->
+    <div class="about-grid">
 
-      <h2>
-        Dr. Tanupriya Gupta
-      </h2>
+      <div class="about-img">
 
-      <span class="role">
-        MDS &middot; Principal Dentist &middot; 20 Years of Experience
-      </span>
+        <img
+          src="Meet your dentist/dr tanupriya gupta.png"
+          alt="Dr. Tanupriya Gupta">
 
-      <p>
-        Dr. Tanupriya Gupta, MDS, founded Dr. Gupta's Dental Clinic in 2013 with a simple standard: treat every patient the way she'd want her own family treated. That means unhurried appointments, magnification-guided restorative work, and an unwavering rule against unnecessary treatment.
-      </p>
+      </div>
 
-      <p>
-        Before starting her own practice, she spent over five years at <strong>AIIMS, New Delhi</strong>, trained at <strong>PGI Chandigarh</strong>, and served as faculty at the <strong>Faculty of Dental Sciences, Jamia Millia Islamia</strong>. She completed her MDS at <strong>Manipal</strong> and her BDS at <strong>Nair Hospital, Mumbai</strong>.
-      </p>
 
-      <p>
-        She's known among patients for being soft-spoken, thorough, and scrupulously careful — walking every patient through their options before recommending the simplest one that actually solves the problem.
-      </p>
+      <div class="about-text">
 
-      <a href="about_Tanupriya.html" class="cta-btn"> Read more </a>
+        <h2>
+          Dr. Tanupriya Gupta
+        </h2>
+
+        <span class="role">
+          MDS &middot; Principal Dentist &middot; 20 Years of Experience
+        </span>
+
+        <p>
+          Dr. Tanupriya Gupta, MDS, began her dental journey with her
+          <strong>BDS from Nair Hospital Dental College, Mumbai</strong>,
+          graduating in 2003. She then worked as a
+          <strong>House Surgeon at PGI Chandigarh</strong>, gaining early
+          clinical experience in a leading teaching hospital.
+        </p>
+
+        <p>
+          She went on to complete her
+          <strong>MDS from Manipal College of Dental Sciences, Manipal</strong>,
+          followed by several years of advanced clinical and academic
+          experience at <strong>AIIMS, New Delhi</strong>. At AIIMS, she
+          spent four years working in clinical and research roles, including
+          <strong>three years as a Senior Resident</strong> and
+          <strong>one year as a Senior Research Fellow</strong>.
+        </p>
+
+        <p>
+          She subsequently joined the
+          <strong>Faculty of Dental Sciences, Jamia Millia Islamia</strong>,
+          combining clinical practice with teaching and academic work.
+        </p>
+
+        <p>
+          In 2013, she established
+          <strong>Dr. Gupta's Dental Clinic</strong> in South Delhi.
+          Her approach is centred on careful diagnosis, preserving natural
+          teeth whenever possible, and recommending treatment based on
+          clinical need rather than unnecessary intervention.
+        </p>
+
+        <a href="about_Tanupriya.html" class="cta-btn">
+          Read More
+        </a>
+
+      </div>
 
     </div>
 
@@ -1035,13 +1279,13 @@
 
         <div class="sec-head">
 
-            <span class="eyebrow">
+            <h2 class="eyebrow sizefont">
                 Our Services
-            </span>
-
-            <h2>
-                Better dentistry begins with better care
             </h2>
+
+            <!-- <h2>
+                Better dentistry begins with better care
+            </h2> -->
 
         </div>
 
@@ -1060,15 +1304,14 @@
 
             <!-- SLIDER -->
             <div class="services-slider">
-
                 <!-- CARD 1 -->
                 <article class="service-card">
 
                     <div class="service-card-image">
 
                         <img
-                            src="clinic_photos_shortlist/restoractive procedure.jpeg"
-                            alt="Restorative Procedures"
+                            src="clinic_photos_shortlist/screening and diagnosis.jpg"
+                            alt="Checkups and Diagnosis"
                         >
 
                     </div>
@@ -1080,7 +1323,38 @@
                         </span>
 
                         <h3>
-                            Restorative Procedures
+                            Checkups &amp; Diagnosis
+                        </h3>
+
+                        <p>
+                            Detailed examination and diagnosis to
+                            identify dental problems at the right time.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <!-- CARD 2 -->
+                <article class="service-card">
+
+                    <div class="service-card-image">
+
+                        <img
+                            src="clinic_photos_shortlist/restorative procedure img.png"
+                            alt="Restorative Procedures"
+                        >
+
+                    </div>
+
+                    <div class="service-card-content">
+
+                        <span class="service-card-number">
+                            02
+                        </span>
+
+                        <h3>
+                            Dental Fillings 
                         </h3>
 
                         <p>
@@ -1093,7 +1367,7 @@
                 </article>
 
 
-                <!-- CARD 2 -->
+                <!-- CARD 3 -->
                 <article class="service-card">
 
                     <div class="service-card-image">
@@ -1108,7 +1382,7 @@
                     <div class="service-card-content">
 
                         <span class="service-card-number">
-                            02
+                            03
                         </span>
 
                         <h3>
@@ -1125,7 +1399,7 @@
                 </article>
 
 
-                <!-- CARD 3 -->
+                <!-- CARD 4 -->
                 <article class="service-card">
 
                     <div class="service-card-image">
@@ -1140,7 +1414,7 @@
                     <div class="service-card-content">
 
                         <span class="service-card-number">
-                            03
+                            04
                         </span>
 
                         <h3>
@@ -1155,15 +1429,45 @@
                     </div>
 
                 </article>
-
-
-                <!-- CARD 4 -->
+                <!-- CARD 5 -->
                 <article class="service-card">
 
                     <div class="service-card-image">
 
                         <img
-                            src="clinic_photos_shortlist/Preventive-procedure.jpg"
+                            src="clinic_photos_shortlist/cosmetic densitery.jpg"
+                            alt="Cosmetic Dentistry"
+                        >
+
+                    </div>
+
+                    <div class="service-card-content">
+
+                        <span class="service-card-number">
+                            05
+                        </span>
+
+                        <h3>
+                            Cosmetic Dentistry
+                        </h3>
+
+                        <p>
+                            Subtle aesthetic improvements for a more
+                            confident and natural-looking smile.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CARD 6 -->
+                <article class="service-card">
+
+                    <div class="service-card-image">
+
+                        <img
+                            src="clinic_photos_shortlist/oral health img.png"
                             alt="Preventive Procedures"
                         >
 
@@ -1172,7 +1476,7 @@
                     <div class="service-card-content">
 
                         <span class="service-card-number">
-                            04
+                            06
                         </span>
 
                         <h3>
@@ -1188,78 +1492,13 @@
 
                 </article>
 
-
-                <!-- CARD 5 -->
+                 <!-- CARD 7 -->
                 <article class="service-card">
 
                     <div class="service-card-image">
 
                         <img
-                            src="clinic_photos_shortlist/screening and diagnosis.jpg"
-                            alt="Screening and Diagnosis"
-                        >
-
-                    </div>
-
-                    <div class="service-card-content">
-
-                        <span class="service-card-number">
-                            05
-                        </span>
-
-                        <h3>
-                            Screening &amp; Diagnosis
-                        </h3>
-
-                        <p>
-                            Detailed examination and diagnosis to
-                            identify dental problems at the right time.
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <!-- CARD 6 -->
-                <article class="service-card">
-
-                    <div class="service-card-image">
-
-                        <img
-                            src="clinic_photos_shortlist/dental implant.jpg"
-                            alt="Dental Implants"
-                        >
-
-                    </div>
-
-                    <div class="service-card-content">
-
-                        <span class="service-card-number">
-                            06
-                        </span>
-
-                        <h3>
-                            Dental Implants
-                        </h3>
-
-                        <p>
-                            Natural-looking tooth replacement using
-                            carefully planned dental implants.
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <!-- CARD 7 -->
-                <article class="service-card">
-
-                    <div class="service-card-image">
-
-                        <img
-                            src="clinic_photos_shortlist/replacement of missing teeth.jpg"
+                            src="clinic_photos_shortlist/mising teeth.png"
                             alt="Replacement of Missing Teeth"
                         >
 
@@ -1284,15 +1523,14 @@
 
                 </article>
 
-
                 <!-- CARD 8 -->
                 <article class="service-card">
 
                     <div class="service-card-image">
 
                         <img
-                            src="clinic_photos_shortlist/cosmetic densitery.jpg"
-                            alt="Cosmetic Dentistry"
+                            src="clinic_photos_shortlist/dental implant.jpg"
+                            alt="Dental Implants"
                         >
 
                     </div>
@@ -1304,18 +1542,17 @@
                         </span>
 
                         <h3>
-                            Cosmetic Dentistry
+                            Dental Implants
                         </h3>
 
                         <p>
-                            Subtle aesthetic improvements for a more
-                            confident and natural-looking smile.
+                            Natural-looking tooth replacement using
+                            carefully planned dental implants.
                         </p>
 
                     </div>
 
                 </article>
-
 
                 <!-- CARD 9 -->
                 <!-- <article class="service-card">
@@ -1486,8 +1723,339 @@
 <!-- =========================================================
      TESTIMONIALS
      ========================================================= -->
+<!-- =========================================================
+     PATIENT TESTIMONIALS
+     ========================================================= -->
 
-<section
+<section class="patient-stories" id="testimonials">
+
+  <div class="patient-stories-inner">
+
+    <!-- HEADER -->
+    <div class="patient-stories-heading">
+
+      <span class="patient-stories-eyebrow">
+        PATIENT STORIES
+      </span>
+
+      <h2>
+        What patients <span>say</span>
+      </h2>
+
+      <p>
+        Every single review Dr. Gupta's Dental Clinic has received
+        on Google has been five stars — not one exception.
+      </p>
+
+    </div>
+
+
+    <!-- TESTIMONIAL SLIDER -->
+    <div class="patient-slider">
+
+      <!-- LEFT ARROW -->
+      <button
+        class="patient-arrow patient-arrow-prev"
+        type="button"
+        aria-label="Previous review"
+      >
+        <span>←</span>
+      </button>
+
+
+      <!-- VIEWPORT -->
+      <div class="patient-slider-viewport">
+
+        <div class="patient-slider-track">
+
+
+          <!-- ================= REVIEW 1 ================= -->
+
+          <article class="patient-review-card">
+
+            <div class="patient-quote-mark">
+              “
+            </div>
+
+            <div class="patient-stars">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+
+            <p class="patient-review-text">
+              Dr Tanupriya is the most knowledgeable, sincere and
+              methodical dental surgeon I have come across. She's
+              also very caring and compassionate and makes sure her
+              patients are comfortable during and post procedure also.
+              I recommend her to all my family and friends.
+            </p>
+
+            <div class="patient-review-line"></div>
+
+            <div class="patient-review-author">
+
+              <div class="patient-author-initial">
+                DG
+              </div>
+
+              <div class="patient-author-details">
+
+                <strong>
+                  Dr. Chhabir Gupta
+                </strong>
+
+                <span>
+                  <b>G</b> Google Review
+                </span>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- ================= REVIEW 2 ================= -->
+
+          <article class="patient-review-card">
+
+            <div class="patient-quote-mark">
+              “
+            </div>
+
+            <div class="patient-stars">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+
+            <p class="patient-review-text">
+              Fabulous doctor, a real healer. Best dental cleaning
+              work I've had in over twenty years, very precise,
+              very careful. Superb, and highly recommended.
+            </p>
+
+            <div class="patient-review-line"></div>
+
+            <div class="patient-review-author">
+
+              <div class="patient-author-initial">
+                AT
+              </div>
+
+              <div class="patient-author-details">
+
+                <strong>
+                  Anuraag Tiwari
+                </strong>
+
+                <span>
+                  <b>G</b> Google Review
+                </span>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- ================= REVIEW 3 ================= -->
+
+          <article class="patient-review-card">
+
+            <div class="patient-quote-mark">
+              “
+            </div>
+
+            <div class="patient-stars">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+
+            <p class="patient-review-text">
+              Had an amazing experience while having composite filling
+              done here. Such a sweet and soft spoken lady as well as
+              a highly professional dentist who takes all precautions
+              and utmost care taking into account all necessary protocols.
+            </p>
+
+            <div class="patient-review-line"></div>
+
+            <div class="patient-review-author">
+
+              <div class="patient-author-initial">
+                AK
+              </div>
+
+              <div class="patient-author-details">
+
+                <strong>
+                  Ayush Kushwaha
+                </strong>
+
+                <span>
+                  <b>G</b> Google Review
+                </span>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+
+      <!-- RIGHT ARROW -->
+      <button
+        class="patient-arrow patient-arrow-next"
+        type="button"
+        aria-label="Next review"
+      >
+        <span>→</span>
+      </button>
+
+    </div>
+
+
+
+    <!-- DOTS -->
+    <div class="patient-slider-dots">
+
+      <button
+        class="patient-dot active"
+        type="button"
+        aria-label="Show review 1"
+      ></button>
+
+      <button
+        class="patient-dot"
+        type="button"
+        aria-label="Show review 2"
+      ></button>
+
+      <button
+        class="patient-dot"
+        type="button"
+        aria-label="Show review 3"
+      ></button>
+
+    </div>
+
+
+
+    <!-- GOOGLE CTA -->
+    <div class="patient-google-area">
+
+      <div class="patient-google-line"></div>
+
+      <a
+        href="https://www.google.com/maps/place/Dr.+Gupta's+Dental+Clinic/@28.5712336,77.2185971,17z/data=!3m1!4b1!4m6!3m5!1s0x390ce25ebe73cb59:0x56e9179e7dcfc73b!8m2!3d28.5712289!4d77.221172!16s%2Fg%2F11b6t0lkcx"
+        target="_blank"
+        rel="noopener"
+        class="patient-google-button"
+      >
+
+        <span class="google-g">
+          G
+        </span>
+
+        <span>
+          Read All Reviews on Google
+        </span>
+
+        <strong>
+          →
+        </strong>
+
+      </a>
+
+      <div class="patient-google-line"></div>
+
+    </div>
+
+
+
+    <!-- TRUST STRIP -->
+    <div class="patient-trust-strip">
+
+      <div class="patient-trust-item">
+
+        <div class="patient-trust-icon">
+          ★
+        </div>
+
+        <div>
+          <strong>5-Star</strong>
+          <span>Patient Reviews</span>
+        </div>
+
+      </div>
+
+
+      <div class="patient-trust-item">
+
+        <div class="patient-trust-icon">
+          ♡
+        </div>
+
+        <div>
+          <strong>Trusted</strong>
+          <span>By Our Patients</span>
+        </div>
+
+      </div>
+
+
+      <div class="patient-trust-item">
+
+        <div class="patient-trust-icon">
+          ✓
+        </div>
+
+        <div>
+          <strong>Thoughtful</strong>
+          <span>Personalised Care</span>
+        </div>
+
+      </div>
+
+
+      <div class="patient-trust-item">
+
+        <div class="patient-trust-icon">
+          +
+        </div>
+
+        <div>
+          <strong>Long-Term</strong>
+          <span>Dental Care</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- <section
   id="testimonials"
   class="reveal testi"
 >
@@ -1583,7 +2151,7 @@
 
   </div>
 
-</section>
+</section> -->
 
 
 <!-- =========================================================
@@ -1730,7 +2298,7 @@
      FINAL CTA
      ========================================================= -->
 
-<div class="final-cta">
+<!-- <div class="final-cta">
 
   <div class="container">
 
@@ -1746,7 +2314,7 @@
 
   </div>
 
-</div>
+</div> -->
 
 
 <!-- =========================================================
@@ -1780,6 +2348,9 @@
       <a href="about.html">
         About
       </a>
+      <a href="difference.html">
+        Our Difference
+      </a>
 
       <a href="services.html">
         Services
@@ -1787,6 +2358,10 @@
 
       <a href="reviews.html">
         Reviews
+      </a>
+
+      <a href="faq.html">
+        FAQ
       </a>
 
       <a href="contact.html">

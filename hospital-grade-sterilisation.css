@@ -43,7 +43,7 @@
     margin: 0 auto;
     font-size: 16px;
     line-height: 1.7;
-    color: #6B7280;
+    color: #202223;
 }
 
 .topic-body {
@@ -63,7 +63,7 @@
 .topic-body p {
     font-size: 15.5px;
     line-height: 1.85;
-    color: #454A55;
+    color: #202223;
     margin: 0 0 24px;
 }
 
@@ -129,7 +129,7 @@
 
 .protocol-steps span {
     font-size: 14px;
-    color: #6B7280;
+    color: #202223;
     line-height: 1.6;
 }
 

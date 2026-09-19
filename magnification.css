@@ -1,0 +1,936 @@
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    color: #151b24;
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.site-header {
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 25px;
+
+    padding: 0 4.5%;
+
+    border-bottom: 1px solid #eee;
+
+    background: #fff;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 10;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    text-decoration: none;
+    color: #222;
+
+    min-width: 270px;
+}
+
+.brand-tooth {
+    font-size: 38px;
+    color: #f5c62d;
+}
+
+.brand strong {
+    display: block;
+
+    letter-spacing: 2px;
+
+    font-size: 17px;
+}
+
+.brand small {
+    display: block;
+
+    font-size: 8px;
+
+    letter-spacing: .5px;
+
+    color: #777;
+
+    margin-top: 2px;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 23px;
+
+    flex: 1;
+}
+
+.nav a {
+    font-size: 12px;
+
+    text-decoration: none;
+
+    color: #20242a;
+
+    padding: 25px 0 21px;
+
+    white-space: nowrap;
+}
+
+.nav a.active {
+    font-weight: 700;
+
+    border-bottom: 3px solid #f5c62d;
+}
+
+
+/* =========================================================
+   BUTTON
+   ========================================================= */
+
+.btn {
+    display: inline-block;
+
+    background: #f7c934;
+
+    color: #101010;
+
+    text-decoration: none;
+
+    padding: 13px 20px;
+
+    border-radius: 11px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    transition:
+        background .3s ease,
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.btn:hover {
+    background: #e8b91f;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .10);
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+   ========================================================= */
+
+.menu-toggle {
+    display: none;
+
+    border: 0;
+
+    background: none;
+
+    font-size: 24px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+    display: grid;
+
+    grid-template-columns: 1fr 1.08fr;
+
+    min-height: 440px;
+
+    background: #0c172d;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   HERO LEFT CONTENT
+   ========================================================= */
+
+.hero-copy {
+    padding: 70px 8% 55px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.eyebrow_hero {
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.8px;
+
+    margin: 0;
+}
+
+.yellow-line {
+    width: 38px;
+
+    height: 4px;
+
+    background: #f5c62d;
+
+    margin: 12px 0 22px;
+}
+
+
+/* HERO HEADING */
+
+.hero h1 {
+    font-size: 54px;
+
+    line-height: 1.02;
+
+    letter-spacing: -2px;
+
+    margin: 0 0 20px;
+
+    color: #FFFFFF;
+}
+
+.hero h2 {
+    font-size: 24px;
+
+    line-height: 1.15;
+
+    font-weight: 400;
+
+    margin: 0 0 18px;
+
+    color: #e7cb6b;
+}
+
+.hero p:not(.eyebrow) {
+    font-size: 17px;
+
+    line-height: 1.5;
+
+    max-width: 580px;
+
+    color: rgba(255, 255, 255, 0.76);
+
+    margin-top: 0;
+}
+
+
+/* =========================================================
+   HERO IMAGE
+   ========================================================= */
+
+/*
+   SINGLE BACKGROUND IMAGE
+
+   Change ONLY this path if you want to use another image.
+
+   Example:
+   assets/hero.jpg
+
+   If your image is inside:
+   our-difference/magnification.jpg
+
+   use:
+   ../our-difference/magnification.jpg
+
+   depending on where this CSS file is located.
+*/
+
+.hero-image {
+    min-height: 440px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.08),
+            rgba(0, 0, 0, 0.08)
+        ),
+        url("clinic_photos_shortlist/header\ img\ magnification.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+}
+
+
+/*
+   IMPORTANT:
+
+   If your CSS file is in the SAME folder as the HTML file
+   and "assets" is next to the HTML, use:
+
+   url("assets/hero.jpg")
+
+   If your CSS file is inside:
+
+   css/magnification.css
+
+   and your assets folder is:
+
+   assets/hero.jpg
+
+   then use:
+
+   url("../assets/hero.jpg")
+*/
+
+
+/* =========================================================
+   HANDWRITTEN NOTE
+   ========================================================= */
+
+.hand-note {
+    position: absolute;
+
+    right: 7%;
+
+    top: 20%;
+
+    font-size: 25px;
+
+    line-height: 1.2;
+
+    font-style: italic;
+
+    font-family: cursive;
+
+    text-align: center;
+
+    color: #151b24;
+
+    text-shadow:
+        0 1px 2px rgba(255, 255, 255, .45);
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   GENERAL SECTION
+   ========================================================= */
+
+.section {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 48px 4.5%;
+}
+
+
+/* =========================================================
+   INTRO SECTION
+   ========================================================= */
+
+.intro {
+    display: grid;
+
+    grid-template-columns:
+        1.05fr
+        .95fr
+        .95fr;
+
+    gap: 25px;
+
+    align-items: center;
+}
+
+
+/* =========================================================
+   LOUPE PHOTO
+   ========================================================= */
+
+.loupes-photo {
+    height: 195px;
+}
+
+.loupes-photo img{
+     width: 100%;
+
+    height: 225px;
+
+    object-fit: inherit;
+
+    border-radius: 15px;
+
+    display: block;
+}
+
+
+.needle-wrap img,
+.rct-image img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: inherit;
+
+    border-radius: 15px;
+
+    display: block;
+}
+
+
+/* =========================================================
+   GENERAL CONTENT
+   ========================================================= */
+
+.copy h2,
+.compare h2,
+.everyday h2,
+.useful h2 {
+    font-size: 28px;
+
+    line-height: 1.08;
+
+    margin: 0;
+}
+
+.copy p,
+.compare p,
+.everyday p {
+    font-size: 15px;
+
+    line-height: 1.55;
+
+    color: #42474e;
+}
+
+
+/* =========================================================
+   ANALOGY CARD
+   ========================================================= */
+
+.analogy {
+    background: #12213f;
+
+    border-radius: 15px;
+
+    padding: 23px;
+
+    min-height: 190px;
+}
+
+.magnifier {
+    font-size: 43px;
+
+    float: left;
+
+    margin-right: 14px;
+    color: #e7cb6b;
+}
+
+.analogy h3 {
+    font-size: 18px;
+    color: #ffff;
+
+    margin: 0 0 12px;
+}
+
+.analogy p {
+    font-size: 14px;
+
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.68);
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   COMPARISON SECTION
+   ========================================================= */
+
+.compare {
+    max-width: none;
+
+    background: #faf9f6;
+
+    display: grid;
+
+    grid-template-columns:
+        .8fr
+        1fr
+        1fr;
+
+    gap: 15px;
+
+    align-items: center;
+}
+
+.compare-copy {
+    max-width: 320px;
+
+    margin-left: auto;
+}
+
+
+/* =========================================================
+   COMPARISON CARDS
+   ========================================================= */
+
+.compare-card {
+    position: relative;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    background: #fff;
+}
+
+.compare-card img {
+    width: 100%;
+
+    height: 230px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.compare-card span {
+    position: absolute;
+
+    left: 14px;
+
+    top: 12px;
+
+    background: #444;
+
+    color: #fff;
+
+    padding: 7px 11px;
+
+    border-radius: 9px;
+
+    font-size: 12px;
+}
+
+.compare-card .yellow-label {
+    background: #f7c934;
+
+    color: #111;
+}
+
+.compare-card b {
+    display: block;
+
+    text-align: center;
+
+    padding: 10px;
+
+    font-size: 13px;
+
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   EVERYDAY SECTION
+   ========================================================= */
+
+.everyday {
+    display: grid;
+
+    grid-template-columns: 1.1fr 1fr;
+
+    gap: 50px;
+
+    align-items: center;
+}
+
+
+/* =========================================================
+   NEEDLE SECTION
+   ========================================================= */
+
+.needle-wrap {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+.needle-wrap img {
+    height: 240px;
+}
+
+.needle-wrap span {
+    font-family: cursive;
+
+    font-size: 19px;
+
+    line-height: 1.2;
+}
+
+
+/* =========================================================
+   USEFUL SECTION
+   ========================================================= */
+
+.useful {
+    padding-top: 25px;
+}
+
+.useful-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(6, 1fr);
+
+    gap: 10px;
+}
+
+.useful-grid div {
+    border: 1px solid #e7e4dd;
+
+    border-radius: 12px;
+
+    padding: 17px 8px;
+
+    text-align: center;
+
+    font-size: 27px;
+
+    background: #fff;
+}
+
+.useful-grid small {
+    display: block;
+
+    font-size: 11px;
+
+    line-height: 1.25;
+
+    margin-top: 9px;
+
+    color: #555;
+}
+
+
+/* =========================================================
+   RCT SECTION
+   ========================================================= */
+
+.rct {
+    display: grid;
+
+    grid-template-columns:
+        1.15fr
+        .85fr;
+
+    gap: 35px;
+
+    align-items: center;
+
+    background: #12213F;
+
+    border-radius: 20px;
+
+    margin-bottom: 45px;
+}
+.rct p {
+
+    font-size: 15px;
+
+    line-height: 1.55;
+
+    color: rgba(255, 255, 255, 0.70);
+
+}
+
+.rct h2{
+    font-size: 28px;
+
+    line-height: 1.08;
+
+    margin: 0;
+
+    color: #ffff;
+}
+
+
+/* =========================================================
+   RCT IMAGE
+   ========================================================= */
+
+.rct-image {
+    height: 220px;
+
+    position: relative;
+}
+
+.rct-image strong {
+    position: absolute;
+
+    right: 4%;
+
+    top: 5%;
+
+    background: #f7c934;
+
+    padding: 7px 10px;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    background: #303238;
+
+    color: #fff;
+
+    padding: 55px 8%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+footer h2 {
+    margin: 0;
+
+    font-size: 28px;
+}
+
+footer p {
+    color: #ddd;
+
+    margin: 10px 0 0;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .nav {
+        display: none;
+    }
+
+    .site-header {
+        justify-content: space-between;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .desktop-btn {
+        display: none;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        grid-template-columns: 1fr 1fr;
+
+        min-height: 520px;
+    }
+
+    .hero-copy {
+        padding: 55px 7%;
+    }
+
+    .hero-image {
+        min-height: 520px;
+
+        background-position: center;
+    }
+
+
+    /* OTHER SECTIONS */
+
+    .intro,
+    .everyday,
+    .rct {
+        grid-template-columns: 1fr;
+    }
+
+    .compare {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .compare-copy {
+        grid-column: 1 / -1;
+
+        margin: 0;
+
+        max-width: none;
+    }
+
+    .useful-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    footer {
+        display: block;
+    }
+
+    footer .btn {
+        margin-top: 25px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 520px) {
+
+    .site-header {
+        padding: 0 5%;
+    }
+
+    .brand {
+        min-width: 0;
+    }
+
+    .brand strong {
+        font-size: 14px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        display: flex;
+
+        flex-direction: column;
+
+        min-height: auto;
+    }
+
+    .hero-copy {
+        padding: 55px 7% 45px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+
+        letter-spacing: -1.5px;
+    }
+
+    .hero h2 {
+        font-size: 22px;
+    }
+
+    .hero p:not(.eyebrow) {
+        font-size: 16px;
+    }
+
+
+    /* IMAGE */
+
+    .hero-image {
+        min-height: 360px;
+
+        height: 360px;
+
+        background-position: center;
+    }
+
+    .hand-note {
+        right: 7%;
+
+        top: 18%;
+
+        font-size: 22px;
+    }
+
+
+    /* COMPARISON */
+
+    .compare {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* USEFUL GRID */
+
+    .useful-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    /* NEEDLE */
+
+    .needle-wrap {
+        display: block;
+    }
+
+    .needle-wrap img {
+        height: 170px;
+
+        margin-bottom: 15px;
+    }
+}

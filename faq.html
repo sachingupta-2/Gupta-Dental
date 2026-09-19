@@ -1,0 +1,1829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our Difference | Dr. Gupta's Dental Clinic</title>
+
+<meta name="description" content="Dr. Tanupriya Gupta — 20 years of precision, magnification-guided restorative dentistry in South Extension, New Delhi. Ethical care, no over-treatment.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="faq.css">
+</head>
+
+
+<body><!-- =========================================================
+     HEADER
+     ========================================================= -->
+
+<header>
+
+  <div class="header-info">
+    <div class="container header-info-wrap">
+      <div class="availability" aria-label="Clinic availability">
+        <span><strong>Availability:</strong> <span class="availability-hours">Monday - Saturday, 10:00 AM - 7:00 PM</span></span>
+        <span class="sunday-closed">Sunday: CLOSED</span>
+      </div>
+      <div class="header-contact" aria-label="Clinic contact details">
+        <a href="tel:+919990880975">Call: +91 99908 80975</a>
+        <a href="https://wa.me/919990880975" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container nav-wrap">
+
+    <a href="index.html" class="brand" style="text-decoration:none; color:inherit;" aria-label="Dr. Gupta's Dental Clinic — Home">
+
+      <img
+        src="logos/web_logo.png"
+        alt="Dr. Gupta's Dental Clinic logo"
+        style="width:44px;height:44px;border-radius:10px;object-fit:cover;"
+      >
+
+      <div class="brand-name">
+        Dr. Gupta's Dental Clinic
+      </div>
+
+    </a>
+
+
+    <nav>
+
+      <ul id="main-navigation">
+
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+
+        <li>
+          <a href="about.html">About</a>
+        </li>
+
+        <li>
+          <a href="difference.html">Our Difference</a>
+        </li>
+
+        <li>
+          <a href="services.html">Services</a>
+        </li>
+
+        <li>
+          <a href="reviews.html">Reviews</a>
+        </li>
+
+        <li>
+          <a href="faq.html" aria-current="page">FAQ</a>
+        </li>
+
+        <li>
+          <a href="contact.html">Contact</a>
+        </li>
+
+      </ul>
+
+    </nav>
+
+
+    <div class="nav-cta">
+
+      <button
+        type="button"
+        class="appointment-trigger"
+        id="openAppointmentModal"
+      >
+        Book Appointment
+      </button>
+
+      <button
+        type="button"
+        class="menu-toggle"
+        aria-label="Menu"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >
+        &#9776;
+      </button>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- =========================================================
+     APPOINTMENT MODAL
+     ========================================================= -->
+
+<div
+  class="appointment-modal-overlay"
+  id="appointmentModal"
+  aria-hidden="true"
+>
+
+  <div
+    class="appointment-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="appointmentTitle"
+  >
+
+    <button
+      type="button"
+      class="modal-close"
+      aria-label="Close appointment form"
+    >
+      &times;
+    </button>
+
+
+    <div class="modal-head">
+
+      <h3 id="appointmentTitle">
+        Book an Appointment
+      </h3>
+
+      <p>
+        Please fill in your details and we will contact you shortly.
+      </p>
+
+    </div>
+
+
+    <form class="appointment-form" id="appointmentForm">
+      <div class="appointment-progress" aria-label="Appointment form progress">
+        <div class="step-indicator active" id="stepIndicator1">1. Patient Details</div>
+        <div class="step-indicator" id="stepIndicator2">2. Personal Details <span class="optional-note">(Optional)</span></div>
+      </div>
+
+      <div class="appointment-step active" id="appointmentStep1">
+        <div class="form-grid">
+          <div class="form-group"><label for="name">Name</label><input id="name" name="name" type="text" placeholder="Enter your name" required></div>
+          <div class="form-group"><label for="age">Age</label><input id="age" name="age" type="number" min="1" placeholder="Age" required></div>
+          <div class="form-group"><label for="phone">Phone No</label><input id="phone" name="phone" type="tel" placeholder="Your phone number" required></div>
+          <div class="form-group"><label for="email">Email</label><input id="email" name="email" type="email" placeholder="Your email address" required></div>
+          <div class="form-group full"><label for="address">Address</label><input id="address" name="address" type="text" placeholder="Your address" required></div>
+          <div class="form-group"><label for="appointmentDate">Appointment Date</label><input type="date" id="appointmentDate" name="appointmentDate" required></div>
+          <div class="form-group"><label for="appointmentTime">Available Time Slot</label><select id="appointmentTime" name="appointmentTime" required disabled><option value="">Select a date first</option></select><small class="slot-status" id="slotStatus" aria-live="polite">Choose a date to see available slots.</small></div>
+          <div class="form-group"><label for="gender">Gender</label><select id="gender" name="gender" required><option value="">Select gender</option><option>Male</option><option>Female</option><option>Other</option></select></div>
+        </div>
+        <div class="step-actions">
+          <button type="button" class="secondary-btn" id="closeAppointmentModal">Cancel</button>
+          <button type="button" class="cta-btn" id="nextAppointmentStep">Next &rarr;</button>
+        </div>
+      </div>
+
+      <div class="appointment-step" id="appointmentStep2">
+        <div class="clinical-intro"><strong>Personal details are optional.</strong> You can provide them to help the dentist understand your concern before the appointment, or skip this section and submit with your basic details.</div>
+        <div class="form-grid">
+          <div class="form-group full"><label for="reasonForVisit">Reason for Visit</label><textarea id="reasonForVisit" name="reasonForVisit" placeholder="Briefly describe the reason for your visit"></textarea></div>
+          <div class="form-group"><label for="dentalProblem">Current Dental Problem</label><select id="dentalProblem" name="dentalProblem"><option value="">Select if applicable</option><option>Tooth Pain</option><option>Sensitivity</option><option>Swelling</option><option>Bleeding Gums</option><option>Broken / Chipped Tooth</option><option>Cavity</option><option>Missing Tooth</option><option>Routine Check-up</option><option>Cleaning</option><option>Other</option></select></div>
+          <div class="form-group"><label for="painLevel">Pain / Discomfort</label><select id="painLevel" name="painLevel"><option value="">Select if applicable</option><option>None</option><option>Mild</option><option>Moderate</option><option>Severe</option></select></div>
+          <div class="form-group"><label for="previousDentalTreatment">Previous Dental Treatment</label><select id="previousDentalTreatment" name="previousDentalTreatment"><option value="">Select if applicable</option><option>No Previous Treatment</option><option>Filling</option><option>Root Canal</option><option>Extraction</option><option>Implant</option><option>Crown / Bridge</option><option>Other</option></select></div>
+          <div class="form-group"><label>Currently Taking Any Medicine?</label><div class="radio-row"><label class="radio-option"><input type="radio" name="medication" value="yes"> Yes</label><label class="radio-option"><input type="radio" name="medication" value="no" checked> No</label></div></div>
+          <div class="form-group full medication-box" id="medicationBox"><label for="medicineDetails">Medicine Details</label><textarea id="medicineDetails" name="medicineDetails" placeholder="List medicines you are currently taking"></textarea></div>
+          <div class="form-group full"><label for="allergies">Known Allergies</label><textarea id="allergies" name="allergies" placeholder="Mention any known medicine or other allergies"></textarea></div>
+          <div class="form-group full"><label for="medicalHistory">Medical History</label><textarea id="medicalHistory" name="medicalHistory" placeholder="Mention any relevant medical history"></textarea></div>
+          <div class="form-group full"><label for="additionalClinicalDetails">Additional Clinical Details</label><textarea id="additionalClinicalDetails" name="additionalClinicalDetails" placeholder="Anything else you would like the dentist to know"></textarea></div>
+        </div>
+
+        <div class="clinical-section">
+          <h4 class="clinical-section-title">Adverse Habits / Adverse Oral Habits</h4>
+          <div class="clinical-table-wrap"><table class="clinical-table"><thead><tr><th>Type</th><th>Frequency</th><th>Duration</th></tr></thead><tbody>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitSmoking" value="Smoking"> Smoking</label></td><td><select name="habitSmokingFrequency"><option value="">Select</option><option>Occasional</option><option>Once Daily</option><option>Twice Daily</option><option>More than Twice Daily</option></select></td><td><select name="habitSmokingDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitTobacco" value="Smokeless Tobacco/snuff"> Smokeless Tobacco / Snuff</label></td><td><select name="habitTobaccoFrequency"><option value="">Select</option><option>Occasional</option><option>Once Daily</option><option>Twice Daily</option><option>More than Twice Daily</option></select></td><td><select name="habitTobaccoDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitPaan" value="Paan chewing (gutka, paanmasala)"> Paan chewing (gutka, paanmasala)</label></td><td><select name="habitPaanFrequency"><option value="">Select</option><option>Occasional</option><option>Once Daily</option><option>Twice Daily</option><option>More than Twice Daily</option></select></td><td><select name="habitPaanDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitAlcohol" value="Alcohol"> Alcohol</label></td><td><select name="habitAlcoholFrequency"><option value="">Select</option><option>Occasional</option><option>Once Weekly</option><option>2-3 Times Weekly</option><option>Daily</option></select></td><td><select name="habitAlcoholDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+          </tbody></table></div>
+        </div>
+
+        <div class="clinical-section"><h4 class="clinical-section-title">Oral Hygiene Practices</h4><div class="hygiene-grid">
+          <div class="form-group full"><label>i) Type of Cleaning</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Toothbrush"> Toothbrush</label><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Finger"> Finger</label><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Stick"> Stick</label><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Others"> Others</label></div></div>
+          <div class="form-group full"><label>ii) Method of Cleaning</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="cleaningMethod" value="Vertical"> Vertical</label><label class="clinical-check"><input type="checkbox" name="cleaningMethod" value="Horizontal"> Horizontal</label><label class="clinical-check"><input type="checkbox" name="cleaningMethod" value="Circular"> Circular</label></div></div>
+          <div class="form-group full"><label>iii) Frequency of Cleaning / Brushing</label><div class="option-grid"><label class="clinical-check"><input type="radio" name="brushingFrequency" value="Once"> Once</label><label class="clinical-check"><input type="radio" name="brushingFrequency" value="Twice"> Twice</label><label class="clinical-check"><input type="radio" name="brushingFrequency" value="Thrice"> Thrice</label></div></div>
+          <div class="form-group full"><label>iv) Materials Used</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Toothpaste"> Toothpaste</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Tooth Powder"> Tooth Powder</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Charcoal"> Charcoal</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Sand"> Sand</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Brick Powder"> Brick Powder</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Any Other"> Any Other</label></div><input type="text" id="cleaningMaterialOther" name="cleaningMaterialOther" placeholder="If any other, please specify"></div>
+          <div class="form-group full"><label>v) Time of Brushing</label><div class="option-grid"><label class="clinical-check"><input type="radio" name="brushingTime" value="Before Meal"> Before Meal</label><label class="clinical-check"><input type="radio" name="brushingTime" value="After Meals"> After Meals</label></div></div>
+          <div class="form-group full"><label>vi) Frequency of Changing the Tooth Brush</label><div class="option-grid"><label class="clinical-check"><input type="radio" name="toothbrushChangeFrequency" value="Once"> Once</label><label class="clinical-check"><input type="radio" name="toothbrushChangeFrequency" value="Twice"> Twice</label><label class="clinical-check"><input type="radio" name="toothbrushChangeFrequency" value="Thrice"> Thrice</label></div></div>
+          <div class="form-group"><label for="durationOfCleaning">vii) Duration of Cleaning</label><input type="text" id="durationOfCleaning" name="durationOfCleaning" placeholder="e.g. 2 minutes"></div>
+          <div class="form-group full"><label>viii) Other Oral Hygiene Aids Used</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Flossing"> Flossing</label><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Interdental Aids"> Interdental Aids</label><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Oral Mouth Rinse"> Oral Mouth Rinse</label><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Tongue Cleaner"> Tongue Cleaner</label></div></div>
+        </div></div>
+
+        <div class="step-actions"><button type="button" class="secondary-btn" id="backAppointmentStep">&larr; Back</button><div class="right-actions"><button type="button" class="secondary-btn" id="skipClinicalStep">Skip &amp; Submit</button><button type="submit" class="cta-btn">Submit Appointment</button></div></div>
+      </div>
+    </form>
+
+  </div>
+
+</div>
+
+<!-- =========================================================
+     FAQ PAGE
+     Header and Footer are intentionally NOT included
+     ========================================================= -->
+
+<main class="faq-page">
+
+  <!-- =======================================================
+       HERO
+       ======================================================= -->
+
+  <section class="faq-hero">
+
+    <div class="faq-hero-inner">
+
+      <div class="faq-hero-content">
+
+        <span class="faq-eyebrow">
+          FREQUENTLY ASKED QUESTIONS
+        </span>
+
+        <h1>
+          Questions are part of
+          <span>good care.</span>
+        </h1>
+
+        <p>
+          Whether you're visiting us for the first time,
+          considering a treatment, or simply want to know
+          what to expect, we've answered some of the questions
+          patients ask most often.
+        </p>
+
+      </div>
+
+
+      <!-- Decorative question mark -->
+
+      <div class="faq-hero-art">
+
+        <div class="faq-orbit orbit-one"></div>
+        <div class="faq-orbit orbit-two"></div>
+
+        <div class="faq-question-symbol">
+          ?
+        </div>
+
+        <div class="faq-floating-dot dot-one"></div>
+        <div class="faq-floating-dot dot-two"></div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =======================================================
+       SEARCH
+       ======================================================= -->
+
+  <section class="faq-search-section">
+
+    <div class="faq-container">
+
+      <div class="faq-search-box">
+
+        <span class="faq-search-icon">
+          ⌕
+        </span>
+
+        <input
+          type="text"
+          id="faqSearch"
+          placeholder="Search your question..."
+          autocomplete="off"
+        >
+
+        <button
+          type="button"
+          id="faqClear"
+          aria-label="Clear search"
+        >
+          ×
+        </button>
+
+      </div>
+
+      <p class="faq-search-hint">
+        Try searching for
+        <button type="button" class="faq-suggestion">
+          root canal
+        </button>,
+        <button type="button" class="faq-suggestion">
+          appointment
+        </button>,
+        or
+        <button type="button" class="faq-suggestion">
+          children
+        </button>.
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =======================================================
+       FAQ CONTENT
+       ======================================================= -->
+
+  <section class="faq-content">
+
+    <div class="faq-container">
+
+
+      <!-- =====================================================
+           CATEGORY FILTERS
+           ===================================================== -->
+
+      <div class="faq-categories">
+
+        <button
+          class="faq-category active"
+          type="button"
+          data-category="all"
+        >
+          All Questions
+        </button>
+
+        <button
+          class="faq-category"
+          type="button"
+          data-category="general"
+        >
+          General
+        </button>
+
+        <button
+          class="faq-category"
+          type="button"
+          data-category="appointment"
+        >
+          Appointments
+        </button>
+
+        <button
+          class="faq-category"
+          type="button"
+          data-category="treatment"
+        >
+          Treatments
+        </button>
+
+        <button
+          class="faq-category"
+          type="button"
+          data-category="children"
+        >
+          Children
+        </button>
+
+        <button
+          class="faq-category"
+          type="button"
+          data-category="emergency"
+        >
+          Emergencies
+        </button>
+
+      </div>
+
+
+
+      <!-- =====================================================
+           FAQ LAYOUT
+           ===================================================== -->
+
+      <div class="faq-layout">
+
+
+        <!-- LEFT INTRO -->
+        <aside class="faq-sidebar">
+
+          <span class="faq-sidebar-number">
+            01
+          </span>
+
+          <h2>
+            Before your
+            <span>visit</span>
+          </h2>
+
+          <p>
+            We believe patients should understand their
+            dental care before treatment begins.
+          </p>
+
+          <div class="faq-sidebar-line"></div>
+
+          <p class="faq-sidebar-small">
+            If your question isn't answered here,
+            we're always happy to discuss it during
+            your consultation.
+          </p>
+
+        </aside>
+
+
+
+        <!-- QUESTIONS -->
+        <div class="faq-list" id="faqList">
+
+
+          <!-- =================================================
+               GENERAL
+               ================================================= -->
+
+          <article
+            class="faq-item"
+            data-category="general"
+            data-search="first visit dental clinic consultation what happens examination dentist"
+          >
+
+            <button
+              class="faq-question"
+              type="button"
+              aria-expanded="false"
+            >
+
+              <span class="faq-question-number">
+                01
+              </span>
+
+              <span class="faq-question-text">
+                What can I expect during my first visit?
+              </span>
+
+              <span class="faq-plus">
+                +
+              </span>
+
+            </button>
+
+            <div class="faq-answer">
+
+              <div class="faq-answer-inner">
+
+                <p>
+                  Your first visit generally begins with a
+                  conversation about your concerns, dental
+                  history and what you would like help with.
+                  This is followed by a careful clinical
+                  examination to understand your oral health
+                  and identify any areas that may need attention.
+                </p>
+
+                <p>
+                  The findings are discussed with you before
+                  any treatment is recommended, so you can
+                  understand the available options and make
+                  an informed decision.
+                </p>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+
+          <article
+            class="faq-item"
+            data-category="general"
+            data-search="do I need treatment if tooth does not hurt pain dental treatment"
+          >
+
+            <button
+              class="faq-question"
+              type="button"
+              aria-expanded="false"
+            >
+
+              <span class="faq-question-number">
+                02
+              </span>
+
+              <span class="faq-question-text">
+                If my tooth doesn't hurt, do I still need a dental check-up?
+              </span>
+
+              <span class="faq-plus">
+                +
+              </span>
+
+            </button>
+
+            <div class="faq-answer">
+
+              <div class="faq-answer-inner">
+
+                <p>
+                  Not all dental problems cause pain in their
+                  early stages. Regular examinations can help
+                  identify changes before they become more
+                  complicated or uncomfortable.
+                </p>
+
+                <p>
+                  The appropriate frequency of visits depends
+                  on your individual dental health and risk
+                  factors.
+                </p>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+
+          <article
+            class="faq-item"
+            data-category="general"
+            data-search="how often dentist visit dental checkup regular examination"
+          >
+
+            <button
+              class="faq-question"
+              type="button"
+              aria-expanded="false"
+            >
+
+              <span class="faq-question-number">
+                03
+              </span>
+
+              <span class="faq-question-text">
+                How often should I have a dental examination?
+              </span>
+
+              <span class="faq-plus">
+                +
+              </span>
+
+            </button>
+
+            <div class="faq-answer">
+
+              <div class="faq-answer-inner">
+
+                <p>
+                  There is no single schedule that is suitable
+                  for everyone. Your recommended review interval
+                  depends on your oral health, previous dental
+                  problems, existing restorations and individual
+                  risk factors.
+                </p>
+
+                <p>
+                  Your dentist can suggest an appropriate
+                  follow-up schedule after assessing your
+                  dental health.
+                </p>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- =================================================
+               APPOINTMENTS
+               ================================================= -->
+
+          <article
+            class="faq-item"
+            data-category="appointment"
+            data-search="book appointment consultation appointment phone whatsapp"
+          >
+
+            <button
+              class="faq-question"
+              type="button"
+              aria-expanded="false"
+            >
+
+              <span class="faq-question-number">
+                04
+              </span>
+
+              <span class="faq-question-text">
+                How can I book an appointment?
+              </span>
+
+              <span class="faq-plus">
+                +
+              </span>
+
+            </button>
+
+            <div class="faq-answer">
+
+              <div class="faq-answer-inner">
+
+                <p>
+                  You can contact the clinic directly to
+                  discuss an appointment. Our team can help
+                  you find a suitable time and guide you
+                  regarding your visit.
+                </p>
+
+                <div class="faq-answer-actions">
+
+                  <a
+                    href="https://wa.me/919990880975"
+                    target="_blank"
+                    rel="noopener"
+                    class="faq-answer-button"
+                  >
+                    Book on WhatsApp →
+                  </a>
+
+                  <a
+                    href="tel:+919990880975"
+                    class="faq-answer-button secondary"
+                  >
+                    Call the Clinic
+                  </a>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+
+          <article
+            class="faq-item"
+            data-category="appointment"
+            data-search="late appointment reschedule cancel appointment dental clinic"
+          >
+
+            <button
+              class="faq-question"
+              type="button"
+              aria-expanded="false"
+            >
+
+              <span class="faq-question-number">
+                05
+              </span>
+
+              <span class="faq-question-text">
+                What if I need to reschedule my appointment?
+              </span>
+
+              <span class="faq-plus">
+                +
+              </span>
+
+            </button>
+
+            <div class="faq-answer">
+
+              <div class="faq-answer-inner">
+
+                <p>
+                  If you need to change your appointment,
+                  please contact the clinic as early as
+                  possible. We can then help you arrange
+                  another suitable time.
+                </p>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- =================================================
+               TREATMENTS
+               ================================================= -->
+
+          <article
+            class="faq-item"
+            data-category="treatment"
+            data-search="root canal treatment rct painful root canal pain"
+          >
+
+            <button
+              class="faq-question"
+              type="button"
+              aria-expanded="false"
+            >
+
+              <span class="faq-question-number">
+                06
+              </span>
+
+              <span class="faq-question-text">
+                Is a root canal treatment painful?
+              </span>
+
+              <span class="faq-plus">
+                +
+              </span>
+
+            </button>
+
+            <div class="faq-answer">
+
+              <div class="faq-answer-inner">
+
+                <p>
+                  Root canal treatment is performed with
+                  appropriate local anaesthesia to keep you
+                  comfortable during the procedure.
+                </p>
+
+                <p>
+                  Some sensitivity or discomfort can occur
+                  after treatment, but this varies between
+                  patients and depends on the condition of
+                  the tooth.
+                </p>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+
+          <article
+            class="faq-item"
+            data-category="treatment"
+            data-search="filling cavity tooth filling composite filling decay"
+          >
+
+            <button
+              class="faq-question"
+              type="button"
+              aria-expanded="false"
+            >
+
+              <span class="faq-question-number">
+                07
+              </span>
+
+              <span class="faq-question-text">
+                When does a tooth need a filling?
+              </span>
+
+              <span class="faq-plus">
+                +
+              </span>
+
+            </button>
+
+            <div class="faq-answer">
+
+              <div class="faq-answer-inner">
+
+                <p>
+                  A filling may be recommended when tooth
+                  structure has been damaged by decay or
+                  another localised defect.
+                </p>
+
+                <p>
+                  The appropriate treatment depends on the
+                  size, depth and condition of the affected
+                  tooth. The aim is to address the problem
+                  while preserving healthy tooth structure
+                  wherever possible.
+                </p>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+
+          <article
+            class="faq-item"
+            data-category="treatment"
+            data-search="dental cleaning scaling cleaning teeth plaque tartar"
+          >
+
+            <button
+              class="faq-question"
+              type="button"
+              aria-expanded="false"
+            >
+
+              <span class="faq-question-number">
+                08
+              </span>
+
+              <span class="faq-question-text">
+                Why might I need professional dental cleaning?
+              </span>
+
+              <span class="faq-plus">
+                +
+              </span>
+
+            </button>
+
+            <div class="faq-answer">
+
+              <div class="faq-answer-inner">
+
+                <p>
+                  Even with regular brushing, plaque and
+                  hardened deposits can accumulate in areas
+                  that are difficult to clean effectively
+                  at home.
+                </p>
+
+                <p>
+                  Professional cleaning can help remove these
+                  deposits and is often combined with guidance
+                  on improving everyday oral hygiene.
+                </p>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+
+          <article
+            class="faq-item"
+            data-category="treatment"
+            data-search="preserve natural teeth conservative dentistry tooth extraction save tooth"
+          >
+
+            <button
+              class="faq-question"
+              type="button"
+              aria-expanded="false"
+            >
+
+              <span class="faq-question-number">
+                09
+              </span>
+
+              <span class="faq-question-text">
+                Do you try to preserve natural teeth whenever possible?
+              </span>
+
+              <span class="faq-plus">
+                +
+              </span>
+
+            </button>
+
+            <div class="faq-answer">
+
+              <div class="faq-answer-inner">
+
+                <p>
+                  Where clinically appropriate, preserving
+                  healthy natural tooth structure is an
+                  important part of our approach.
+                </p>
+
+                <p>
+                  Treatment is planned after careful
+                  examination and diagnosis, with the goal
+                  of addressing the problem while avoiding
+                  unnecessary removal of healthy tooth
+                  structure.
+                </p>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- =================================================
+               CHILDREN
+               ================================================= -->
+
+          <article
+            class="faq-item"
+            data-category="children"
+            data-search="child children kids dentist first dental visit child dental care"
+          >
+
+            <button
+              class="faq-question"
+              type="button"
+              aria-expanded="false"
+            >
+
+              <span class="faq-question-number">
+                10
+              </span>
+
+              <span class="faq-question-text">
+                When should my child have a dental visit?
+              </span>
+
+              <span class="faq-plus">
+                +
+              </span>
+
+            </button>
+
+            <div class="faq-answer">
+
+              <div class="faq-answer-inner">
+
+                <p>
+                  Children benefit from dental care that
+                  focuses not only on treating problems but
+                  also on developing healthy habits and
+                  preventing future dental issues.
+                </p>
+
+                <p>
+                  The appropriate timing of the first visit
+                  can depend on your child's age, dental
+                  development and individual needs.
+                </p>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+
+          <article
+            class="faq-item"
+            data-category="children"
+            data-search="child afraid dentist nervous dental visit children fear"
+          >
+
+            <button
+              class="faq-question"
+              type="button"
+              aria-expanded="false"
+            >
+
+              <span class="faq-question-number">
+                11
+              </span>
+
+              <span class="faq-question-text">
+                What if my child is nervous about visiting the dentist?
+              </span>
+
+              <span class="faq-plus">
+                +
+              </span>
+
+            </button>
+
+            <div class="faq-answer">
+
+              <div class="faq-answer-inner">
+
+                <p>
+                  A calm, age-appropriate approach can help
+                  children become more comfortable with dental
+                  visits. The aim is to create a positive
+                  experience and gradually build familiarity
+                  with the dental environment.
+                </p>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- =================================================
+               EMERGENCY
+               ================================================= -->
+
+          <article
+            class="faq-item"
+            data-category="emergency"
+            data-search="emergency dental pain swelling broken tooth trauma urgent appointment"
+          >
+
+            <button
+              class="faq-question"
+              type="button"
+              aria-expanded="false"
+            >
+
+              <span class="faq-question-number">
+                12
+              </span>
+
+              <span class="faq-question-text">
+                What should I do if I have sudden dental pain?
+              </span>
+
+              <span class="faq-plus">
+                +
+              </span>
+
+            </button>
+
+            <div class="faq-answer">
+
+              <div class="faq-answer-inner">
+
+                <p>
+                  Sudden dental pain can have different causes,
+                  so an examination is important to understand
+                  what is happening.
+                </p>
+
+                <p>
+                  If you experience significant pain, swelling,
+                  trauma, a broken tooth or another urgent
+                  dental problem, contact the clinic so that
+                  your situation can be assessed and the
+                  appropriate next step discussed.
+                </p>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+
+          <article
+            class="faq-item"
+            data-category="emergency"
+            data-search="broken tooth dental emergency tooth injury accident"
+          >
+
+            <button
+              class="faq-question"
+              type="button"
+              aria-expanded="false"
+            >
+
+              <span class="faq-question-number">
+                13
+              </span>
+
+              <span class="faq-question-text">
+                What should I do if I break or damage a tooth?
+              </span>
+
+              <span class="faq-plus">
+                +
+              </span>
+
+            </button>
+
+            <div class="faq-answer">
+
+              <div class="faq-answer-inner">
+
+                <p>
+                  Contact the clinic as soon as possible for
+                  advice and assessment. The appropriate
+                  treatment depends on how the tooth has been
+                  damaged and whether the surrounding tissues
+                  are also affected.
+                </p>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- =================================================
+               SEARCH EMPTY STATE
+               ================================================= -->
+
+          <div
+            class="faq-no-results"
+            id="faqNoResults"
+          >
+
+            <div class="faq-no-results-icon">
+              ?
+            </div>
+
+            <h3>
+              We couldn't find that question.
+            </h3>
+
+            <p>
+              Try using a different search term or contact
+              the clinic directly.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =======================================================
+       STILL HAVE QUESTIONS
+       ======================================================= -->
+
+  <section class="faq-contact">
+
+    <div class="faq-contact-inner">
+
+      <div>
+
+        <span class="faq-eyebrow">
+          STILL HAVE A QUESTION?
+        </span>
+
+        <h2>
+          Let's talk about
+          <span>your concern.</span>
+        </h2>
+
+        <p>
+          Every patient and every dental situation is different.
+          If you haven't found the answer you're looking for,
+          we're happy to discuss your concern directly.
+        </p>
+
+      </div>
+
+
+      <div class="faq-contact-actions">
+
+        <a
+          href="https://wa.me/919990880975"
+          target="_blank"
+          rel="noopener"
+          class="faq-contact-button primary"
+        >
+          Book on WhatsApp
+          <span>→</span>
+        </a>
+
+        <a
+          href="tel:+919990880975"
+          class="faq-contact-button"
+        >
+          Call the Clinic
+          <span>→</span>
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+<footer>
+
+  <div class="container footer-grid">
+
+
+    <div>
+
+      <h4>
+        Dr. Gupta's Dental Clinic
+      </h4>
+
+      <p>
+        Precision, magnification-guided dentistry in South Extension, New Delhi since 2013.
+      </p>
+
+    </div>
+
+
+    <div>
+
+      <h4>
+        Quick Links
+      </h4>
+
+      <a href="about.html">
+        About
+      </a>
+      <a href="difference.html">
+        Our Difference
+      </a>
+
+      <a href="services.html">
+        Services
+      </a>
+
+      <a href="reviews.html">
+        Reviews
+      </a>
+
+      <a href="faq.html">
+        FAQ
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+    </div>
+
+
+    <div>
+
+      <h4>
+        Contact
+      </h4>
+
+      <a href="tel:+919990880975">
+        Mobile: 99908 80975
+      </a>
+
+      <a href="tel:+911142220392">
+        Landline: 011-4222-0392
+      </a>
+
+      <a href="https://wa.me/919990880975">
+        WhatsApp Us
+      </a>
+
+      <p>   H-30, South Extension Part 1, New Delhi</p>
+
+    </div>
+  </div>
+
+
+  <div class="container footer-bottom">
+    © 2026 Dr. Gupta's Dental Clinic. All rights reserved.
+  </div>
+
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+  /* =======================================================
+     ELEMENTS
+     ======================================================= */
+
+  const faqPage =
+    document.querySelector(".faq-page");
+
+  if (!faqPage) return;
+
+
+  const faqItems =
+    Array.from(
+      faqPage.querySelectorAll(".faq-item")
+    );
+
+  const questions =
+    Array.from(
+      faqPage.querySelectorAll(".faq-question")
+    );
+
+  const categories =
+    Array.from(
+      faqPage.querySelectorAll(".faq-category")
+    );
+
+  const searchInput =
+    faqPage.querySelector("#faqSearch");
+
+  const clearButton =
+    faqPage.querySelector("#faqClear");
+
+  const noResults =
+    faqPage.querySelector("#faqNoResults");
+
+  const suggestions =
+    Array.from(
+      faqPage.querySelectorAll(".faq-suggestion")
+    );
+
+
+  let activeCategory = "all";
+
+
+  /* =======================================================
+     OPEN FAQ
+     ======================================================= */
+
+  function openFAQ(item) {
+
+    /*
+      Close every other FAQ first
+      */
+
+    faqItems.forEach(function (otherItem) {
+
+      if (otherItem !== item) {
+
+        otherItem.classList.remove("open");
+
+        const otherButton =
+          otherItem.querySelector(".faq-question");
+
+        if (otherButton) {
+
+          otherButton.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+        }
+
+      }
+
+    });
+
+
+    item.classList.add("open");
+
+    const button =
+      item.querySelector(".faq-question");
+
+    if (button) {
+
+      button.setAttribute(
+        "aria-expanded",
+        "true"
+      );
+
+    }
+
+  }
+
+
+  /* =======================================================
+     CLOSE FAQ
+     ======================================================= */
+
+  function closeFAQ(item) {
+
+    item.classList.remove("open");
+
+    const button =
+      item.querySelector(".faq-question");
+
+    if (button) {
+
+      button.setAttribute(
+        "aria-expanded",
+        "false"
+      );
+
+    }
+
+  }
+
+
+  /* =======================================================
+     QUESTION CLICK
+     ======================================================= */
+
+  questions.forEach(function (button) {
+
+    button.addEventListener(
+      "click",
+      function () {
+
+        const item =
+          button.closest(".faq-item");
+
+        if (!item) return;
+
+
+        const isOpen =
+          item.classList.contains("open");
+
+
+        if (isOpen) {
+
+          closeFAQ(item);
+
+        } else {
+
+          openFAQ(item);
+
+        }
+
+      }
+    );
+
+  });
+
+
+  /* =======================================================
+     FILTER FAQS
+     ======================================================= */
+
+  function filterFAQs() {
+
+    const searchTerm =
+      searchInput.value
+        .toLowerCase()
+        .trim();
+
+    let visibleCount = 0;
+
+
+    faqItems.forEach(function (item) {
+
+      const category =
+        item.dataset.category || "";
+
+      const searchData =
+        (
+          item.dataset.search ||
+          item.innerText
+        ).toLowerCase();
+
+
+      const categoryMatch =
+        activeCategory === "all" ||
+        category === activeCategory;
+
+
+      const searchMatch =
+        searchTerm === "" ||
+        searchData.includes(searchTerm);
+
+
+      if (categoryMatch && searchMatch) {
+
+        item.style.display = "";
+
+        visibleCount++;
+
+      } else {
+
+        item.style.display = "none";
+
+        closeFAQ(item);
+
+      }
+
+    });
+
+
+    /* =====================================================
+       NO RESULTS
+       ===================================================== */
+
+    if (noResults) {
+
+      noResults.classList.toggle(
+        "show",
+        visibleCount === 0
+      );
+
+    }
+
+
+    /* =====================================================
+       SEARCH CLEAR BUTTON
+       ===================================================== */
+
+    if (clearButton) {
+
+      clearButton.classList.toggle(
+        "visible",
+        searchTerm.length > 0
+      );
+
+    }
+
+  }
+
+
+  /* =======================================================
+     CATEGORY BUTTONS
+     ======================================================= */
+
+  categories.forEach(function (button) {
+
+    button.addEventListener(
+      "click",
+      function () {
+
+        activeCategory =
+          button.dataset.category || "all";
+
+
+        categories.forEach(
+          function (categoryButton) {
+
+            categoryButton.classList.remove(
+              "active"
+            );
+
+          }
+        );
+
+
+        button.classList.add("active");
+
+
+        filterFAQs();
+
+      }
+    );
+
+  });
+
+
+  /* =======================================================
+     SEARCH
+     ======================================================= */
+
+  if (searchInput) {
+
+    searchInput.addEventListener(
+      "input",
+      function () {
+
+        filterFAQs();
+
+      }
+    );
+
+  }
+
+
+  /* =======================================================
+     CLEAR SEARCH
+     ======================================================= */
+
+  if (clearButton) {
+
+    clearButton.addEventListener(
+      "click",
+      function () {
+
+        searchInput.value = "";
+
+        filterFAQs();
+
+        searchInput.focus();
+
+      }
+    );
+
+  }
+
+
+  /* =======================================================
+     SEARCH SUGGESTIONS
+     ======================================================= */
+
+  suggestions.forEach(function (button) {
+
+    button.addEventListener(
+      "click",
+      function () {
+
+        const term =
+          button.textContent.trim();
+
+        searchInput.value = term;
+
+        activeCategory = "all";
+
+
+        categories.forEach(
+          function (categoryButton) {
+
+            categoryButton.classList.remove(
+              "active"
+            );
+
+          }
+        );
+
+
+        const allButton =
+          faqPage.querySelector(
+            '.faq-category[data-category="all"]'
+          );
+
+        if (allButton) {
+
+          allButton.classList.add("active");
+
+        }
+
+
+        filterFAQs();
+
+
+        /*
+          Scroll gently toward results
+        */
+
+        const faqContent =
+          faqPage.querySelector(".faq-content");
+
+        if (faqContent) {
+
+          faqContent.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+
+        }
+
+      }
+    );
+
+  });
+
+
+  /* =======================================================
+     KEYBOARD ACCESSIBILITY
+     ======================================================= */
+
+  questions.forEach(function (button, index) {
+
+    button.addEventListener(
+      "keydown",
+      function (event) {
+
+        if (
+          event.key === "ArrowDown"
+        ) {
+
+          event.preventDefault();
+
+          const next =
+            questions[index + 1];
+
+          if (next) {
+            next.focus();
+          }
+
+        }
+
+
+        if (
+          event.key === "ArrowUp"
+        ) {
+
+          event.preventDefault();
+
+          const previous =
+            questions[index - 1];
+
+          if (previous) {
+            previous.focus();
+          }
+
+        }
+
+      }
+    );
+
+  });
+
+
+  /* =======================================================
+     REVEAL FAQ ITEMS
+     ======================================================= */
+
+  if (
+    "IntersectionObserver" in window
+  ) {
+
+    const observer =
+      new IntersectionObserver(
+        function (entries) {
+
+          entries.forEach(
+            function (entry) {
+
+              if (
+                entry.isIntersecting
+              ) {
+
+                entry.target.style.opacity =
+                  "1";
+
+                entry.target.style.transform =
+                  "translateY(0)";
+
+                observer.unobserve(
+                  entry.target
+                );
+
+              }
+
+            }
+          );
+
+        },
+        {
+          threshold: 0.08
+        }
+      );
+
+
+    faqItems.forEach(
+      function (item, index) {
+
+        item.style.opacity = "0";
+
+        item.style.transform =
+          "translateY(15px)";
+
+        item.style.transition =
+          `
+          opacity 0.55s ease,
+          transform 0.55s ease
+          `;
+
+        item.style.transitionDelay =
+          `${Math.min(index * 0.04, 0.35)}s`;
+
+        observer.observe(item);
+
+      }
+    );
+
+  }
+
+
+  /* =======================================================
+     ESCAPE KEY
+     ======================================================= */
+
+  document.addEventListener(
+    "keydown",
+    function (event) {
+
+      if (event.key !== "Escape") {
+        return;
+      }
+
+
+      faqItems.forEach(
+        function (item) {
+
+          closeFAQ(item);
+
+        }
+      );
+
+    }
+  );
+
+
+  /* =======================================================
+     INITIALISE
+     ======================================================= */
+
+  filterFAQs();
+
+});
+</script>
+
+</body>
+</html>

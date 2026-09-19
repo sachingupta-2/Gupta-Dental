@@ -14,6 +14,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="contact.css">
 </head>
 
 
@@ -38,10 +39,10 @@
 
   <div class="container nav-wrap">
 
-    <div class="brand">
+    <a href="index.html" class="brand" style="text-decoration:none; color:inherit;" aria-label="Dr. Gupta's Dental Clinic — Home">
 
       <img
-        src="logo_trimmed.png"
+        src="logos/web_logo.png"
         alt="Dr. Gupta's Dental Clinic logo"
         style="width:44px;height:44px;border-radius:10px;object-fit:cover;"
       >
@@ -50,7 +51,7 @@
         Dr. Gupta's Dental Clinic
       </div>
 
-    </div>
+    </a>
 
 
     <nav>
@@ -75,6 +76,10 @@
 
         <li>
           <a href="reviews.html">Reviews</a>
+        </li>
+
+        <li>
+          <a href="faq.html">FAQ</a>
         </li>
 
         <li>
@@ -223,7 +228,9 @@
      CONTACT
      ========================================================= -->
 
-<section
+<!-- <section
+
+
   id="contact"
   class="reveal"
 >
@@ -318,13 +325,212 @@
 
   </div>
 
-</section>
+</section> -->
 
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">CONTACT US</p>
+      <h1>We're Here for<br><span>Your Smile</span> <i>⌣</i></h1>
+      <p class="hero-text">
+        Have a question, want to book an appointment, or need advice?
+        We'd love to hear from you. Our team is here to help with all your dental care needs.
+      </p>
+
+      <div class="quick-links">
+        <a href="tel:+919990880975" class="quick-link">
+          <span class="icon">☎</span><span><b>Call Us</b><small>Quick Support</small></span>
+        </a>
+        <a href="mailto:info@example.com" class="quick-link">
+          <span class="icon">✉</span><span><b>Email Us</b><small>We Reply Soon</small></span>
+        </a>
+        <a href="#map" class="quick-link">
+          <span class="icon">●</span><span><b>Visit Us</b><small>Friendly Clinic</small></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-image-wrap">
+      <img src="clinic_photos_shortlist/oral health img.png" alt="Dental professional explaining oral care using a dental model">
+      <div class="yellow-note">
+        Healthy<br>Smiles<br><span>Happier Lives</span> ☺
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT GRID -->
+  <section class="contact-grid" id="contact">
+
+    <article class="card info-card">
+      <h2>Contact Information</h2>
+      <div class="yellow-line"></div>
+
+      <div class="info-item">
+        <span class="round-icon">☎</span>
+        <div><b>Phone</b><strong>+91 99908 80975</strong><small>Mon – Sat, 10:00 AM – 7:00 PM</small></div>
+      </div>
+
+      <div class="info-item">
+        <span class="round-icon">✉</span>
+        <div><b>Email</b><strong>dr.tanupriyagupta@gmail.com</strong><small>We usually respond within 24 hours</small></div>
+      </div>
+
+      <div class="info-item">
+        <span class="round-icon">●</span>
+        <div><b>Clinic Address</b><strong>H-30, Upper Ground Floor, South Extension, Part 1 (Same lane as Bengali Sweet Centre)</strong><small>New Delhi – 110049</small></div>
+      </div>
+
+      <div class="info-item">
+        <span class="round-icon">◷</span>
+        <div><b>Clinic Hours</b><strong>Mon – Sat: 10:00 AM – 7:00 PM</strong><small>Sunday: By Appointment Only</small></div>
+      </div>
+
+      <div class="quote-box">“We look forward to welcoming you!”</div>
+    </article>
+
+    <article class="card form-card">
+      <h2>Send Us a Message</h2>
+      <p class="card-subtitle">Fill out the form and our team will get back to you shortly.</p>
+      <div class="yellow-line"></div>
+
+      <form id="contactForm">
+        <div class="form-row">
+          <label>Your Name *
+            <input type="text" name="name" placeholder="Enter your name" required>
+          </label>
+          <label>Phone Number *
+            <input type="tel" name="phone" placeholder="Enter your phone number" required>
+          </label>
+        </div>
+
+        <div class="form-row">
+          <label>Email Address *
+            <input type="email" name="email" placeholder="Enter your email" required>
+          </label>
+          <label>Subject
+            <select name="subject">
+              <option value="">Select a subject</option>
+              <option>Appointment</option>
+              <option>General enquiry</option>
+              <option>Dental treatment</option>
+              <option>Emergency</option>
+            </select>
+          </label>
+        </div>
+
+        <label>Your Message *
+          <textarea name="message" placeholder="Tell us how we can help you..." required></textarea>
+        </label>
+
+        <button class="btn submit-btn" type="submit">➤ &nbsp; Send Message</button>
+        <p class="privacy">🔒 Your information is safe with us.</p>
+        <div id="formMessage" class="form-message"></div>
+      </form>
+    </article>
+
+    <article class="map-section" id="map">
+
+    <!-- Google Map Background -->
+    <!-- <iframe
+        class="map-background"
+        src="https://www.google.com/maps?q=Dr.+Gupta%27s+Dental+Clinic,+H-30+South+Extension+Part+1,+New+Delhi&ll=28.5712289,77.221172&z=17&output=embed"
+        loading="lazy"
+        allowfullscreen>
+    </iframe> -->
+    <div class="map-frame">
+
+    <iframe
+        class="map-background"
+        src="https://www.google.com/maps?q=Dr.+Gupta%27s+Dental+Clinic,+H-30+South+Extension+Part+1,+New+Delhi&ll=28.5712289,77.221172&z=17&output=embed"
+        loading="lazy"
+        allowfullscreen>
+    </iframe>
+
+    <!-- Makes the complete map clickable -->
+    <a
+        class="map-click-area"
+        href="https://www.google.com/maps?q=Dr.+Gupta%27s+Dental+Clinic,+H-30+South+Extension+Part+1,+New+Delhi&ll=28.5712289,77.221172&z=17"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Open Dr. Gupta's Dental Clinic in Google Maps">
+    </a>
+
+</div>
+
+    <!-- Dark/light overlay for readability -->
+    <div class="map-overlay"></div>
+
+    <!-- Information displayed over the map -->
+    <div class="map-content">
+
+        <span class="map-eyebrow">FIND US</span>
+
+        <h2>Dr. Gupta's Dental Clinic</h2>
+
+        <p>
+            H-30, Upper Ground Floor,<br>
+            South Extension, Part 1<br>
+            Same lane as Bengali Sweet Centre
+        </p>
+
+        <span class="map-note">
+           New Delhi – 110049
+        </span>
+
+    </div>
+
+</article>
+
+    <!-- <article class="card map-card" id="map">
+      <h2>Find Us on Map</h2>
+      <p class="card-subtitle">Visit our clinic for a comfortable and friendly experience.</p>
+      <div class="yellow-line"></div>
+
+      <div class="map-placeholder">
+        <div class="map-grid"></div>
+        <div class="map-label">
+          <b>Dr. Gupta's Dental Clinic</b>
+          <span> H-30, Upper Ground Floor, South Extension, Part 1 (Same lane as Bengali Sweet Centre)</span>
+          <small>New Delhi – 110049</small>
+        </div>
+        <div class="pin">●</div>
+        <span class="pin-text">Dr. Gupta's Dental Clinic</span>
+      </div>
+      <iframe
+        src="https://www.google.com/maps?q=Dr.+Gupta%27s+Dental+Clinic,+H-30+South+Extension+Part+1,+New+Delhi&ll=28.5712289,77.221172&z=17&output=embed"
+        allowfullscreen
+        loading="lazy"
+      ></iframe>
+      <a class="directions" href="https://www.google.com/maps?q=Dr.+Gupta%27s+Dental+Clinic,+H-30+South+Extension+Part+1,+New+Delhi&ll=28.5712289,77.221172&z=17&output=embed" target="_blank" rel="noopener">
+        📍 Get Directions
+      </a>
+    </article> -->
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="benefits">
+    <div><span>▣</span><b>Easy Appointment Booking</b><small>Get started in minutes</small></div>
+    <div><span>●</span><b>Quick Response</b><small>We're just a message away</small></div>
+    <div><span>♥</span><b>Patient-Centred Care</b><small>Your comfort is our priority</small></div>
+    <div><span>✓</span><b>Trusted & Experienced</b><small>Quality dental care always</small></div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" id="appointment">
+    <div>
+      <p class="eyebrow">READY WHEN YOU ARE</p>
+      <h2>A healthier smile<br><span>starts here.</span></h2>
+    </div>
+    <a href="tel:+919876543210" class="btn btn-yellow big-btn">Book an Appointment →</a>
+  </section>
+</main>
 
 <!-- =========================================================
      FINAL CTA
      ========================================================= -->
-
+<!-- 
 <div class="final-cta">
 
   <div class="container">
@@ -341,7 +547,7 @@
 
   </div>
 
-</div>
+</div> -->
 
 
 <!-- =========================================================
@@ -375,6 +581,9 @@
       <a href="about.html">
         About
       </a>
+      <a href="difference.html">
+        Our Difference
+      </a>
 
       <a href="services.html">
         Services
@@ -382,6 +591,10 @@
 
       <a href="reviews.html">
         Reviews
+      </a>
+
+      <a href="faq.html">
+        FAQ
       </a>
 
       <a href="contact.html">

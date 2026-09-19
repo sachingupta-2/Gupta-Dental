@@ -1,0 +1,2014 @@
+/* =========================================================
+   ADVANCED ENDOMOTOR PAGE
+   Dr. Gupta's Dental Clinic
+   ========================================================= */
+
+
+/* =========================================================
+   01. ROOT VARIABLES
+   ========================================================= */
+
+:root {
+    --navy: #12213F;
+    --navy-dark: #0C172D;
+    --navy-light: #1C3156;
+
+    --gold: #C9A227;
+    --gold-light: #E7CB6B;
+    --gold-soft: #F5EBC8;
+
+    --cream: #FAF7F0;
+    --cream-dark: #F2EEE4;
+
+    --white: #FFFFFF;
+
+    --text: #252A38;
+    --text-light: #697080;
+    --text-soft: #858B98;
+
+    --border: #E4E1D8;
+
+    --shadow-sm:
+        0 8px 25px rgba(18, 33, 63, 0.06);
+
+    --shadow-md:
+        0 18px 45px rgba(18, 33, 63, 0.10);
+
+    --shadow-lg:
+        0 30px 70px rgba(18, 33, 63, 0.14);
+
+    --radius-sm: 12px;
+    --radius-md: 20px;
+    --radius-lg: 30px;
+
+    --container: 1200px;
+}
+
+
+/* =========================================================
+   02. RESET
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:
+        "Inter",
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background: var(--cream);
+    color: var(--text);
+
+    line-height: 1.7;
+
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+::selection {
+    background: var(--gold-light);
+    color: var(--navy-dark);
+}
+
+
+/* =========================================================
+   03. MAIN PAGE
+   ========================================================= */
+
+main {
+    width: 100%;
+    overflow: hidden;
+}
+
+.section {
+    width: 100%;
+    max-width: var(--container);
+
+    margin: 0 auto;
+
+    padding: 100px 40px;
+}
+
+
+/* =========================================================
+   04. COMMON TYPOGRAPHY
+   ========================================================= */
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+
+    color: var(--gold);
+
+    margin-bottom: 12px;
+}
+
+.yellow-line {
+    width: 58px;
+    height: 3px;
+
+    background: var(--gold);
+
+    border-radius: 20px;
+
+    margin: 16px 0 28px;
+}
+
+h1,
+h2,
+h3 {
+    color: var(--navy);
+    line-height: 1.15;
+}
+
+p {
+    color: var(--text-light);
+}
+
+
+/* =========================================================
+   05. BUTTON
+   ========================================================= */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    min-height: 52px;
+
+    padding: 14px 25px;
+
+    background: var(--gold);
+    color: var(--navy-dark);
+
+    border-radius: 50px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.btn span {
+    font-size: 20px;
+    line-height: 1;
+
+    transition: transform 0.3s ease;
+}
+
+.btn:hover {
+    background: var(--gold-light);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(201, 162, 39, 0.25);
+}
+
+.btn:hover span {
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   06. HERO SECTION
+   ========================================================= */
+
+.hero {
+    width: 100%;
+
+    min-height: 620px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 0.92fr)
+        minmax(0, 1.08fr);
+
+    background: var(--navy-dark);
+}
+
+
+/* ---------------------------------------------------------
+   HERO CONTENT
+   --------------------------------------------------------- */
+
+.hero-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding:
+        80px
+        clamp(40px, 7vw, 110px);
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.hero-copy .eyebrow {
+    color: var(--gold-light);
+}
+
+.hero-copy .yellow-line {
+    margin-top: 4px;
+    margin-bottom: 28px;
+}
+
+.hero-copy h1 {
+    color: var(--white);
+
+    font-size:
+        clamp(48px, 5.5vw, 78px);
+
+    font-weight: 600;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 22px;
+}
+
+.hero-copy h2 {
+    max-width: 560px;
+
+    color: var(--gold-light);
+
+    font-size:
+        clamp(22px, 2.3vw, 31px);
+
+    font-weight: 500;
+
+    line-height: 1.3;
+
+    margin-bottom: 22px;
+}
+
+.hero-copy > p:not(.eyebrow) {
+    max-width: 580px;
+
+    color: rgba(255, 255, 255, 0.76);
+
+    font-size: 16px;
+
+    line-height: 1.85;
+
+    margin-bottom: 32px;
+}
+
+.hero-copy .btn {
+    align-self: flex-start;
+}
+
+
+/* ---------------------------------------------------------
+   HERO IMAGE
+   --------------------------------------------------------- */
+
+.hero-image {
+    min-height: 620px;
+
+    position: relative;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(12, 23, 45, 0.12),
+            rgba(12, 23, 45, 0.02)
+        ),
+        url("clinic_photos_shortlist/endomotor_header.png");
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    overflow: hidden;
+}
+
+
+/* subtle image overlay */
+
+.hero-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(12, 23, 45, 0.04),
+            rgba(12, 23, 45, 0.16)
+        );
+
+    pointer-events: none;
+}
+
+
+/* ---------------------------------------------------------
+   HERO HAND NOTE
+   --------------------------------------------------------- */
+
+.hand-note {
+    position: absolute;
+
+    right: 35px;
+    bottom: 35px;
+
+    z-index: 3;
+
+    min-width: 145px;
+
+    padding: 18px 22px;
+
+    background: rgba(250, 247, 240, 0.94);
+
+    color: var(--navy);
+
+    border-radius: 8px 8px 8px 2px;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.16);
+
+    font-family:
+        "Segoe Print",
+        "Comic Sans MS",
+        cursive;
+
+    font-size: 15px;
+
+    line-height: 1.35;
+
+    transform: rotate(-3deg);
+}
+
+.hand-note::before {
+    content: "";
+
+    position: absolute;
+
+    left: -9px;
+    bottom: 0;
+
+    width: 20px;
+    height: 20px;
+
+    background: var(--cream);
+
+    clip-path:
+        polygon(100% 0, 0 100%, 100% 100%);
+}
+
+
+/* =========================================================
+   07. WHAT IS AN ENDOMOTOR
+   ========================================================= */
+
+.intro {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr)
+        minmax(250px, 0.65fr);
+
+    gap: 45px;
+
+    align-items: center;
+
+    padding-top: 110px;
+    padding-bottom: 110px;
+}
+
+
+/* ---------------------------------------------------------
+   INTRO PHOTO
+   --------------------------------------------------------- */
+
+.intro .photo {
+    position: relative;
+
+    border-radius: var(--radius-lg);
+
+    overflow: hidden;
+
+    background: var(--white);
+
+    box-shadow: var(--shadow-md);
+}
+
+.intro .photo::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    border:
+        1px solid rgba(201, 162, 39, 0.15);
+
+    border-radius: inherit;
+
+    pointer-events: none;
+
+    z-index: 2;
+}
+
+.intro .photo img {
+    width: 100%;
+    height: 390px;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.7s ease;
+}
+
+.intro .photo:hover img {
+    transform: scale(1.035);
+}
+
+
+/* ---------------------------------------------------------
+   INTRO COPY
+   --------------------------------------------------------- */
+
+.intro .copy h2 {
+    font-size:
+        clamp(32px, 3vw, 46px);
+
+    font-weight: 600;
+}
+
+.intro .copy p {
+    font-size: 16px;
+
+    line-height: 1.85;
+
+    margin-bottom: 18px;
+}
+
+
+/* ---------------------------------------------------------
+   ANALOGY CARD
+   --------------------------------------------------------- */
+
+.analogy {
+    align-self: stretch;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 35px 30px;
+
+    background: var(--navy);
+
+    border-radius: var(--radius-md);
+
+    box-shadow: var(--shadow-md);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.analogy::before {
+    content: "";
+
+    position: absolute;
+
+    width: 170px;
+    height: 170px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(231, 203, 107, 0.20);
+
+    top: -90px;
+    right: -70px;
+}
+
+.analogy .icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(231, 203, 107, 0.12);
+
+    border:
+        1px solid rgba(231, 203, 107, 0.35);
+
+    color: var(--gold-light);
+
+    border-radius: 50%;
+
+    font-size: 25px;
+
+    margin-bottom: 22px;
+}
+
+.analogy h3 {
+    color: var(--white);
+
+    font-size: 21px;
+
+    line-height: 1.4;
+
+    margin-bottom: 15px;
+}
+
+.analogy p {
+    color: rgba(255, 255, 255, 0.68);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   08. WHY DO WE USE IT
+   ========================================================= */
+
+.why {
+    max-width: none;
+
+    padding:
+        100px
+        max(40px, calc((100% - var(--container)) / 2 + 40px));
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(280px, 0.75fr)
+        minmax(0, 1.25fr);
+
+    gap: 80px;
+
+    align-items: center;
+
+    background: var(--white);
+}
+
+.why-copy h2 {
+    max-width: 500px;
+
+    font-size:
+        clamp(34px, 3.5vw, 52px);
+
+    font-weight: 600;
+}
+
+.why-copy p {
+    max-width: 530px;
+
+    font-size: 16px;
+
+    line-height: 1.85;
+}
+
+
+/* ---------------------------------------------------------
+   BENEFITS
+   --------------------------------------------------------- */
+
+.benefits {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px;
+}
+
+.benefits > div {
+    min-height: 145px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 25px;
+
+    background: var(--cream);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 16px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.benefits > div:hover {
+    transform: translateY(-5px);
+
+    border-color:
+        rgba(201, 162, 39, 0.45);
+
+    box-shadow: var(--shadow-sm);
+}
+
+.benefits > div > span {
+    flex: 0 0 48px;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--gold-soft);
+
+    color: var(--gold);
+
+    font-size: 23px;
+
+    border:
+        1px solid rgba(201, 162, 39, 0.30);
+}
+
+.benefits p {
+    color: var(--navy);
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   09. HOW DOES IT WORK
+   ========================================================= */
+
+.how {
+    display: block;
+
+    padding-top: 105px;
+    padding-bottom: 105px;
+}
+
+.how-copy {
+    max-width: 720px;
+
+    margin-bottom: 55px;
+}
+
+.how-copy h2 {
+    font-size:
+        clamp(34px, 3.5vw, 50px);
+
+    font-weight: 600;
+}
+
+.how-copy p {
+    max-width: 680px;
+
+    font-size: 16px;
+
+    line-height: 1.85;
+}
+
+
+/* ---------------------------------------------------------
+   STEPS
+   --------------------------------------------------------- */
+
+.steps {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        45px
+        1fr
+        45px
+        1fr;
+
+    gap: 12px;
+
+    align-items: center;
+}
+
+.step {
+    position: relative;
+
+    background: var(--white);
+
+    padding: 12px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 18px;
+
+    box-shadow: var(--shadow-sm);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.step:hover {
+    transform: translateY(-7px);
+
+    box-shadow: var(--shadow-md);
+}
+
+.step img {
+    width: 100%;
+
+    height: 270px;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+
+    margin-bottom: 18px;
+}
+
+.step b {
+    display: block;
+
+    padding:
+        0 8px
+        10px;
+
+    color: var(--navy);
+
+    font-size: 17px;
+
+    line-height: 1.4;
+}
+
+.arrow {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--gold);
+
+    font-size: 28px;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   10. ROTARY / RECIPROCATING
+   ========================================================= */
+
+.movement-section {
+    max-width: none;
+
+    padding:
+        105px
+        max(40px, calc((100% - var(--container)) / 2 + 40px));
+
+    background: var(--navy);
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(280px, 0.8fr)
+        minmax(0, 1.2fr);
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+.movement-copy h2 {
+    color: var(--white);
+
+    font-size:
+        clamp(34px, 3.5vw, 50px);
+
+    font-weight: 600;
+}
+
+.movement-copy p {
+    color: rgba(255, 255, 255, 0.70);
+
+    font-size: 16px;
+
+    line-height: 1.85;
+
+    margin-bottom: 18px;
+}
+
+
+/* ---------------------------------------------------------
+   MOVEMENT CARDS
+   --------------------------------------------------------- */
+
+.movement-cards {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+.movement-card {
+    min-height: 260px;
+
+    padding: 30px 25px;
+
+    background:
+        rgba(255, 255, 255, 0.06);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.10);
+
+    border-radius: 20px;
+
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.movement-card:hover {
+    transform: translateY(-7px);
+
+    background:
+        rgba(255, 255, 255, 0.09);
+
+    border-color:
+        rgba(231, 203, 107, 0.35);
+}
+
+.movement-card > span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 52px;
+    height: 52px;
+
+    margin-bottom: 25px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(231, 203, 107, 0.12);
+
+    border:
+        1px solid rgba(231, 203, 107, 0.30);
+
+    color: var(--gold-light);
+
+    font-size: 25px;
+}
+
+.movement-card h3 {
+    color: var(--white);
+
+    font-size: 21px;
+
+    margin-bottom: 12px;
+}
+
+.movement-card p {
+    color:
+        rgba(255, 255, 255, 0.62);
+
+    font-size: 14px;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   11. SPEED / TORQUE / TECHNIQUE
+   ========================================================= */
+
+.control-section {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+
+    padding-top: 105px;
+    padding-bottom: 105px;
+}
+
+.control-card {
+    position: relative;
+
+    min-height: 280px;
+
+    padding: 38px 32px;
+
+    background: var(--white);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: var(--radius-md);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.control-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 150px;
+    height: 150px;
+
+    right: -70px;
+    bottom: -70px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(201, 162, 39, 0.07);
+}
+
+.control-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow: var(--shadow-md);
+
+    border-color:
+        rgba(201, 162, 39, 0.35);
+}
+
+.control-number {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 48px;
+    height: 48px;
+
+    margin-bottom: 28px;
+
+    border-radius: 50%;
+
+    background: var(--navy);
+
+    color: var(--gold-light);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.control-card h3 {
+    font-size: 27px;
+
+    margin-bottom: 15px;
+}
+
+.control-card p {
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   12. LOWER SECTION
+   ========================================================= */
+
+.lower {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap: 45px;
+
+    align-items: stretch;
+
+    padding-top: 105px;
+    padding-bottom: 105px;
+}
+
+
+/* ---------------------------------------------------------
+   USEFUL
+   --------------------------------------------------------- */
+
+.useful {
+    padding: 45px;
+
+    background: var(--white);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-sm);
+}
+
+.useful h2,
+.meaning h2 {
+    font-size:
+        clamp(32px, 3vw, 44px);
+
+    font-weight: 600;
+}
+
+.useful > p {
+    margin-bottom: 30px;
+
+    font-size: 16px;
+}
+
+
+/* ---------------------------------------------------------
+   USE GRID
+   --------------------------------------------------------- */
+
+.use-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+.use-grid > div {
+    min-height: 130px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 22px;
+
+    background: var(--cream);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 15px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.use-grid > div:hover {
+    transform: translateY(-4px);
+
+    border-color:
+        rgba(201, 162, 39, 0.40);
+}
+
+.use-grid span {
+    display: block;
+
+    color: var(--gold);
+
+    font-size: 23px;
+
+    margin-bottom: 10px;
+}
+
+.use-grid b {
+    color: var(--navy);
+
+    font-size: 15px;
+
+    line-height: 1.4;
+}
+
+
+/* ---------------------------------------------------------
+   MEANING
+   --------------------------------------------------------- */
+
+.meaning {
+    position: relative;
+
+    padding: 45px;
+
+    background: var(--navy);
+
+    border-radius: var(--radius-lg);
+
+    overflow: hidden;
+
+    box-shadow: var(--shadow-md);
+}
+
+.meaning::before {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    right: -130px;
+    top: -130px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(231, 203, 107, 0.16);
+}
+
+.meaning h2 {
+    color: var(--white);
+}
+
+.meaning ul {
+    list-style: none;
+
+    margin-top: 28px;
+}
+
+.meaning li {
+    position: relative;
+
+    padding:
+        0 0 15px 29px;
+
+    margin-bottom: 15px;
+
+    color:
+        rgba(255, 255, 255, 0.76);
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.08);
+}
+
+.meaning li:last-child {
+    border-bottom: none;
+
+    margin-bottom: 0;
+}
+
+.meaning li::before {
+    content: "✓";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    color: var(--gold-light);
+
+    font-size: 15px;
+
+    font-weight: 700;
+}
+
+
+/* ---------------------------------------------------------
+   BOTTOM NOTE
+   --------------------------------------------------------- */
+
+.bottom-note {
+    position: absolute;
+
+    right: 25px;
+    bottom: 25px;
+
+    min-width: 170px;
+
+    opacity: 0.95;
+
+    transform: rotate(-3deg);
+}
+
+
+/* =========================================================
+   13. FINAL MESSAGE
+   ========================================================= */
+
+.final-message {
+    max-width: none;
+
+    min-height: 500px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding:
+        110px
+        40px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--cream-dark),
+            var(--cream)
+        );
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.final-message::before {
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(201, 162, 39, 0.16);
+
+    top: -220px;
+    left: -120px;
+}
+
+.final-message::after {
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(18, 33, 63, 0.07);
+
+    right: -160px;
+    bottom: -180px;
+}
+
+.final-message > div {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 760px;
+}
+
+.final-message .eyebrow {
+    justify-content: center;
+}
+
+.final-message .yellow-line {
+    margin:
+        15px auto
+        28px;
+}
+
+.final-message h2 {
+    font-size:
+        clamp(38px, 5vw, 62px);
+
+    font-weight: 600;
+
+    letter-spacing: -1px;
+
+    margin-bottom: 22px;
+}
+
+.final-message p:not(.eyebrow) {
+    max-width: 680px;
+
+    margin:
+        0 auto 32px;
+
+    font-size: 16px;
+
+    line-height: 1.85;
+}
+
+.final-message .btn {
+    display: inline-flex;
+}
+
+
+/* =========================================================
+   14. TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .section {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        grid-template-columns:
+            1fr
+            1fr;
+    }
+
+    .hero-copy {
+        padding:
+            65px
+            45px;
+    }
+
+    .hero-image {
+        min-height: 560px;
+    }
+
+
+    /* INTRO */
+
+    .intro {
+        grid-template-columns:
+            1fr
+            1fr;
+
+        gap: 30px;
+    }
+
+    .intro .analogy {
+        grid-column: 1 / -1;
+
+        min-height: auto;
+    }
+
+
+    /* WHY */
+
+    .why,
+    .movement-section {
+        padding-left: 45px;
+        padding-right: 45px;
+
+        gap: 50px;
+    }
+
+
+    /* MOVEMENT */
+
+    .movement-cards {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .movement-card:last-child {
+        grid-column: 1 / -1;
+    }
+
+
+    /* LOWER */
+
+    .lower {
+        gap: 25px;
+    }
+
+    .useful,
+    .meaning {
+        padding: 35px;
+    }
+}
+
+
+/* =========================================================
+   15. TABLET / SMALL LAPTOP
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-copy {
+        min-height: 510px;
+
+        padding:
+            75px
+            45px;
+    }
+
+    .hero-image {
+        min-height: 500px;
+    }
+
+
+    /* INTRO */
+
+    .intro {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .intro .photo img {
+        height: 430px;
+    }
+
+    .intro .analogy {
+        grid-column: auto;
+    }
+
+
+    /* WHY */
+
+    .why {
+        grid-template-columns: 1fr;
+
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .why-copy h2,
+    .why-copy p {
+        max-width: none;
+    }
+
+
+    /* MOVEMENT */
+
+    .movement-section {
+        grid-template-columns: 1fr;
+
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .movement-copy p {
+        max-width: 750px;
+    }
+
+
+    /* CONTROL */
+
+    .control-section {
+        grid-template-columns: 1fr;
+
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .control-card {
+        min-height: auto;
+    }
+
+
+    /* LOWER */
+
+    .lower {
+        grid-template-columns: 1fr;
+
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+
+    /* STEPS */
+
+    .steps {
+        grid-template-columns:
+            1fr
+            35px
+            1fr;
+
+        gap: 10px;
+    }
+
+    .step img {
+        height: 240px;
+    }
+
+    .steps .step:nth-of-type(5),
+    .steps .step:nth-of-type(6) {
+        display: none;
+    }
+}
+
+
+/* =========================================================
+   16. MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    .section {
+        padding:
+            70px 20px;
+    }
+
+
+    /* -----------------------------------------------------
+       HERO
+       ----------------------------------------------------- */
+
+    .hero-copy {
+        min-height: auto;
+
+        padding:
+            65px 25px 70px;
+    }
+
+    .hero-copy h1 {
+        font-size: 48px;
+
+        letter-spacing: -1.5px;
+    }
+
+    .hero-copy h2 {
+        font-size: 23px;
+    }
+
+    .hero-copy > p:not(.eyebrow) {
+        font-size: 15px;
+
+        line-height: 1.75;
+    }
+
+    .hero-image {
+        min-height: 390px;
+    }
+
+    .hand-note {
+        right: 18px;
+        bottom: 18px;
+
+        padding: 14px 17px;
+
+        min-width: 125px;
+
+        font-size: 13px;
+    }
+
+
+    /* -----------------------------------------------------
+       INTRO
+       ----------------------------------------------------- */
+
+    .intro {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    .intro .photo img {
+        height: 300px;
+    }
+
+    .intro .copy h2 {
+        font-size: 34px;
+    }
+
+    .intro .copy p {
+        font-size: 15px;
+    }
+
+    .analogy {
+        padding: 30px 24px;
+    }
+
+
+    /* -----------------------------------------------------
+       WHY
+       ----------------------------------------------------- */
+
+    .why {
+        padding:
+            70px 20px;
+    }
+
+    .why-copy h2 {
+        font-size: 35px;
+    }
+
+    .why-copy p {
+        font-size: 15px;
+    }
+
+    .benefits {
+        grid-template-columns: 1fr;
+    }
+
+    .benefits > div {
+        min-height: 115px;
+
+        padding: 20px;
+    }
+
+
+    /* -----------------------------------------------------
+       HOW
+       ----------------------------------------------------- */
+
+    .how {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    .how-copy {
+        margin-bottom: 35px;
+    }
+
+    .how-copy h2 {
+        font-size: 35px;
+    }
+
+    .steps {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .step img {
+        height: auto;
+
+        max-height: 360px;
+
+        object-fit: contain;
+    }
+
+    .steps .step:nth-of-type(5),
+    .steps .step:nth-of-type(6) {
+        display: block;
+    }
+
+    .arrow {
+        width: 100%;
+        height: 25px;
+
+        transform: rotate(90deg);
+
+        font-size: 25px;
+    }
+
+
+    /* -----------------------------------------------------
+       MOVEMENT
+       ----------------------------------------------------- */
+
+    .movement-section {
+        padding:
+            70px 20px;
+    }
+
+    .movement-copy h2 {
+        font-size: 35px;
+    }
+
+    .movement-copy p {
+        font-size: 15px;
+    }
+
+    .movement-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .movement-card:last-child {
+        grid-column: auto;
+    }
+
+    .movement-card {
+        min-height: auto;
+
+        padding: 28px 24px;
+    }
+
+
+    /* -----------------------------------------------------
+       CONTROL
+       ----------------------------------------------------- */
+
+    .control-section {
+        padding:
+            70px 20px;
+    }
+
+    .control-card {
+        padding: 30px 25px;
+    }
+
+    .control-card h3 {
+        font-size: 25px;
+    }
+
+
+    /* -----------------------------------------------------
+       LOWER
+       ----------------------------------------------------- */
+
+    .lower {
+        padding:
+            70px 20px;
+    }
+
+    .useful,
+    .meaning {
+        padding: 30px 23px;
+
+        border-radius: 20px;
+    }
+
+    .useful h2,
+    .meaning h2 {
+        font-size: 33px;
+    }
+
+    .use-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .use-grid > div {
+        min-height: 105px;
+    }
+
+    .meaning li {
+        font-size: 14px;
+    }
+
+    .bottom-note {
+        position: relative;
+
+        right: auto;
+        bottom: auto;
+
+        display: inline-block;
+
+        margin-top: 30px;
+    }
+
+
+    /* -----------------------------------------------------
+       FINAL MESSAGE
+       ----------------------------------------------------- */
+
+    .final-message {
+        min-height: 480px;
+
+        padding:
+            80px 25px;
+    }
+
+    .final-message h2 {
+        font-size: 40px;
+    }
+
+    .final-message p:not(.eyebrow) {
+        font-size: 15px;
+    }
+}
+
+
+/* =========================================================
+   17. SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    .hero-copy {
+        padding:
+            55px 20px 60px;
+    }
+
+    .hero-copy h1 {
+        font-size: 42px;
+    }
+
+    .hero-copy h2 {
+        font-size: 21px;
+    }
+
+    .hero-image {
+        min-height: 330px;
+    }
+
+    .hero-copy .btn {
+        width: 100%;
+    }
+
+    .intro .photo img {
+        height: 260px;
+    }
+
+    .intro .copy h2,
+    .why-copy h2,
+    .how-copy h2,
+    .movement-copy h2 {
+        font-size: 32px;
+    }
+
+    .benefits > div {
+        gap: 14px;
+    }
+
+    .benefits > div > span {
+        flex-basis: 42px;
+
+        width: 42px;
+        height: 42px;
+
+        font-size: 20px;
+    }
+
+    .benefits p {
+        font-size: 14px;
+    }
+
+    .final-message h2 {
+        font-size: 35px;
+    }
+
+    .final-message .btn {
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   18. ACCESSIBILITY
+   ========================================================= */
+
+a:focus-visible,
+button:focus-visible {
+    outline:
+        3px solid var(--gold);
+
+    outline-offset: 4px;
+}
+
+
+/* =========================================================
+   19. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
+
+/* =========================================================
+   JAVASCRIPT SCROLL REVEAL
+   ========================================================= */
+
+.reveal-element {
+    opacity: 0;
+
+    transform: translateY(35px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+
+    transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal-element.is-visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   IMAGE FADE-IN
+   ========================================================= */
+
+.photo img,
+.step img {
+    opacity: 0;
+
+    transition:
+        opacity 0.6s ease,
+        transform 0.7s ease;
+}
+
+.photo img.image-loaded,
+.step img.image-loaded {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   HERO IMAGE LOADING
+   ========================================================= */
+
+.hero-image {
+    transition:
+        opacity 0.7s ease;
+}
+
+.hero-image-loading {
+    opacity: 0.7;
+}
+
+.hero-image-loaded {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .reveal-element {
+        opacity: 1;
+
+        transform: none;
+
+        transition: none;
+    }
+
+    .photo img,
+    .step img {
+        opacity: 1;
+
+        transition: none;
+    }
+
+    .hero-image {
+        opacity: 1;
+
+        transition: none;
+    }
+}

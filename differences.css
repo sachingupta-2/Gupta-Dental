@@ -1516,3 +1516,1353 @@
     }
 
 }
+
+
+/* new css from here  */
+
+/* =========================================================
+   OUR DIFFERENCE PAGE
+========================================================= */
+
+.difference-page {
+
+    --difference-navy: #12213F;
+    --difference-navy-dark: #0C172D;
+
+    --difference-gold: #C9A227;
+    --difference-gold-light: #E7CB6B;
+
+    --difference-cream: #FAF7F0;
+    --difference-white: #FFFFFF;
+
+    --difference-text: #252A38;
+    --difference-grey: #697080;
+
+    --difference-border: #E4E1D8;
+
+    background: var(--difference-cream);
+
+    color: var(--difference-text);
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+.difference-page *,
+.difference-page *::before,
+.difference-page *::after {
+
+    box-sizing: border-box;
+
+}
+
+
+.difference-page a {
+
+    color: inherit;
+
+    text-decoration: none;
+
+}
+
+
+.difference-page img {
+
+    max-width: 100%;
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.difference-hero {
+
+    padding: 100px 6.5% 90px;
+
+    background:
+
+        radial-gradient(
+            circle at 85% 25%,
+            rgba(201, 162, 39, .10),
+            transparent 28%
+        ),
+
+        var(--difference-cream);
+
+}
+
+
+.difference-hero-inner {
+
+    width: min(1200px, 100%);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.6fr)
+        minmax(260px, .65fr);
+
+    gap: 80px;
+
+    align-items: end;
+
+}
+
+
+.difference-hero-copy {
+
+    max-width: 850px;
+
+}
+
+
+.difference-eyebrow {
+
+    display: inline-block;
+
+    margin-bottom: 17px;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 2.5px;
+
+    color: var(--difference-gold);
+
+}
+
+
+.difference-hero h1 {
+
+    margin: 0;
+
+    font-size: clamp(48px, 6vw, 80px);
+
+    line-height: .99;
+
+    letter-spacing: -3px;
+
+    font-weight: 700;
+
+    color: var(--difference-navy);
+
+}
+
+
+.difference-hero h1 span {
+
+    color: var(--difference-gold);
+
+}
+
+
+.difference-hero-copy > p {
+
+    max-width: 710px;
+
+    margin: 32px 0 0;
+
+    font-size: 18px;
+
+    line-height: 1.75;
+
+    color: var(--difference-grey);
+
+}
+
+
+.difference-hero-side {
+
+    padding-left: 30px;
+
+    border-left: 1px solid var(--difference-border);
+
+}
+
+
+.hero-side-line {
+
+    width: 52px;
+
+    height: 3px;
+
+    margin-bottom: 20px;
+
+    background: var(--difference-gold);
+
+}
+
+
+.difference-hero-side p {
+
+    margin: 0;
+
+    font-size: 15px;
+
+    line-height: 1.75;
+
+    color: var(--difference-grey);
+
+}
+
+
+/* =========================================================
+   INTRODUCTION
+========================================================= */
+
+.difference-intro {
+
+    padding: 75px 6.5%;
+
+    background: var(--difference-white);
+
+    border-top: 1px solid rgba(18, 33, 63, .06);
+
+    border-bottom: 1px solid rgba(18, 33, 63, .06);
+
+}
+
+
+.difference-intro-inner {
+
+    width: min(1100px, 100%);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 160px minmax(0, 1fr);
+
+    gap: 70px;
+
+}
+
+
+.intro-label {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+
+.intro-label span {
+
+    font-size: 52px;
+
+    line-height: 1;
+
+    font-weight: 700;
+
+    color: var(--difference-gold-light);
+
+}
+
+
+.intro-label small {
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.8px;
+
+    color: var(--difference-navy);
+
+}
+
+
+.intro-content {
+
+    max-width: 780px;
+
+}
+
+
+.intro-content h2 {
+
+    margin: 0 0 22px;
+
+    font-size: clamp(32px, 4vw, 48px);
+
+    line-height: 1.1;
+
+    letter-spacing: -1.2px;
+
+    color: var(--difference-navy);
+
+}
+
+
+.intro-content p {
+
+    margin: 0 0 16px;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    color: var(--difference-grey);
+
+}
+
+
+.intro-content p:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+/* =========================================================
+   DIFFERENCE LIST
+========================================================= */
+
+.difference-list {
+
+    padding: 105px 6.5% 115px;
+
+}
+
+
+.difference-list-heading {
+
+    width: min(1200px, 100%);
+
+    margin: 0 auto 50px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    gap: 50px;
+
+}
+
+
+.difference-list-heading h2 {
+
+    margin: 0;
+
+    font-size: clamp(36px, 4.5vw, 55px);
+
+    line-height: 1.05;
+
+    letter-spacing: -1.7px;
+
+    color: var(--difference-navy);
+
+}
+
+
+.difference-list-heading > p {
+
+    max-width: 390px;
+
+    margin: 0;
+
+    font-size: 15px;
+
+    line-height: 1.75;
+
+    color: var(--difference-grey);
+
+}
+
+
+/* =========================================================
+   ONE COLUMN GRID
+========================================================= */
+
+.difference-grid {
+
+    width: min(1200px, 100%);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+
+}
+
+
+/* =========================================================
+   HORIZONTAL CARD
+========================================================= */
+
+.difference-card {
+
+    display: grid;
+
+    grid-template-columns: 42% 58%;
+
+    min-height: 335px;
+
+    background: var(--difference-white);
+
+    border: 1px solid var(--difference-border);
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    opacity: 1;
+    transform: none;
+
+    box-shadow:
+        0 8px 28px rgba(18, 33, 63, .045);
+
+    transition:
+        transform .45s cubic-bezier(.2,.8,.2,1),
+        box-shadow .45s ease,
+        border-color .3s ease;
+
+}
+
+
+.difference-card:hover {
+
+    transform: translateY(-6px);
+
+    border-color: rgba(201, 162, 39, .45);
+
+    box-shadow:
+        0 24px 60px rgba(18, 33, 63, .12);
+
+}
+
+
+/* =========================================================
+   REVERSE CARDS
+========================================================= */
+
+.difference-card-reverse {
+
+    grid-template-columns: 58% 42%;
+
+}
+
+
+.difference-card-reverse .difference-card-image {
+
+    order: 2;
+
+}
+
+
+.difference-card-reverse .difference-card-content {
+
+    order: 1;
+
+}
+
+
+/* =========================================================
+   CARD IMAGE
+========================================================= */
+
+.difference-card-image {
+
+    position: relative;
+
+    min-height: 335px;
+
+    overflow: hidden;
+
+    background: #E8E7E1;
+
+}
+
+
+.difference-card-image::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(18, 33, 63, .08),
+            transparent 60%
+        );
+
+    pointer-events: none;
+
+}
+
+
+.difference-card-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform .9s cubic-bezier(.2,.8,.2,1);
+
+}
+
+
+.difference-card:hover .difference-card-image img {
+
+    transform: scale(1.055);
+
+}
+
+
+/* =========================================================
+   IMAGE NUMBER
+========================================================= */
+
+.image-number {
+
+    position: absolute;
+
+    z-index: 2;
+
+    top: 20px;
+
+    left: 20px;
+
+    width: 46px;
+
+    height: 46px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(18, 33, 63, .9);
+
+    color: #FFFFFF;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    backdrop-filter: blur(5px);
+
+}
+
+
+/* =========================================================
+   IMAGE ARROW
+========================================================= */
+
+.image-arrow {
+
+    position: absolute;
+
+    z-index: 2;
+
+    right: 20px;
+
+    bottom: 20px;
+
+    width: 50px;
+
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, .94);
+
+    color: var(--difference-navy);
+
+    font-size: 22px;
+
+    transition:
+        transform .35s ease,
+        background .35s ease;
+
+}
+
+
+.difference-card:hover .image-arrow {
+
+    background: var(--difference-gold);
+
+    transform: translateX(5px);
+
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.difference-card-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 50px 60px;
+
+}
+
+
+.card-category {
+
+    margin-bottom: 14px;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color: var(--difference-gold);
+
+}
+
+
+.difference-card-content h3 {
+
+    max-width: 600px;
+
+    margin: 0 0 17px;
+
+    font-size: clamp(28px, 3vw, 42px);
+
+    line-height: 1.1;
+
+    letter-spacing: -1.2px;
+
+    color: var(--difference-navy);
+
+}
+
+
+.difference-card-content p {
+
+    max-width: 570px;
+
+    margin: 0;
+
+    font-size: 16px;
+
+    line-height: 1.75;
+
+    color: var(--difference-grey);
+
+}
+
+
+.card-link {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    width: fit-content;
+
+    margin-top: 27px;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    color: var(--difference-navy);
+
+    transition:
+        color .3s ease,
+        gap .3s ease;
+
+}
+
+
+.card-link > span {
+
+    color: var(--difference-gold);
+
+    font-size: 19px;
+
+    transition:
+        transform .3s ease;
+
+}
+
+
+.difference-card:hover .card-link {
+
+    gap: 15px;
+
+    color: var(--difference-gold);
+
+}
+
+
+.difference-card:hover .card-link > span {
+
+    transform: translateX(4px);
+
+}
+
+
+/* =========================================================
+   PHILOSOPHY
+========================================================= */
+
+.difference-philosophy {
+
+    padding: 100px 6.5%;
+
+    background: var(--difference-navy);
+
+    color: #FFFFFF;
+
+}
+
+
+.philosophy-inner {
+
+    width: min(1100px, 100%);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 90px;
+
+    align-items: center;
+
+}
+
+
+.difference-philosophy .difference-eyebrow {
+
+    color: var(--difference-gold-light);
+
+}
+
+
+.philosophy-heading h2 {
+
+    margin: 0;
+
+    font-size: clamp(36px, 4vw, 55px);
+
+    line-height: 1.08;
+
+    letter-spacing: -1.5px;
+
+    color: #FFFFFF;
+
+}
+
+
+.philosophy-text p {
+
+    margin: 0 0 20px;
+
+    font-size: 16px;
+
+    line-height: 1.85;
+
+    color: rgba(255,255,255,.78);
+
+}
+
+
+.philosophy-text p:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.difference-cta {
+
+    padding: 85px 6.5%;
+
+    background: var(--difference-cream);
+
+}
+
+
+.difference-cta-inner {
+
+    width: min(1100px, 100%);
+
+    margin: auto;
+
+    padding: 55px 60px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 50px;
+
+    background: var(--difference-white);
+
+    border: 1px solid var(--difference-border);
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 15px 45px rgba(18, 33, 63, .06);
+
+}
+
+
+.difference-cta-copy {
+
+    max-width: 650px;
+
+}
+
+
+.difference-cta h2 {
+
+    margin: 0 0 14px;
+
+    font-size: clamp(30px, 4vw, 44px);
+
+    line-height: 1.1;
+
+    color: var(--difference-navy);
+
+}
+
+
+.difference-cta p {
+
+    margin: 0;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    color: var(--difference-grey);
+
+}
+
+
+/* =========================================================
+   CTA BUTTONS
+========================================================= */
+
+.cta-actions {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    flex-shrink: 0;
+
+}
+
+
+.cta-button {
+
+    min-width: 205px;
+
+    padding: 14px 21px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    border-radius: 30px;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    transition:
+        transform .3s ease,
+        background .3s ease,
+        color .3s ease;
+
+}
+
+
+.cta-button span {
+
+    font-size: 18px;
+
+}
+
+
+.cta-button.primary {
+
+    background: var(--difference-navy);
+
+    color: #FFFFFF;
+
+}
+
+
+.cta-button.primary:hover {
+
+    background: var(--difference-gold);
+
+    color: var(--difference-navy);
+
+    transform: translateY(-2px);
+
+}
+
+
+.cta-button.secondary {
+
+    border: 1px solid var(--difference-navy);
+
+    color: var(--difference-navy);
+
+    background: transparent;
+
+}
+
+
+.cta-button.secondary:hover {
+
+    background: var(--difference-navy);
+
+    color: #FFFFFF;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+.reveal-card {
+
+    opacity: 1;
+
+    transform: translateY(35px);
+
+    transition:
+        opacity .7s ease,
+        transform .7s cubic-bezier(.2,.8,.2,1),
+        box-shadow .45s ease,
+        border-color .3s ease;
+
+}
+
+
+.reveal-card.visible {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+
+
+.reveal-card.visible:hover {
+
+    transform: translateY(-6px);
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .difference-hero {
+
+        padding: 75px 5%;
+
+    }
+
+
+    .difference-hero-inner {
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+    }
+
+
+    .difference-hero-side {
+
+        max-width: 500px;
+
+    }
+
+
+    .difference-intro {
+
+        padding: 65px 5%;
+
+    }
+
+
+    .difference-intro-inner {
+
+        grid-template-columns: 110px 1fr;
+
+        gap: 40px;
+
+    }
+
+
+    .difference-list {
+
+        padding: 80px 5% 90px;
+
+    }
+
+
+    .difference-list-heading {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 25px;
+
+    }
+
+
+    .difference-card,
+    .difference-card-reverse {
+
+        grid-template-columns: 45% 55%;
+
+    }
+
+
+    .difference-card-content {
+
+        padding: 40px;
+
+    }
+
+
+    .difference-card-content h3 {
+
+        font-size: 30px;
+
+    }
+
+
+    .philosophy-inner {
+
+        gap: 50px;
+
+    }
+
+
+    .difference-cta {
+
+        padding: 70px 5%;
+
+    }
+
+
+    .difference-cta-inner {
+
+        padding: 45px;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .difference-hero {
+
+        padding: 60px 22px 65px;
+
+    }
+
+
+    .difference-hero h1 {
+
+        font-size: clamp(42px, 12vw, 58px);
+
+        letter-spacing: -2px;
+
+    }
+
+
+    .difference-hero-copy > p {
+
+        font-size: 16px;
+
+        line-height: 1.7;
+
+    }
+
+
+    .difference-hero-side {
+
+        padding-left: 20px;
+
+    }
+
+
+    .difference-intro {
+
+        padding: 55px 22px;
+
+    }
+
+
+    .difference-intro-inner {
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+    }
+
+
+    .intro-label {
+
+        flex-direction: row;
+
+        align-items: center;
+
+        gap: 15px;
+
+    }
+
+
+    .intro-label span {
+
+        font-size: 38px;
+
+    }
+
+
+    .difference-list {
+
+        padding: 65px 18px 75px;
+
+    }
+
+
+    .difference-list-heading h2 {
+
+        font-size: 38px;
+
+    }
+
+
+    /*
+       On mobile the horizontal cards
+       become vertical cards.
+    */
+
+    .difference-card,
+    .difference-card-reverse {
+
+        display: flex;
+
+        flex-direction: column;
+
+        min-height: 0;
+
+    }
+
+
+    .difference-card-reverse .difference-card-image,
+    .difference-card-reverse .difference-card-content {
+
+        order: initial;
+
+    }
+
+
+    .difference-card-image {
+
+        height: 250px;
+
+        min-height: 250px;
+
+    }
+
+
+    .difference-card-content {
+
+        padding: 30px 25px 34px;
+
+    }
+
+
+    .difference-card-content h3 {
+
+        font-size: 28px;
+
+        letter-spacing: -.7px;
+
+    }
+
+
+    .difference-card-content p {
+
+        font-size: 15px;
+
+        line-height: 1.7;
+
+    }
+
+
+    .difference-philosophy {
+
+        padding: 70px 22px;
+
+    }
+
+
+    .philosophy-inner {
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+    }
+
+
+    .philosophy-heading h2 {
+
+        font-size: 38px;
+
+    }
+
+
+    .difference-cta {
+
+        padding: 45px 18px;
+
+    }
+
+
+    .difference-cta-inner {
+
+        padding: 35px 25px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 30px;
+
+        border-radius: 20px;
+
+    }
+
+
+    .difference-cta h2 {
+
+        font-size: 34px;
+
+    }
+
+
+    .cta-actions {
+
+        width: 100%;
+
+    }
+
+
+    .cta-button {
+
+        width: 100%;
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .difference-page *,
+    .difference-page *::before,
+    .difference-page *::after {
+
+        transition-duration: .01ms !important;
+
+        animation-duration: .01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+    }
+
+
+    .reveal-card {
+
+        opacity: 1;
+
+        transform: none;
+
+    }
+
+}

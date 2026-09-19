@@ -1,0 +1,2104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our Difference | Dr. Gupta's Dental Clinic</title>
+
+<meta name="description" content="Dr. Tanupriya Gupta — 20 years of precision, magnification-guided restorative dentistry in South Extension, New Delhi. Ethical care, no over-treatment.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="conservative-dentistry.css">
+</head>
+
+
+<body><!-- =========================================================
+     HEADER
+     ========================================================= -->
+
+<header>
+
+  <div class="header-info">
+    <div class="container header-info-wrap">
+      <div class="availability" aria-label="Clinic availability">
+        <span><strong>Availability:</strong> <span class="availability-hours">Monday - Saturday, 10:00 AM - 7:00 PM</span></span>
+        <span class="sunday-closed">Sunday: CLOSED</span>
+      </div>
+      <div class="header-contact" aria-label="Clinic contact details">
+        <a href="tel:+919990880975">Call: +91 99908 80975</a>
+        <a href="https://wa.me/919990880975" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container nav-wrap">
+
+    <a href="index.html" class="brand" style="text-decoration:none; color:inherit;" aria-label="Dr. Gupta's Dental Clinic — Home">
+
+      <img
+        src="logos/web_logo.png"
+        alt="Dr. Gupta's Dental Clinic logo"
+        style="width:44px;height:44px;border-radius:10px;object-fit:cover;"
+      >
+
+      <div class="brand-name">
+        Dr. Gupta's Dental Clinic
+      </div>
+
+    </a>
+
+
+    <nav>
+
+      <ul id="main-navigation">
+
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+
+        <li>
+          <a href="about.html">About</a>
+        </li>
+
+        <li>
+          <a href="difference.html" aria-current="page">Our Difference</a>
+        </li>
+
+        <li>
+          <a href="services.html">Services</a>
+        </li>
+
+        <li>
+          <a href="reviews.html">Reviews</a>
+        </li>
+
+        <li>
+          <a href="faq.html">FAQ</a>
+        </li>
+
+        <li>
+          <a href="contact.html">Contact</a>
+        </li>
+
+      </ul>
+
+    </nav>
+
+
+    <div class="nav-cta">
+
+      <button
+        type="button"
+        class="appointment-trigger"
+        id="openAppointmentModal"
+      >
+        Book Appointment
+      </button>
+
+      <button
+        type="button"
+        class="menu-toggle"
+        aria-label="Menu"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >
+        &#9776;
+      </button>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- =========================================================
+     APPOINTMENT MODAL
+     ========================================================= -->
+
+<div
+  class="appointment-modal-overlay"
+  id="appointmentModal"
+  aria-hidden="true"
+>
+
+  <div
+    class="appointment-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="appointmentTitle"
+  >
+
+    <button
+      type="button"
+      class="modal-close"
+      aria-label="Close appointment form"
+    >
+      &times;
+    </button>
+
+
+    <div class="modal-head">
+
+      <h3 id="appointmentTitle">
+        Book an Appointment
+      </h3>
+
+      <p>
+        Please fill in your details and we will contact you shortly.
+      </p>
+
+    </div>
+
+
+    <form class="appointment-form" id="appointmentForm">
+      <div class="appointment-progress" aria-label="Appointment form progress">
+        <div class="step-indicator active" id="stepIndicator1">1. Patient Details</div>
+        <div class="step-indicator" id="stepIndicator2">2. Personal Details <span class="optional-note">(Optional)</span></div>
+      </div>
+
+      <div class="appointment-step active" id="appointmentStep1">
+        <div class="form-grid">
+          <div class="form-group"><label for="name">Name</label><input id="name" name="name" type="text" placeholder="Enter your name" required></div>
+          <div class="form-group"><label for="age">Age</label><input id="age" name="age" type="number" min="1" placeholder="Age" required></div>
+          <div class="form-group"><label for="phone">Phone No</label><input id="phone" name="phone" type="tel" placeholder="Your phone number" required></div>
+          <div class="form-group"><label for="email">Email</label><input id="email" name="email" type="email" placeholder="Your email address" required></div>
+          <div class="form-group full"><label for="address">Address</label><input id="address" name="address" type="text" placeholder="Your address" required></div>
+          <div class="form-group"><label for="appointmentDate">Appointment Date</label><input type="date" id="appointmentDate" name="appointmentDate" required></div>
+          <div class="form-group"><label for="appointmentTime">Available Time Slot</label><select id="appointmentTime" name="appointmentTime" required disabled><option value="">Select a date first</option></select><small class="slot-status" id="slotStatus" aria-live="polite">Choose a date to see available slots.</small></div>
+          <div class="form-group"><label for="gender">Gender</label><select id="gender" name="gender" required><option value="">Select gender</option><option>Male</option><option>Female</option><option>Other</option></select></div>
+        </div>
+        <div class="step-actions">
+          <button type="button" class="secondary-btn" id="closeAppointmentModal">Cancel</button>
+          <button type="button" class="cta-btn" id="nextAppointmentStep">Next &rarr;</button>
+        </div>
+      </div>
+
+      <div class="appointment-step" id="appointmentStep2">
+        <div class="clinical-intro"><strong>Personal details are optional.</strong> You can provide them to help the dentist understand your concern before the appointment, or skip this section and submit with your basic details.</div>
+        <div class="form-grid">
+          <div class="form-group full"><label for="reasonForVisit">Reason for Visit</label><textarea id="reasonForVisit" name="reasonForVisit" placeholder="Briefly describe the reason for your visit"></textarea></div>
+          <div class="form-group"><label for="dentalProblem">Current Dental Problem</label><select id="dentalProblem" name="dentalProblem"><option value="">Select if applicable</option><option>Tooth Pain</option><option>Sensitivity</option><option>Swelling</option><option>Bleeding Gums</option><option>Broken / Chipped Tooth</option><option>Cavity</option><option>Missing Tooth</option><option>Routine Check-up</option><option>Cleaning</option><option>Other</option></select></div>
+          <div class="form-group"><label for="painLevel">Pain / Discomfort</label><select id="painLevel" name="painLevel"><option value="">Select if applicable</option><option>None</option><option>Mild</option><option>Moderate</option><option>Severe</option></select></div>
+          <div class="form-group"><label for="previousDentalTreatment">Previous Dental Treatment</label><select id="previousDentalTreatment" name="previousDentalTreatment"><option value="">Select if applicable</option><option>No Previous Treatment</option><option>Filling</option><option>Root Canal</option><option>Extraction</option><option>Implant</option><option>Crown / Bridge</option><option>Other</option></select></div>
+          <div class="form-group"><label>Currently Taking Any Medicine?</label><div class="radio-row"><label class="radio-option"><input type="radio" name="medication" value="yes"> Yes</label><label class="radio-option"><input type="radio" name="medication" value="no" checked> No</label></div></div>
+          <div class="form-group full medication-box" id="medicationBox"><label for="medicineDetails">Medicine Details</label><textarea id="medicineDetails" name="medicineDetails" placeholder="List medicines you are currently taking"></textarea></div>
+          <div class="form-group full"><label for="allergies">Known Allergies</label><textarea id="allergies" name="allergies" placeholder="Mention any known medicine or other allergies"></textarea></div>
+          <div class="form-group full"><label for="medicalHistory">Medical History</label><textarea id="medicalHistory" name="medicalHistory" placeholder="Mention any relevant medical history"></textarea></div>
+          <div class="form-group full"><label for="additionalClinicalDetails">Additional Clinical Details</label><textarea id="additionalClinicalDetails" name="additionalClinicalDetails" placeholder="Anything else you would like the dentist to know"></textarea></div>
+        </div>
+
+        <div class="clinical-section">
+          <h4 class="clinical-section-title">Adverse Habits / Adverse Oral Habits</h4>
+          <div class="clinical-table-wrap"><table class="clinical-table"><thead><tr><th>Type</th><th>Frequency</th><th>Duration</th></tr></thead><tbody>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitSmoking" value="Smoking"> Smoking</label></td><td><select name="habitSmokingFrequency"><option value="">Select</option><option>Occasional</option><option>Once Daily</option><option>Twice Daily</option><option>More than Twice Daily</option></select></td><td><select name="habitSmokingDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitTobacco" value="Smokeless Tobacco/snuff"> Smokeless Tobacco / Snuff</label></td><td><select name="habitTobaccoFrequency"><option value="">Select</option><option>Occasional</option><option>Once Daily</option><option>Twice Daily</option><option>More than Twice Daily</option></select></td><td><select name="habitTobaccoDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitPaan" value="Paan chewing (gutka, paanmasala)"> Paan chewing (gutka, paanmasala)</label></td><td><select name="habitPaanFrequency"><option value="">Select</option><option>Occasional</option><option>Once Daily</option><option>Twice Daily</option><option>More than Twice Daily</option></select></td><td><select name="habitPaanDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitAlcohol" value="Alcohol"> Alcohol</label></td><td><select name="habitAlcoholFrequency"><option value="">Select</option><option>Occasional</option><option>Once Weekly</option><option>2-3 Times Weekly</option><option>Daily</option></select></td><td><select name="habitAlcoholDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+          </tbody></table></div>
+        </div>
+
+        <div class="clinical-section"><h4 class="clinical-section-title">Oral Hygiene Practices</h4><div class="hygiene-grid">
+          <div class="form-group full"><label>i) Type of Cleaning</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Toothbrush"> Toothbrush</label><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Finger"> Finger</label><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Stick"> Stick</label><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Others"> Others</label></div></div>
+          <div class="form-group full"><label>ii) Method of Cleaning</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="cleaningMethod" value="Vertical"> Vertical</label><label class="clinical-check"><input type="checkbox" name="cleaningMethod" value="Horizontal"> Horizontal</label><label class="clinical-check"><input type="checkbox" name="cleaningMethod" value="Circular"> Circular</label></div></div>
+          <div class="form-group full"><label>iii) Frequency of Cleaning / Brushing</label><div class="option-grid"><label class="clinical-check"><input type="radio" name="brushingFrequency" value="Once"> Once</label><label class="clinical-check"><input type="radio" name="brushingFrequency" value="Twice"> Twice</label><label class="clinical-check"><input type="radio" name="brushingFrequency" value="Thrice"> Thrice</label></div></div>
+          <div class="form-group full"><label>iv) Materials Used</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Toothpaste"> Toothpaste</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Tooth Powder"> Tooth Powder</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Charcoal"> Charcoal</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Sand"> Sand</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Brick Powder"> Brick Powder</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Any Other"> Any Other</label></div><input type="text" id="cleaningMaterialOther" name="cleaningMaterialOther" placeholder="If any other, please specify"></div>
+          <div class="form-group full"><label>v) Time of Brushing</label><div class="option-grid"><label class="clinical-check"><input type="radio" name="brushingTime" value="Before Meal"> Before Meal</label><label class="clinical-check"><input type="radio" name="brushingTime" value="After Meals"> After Meals</label></div></div>
+          <div class="form-group full"><label>vi) Frequency of Changing the Tooth Brush</label><div class="option-grid"><label class="clinical-check"><input type="radio" name="toothbrushChangeFrequency" value="Once"> Once</label><label class="clinical-check"><input type="radio" name="toothbrushChangeFrequency" value="Twice"> Twice</label><label class="clinical-check"><input type="radio" name="toothbrushChangeFrequency" value="Thrice"> Thrice</label></div></div>
+          <div class="form-group"><label for="durationOfCleaning">vii) Duration of Cleaning</label><input type="text" id="durationOfCleaning" name="durationOfCleaning" placeholder="e.g. 2 minutes"></div>
+          <div class="form-group full"><label>viii) Other Oral Hygiene Aids Used</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Flossing"> Flossing</label><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Interdental Aids"> Interdental Aids</label><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Oral Mouth Rinse"> Oral Mouth Rinse</label><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Tongue Cleaner"> Tongue Cleaner</label></div></div>
+        </div></div>
+
+        <div class="step-actions"><button type="button" class="secondary-btn" id="backAppointmentStep">&larr; Back</button><div class="right-actions"><button type="button" class="secondary-btn" id="skipClinicalStep">Skip &amp; Submit</button><button type="submit" class="cta-btn">Submit Appointment</button></div></div>
+      </div>
+    </form>
+
+  </div>
+
+</div>
+
+<main class="cd-page">
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="cd-hero">
+
+        <div class="cd-hero-content">
+
+            <span class="cd-eyebrow">
+                CONSERVATIVE DENTISTRY
+            </span>
+
+            <h1>
+                Preserve more.<br>
+                <span>Treat only what is needed.</span>
+            </h1>
+
+            <p class="cd-hero-text">
+                Conservative dentistry is an approach centred around
+                preserving as much of your healthy natural tooth as
+                possible. Instead of removing more tooth structure than
+                necessary, treatment is planned carefully to address the
+                actual problem while protecting the healthy parts of
+                the tooth.
+            </p>
+
+            <p class="cd-hero-text">
+                The goal is not simply to repair a tooth today. It is to
+                maintain its strength, function and health for as long
+                as possible.
+            </p>
+
+            <div class="cd-hero-actions">
+
+                <a href="#understanding"
+                   class="cd-btn cd-btn-primary">
+                    Understand the Approach
+                </a>
+
+                <a href="https://wa.me/919990880975"
+                   target="_blank"
+                   rel="noopener"
+                   class="cd-btn cd-btn-outline">
+                    Book a Consultation
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="cd-hero-visual">
+
+            <div class="cd-tooth-visual">
+
+                <div class="cd-tooth-crown">
+                    <span class="cd-tooth-highlight"></span>
+                </div>
+
+                <div class="cd-tooth-root"></div>
+
+            </div>
+
+            <div class="cd-hero-note">
+
+                <strong>
+                    Natural tooth first
+                </strong>
+
+                <span>
+                    Preserve healthy structure whenever
+                    clinically appropriate.
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         INTRODUCTION
+    ====================================================== -->
+
+    <section class="cd-section cd-understanding"
+             id="understanding">
+
+        <div class="cd-section-heading">
+
+            <span class="cd-eyebrow">
+                UNDERSTANDING THE CONCEPT
+            </span>
+
+            <h2>
+                What is Conservative Dentistry?
+            </h2>
+
+            <p>
+                Conservative dentistry focuses on treating dental
+                disease while preserving as much healthy natural tooth
+                structure as possible.
+            </p>
+
+        </div>
+
+
+        <div class="cd-understanding-grid">
+
+            <div class="cd-large-explanation">
+
+                <h3>
+                    Treat the problem without unnecessarily
+                    sacrificing the healthy tooth.
+                </h3>
+
+                <p>
+                    A natural tooth is a complex structure designed to
+                    function together as a whole. When part of a tooth
+                    becomes affected by decay, damage or disease, the
+                    treatment should ideally address the affected area
+                    while protecting the healthy structure around it.
+                </p>
+
+                <p>
+                    Conservative dentistry therefore begins with
+                    understanding exactly what is happening inside and
+                    around the tooth. The treatment is then planned
+                    according to the extent of the problem rather than
+                    automatically removing more tooth structure than is
+                    necessary.
+                </p>
+
+                <p>
+                    This approach can be particularly important when
+                    dealing with early decay, small defects, damaged
+                    restorations or teeth where only a limited area
+                    requires treatment.
+                </p>
+
+            </div>
+
+
+            <div class="cd-understanding-cards">
+
+                <article class="cd-mini-card">
+
+                    <span class="cd-mini-number">
+                        01
+                    </span>
+
+                    <h3>
+                        Identify the actual problem
+                    </h3>
+
+                    <p>
+                        Careful examination helps determine whether a
+                        tooth genuinely needs treatment and how
+                        extensive that treatment needs to be.
+                    </p>
+
+                </article>
+
+
+                <article class="cd-mini-card">
+
+                    <span class="cd-mini-number">
+                        02
+                    </span>
+
+                    <h3>
+                        Preserve healthy structure
+                    </h3>
+
+                    <p>
+                        When treatment is required, the aim is to avoid
+                        unnecessary removal of sound natural tooth
+                        structure.
+                    </p>
+
+                </article>
+
+
+                <article class="cd-mini-card">
+
+                    <span class="cd-mini-number">
+                        03
+                    </span>
+
+                    <h3>
+                        Think beyond today's treatment
+                    </h3>
+
+                    <p>
+                        The condition of the tooth today and how it may
+                        respond over time are both considered while
+                        planning treatment.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         WHY PRESERVE
+    ====================================================== -->
+
+    <section class="cd-section cd-preserve">
+
+        <div class="cd-section-heading">
+
+            <span class="cd-eyebrow">
+                NATURAL TOOTH PRESERVATION
+            </span>
+
+            <h2>
+                Why preserving your natural tooth matters
+            </h2>
+
+            <p>
+                Whenever a natural tooth can be predictably maintained,
+                keeping it can be an important part of long-term
+                dental care.
+            </p>
+
+        </div>
+
+
+        <div class="cd-three-columns">
+
+
+            <article class="cd-feature-card">
+
+                <div class="cd-card-number">
+                    01
+                </div>
+
+                <h3>
+                    Natural Structure
+                </h3>
+
+                <p>
+                    A natural tooth has a structure that has developed
+                    to work together as a functional unit. Preserving
+                    healthy parts of that structure can help retain the
+                    tooth's natural form and function.
+                </p>
+
+                <p>
+                    Treatment is therefore planned to address the
+                    damaged or diseased portion while protecting
+                    healthy areas whenever clinically possible.
+                </p>
+
+            </article>
+
+
+
+            <article class="cd-feature-card">
+
+                <div class="cd-card-number">
+                    02
+                </div>
+
+                <h3>
+                    Function & Comfort
+                </h3>
+
+                <p>
+                    Teeth work together during chewing, speaking and
+                    everyday activities. Maintaining the natural tooth
+                    can help preserve its position and relationship
+                    with the surrounding teeth.
+                </p>
+
+                <p>
+                    The aim is to restore the tooth appropriately
+                    rather than treating it in isolation from the rest
+                    of the mouth.
+                </p>
+
+            </article>
+
+
+
+            <article class="cd-feature-card">
+
+                <div class="cd-card-number">
+                    03
+                </div>
+
+                <h3>
+                    Long-Term Thinking
+                </h3>
+
+                <p>
+                    Dental treatment should not only solve the immediate
+                    problem. It should also consider how the tooth and
+                    restoration may need to be maintained in the future.
+                </p>
+
+                <p>
+                    This is why diagnosis, treatment planning and
+                    regular maintenance are important parts of
+                    conservative care.
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PROBLEMS
+    ====================================================== -->
+
+    <section class="cd-section cd-problems">
+
+        <div class="cd-section-heading">
+
+            <span class="cd-eyebrow">
+                WHEN IS IT USED?
+            </span>
+
+            <h2>
+                Problems that may benefit from a
+                conservative approach
+            </h2>
+
+            <p>
+                Conservative dentistry is not a single treatment.
+                It is a way of approaching different dental problems
+                with the aim of preserving healthy tooth structure
+                wherever appropriate.
+            </p>
+
+        </div>
+
+
+        <div class="cd-four-columns">
+
+
+            <article class="cd-problem-card">
+
+                <span class="cd-problem-number">
+                    01
+                </span>
+
+                <h3>
+                    Tooth Decay
+                </h3>
+
+                <p>
+                    Early or limited decay may sometimes be treated by
+                    removing only the affected tooth structure and
+                    restoring the area with an appropriate filling.
+                </p>
+
+                <p>
+                    The exact treatment depends on how deep and
+                    extensive the decay is and whether the pulp of the
+                    tooth is involved.
+                </p>
+
+            </article>
+
+
+
+            <article class="cd-problem-card">
+
+                <span class="cd-problem-number">
+                    02
+                </span>
+
+                <h3>
+                    Small Fractures & Defects
+                </h3>
+
+                <p>
+                    Not every damaged or chipped tooth requires
+                    extensive treatment. In selected cases, a limited
+                    repair may be appropriate.
+                </p>
+
+                <p>
+                    The location, size and cause of the defect are
+                    considered before deciding how the tooth should
+                    be restored.
+                </p>
+
+            </article>
+
+
+
+            <article class="cd-problem-card">
+
+                <span class="cd-problem-number">
+                    03
+                </span>
+
+                <h3>
+                    Failing Fillings
+                </h3>
+
+                <p>
+                    An old or damaged filling does not always mean that
+                    the entire tooth needs extensive treatment.
+                </p>
+
+                <p>
+                    The tooth is assessed to determine whether the
+                    restoration can be repaired, replaced or whether
+                    a different treatment is required.
+                </p>
+
+            </article>
+
+
+
+            <article class="cd-problem-card">
+
+                <span class="cd-problem-number">
+                    04
+                </span>
+
+                <h3>
+                    Deeper Tooth Problems
+                </h3>
+
+                <p>
+                    When decay or damage has progressed deeper into
+                    the tooth, more comprehensive treatment may be
+                    necessary.
+                </p>
+
+                <p>
+                    If the pulp is affected, root canal treatment may
+                    be considered when the tooth can still be
+                    predictably saved.
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PROCESS
+    ====================================================== -->
+
+    <section class="cd-section cd-process">
+
+        <div class="cd-section-heading">
+
+            <span class="cd-eyebrow">
+                OUR TREATMENT PROCESS
+            </span>
+
+            <h2>
+                Conservative care starts with diagnosis
+            </h2>
+
+            <p>
+                Treatment is not decided simply by looking at a visible
+                cavity or damaged area. The condition of the tooth is
+                assessed first, followed by a treatment plan based on
+                what is clinically appropriate.
+            </p>
+
+        </div>
+
+
+        <div class="cd-process-grid">
+
+
+            <article class="cd-process-card">
+
+                <span class="cd-process-number">
+                    01
+                </span>
+
+                <h3>
+                    Examine
+                </h3>
+
+                <p>
+                    The tooth and surrounding oral structures are
+                    carefully examined to understand the condition and
+                    identify areas that may require attention.
+                </p>
+
+                <button class="cd-process-toggle"
+                        type="button">
+                    Read more
+                    <span>+</span>
+                </button>
+
+                <div class="cd-process-extra">
+
+                    <p>
+                        The examination helps establish a clear
+                        starting point before deciding whether
+                        treatment is necessary and what level of
+                        treatment may be appropriate.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="cd-process-card">
+
+                <span class="cd-process-number">
+                    02
+                </span>
+
+                <h3>
+                    Diagnose
+                </h3>
+
+                <p>
+                    The findings are evaluated to determine the nature
+                    and extent of the dental problem.
+                </p>
+
+                <button class="cd-process-toggle"
+                        type="button">
+                    Read more
+                    <span>+</span>
+                </button>
+
+                <div class="cd-process-extra">
+
+                    <p>
+                        A correct diagnosis is important because similar
+                        symptoms can sometimes have different causes.
+                        Treatment should be based on the actual
+                        condition rather than assumptions.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="cd-process-card">
+
+                <span class="cd-process-number">
+                    03
+                </span>
+
+                <h3>
+                    Plan
+                </h3>
+
+                <p>
+                    Treatment options are considered according to the
+                    condition of the tooth and the amount of healthy
+                    structure remaining.
+                </p>
+
+                <button class="cd-process-toggle"
+                        type="button">
+                    Read more
+                    <span>+</span>
+                </button>
+
+                <div class="cd-process-extra">
+
+                    <p>
+                        The plan is individualised according to the
+                        tooth, the extent of disease and the patient's
+                        overall dental needs.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="cd-process-card">
+
+                <span class="cd-process-number">
+                    04
+                </span>
+
+                <h3>
+                    Treat
+                </h3>
+
+                <p>
+                    The selected treatment focuses on addressing the
+                    disease or damage while preserving healthy tooth
+                    structure wherever clinically appropriate.
+                </p>
+
+                <button class="cd-process-toggle"
+                        type="button">
+                    Read more
+                    <span>+</span>
+                </button>
+
+                <div class="cd-process-extra">
+
+                    <p>
+                        Depending on the diagnosis, treatment may
+                        involve restoration, repair, replacement of a
+                        failing restoration or root canal treatment.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="cd-process-card">
+
+                <span class="cd-process-number">
+                    05
+                </span>
+
+                <h3>
+                    Maintain
+                </h3>
+
+                <p>
+                    Once treatment is completed, maintaining the tooth
+                    through good oral hygiene, preventive care and
+                    appropriate reviews becomes part of long-term care.
+                </p>
+
+                <button class="cd-process-toggle"
+                        type="button">
+                    Read more
+                    <span>+</span>
+                </button>
+
+                <div class="cd-process-extra">
+
+                    <p>
+                        Regular maintenance can help monitor treated
+                        teeth and identify new problems early.
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         TREATMENT OPTIONS
+    ====================================================== -->
+
+    <section class="cd-section cd-treatment-options">
+
+        <div class="cd-section-heading">
+
+            <span class="cd-eyebrow">
+                TREATMENT OPTIONS
+            </span>
+
+            <h2>
+                What can conservative dentistry involve?
+            </h2>
+
+            <p>
+                The treatment depends entirely on the condition of the
+                tooth. Conservative dentistry does not mean avoiding
+                necessary treatment. It means choosing appropriate
+                treatment while preserving healthy structure whenever
+                possible.
+            </p>
+
+        </div>
+
+
+        <div class="cd-treatment-grid">
+
+
+            <article class="cd-treatment-card">
+
+                <span class="cd-treatment-number">
+                    01
+                </span>
+
+                <h3>
+                    Tooth-Coloured Fillings
+                </h3>
+
+                <p>
+                    When a tooth has a suitable amount of healthy
+                    structure remaining, a tooth-coloured restoration
+                    may be used to restore an area affected by decay
+                    or damage.
+                </p>
+
+                <p>
+                    The objective is to restore the affected portion
+                    while maintaining as much healthy tooth structure
+                    as possible.
+                </p>
+
+            </article>
+
+
+
+            <article class="cd-treatment-card">
+
+                <span class="cd-treatment-number">
+                    02
+                </span>
+
+                <h3>
+                    Repair of Damaged Teeth
+                </h3>
+
+                <p>
+                    Selected small chips, defects or damaged areas
+                    may sometimes be repaired rather than replacing
+                    or removing a larger portion of the tooth.
+                </p>
+
+                <p>
+                    Whether repair is suitable depends on the size,
+                    position and condition of the affected area.
+                </p>
+
+            </article>
+
+
+
+            <article class="cd-treatment-card">
+
+                <span class="cd-treatment-number">
+                    03
+                </span>
+
+                <h3>
+                    Replacement of Failing Restorations
+                </h3>
+
+                <p>
+                    Older restorations may eventually become worn,
+                    fractured or compromised. They can be assessed
+                    to determine whether replacement is necessary.
+                </p>
+
+                <p>
+                    The surrounding natural tooth structure is
+                    considered when planning the new restoration.
+                </p>
+
+            </article>
+
+
+
+            <article class="cd-treatment-card">
+
+                <span class="cd-treatment-number">
+                    04
+                </span>
+
+                <h3>
+                    Root Canal Treatment
+                </h3>
+
+                <p>
+                    If disease or damage has reached the pulp of a
+                    tooth, root canal treatment may sometimes allow
+                    the natural tooth to be retained instead of
+                    removing it.
+                </p>
+
+                <p>
+                    The decision depends on whether the tooth can be
+                    treated and restored predictably.
+                </p>
+
+            </article>
+
+
+
+            <article class="cd-treatment-card">
+
+                <span class="cd-treatment-number">
+                    05
+                </span>
+
+                <h3>
+                    Preventive Care
+                </h3>
+
+                <p>
+                    Preventing or detecting dental problems early can
+                    reduce the amount of treatment a tooth may require
+                    later.
+                </p>
+
+                <p>
+                    Regular examinations, professional cleaning and
+                    appropriate oral-hygiene guidance are important
+                    parts of this approach.
+                </p>
+
+            </article>
+
+
+
+            <article class="cd-treatment-card">
+
+                <span class="cd-treatment-number">
+                    06
+                </span>
+
+                <h3>
+                    Monitoring & Maintenance
+                </h3>
+
+                <p>
+                    Some dental findings may not require immediate
+                    treatment. In suitable situations, monitoring the
+                    area can be an appropriate part of the overall
+                    plan.
+                </p>
+
+                <p>
+                    Regular reviews help identify changes early and
+                    determine when intervention may actually become
+                    necessary.
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SIMPLE EXAMPLE
+    ====================================================== -->
+
+    <section class="cd-section cd-example">
+
+        <div class="cd-example-grid">
+
+
+            <div class="cd-example-text">
+
+                <span class="cd-eyebrow">
+                    A SIMPLE EXAMPLE
+                </span>
+
+                <h2>
+                    Treating a small cavity while preserving
+                    healthy tooth structure
+                </h2>
+
+                <p>
+                    Imagine a tooth with a small area of decay. The
+                    objective is not simply to make the cavity
+                    disappear. The tooth is first assessed to
+                    understand the extent of the decay.
+                </p>
+
+                <p>
+                    If the problem is limited and the tooth is
+                    otherwise suitable for restoration, the affected
+                    portion can be treated and restored while
+                    preserving the surrounding healthy structure.
+                </p>
+
+                <p>
+                    This illustrates the basic principle behind
+                    conservative dentistry:
+                    <strong>
+                        treat the disease while respecting the
+                        healthy tooth that remains.
+                    </strong>
+                </p>
+
+            </div>
+
+
+            <div class="cd-example-visual">
+
+                <div class="cd-example-stage">
+
+                    <div class="cd-example-tooth before">
+
+                        <span class="cd-decay"></span>
+
+                    </div>
+
+
+                    <div class="cd-example-arrow">
+                        →
+                    </div>
+
+
+                    <div class="cd-example-tooth after">
+
+                        <span class="cd-filling"></span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="cd-example-labels">
+
+                    <span>
+                        Affected area
+                    </span>
+
+                    <span>
+                        Conservatively restored
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         IMPORTANT DISTINCTION
+    ====================================================== -->
+
+    <section class="cd-section cd-not-about">
+
+        <div class="cd-section-heading">
+
+            <span class="cd-eyebrow">
+                AN IMPORTANT DISTINCTION
+            </span>
+
+            <h2>
+                Conservative does not mean avoiding
+                necessary treatment
+            </h2>
+
+            <p>
+                Preserving natural teeth is important, but preservation
+                should always be balanced with appropriate treatment
+                of dental disease.
+            </p>
+
+        </div>
+
+
+        <div class="cd-three-columns">
+
+
+            <article class="cd-feature-card">
+
+                <div class="cd-card-number">
+                    01
+                </div>
+
+                <h3>
+                    Not "do nothing"
+                </h3>
+
+                <p>
+                    Conservative dentistry does not mean leaving
+                    disease untreated. If a tooth requires treatment,
+                    appropriate treatment is recommended.
+                </p>
+
+            </article>
+
+
+
+            <article class="cd-feature-card">
+
+                <div class="cd-card-number">
+                    02
+                </div>
+
+                <h3>
+                    Not every problem needs the same treatment
+                </h3>
+
+                <p>
+                    The extent of treatment should reflect the actual
+                    condition of the tooth. A small problem and a
+                    severely damaged tooth may require very different
+                    approaches.
+                </p>
+
+            </article>
+
+
+
+            <article class="cd-feature-card">
+
+                <div class="cd-card-number">
+                    03
+                </div>
+
+                <h3>
+                    Appropriate treatment comes first
+                </h3>
+
+                <p>
+                    The purpose is to find the most suitable way to
+                    manage the dental problem while preserving healthy
+                    structure whenever this can be done predictably.
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         OUR APPROACH
+    ====================================================== -->
+
+    <section class="cd-section cd-approach">
+
+        <div class="cd-section-heading">
+
+            <span class="cd-eyebrow">
+                OUR APPROACH
+            </span>
+
+            <h2>
+                A careful approach to every tooth
+            </h2>
+
+            <p>
+                Conservative dentistry fits naturally into a broader
+                philosophy of careful diagnosis, appropriate treatment
+                and long-term maintenance.
+            </p>
+
+        </div>
+
+
+        <div class="cd-approach-grid">
+
+
+            <article class="cd-approach-item">
+
+                <span>01</span>
+
+                <div>
+
+                    <h3>
+                        Careful Diagnosis
+                    </h3>
+
+                    <p>
+                        Understand the problem before deciding how it
+                        should be treated. A clear diagnosis helps
+                        determine whether treatment is necessary and
+                        how extensive it needs to be.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="cd-approach-item">
+
+                <span>02</span>
+
+                <div>
+
+                    <h3>
+                        Preserve Healthy Structure
+                    </h3>
+
+                    <p>
+                        Avoid unnecessary removal of healthy natural
+                        tooth structure whenever clinically
+                        appropriate, while still addressing disease
+                        effectively.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="cd-approach-item">
+
+                <span>03</span>
+
+                <div>
+
+                    <h3>
+                        Appropriate Treatment
+                    </h3>
+
+                    <p>
+                        Choose treatment according to the actual
+                        condition of the tooth rather than applying
+                        the same solution to every patient.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="cd-approach-item">
+
+                <span>04</span>
+
+                <div>
+
+                    <h3>
+                        Long-Term Thinking
+                    </h3>
+
+                    <p>
+                        Consider how the tooth can be maintained after
+                        treatment and how future dental problems may
+                        be prevented.
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FAQ
+    ====================================================== -->
+
+    <section class="cd-section cd-faq">
+
+        <div class="cd-section-heading">
+
+            <span class="cd-eyebrow">
+                COMMON QUESTIONS
+            </span>
+
+            <h2>
+                Conservative Dentistry — FAQs
+            </h2>
+
+            <p>
+                A few common questions patients may have about this
+                approach to dental care.
+            </p>
+
+        </div>
+
+
+        <div class="cd-faq-list">
+
+
+            <div class="cd-faq-item">
+
+                <button class="cd-faq-question"
+                        type="button">
+
+                    <span>
+                        Is conservative dentistry a specific
+                        dental treatment?
+                    </span>
+
+                    <span class="cd-faq-icon">
+                        +
+                    </span>
+
+                </button>
+
+                <div class="cd-faq-answer">
+
+                    <p>
+                        Conservative dentistry is better understood
+                        as an approach to dental treatment rather than
+                        one particular procedure. It focuses on
+                        treating dental problems while preserving
+                        healthy natural tooth structure whenever
+                        clinically appropriate.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="cd-faq-item">
+
+                <button class="cd-faq-question"
+                        type="button">
+
+                    <span>
+                        Does conservative dentistry mean I will not
+                        need a filling or root canal?
+                    </span>
+
+                    <span class="cd-faq-icon">
+                        +
+                    </span>
+
+                </button>
+
+                <div class="cd-faq-answer">
+
+                    <p>
+                        No. Conservative dentistry does not mean
+                        avoiding necessary treatment. If a tooth
+                        requires a filling, root canal treatment or
+                        another procedure, appropriate treatment may
+                        still be recommended. The focus is on treating
+                        the problem while preserving the tooth whenever
+                        it can be predictably maintained.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="cd-faq-item">
+
+                <button class="cd-faq-question"
+                        type="button">
+
+                    <span>
+                        Why is preserving natural tooth structure
+                        important?
+                    </span>
+
+                    <span class="cd-faq-icon">
+                        +
+                    </span>
+
+                </button>
+
+                <div class="cd-faq-answer">
+
+                    <p>
+                        Healthy natural tooth structure contributes to
+                        the tooth's strength, shape and function. When
+                        treatment is necessary, preserving sound
+                        structure can therefore be an important
+                        consideration in planning the restoration.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="cd-faq-item">
+
+                <button class="cd-faq-question"
+                        type="button">
+
+                    <span>
+                        Can a damaged tooth always be saved?
+                    </span>
+
+                    <span class="cd-faq-icon">
+                        +
+                    </span>
+
+                </button>
+
+                <div class="cd-faq-answer">
+
+                    <p>
+                        Not every tooth can be predictably preserved.
+                        The condition, amount of remaining tooth
+                        structure, extent of disease and other clinical
+                        factors all influence the treatment decision.
+                        The aim is to preserve the natural tooth when
+                        it can be treated and maintained appropriately.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="cd-faq-item">
+
+                <button class="cd-faq-question"
+                        type="button">
+
+                    <span>
+                        How can I help preserve my natural teeth?
+                    </span>
+
+                    <span class="cd-faq-icon">
+                        +
+                    </span>
+
+                </button>
+
+                <div class="cd-faq-answer">
+
+                    <p>
+                        Regular dental examinations, good daily oral
+                        hygiene, appropriate preventive care and timely
+                        attention to dental problems can all help
+                        maintain natural teeth. Early assessment can
+                        also help identify problems before they become
+                        more extensive.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FINAL CTA
+    ====================================================== -->
+
+    <section class="cd-final-cta">
+
+        <div class="cd-final-content">
+
+            <span class="cd-eyebrow">
+                CARE FOR YOUR NATURAL TEETH
+            </span>
+
+            <h2>
+                Have a tooth that needs attention?
+            </h2>
+
+            <p>
+                A careful examination can help determine what is
+                actually happening and whether the tooth can be
+                treated while preserving as much healthy structure
+                as possible.
+            </p>
+
+            <div class="cd-final-actions">
+
+                <a href="https://wa.me/919990880975"
+                   target="_blank"
+                   rel="noopener"
+                   class="cd-btn cd-btn-primary">
+                    Book on WhatsApp
+                </a>
+
+                <a href="tel:+919990880975"
+                   class="cd-btn cd-btn-outline">
+                    Call the Clinic
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+
+  <div class="container footer-grid">
+
+
+    <div>
+
+      <h4>
+        Dr. Gupta's Dental Clinic
+      </h4>
+
+      <p>
+        Precision, magnification-guided dentistry in South Extension, New Delhi since 2013.
+      </p>
+
+    </div>
+
+
+    <div>
+
+      <h4>
+        Quick Links
+      </h4>
+
+      <a href="about.html">
+        About
+      </a>
+      <a href="difference.html">
+        Our Difference
+      </a>
+
+      <a href="services.html">
+        Services
+      </a>
+
+      <a href="reviews.html">
+        Reviews
+      </a>
+
+      <a href="faq.html">
+        FAQ
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+    </div>
+
+
+    <div>
+
+      <h4>
+        Contact
+      </h4>
+
+      <a href="tel:+919990880975">
+        Mobile: 99908 80975
+      </a>
+
+      <a href="tel:+911142220392">
+        Landline: 011-4222-0392
+      </a>
+
+      <a href="https://wa.me/919990880975">
+        WhatsApp Us
+      </a>
+
+      <p>   H-30, South Extension Part 1, New Delhi</p>
+
+    </div>
+  </div>
+
+
+  <div class="container footer-bottom">
+    © 2026 Dr. Gupta's Dental Clinic. All rights reserved.
+  </div>
+
+</footer>
+<script>
+   /* =========================================================
+   CONSERVATIVE DENTISTRY PAGE JS
+   Dr. Gupta's Dental Clinic
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+
+    /* =====================================================
+       SCROLL REVEAL
+    ====================================================== */
+
+    const revealElements = document.querySelectorAll(
+        ".cd-section-heading, " +
+        ".cd-feature-card, " +
+        ".cd-problem-card, " +
+        ".cd-treatment-card, " +
+        ".cd-process-card, " +
+        ".cd-mini-card, " +
+        ".cd-approach-item, " +
+        ".cd-faq-item, " +
+        ".cd-large-explanation"
+    );
+
+
+    if ("IntersectionObserver" in window) {
+
+        const observer = new IntersectionObserver(
+
+            function (entries, observer) {
+
+                entries.forEach(function (entry) {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("cd-visible");
+
+                        observer.unobserve(entry.target);
+
+                    }
+
+                });
+
+            },
+
+            {
+                threshold: 0.12
+            }
+
+        );
+
+
+        revealElements.forEach(function (element, index) {
+
+            element.style.transitionDelay =
+                (index % 5) * 0.08 + "s";
+
+            observer.observe(element);
+
+        });
+
+    } else {
+
+        revealElements.forEach(function (element) {
+
+            element.classList.add("cd-visible");
+
+        });
+
+    }
+
+
+
+    /* =====================================================
+       PROCESS READ MORE
+    ====================================================== */
+
+    const processButtons =
+        document.querySelectorAll(".cd-process-toggle");
+
+
+    processButtons.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            const card =
+                button.closest(".cd-process-card");
+
+            if (!card) return;
+
+
+            const isOpen =
+                card.classList.contains("open");
+
+
+            /* Close other process cards */
+
+            document
+                .querySelectorAll(".cd-process-card.open")
+                .forEach(function (otherCard) {
+
+                    if (otherCard !== card) {
+
+                        otherCard.classList.remove("open");
+
+                        const otherButton =
+                            otherCard.querySelector(
+                                ".cd-process-toggle"
+                            );
+
+                        if (otherButton) {
+
+                            otherButton.childNodes[0].textContent =
+                                "Read more ";
+
+                        }
+
+                    }
+
+                });
+
+
+            /* Toggle selected card */
+
+            card.classList.toggle("open");
+
+
+            if (!isOpen) {
+
+                button.childNodes[0].textContent =
+                    "Read less ";
+
+            } else {
+
+                button.childNodes[0].textContent =
+                    "Read more ";
+
+            }
+
+        });
+
+    });
+
+
+
+    /* =====================================================
+       FAQ ACCORDION
+    ====================================================== */
+
+    const faqQuestions =
+        document.querySelectorAll(".cd-faq-question");
+
+
+    faqQuestions.forEach(function (question) {
+
+        question.addEventListener("click", function () {
+
+            const item =
+                question.closest(".cd-faq-item");
+
+            if (!item) return;
+
+
+            const isOpen =
+                item.classList.contains("open");
+
+
+            /* Close all other FAQs */
+
+            document
+                .querySelectorAll(".cd-faq-item.open")
+                .forEach(function (otherItem) {
+
+                    if (otherItem !== item) {
+
+                        otherItem.classList.remove("open");
+
+                        const otherButton =
+                            otherItem.querySelector(
+                                ".cd-faq-question"
+                            );
+
+                        if (otherButton) {
+
+                            otherButton.setAttribute(
+                                "aria-expanded",
+                                "false"
+                            );
+
+                        }
+
+                    }
+
+                });
+
+
+            /* Open / close current FAQ */
+
+            item.classList.toggle("open");
+
+
+            question.setAttribute(
+                "aria-expanded",
+                String(!isOpen)
+            );
+
+        });
+
+    });
+
+
+
+    /* =====================================================
+       ADD ACCESSIBILITY ATTRIBUTES
+    ====================================================== */
+
+    faqQuestions.forEach(function (question) {
+
+        question.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+    });
+
+
+
+    /* =====================================================
+       SMOOTH SCROLL
+    ====================================================== */
+
+    const anchorLinks =
+        document.querySelectorAll(
+            'a[href^="#"]'
+        );
+
+
+    anchorLinks.forEach(function (link) {
+
+        link.addEventListener("click", function (event) {
+
+            const targetId =
+                link.getAttribute("href");
+
+
+            if (
+                !targetId ||
+                targetId === "#"
+            ) {
+                return;
+            }
+
+
+            const target =
+                document.querySelector(targetId);
+
+
+            if (!target) {
+                return;
+            }
+
+
+            event.preventDefault();
+
+
+            target.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        });
+
+    });
+
+
+
+    /* =====================================================
+       HERO TOOTH MOVEMENT
+    ====================================================== */
+
+    const heroVisual =
+        document.querySelector(".cd-hero-visual");
+
+    const tooth =
+        document.querySelector(".cd-tooth-visual");
+
+
+    if (
+        heroVisual &&
+        tooth &&
+        window.matchMedia(
+            "(pointer: fine)"
+        ).matches
+    ) {
+
+        heroVisual.addEventListener(
+            "mousemove",
+            function (event) {
+
+                const rect =
+                    heroVisual.getBoundingClientRect();
+
+
+                const x =
+                    (event.clientX - rect.left)
+                    / rect.width
+                    - 0.5;
+
+
+                const y =
+                    (event.clientY - rect.top)
+                    / rect.height
+                    - 0.5;
+
+
+                const moveX =
+                    x * 10;
+
+
+                const moveY =
+                    y * 10;
+
+
+                tooth.style.transform =
+                    `translate(${moveX}px, ${moveY}px) rotate(-3deg)`;
+
+            }
+        );
+
+
+        heroVisual.addEventListener(
+            "mouseleave",
+            function () {
+
+                tooth.style.transform =
+                    "translate(0, 0) rotate(-5deg)";
+
+            }
+        );
+
+    }
+
+
+
+    /* =====================================================
+       BUTTON KEYBOARD SUPPORT
+    ====================================================== */
+
+    document
+        .querySelectorAll(
+            ".cd-process-toggle, .cd-faq-question"
+        )
+        .forEach(function (button) {
+
+            button.addEventListener(
+                "keydown",
+                function (event) {
+
+                    if (
+                        event.key === "Enter" ||
+                        event.key === " "
+                    ) {
+
+                        event.preventDefault();
+
+                        button.click();
+
+                    }
+
+                }
+            );
+
+        });
+
+
+
+    /* =====================================================
+       PAGE LOADED
+    ====================================================== */
+
+    document.documentElement.classList.add(
+        "cd-js-ready"
+    );
+
+});
+</script>
+
+</body>
+</html>

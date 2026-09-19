@@ -2213,3 +2213,569 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+
+
+
+/* =========================================================
+   OUR DIFFERENCE - SIMPLE INTERACTIONS
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const featureCards =
+        document.querySelectorAll(".difference-feature");
+
+
+    /*
+     * Gentle reveal animation when the section
+     * enters the screen.
+     */
+
+    const observer =
+        new IntersectionObserver(
+            function (entries) {
+
+                entries.forEach(function (entry) {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("difference-visible");
+
+                        observer.unobserve(entry.target);
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.15
+            }
+        );
+
+
+    featureCards.forEach(function (card) {
+
+        observer.observe(card);
+
+    });
+
+
+    /*
+     * Make the feature cards feel interactive.
+     * Clicking/tapping highlights the selected item.
+     */
+
+    featureCards.forEach(function (card) {
+
+        card.addEventListener("click", function () {
+
+            featureCards.forEach(function (item) {
+
+                item.classList.remove("selected");
+
+            });
+
+            card.classList.add("selected");
+
+        });
+
+    });
+
+});
+
+// patient tesstimonial starts here 
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const section = document.querySelector(".patient-stories");
+
+  if (!section) return;
+
+
+  /* =====================================================
+     ELEMENTS
+     ===================================================== */
+
+  const viewport = section.querySelector(
+    ".patient-slider-viewport"
+  );
+
+  const track = section.querySelector(
+    ".patient-slider-track"
+  );
+
+  const cards = Array.from(
+    section.querySelectorAll(".patient-review-card")
+  );
+
+  const prevButton = section.querySelector(
+    ".patient-arrow-prev"
+  );
+
+  const nextButton = section.querySelector(
+    ".patient-arrow-next"
+  );
+
+  const dots = Array.from(
+    section.querySelectorAll(".patient-dot")
+  );
+
+
+  if (!track || !viewport || cards.length === 0) {
+    return;
+  }
+
+
+  /* =====================================================
+     STATE
+     ===================================================== */
+
+  let currentIndex = 0;
+
+  let cardsPerView = 3;
+
+  let autoSlide = null;
+
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+
+  /* =====================================================
+     DETERMINE CARDS PER VIEW
+     ===================================================== */
+
+  function getCardsPerView() {
+
+    const width = window.innerWidth;
+
+    if (width <= 700) {
+      return 1;
+    }
+
+    if (width <= 1100) {
+      return 2;
+    }
+
+    return 3;
+  }
+
+
+  /* =====================================================
+     MAX INDEX
+     ===================================================== */
+
+  function getMaxIndex() {
+
+    cardsPerView = getCardsPerView();
+
+    return Math.max(
+      0,
+      cards.length - cardsPerView
+    );
+  }
+
+
+  /* =====================================================
+     UPDATE SLIDER
+     ===================================================== */
+
+  function updateSlider() {
+
+    const maxIndex = getMaxIndex();
+
+    if (currentIndex > maxIndex) {
+      currentIndex = maxIndex;
+    }
+
+    /*
+      Calculate card width including gap
+    */
+
+    const cardWidth =
+      cards[0].getBoundingClientRect().width;
+
+    const trackStyle =
+      window.getComputedStyle(track);
+
+    const gap =
+      parseFloat(trackStyle.gap) || 0;
+
+    const moveAmount =
+      currentIndex * (cardWidth + gap);
+
+    track.style.transform =
+      `translateX(-${moveAmount}px)`;
+
+
+    /* =================================================
+       BUTTON STATE
+       ================================================= */
+
+    if (prevButton) {
+      prevButton.disabled =
+        currentIndex === 0;
+    }
+
+    if (nextButton) {
+      nextButton.disabled =
+        currentIndex >= maxIndex;
+    }
+
+
+    /* =================================================
+       DOT STATE
+       ================================================= */
+
+    dots.forEach(function (dot, index) {
+
+      dot.classList.toggle(
+        "active",
+        index === currentIndex
+      );
+
+    });
+  }
+
+
+  /* =====================================================
+     NEXT
+     ===================================================== */
+
+  function goNext() {
+
+    const maxIndex = getMaxIndex();
+
+    if (currentIndex < maxIndex) {
+
+      currentIndex++;
+
+    } else {
+
+      /*
+        Return to beginning
+        for continuous autoplay
+      */
+
+      currentIndex = 0;
+    }
+
+    updateSlider();
+  }
+
+
+  /* =====================================================
+     PREVIOUS
+     ================================================= */
+
+  function goPrevious() {
+
+    const maxIndex = getMaxIndex();
+
+    if (currentIndex > 0) {
+
+      currentIndex--;
+
+    } else {
+
+      currentIndex = maxIndex;
+    }
+
+    updateSlider();
+  }
+
+
+  /* =====================================================
+     BUTTON EVENTS
+     ===================================================== */
+
+  if (nextButton) {
+
+    nextButton.addEventListener(
+      "click",
+      function () {
+
+        goNext();
+        restartAutoSlide();
+
+      }
+    );
+  }
+
+
+  if (prevButton) {
+
+    prevButton.addEventListener(
+      "click",
+      function () {
+
+        goPrevious();
+        restartAutoSlide();
+
+      }
+    );
+  }
+
+
+  /* =====================================================
+     DOT EVENTS
+     ===================================================== */
+
+  dots.forEach(function (dot, index) {
+
+    dot.addEventListener(
+      "click",
+      function () {
+
+        const maxIndex = getMaxIndex();
+
+        currentIndex =
+          Math.min(index, maxIndex);
+
+        updateSlider();
+
+        restartAutoSlide();
+
+      }
+    );
+
+  });
+
+
+  /* =====================================================
+     AUTO SLIDE
+     ===================================================== */
+
+  function startAutoSlide() {
+
+    stopAutoSlide();
+
+    /*
+      Don't autoplay if all cards
+      are already visible.
+    */
+
+    if (getMaxIndex() <= 0) {
+      return;
+    }
+
+    autoSlide = setInterval(
+      function () {
+
+        goNext();
+
+      },
+      5000
+    );
+  }
+
+
+  function stopAutoSlide() {
+
+    if (autoSlide) {
+
+      clearInterval(autoSlide);
+
+      autoSlide = null;
+    }
+  }
+
+
+  function restartAutoSlide() {
+
+    startAutoSlide();
+  }
+
+
+  /* =====================================================
+     PAUSE ON HOVER
+     ===================================================== */
+
+  viewport.addEventListener(
+    "mouseenter",
+    stopAutoSlide
+  );
+
+  viewport.addEventListener(
+    "mouseleave",
+    startAutoSlide
+  );
+
+
+  /* =====================================================
+     TOUCH SWIPE
+     ===================================================== */
+
+  viewport.addEventListener(
+    "touchstart",
+    function (event) {
+
+      touchStartX =
+        event.changedTouches[0].screenX;
+
+      stopAutoSlide();
+
+    },
+    { passive: true }
+  );
+
+
+  viewport.addEventListener(
+    "touchend",
+    function (event) {
+
+      touchEndX =
+        event.changedTouches[0].screenX;
+
+      const difference =
+        touchStartX - touchEndX;
+
+
+      /*
+        Swipe left
+      */
+
+      if (difference > 50) {
+
+        goNext();
+
+      }
+
+
+      /*
+        Swipe right
+      */
+
+      if (difference < -50) {
+
+        goPrevious();
+
+      }
+
+      startAutoSlide();
+
+    },
+    { passive: true }
+  );
+
+
+  /* =====================================================
+     KEYBOARD ACCESSIBILITY
+     ===================================================== */
+
+  document.addEventListener(
+    "keydown",
+    function (event) {
+
+      /*
+        Only react when testimonial
+        section is reasonably visible
+      */
+
+      const rect =
+        section.getBoundingClientRect();
+
+      const visible =
+        rect.top < window.innerHeight &&
+        rect.bottom > 0;
+
+      if (!visible) return;
+
+
+      if (event.key === "ArrowRight") {
+
+        goNext();
+
+      }
+
+
+      if (event.key === "ArrowLeft") {
+
+        goPrevious();
+
+      }
+
+    }
+  );
+
+
+  /* =====================================================
+     RESIZE
+     ===================================================== */
+
+  let resizeTimer;
+
+  window.addEventListener(
+    "resize",
+    function () {
+
+      clearTimeout(resizeTimer);
+
+      resizeTimer = setTimeout(
+        function () {
+
+          updateSlider();
+
+        },
+        150
+      );
+
+    }
+  );
+
+
+  /* =====================================================
+     SECTION ENTRANCE ANIMATION
+     ===================================================== */
+
+  if ("IntersectionObserver" in window) {
+
+    const observer =
+      new IntersectionObserver(
+        function (entries) {
+
+          entries.forEach(
+            function (entry) {
+
+              if (entry.isIntersecting) {
+
+                section.classList.add(
+                  "is-visible"
+                );
+
+                observer.unobserve(
+                  section
+                );
+
+              }
+
+            }
+          );
+
+        },
+        {
+          threshold: 0.15
+        }
+      );
+
+    observer.observe(section);
+
+  } else {
+
+    section.classList.add(
+      "is-visible"
+    );
+
+  }
+
+
+  /* =====================================================
+     INITIALISE
+     ===================================================== */
+
+  updateSlider();
+
+  startAutoSlide();
+
+});
+// patient tesstimonial ends here

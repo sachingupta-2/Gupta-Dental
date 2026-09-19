@@ -1,0 +1,1381 @@
+/* =========================================================
+   ADVANCED TECHNOLOGY
+   MAIN CONTENT ONLY
+
+   Header / Navigation / Footer are NOT included
+   ========================================================= */
+
+
+/* =========================================================
+   PAGE VARIABLES
+   ========================================================= */
+
+.at-page {
+    --at-yellow: #C9A227;
+    --at-gold-light: #E7CB6B;
+
+    --at-ink: #12213F;
+    --at-dark: #0C172D;
+
+    --at-muted: #697080;
+
+    --at-soft: #FAF7F0;
+    --at-pale: #F5EBC8;
+
+    --at-white: #FFFFFF;
+
+    --at-line: #E4E1D8;
+
+    width: 100%;
+    min-width: 0;
+
+    overflow: hidden;
+
+    background: var(--at-soft);
+    color: var(--at-ink);
+
+    font-family: "DM Sans", Arial, sans-serif;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+.at-page *,
+.at-page *::before,
+.at-page *::after {
+    box-sizing: border-box;
+}
+
+.at-page img {
+    display: block;
+    max-width: 100%;
+}
+
+.at-page a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.at-page h1,
+.at-page h2,
+.at-page h3,
+.at-page p {
+    margin-top: 0;
+}
+
+
+/* =========================================================
+   BUTTON
+   ========================================================= */
+
+.at-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: fit-content;
+
+    gap: 15px;
+
+    padding: 13px 21px;
+
+    border: 0;
+    border-radius: 9px;
+
+    background: var(--at-yellow);
+    color: var(--at-dark);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    box-shadow:
+        0 6px 18px rgba(18, 33, 63, 0.12);
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.at-btn span {
+    font-size: 19px;
+    line-height: 1;
+}
+
+.at-btn:hover {
+    background: var(--at-gold-light);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(18, 33, 63, 0.16);
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.at-hero {
+    display: grid;
+
+    grid-template-columns: minmax(0, 44%) minmax(0, 56%);
+
+    width: 100%;
+    min-height: 430px;
+
+    background: var(--at-soft);
+}
+
+
+/* =========================================================
+   HERO COPY
+   ========================================================= */
+
+.at-hero-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    min-width: 0;
+
+    padding:
+        55px
+        clamp(30px, 7vw, 105px);
+}
+
+.at-eyebrow {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: var(--at-ink);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+}
+
+.at-hero h1 {
+    margin: 0 0 14px;
+
+    color: var(--at-ink);
+
+    font-size: clamp(40px, 4.5vw, 58px);
+    line-height: 1.02;
+
+    letter-spacing: -2px;
+}
+
+.at-line {
+    width: 48px;
+    height: 3px;
+
+    margin:
+        8px
+        0
+        18px;
+
+    background: var(--at-yellow);
+}
+
+.at-hero h2 {
+    margin: 0 0 14px;
+
+    color: var(--at-ink);
+
+    font-size: clamp(20px, 2vw, 25px);
+    line-height: 1.25;
+
+    font-weight: 500;
+}
+
+.at-hero p {
+    max-width: 570px;
+
+    margin: 0 0 24px;
+
+    color: var(--at-muted);
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   HERO IMAGE
+   ========================================================= */
+
+.at-hero-image {
+    position: relative;
+
+    width: 100%;
+    min-height: 430px;
+
+    overflow: hidden;
+
+    background: var(--at-dark);
+}
+
+.at-hero-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.7s ease;
+}
+
+.at-hero-image:hover img {
+    transform: scale(1.025);
+}
+
+
+/* =========================================================
+   HERO NOTES
+   ========================================================= */
+
+.at-note {
+    position: absolute;
+
+    z-index: 2;
+
+    color: var(--at-white);
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(18px, 2vw, 25px);
+    font-style: italic;
+
+    line-height: 1.05;
+
+    text-align: center;
+
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.28);
+
+    pointer-events: none;
+}
+
+.at-note-one {
+    top: 25%;
+    right: 12%;
+
+    transform: rotate(-5deg);
+}
+
+.at-note-two {
+    right: 5%;
+    bottom: 12%;
+
+    padding:
+        24px
+        18px;
+
+    color: var(--at-ink);
+
+    background:
+        rgba(245, 235, 200, 0.92);
+
+    border-radius: 50%;
+
+    font-size: 18px;
+
+    text-shadow: none;
+
+    transform: rotate(-5deg);
+}
+
+
+/* =========================================================
+   TECHNOLOGY CARDS
+   ========================================================= */
+
+.at-technology {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 22px;
+
+    width: 100%;
+
+    padding:
+        42px
+        clamp(5%, 5vw, 7%);
+
+    background: var(--at-white);
+}
+
+
+/* =========================================================
+   TECHNOLOGY CARD
+   ========================================================= */
+
+.at-tech-card {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+    overflow: hidden;
+
+    background: var(--at-white);
+
+    border: 1px solid var(--at-line);
+    border-radius: 13px;
+
+    box-shadow:
+        0 5px 20px rgba(18, 33, 63, 0.055);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.at-tech-card:hover {
+    transform: translateY(-5px);
+
+    border-color:
+        rgba(201, 162, 39, 0.45);
+
+    box-shadow:
+        0 14px 32px rgba(18, 33, 63, 0.11);
+}
+
+
+/* =========================================================
+   CARD IMAGE
+   ========================================================= */
+
+.at-tech-card-image {
+    position: relative;
+
+    width: 100%;
+    height: 215px;
+
+    overflow: hidden;
+
+    background: #ECE9DF;
+}
+
+.at-tech-card-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition:
+        transform 0.6s ease;
+}
+
+.at-tech-card:hover
+.at-tech-card-image img {
+    transform: scale(1.045);
+}
+
+
+/* =========================================================
+   CARD BODY
+   ========================================================= */
+
+.at-tech-card-body {
+    display: flex;
+    flex-direction: column;
+
+    flex: 1;
+
+    padding:
+        22px
+        22px
+        25px;
+}
+
+.at-tech-card-body h3 {
+    margin: 0 0 11px;
+
+    color: var(--at-ink);
+
+    font-size: 18px;
+    line-height: 1.3;
+}
+
+.at-tech-card-body p {
+    flex: 1;
+
+    margin: 0 0 18px;
+
+    color: var(--at-muted);
+
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   CARD LINK
+   ========================================================= */
+
+.at-tech-card-link {
+    display: inline-flex;
+    align-items: center;
+
+    width: fit-content;
+
+    gap: 8px;
+
+    color: var(--at-yellow);
+
+    font-size: 12px;
+    font-weight: 700;
+
+    transition:
+        gap 0.25s ease,
+        color 0.25s ease;
+}
+
+.at-tech-card-link:hover {
+    gap: 13px;
+
+    color: var(--at-ink);
+}
+
+
+/* =========================================================
+   ENHANCE SECTION
+   ========================================================= */
+
+.at-enhance {
+    width: 100%;
+
+    padding:
+        50px
+        clamp(5%, 5vw, 7%);
+
+    background: var(--at-soft);
+}
+
+
+/* =========================================================
+   SECTION TITLE
+   ========================================================= */
+
+.at-section-title {
+    margin-bottom: 30px;
+}
+
+.at-section-title h2 {
+    max-width: 800px;
+
+    margin: 0;
+
+    color: var(--at-ink);
+
+    font-size: clamp(25px, 2.5vw, 32px);
+    line-height: 1.15;
+}
+
+.at-section-title p {
+    margin: 10px 0 0;
+
+    color: var(--at-muted);
+
+    font-size: 13px;
+}
+
+.at-section-line {
+    width: 48px;
+    height: 3px;
+
+    margin:
+        9px
+        0
+        0;
+
+    background: var(--at-yellow);
+}
+
+
+/* =========================================================
+   STEPS
+   ========================================================= */
+
+.at-steps {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        28px
+        minmax(0, 1fr)
+        28px
+        minmax(0, 1fr)
+        28px
+        minmax(0, 1fr)
+        28px
+        minmax(0, 1fr);
+
+    gap: 10px;
+
+    align-items: start;
+
+    width: 100%;
+}
+
+.at-step {
+    min-width: 0;
+}
+
+
+/* =========================================================
+   STEP IMAGE
+   ========================================================= */
+
+.at-step-image {
+    position: relative;
+
+    width: 100%;
+    height: 145px;
+
+    margin-bottom: 12px;
+
+    overflow: visible;
+
+    border-radius: 10px;
+}
+
+.at-step-image img {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 10px;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition:
+        transform 0.5s ease;
+}
+
+.at-step:hover
+.at-step-image img {
+    transform: scale(1.035);
+}
+
+
+/* =========================================================
+   STEP NUMBER
+   ========================================================= */
+
+.at-step-number {
+    position: absolute;
+
+    left: 10px;
+    bottom: -9px;
+
+    display: grid;
+    place-items: center;
+
+    width: 30px;
+    height: 30px;
+
+    border-radius: 50%;
+
+    background: var(--at-yellow);
+    color: var(--at-dark);
+
+    border: 3px solid var(--at-soft);
+
+    font-size: 12px;
+    font-weight: 700;
+
+    box-shadow:
+        0 3px 10px rgba(18, 33, 63, 0.12);
+}
+
+
+/* =========================================================
+   STEP TEXT
+   ========================================================= */
+
+.at-step h3 {
+    margin:
+        17px
+        0
+        5px;
+
+    color: var(--at-ink);
+
+    font-size: 14px;
+    line-height: 1.3;
+}
+
+.at-step p {
+    margin: 0;
+
+    color: var(--at-muted);
+
+    font-size: 11.5px;
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   STEP ARROW
+   ========================================================= */
+
+.at-step-arrow {
+    align-self: center;
+
+    color: var(--at-yellow);
+
+    font-size: 25px;
+    line-height: 1;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   LOWER SECTION
+   ========================================================= */
+
+.at-lower {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.15fr)
+        minmax(300px, 1fr);
+
+    gap:
+        clamp(30px, 5vw, 70px);
+
+    width: 100%;
+
+    padding:
+        50px
+        clamp(5%, 5vw, 7%);
+
+    background: var(--at-white);
+}
+
+.at-lower h2 {
+    margin: 0;
+
+    color: var(--at-ink);
+
+    font-size: clamp(25px, 2.5vw, 32px);
+    line-height: 1.15;
+}
+
+
+/* =========================================================
+   BENEFITS
+   ========================================================= */
+
+.at-benefits {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.at-benefit {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 125px;
+
+    padding:
+        15px
+        8px;
+
+    text-align: center;
+
+    border: 1px solid var(--at-line);
+    border-radius: 10px;
+
+    background: var(--at-white);
+
+    box-shadow:
+        0 3px 12px rgba(18, 33, 63, 0.045);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.at-benefit:hover {
+    transform: translateY(-4px);
+
+    border-color:
+        rgba(201, 162, 39, 0.5);
+
+    box-shadow:
+        0 9px 22px rgba(18, 33, 63, 0.09);
+}
+
+.at-benefit-icon {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: var(--at-yellow);
+
+    font-size: 30px;
+    line-height: 1;
+}
+
+.at-benefit p {
+    margin: 0;
+
+    color: var(--at-ink);
+
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   PROMISE
+   ========================================================= */
+
+.at-promise {
+    position: relative;
+
+    min-width: 0;
+
+    padding-left: 35px;
+
+    border-left: 1px solid var(--at-line);
+}
+
+.at-promise ul {
+    padding: 0;
+
+    margin:
+        18px
+        0
+        0;
+
+    list-style: none;
+}
+
+.at-promise li {
+    position: relative;
+
+    padding:
+        7px
+        0
+        7px
+        28px;
+
+    color: var(--at-muted);
+
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.at-promise li::before {
+    content: "✓";
+
+    position: absolute;
+
+    left: 0;
+    top: 8px;
+
+    display: grid;
+    place-items: center;
+
+    width: 18px;
+    height: 18px;
+
+    border-radius: 50%;
+
+    background: var(--at-yellow);
+    color: var(--at-dark);
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   PROMISE NOTE
+   ========================================================= */
+
+.at-promise-note {
+    width: fit-content;
+
+    margin:
+        20px
+        0
+        0
+        auto;
+
+    color: var(--at-yellow);
+
+    font-family: Georgia, serif;
+
+    font-size: 18px;
+    font-style: italic;
+
+    line-height: 1.05;
+
+    text-align: center;
+
+    transform: rotate(-5deg);
+}
+
+
+/* =========================================================
+   FINAL CTA
+   ========================================================= */
+
+.at-cta {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 35px;
+
+    width: 100%;
+
+    padding:
+        40px
+        clamp(5%, 8vw, 10%);
+
+    background: var(--at-dark);
+    color: var(--at-white);
+}
+
+.at-cta-content {
+    max-width: 720px;
+}
+
+.at-cta h2 {
+    margin: 0 0 8px;
+
+    color: var(--at-white);
+
+    font-size: clamp(24px, 2.5vw, 32px);
+    line-height: 1.15;
+}
+
+.at-cta p {
+    margin: 0;
+
+    color:
+        rgba(255, 255, 255, 0.72);
+
+    font-size: 13.5px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
+   ========================================================= */
+
+.at-reveal {
+    opacity: 1;
+
+    transform: translateY(24px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.at-reveal.at-visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   LARGE TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .at-hero-copy {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+
+    .at-technology {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+
+    .at-lower {
+        grid-template-columns: 1fr;
+
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+
+    .at-promise {
+        padding:
+            30px
+            0
+            0;
+
+        border-left: 0;
+
+        border-top:
+            1px solid var(--at-line);
+    }
+
+
+    .at-steps {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap:
+            35px
+            24px;
+    }
+
+
+    .at-step-arrow {
+        display: none;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .at-hero {
+        grid-template-columns: 1fr;
+    }
+
+
+    .at-hero-copy {
+        padding:
+            55px
+            7%;
+    }
+
+
+    .at-hero-image {
+        min-height: 390px;
+        max-height: 480px;
+    }
+
+
+    .at-hero h1 {
+        font-size:
+            clamp(40px, 7vw, 54px);
+    }
+
+
+    .at-tech-card-image {
+        height: 205px;
+    }
+
+
+    .at-benefits {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 620px) {
+
+    .at-page {
+        overflow-x: hidden;
+    }
+
+
+    /* HERO */
+
+    .at-hero-copy {
+        padding:
+            42px
+            6%;
+    }
+
+
+    .at-hero h1 {
+        font-size: 39px;
+
+        letter-spacing: -1.3px;
+    }
+
+
+    .at-hero h2 {
+        font-size: 20px;
+    }
+
+
+    .at-hero p {
+        font-size: 13.5px;
+
+        line-height: 1.65;
+    }
+
+
+    .at-hero-image {
+        min-height: 310px;
+        max-height: none;
+    }
+
+
+    .at-note {
+        font-size: 17px;
+    }
+
+
+    .at-note-one {
+        top: 18%;
+        right: 7%;
+    }
+
+
+    .at-note-two {
+        right: 3%;
+        bottom: 8%;
+
+        padding:
+            18px
+            14px;
+
+        font-size: 14px;
+    }
+
+
+    /* TECHNOLOGY */
+
+    .at-technology {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+
+        padding:
+            35px
+            6%;
+    }
+
+
+    .at-tech-card-image {
+        height: 220px;
+    }
+
+
+    .at-tech-card-body {
+        padding:
+            20px
+            20px
+            23px;
+    }
+
+
+    .at-tech-card-body h3 {
+        font-size: 18px;
+    }
+
+
+    .at-tech-card-body p {
+        font-size: 13px;
+    }
+
+
+    /* ENHANCE */
+
+    .at-enhance {
+        padding:
+            40px
+            6%
+            45px;
+    }
+
+
+    .at-section-title {
+        margin-bottom: 26px;
+    }
+
+
+    .at-section-title h2 {
+        font-size: 26px;
+    }
+
+
+    .at-section-title p {
+        font-size: 12.5px;
+    }
+
+
+    /* STEPS */
+
+    .at-steps {
+        grid-template-columns: 1fr;
+
+        gap: 32px;
+    }
+
+
+    .at-step-arrow {
+        display: none !important;
+    }
+
+
+    .at-step-image {
+        height: 215px;
+    }
+
+
+    .at-step h3 {
+        font-size: 16px;
+    }
+
+
+    .at-step p {
+        font-size: 12.5px;
+    }
+
+
+    /* LOWER */
+
+    .at-lower {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+        padding:
+            40px
+            6%;
+    }
+
+
+    .at-lower h2 {
+        font-size: 26px;
+    }
+
+
+    /* BENEFITS */
+
+    .at-benefits {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+    }
+
+
+    .at-benefit {
+        min-height: 115px;
+    }
+
+
+    .at-benefit-icon {
+        font-size: 27px;
+    }
+
+
+    .at-benefit p {
+        font-size: 10.5px;
+    }
+
+
+    /* PROMISE */
+
+    .at-promise {
+        padding-top: 30px;
+    }
+
+
+    .at-promise li {
+        font-size: 12.5px;
+    }
+
+
+    .at-promise-note {
+        display: none;
+    }
+
+
+    /* CTA */
+
+    .at-cta {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 22px;
+
+        padding:
+            35px
+            6%;
+    }
+
+
+    .at-cta h2 {
+        font-size: 27px;
+    }
+
+
+    .at-cta p {
+        font-size: 13px;
+    }
+
+
+    .at-cta .at-btn {
+        width: 100%;
+
+        justify-content: center;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .at-hero-copy {
+        padding:
+            35px
+            5%;
+    }
+
+
+    .at-hero h1 {
+        font-size: 34px;
+    }
+
+
+    .at-hero h2 {
+        font-size: 18px;
+    }
+
+
+    .at-hero-image {
+        min-height: 260px;
+    }
+
+
+    .at-note {
+        font-size: 14px;
+    }
+
+
+    .at-technology {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+
+    .at-tech-card-image {
+        height: 195px;
+    }
+
+
+    .at-enhance {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+
+    .at-step-image {
+        height: 190px;
+    }
+
+
+    .at-lower {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+
+    .at-benefits {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    .at-benefit {
+        min-height: 105px;
+    }
+
+
+    .at-benefit-icon {
+        font-size: 25px;
+    }
+
+
+    .at-benefit p {
+        font-size: 9.5px;
+    }
+
+
+    .at-cta {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .at-page *,
+    .at-page *::before,
+    .at-page *::after {
+
+        scroll-behavior: auto !important;
+
+        transition-duration:
+            0.01ms !important;
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+    }
+
+
+    .at-reveal {
+        opacity: 1;
+
+        transform: none;
+    }
+}
