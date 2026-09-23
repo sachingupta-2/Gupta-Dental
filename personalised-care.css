@@ -141,7 +141,7 @@
 
 .pc-hero {
 
-    display: grid;
+    /* display: grid;
 
     grid-template-columns:
         minmax(0, 44%)
@@ -151,7 +151,20 @@
 
     min-height: 430px;
 
+    background: var(--pc-soft); */
+
+        display: grid;
+
+    grid-template-columns: 44% 56%;
+
+    align-items: center;
+
+    min-height: 0;
+    height: auto;
+
     background: var(--pc-soft);
+
+    overflow: hidden;
 }
 
 
@@ -161,7 +174,7 @@
 
 .pc-hero-copy {
 
-    display: flex;
+    /* display: flex;
 
     flex-direction: column;
 
@@ -171,7 +184,13 @@
 
     padding:
         55px
-        clamp(30px, 7vw, 105px);
+        clamp(30px, 7vw, 105px); */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 32px clamp(25px, 5vw, 75px);
 }
 
 
@@ -243,7 +262,7 @@
 
 .pc-hero-image {
 
-    position: relative;
+    /* position: relative;
 
     width: 100%;
 
@@ -251,13 +270,28 @@
 
     overflow: hidden;
 
-    background: var(--pc-dark);
+    background: var(--pc-dark); */
+
+    position: relative;
+
+    width: 100%;
+
+    height: 100%;
+    min-height: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background: var(--pc-soft);
 }
 
 
 .pc-hero-image img {
 
-    width: 100%;
+    /* width: 100%;
     height: 100%;
 
     object-fit: cover;
@@ -265,7 +299,20 @@
     object-position: center;
 
     transition:
-        transform 0.7s ease;
+        transform 0.7s ease; */
+
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    max-width: 100%;
+
+    object-fit: contain;
+    object-position: center;
+
+    border-radius: 0;
 }
 
 
@@ -275,43 +322,6 @@
 }
 
 
-/* =========================================================
-   HERO NOTE
-   ========================================================= */
-
-.pc-hero-note {
-
-    position: absolute;
-
-    z-index: 2;
-
-    top: 17%;
-    right: 8%;
-
-    color: var(--pc-white);
-
-    font-family: Georgia, serif;
-
-    font-size:
-        clamp(18px, 2vw, 25px);
-
-    font-style: italic;
-
-    line-height: 1.05;
-
-    text-align: center;
-
-    text-shadow:
-        0 2px 8px rgba(0, 0, 0, 0.28);
-
-    pointer-events: none;
-
-    transform: rotate(-5deg);
-}
-
-.pc-hero-note span {
-    color: var(--pc-gold-light);
-}
 
 
 /* =========================================================

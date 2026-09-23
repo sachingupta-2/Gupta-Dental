@@ -218,7 +218,7 @@
     width: 100%;
     height: 100%;
 
-    object-fit: cover;
+    object-fit: contain;
 
     object-position: center;
 
@@ -462,26 +462,25 @@
     display: grid;
 
     grid-template-columns:
-        minmax(0, 1fr)
-        28px
-        minmax(0, 1fr)
-        28px
-        minmax(0, 1fr)
-        28px
-        minmax(0, 1fr)
-        28px
-        minmax(0, 1fr);
+        repeat(5, minmax(0, 1fr));
 
-    gap: 10px;
+    gap: 18px;
 
     align-items: start;
+
+    width: 100%;
 }
 
 .cde-step {
-    min-width: 0;
-
     position: relative;
+
+    min-width: 0;
 }
+
+
+/* =========================================================
+   STEP IMAGE
+   ========================================================= */
 
 .cde-step-image {
     position: relative;
@@ -492,6 +491,8 @@
 }
 
 .cde-step-image img {
+    display: block;
+
     width: 100%;
     height: 105px;
 
@@ -508,7 +509,9 @@
 }
 
 
-/* STEP NUMBER */
+/* =========================================================
+   STEP NUMBER
+   ========================================================= */
 
 .cde-step-number {
     position: absolute;
@@ -536,13 +539,17 @@
         0 3px 10px rgba(18, 33, 63, 0.12);
 }
 
+
+/* =========================================================
+   STEP TEXT
+   ========================================================= */
+
 .cde-step h3 {
     margin: 13px 0 3px;
 
     color: var(--cde-ink);
 
     font-size: 13px;
-
     line-height: 1.25;
 }
 
@@ -552,25 +559,8 @@
     color: var(--cde-muted);
 
     font-size: 11.5px;
-
     line-height: 1.45;
 }
-
-
-/* ARROW */
-
-.cde-arrow {
-    align-self: center;
-
-    color: var(--cde-yellow);
-
-    font-size: 25px;
-
-    line-height: 1;
-
-    text-align: center;
-}
-
 
 /* =========================================================
    BOTTOM INFORMATION
@@ -1076,6 +1066,73 @@
         font-size: 12px;
     }
 
+    /* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+    .cde-steps {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 24px 18px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL TABLET
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .cde-steps {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 24px 16px;
+    }
+
+    .cde-step-image img {
+        height: 125px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .cde-journey {
+        padding:
+            35px 6% 40px;
+    }
+
+    .cde-steps {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+    .cde-step-image img {
+        height: 190px;
+    }
+
+    .cde-step h3 {
+        font-size: 15px;
+    }
+
+    .cde-step p {
+        font-size: 12px;
+    }
+
+}
+
 
     /* BOTTOM */
 
@@ -1225,6 +1282,387 @@
     .cde-reveal {
         opacity: 1;
         transform: none;
+    }
+
+}
+
+/* =========================================================
+   CONTINUOUS CERTIFICATE SLIDER
+   ========================================================= */
+
+.certificate-marquee-section {
+
+    --certificate-gold: #C9A227;
+    --certificate-ink: #12213F;
+    --certificate-soft: #FAF7F0;
+    --certificate-white: #FFFFFF;
+    --certificate-line: #E4E1D8;
+
+    width: 100%;
+
+    padding: 35px 0;
+
+    background: var(--certificate-soft);
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   SLIDER WRAPPER
+   ========================================================= */
+
+.certificate-marquee {
+
+    position: relative;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    /*
+     * Adds a soft fade at the left and right edges.
+     */
+    mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 5%,
+        black 95%,
+        transparent 100%
+    );
+
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 5%,
+        black 95%,
+        transparent 100%
+    );
+}
+
+
+/* =========================================================
+   MOVING TRACK
+   ========================================================= */
+
+.certificate-marquee-track {
+
+    display: flex;
+
+    align-items: center;
+
+    width: max-content;
+
+    gap: 22px;
+
+    padding: 12px 0;
+
+    /*
+     * The animation moves exactly half of the
+     * duplicated track for a seamless loop.
+     */
+    animation: certificateContinuousMove 42s linear infinite;
+
+    will-change: transform;
+}
+
+
+/* =========================================================
+   PAUSE WHEN MOUSE HOVERS OVER SLIDER
+   ========================================================= */
+
+.certificate-marquee:hover
+.certificate-marquee-track {
+
+    animation-play-state: paused;
+}
+
+
+/* =========================================================
+   CERTIFICATE CARD
+   ========================================================= */
+
+.certificate-card {
+
+    position: relative;
+
+    flex: 0 0 auto;
+
+    width: 245px;
+
+    height: 165px;
+
+    padding: 8px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: var(--certificate-white);
+
+    border: 1px solid var(--certificate-line);
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 5px 18px rgba(18, 33, 63, 0.08);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+
+    transform-origin: center center;
+}
+
+
+/* =========================================================
+   CERTIFICATE IMAGE
+   ========================================================= */
+
+.certificate-card img {
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    border-radius: 4px;
+
+    transition:
+        transform 0.4s ease;
+
+    transform-origin: center center;
+}
+
+
+/* =========================================================
+   HOVER ZOOM
+   ========================================================= */
+
+.certificate-card:hover {
+
+    z-index: 5;
+
+    border-color: var(--certificate-gold);
+
+    transform: scale(1.12);
+
+    box-shadow:
+        0 12px 35px rgba(18, 33, 63, 0.20);
+
+}
+
+
+/*
+ * Zoom the image slightly inside the card.
+ */
+
+.certificate-card:hover img {
+
+    transform: scale(1.035);
+
+}
+
+
+/* =========================================================
+   CONTINUOUS ANIMATION
+   ========================================================= */
+
+@keyframes certificateContinuousMove {
+
+    from {
+
+        transform: translateX(0);
+
+    }
+
+    to {
+
+        /*
+         * Six cards × 245px width
+         * Five gaps × 22px
+         *
+         * Total movement:
+         * 6 × 245 + 6 × 22 = 1602px
+         *
+         * The exact value is adjusted below
+         * through the CSS variable.
+         */
+
+        transform: translateX(-1602px);
+
+    }
+
+}
+
+
+/* =========================================================
+   TABLET RESPONSIVENESS
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .certificate-marquee-section {
+
+        padding: 30px 0;
+
+    }
+
+    .certificate-marquee-track {
+
+        gap: 18px;
+
+        animation-duration: 38s;
+
+    }
+
+    .certificate-card {
+
+        width: 215px;
+
+        height: 145px;
+
+        padding: 7px;
+
+    }
+
+    @keyframes certificateContinuousMove {
+
+        from {
+
+            transform: translateX(0);
+
+        }
+
+        to {
+
+            transform: translateX(-1398px);
+
+        }
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE RESPONSIVENESS
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .certificate-marquee-section {
+
+        padding: 24px 0;
+
+    }
+
+    .certificate-marquee-track {
+
+        gap: 14px;
+
+        padding: 10px 0;
+
+        animation-duration: 32s;
+
+    }
+
+    .certificate-card {
+
+        width: 175px;
+
+        height: 120px;
+
+        padding: 6px;
+
+        border-radius: 6px;
+
+    }
+
+    .certificate-card:hover {
+
+        transform: scale(1.08);
+
+    }
+
+    @keyframes certificateContinuousMove {
+
+        from {
+
+            transform: translateX(0);
+
+        }
+
+        to {
+
+            transform: translateX(-1134px);
+
+        }
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE DEVICES
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .certificate-card {
+
+        width: 155px;
+
+        height: 108px;
+
+    }
+
+    .certificate-marquee-track {
+
+        gap: 12px;
+
+        animation-duration: 28s;
+
+    }
+
+    @keyframes certificateContinuousMove {
+
+        from {
+
+            transform: translateX(0);
+
+        }
+
+        to {
+
+            transform: translateX(-1002px);
+
+        }
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .certificate-marquee-track {
+
+        animation-play-state: paused;
+
     }
 
 }

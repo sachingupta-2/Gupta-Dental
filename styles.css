@@ -928,7 +928,7 @@ nav a.active::after{
   font-size:0.75rem;
   font-weight:700;
   letter-spacing:.08em;
-  text-transform:uppercase;
+  /* text-transform:uppercase; */
   padding:6px 14px;
   border-radius:20px;
   margin-bottom:18px;
@@ -1696,7 +1696,7 @@ footer{
     }
 
     nav a {
-        font-size: .85rem;
+        font-size: 1.25rem;
     }
 
     .appointment-trigger,
@@ -4574,11 +4574,11 @@ footer .footer-bottom{
 
     color: var(--accent dark );
 
-    font-size: 46px;
+    font-size: 48px;
     font-weight: 700;
 
-    /* letter-spacing: .16em; */
-    text-transform: uppercase;
+    letter-spacing: -1px;
+    /* text-transform: uppercase; */
 }
 
 .services-section h2 {
@@ -5399,7 +5399,7 @@ footer .footer-bottom{
 
     color: #4d5054;
 
-    font-size: 13px;
+    font-size: 15px;
 }
 
 
@@ -5616,7 +5616,7 @@ footer .footer-bottom{
 
     text-align: center;
 
-    background: #30343b;
+    background: #12213f;
 
     border-radius: 25px;
 
@@ -6117,212 +6117,849 @@ footer .footer-bottom{
    OUR DIFFERENCE
 ========================================================= */
 
+
+/* =========================================================
+   OUR DIFFERENCE SECTION
+   ========================================================= */
+
 .our-difference {
+
+    --difference-yellow: #C9A227;
+    --difference-gold-light: #E7CB6B;
+    --difference-ink: #12213F;
+    --difference-dark: #0C172D;
+    --difference-muted: #697080;
+    --difference-soft: #FAF7F0;
+    --difference-pale: #F5EBC8;
+    --difference-white: #FFFFFF;
+    --difference-line: #E4E1D8;
+
     width: 100%;
-    background: #ffffff;
-    padding: 90px 5% 85px;
-    box-sizing: border-box;
+    min-width: 0;
+    padding: 70px clamp(20px, 5vw, 80px);
+
+    background: var(--difference-soft);
+    color: var(--difference-ink);
+
+    overflow: hidden;
 }
 
 
-/* ---------- Heading ---------- */
+/* =========================================================
+   SECTION HEADING
+   ========================================================= */
 
 .difference-heading {
+
+    max-width: 700px;
+    margin: 0 auto 45px;
+
     text-align: center;
-    max-width: 1000px;
-    margin: 0 auto 48px;
 }
 
 .difference-heading h2 {
+
     margin: 0;
 
-    color: #172b4d;
+    color: var(--difference-ink);
 
-    font-family: Arial, sans-serif;
-
-    font-size: clamp(34px, 4vw, 48px);
-
-    font-weight: 700;
-
-    letter-spacing: -1.5px;
-
+    font-size: clamp(28px, 3vw, 42px);
     line-height: 1.15;
+    font-weight: 700;
 }
 
+.difference-heading .heading-line {
 
-.heading-line {
-    width: 66px;
-    height: 5px;
+    width: 55px;
+    height: 3px;
 
-    margin: 14px auto 15px;
+    margin: 18px auto;
 
-    background: #f5c62f;
-
-    border-radius: 10px;
+    background: var(--difference-yellow);
 }
-
 
 .difference-heading p {
-    margin: 0;
 
-    color: #64718a;
+    max-width: 560px;
+    margin: 0 auto;
 
-    font-size: 18px;
+    color: var(--difference-muted);
 
-    line-height: 1.55;
+    font-size: 15px;
+    line-height: 1.7;
 }
 
 
-/* ---------- Feature Grid ---------- */
+/* =========================================================
+   FEATURE GRID
+   ========================================================= */
 
 .difference-features {
 
-    width: min(1200px, 100%);
-
-    margin: 0 auto;
-
     display: grid;
 
-    grid-template-columns:
-        repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
 
-    column-gap: 55px;
+    gap: 22px;
 
-    row-gap: 45px;
+    width: 100%;
 }
 
 
-/* ---------- Individual Feature ---------- */
+/* =========================================================
+   FEATURE CARD
+   ========================================================= */
 
 .difference-feature {
-
-    text-align: center;
-
-    position: relative;
-
-    transition:
-        transform 0.3s ease;
-}
-
-
-.difference-feature:hover {
-
-    transform: translateY(-5px);
-}
-
-
-/* ---------- Circular Image ---------- */
-
-.feature-image {
-
-    width: 205px;
-    height: 205px;
-
-    margin: 0 auto 17px;
 
     position: relative;
 
     display: flex;
+    flex-direction: column;
 
-    align-items: center;
-    justify-content: center;
+    min-width: 0;
+    min-height: 100%;
 
-    border-radius: 50%;
+    padding: 14px 14px 20px;
 
-    background: #fff8df;
+    border: 1px solid var(--difference-line);
+    border-radius: 16px;
 
-    overflow: visible;
+    background: var(--difference-white);
+
+    color: var(--difference-ink);
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 20px rgba(18, 33, 63, 0.04);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+
+    z-index: 1;
+}
+
+.difference-feature:hover {
+
+    transform: translateY(-8px);
+
+    border-color: var(--difference-gold-light);
+
+    box-shadow:
+        0 18px 40px rgba(18, 33, 63, 0.13);
+}
+
+.difference-feature:focus-visible {
+
+    outline: 3px solid var(--difference-yellow);
+    outline-offset: 4px;
 }
 
 
-/* Image itself */
+/* =========================================================
+   FEATURE IMAGE
+   ========================================================= */
 
-.feature-image img {
+.difference-feature .feature-image {
+
+    position: relative;
+
+    width: 100%;
+    aspect-ratio: 1 / 0.92;
+
+    margin-bottom: 18px;
+
+    overflow: hidden;
+
+    border-radius: 11px;
+
+    background: var(--difference-pale);
+}
+
+.difference-feature .feature-image img {
+
+    display: block;
 
     width: 100%;
     height: 100%;
 
     object-fit: cover;
+    object-position: center;
 
-    border-radius: 50%;
+    transition:
+        transform 0.55s ease;
+}
 
-    display: block;
+.difference-feature:hover .feature-image img {
+
+    transform: scale(1.06);
 }
 
 
-/*
- If your source image is NOT circular,
- this makes it sit nicely inside
- the circular cream background.
-*/
-
-.feature-image img[src$=".png"] {
-    object-fit: inherit;
-}
-
-
-/* ---------- 7.5x Badge ---------- */
+/* =========================================================
+   MAGNIFICATION BADGE
+   ========================================================= */
 
 .magnification-badge {
 
     position: absolute;
 
-    right: -8px;
-    bottom: 5px;
+    left: 12px;
+    bottom: 12px;
 
-    width: 67px;
-    height: 67px;
+    display: grid;
+    place-items: center;
 
-    display: flex;
+    min-width: 48px;
+    min-height: 34px;
 
-    align-items: center;
-    justify-content: center;
+    padding: 5px 10px;
 
-    border-radius: 50%;
+    border: 2px solid var(--difference-white);
+    border-radius: 30px;
 
-    background: #f5c62f;
+    background: var(--difference-dark);
+    color: var(--difference-gold-light);
 
-    color: #172b4d;
-
-    font-size: 18px;
-
+    font-size: 12px;
     font-weight: 700;
 
     box-shadow:
-        0 4px 10px rgba(0,0,0,0.08);
+        0 5px 15px rgba(12, 23, 45, 0.2);
 }
 
 
-/* ---------- Feature Heading ---------- */
+/* =========================================================
+   CARD TEXT
+   ========================================================= */
 
 .difference-feature h3 {
 
-    margin: 0 0 7px;
+    margin: 0 0 9px;
 
-    color: #172b4d;
+    color: var(--difference-ink);
 
-    font-size: 19px;
-
+    font-size: clamp(17px, 1.35vw, 21px);
+    line-height: 1.2;
     font-weight: 700;
-
-    line-height: 1.25;
 }
-
-
-/* ---------- Feature Description ---------- */
 
 .difference-feature p {
 
     margin: 0;
 
-    color: #68758b;
+    color: var(--difference-muted);
 
-    font-size: 16px;
+    font-size: 13px;
+    line-height: 1.55;
+}
 
-    line-height: 1.4;
+.feature-explore {
+
+    display: inline-block;
+
+    margin-top: auto;
+    padding-top: 18px;
+
+    color: var(--difference-yellow);
+
+    font-size: 12px;
+    font-weight: 700;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.difference-feature:hover .feature-explore {
+
+    color: var(--difference-dark);
+    transform: translateX(4px);
 }
 
 
+/* =========================================================
+   LARGE HOVER DETAIL PREVIEW
+   ========================================================= */
+
+/* =========================================================
+   FULLY VISIBLE DETAIL PREVIEW
+   ========================================================= */
+
+.difference-preview {
+
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+
+    display: grid;
+
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1fr);
+
+    width: min(900px, calc(100vw - 40px));
+    max-height: calc(100vh - 40px);
+
+    /* FULLY OPAQUE BACKGROUND */
+    background: #FFFFFF;
+
+    /* SOLID BORDER */
+    border: 2px solid #C9A227;
+
+    border-radius: 20px;
+
+    /* STRONG SHADOW */
+    box-shadow:
+        0 20px 70px rgba(12, 23, 45, 0.45);
+
+    overflow: hidden;
+
+    opacity: 0;
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transform:
+        translate(-50%, -47%)
+        scale(0.96);
+
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease,
+        transform 0.25s ease;
+
+    /* KEEP POPUP ABOVE OTHER CONTENT */
+    z-index: 9999;
+}
+
+
+/* =========================================================
+   SHOW PREVIEW
+   ========================================================= */
+
+.difference-preview.is-visible {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform:
+        translate(-50%, -50%)
+        scale(1);
+}
+
+
+/* =========================================================
+   PREVIEW IMAGE
+   ========================================================= */
+
+.difference-preview-image {
+
+    width: 100%;
+    min-width: 0;
+    min-height: 320px;
+
+    background: #FAF7F0;
+
+    overflow: hidden;
+}
+
+.difference-preview-image img {
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    min-height: 320px;
+
+    object-fit: cover;
+    object-position: center;
+
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+/* =========================================================
+   PREVIEW CONTENT
+   ========================================================= */
+
+.difference-preview-content {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 100%;
+    min-width: 0;
+
+    padding: 42px;
+
+    /* FULLY OPAQUE CONTENT BACKGROUND */
+    background: #FFFFFF;
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   PREVIEW LABEL
+   ========================================================= */
+
+.preview-label {
+
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: #C9A227;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   PREVIEW HEADING
+   ========================================================= */
+
+.difference-preview-content h3 {
+
+    margin: 0;
+
+    color: #12213F;
+
+    font-size: clamp(25px, 3vw, 38px);
+    font-weight: 700;
+
+    line-height: 1.15;
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   PREVIEW LINE
+   ========================================================= */
+
+.preview-line {
+
+    width: 48px;
+    height: 3px;
+
+    margin: 18px 0;
+
+    background: #C9A227;
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   PREVIEW DESCRIPTION
+   ========================================================= */
+
+.difference-preview-content p {
+
+    margin: 0 0 20px;
+
+    color: #697080;
+
+    font-size: 14px;
+    font-weight: 400;
+
+    line-height: 1.7;
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   PREVIEW BULLET LIST
+   ========================================================= */
+
+.difference-preview-content ul {
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 11px;
+
+    margin: 0 0 25px;
+    padding: 0;
+
+    list-style: none;
+
+    opacity: 1;
+}
+
+.difference-preview-content li {
+
+    position: relative;
+
+    padding-left: 28px;
+
+    color: #12213F;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    line-height: 1.5;
+
+    opacity: 1;
+}
+
+.difference-preview-content li::before {
+
+    content: "✓";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    display: grid;
+    place-items: center;
+
+    width: 19px;
+    height: 19px;
+
+    border-radius: 50%;
+
+    background: #C9A227;
+
+    color: #0C172D;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   PREVIEW LINK
+   ========================================================= */
+
+.preview-link {
+
+    display: inline-flex;
+    align-items: center;
+
+    width: fit-content;
+
+    padding: 13px 20px;
+
+    border-radius: 8px;
+
+    background: #C9A227;
+
+    color: #0C172D;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    opacity: 1;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.preview-link:hover {
+
+    background: #E7CB6B;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+   ========================================================= */
+
+.difference-preview-close {
+
+    position: absolute;
+
+    top: 12px;
+    right: 12px;
+
+    z-index: 10;
+
+    display: grid;
+    place-items: center;
+
+    width: 34px;
+    height: 34px;
+
+    border: 1px solid #E4E1D8;
+    border-radius: 50%;
+
+    background: #FFFFFF;
+
+    color: #0C172D;
+
+    font-size: 23px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    opacity: 1;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.difference-preview-close:hover {
+
+    background: #F5EBC8;
+
+    transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   REMOVE TRANSPARENT OVERLAY
+   ========================================================= */
+
+/*
+   Do not use a transparent pseudo-element inside
+   the popup because it can affect the appearance
+   of the preview.
+*/
+
+.difference-preview::before {
+
+    display: none;
+
+    content: none;
+}
+
+/* =========================================================
+   TABLET RESPONSIVENESS
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .difference-features {
+
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+
+        gap: 18px;
+    }
+
+    .difference-feature h3 {
+
+        font-size: 18px;
+    }
+
+    .difference-preview {
+
+        width: min(780px, calc(100vw - 32px));
+    }
+
+}
+
+
+/* =========================================================
+   SMALL TABLET
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .our-difference {
+
+        padding:
+            55px
+            20px;
+    }
+
+    .difference-features {
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .difference-preview {
+
+        display: flex;
+        flex-direction: column;
+
+        width: min(600px, calc(100vw - 30px));
+
+        max-height: calc(100vh - 30px);
+
+        overflow-y: auto;
+
+        background: #FFFFFF;
+    }
+
+    .difference-preview-image {
+
+        flex-shrink: 0;
+
+        min-height: 220px;
+        max-height: 260px;
+    }
+
+    .difference-preview-image img {
+
+        min-height: 220px;
+        max-height: 260px;
+
+        object-fit: cover;
+    }
+
+    .difference-preview-content {
+
+        flex-shrink: 0;
+
+        padding: 32px;
+
+        background: #FFFFFF;
+    }
+
+    .difference-preview-content h3 {
+
+        font-size: 28px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 520px) {
+
+    .our-difference {
+
+        padding:
+            45px
+            15px;
+    }
+
+    .difference-heading {
+
+        margin-bottom: 30px;
+    }
+
+    .difference-heading h2 {
+
+        font-size: 28px;
+    }
+
+    .difference-heading p {
+
+        font-size: 13px;
+    }
+
+    .difference-features {
+
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+    }
+
+    .difference-feature {
+
+        padding: 12px 12px 18px;
+    }
+
+    .difference-feature .feature-image {
+
+        aspect-ratio: 1 / 0.72;
+    }
+
+    .difference-feature h3 {
+
+        font-size: 20px;
+    }
+
+    .difference-feature p {
+
+        font-size: 13px;
+    }
+
+    .difference-preview {
+
+        width: calc(100vw - 24px);
+
+        border-radius: 15px;
+    }
+
+    .difference-preview-image {
+
+        min-height: 180px;
+        max-height: 210px;
+    }
+
+    .difference-preview-image img {
+
+        min-height: 180px;
+        max-height: 210px;
+    }
+
+    .difference-preview-content {
+
+        padding: 28px 22px;
+    }
+
+    .difference-preview-content h3 {
+
+        font-size: 25px;
+    }
+
+    .difference-preview-content p {
+
+        font-size: 13px;
+    }
+
+    .difference-preview-content li {
+
+        font-size: 12px;
+    }
+
+    .preview-link {
+
+        padding: 12px 16px;
+
+        font-size: 11px;
+    }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .difference-feature,
+    .difference-feature .feature-image img,
+    .feature-explore,
+    .difference-preview,
+    .preview-link,
+    .difference-preview-close {
+
+        transition: none;
+    }
+
+}
 
 /* =========================================================
    OUR COMMITMENT
@@ -6925,10 +7562,10 @@ footer .footer-bottom{
 .patient-stories-heading h2 {
   margin: 0;
 
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(42px, 5vw, 68px);
+  font-family: "DM Sans", Arial, sans-sarif;
+  font-size: clamp(42px, 5vw, 48px);
   line-height: 1.05;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: -0.035em;
 
   color: var(--ps-navy);
@@ -6944,7 +7581,7 @@ footer .footer-bottom{
   margin: 22px auto 0;
 
   color: var(--ps-grey);
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1.8;
 }
 
@@ -7398,7 +8035,7 @@ footer .footer-bottom{
   border-top: 1px solid var(--ps-border);
   border-bottom: 1px solid var(--ps-border);
 
-  background: rgba(255, 255, 255, 0.32);
+  background: #12213F;
 }
 
 .patient-trust-item {
@@ -7441,7 +8078,7 @@ footer .footer-bottom{
 .patient-trust-item strong {
   display: block;
 
-  color: var(--ps-navy);
+  color: #FFFFFF;
 
   font-size: 13px;
 }
@@ -7451,7 +8088,7 @@ footer .footer-bottom{
 
   margin-top: 3px;
 
-  color: var(--ps-grey);
+  color: #9AA4BD;
 
   font-size: 11px;
 }
@@ -7684,7 +8321,7 @@ footer .footer-bottom{
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 2px;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
 }
 
 .about-heading h2 {
@@ -7692,7 +8329,7 @@ footer .footer-bottom{
 
     color: #e6a900;
 
-    font-size: clamp(30px, 4vw, 46px);
+    font-size: clamp(30px, 4vw, 48px);
     line-height: 1.1;
     letter-spacing: -1px;
 }
@@ -7715,4 +8352,387 @@ footer .footer-bottom{
     margin: 16px auto 0;
 
     background: #c9a227;
+}
+
+
+
+/* =========================================================
+   CONTINUOUS CERTIFICATE SLIDER
+   ========================================================= */
+
+.certificate-marquee-section {
+
+    --certificate-gold: #C9A227;
+    --certificate-ink: #12213F;
+    --certificate-soft: #FAF7F0;
+    --certificate-white: #FFFFFF;
+    --certificate-line: #E4E1D8;
+
+    width: 100%;
+
+    padding: 35px 0;
+
+    background: var(--certificate-soft);
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   SLIDER WRAPPER
+   ========================================================= */
+
+.certificate-marquee {
+
+    position: relative;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    /*
+     * Adds a soft fade at the left and right edges.
+     */
+    mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 5%,
+        black 95%,
+        transparent 100%
+    );
+
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 5%,
+        black 95%,
+        transparent 100%
+    );
+}
+
+
+/* =========================================================
+   MOVING TRACK
+   ========================================================= */
+
+.certificate-marquee-track {
+
+    display: flex;
+
+    align-items: center;
+
+    width: max-content;
+
+    gap: 22px;
+
+    padding: 12px 0;
+
+    /*
+     * The animation moves exactly half of the
+     * duplicated track for a seamless loop.
+     */
+    animation: certificateContinuousMove 42s linear infinite;
+
+    will-change: transform;
+}
+
+
+/* =========================================================
+   PAUSE WHEN MOUSE HOVERS OVER SLIDER
+   ========================================================= */
+
+.certificate-marquee:hover
+.certificate-marquee-track {
+
+    animation-play-state: paused;
+}
+
+
+/* =========================================================
+   CERTIFICATE CARD
+   ========================================================= */
+
+.certificate-card {
+
+    position: relative;
+
+    flex: 0 0 auto;
+
+    width: 245px;
+
+    height: 165px;
+
+    padding: 8px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: var(--certificate-white);
+
+    border: 1px solid var(--certificate-line);
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 5px 18px rgba(18, 33, 63, 0.08);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+
+    transform-origin: center center;
+}
+
+
+/* =========================================================
+   CERTIFICATE IMAGE
+   ========================================================= */
+
+.certificate-card img {
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    border-radius: 4px;
+
+    transition:
+        transform 0.4s ease;
+
+    transform-origin: center center;
+}
+
+
+/* =========================================================
+   HOVER ZOOM
+   ========================================================= */
+
+.certificate-card:hover {
+
+    z-index: 5;
+
+    border-color: var(--certificate-gold);
+
+    transform: scale(1.12);
+
+    box-shadow:
+        0 12px 35px rgba(18, 33, 63, 0.20);
+
+}
+
+
+/*
+ * Zoom the image slightly inside the card.
+ */
+
+.certificate-card:hover img {
+
+    transform: scale(1.035);
+
+}
+
+
+/* =========================================================
+   CONTINUOUS ANIMATION
+   ========================================================= */
+
+@keyframes certificateContinuousMove {
+
+    from {
+
+        transform: translateX(0);
+
+    }
+
+    to {
+
+        /*
+         * Six cards × 245px width
+         * Five gaps × 22px
+         *
+         * Total movement:
+         * 6 × 245 + 6 × 22 = 1602px
+         *
+         * The exact value is adjusted below
+         * through the CSS variable.
+         */
+
+        transform: translateX(-1602px);
+
+    }
+
+}
+
+
+/* =========================================================
+   TABLET RESPONSIVENESS
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .certificate-marquee-section {
+
+        padding: 30px 0;
+
+    }
+
+    .certificate-marquee-track {
+
+        gap: 18px;
+
+        animation-duration: 38s;
+
+    }
+
+    .certificate-card {
+
+        width: 215px;
+
+        height: 145px;
+
+        padding: 7px;
+
+    }
+
+    @keyframes certificateContinuousMove {
+
+        from {
+
+            transform: translateX(0);
+
+        }
+
+        to {
+
+            transform: translateX(-1398px);
+
+        }
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE RESPONSIVENESS
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .certificate-marquee-section {
+
+        padding: 24px 0;
+
+    }
+
+    .certificate-marquee-track {
+
+        gap: 14px;
+
+        padding: 10px 0;
+
+        animation-duration: 32s;
+
+    }
+
+    .certificate-card {
+
+        width: 175px;
+
+        height: 120px;
+
+        padding: 6px;
+
+        border-radius: 6px;
+
+    }
+
+    .certificate-card:hover {
+
+        transform: scale(1.08);
+
+    }
+
+    @keyframes certificateContinuousMove {
+
+        from {
+
+            transform: translateX(0);
+
+        }
+
+        to {
+
+            transform: translateX(-1134px);
+
+        }
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE DEVICES
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .certificate-card {
+
+        width: 155px;
+
+        height: 108px;
+
+    }
+
+    .certificate-marquee-track {
+
+        gap: 12px;
+
+        animation-duration: 28s;
+
+    }
+
+    @keyframes certificateContinuousMove {
+
+        from {
+
+            transform: translateX(0);
+
+        }
+
+        to {
+
+            transform: translateX(-1002px);
+
+        }
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .certificate-marquee-track {
+
+        animation-play-state: paused;
+
+    }
+
 }
