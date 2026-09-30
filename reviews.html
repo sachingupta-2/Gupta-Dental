@@ -76,7 +76,7 @@
         </li>
 
         <li>
-          <a href="reviews.html">Reviews</a>
+          <a href="reviews.html" aria-current="page">Reviews</a>
         </li>
 
         <li>
@@ -225,196 +225,381 @@
 </div>
 
 
-<!-- =========================================================
-     REVIEWS HERO
-     ========================================================= -->
 
-<section class="reviews-hero">
-  <div class="reviews-hero-img">
-    <img src="clinic_photos_shortlist/img-reviews-hero.svg" alt="Illustration of a speech bubble with a quote mark above five stars">
+<!-- =====================================================
+     DR. GUPTA'S DENTAL CLINIC — REVIEWS PAGE
+     Header and footer intentionally excluded
+====================================================== -->
+
+  <main>
+    <section class="clinic-reviews" id="clinic-reviews">
+
+      <!-- HERO -->
+      <div class="cr-hero">
+        <div class="cr-hero-image"></div>
+        <div class="cr-hero-overlay"></div>
+
+        <div class="cr-hero-content cr-reveal">
+          <span class="cr-eyebrow">
+            <span class="cr-eyebrow-line"></span>
+            PATIENT EXPERIENCES
+          </span>
+
+          <h1>Real care.<br><em>Real experiences.</em></h1>
+
+          <p>
+            Every smile has a story. Discover what patients have shared
+            about their experience at Dr. Gupta's Dental Clinic.
+          </p>
+
+          <a href="#cr-review-list" class="cr-button cr-button-gold">
+            Explore patient reviews <span aria-hidden="true">↘</span>
+          </a>
+
+          <div class="cr-hero-note">
+            <span class="cr-note-dot"></span>
+            Patient feedback matters to us
+          </div>
+        </div>
+
+        <div class="cr-hero-side-label">DR. GUPTA'S DENTAL CLINIC</div>
+      </div>
+
+
+      <!-- RATING OVERVIEW -->
+      <div class="cr-overview cr-reveal">
+        <div class="cr-overview-intro">
+          <span class="cr-eyebrow">THE PATIENT PERSPECTIVE</span>
+          <h2>Words that <em>matter.</em></h2>
+          <p>
+            Thoughtful feedback helps us understand what patients value
+            and where we can continue to improve.
+          </p>
+        </div>
+
+        <div class="cr-rating-panel">
+          <div class="cr-rating-main">
+            <div class="cr-big-rating" id="cr-average">5.0</div>
+
+            <div class="cr-rating-details">
+              <div class="cr-stars cr-overview-stars"
+                   aria-label="Average patient rating">
+                <span>★</span><span>★</span><span>★</span>
+                <span>★</span><span>★</span>
+              </div>
+              <p>Based on <strong id="cr-total-reviews">3</strong> reviews</p>
+              <span class="cr-rating-caption">Reviews displayed on this page</span>
+            </div>
+          </div>
+
+          <div class="cr-rating-divider"></div>
+          <div class="cr-rating-bars" id="cr-rating-bars"></div>
+        </div>
+      </div>
+
+
+
+
+
+      
+<!-- =====================================================
+     PATIENT VIDEO TESTIMONIALS
+     Section only: keep your existing header and footer.
+====================================================== -->
+
+<section class="patient-video-section" id="patient-video-testimonials"
+         aria-labelledby="patient-video-heading">
+
+  <div class="pv-container">
+
+    <!-- Section introduction -->
+    <div class="pv-heading-row">
+      <div class="pv-heading-copy">
+        <span class="pv-eyebrow">PATIENT STORIES</span>
+
+        <h2 id="patient-video-heading">
+          Real Stories.<br>
+          <span>Genuine Smiles.</span>
+        </h2>
+
+        <p class="pv-intro">
+          Hear directly from our patients as they share their experiences
+          at Dr. Gupta’s Dental Clinic.
+        </p>
+      </div>
+
+      <div class="pv-heading-note">
+        <span class="pv-note-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 3.5 14.6 9l5.9.8-4.3 4.2 1 5.9-5.2-2.8-5.2 2.8 1-5.9-4.3-4.2L9.4 9 12 3.5Z"
+                  stroke="currentColor" stroke-width="1.4"
+                  stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <p>Every smile has<br>its own story.</p>
+      </div>
+    </div>
+
+    <!-- Carousel controls -->
+    <div class="pv-carousel-top">
+      <p class="pv-carousel-label">
+        <span class="pv-live-dot" aria-hidden="true"></span>
+        WATCH PATIENT EXPERIENCES
+      </p>
+
+      <div class="pv-controls">
+        <button class="pv-arrow pv-prev"
+                type="button"
+                aria-label="Scroll to previous patient videos"
+                aria-controls="pv-track">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m15 18-6-6 6-6"
+                  fill="none" stroke="currentColor"
+                  stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+        <button class="pv-arrow pv-next"
+                type="button"
+                aria-label="Scroll to next patient videos"
+                aria-controls="pv-track">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m9 18 6-6-6-6"
+                  fill="none" stroke="currentColor"
+                  stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Video cards are created from patient-videos.js -->
+    <div class="pv-carousel"
+         id="pv-carousel"
+         role="region"
+         aria-label="Patient testimonial videos">
+
+      <div class="pv-track"
+           id="pv-track"
+           tabindex="0"
+           aria-label="Scroll through patient video cards">
+
+        <!-- Cards are inserted here by JavaScript -->
+
+      </div>
+    </div>
+
+    <!-- Carousel progress -->
+    <div class="pv-carousel-footer">
+      <div class="pv-progress"
+           role="progressbar"
+           aria-label="Patient video carousel position"
+           aria-valuemin="0"
+           aria-valuemax="100"
+           aria-valuenow="0">
+        <span class="pv-progress-fill"></span>
+      </div>
+
+      <p class="pv-position" aria-live="polite">
+        <span class="pv-current">01</span>
+        <span class="pv-position-divider">/</span>
+        <span class="pv-total">03</span>
+      </p>
+    </div>
+
+    <div class="pv-bottom-note">
+      <span class="pv-bottom-line" aria-hidden="true"></span>
+      <p>Thank you to our patients for sharing their experiences.</p>
+      <span class="pv-bottom-line" aria-hidden="true"></span>
+    </div>
+
   </div>
-  <span class="reviews-eyebrow">Patient Reviews</span>
-  <h1>What Our Patients Say</h1>
-  <p>Every review below is genuine — read what patients have said about their visits, and share your own experience with us.</p>
 </section>
 
+<!-- Accessible video modal -->
+<div class="pv-modal"
+     id="pv-modal"
+     aria-hidden="true"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="pv-modal-title"
+     aria-describedby="pv-modal-description"
+     hidden>
 
-<!-- =========================================================
-     REVIEWS BODY
-     ========================================================= -->
+  <div class="pv-modal-backdrop" data-pv-close></div>
 
-<div class="reviews-body">
+  <div class="pv-modal-panel" role="document">
 
-  <!-- Rating summary -->
-  <div class="rating-summary">
+    <div class="pv-modal-header">
+      <div>
+        <span class="pv-modal-eyebrow">PATIENT TESTIMONIAL</span>
+        <h3 id="pv-modal-title">Patient story</h3>
+        <p id="pv-modal-description">
+          Patient video testimonial from Dr. Gupta’s Dental Clinic.
+        </p>
+      </div>
 
-    <div class="rating-summary-score">
-      <div class="rating-summary-num">5.0</div>
-      <div class="rating-summary-stars">★★★★★</div>
-      <div class="rating-summary-count">Based on our Google Reviews</div>
+      <button class="pv-modal-close"
+              type="button"
+              aria-label="Close video">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="m6 6 12 12M18 6 6 18"
+                fill="none" stroke="currentColor"
+                stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </button>
     </div>
 
-    <div class="rating-bars">
-      <div class="rating-bar-row">
-        <span>5 stars</span>
-        <div class="rating-bar-track"><div class="rating-bar-fill" style="width:100%"></div></div>
-        <span>100%</span>
-      </div>
-      <div class="rating-bar-row">
-        <span>4 stars</span>
-        <div class="rating-bar-track"><div class="rating-bar-fill" style="width:0%"></div></div>
-        <span>0%</span>
-      </div>
-      <div class="rating-bar-row">
-        <span>3 stars</span>
-        <div class="rating-bar-track"><div class="rating-bar-fill" style="width:0%"></div></div>
-        <span>0%</span>
-      </div>
-      <div class="rating-bar-row">
-        <span>2 stars</span>
-        <div class="rating-bar-track"><div class="rating-bar-fill" style="width:0%"></div></div>
-        <span>0%</span>
-      </div>
-      <div class="rating-bar-row">
-        <span>1 star</span>
-        <div class="rating-bar-track"><div class="rating-bar-fill" style="width:0%"></div></div>
-        <span>0%</span>
-      </div>
+    <div class="pv-player-wrap">
+      <video id="pv-modal-video"
+             controls
+             playsinline
+             preload="none"
+             aria-label="Patient testimonial video">
+        Your browser does not support HTML video.
+      </video>
     </div>
 
-    <div class="rating-summary-cta">
-      <a
-        href="https://www.google.com/maps/place/Dr.+Gupta's+Dental+Clinic/@28.5712336,77.2185971,17z/data=!3m1!4b1!4m6!3m5!1s0x390ce25ebe73cb59:0x56e9179e7dcfc73b!8m2!3d28.5712289!4d77.221172!16s%2Fg%2F11b6t0lkcx"
-        target="_blank"
-        rel="noopener"
-        class="btn-outline"
-      >
-        Read All Reviews on Google
-      </a>
-    </div>
-
-  </div>
-
-  <!-- Existing reviews -->
-  <div class="reviews-section-head">
-    <h2>Recent Reviews</h2>
-    <p>A few of the reviews our patients have left us on Google.</p>
-  </div>
-
-  <div class="reviews-grid" id="reviewsGrid">
-
-    <div class="review-card">
-      <div class="review-card-stars">★★★★★</div>
-      <p>"Dr Tanupriya is the most knowledgeable, sincere and methodical dental surgeon I have come across. She's also very caring and compassionate and makes sure her patients are comfortable during and post procedure also. I recommend her to all my family and friends."</p>
-      <div class="review-card-who">
-        <div class="review-card-avatar">CG</div>
-        <div>
-          <div class="review-card-name">Dr. Chhabir Gupta</div>
-          <div class="review-card-source">Google Review</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="review-card">
-      <div class="review-card-stars">★★★★★</div>
-      <p>"Fabulous doctor, a real healer. Best dental cleaning work I've had in over twenty years, very precise, very careful. Superb, and highly recommended."</p>
-      <div class="review-card-who">
-        <div class="review-card-avatar">AT</div>
-        <div>
-          <div class="review-card-name">Anuraag Tiwari</div>
-          <div class="review-card-source">Google Review</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="review-card">
-      <div class="review-card-stars">★★★★★</div>
-      <p>"Had an amazing experience while having composite filling done here. Such a sweet and soft spoken lady as well a highly professional dentist who takes all precautions and utmost care taking into account all necessary protocols."</p>
-      <div class="review-card-who">
-        <div class="review-card-avatar">AK</div>
-        <div>
-          <div class="review-card-name">Ayush Kushwaha</div>
-          <div class="review-card-source">Google Review</div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- Write a review -->
-  <div class="reviews-section-head">
-    <h2>Share Your Experience</h2>
-    <p>Had a visit with us? We'd love to hear how it went.</p>
-  </div>
-
-  <div class="write-review">
-
-    <form id="reviewForm">
-
-      <div id="starPicker" class="star-picker" aria-label="Select a star rating">
-        <button type="button" data-value="1" aria-label="1 star">☆</button>
-        <button type="button" data-value="2" aria-label="2 stars">☆</button>
-        <button type="button" data-value="3" aria-label="3 stars">☆</button>
-        <button type="button" data-value="4" aria-label="4 stars">☆</button>
-        <button type="button" data-value="5" aria-label="5 stars">☆</button>
-      </div>
-      <input type="hidden" id="reviewRating" value="0">
-
-      <div class="review-form-grid">
-
-        <div class="form-group">
-          <label for="reviewerName">Your Name</label>
-          <input type="text" id="reviewerName" placeholder="Enter your name" required>
-        </div>
-
-        <div class="form-group">
-          <label for="reviewerPhone">Phone (optional)</label>
-          <input type="tel" id="reviewerPhone" placeholder="For us to follow up if needed">
-        </div>
-
-        <div class="form-group full">
-          <label for="reviewText">Your Review</label>
-          <textarea id="reviewText" placeholder="Tell us about your visit..." required></textarea>
-        </div>
-
-        <div class="review-form-submit-msg" id="reviewFormMsg"></div>
-
-        <div class="review-form-actions">
-          <button type="submit" class="cta-btn">Submit Review</button>
-        </div>
-
-      </div>
-
-    </form>
-
-    <p class="review-form-note">Your review is sent to us directly for verification before it's posted publicly — this helps keep every review on this page genuine.</p>
-
-  </div>
-
-</div>
-
-
-<!-- =========================================================
-     FINAL CTA
-     ========================================================= -->
-
-<div class="final-cta">
-
-  <div class="container">
-
-    <h2>
-      Your smile deserves careful hands.
-    </h2>
-
-    <p>
-      Book a consultation with Dr. Tanupriya Gupta today.
+    <p class="pv-modal-footnote">
+      Dr. Gupta’s Dental Clinic
     </p>
 
-    <a href="https://wa.me/919990880975" class="cta-btn">  Book on WhatsApp</a>
-
   </div>
-
 </div>
+
+
+
+
+
+      <!-- REVIEWS -->
+      <div class="cr-review-section" id="cr-review-list">
+
+        <div class="cr-section-heading cr-reveal">
+          <div>
+            <span class="cr-eyebrow">KIND WORDS, SHARED HONESTLY</span>
+            <h2>Patient <em>stories.</em></h2>
+          </div>
+
+          <a class="cr-google-link"
+             href="https://www.google.com/maps/place/Dr.+Gupta's+Dental+Clinic/@28.5712336,77.2185971,17z/data=!3m1!4b1!4m6!3m5!1s0x390ce25ebe73cb59:0x56e9179e7dcfc73b!8m2!3d28.5712289!4d77.221172!16s%2Fg%2F11b6t0lkcx"
+             target="_blank"
+             rel="noopener noreferrer">
+            <span class="cr-google-g">G</span>
+            View on Google <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+
+        <!-- INTERACTIVE FILTERS -->
+        <div class="cr-controls cr-reveal">
+          <div class="cr-filter-wrap">
+            <span class="cr-control-label">FILTER BY RATING</span>
+
+            <div class="cr-filter-buttons" id="cr-filter-buttons">
+              <button type="button" class="cr-filter is-active"
+                      data-rating="all" aria-pressed="true">
+                All <span class="cr-filter-count" data-count="all">3</span>
+              </button>
+
+              <button type="button" class="cr-filter"
+                      data-rating="5" aria-pressed="false">
+                ★ 5 <span class="cr-filter-count" data-count="5">3</span>
+              </button>
+
+              <button type="button" class="cr-filter"
+                      data-rating="4" aria-pressed="false">
+                ★ 4 <span class="cr-filter-count" data-count="4">0</span>
+              </button>
+
+              <button type="button" class="cr-filter"
+                      data-rating="3" aria-pressed="false">
+                ★ 3 <span class="cr-filter-count" data-count="3">0</span>
+              </button>
+
+              <button type="button" class="cr-filter"
+                      data-rating="2" aria-pressed="false">
+                ★ 2 <span class="cr-filter-count" data-count="2">0</span>
+              </button>
+
+              <button type="button" class="cr-filter"
+                      data-rating="1" aria-pressed="false">
+                ★ 1 <span class="cr-filter-count" data-count="1">0</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="cr-search-sort">
+            <label class="cr-search-box">
+              <span class="cr-search-icon" aria-hidden="true">⌕</span>
+              <input type="search" id="cr-review-search"
+                     placeholder="Search reviews..."
+                     aria-label="Search patient reviews">
+              <button type="button" id="cr-clear-search"
+                      aria-label="Clear search">×</button>
+            </label>
+
+            <label class="cr-sort-box">
+              <span class="cr-control-label">SORT REVIEWS</span>
+              <select id="cr-review-sort" aria-label="Sort reviews">
+                <option value="featured">Featured</option>
+                <option value="name">Name A–Z</option>
+                <option value="rating-high">Highest rating</option>
+                <option value="rating-low">Lowest rating</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+
+        <!-- JavaScript inserts the interactive review cards here. -->
+        <div class="cr-review-grid" id="cr-review-grid" aria-live="polite"></div>
+
+        <div class="cr-empty-state" id="cr-empty-state" hidden>
+          <div class="cr-empty-icon" aria-hidden="true">✳</div>
+          <h3>No matching reviews</h3>
+          <p>Try a different rating or search term.</p>
+          <button type="button" class="cr-button cr-button-dark"
+                  id="cr-reset-filters">
+            Show all reviews
+          </button>
+        </div>
+
+        <p class="cr-results-note" id="cr-results-note">
+          Showing 3 patient reviews
+        </p>
+      </div>
+
+
+      <!-- GOOGLE REVIEW CTA -->
+      <div class="cr-cta cr-reveal">
+        <div class="cr-cta-decoration" aria-hidden="true">✳</div>
+
+        <div class="cr-cta-content">
+          <span class="cr-eyebrow">YOUR EXPERIENCE MATTERS</span>
+          <h2>Been to our clinic?<br><em>Share your experience.</em></h2>
+          <p>
+            Your honest feedback can help others make informed decisions
+            about their dental care.
+          </p>
+
+          <a class="cr-button cr-button-gold"
+             href="https://www.google.com/maps/place/Dr.+Gupta's+Dental+Clinic/@28.5712336,77.2185971,17z/data=!3m1!4b1!4m6!3m5!1s0x390ce25ebe73cb59:0x56e9179e7dcfc73b!8m2!3d28.5712289!4d77.221172!16s%2Fg%2F11b6t0lkcx"
+             target="_blank"
+             rel="noopener noreferrer">
+            Write a Google review <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <div class="cr-cta-mark" aria-hidden="true">
+          <span>CARE</span>
+          <span>WITH</span>
+          <span>PRECISION.</span>
+        </div>
+      </div>
+
+    </section>
+  </main>
 
 
 <!-- =========================================================
@@ -501,120 +686,845 @@
 
 </footer>
 
-
-<script src="script.js" defer></script>
 <script>
-  /* =========================================================
-   REVIEWS PAGE — STAR PICKER + SUBMISSION
-========================================================= */
 
-document.addEventListener('DOMContentLoaded', function () {
 
-  var starButtons = document.querySelectorAll('.star-picker button');
-  var ratingInput = document.getElementById('reviewRating');
-  var currentRating = 0;
 
-  function paintStars(rating) {
-    starButtons.forEach(function (btn) {
-      var val = parseInt(btn.getAttribute('data-value'), 10);
-      btn.classList.toggle('active', val <= rating);
-      btn.textContent = val <= rating ? '★' : '☆';
-    });
+/* =====================================================
+   DR. GUPTA'S DENTAL CLINIC — REVIEW INTERACTIONS
+===================================================== */
+
+(() => {
+  "use strict";
+
+  const root = document.querySelector("#clinic-reviews");
+  if (!root) return;
+
+  /*
+    Only use genuine patient reviews here.
+    Add further reviews with their actual ratings when available.
+  */
+  const reviews = [
+    {
+      id: 1,
+      name: "Dr. Chhabir Gupta",
+      rating: 5,
+      text: "Dr Tanupriya is the most knowledgeable, sincere and methodical dental surgeon I have come across. She's also very caring and compassionate and makes sure her patients are comfortable during and post procedure also. I recommend her to all my family and friends.",
+      source: "Google",
+      featured: true
+    },
+    {
+      id: 2,
+      name: "Anuraag Tiwari",
+      rating: 4,
+      text: "Fabulous doctor, a real healer. Best dental cleaning work I've had in over twenty years, very precise, very careful. Superb, and highly recommended.",
+      source: "Google",
+      featured: true
+    },
+    {
+      id: 3,
+      name: "Ayush Kushwaha",
+      rating: 5,
+      text: "Had an amazing experience while having composite filling done here. Such a sweet and soft spoken lady as well as a highly professional dentist who takes all precautions and utmost care taking into account all necessary protocols.",
+      source: "Google",
+      featured: true
+    }
+  ];
+
+  const googleUrl =
+    "https://www.google.com/maps/place/Dr.+Gupta's+Dental+Clinic/@28.5712336,77.2185971,17z/data=!3m1!4b1!4m6!3m5!1s0x390ce25ebe73cb59:0x56e9179e7dcfc73b!8m2!3d28.5712289!4d77.221172!16s%2Fg%2F11b6t0lkcx";
+
+  const grid = root.querySelector("#cr-review-grid");
+  const emptyState = root.querySelector("#cr-empty-state");
+  const searchInput = root.querySelector("#cr-review-search");
+  const clearSearch = root.querySelector("#cr-clear-search");
+  const sortSelect = root.querySelector("#cr-review-sort");
+  const filterButtons = [...root.querySelectorAll(".cr-filter")];
+  const resultsNote = root.querySelector("#cr-results-note");
+  const ratingBars = root.querySelector("#cr-rating-bars");
+  const averageDisplay = root.querySelector("#cr-average");
+  const totalDisplay = root.querySelector("#cr-total-reviews");
+
+  if (
+    !grid || !emptyState || !searchInput ||
+    !sortSelect || !resultsNote || !ratingBars
+  ) return;
+
+  let activeRating = "all";
+  let searchTerm = "";
+  let cardObserver = null;
+  let revealObserver = null;
+  let barsObserver = null;
+
+  function escapeHTML(value) {
+    return String(value).replace(/[&<>"']/g, character => ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;"
+    })[character]);
   }
 
-  starButtons.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      currentRating = parseInt(btn.getAttribute('data-value'), 10);
-      ratingInput.value = currentRating;
-      paintStars(currentRating);
+  function getInitials(name) {
+    return name.trim()
+      .split(/\s+/)
+      .slice(0, 2)
+      .map(part => part.charAt(0))
+      .join("")
+      .toUpperCase();
+  }
+
+  function getStars(rating) {
+    return Array.from({ length: 5 }, (_, index) => {
+      return `<span aria-hidden="true">${index < rating ? "★" : "☆"}</span>`;
+    }).join("");
+  }
+
+  /* RATING DISTRIBUTION */
+  function updateRatingOverview() {
+    const total = reviews.length;
+    const average = total
+      ? reviews.reduce((sum, review) => sum + review.rating, 0) / total
+      : 0;
+
+    averageDisplay.textContent = total ? average.toFixed(1) : "—";
+    totalDisplay.textContent = String(total);
+
+    ratingBars.innerHTML = "";
+
+    for (let rating = 5; rating >= 1; rating--) {
+      const count = reviews.filter(
+        review => review.rating === rating
+      ).length;
+
+      const percentage = total ? (count / total) * 100 : 0;
+      const row = document.createElement("div");
+
+      row.className = "cr-bar-row";
+      row.innerHTML = `
+        <span>${rating} star${rating === 1 ? "" : "s"}</span>
+        <span class="cr-bar-track">
+          <span class="cr-bar-fill"
+                style="--cr-bar-width:${percentage}%"></span>
+        </span>
+        <span>${count}</span>
+      `;
+
+      ratingBars.appendChild(row);
+    }
+
+    root.querySelectorAll("[data-count]").forEach(element => {
+      const rating = element.dataset.count;
+      const count = rating === "all"
+        ? total
+        : reviews.filter(
+            review => review.rating === Number(rating)
+          ).length;
+
+      element.textContent = String(count);
     });
 
-    btn.addEventListener('mouseenter', function () {
-      paintStars(parseInt(btn.getAttribute('data-value'), 10));
+    if (barsObserver) barsObserver.disconnect();
+
+    if ("IntersectionObserver" in window) {
+      barsObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            ratingBars.classList.add("cr-bars-animated");
+            barsObserver.disconnect();
+          }
+        });
+      }, { threshold: 0.25 });
+
+      barsObserver.observe(ratingBars);
+    } else {
+      ratingBars.classList.add("cr-bars-animated");
+    }
+  }
+
+  /* FILTER, SEARCH AND SORT */
+  function getFilteredReviews() {
+    let result = [...reviews];
+
+    if (activeRating !== "all") {
+      result = result.filter(
+        review => review.rating === Number(activeRating)
+      );
+    }
+
+    if (searchTerm) {
+      result = result.filter(review => {
+        const text =
+          `${review.name} ${review.text} ${review.source}`.toLowerCase();
+
+        return text.includes(searchTerm);
+      });
+    }
+
+    switch (sortSelect.value) {
+      case "name":
+        result.sort((a, b) => a.name.localeCompare(b.name));
+        break;
+
+      case "rating-high":
+        result.sort((a, b) => b.rating - a.rating);
+        break;
+
+      case "rating-low":
+        result.sort((a, b) => a.rating - b.rating);
+        break;
+
+      default:
+        result.sort((a, b) => {
+          if (a.featured !== b.featured) {
+            return Number(b.featured) - Number(a.featured);
+          }
+          return a.id - b.id;
+        });
+    }
+
+    return result;
+  }
+
+  /* REVIEW CARD GENERATOR */
+  function createReviewCard(review, index) {
+    const card = document.createElement("article");
+    card.className = "cr-review-card";
+    card.dataset.reviewId = String(review.id);
+    card.style.transitionDelay = `${Math.min(index * 100, 300)}ms`;
+
+    const name = escapeHTML(review.name);
+    const text = escapeHTML(review.text);
+    const source = escapeHTML(review.source);
+    const initials = escapeHTML(getInitials(review.name));
+
+    card.innerHTML = `
+      <div class="cr-card-top">
+        <div class="cr-card-stars"
+             role="img"
+             aria-label="${review.rating} out of 5 stars">
+          ${getStars(review.rating)}
+        </div>
+
+        <a class="cr-google-badge"
+           href="${googleUrl}"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="View clinic reviews on Google">
+          <strong>G</strong> ${source} ↗
+        </a>
+      </div>
+
+      <div class="cr-quote-mark" aria-hidden="true">“</div>
+
+      <h3 class="cr-review-name">${name}</h3>
+      <p class="cr-review-text">${text}</p>
+
+      <button type="button"
+              class="cr-read-toggle"
+              aria-expanded="false">
+        Read full review <span aria-hidden="true">＋</span>
+      </button>
+
+      <div class="cr-card-footer">
+        <div class="cr-review-avatar" aria-hidden="true">${initials}</div>
+
+        <div class="cr-review-author">
+          <strong>${name}</strong>
+          <span>Patient review · ${review.rating}/5 stars</span>
+        </div>
+
+        <div class="cr-verified">
+          <span class="cr-verified-mark" aria-hidden="true">✓</span>
+          <span>Review</span>
+        </div>
+      </div>
+    `;
+
+    const readButton = card.querySelector(".cr-read-toggle");
+
+    readButton.addEventListener("click", () => {
+      const expanded = card.classList.toggle("is-expanded");
+
+      readButton.setAttribute("aria-expanded", String(expanded));
+      readButton.innerHTML = expanded
+        ? 'Read less <span aria-hidden="true">−</span>'
+        : 'Read full review <span aria-hidden="true">＋</span>';
+    });
+
+    return card;
+  }
+
+  /* STAGGERED CARD ANIMATION */
+  function observeNewCards() {
+    if (cardObserver) cardObserver.disconnect();
+
+    const cards = grid.querySelectorAll(".cr-review-card");
+
+    if (!("IntersectionObserver" in window)) {
+      cards.forEach(card => card.classList.add("cr-card-visible"));
+      return;
+    }
+
+    cardObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("cr-card-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.12,
+      rootMargin: "0px 0px -25px 0px"
+    });
+
+    cards.forEach(card => cardObserver.observe(card));
+  }
+
+  /* RENDER CARDS */
+  function renderReviews() {
+    const filtered = getFilteredReviews();
+
+    if (cardObserver) cardObserver.disconnect();
+
+    grid.innerHTML = "";
+    grid.hidden = filtered.length === 0;
+    emptyState.hidden = filtered.length !== 0;
+
+    filtered.forEach((review, index) => {
+      grid.appendChild(createReviewCard(review, index));
+    });
+
+    resultsNote.textContent = filtered.length
+      ? `Showing ${filtered.length} of ${reviews.length} patient review${reviews.length === 1 ? "" : "s"}`
+      : "No reviews match your search.";
+
+    observeNewCards();
+  }
+
+  /* FILTER BUTTONS */
+  function setActiveFilter(rating) {
+    activeRating = rating;
+
+    filterButtons.forEach(button => {
+      const active = button.dataset.rating === rating;
+
+      button.classList.toggle("is-active", active);
+      button.setAttribute("aria-pressed", String(active));
+    });
+
+    renderReviews();
+  }
+
+  filterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      setActiveFilter(button.dataset.rating);
     });
   });
 
-  var starPicker = document.getElementById('starPicker');
-  if (starPicker) {
-    starPicker.addEventListener('mouseleave', function () {
-      paintStars(currentRating);
+  /* LIVE SEARCH */
+  searchInput.addEventListener("input", () => {
+    searchTerm = searchInput.value.trim().toLowerCase();
+    clearSearch?.classList.toggle(
+      "is-visible",
+      searchInput.value.length > 0
+    );
+    renderReviews();
+  });
+
+  clearSearch?.addEventListener("click", () => {
+    searchInput.value = "";
+    searchTerm = "";
+    clearSearch.classList.remove("is-visible");
+    renderReviews();
+    searchInput.focus();
+  });
+
+  /* SORTING */
+  sortSelect.addEventListener("change", renderReviews);
+
+  /* RESET FILTERS */
+  root.querySelector("#cr-reset-filters")?.addEventListener("click", () => {
+    searchInput.value = "";
+    searchTerm = "";
+    clearSearch?.classList.remove("is-visible");
+    sortSelect.value = "featured";
+    setActiveFilter("all");
+  });
+
+  /* SMOOTH SCROLL FOR INTERNAL LINKS */
+  root.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener("click", event => {
+      const target = root.querySelector(link.getAttribute("href"));
+      if (!target) return;
+
+      event.preventDefault();
+
+      target.scrollIntoView({
+        behavior: window.matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        ).matches ? "auto" : "smooth",
+        block: "start"
+      });
+    });
+  });
+
+  /* SCROLL-TRIGGERED SECTION ANIMATIONS */
+  function setupScrollReveals() {
+    const elements = root.querySelectorAll(".cr-reveal");
+
+    if (!("IntersectionObserver" in window)) {
+      elements.forEach(element => element.classList.add("cr-visible"));
+      return;
+    }
+
+    revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("cr-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.12,
+      rootMargin: "0px 0px -30px 0px"
+    });
+
+    elements.forEach(element => revealObserver.observe(element));
+  }
+
+  /* INITIALIZE */
+  updateRatingOverview();
+  renderReviews();
+  setupScrollReveals();
+
+})();
+
+
+
+
+/* =====================================================
+   PATIENT VIDEO TESTIMONIALS
+   Edit the patientVideos array to add your real videos.
+====================================================== */
+
+(() => {
+  "use strict";
+
+  const patientVideos = [
+    {
+      title: "A Patient’s Experience",
+      category: "Patient Story",
+      description:
+        "Hear this patient describe their experience at our clinic.",
+      video: "patient-videos/patient-review-1.mp4",
+      poster: "clinic_photos_shortlist/patient-video-1.jpg",
+      duration: "Video review",
+      label: "PATIENT TESTIMONIAL"
+    },
+    {
+      title: "Care That Builds Trust",
+      category: "Patient Story",
+      description:
+        "A patient shares their personal experience with our dental team.",
+      video: "patient-videos/patient-review-2.mp4",
+      poster: "clinic_photos_shortlist/patient-video-2.jpg",
+      duration: "Video review",
+      label: "PATIENT TESTIMONIAL"
+    },
+    {
+      title: "A Visit to Remember",
+      category: "Patient Story",
+      description:
+        "Listen to another patient's experience at Dr. Gupta’s Dental Clinic.",
+      video: "patient-videos/patient-review-3.mp4",
+      poster: "clinic_photos_shortlist/patient-video-3.jpg",
+      duration: "Video review",
+      label: "PATIENT TESTIMONIAL"
+    }
+  ];
+
+  const section = document.getElementById(
+    "patient-video-testimonials"
+  );
+
+  if (!section) return;
+
+  const track = section.querySelector("#pv-track");
+  const previousButton = section.querySelector(".pv-prev");
+  const nextButton = section.querySelector(".pv-next");
+  const progress = section.querySelector(".pv-progress");
+  const progressFill = section.querySelector(".pv-progress-fill");
+  const currentLabel = section.querySelector(".pv-current");
+  const totalLabel = section.querySelector(".pv-total");
+
+  const modal = document.getElementById("pv-modal");
+  const modalPanel = modal.querySelector(".pv-modal-panel");
+  const modalTitle = document.getElementById("pv-modal-title");
+  const modalDescription = document.getElementById(
+    "pv-modal-description"
+  );
+  const videoPlayer = document.getElementById("pv-modal-video");
+  const closeButton = modal.querySelector(".pv-modal-close");
+
+  let lastFocusedElement = null;
+  let scrollPositionBeforeModal = 0;
+  let isModalOpen = false;
+  let cardObserver = null;
+  let resizeTimer = null;
+
+  const reduceMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  );
+
+  /* ---------- Create safe SVG icon markup ---------- */
+
+  const playIcon = `
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M8 5.5v13l10-6.5-10-6.5Z"
+            fill="currentColor"/>
+    </svg>`;
+
+  const arrowIcon = `
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="m7 12 10 0m-4-4 4 4-4 4"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"/>
+    </svg>`;
+
+  /* ---------- Build cards ---------- */
+
+  function createCard(item, index) {
+    const card = document.createElement("article");
+    card.className = "pv-card pv-reveal";
+
+    const thumbnail = document.createElement("button");
+    thumbnail.type = "button";
+    thumbnail.className = "pv-thumbnail";
+    thumbnail.setAttribute(
+      "aria-label",
+      `Play video: ${item.title}`
+    );
+
+    const image = document.createElement("img");
+    image.src = item.poster;
+    image.alt = "";
+    image.loading = index < 2 ? "eager" : "lazy";
+    image.decoding = "async";
+
+    // If a poster is missing, use a neutral fallback.
+    image.addEventListener("error", () => {
+      image.removeAttribute("src");
+      image.style.display = "none";
+      thumbnail.classList.add("pv-no-poster");
+    }, { once: true });
+
+    const playButton = document.createElement("span");
+    playButton.className = "pv-video-play";
+    playButton.setAttribute("aria-hidden", "true");
+    playButton.innerHTML = playIcon;
+
+    const label = document.createElement("span");
+    label.className = "pv-thumbnail-label";
+    label.textContent = item.label || "PATIENT STORY";
+
+    const duration = document.createElement("span");
+    duration.className = "pv-duration";
+    duration.textContent = item.duration || "Watch video";
+
+    thumbnail.append(image, playButton, label, duration);
+    thumbnail.addEventListener("click", () => openVideo(item, thumbnail));
+
+    const body = document.createElement("div");
+    body.className = "pv-card-body";
+
+    const category = document.createElement("p");
+    category.className = "pv-card-kicker";
+    category.textContent = item.category || "Patient Story";
+
+    const title = document.createElement("h3");
+    title.className = "pv-card-title";
+    title.textContent = item.title;
+
+    const description = document.createElement("p");
+    description.className = "pv-card-description";
+    description.textContent = item.description;
+
+    const watchButton = document.createElement("button");
+    watchButton.type = "button";
+    watchButton.className = "pv-card-watch";
+    watchButton.innerHTML = `Watch story ${arrowIcon}`;
+    watchButton.setAttribute(
+      "aria-label",
+      `Watch patient video: ${item.title}`
+    );
+    watchButton.addEventListener("click", () => openVideo(item, watchButton));
+
+    body.append(category, title, description, watchButton);
+    card.append(thumbnail, body);
+
+    return card;
+  }
+
+  function renderCards() {
+    track.replaceChildren();
+
+    patientVideos.forEach((item, index) => {
+      track.appendChild(createCard(item, index));
+    });
+
+    totalLabel.textContent = String(patientVideos.length).padStart(2, "0");
+
+    setupRevealObserver();
+    updateCarousel();
+  }
+
+  /* ---------- Carousel navigation ---------- */
+
+  function getCards() {
+    return Array.from(track.querySelectorAll(".pv-card"));
+  }
+
+  function getCardStep() {
+    const firstCard = getCards()[0];
+
+    if (!firstCard) return track.clientWidth;
+
+    const styles = window.getComputedStyle(track);
+    const gap = parseFloat(styles.columnGap) || 0;
+
+    return firstCard.getBoundingClientRect().width + gap;
+  }
+
+  function scrollByCards(direction) {
+    const step = getCardStep();
+
+    track.scrollBy({
+      left: step * direction,
+      behavior: reduceMotion.matches ? "auto" : "smooth"
     });
   }
 
-  // ---------------------------------------------------------
-  // Form submission
-  // ---------------------------------------------------------
+  function updateCarousel() {
+    const maxScroll = Math.max(
+      0,
+      track.scrollWidth - track.clientWidth
+    );
 
-  var form = document.getElementById('reviewForm');
-  var reviewsGrid = document.getElementById('reviewsGrid');
-  var submitMsg = document.getElementById('reviewFormMsg');
-  var whatsappNumber = '919990880975';
+    const scrollLeft = Math.max(0, track.scrollLeft);
+    const percentage = maxScroll > 0
+      ? Math.min(100, (scrollLeft / maxScroll) * 100)
+      : 100;
 
-  if (form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
+    progressFill.style.width = `${percentage}%`;
+    progress.setAttribute(
+      "aria-valuenow",
+      String(Math.round(percentage))
+    );
 
-      var name = document.getElementById('reviewerName').value.trim();
-      var text = document.getElementById('reviewText').value.trim();
-      var rating = parseInt(ratingInput.value, 10) || 0;
+    previousButton.disabled = scrollLeft <= 2;
+    nextButton.disabled = scrollLeft >= maxScroll - 2;
 
-      if (!name || !text || rating === 0) {
-        submitMsg.textContent = 'Please add your name, a rating, and your review before submitting.';
-        submitMsg.style.color = '#B03A2E';
-        submitMsg.classList.add('show');
+    const cards = getCards();
+
+    if (!cards.length) {
+      currentLabel.textContent = "00";
+      return;
+    }
+
+    // Find the card nearest the left edge of the track.
+    let currentIndex = 0;
+    let smallestDistance = Infinity;
+
+    const trackLeft = track.getBoundingClientRect().left;
+
+    cards.forEach((card, index) => {
+      const distance = Math.abs(
+        card.getBoundingClientRect().left - trackLeft
+      );
+
+      if (distance < smallestDistance) {
+        smallestDistance = distance;
+        currentIndex = index;
+      }
+    });
+
+    currentLabel.textContent = String(currentIndex + 1).padStart(2, "0");
+  }
+
+  previousButton.addEventListener("click", () => {
+    scrollByCards(-1);
+  });
+
+  nextButton.addEventListener("click", () => {
+    scrollByCards(1);
+  });
+
+  track.addEventListener("scroll", updateCarousel, {
+    passive: true
+  });
+
+  /* ---------- Reveal cards on scroll ---------- */
+
+  function setupRevealObserver() {
+    if (cardObserver) cardObserver.disconnect();
+
+    const cards = getCards();
+
+    if (
+      reduceMotion.matches ||
+      !("IntersectionObserver" in window)
+    ) {
+      cards.forEach(card => {
+        card.classList.add("pv-visible");
+      });
+      return;
+    }
+
+    cardObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("pv-visible");
+          cardObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      root: null,
+      threshold: 0.12
+    });
+
+    cards.forEach(card => cardObserver.observe(card));
+  }
+
+  /* ---------- Accessible modal ---------- */
+
+  function openVideo(item, triggerElement) {
+    if (!item.video) return;
+
+    lastFocusedElement = triggerElement;
+    scrollPositionBeforeModal = window.scrollY;
+    isModalOpen = true;
+
+    modalTitle.textContent = item.title;
+    modalDescription.textContent =
+      item.description || "Patient testimonial from Dr. Gupta’s Dental Clinic.";
+
+    videoPlayer.pause();
+    videoPlayer.removeAttribute("src");
+    videoPlayer.removeAttribute("poster");
+    videoPlayer.load();
+
+    if (item.poster) {
+      videoPlayer.poster = item.poster;
+    }
+
+    videoPlayer.src = item.video;
+    videoPlayer.load();
+
+    modal.hidden = false;
+    modal.setAttribute("aria-hidden", "false");
+
+    document.body.classList.add("pv-modal-open");
+    document.body.style.overflow = "hidden";
+
+    // Focus the close button as soon as the dialog opens.
+    closeButton.focus();
+
+    // Start playback only following the visitor's click.
+    const playPromise = videoPlayer.play();
+
+    if (playPromise && typeof playPromise.catch === "function") {
+      playPromise.catch(() => {
+        // If playback is blocked, the visible controls let the
+        // visitor start playback manually.
+      });
+    }
+  }
+
+  function closeVideo() {
+    if (!isModalOpen) return;
+
+    isModalOpen = false;
+
+    videoPlayer.pause();
+    videoPlayer.removeAttribute("src");
+    videoPlayer.removeAttribute("poster");
+    videoPlayer.load();
+
+    modal.hidden = true;
+    modal.setAttribute("aria-hidden", "true");
+
+    document.body.classList.remove("pv-modal-open");
+    document.body.style.overflow = "";
+
+    // Restore focus to the button that opened the dialog.
+    if (lastFocusedElement && lastFocusedElement.isConnected) {
+      lastFocusedElement.focus({ preventScroll: true });
+    }
+
+    lastFocusedElement = null;
+  }
+
+  closeButton.addEventListener("click", closeVideo);
+
+  modal.querySelectorAll("[data-pv-close]").forEach(element => {
+    element.addEventListener("click", closeVideo);
+  });
+
+  document.addEventListener("keydown", event => {
+    if (!isModalOpen) return;
+
+    if (event.key === "Escape") {
+      event.preventDefault();
+      closeVideo();
+      return;
+    }
+
+    // Keep keyboard focus inside the open dialog.
+    if (event.key === "Tab") {
+      const focusable = Array.from(
+        modal.querySelectorAll(
+          'button:not(:disabled), video[controls], [href], ' +
+          'input:not(:disabled), [tabindex]:not([tabindex="-1"])'
+        )
+      ).filter(element => element.getClientRects().length > 0);
+
+      if (!focusable.length) {
+        event.preventDefault();
+        closeButton.focus();
         return;
       }
 
-      // Build a card showing the submission immediately, marked as pending
-      var card = document.createElement('div');
-      card.className = 'review-card';
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
 
-      var starsHtml = '';
-      for (var i = 0; i < 5; i++) {
-        starsHtml += i < rating ? '★' : '☆';
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
       }
+    }
+  });
 
-      var initials = name
-        .split(' ')
-        .map(function (w) { return w.charAt(0); })
-        .join('')
-        .slice(0, 2)
-        .toUpperCase();
+  /* ---------- Resize handling ---------- */
 
-      card.innerHTML =
-        '<div class="review-card-stars">' + starsHtml + '</div>' +
-        '<p>"' + text.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '"</p>' +
-        '<div class="review-card-who">' +
-          '<div class="review-card-avatar">' + initials + '</div>' +
-          '<div><div class="review-card-name">' + name.replace(/</g, '&lt;') + '</div>' +
-          '<div class="review-card-source">Submitted just now</div></div>' +
-        '</div>' +
-        '<span class="review-card-pending">Pending Approval</span>';
+  window.addEventListener("resize", () => {
+    window.clearTimeout(resizeTimer);
 
-      reviewsGrid.insertBefore(card, reviewsGrid.firstChild);
+    resizeTimer = window.setTimeout(() => {
+      updateCarousel();
+    }, 120);
+  }, { passive: true });
 
-      // Send the review to the clinic via WhatsApp for verification and posting
-      var message =
-        'New website review submitted:\n\n' +
-        'Name: ' + name + '\n' +
-        'Rating: ' + rating + '/5\n' +
-        'Review: ' + text;
+  /* ---------- Initialize ---------- */
 
-      var waUrl = 'https://wa.me/' + whatsappNumber + '?text=' + encodeURIComponent(message);
-      window.open(waUrl, '_blank', 'noopener');
-
-      submitMsg.textContent = 'Thank you! Your review has been sent to us on WhatsApp and will appear here once approved.';
-      submitMsg.style.color = '#2E7D4F';
-      submitMsg.classList.add('show');
-
-      form.reset();
-      currentRating = 0;
-      ratingInput.value = 0;
-      paintStars(0);
-    });
-  }
-
-});
+  renderCards();
+})();
 
 </script>
 

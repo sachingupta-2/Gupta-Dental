@@ -1,10 +1,2796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dr. Gupta's Dental Clinic | Precision Dentistry in South Extension, Delhi</title>
+
+<meta name="description" content="Dr. Tanupriya Gupta — 20 years of precision, magnification-guided restorative dentistry in South Extension, New Delhi. Ethical care, no over-treatment.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="faq.css">
+
+</head>
+
+
+<body><!-- =========================================================
+     HEADER
+     ========================================================= -->
+
+<header>
+
+  <div class="header-info">
+    <div class="container header-info-wrap">
+      <div class="availability" aria-label="Clinic availability">
+        <span><strong>Availability:</strong> <span class="availability-hours">Monday - Saturday, 10:00 AM - 7:00 PM</span></span>
+        <span class="sunday-closed">Sunday: CLOSED</span>
+      </div>
+      <div class="header-contact" aria-label="Clinic contact details">
+        <a href="tel:+919990880975">Call: +91 99908 80975</a>
+        <a href="https://wa.me/919990880975" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container nav-wrap" >
+
+    <a href="index.html" class="brand" style="text-decoration:none; color:inherit;" aria-label="Dr. Gupta's Dental Clinic — Home">
+
+      <img
+        src="logos/web_logo.png"
+        alt="Dr. Gupta's Dental Clinic logo"
+        style="width:44px;height:44px;border-radius:10px;object-fit:cover;"
+      >
+
+      <div class="brand-name">
+        Dr. Gupta's Dental Clinic
+      </div>
+
+    </a>
+
+
+    <nav>
+
+      <ul id="main-navigation">
+
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+
+        <li>
+          <a href="about.html">About</a>
+        </li>
+
+        <li>
+          <a href="difference.html">Our Difference</a>
+        </li>
+
+        <li>
+          <a href="services.html">Services</a>
+        </li>
+
+        <li>
+          <a href="reviews.html">Reviews</a>
+        </li>
+
+        <li>
+          <a href="faq.html">FAQ</a>
+        </li>
+
+        <li>
+          <a href="contact.html">Contact</a>
+        </li>
+
+      </ul>
+
+    </nav>
+
+
+    <div class="nav-cta">
+
+      <button
+        type="button"
+        class="appointment-trigger"
+        id="openAppointmentModal"
+      >
+        Book Appointment
+      </button>
+
+      <button
+        type="button"
+        class="menu-toggle"
+        aria-label="Menu"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >
+        &#9776;
+      </button>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- =========================================================
+     APPOINTMENT MODAL
+     ========================================================= -->
+
+<div
+  class="appointment-modal-overlay"
+  id="appointmentModal"
+  aria-hidden="true"
+>
+
+  <div
+    class="appointment-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="appointmentTitle"
+  >
+
+    <button
+      type="button"
+      class="modal-close"
+      aria-label="Close appointment form"
+    >
+      &times;
+    </button>
+
+
+    <div class="modal-head">
+
+      <h3 id="appointmentTitle">
+        Book an Appointment
+      </h3>
+
+      <p>
+        Please fill in your details and we will contact you shortly.
+      </p>
+
+    </div>
+
+
+    <form class="appointment-form" id="appointmentForm">
+      <div class="appointment-progress" aria-label="Appointment form progress">
+        <div class="step-indicator active" id="stepIndicator1">1. Patient Details</div>
+        <div class="step-indicator" id="stepIndicator2">2. Personal Details <span class="optional-note">(Optional)</span></div>
+      </div>
+
+      <div class="appointment-step active" id="appointmentStep1">
+        <div class="form-grid">
+          <div class="form-group"><label for="name">Name</label><input id="name" name="name" type="text" placeholder="Enter your name" required></div>
+          <div class="form-group"><label for="age">Age</label><input id="age" name="age" type="number" min="1" placeholder="Age" required></div>
+          <div class="form-group"><label for="phone">Phone No</label><input id="phone" name="phone" type="tel" placeholder="Your phone number" required></div>
+          <div class="form-group"><label for="email">Email</label><input id="email" name="email" type="email" placeholder="Your email address" required></div>
+          <div class="form-group full"><label for="address">Address</label><input id="address" name="address" type="text" placeholder="Your address" required></div>
+          <div class="form-group"><label for="appointmentDate">Appointment Date</label><input type="date" id="appointmentDate" name="appointmentDate" required></div>
+          <div class="form-group"><label for="appointmentTime">Available Time Slot</label><select id="appointmentTime" name="appointmentTime" required disabled><option value="">Select a date first</option></select><small class="slot-status" id="slotStatus" aria-live="polite">Choose a date to see available slots.</small></div>
+          <div class="form-group"><label for="gender">Gender</label><select id="gender" name="gender" required><option value="">Select gender</option><option>Male</option><option>Female</option><option>Other</option></select></div>
+        </div>
+        <div class="step-actions">
+          <button type="button" class="secondary-btn" id="closeAppointmentModal">Cancel</button>
+          <button type="button" class="cta-btn" id="nextAppointmentStep">Next &rarr;</button>
+        </div>
+      </div>
+
+      <div class="appointment-step" id="appointmentStep2">
+        <div class="clinical-intro"><strong>Personal details are optional.</strong> You can provide them to help the dentist understand your concern before the appointment, or skip this section and submit with your basic details.</div>
+        <div class="form-grid">
+          <div class="form-group full"><label for="reasonForVisit">Reason for Visit</label><textarea id="reasonForVisit" name="reasonForVisit" placeholder="Briefly describe the reason for your visit"></textarea></div>
+          <div class="form-group"><label for="dentalProblem">Current Dental Problem</label><select id="dentalProblem" name="dentalProblem"><option value="">Select if applicable</option><option>Tooth Pain</option><option>Sensitivity</option><option>Swelling</option><option>Bleeding Gums</option><option>Broken / Chipped Tooth</option><option>Cavity</option><option>Missing Tooth</option><option>Routine Check-up</option><option>Cleaning</option><option>Other</option></select></div>
+          <div class="form-group"><label for="painLevel">Pain / Discomfort</label><select id="painLevel" name="painLevel"><option value="">Select if applicable</option><option>None</option><option>Mild</option><option>Moderate</option><option>Severe</option></select></div>
+          <div class="form-group"><label for="previousDentalTreatment">Previous Dental Treatment</label><select id="previousDentalTreatment" name="previousDentalTreatment"><option value="">Select if applicable</option><option>No Previous Treatment</option><option>Filling</option><option>Root Canal</option><option>Extraction</option><option>Implant</option><option>Crown / Bridge</option><option>Other</option></select></div>
+          <div class="form-group"><label>Currently Taking Any Medicine?</label><div class="radio-row"><label class="radio-option"><input type="radio" name="medication" value="yes"> Yes</label><label class="radio-option"><input type="radio" name="medication" value="no" checked> No</label></div></div>
+          <div class="form-group full medication-box" id="medicationBox"><label for="medicineDetails">Medicine Details</label><textarea id="medicineDetails" name="medicineDetails" placeholder="List medicines you are currently taking"></textarea></div>
+          <div class="form-group full"><label for="allergies">Known Allergies</label><textarea id="allergies" name="allergies" placeholder="Mention any known medicine or other allergies"></textarea></div>
+          <div class="form-group full"><label for="medicalHistory">Medical History</label><textarea id="medicalHistory" name="medicalHistory" placeholder="Mention any relevant medical history"></textarea></div>
+          <div class="form-group full"><label for="additionalClinicalDetails">Additional Clinical Details</label><textarea id="additionalClinicalDetails" name="additionalClinicalDetails" placeholder="Anything else you would like the dentist to know"></textarea></div>
+        </div>
+
+        <div class="clinical-section">
+          <h4 class="clinical-section-title">Adverse Habits / Adverse Oral Habits</h4>
+          <div class="clinical-table-wrap"><table class="clinical-table"><thead><tr><th>Type</th><th>Frequency</th><th>Duration</th></tr></thead><tbody>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitSmoking" value="Smoking"> Smoking</label></td><td><select name="habitSmokingFrequency"><option value="">Select</option><option>Occasional</option><option>Once Daily</option><option>Twice Daily</option><option>More than Twice Daily</option></select></td><td><select name="habitSmokingDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitTobacco" value="Smokeless Tobacco/snuff"> Smokeless Tobacco / Snuff</label></td><td><select name="habitTobaccoFrequency"><option value="">Select</option><option>Occasional</option><option>Once Daily</option><option>Twice Daily</option><option>More than Twice Daily</option></select></td><td><select name="habitTobaccoDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitPaan" value="Paan chewing (gutka, paanmasala)"> Paan chewing (gutka, paanmasala)</label></td><td><select name="habitPaanFrequency"><option value="">Select</option><option>Occasional</option><option>Once Daily</option><option>Twice Daily</option><option>More than Twice Daily</option></select></td><td><select name="habitPaanDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitAlcohol" value="Alcohol"> Alcohol</label></td><td><select name="habitAlcoholFrequency"><option value="">Select</option><option>Occasional</option><option>Once Weekly</option><option>2-3 Times Weekly</option><option>Daily</option></select></td><td><select name="habitAlcoholDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+          </tbody></table></div>
+        </div>
+
+        <div class="clinical-section"><h4 class="clinical-section-title">Oral Hygiene Practices</h4><div class="hygiene-grid">
+          <div class="form-group full"><label>i) Type of Cleaning</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Toothbrush"> Toothbrush</label><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Finger"> Finger</label><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Stick"> Stick</label><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Others"> Others</label></div></div>
+          <div class="form-group full"><label>ii) Method of Cleaning</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="cleaningMethod" value="Vertical"> Vertical</label><label class="clinical-check"><input type="checkbox" name="cleaningMethod" value="Horizontal"> Horizontal</label><label class="clinical-check"><input type="checkbox" name="cleaningMethod" value="Circular"> Circular</label></div></div>
+          <div class="form-group full"><label>iii) Frequency of Cleaning / Brushing</label><div class="option-grid"><label class="clinical-check"><input type="radio" name="brushingFrequency" value="Once"> Once</label><label class="clinical-check"><input type="radio" name="brushingFrequency" value="Twice"> Twice</label><label class="clinical-check"><input type="radio" name="brushingFrequency" value="Thrice"> Thrice</label></div></div>
+          <div class="form-group full"><label>iv) Materials Used</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Toothpaste"> Toothpaste</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Tooth Powder"> Tooth Powder</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Charcoal"> Charcoal</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Sand"> Sand</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Brick Powder"> Brick Powder</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Any Other"> Any Other</label></div><input type="text" id="cleaningMaterialOther" name="cleaningMaterialOther" placeholder="If any other, please specify"></div>
+          <div class="form-group full"><label>v) Time of Brushing</label><div class="option-grid"><label class="clinical-check"><input type="radio" name="brushingTime" value="Before Meal"> Before Meal</label><label class="clinical-check"><input type="radio" name="brushingTime" value="After Meals"> After Meals</label></div></div>
+          <div class="form-group full"><label>vi) Frequency of Changing the Tooth Brush</label><div class="option-grid"><label class="clinical-check"><input type="radio" name="toothbrushChangeFrequency" value="Once"> Once</label><label class="clinical-check"><input type="radio" name="toothbrushChangeFrequency" value="Twice"> Twice</label><label class="clinical-check"><input type="radio" name="toothbrushChangeFrequency" value="Thrice"> Thrice</label></div></div>
+          <div class="form-group"><label for="durationOfCleaning">vii) Duration of Cleaning</label><input type="text" id="durationOfCleaning" name="durationOfCleaning" placeholder="e.g. 2 minutes"></div>
+          <div class="form-group full"><label>viii) Other Oral Hygiene Aids Used</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Flossing"> Flossing</label><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Interdental Aids"> Interdental Aids</label><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Oral Mouth Rinse"> Oral Mouth Rinse</label><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Tongue Cleaner"> Tongue Cleaner</label></div></div>
+        </div></div>
+
+        <div class="step-actions"><button type="button" class="secondary-btn" id="backAppointmentStep">&larr; Back</button><div class="right-actions"><button type="button" class="secondary-btn" id="skipClinicalStep">Skip &amp; Submit</button><button type="submit" class="cta-btn">Submit Appointment</button></div></div>
+      </div>
+    </form>
+
+  </div>
+
+</div>
+
+
+<!-- =========================================================
+     HERO
+     ========================================================= -->
+
+<section
+  id="home"
+  class="reveal hero home_bg"
+>
+
+  <div class="container hero-grid">
+
+    <div>
+
+      <h2 class="" style="color: #E6A900;">
+        Experience. Precision. Trust.
+      </h2>
+
+      <h1>
+        Healthy smiles<br>                     
+        begin with<br>
+        <span>the right care.</span>
+      </h1>
+       <!-- Providing ethical, evidence-based and comprehensive dental care with 20+ years of experience in dentistry. Your comfort, safety and long-term oral health are our priority. -->
+
+      <p>
+       We believe great dentistry begins with trust. From your first consultation to your final result, we're dedicated to providing honest care, gentle treatment, and exceptional attention to detail.
+      </p>
+
+
+  <!-- companies logoes and details start here  -->
+<!-- 
+ <div class="home_logoes">
+
+    <div class="cred-grid">
+
+
+      <div class="cred-item">
+
+        <div class="cred-badge">
+
+          <img src="logos/aiims.png" alt="AIIMS New Delhi logo" >
+
+        </div>
+
+        <span class="cred-name">
+          AIIMS, New Delhi
+        </span>
+
+      </div>
+
+
+      <div class="cred-item">
+
+        <div class="cred-badge">
+
+          <img src="logos/pgi.png" alt="PGIMER Chandigarh logo" >
+
+        </div>
+
+        <span class="cred-name">
+          PGI, Chandigarh
+        </span>
+
+      </div>
+
+
+      <div class="cred-item">
+
+        <div class="cred-badge">
+
+          <img src="logos/jmi.png" alt="Jamia Millia Islamia logo" >
+
+        </div>
+
+        <span class="cred-name">
+          Jamia Millia Islamia<br>
+          Faculty of Dental Sciences
+        </span>
+
+      </div>
+
+
+      <div class="cred-item">
+
+        <div class="cred-badge">
+
+          <img src="logos/manipal.png" alt="Manipal University logo" >
+
+        </div>
+
+        <span class="cred-name">
+          Manipal University<br>
+          (MDS)
+        </span>
+
+      </div>
+
+
+      <div class="cred-item">
+
+        <div class="cred-badge">
+
+          <img src="logos/nhdc.png" alt="Nair Hospital Dental College logo" >
+
+        </div>
+
+        <span class="cred-name">
+          Nair Hospital, Mumbai<br>
+          (BDS)
+        </span>
+
+      </div>
+
+
+    </div>
+
+  </div> -->
+
+
+
+
+
+<!-- companies logoes and details Ends here  -->
+
+
+
+
+      <!-- <div class="hero-ctas">
+
+        <a href="https://wa.me/919990880975" class="cta-btn" > Book on WhatsApp </a>
+
+        <a href="tel:+919990880975" class="btn-outline" > Call the Clinic </a>
+
+      </div> -->
+
+<!-- 20+exp with icons section  -->
+      <!-- <div class="hero-points" aria-label="Clinic highlights">
+        <div class="hero-point">
+          <span class="hero-point-icon"><img src="web_ready/icon-experience.svg" alt=""></span>
+          <div><strong>20+ Years</strong><span>of Experience</span></div>
+        </div>
+        <div class="hero-point">
+          <span class="hero-point-icon"><img src="web_ready/icon-dentist.svg" alt=""></span>
+          <div><strong>Public Health</strong><span>Dentist</span></div>
+        </div>
+        <div class="hero-point">
+          <span class="hero-point-icon"><img src="web_ready/icon-patients.svg" alt=""></span>
+          <div><strong>2000+ Happy</strong><span>Patients</span></div>
+        </div>
+        <div class="hero-point">
+          <span class="hero-point-icon"><img src="web_ready/icon-care.svg" alt=""></span>
+          <div><strong>Ethical &amp; Caring</strong><span>Patient Care</span></div>
+        </div>
+      </div> -->
+
+    </div>
+
+<!-- image carouser  -->
+   <div class="hero-img">
+
+  <div class="hero-carousel" id="heroCarousel">
+
+    <!-- Slide 1 -->
+    <div class="hero-slide active">
+      <img
+        src="Meet your dentist/dr tanupriya gupta.png"
+        alt="Dr. Tanupriya Gupta Dental Clinic"
+      >
+    </div>
+
+
+    <!-- Slide 2 -->
+    <div class="hero-slide">
+      <img
+        src="clinic_photos_shortlist/2nd image.png"
+        alt="Dr. Gupta's Dental Clinic"
+      >
+    </div>
+
+
+    <!-- Slide 3 -->
+    <div class="hero-slide">
+      <img
+        src="clinic_photos_shortlist/selected 1.png"
+        alt="Dental treatment at Dr. Gupta's Dental Clinic"
+      >
+    </div>
+
+
+    <!-- Slide 4 -->
+    <div class="hero-slide">
+      <img
+        src="clinic_photos/IMG_7437.JPG"
+        alt="Modern dental clinic"
+      >
+    </div>
+
+
+    <!-- Previous -->
+    <button
+      class="carousel-arrow carousel-prev"
+      type="button"
+      aria-label="Previous image"
+    >
+      &#10094;
+    </button>
+
+
+    <!-- Next -->
+    <button
+      class="carousel-arrow carousel-next"
+      type="button"
+      aria-label="Next image"
+    >
+      &#10095;
+    </button>
+
+
+    <!-- Dots -->
+    <div class="carousel-dots">
+
+      <button
+        class="carousel-dot active"
+        type="button"
+        aria-label="Show image 1"
+      ></button>
+
+      <button
+        class="carousel-dot"
+        type="button"
+        aria-label="Show image 2"
+      ></button>
+
+      <button
+        class="carousel-dot"
+        type="button"
+        aria-label="Show image 3"
+      ></button>
+
+      <button
+        class="carousel-dot"
+        type="button"
+        aria-label="Show image 4"
+      ></button>
+
+    </div>
+
+  </div>
+
+</div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     STATS
+     ========================================================= -->
+
+<div class="stats">
+
+  <div class="container stats-grid">
+
+
+
+
+
+
+  <div class="stat-item">
+    <div class="stat-icon">
+      <!-- Award Icon -->
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="8" r="5"/>
+        <path d="M8.5 13.5L7 22l5-3 5 3-1.5-8.5"/>
+      </svg>
+    </div>
+    <div class="num" data-target="20">0</div>
+    <div class="label">Years of Experience</div>
+  </div>
+
+  <div class="stat-item">
+    <div class="stat-icon">
+      <!-- Smile Icon -->
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M8 15s1.5 2 4 2 4-2 4-2"/>
+        <circle cx="9" cy="10" r="1"/>
+        <circle cx="15" cy="10" r="1"/>
+      </svg>
+    </div>
+    <div class="num" data-target="2000" data-suffix="+">0+</div>
+    <div class="label">Smiling Clients</div>
+  </div>
+
+  <div class="stat-item">
+    <div class="stat-icon">
+      <!-- Tooth Icon -->
+<svg
+    viewBox="0 0 64 64"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+>
+    <path
+        d="M18 10
+           C13 12 10 17 10 23
+           C10 31 14 35 15 42
+           C16 49 17 56 21 56
+           C25 56 25 45 30 44
+           C35 43 35 56 40 56
+           C44 56 45 49 46 42
+           C47 35 54 31 54 23
+           C54 17 51 12 46 10
+           C41 8 37 12 32 12
+           C27 12 23 8 18 10Z"
+        stroke="currentColor"
+        stroke-width="3"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+    />
+</svg>
+    </div>
+    <div class="num" data-target="1500" data-suffix="+">0+</div>
+    <div class="label">Teeth Filled</div>
+  </div>
+
+  <div class="stat-item">
+    <div class="stat-icon">
+<!-- Root Canal Treatment Icon -->
+<svg
+    viewBox="0 0 100 100"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    aria-hidden="true"
+>
+
+    <!-- Tooth outline -->
+    <path
+        d="M27 22
+           C19 23 13 30 13 40
+           C13 48 18 53 19 61
+           C20 69 19 80 24 86
+           C27 89 31 88 33 83
+           L39 66
+           C40 62 43 60 50 60
+           C57 60 60 62 61 66
+           L67 83
+           C69 88 73 89 76 86
+           C81 80 80 69 81 61
+           C82 53 87 48 87 40
+           C87 30 81 23 73 22
+           C65 21 60 26 55 27
+           C53 28 52 28 50 28
+           C48 28 47 28 45 27
+           C40 26 35 21 27 22Z"
+
+        stroke="currentColor"
+        stroke-width="4"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+    />
+
+
+    <!-- Left root canal -->
+    <path
+        d="M43 42
+           C44 48 43 54 41 61
+           C39 68 37 75 36 82"
+
+        stroke="currentColor"
+        stroke-width="4"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+    />
+
+
+    <!-- Right root canal -->
+    <path
+        d="M57 42
+           C56 48 57 54 59 61
+           C61 68 63 75 64 82"
+
+        stroke="currentColor"
+        stroke-width="4"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+    />
+
+
+    <!-- Root canal instrument -->
+    <path
+        d="M50 8
+           L50 55
+           L45 68"
+
+        stroke="currentColor"
+        stroke-width="3.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+    />
+
+
+    <!-- File handle -->
+    <path
+        d="M44 8
+           L56 8
+           L58 13
+           L54 18
+           L46 18
+           L42 13
+           Z"
+
+        stroke="currentColor"
+        stroke-width="3.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+    />
+
+
+    <!-- File grip lines -->
+    <path
+        d="M44 20
+           L56 20
+
+           M43 24
+           L55 24
+
+           M42 28
+           L54 28"
+
+        stroke="currentColor"
+        stroke-width="3"
+        stroke-linecap="round"
+    />
+
+</svg>
+    </div>
+    <div class="num" data-target="500" data-suffix="+">0+</div>
+    <div class="label">Root Canals Done</div>
+  </div>
+
+
+    <!-- <div>
+      <div class="num" data-target="20">0</div>
+      <div class="label">Years of Experience</div>
+    </div>
+
+    <div>
+      <div class="num" data-target="2000" data-suffix="+">0+</div>
+      <div class="label">Smiling Clients</div>
+    </div>
+
+    <div>
+      <div class="num" data-target="1500" data-suffix="+">0+</div>
+      <div class="label">Teeth Filled</div>
+    </div>
+
+    <div>
+      <div class="num" data-target="500" data-suffix="+">0+</div>
+      <div class="label">Root Canals Done</div>
+    </div> -->
+
+  </div>
+
+</div>
+
+
+<!-- =========================================================
+     CREDENTIALS
+     ========================================================= -->
+<!-- 
+<section class="credentials reveal">
+
+  <div class="container">
+
+    <div class="cred-label">
+      Trained &amp; Credentialed At
+    </div>
+
+
+    <div class="cred-grid">
+
+
+      <div class="cred-item">
+
+        <div class="cred-badge">
+
+          <img src="logos/aiims.png" alt="AIIMS New Delhi logo" >
+
+        </div>
+
+        <span class="cred-name">
+          AIIMS, New Delhi
+        </span>
+
+      </div>
+
+
+      <div class="cred-item">
+
+        <div class="cred-badge">
+
+          <img src="logos/pgi.png" alt="PGIMER Chandigarh logo" >
+
+        </div>
+
+        <span class="cred-name">
+          PGI, Chandigarh
+        </span>
+
+      </div>
+
+
+      <div class="cred-item">
+
+        <div class="cred-badge">
+
+          <img src="logos/jmi.png" alt="Jamia Millia Islamia logo" >
+
+        </div>
+
+        <span class="cred-name">
+          Jamia Millia Islamia<br>
+          Faculty of Dental Sciences
+        </span>
+
+      </div>
+
+
+      <div class="cred-item">
+
+        <div class="cred-badge">
+
+          <img src="logos/manipal.png" alt="Manipal University logo" >
+
+        </div>
+
+        <span class="cred-name">
+          Manipal University<br>
+          (MDS)
+        </span>
+
+      </div>
+
+
+      <div class="cred-item">
+
+        <div class="cred-badge">
+
+          <img src="logos/nhdc.png" alt="Nair Hospital Dental College logo" >
+
+        </div>
+
+        <span class="cred-name">
+          Nair Hospital, Mumbai<br>
+          (BDS)
+        </span>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section> -->
+
+
+<!-- =========================================================
+     WHAT MAKES US DIFFERENT
+========================================================= -->
+
+
+
+
+
+<!-- testing the differences section starts here  -->
+
+
+<section class="our-difference" id="our-difference">
+
+    <div class="difference-heading">
+
+        <h2>What Makes Us Different?</h2>
+
+        <div class="heading-line"></div>
+
+        <p>
+            It's the little details that make a big difference.
+            Here's what you can expect at our clinic.
+        </p>
+
+    </div>
+
+
+    <div class="difference-features">
+
+
+        <!-- 01. HIGH MAGNIFICATION -->
+
+        <a
+            href="magnification.html"
+            class="difference-feature"
+            data-title="High Magnification"
+            data-image="clinic_photos_shortlist/1st different.png"
+            data-description="High magnification helps improve visibility during detailed dental procedures and supports careful clinical work."
+            data-points="7.5× dental loupes|Improved visibility of treatment areas|Supports precise clinical procedures"
+        >
+
+            <div class="feature-image">
+
+                <img
+                    src="clinic_photos_shortlist/1st different.png"
+                    alt="7.5× dental loupes"
+                    loading="lazy"
+                >
+
+                <span class="magnification-badge">
+                    7.5×
+                </span>
+
+            </div>
+
+            <h3>High Magnification</h3>
+
+            <p>
+                7.5× loupes for<br>
+                greater precision
+            </p>
+
+            <span class="feature-explore">
+                Explore topic →
+            </span>
+
+        </a>
+
+
+
+        <!-- 02. BRIGHTER VISIBILITY -->
+
+        <a
+            href="advanced-technology.html"
+            class="difference-feature"
+            data-title="Brighter Visibility"
+            data-image="clinic_photos_shortlist/orchid-light-admetec-800x.jpg"
+            data-description="High-illumination dental lighting helps improve visibility during examination and treatment."
+            data-points="High-illumination dental light|Clearer visibility during procedures|Supports careful clinical work"
+        >
+
+            <div class="feature-image">
+
+                <img
+                    src="clinic_photos_shortlist/orchid-light-admetec-800x.jpg"
+                    alt="High illumination dental light"
+                    loading="lazy"
+                >
+
+            </div>
+
+            <h3>Brighter Visibility</h3>
+
+            <p>
+                High illumination<br>
+                for clearer care
+            </p>
+
+            <span class="feature-explore">
+                Explore topic →
+            </span>
+
+        </a>
+
+
+
+        <!-- 03. ADVANCED ENDODONTICS -->
+
+        <a
+            href="advance-endodontics.html"
+            class="difference-feature"
+            data-title="Advanced Endodontics"
+            data-image="clinic_photos_shortlist/selected 2.jpeg"
+            data-description="Modern endodontic equipment supports carefully planned root canal treatment and controlled clinical procedures."
+            data-points="Advanced endomotor technology|Supports controlled canal preparation|Careful root canal treatment"
+        >
+
+            <div class="feature-image">
+
+                <img
+                    src="clinic_photos_shortlist/selected 2.jpeg"
+                    alt="Advanced endomotor"
+                    loading="lazy"
+                >
+
+            </div>
+
+            <h3>Advanced Endodontics</h3>
+
+            <p>
+                Endomotor for<br>
+                controlled treatment
+            </p>
+
+            <span class="feature-explore">
+                Explore topic →
+            </span>
+
+        </a>
+
+
+
+        <!-- 04. RUBBER DAM -->
+
+        <a
+            href="rubber-dam.html"
+            class="difference-feature"
+            data-title="Rubber Dam Isolation"
+            data-image="clinic_photos_shortlist/rubberdam.png"
+            data-description="Rubber dam isolation helps keep the treatment area cleaner and better controlled during selected dental procedures."
+            data-points="Improved moisture control|Helps isolate the treatment area|Supports a cleaner procedure"
+        >
+
+            <div class="feature-image">
+
+                <img
+                    src="clinic_photos_shortlist/rubberdam.png"
+                    alt="Rubber dam dental treatment"
+                    loading="lazy"
+                >
+
+            </div>
+
+            <h3>Rubber Dam</h3>
+
+            <p>
+                A cleaner, safer<br>
+                treatment experience
+            </p>
+
+            <span class="feature-explore">
+                Explore topic →
+            </span>
+
+        </a>
+
+
+
+        <!-- 05. STERILIZATION -->
+
+        <a
+            href="sterilisation.html"
+            class="difference-feature"
+            data-title="Strict Sterilization"
+            data-image="clinic_photos_shortlist/vaccum sterlisation.png"
+            data-description="Our sterilization protocols focus on maintaining appropriate infection prevention and instrument processing practices."
+            data-points="Vacuum autoclave sterilization|Instrument processing protocols|Focus on infection prevention"
+        >
+
+            <div class="feature-image">
+
+                <img
+                    src="clinic_photos_shortlist/vaccum sterlisation.png"
+                    alt="Vacuum autoclave sterilization"
+                    loading="lazy"
+                >
+
+            </div>
+
+            <h3>Strict Sterilization</h3>
+
+            <p>
+                Vacuum autoclave<br>
+                for your safety
+            </p>
+
+            <span class="feature-explore">
+                Explore topic →
+            </span>
+
+        </a>
+
+
+
+        <!-- 06. DIGITAL DENTISTRY -->
+
+        <a
+            href="advanced-technology.html"
+            class="difference-feature"
+            data-title="Digital Dentistry"
+            data-image="clinic_photos_shortlist/digital dentastery.png"
+            data-description="Modern diagnostic tools can support assessment, treatment planning, and carefully considered clinical decisions."
+            data-points="Modern diagnostic equipment|Supports treatment planning|Technology-assisted dental care"
+        >
+
+            <div class="feature-image">
+
+                <img
+                    src="clinic_photos_shortlist/digital dentastery.png"
+                    alt="Digital dentistry equipment"
+                    loading="lazy"
+                >
+
+            </div>
+
+            <h3>Digital Dentistry</h3>
+
+            <p>
+                Modern diagnostics<br>
+                for careful treatment
+            </p>
+
+            <span class="feature-explore">
+                Explore topic →
+            </span>
+
+        </a>
+
+
+
+        <!-- 07. CONTINUOUS LEARNING -->
+
+        <a
+            href="continuous-learning.html"
+            class="difference-feature"
+            data-title="Continuous Learning"
+            data-image="clinic_photos_shortlist/continuous learning.jpg"
+            data-description="Continuous education helps us stay informed about developments in dental techniques, materials, and clinical approaches."
+            data-points="Courses and conferences|Hands-on learning|Professional training and workshops"
+        >
+
+            <div class="feature-image">
+
+                <img
+                    src="clinic_photos_shortlist/continuous learning.jpg"
+                    alt="Continuing dental education"
+                    loading="lazy"
+                >
+
+            </div>
+
+            <h3>Continuous Learning</h3>
+
+            <p>
+                Regular training and workshops<br>
+                to stay updated
+            </p>
+
+            <span class="feature-explore">
+                Explore topic →
+            </span>
+
+        </a>
+
+
+
+        <!-- 08. PERSONALISED CARE -->
+
+        <a
+            href="personalised-care.html"
+            class="difference-feature"
+            data-title="Personalised Care"
+            data-image="clinic_photos_shortlist/personalised care.png"
+            data-description="Treatment planning is adapted to each patient's concerns, needs, preferences, and clinical requirements."
+            data-points="Individualised treatment planning|Clear communication|Care based on patient needs"
+        >
+
+            <div class="feature-image">
+
+                <img
+                    src="clinic_photos_shortlist/personalised care.png"
+                    alt="Personalised dental care"
+                    loading="lazy"
+                >
+
+            </div>
+
+            <h3>Personalised Care</h3>
+
+            <p>
+                Treatment planned<br>
+                around you
+            </p>
+
+            <span class="feature-explore">
+                Explore topic →
+            </span>
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     HOVER DETAIL PREVIEW
+     ===================================================== -->
+
+<div
+    class="difference-preview"
+    id="differencePreview"
+    aria-hidden="true"
+>
+
+    <button
+        class="difference-preview-close"
+        type="button"
+        aria-label="Close preview"
+    >
+        ×
+    </button>
+
+
+    <div class="difference-preview-image">
+
+        <img
+            id="previewImage"
+            src=""
+            alt=""
+        >
+
+    </div>
+
+
+    <div class="difference-preview-content">
+
+        <span class="preview-label">
+            OUR DIFFERENCE
+        </span>
+
+        <h3 id="previewTitle"></h3>
+
+        <div class="preview-line"></div>
+
+        <p id="previewDescription"></p>
+
+        <ul id="previewPoints"></ul>
+
+        <a
+            href="#"
+            id="previewLink"
+            class="preview-link"
+        >
+            Explore Full Topic →
+        </a>
+
+    </div>
+
+</div>
+
+
+
+
+<!-- =========================================================
+     DIFFERENCE
+     ========================================================= -->
+
+<!-- <section id="difference" class="reveal diff">
+
+  <div class="container diff-grid">
+
+
+    <div class="diff-img">
+
+      <img src="clinic_photos_shortlist/selected 3.jpeg" alt="Advanced dental technology" >
+
+    </div>
+
+
+    <div class="diff-text">
+
+      <span class="eyebrow eyebrow-outline">
+        Why patients notice the difference
+      </span>
+
+      <h2>
+        Precision-led dentistry, designed around your natural teeth
+      </h2>
+
+      <p>
+        Every tooth deserves careful attention to detail. High-magnification visualisation allows Dr. Gupta to work with enhanced clarity during restorative procedures, supporting meticulous treatment planning and precise execution.
+      </p>
+
+      <p>
+        Our philosophy is conservative by design — preserving healthy tooth structure wherever possible and recommending treatment based on clinical need rather than convenience.
+      </p>
+
+
+      <ul class="diff-list">
+
+        <li>
+          High-magnification visualisation for enhanced precision
+        </li>
+
+        <li>
+          Conservative approach focused on preserving natural teeth
+        </li>
+
+        <li>
+          Carefully selected, high-quality restorative materials
+        </li>
+
+        <li>
+          Meticulous finishing and attention to detail
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+</section> -->
+
+<!-- =========================================================
+     WHY US — interactive flip cards
+     ========================================================= -->
+
+<section id="why" class="reveal why-us">
+
+  <div class="container">
+
+    <div class="sec-head">
+
+      <h2 class="head" style="  font-size: 48px; color: #E6A900;">
+        Why Patients Choose Us
+      </h2>
+
+      <h2>
+        What you'll actually notice in your first visit
+      </h2>
+
+      <p>
+        Six small differences that add up. Tap a card to see why each one matters.
+      </p>
+
+    </div>
+
+
+    <div class="why-grid">
+
+      <a href="magnification-guided-precision.html" class="why-card" aria-label="Magnification-Guided Precision — learn more">
+       <span class="why-card-inner">
+          <span class="why-card-face why-card-front">
+            <span class="why-card-icon">🔍</span>
+            <span class="why-card-title">Magnification-Guided Precision</span>
+            <span class="why-flip-hint">Tap to learn more</span>
+          </span>
+          <span class="why-card-face why-card-back">
+            <span class="why-card-back-text">
+              Every restoration is done under high magnification — the same standard used in specialist microsurgery. Fewer redos, longer-lasting fillings.
+            </span>
+          </span>
+        </span>
+      </a>
+
+      <a href="treat-only-whats-needed.html" class="why-card" aria-label="Treat only What's needed — learn more">
+        <span class="why-card-inner">
+          <span class="why-card-face why-card-front">
+            <span class="why-card-icon">⚖️</span>
+            <span class="why-card-title">Treat Only What's Needed</span>
+            <span class="why-flip-hint">Tap to see why</span>
+          </span>
+          <span class="why-card-face why-card-back">
+            <span class="why-card-back-text">
+              No commissions, no upselling. If a simpler, more conservative option solves your problem, that's the one you'll be offered.
+            </span>
+          </span>
+        </span>
+      </a>
+
+      <a href="20-years-one-doctor.html" class="why-card" aria-label="20 Years, One Doctor — learn more">
+        <span class="why-card-inner"> 
+          <span class="why-card-face why-card-front">
+            <span class="why-card-icon">👩‍⚕️</span>
+            <span class="why-card-title">20 Years, One Doctor</span>
+            <span class="why-flip-hint">Tap to see why</span>
+          </span>
+          <span class="why-card-face why-card-back">
+            <span class="why-card-back-text">
+              You see Dr. Tanupriya Gupta herself, every single visit — not whichever associate happens to be free that day.
+            </span>
+          </span>
+        </span>
+      </a>
+
+      <a href="hospital-grade-sterilisation.html" class="why-card" aria-label="Hospital-Grade Sterilisation — learn more">
+        <span class="why-card-inner">
+          <span class="why-card-face why-card-front">
+            <span class="why-card-icon">🧼</span>
+            <span class="why-card-title">Hospital-Grade Sterilisation</span>
+            <span class="why-flip-hint">Tap to see why</span>
+          </span>
+          <span class="why-card-face why-card-back">
+            <span class="why-card-back-text">
+              Every instrument, every visit, without exception — a stringent sterilisation protocol that's never treated as optional.
+            </span>
+          </span>
+        </span>
+      </a>
+
+      <a href="unhurried-appointment.html" class="why-card" aria-label="Unhurried Appointments — learn more">
+        <span class="why-card-inner">
+          <span class="why-card-face why-card-front">
+            <span class="why-card-icon">⏱️</span>
+            <span class="why-card-title">Unhurried Appointments</span>
+            <span class="why-flip-hint">Tap to see why</span>
+          </span>
+          <span class="why-card-face why-card-back">
+            <span class="why-card-back-text">
+              Time to explain, time to listen, and time to get the work right the first time — instead of rushing to the next chair.
+            </span>
+          </span>
+        </span>
+      </a>
+
+      <a href="rating.html" class="why-card" aria-label="5.0 Rating, Zero Exceptions — learn more">
+        <span class="why-card-inner">
+          <span class="why-card-face why-card-front">
+            <span class="why-card-icon">⭐</span>
+            <span class="why-card-title">5.0 Rating, Zero Exceptions</span>
+            <span class="why-flip-hint">Tap to see why</span>
+          </span>
+          <span class="why-card-face why-card-back">
+            <span class="why-card-back-text">
+              Every single review on our Google listing has been five stars — not one exception. Read them yourself before you decide.
+            </span>
+          </span>
+        </span>
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================================================
+     ABOUT
+     ========================================================= -->
+<section id="about" class="reveal about">
+
+  <div class="container">
+
+    <!-- SECTION HEADING -->
+    <div class="about-heading">
+
+      <h2 class="about-eyebrow">
+          Meet Your Dentist
+      </h2>
+
+    
+
+      <p>
+        Get to know the dentist behind Dr. Gupta's Dental Clinic
+      </p>
+
+      <div class="about-line"></div>
+
+    </div>
+
+
+    <!-- ABOUT CONTENT -->
+    <div class="about-grid">
+
+      <div class="about-img">
+
+        <img
+          src="Meet your dentist/dr tanupriya gupta.png"
+          alt="Dr. Tanupriya Gupta">
+
+      </div>
+
+
+      <div class="about-text">
+
+        <h2>
+          Dr. Tanupriya Gupta
+        </h2>
+
+        <span class="role">
+          MDS &middot; Principal Dentist &middot; 20 Years of Experience
+        </span>
+
+        <p>
+          Dr. Tanupriya Gupta, MDS, began her dental journey with her
+          <strong>BDS from Nair Hospital Dental College, Mumbai</strong>,
+          graduating in 2003. She then worked as a
+          <strong>House Surgeon at PGI Chandigarh</strong>, gaining early
+          clinical experience in a leading teaching hospital.
+        </p>
+
+        <p>
+          She went on to complete her
+          <strong>MDS from Manipal College of Dental Sciences, Manipal</strong>,
+          followed by several years of advanced clinical and academic
+          experience at <strong>AIIMS, New Delhi</strong>. At AIIMS, she
+          spent four years working in clinical and research roles, including
+          <strong>three years as a Senior Resident</strong> and
+          <strong>one year as a Senior Research Fellow</strong>.
+        </p>
+
+        <p>
+          She subsequently joined the
+          <strong>Faculty of Dental Sciences, Jamia Millia Islamia</strong>,
+          combining clinical practice with teaching and academic work.
+        </p>
+
+        <p>
+          In 2013, she established
+          <strong>Dr. Gupta's Dental Clinic</strong> in South Delhi.
+          Her approach is centred on careful diagnosis, preserving natural
+          teeth whenever possible, and recommending treatment based on
+          clinical need rather than unnecessary intervention.
+        </p>
+
+        <a href="about_Tanupriya.html" class="cta-btn">
+          Read More
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     SERVICES
+     ========================================================= -->
+
+
+     <!-- =========================================================
+     SERVICES — HORIZONTAL SLIDER
+========================================================= -->
+
+<section id="services" class="services-section reveal">
+
+    <div class="container">
+
+        <div class="sec-head">
+
+            <h2 class="eyebrow sizefont">
+                Our Services
+            </h2>
+
+            <!-- <h2>
+                Better dentistry begins with better care
+            </h2> -->
+
+        </div>
+
+
+        <div class="services-slider-wrapper">
+
+            <!-- LEFT ARROW -->
+            <button
+                class="service-arrow service-prev"
+                type="button"
+                aria-label="Previous services"
+            >
+                &#10094;
+            </button>
+
+
+            <!-- SLIDER -->
+            <div class="services-slider">
+                <!-- CARD 1 -->
+                <article class="service-card">
+
+                    <div class="service-card-image">
+
+                        <img
+                            src="clinic_photos_shortlist/screening and diagnosis.jpg"
+                            alt="Checkups and Diagnosis"
+                        >
+
+                    </div>
+
+                    <div class="service-card-content">
+
+                        <span class="service-card-number">
+                            01
+                        </span>
+
+                        <h3>
+                            Checkups &amp; Diagnosis
+                        </h3>
+
+                        <p>
+                            Detailed examination and diagnosis to
+                            identify dental problems at the right time.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <!-- CARD 2 -->
+                <article class="service-card">
+
+                    <div class="service-card-image">
+
+                        <img
+                            src="clinic_photos_shortlist/restorative procedure img.png"
+                            alt="Restorative Procedures"
+                        >
+
+                    </div>
+
+                    <div class="service-card-content">
+
+                        <span class="service-card-number">
+                            02
+                        </span>
+
+                        <h3>
+                            Dental Fillings 
+                        </h3>
+
+                        <p>
+                            Restoring damaged or decayed teeth while
+                            preserving natural tooth structure.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CARD 3 -->
+                <article class="service-card">
+
+                    <div class="service-card-image">
+
+                        <img
+                            src="clinic_photos_shortlist/root-canal-treatment.jpg"
+                            alt="Root Canal Treatment"
+                        >
+
+                    </div>
+
+                    <div class="service-card-content">
+
+                        <span class="service-card-number">
+                            03
+                        </span>
+
+                        <h3>
+                            Root Canal Treatment
+                        </h3>
+
+                        <p>
+                            Precise root canal treatment focused on
+                            saving and maintaining natural teeth.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CARD 4 -->
+                <article class="service-card">
+
+                    <div class="service-card-image">
+
+                        <img
+                            src="clinic_photos_shortlist/Tooth-Extractions.jpg"
+                            alt="Teeth Extraction"
+                        >
+
+                    </div>
+
+                    <div class="service-card-content">
+
+                        <span class="service-card-number">
+                            04
+                        </span>
+
+                        <h3>
+                            Teeth Extraction
+                        </h3>
+
+                        <p>
+                            Gentle and carefully planned extraction
+                            when a tooth cannot be predictably saved.
+                        </p>
+
+                    </div>
+
+                </article>
+                <!-- CARD 5 -->
+                <article class="service-card">
+
+                    <div class="service-card-image">
+
+                        <img
+                            src="clinic_photos_shortlist/cosmetic densitery.jpg"
+                            alt="Cosmetic Dentistry"
+                        >
+
+                    </div>
+
+                    <div class="service-card-content">
+
+                        <span class="service-card-number">
+                            05
+                        </span>
+
+                        <h3>
+                            Cosmetic Dentistry
+                        </h3>
+
+                        <p>
+                            Subtle aesthetic improvements for a more
+                            confident and natural-looking smile.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CARD 6 -->
+                <article class="service-card">
+
+                    <div class="service-card-image">
+
+                        <img
+                            src="clinic_photos_shortlist/oral health img.png"
+                            alt="Preventive Procedures"
+                        >
+
+                    </div>
+
+                    <div class="service-card-content">
+
+                        <span class="service-card-number">
+                            06
+                        </span>
+
+                        <h3>
+                            Preventive Procedures
+                        </h3>
+
+                        <p>
+                            Professional preventive care designed to
+                            maintain healthy teeth and gums.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                 <!-- CARD 7 -->
+                <article class="service-card">
+
+                    <div class="service-card-image">
+
+                        <img
+                            src="clinic_photos_shortlist/mising teeth.png"
+                            alt="Replacement of Missing Teeth"
+                        >
+
+                    </div>
+
+                    <div class="service-card-content">
+
+                        <span class="service-card-number">
+                            07
+                        </span>
+
+                        <h3>
+                            Replacement of Missing Teeth
+                        </h3>
+
+                        <p>
+                            Comfortable and functional solutions for
+                            replacing missing teeth.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <!-- CARD 8 -->
+                <article class="service-card">
+
+                    <div class="service-card-image">
+
+                        <img
+                            src="clinic_photos_shortlist/dental implant.jpg"
+                            alt="Dental Implants"
+                        >
+
+                    </div>
+
+                    <div class="service-card-content">
+
+                        <span class="service-card-number">
+                            08
+                        </span>
+
+                        <h3>
+                            Dental Implants
+                        </h3>
+
+                        <p>
+                            Natural-looking tooth replacement using
+                            carefully planned dental implants.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <!-- CARD 9 -->
+                <!-- <article class="service-card">
+
+                    <div class="service-card-image">
+
+                        <img
+                            src="clinic_photos_shortlist/kids dental.jpeg"
+                            alt="Child Dental Care"
+                        >
+
+                    </div>
+
+                    <div class="service-card-content">
+
+                        <span class="service-card-number">
+                            09
+                        </span>
+
+                        <h3>
+                            Child Dental Care
+                        </h3>
+
+                        <p>
+                            Gentle and comfortable dental care designed
+                            especially for children.
+                        </p>
+
+                    </div>
+
+                </article> -->
+
+            </div>
+
+
+            <!-- RIGHT ARROW -->
+            <button
+                class="service-arrow service-next"
+                type="button"
+                aria-label="Next services"
+            >
+                &#10095;
+            </button>
+
+        </div>
+
+
+        <!-- SLIDER DOTS -->
+
+        <div class="services-dots">
+
+            <button
+                class="service-dot active"
+                type="button"
+                aria-label="Slide 1"
+            ></button>
+
+            <button
+                class="service-dot"
+                type="button"
+                aria-label="Slide 2"
+            ></button>
+
+            <button
+                class="service-dot"
+                type="button"
+                aria-label="Slide 3"
+            ></button>
+
+            <button
+                class="service-dot"
+                type="button"
+                aria-label="Slide 4"
+            ></button>
+
+            <button
+                class="service-dot"
+                type="button"
+                aria-label="Slide 5"
+            ></button>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- <section id="services" class="reveal">
+
+  <div class="container">
+
+    <div class="sec-head">
+
+      <span class="eyebrow">
+        Our Services
+      </span>
+
+      <h2>
+        Comprehensive dental care, under one roof
+      </h2>
+
+    </div>
+
+
+    <div class="services-grid">
+
+
+      <div class="service-item">
+        <span class="service-dot"></span>
+        <span>Restorative Procedures</span>
+      </div>
+
+
+      <div class="service-item">
+        <span class="service-dot"></span>
+        <span>Root Canal Treatment</span>
+      </div>
+
+
+      <div class="service-item">
+        <span class="service-dot"></span>
+        <span>Teeth Extraction</span>
+      </div>
+
+
+      <div class="service-item">
+        <span class="service-dot"></span>
+        <span>Preventive Procedures</span>
+      </div>
+
+
+      <div class="service-item">
+        <span class="service-dot"></span>
+        <span>Screening &amp; Diagnosis</span>
+      </div>
+
+
+      <div class="service-item">
+        <span class="service-dot"></span>
+        <span>Dental Implants</span>
+      </div>
+
+
+      <div class="service-item">
+        <span class="service-dot"></span>
+        <span>Replacement of Missing Teeth</span>
+      </div>
+
+
+      <div class="service-item">
+        <span class="service-dot"></span>
+        <span>Cosmetic Dentistry</span>
+      </div>
+
+
+      <div class="service-item">
+        <span class="service-dot"></span>
+        <span>Child Dental Care</span>
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section> -->
+
+
+<!-- =========================================================
+     TESTIMONIALS
+     ========================================================= -->
+<!-- =========================================================
+     PATIENT TESTIMONIALS
+     ========================================================= -->
+
+<section class="patient-stories" id="testimonials">
+
+  <div class="patient-stories-inner">
+
+    <!-- HEADER -->
+    <div class="patient-stories-heading">
+
+      <h2 class="patient-stories-eyebrow" style="color: #e6a900;">
+        Patient Stories
+      </h2>
+
+      <!-- <h3>
+        What patients <span>say</span>
+      </h3> -->
+
+      <p>
+        Every single review Dr. Gupta's Dental Clinic has received
+        on Google has been five stars — not one exception.
+      </p>
+
+    </div>
+
+
+    <!-- TESTIMONIAL SLIDER -->
+    <div class="patient-slider">
+
+      <!-- LEFT ARROW -->
+      <button
+        class="patient-arrow patient-arrow-prev"
+        type="button"
+        aria-label="Previous review"
+      >
+        <span>←</span>
+      </button>
+
+
+      <!-- VIEWPORT -->
+      <div class="patient-slider-viewport">
+
+        <div class="patient-slider-track">
+
+
+          <!-- ================= REVIEW 1 ================= -->
+
+          <article class="patient-review-card">
+
+            <div class="patient-quote-mark">
+              “
+            </div>
+
+            <div class="patient-stars">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+
+            <p class="patient-review-text">
+              Dr Tanupriya is the most knowledgeable, sincere and
+              methodical dental surgeon I have come across. She's
+              also very caring and compassionate and makes sure her
+              patients are comfortable during and post procedure also.
+              I recommend her to all my family and friends.
+            </p>
+
+            <div class="patient-review-line"></div>
+
+            <div class="patient-review-author">
+
+              <div class="patient-author-initial">
+                DG
+              </div>
+
+              <div class="patient-author-details">
+
+                <strong>
+                  Dr. Chhabir Gupta
+                </strong>
+
+                <span>
+                  <b>G</b> Google Review
+                </span>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- ================= REVIEW 2 ================= -->
+
+          <article class="patient-review-card">
+
+            <div class="patient-quote-mark">
+              “
+            </div>
+
+            <div class="patient-stars">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+
+            <p class="patient-review-text">
+              Fabulous doctor, a real healer. Best dental cleaning
+              work I've had in over twenty years, very precise,
+              very careful. Superb, and highly recommended.
+            </p>
+
+            <div class="patient-review-line"></div>
+
+            <div class="patient-review-author">
+
+              <div class="patient-author-initial">
+                AT
+              </div>
+
+              <div class="patient-author-details">
+
+                <strong>
+                  Anuraag Tiwari
+                </strong>
+
+                <span>
+                  <b>G</b> Google Review
+                </span>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- ================= REVIEW 3 ================= -->
+
+          <article class="patient-review-card">
+
+            <div class="patient-quote-mark">
+              “
+            </div>
+
+            <div class="patient-stars">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+
+            <p class="patient-review-text">
+              Had an amazing experience while having composite filling
+              done here. Such a sweet and soft spoken lady as well as
+              a highly professional dentist who takes all precautions
+              and utmost care taking into account all necessary protocols.
+            </p>
+
+            <div class="patient-review-line"></div>
+
+            <div class="patient-review-author">
+
+              <div class="patient-author-initial">
+                AK
+              </div>
+
+              <div class="patient-author-details">
+
+                <strong>
+                  Ayush Kushwaha
+                </strong>
+
+                <span>
+                  <b>G</b> Google Review
+                </span>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+
+      <!-- RIGHT ARROW -->
+      <button
+        class="patient-arrow patient-arrow-next"
+        type="button"
+        aria-label="Next review"
+      >
+        <span>→</span>
+      </button>
+
+    </div>
+
+
+
+    <!-- DOTS -->
+    <div class="patient-slider-dots">
+
+      <button
+        class="patient-dot active"
+        type="button"
+        aria-label="Show review 1"
+      ></button>
+
+      <button
+        class="patient-dot"
+        type="button"
+        aria-label="Show review 2"
+      ></button>
+
+      <button
+        class="patient-dot"
+        type="button"
+        aria-label="Show review 3"
+      ></button>
+
+    </div>
+
+
+
+    <!-- GOOGLE CTA -->
+    <div class="patient-google-area">
+
+      <div class="patient-google-line"></div>
+
+      <a
+        href="https://www.google.com/maps/place/Dr.+Gupta's+Dental+Clinic/@28.5712336,77.2185971,17z/data=!3m1!4b1!4m6!3m5!1s0x390ce25ebe73cb59:0x56e9179e7dcfc73b!8m2!3d28.5712289!4d77.221172!16s%2Fg%2F11b6t0lkcx"
+        target="_blank"
+        rel="noopener"
+        class="patient-google-button"
+      >
+
+        <span class="google-g">
+          G
+        </span>
+
+        <span>
+          Read All Reviews on Google
+        </span>
+
+        <strong>
+          →
+        </strong>
+
+      </a>
+
+      <div class="patient-google-line"></div>
+
+    </div>
+
+
+
+    <!-- TRUST STRIP -->
+    <div class="patient-trust-strip">
+
+      <div class="patient-trust-item">
+
+        <div class="patient-trust-icon">
+          ★
+        </div>
+
+        <div>
+          <strong>5-Star</strong>
+          <span>Patient Reviews</span>
+        </div>
+
+      </div>
+
+
+      <div class="patient-trust-item">
+
+        <div class="patient-trust-icon">
+          ♡
+        </div>
+
+        <div>
+          <strong>Trusted</strong>
+          <span>By Our Patients</span>
+        </div>
+
+      </div>
+
+
+      <div class="patient-trust-item">
+
+        <div class="patient-trust-icon">
+          ✓
+        </div>
+
+        <div>
+          <strong>Thoughtful</strong>
+          <span>Personalised Care</span>
+        </div>
+
+      </div>
+
+
+      <div class="patient-trust-item">
+
+        <div class="patient-trust-icon">
+          +
+        </div>
+
+        <div>
+          <strong>Long-Term</strong>
+          <span>Dental Care</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- <section
+  id="testimonials"
+  class="reveal testi"
+>
+
+  <div class="container">
+
+    <div class="sec-head">
+
+      <span class="eyebrow">
+        Patient Stories
+      </span>
+
+      <h2>
+        What patients say
+      </h2>
+
+      <p>
+        Every single review Dr. Gupta's Dental Clinic has received on Google has been five stars — not one exception.
+      </p>
+
+    </div>
+
+
+    <div class="testi-grid">
+
+
+      <div class="testi-card">
+
+        <div class="stars">
+          ★★★★★
+        </div>
+
+        <p>
+          "Dr Tanupriya is the most knowledgeable, sincere and methodical dental surgeon I have come across. She's also very caring and compassionate and makes sure her patients are comfortable during and post procedure also. I recommend her to all my family and friends."
+        </p>
+
+        <div class="who">
+          Dr. Chhabir Gupta
+        </div>
+
+      </div>
+
+
+      <div class="testi-card">
+
+        <div class="stars">
+          ★★★★★
+        </div>
+
+        <p>
+          "Fabulous doctor, a real healer. Best dental cleaning work I've had in over twenty years, very precise, very careful. Superb, and highly recommended."
+        </p>
+
+        <div class="who">
+          Anuraag Tiwari
+        </div>
+
+      </div>
+
+
+      <div class="testi-card">
+
+        <div class="stars">
+          ★★★★★
+        </div>
+
+        <p>
+          "Had an amazing experience while having composite filling done here. Such a sweet and soft spoken lady as well a highly professional dentist who takes all precautions and utmost care taking into account all necessary protocols."
+        </p>
+
+        <div class="who">
+          Ayush Kushwaha
+        </div>
+
+      </div>
+
+
+      <div style="text-align:center;margin-top:32px;grid-column:1 / -1;">
+
+        <a
+          href="https://www.google.com/maps/place/Dr.+Gupta's+Dental+Clinic/@28.5712336,77.2185971,17z/data=!3m1!4b1!4m6!3m5!1s0x390ce25ebe73cb59:0x56e9179e7dcfc73b!8m2!3d28.5712289!4d77.221172!16s%2Fg%2F11b6t0lkcx"
+          target="_blank"
+          rel="noopener"
+          class="btn-outline reviews-btn"
+        >
+          Read All Reviews on Google
+        </a>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section> -->
+
+
+<!-- =========================================================
+     GALLERY (Our Cases)
+     ========================================================= -->
+<!-- 
+<section id="gallery" class="reveal">
+
+  <div class="container">
+
+    <div class="sec-head">
+
+      <span class="eyebrow">
+        Our Cases
+      </span>
+
+      <h2>
+        The clinic, and the work
+      </h2>
+
+    </div>
+
+
+    <div class="gallery-grid">
+
+      <img src="clinic_photos_shortlist/IMG_7427.JPG" alt="Clinic case">
+
+      <img src="clinic_photos_shortlist/IMG_7470.JPG" alt="Clinic case">
+
+      <img src="clinic_photos_shortlist/IMG_7420.JPG" alt="Clinic interior">
+
+      <img src="clinic_photos_shortlist/IMG_7467.JPG" alt="Sterilisation protocol">
+
+    </div>
+
+  </div>
+
+</section> -->
+
+
+<!-- =========================================================
+     CONTACT
+     ========================================================= -->
+
+<section
+  id="contact"
+  class="reveal"
+>
+
+  <div class="container contact-grid">
+
+
+    <div class="contact-info">
+
+      <h2>
+        Visit or Book Online
+      </h2>
+
+
+      <div class="info-row">
+
+        <div class="info-icon">
+          ⚲
+        </div>
+
+        <div>
+
+          <h4>
+            Address
+          </h4>
+
+          <p>
+            H-30, Upper Ground Floor, South Extension, Part 1<br>
+            (Same lane as Bengali Sweet Centre)<br>
+            New Delhi – 110049
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="info-row">
+
+        <div class="info-icon">
+          ☎
+        </div>
+
+        <div>
+
+          <h4>
+            Phone
+          </h4>
+
+          <p>
+            Mobile: 99908 80975<br>
+            Landline: 011-4222-0392
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="info-row">
+
+        <div class="info-icon">
+          ⏱
+        </div>
+
+        <div>
+
+          <h4>
+            Hours
+          </h4>
+
+          <p>
+            Monday – Saturday, 10AM – 7PM
+          </p>
+
+        </div>
+      </div>
+
+
+      <a href="https://wa.me/919990880975" class="cta-btn"> Chat on WhatsApp </a>
+
+    </div>
+
+
+    <div class="map-wrap">
+      <iframe
+        src="https://www.google.com/maps?q=Dr.+Gupta%27s+Dental+Clinic,+H-30+South+Extension+Part+1,+New+Delhi&ll=28.5712289,77.221172&z=17&output=embed"
+        allowfullscreen
+        loading="lazy"
+      ></iframe>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     FINAL CTA
+     ========================================================= -->
+
+<!-- <div class="final-cta">
+
+  <div class="container">
+
+    <h2>
+      Your smile deserves careful hands.
+    </h2>
+
+    <p>
+      Book a consultation with Dr. Tanupriya Gupta today.
+    </p>
+
+    <a href="https://wa.me/919990880975" class="cta-btn">  Book on WhatsApp</a>
+
+  </div>
+
+</div> -->
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer>
+
+  <div class="container footer-grid">
+
+
+    <div>
+
+      <h4>
+        Dr. Gupta's Dental Clinic
+      </h4>
+
+      <p>
+        Precision, magnification-guided dentistry in South Extension, New Delhi since 2013.
+      </p>
+
+    </div>
+
+
+    <div>
+
+      <h4>
+        Quick Links
+      </h4>
+
+      <a href="about.html">
+        About
+      </a>
+      <a href="difference.html">
+        Our Difference
+      </a>
+
+      <a href="services.html">
+        Services
+      </a>
+
+      <a href="reviews.html">
+        Reviews
+      </a>
+
+      <a href="faq.html">
+        FAQ
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+    </div>
+
+
+    <div>
+
+      <h4>
+        Contact
+      </h4>
+
+      <a href="tel:+919990880975">
+        Mobile: 99908 80975
+      </a>
+
+      <a href="tel:+911142220392">
+        Landline: 011-4222-0392
+      </a>
+
+      <a href="https://wa.me/919990880975">
+        WhatsApp Us
+      </a>
+
+      <p>   H-30, South Extension Part 1, New Delhi</p>
+
+    </div>
+  </div>
+
+
+  <div class="container footer-bottom">
+    © 2026 Dr. Gupta's Dental Clinic. All rights reserved.
+  </div>
+
+</footer>
+
+
+<script src="script.js" defer></script>
+<script>
+  
+document.addEventListener("DOMContentLoaded", () => {
+
+    const cards = document.querySelectorAll(".difference-feature");
+
+    const preview = document.getElementById("differencePreview");
+
+    const previewImage = document.getElementById("previewImage");
+
+    const previewTitle = document.getElementById("previewTitle");
+
+    const previewDescription =
+        document.getElementById("previewDescription");
+
+    const previewPoints =
+        document.getElementById("previewPoints");
+
+    const previewLink =
+        document.getElementById("previewLink");
+
+    const closeButton =
+        document.querySelector(".difference-preview-close");
+
+
+    if (
+        !cards.length ||
+        !preview ||
+        !previewImage ||
+        !previewTitle ||
+        !previewDescription ||
+        !previewPoints ||
+        !previewLink
+    ) {
+        return;
+    }
+
+
+    let closeTimer;
+
+
+    function cancelClose() {
+
+        clearTimeout(closeTimer);
+
+    }
+
+
+    function closePreview() {
+
+        closeTimer = setTimeout(() => {
+
+            preview.classList.remove("is-visible");
+
+            preview.setAttribute("aria-hidden", "true");
+
+        }, 180);
+
+    }
+
+
+    function showPreview(card) {
+
+        cancelClose();
+
+
+        const title =
+            card.dataset.title || "";
+
+        const image =
+            card.dataset.image || "";
+
+        const description =
+            card.dataset.description || "";
+
+        const points =
+            card.dataset.points || "";
+
+        const link =
+            card.getAttribute("href") || "#";
+
+
+        previewTitle.textContent = title;
+
+        previewDescription.textContent = description;
+
+        previewImage.src = image;
+
+        previewImage.alt = title;
+
+        previewLink.href = link;
+
+
+        previewPoints.innerHTML = "";
+
+
+        if (points.trim() !== "") {
+
+            points
+                .split("|")
+                .forEach((point) => {
+
+                    const listItem =
+                        document.createElement("li");
+
+                    listItem.textContent =
+                        point.trim();
+
+                    previewPoints.appendChild(listItem);
+
+                });
+
+        }
+
+
+        preview.classList.add("is-visible");
+
+        preview.setAttribute("aria-hidden", "false");
+
+    }
+
+
+    cards.forEach((card) => {
+
+        card.addEventListener("mouseenter", () => {
+
+            showPreview(card);
+
+        });
+
+
+        card.addEventListener("mouseleave", () => {
+
+            closePreview();
+
+        });
+
+    });
+
+
+    preview.addEventListener("mouseenter", () => {
+
+        cancelClose();
+
+    });
+
+
+    preview.addEventListener("mouseleave", () => {
+
+        closePreview();
+
+    });
+
+
+    closeButton.addEventListener("click", () => {
+
+        cancelClose();
+
+        preview.classList.remove("is-visible");
+
+        preview.setAttribute("aria-hidden", "true");
+
+    });
+
+
+    document.addEventListener("keydown", (event) => {
+
+        if (event.key === "Escape") {
+
+            cancelClose();
+
+            preview.classList.remove("is-visible");
+
+            preview.setAttribute("aria-hidden", "true");
+
+        }
+
+    });
+
+});
+</script>
+
+</body>
+</html>
+
+
+
+css file full
+
+
 
 /* =========================================================
    COLOR SYSTEM
    ========================================================= */
 
 :root{
-  --primary:#F2D16D;
+  --primary:#E6A900;
   --primary-hover:#C98F00;
   --accent-dark:#A87500;
   --light-blue:#F7F6F2;
@@ -12,14 +2798,11 @@
   --navy:#202223;
   --gold:#E6A900;
   --light-gray:#DCDCDC;
-  
+
   --dark-navy:#202223;
   --text:#202223;
   --gray:#707070;
   --border:#D8D8D8;
-  
-  --difference-yellow:#C9A227;
-
 
   --radius:14px;
 }
@@ -45,11 +2828,10 @@ body{
   background:var(--white);
   line-height:1.7;
   -webkit-font-smoothing:antialiased;
-  padding-top: 126px;
 }
 
 h1,h2,h3,h4{
-  font-family:"DM Sans", Arial, sans-serif;
+  font-family:"DM Sans", Arial, sans-sarif;
   font-weight:700;
   line-height:1.15;
   letter-spacing:.01em;
@@ -73,7 +2855,14 @@ img{
   padding-left:clamp(20px, 4vw, 70px);
   padding-right:clamp(20px, 4vw, 70px);
 }
+/*  previous version 
+.container{
+  max-width:1180px;
+  margin:0 auto;
+  padding:0 24px;
+}
 
+*/
 
 section{
   padding:80px 0;
@@ -83,11 +2872,19 @@ section{
 /* =========================================================
    HEADER
    ========================================================= */
-
+/* 
+header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(255,255,255,0.96);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border);
+  box-shadow:0 2px 12px rgba(37,50,58,0.06);
+} */
 header {
-    position: fixed;
+    position: sticky;
     top: 0;
-    left: 0;
     z-index: 9999;
     width: 100%;
     backdrop-filter:blur(10px);
@@ -109,16 +2906,6 @@ header {
   justify-content:space-between;
   gap:18px;
   min-height:56px;
-
-  /* Keep the complete information bar on ONE line */
-  flex-wrap:nowrap;
-  white-space:nowrap;
-  overflow-x:auto;
-  overflow-y:hidden;
-
-  /* Hide scrollbar while allowing horizontal scrolling */
-  scrollbar-width:none;
-  -ms-overflow-style:none;
 }
 
 .availability,
@@ -126,10 +2913,6 @@ header {
   display:flex;
   align-items:center;
   gap:14px;
-
-  flex:0 0 auto;
-  flex-wrap:nowrap;
-  white-space:nowrap;
 }
 
 .availability strong{
@@ -137,21 +2920,21 @@ header {
 }
 
 .availability-hours{
-  color:var(--primary);
+  color:#E6D7A4;
 }
 
 .sunday-closed{
-  color:var(--primary);
+  color:#FFD58A;
   font-weight:800;
 }
 
 .header-contact a{
-  color:var(--primary);
+  color:#F4E8BD;
   font-weight:600;
 }
 
 .header-contact a:hover{
-  color:var(--difference-yellow);
+  color:var(--primary);
 }
 
 .top-accent{
@@ -164,6 +2947,16 @@ header {
     var(--primary)
   );
 }
+
+/* .nav-wrap{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  padding:22px 0;
+  position:relative;
+} */
+
 
 .nav-wrap {
     width: 100%;
@@ -179,6 +2972,15 @@ header {
     padding-top: 10px;
     padding-bottom: 10px;
 }
+
+
+
+/* .brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-shrink:0;
+} */
 
 .brand {
     display: flex;
@@ -215,7 +3017,25 @@ header {
 .brand:hover img {
     transform: translateY(-1px) scale(1.03);
 }
+/* 
+.brand-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:2.75rem;
+  font-weight:700;
+  color:var(--navy);
+  letter-spacing:.02em;
+  line-height:1.05;
+}
 
+.brand-name small{
+  display:block;
+  font-family:'Inter',sans-serif;
+  font-weight:500;
+  font-size:0.68rem;
+  color:var(--gray);
+  letter-spacing:.12em;
+  text-transform:uppercase;
+} */
 
 /* Brand text */
 
@@ -235,6 +3055,8 @@ header {
     transition: color .25s ease;
 }
 
+
+
 .brand-name small {
     display: block;
 
@@ -252,6 +3074,8 @@ header {
     white-space: nowrap;
     text-transform:uppercase;
 }
+
+
 
 nav {
     flex: 1 1 auto;
@@ -283,10 +3107,33 @@ nav li {
     flex: 0 0 auto;
 }
 
+/* nav ul{
+  list-style:none;
+  display:flex;
+  gap:78px;
+  padding:10px 44px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(230,169,0,.4);
+  border-radius:12px;
+  box-shadow:0 10px 0 rgba(230,169,0,.12),0 18px 30px rgba(0,0,0,.24);
+  transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease,background .22s ease;
+} */
+
 nav:hover ul,
 nav:focus-within ul{
   transform:translateY(-2px);
 }
+
+
+
+/* nav a{
+  position:relative;
+  font-size:0.82rem;
+  font-weight:500;
+  color:var(--text);
+  transition:color .2s;
+  padding-bottom:4px;
+} */
 
 nav a {
     position: relative;
@@ -310,6 +3157,17 @@ nav a {
 
 /* Existing-style underline */
 
+/* nav a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:0;
+  height:2px;
+  background:var(--primary);
+  transition:width .25s ease;
+} */
+
 nav a::after {
     content: "";
     position: absolute;
@@ -327,6 +3185,15 @@ nav a::after {
 
 
 /* Hover */
+
+/* 
+nav a:hover{
+  color:var(--accent-dark);
+}
+
+nav a:hover::after{
+  width:100%;
+} */
 
 nav a:hover {
     color: var(--accent-dark);
@@ -351,9 +3218,33 @@ nav a[aria-current="page"]::after {
     width: 100%;
 }
 
+/* 
+nav a.active{
+  color:var(--primary);
+  font-weight:700;
+}
+
+nav a.active::after{
+  width:100%;
+} */
+
+
+
 /* ---------------------------------------------------------
    CALL BUTTON
    --------------------------------------------------------- */
+
+   /* .cta-btn{
+  background:var(--primary-hover);
+  color:var(--navy);
+  padding:12px 26px;
+  border-radius:30px;
+  font-weight:700;
+  font-size:0.9rem;
+  white-space:nowrap;
+  transition:all .25s cubic-bezier(.4,0,.2,1);
+  box-shadow:0 5px 16px rgba(37,50,58,0.18);
+} */
 
 .cta-btn {
     background:var(--primary-hover);
@@ -383,6 +3274,8 @@ nav a[aria-current="page"]::after {
    BUTTONS
    ========================================================= */
 
+
+
 .cta-btn:hover{
   background:var(--primary-hover);
   transform:translateY(-2px);
@@ -392,6 +3285,20 @@ nav a[aria-current="page"]::after {
 /* ---------------------------------------------------------
    APPOINTMENT BUTTON
    --------------------------------------------------------- */
+
+   /* .appointment-trigger{
+  background:#C4C4C4;
+  color:var(--navy);
+  padding:12px 20px;
+  border:none;
+  border-radius:30px;
+  font-weight:700;
+  font-size:0.9rem;
+  white-space:nowrap;
+  cursor:pointer;
+  transition:all .25s ease;
+  box-shadow:0 4px 14px rgba(37,50,58,0.16);
+} */
 
 .appointment-trigger {
     display: inline-flex;
@@ -428,6 +3335,14 @@ nav a[aria-current="page"]::after {
     transform: translateY(0);
 }
 
+
+
+
+/* .appointment-trigger:hover{
+  background:var(--primary-hover);
+  transform:translateY(-2px);
+} */
+
 /* ---------------------------------------------------------
    NAVIGATION CTA AREA
    --------------------------------------------------------- */
@@ -443,6 +3358,21 @@ nav a[aria-current="page"]::after {
 
     min-width: max-content;
 }
+
+/* .nav-cta{
+  display:flex;
+  align-items:center;
+  gap:10px;
+} */
+
+/* .menu-toggle{
+  display:none;
+  background:none;
+  border:none;
+  font-size:1.6rem;
+  color:var(--navy);
+  cursor:pointer;
+} */
 
 .menu-toggle {
     display: none;
@@ -765,6 +3695,18 @@ nav a[aria-current="page"]::after {
   align-items:center;
 }
 
+
+/* prev version 
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.1fr 0.9fr;
+  gap:50px;
+  align-items:center;
+}
+*/
+
+
+
 .eyebrow{
   display:inline-block;
   background:var(--primary);
@@ -905,6 +3847,8 @@ nav a[aria-current="page"]::after {
   position:relative;
 }
 
+
+
 .hero-img img{
   width:100%;
   height:clamp(420px, 32vw, 560px);
@@ -912,6 +3856,15 @@ nav a[aria-current="page"]::after {
   transition:transform .6s ease;
 }
 
+
+/*
+.hero-img img{
+  width:100%;
+  height:440px;
+  object-fit:cover;
+  transition:transform .6s ease;
+}
+*/
 .hero-img:hover img{
   transform:scale(1.04);
 }
@@ -1040,6 +3993,12 @@ stroke-width: 1.8;
   
 }
 
+/* .sec-head h2{
+  font-size:5rem;
+  color:var(--navy);
+  margin-bottom:12px;
+} */
+
 .sec-head p{
   color:var(--light-blue);
 }
@@ -1165,6 +4124,14 @@ stroke-width: 1.8;
   gap:24px;
 }
 
+/* prev version
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+  */
+
 .service-item{
   background:var(--white);
   border:1px solid var(--border);
@@ -1235,6 +4202,14 @@ stroke-width: 1.8;
   grid-template-columns:repeat(3,minmax(0,1fr));
   gap:24px;
 }
+
+/* prev version
+.testi-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+  */
 
 .testi-card{
   background:var(--white);
@@ -1413,7 +4388,7 @@ footer{
 }
 
 .footer-grid h4{
-  color: var(--primary);
+  color:var(--navy);
   margin-bottom:14px;
   font-size:2rem;
 }
@@ -1498,11 +4473,6 @@ footer{
 
 @media (min-width: 1200px) {
 
-    body {
-        padding-top: 118px;
-    }
-
-
     .nav-wrap {
         min-height: 78px;
     }
@@ -1530,8 +4500,37 @@ footer{
    1100px – 1199px
    ========================================================= */
 
-@media (max-width: 1199px) and (min-width: 1050px) {
+/* @media(max-width:1100px) and (min-width:901px){
+  .nav-wrap{
+    gap:14px;
+  }
 
+  .brand-name{
+    font-size:1.85rem;
+  }
+
+  nav ul{
+    gap:10px;
+  }
+
+  nav a{
+    font-size:0.76rem;
+  }
+
+  .nav-cta{
+    gap:7px;
+  }
+
+  .appointment-trigger,
+  .nav-cta .cta-btn{
+    padding-left:12px;
+    padding-right:12px;
+    font-size:0.78rem;
+  }
+} */
+
+   
+@media (max-width: 1199px) and (min-width: 1050px) {
 
     .nav-wrap {
         gap: 12px;
@@ -1586,10 +4585,6 @@ footer{
    ========================================================= */
 
 @media (max-width: 1049px) {
-
-    body {
-        padding-top: 124px;
-    }
 
     .nav-wrap {
         min-height: 68px;
@@ -1872,13 +4867,74 @@ footer{
 
    /* @media(max-width:600px){ */
 
+    /* .container{
+    padding-left:16px;
+    padding-right:16px;
+  } */
+
+  /*prev version
+  .container{
+    padding:0 16px;
+  }
+    */
+/* 
+  .brand{
+    min-width:0;
+    gap:6px;
+    flex:1;
+  }
+
+  .brand img{
+    width:30px !important;
+    height:30px !important;
+  }
+
+  .brand-name{
+    min-width:0;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    font-size:0.95rem;
+    white-space:nowrap;
+  }
+
+  .brand-name small{
+    font-size:0.56rem;
+    letter-spacing:.08em;
+  } */
+
+  /* .form-grid{
+    grid-template-columns:1fr;
+  } */
+
+  /* .nav-cta{
+    flex-shrink:0;
+    gap:4px;
+  }
+
+  .appointment-trigger{
+    padding:7px 7px;
+    font-size:0.6rem;
+  }
+
+  .menu-toggle{
+    width:30px;
+    height:30px;
+    padding:0;
+    font-size:1.35rem;
+  } */
+
+  /* .nav-cta .cta-btn{
+    display:none;
+  }
+
+  .modal-head h3{
+    font-size:1.7rem;
+  } */
 /* } */
 
-@media (max-width: 700px) {
 
-    body {
-        padding-top: 118px;
-    }
+
+@media (max-width: 700px) {
   .form-grid{
     grid-template-columns:1fr;
   }
@@ -1987,6 +5043,20 @@ footer{
     }
 }
 
+/* @media(max-width:560px){
+
+  .cards-grid,
+  .services-grid,
+  .testi-grid,
+  .gallery-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero-img img{
+    height:280px;
+  }
+} */
+
 /* =========================================================
    SMALL MOBILE
    480px AND BELOW
@@ -1999,10 +5069,6 @@ footer{
   .gallery-grid{
     grid-template-columns:1fr;
   }
-
-  body {
-        padding-top: 110px;
-    }
 
   .hero-img img{
     height:280px;
@@ -2140,6 +5206,32 @@ nav a:focus-visible,
         transition: none !important;
     }
 }
+
+
+
+
+
+/* @media(max-width:380px){
+  .brand img{
+    width:30px !important;
+    height:30px !important;
+  }
+
+  .brand-name{
+    font-size:1rem;
+  }
+
+  .appointment-trigger{
+    padding:7px 7px;
+    font-size:0.6rem;
+  }
+
+  .menu-toggle{
+    width:30px;
+    height:30px;
+    font-size:1.35rem;
+  }
+} */
 
 /* =========================================================
    REFERENCE-INSPIRED VISUAL TREATMENT
@@ -2285,9 +5377,9 @@ footer{
   background:#17191A;
 }
 
-/* footer .footer-grid h4{
+footer .footer-grid h4{
   color:var(--white);
-} */
+}
 
 footer .footer-grid p,
 footer .footer-grid a,
@@ -2303,103 +5395,46 @@ footer .footer-bottom{
   border-top-color:rgba(255,255,255,.18);
 }
 
-@media(max-width:1049px){
-
+@media(max-width:900px){
   .header-info-wrap{
     padding-top:7px;
     padding-bottom:7px;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:5px 14px;
+  }
 
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    flex-wrap:nowrap;
-
-    gap:8px;
-
-    width:100%;
-    min-width:0;
+  .header-info{
+    font-size:.72rem;
   }
 
   .availability,
   .header-contact{
-    display:flex;
-    align-items:center;
-
-    flex-wrap:nowrap;
-
-    gap:7px;
-
-    min-width:0;
-  }
-
-  .availability{
-    flex:1 1 auto;
-  }
-
-  .header-contact{
-    flex:0 1 auto;
-  }
-
-  .header-info{
-    font-size:clamp(.52rem, 1.05vw, .68rem);
-    line-height:1.15;
-
-    white-space:nowrap;
+    gap:9px;
   }
 }
 
 @media(max-width:600px){
-
   .header-info-wrap{
-    display:flex;
-    flex-direction:row;
-
-    align-items:center;
     justify-content:flex-start;
-
     flex-wrap:nowrap;
-
-    gap:6px;
-
-    width:100%;
-    min-width:0;
-
+    gap:4px;
     overflow:hidden;
-
     white-space:nowrap;
   }
 
   .availability,
   .header-contact{
-    display:flex;
-    flex-direction:row;
-
-    align-items:center;
-
-    flex-wrap:nowrap;
-
+    width:auto;
     flex-shrink:0;
-
-    gap:5px;
-
-    white-space:nowrap;
-  }
-
-  .availability{
-    min-width:0;
-    flex:1 1 auto;
-  }
-
-  .header-contact{
-    flex:0 0 auto;
+    justify-content:flex-start;
+    flex-wrap:nowrap;
+    gap:4px;
   }
 
   .header-info{
-    font-size:clamp(.46rem, 1.8vw, .58rem);
-    line-height:1.15;
-
-    white-space:nowrap;
+    font-size:.48rem;
+    line-height:1.2;
   }
 
   .header-contact{
@@ -2413,10 +5448,6 @@ footer .footer-bottom{
   }
 
   nav a{
-    color:var(--navy);
-  }
-
-  .menu-toggle{
     color:var(--navy);
   }
 }
@@ -2730,6 +5761,8 @@ footer .footer-bottom{
     position: relative;
     z-index: 1;
 }
+
+
 
 /* home page logoes  */
 .home_logoes{
@@ -3811,7 +6844,7 @@ footer .footer-bottom{
     font-size: 13px;
     letter-spacing: .14em;
     text-transform: uppercase;
-    color:var(--difference-yellow);
+    color: #C9A227;
     font-weight: 600;
     display: block;
     margin-bottom: 10px;
@@ -4098,7 +7131,7 @@ footer .footer-bottom{
 .t-card .t-meta {
     font-size: 13px;
 
-    color: var(--difference-yellow);
+    color: #C9A227;
 
     font-weight: 600;
 
@@ -4211,6 +7244,92 @@ footer .footer-bottom{
 
 }
 
+
+/* .credentials{ padding:96px 24px; background:#FAF7F0; }
+.credentials-inner{ max-width:920px; margin:0 auto; }
+.credentials-head{ text-align:center; margin-bottom:64px; }
+.credentials-eyebrow{ font-family:'Inter',sans-serif; font-size:13px; letter-spacing:.14em; text-transform:uppercase; color:#C9A227; font-weight:600; display:block; margin-bottom:10px; }
+.credentials-head h2{ font-family:'Cormorant Garamond',serif; font-size:42px; font-weight:600; color:#12213F; margin:0 0 14px; }
+.credentials-head p{ font-size:16px; color:#6B7280; max-width:520px; margin:0 auto; line-height:1.6; }
+
+.timeline{ position:relative; }
+.timeline::before{ content:""; position:absolute; top:0; bottom:0; left:50%; width:2px; background:linear-gradient(to bottom, transparent, #C9A227 6%, #C9A227 94%, transparent); transform:translateX(-50%); }
+
+.t-item{ position:relative; width:50%; padding:0 48px 56px; }
+.t-item:nth-child(odd){ left:0; text-align:right; }
+.t-item:nth-child(even){ left:50%; text-align:left; }
+.t-item:last-child{ padding-bottom:0; }
+
+.t-marker{ position:absolute; top:2px; width:34px; height:34px; border-radius:50%; background:#12213F; border:3px solid #C9A227; display:flex; align-items:center; justify-content:center; }
+.t-item:nth-child(odd) .t-marker{ right:-17px; }
+.t-item:nth-child(even) .t-marker{ left:-17px; }
+.t-marker svg{ width:15px; height:15px; fill:#E7CB6B; }
+
+.t-card{ background:#fff; border:1px solid #E9E4D8; border-radius:10px; padding:22px 26px; box-shadow:0 4px 18px rgba(18,33,63,0.05); }
+.t-badge{ display:inline-block; font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:4px 10px; border-radius:20px; margin-bottom:10px; }
+.t-badge.edu{ background:#EFE6C8; color:#8A6D0E; }
+.t-badge.exp{ background:#DDE3EE; color:#12213F; }
+
+.t-card h3{ font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:700; color:#12213F; margin:0 0 4px; }
+.t-card .t-meta{ font-size:13px; color:#C9A227; font-weight:600; margin-bottom:10px; }
+.t-card p{ font-size:14px; line-height:1.6; color:#6B7280; margin:0; }
+
+
+.t-card-header {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    width: 100%;
+
+    margin-bottom: 10px;
+}
+
+.t-card-logo {
+
+    width: 52px;
+    height: 52px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-left: 15px;
+
+    padding: 6px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e3dc;
+
+    border-radius: 9px;
+
+    box-sizing: border-box;
+}
+
+
+.t-card-logo img {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+}
+
+@media (max-width:720px){
+  .timeline::before{ left:20px; }
+  .t-item{ width:100%; left:0 !important; text-align:left !important; padding:0 0 40px 56px; }
+  .t-item:nth-child(odd) .t-marker, .t-item:nth-child(even) .t-marker{ left:3px; right:auto; }
+} */
+
 /* about us page education and experience ends here */
 
 /* service section css starts here  */
@@ -4239,12 +7358,12 @@ footer .footer-bottom{
 
     margin-bottom: 12px;
 
-    color: var(--difference-yellow);
+    color: var(--accent dark );
 
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: 48px;
     font-weight: 700;
 
-    letter-spacing: 0;
+    letter-spacing: -1px;
     /* text-transform: uppercase; */
 }
 
@@ -4705,10 +7824,6 @@ footer .footer-bottom{
         margin-bottom: 35px;
     }
 
-    .services-section .eyebrow {
-      font-size: clamp(2rem, 10vw, 2.75rem);
-    }
-
     .services-slider-wrapper {
 
         gap: 8px;
@@ -4813,9 +7928,9 @@ footer .footer-bottom{
 
     margin-bottom: 18px;
 
-    color: var(--difference-yellow);
+    color: #a88600;
 
-    font-size: 48px;
+    font-size: 11px;
     font-weight: 800;
 
     letter-spacing: 2.5px;
@@ -4829,7 +7944,7 @@ footer .footer-bottom{
 
     color: #30343b;
 
-    font-size: clamp(36px, 5vw, 42px);
+    font-size: clamp(42px, 5vw, 68px);
 
     line-height: 1.05;
 
@@ -5027,7 +8142,7 @@ footer .footer-bottom{
 .service-feature-content h2 {
     margin: 0 0 20px;
 
-    color: var(--difference-yellow);
+    color: #30343b;
 
     font-size: clamp(30px, 3vw, 42px);
 
@@ -5659,8 +8774,9 @@ footer .footer-bottom{
   overflow:hidden;
 }
 
-.why-us .sec-head h2{
-  color:var(--difference-yellow);
+.why-us .sec-head h2,
+.why-us .sec-head p{
+  color:var(--white);
 }
 
 .why-grid{
@@ -5781,6 +8897,8 @@ footer .footer-bottom{
 
 /* why us section css home page ends here */
 
+
+
 /* =========================================================
    OUR DIFFERENCE
 ========================================================= */
@@ -5829,7 +8947,7 @@ footer .footer-bottom{
 
     margin: 0;
 
-    color: var(--difference-yellow);
+    color: var(--difference-ink);
 
     font-size: clamp(28px, 3vw, 42px);
     line-height: 1.15;
@@ -5938,7 +9056,7 @@ footer .footer-bottom{
     position: relative;
 
     width: 100%;
-    height: auto;
+    aspect-ratio: 1 / 0.92;
 
     margin-bottom: 18px;
 
@@ -5954,9 +9072,10 @@ footer .footer-bottom{
     display: block;
 
     width: 100%;
-    height: auto;
+    height: 100%;
 
-    object-fit: initial;
+    object-fit: cover;
+    object-position: center;
 
     transition:
         transform 0.55s ease;
@@ -5964,7 +9083,7 @@ footer .footer-bottom{
 
 .difference-feature:hover .feature-image img {
 
-  transform: none;
+    transform: scale(1.06);
 }
 
 
@@ -6131,7 +9250,7 @@ footer .footer-bottom{
 
     width: 100%;
     min-width: 0;
-  min-height: 0;
+    min-height: 320px;
 
     background: #FAF7F0;
 
@@ -6143,9 +9262,12 @@ footer .footer-bottom{
     display: block;
 
     width: 100%;
-    height: auto;
+    height: 100%;
 
-    object-fit: initial;
+    min-height: 320px;
+
+    object-fit: cover;
+    object-position: center;
 
     opacity: 1;
 
@@ -6476,11 +9598,17 @@ footer .footer-bottom{
     .difference-preview-image {
 
         flex-shrink: 0;
+
+        min-height: 220px;
+        max-height: 260px;
     }
 
     .difference-preview-image img {
 
-      height: auto;
+        min-height: 220px;
+        max-height: 260px;
+
+        object-fit: cover;
     }
 
     .difference-preview-content {
@@ -6563,14 +9691,14 @@ footer .footer-bottom{
 
     .difference-preview-image {
 
-      min-height: 0;
-      max-height: none;
+        min-height: 180px;
+        max-height: 210px;
     }
 
     .difference-preview-image img {
 
-      min-height: 0;
-      max-height: none;
+        min-height: 180px;
+        max-height: 210px;
     }
 
     .difference-preview-content {
@@ -6843,6 +9971,8 @@ footer .footer-bottom{
     transform: rotate(4deg);
 }
 
+
+
 /* =========================================================
    HOVER EFFECTS
 ========================================================= */
@@ -6878,6 +10008,8 @@ footer .footer-bottom{
 
     background: #f5c62f;
 }
+
+
 
 /* =========================================================
    TABLET
@@ -6942,6 +10074,8 @@ footer .footer-bottom{
     }
 }
 
+
+
 /* =========================================================
    MOBILE
 ========================================================= */
@@ -6984,11 +10118,10 @@ footer .footer-bottom{
     }
 
 
-    .difference-feature .feature-image {
+    .feature-image {
 
-      width: 100%;
-      height: auto;
-      aspect-ratio: auto;
+        width: 190px;
+        height: 190px;
     }
 
 
@@ -7215,13 +10348,13 @@ footer .footer-bottom{
 .patient-stories-heading h2 {
   margin: 0;
 
-  font-family: "DM Sans", Arial, sans-serif;
+  font-family: "DM Sans", Arial, sans-sarif;
   font-size: clamp(42px, 5vw, 48px);
   line-height: 1.05;
   font-weight: 700;
   letter-spacing: -0.035em;
 
-  color: var(--difference-yellow);
+  color: var(--ps-navy);
 }
 
 .patient-stories-heading h2 span {
@@ -7969,6 +11102,8 @@ footer .footer-bottom{
 
     margin-bottom: 10px;
 
+    color: #c9a227;
+
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 2px;
@@ -7978,7 +11113,7 @@ footer .footer-bottom{
 .about-heading h2 {
     margin: 0;
 
-    color: var(--difference-yellow);
+    color: #e6a900;
 
     font-size: clamp(30px, 4vw, 48px);
     line-height: 1.1;
@@ -8002,8 +11137,10 @@ footer .footer-bottom{
 
     margin: 16px auto 0;
 
-    background: var(--difference-yellow);
+    background: #c9a227;
 }
+
+
 
 /* =========================================================
    CONTINUOUS CERTIFICATE SLIDER
@@ -8385,538 +11522,3 @@ footer .footer-bottom{
     }
 
 }
-
-/* =========================================================
-   RESPONSIVE CONSOLIDATION PATCH
-   Purpose: preserve the existing design while preventing
-   overflow, overlap, and broken layouts at all screen sizes.
-   ========================================================= */
-
-/* ---------------------------------------------------------
-   01. GLOBAL RESPONSIVE SAFETY
-   --------------------------------------------------------- */
-html {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-}
-
-body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
-img,
-svg,
-video,
-iframe {
-    max-width: 100%;
-}
-
-button,
-a,
-input,
-select,
-textarea {
-    font: inherit;
-}
-
-button,
-a {
-    -webkit-tap-highlight-color: transparent;
-}
-
-/* ---------------------------------------------------------
-   02. MAIN CONTAINERS AND SECTION SPACING
-   --------------------------------------------------------- */
-.container {
-    width: min(100% - 40px, 1600px);
-    margin-inline: auto;
-}
-
-section,
-main,
-header,
-footer {
-    max-width: 100%;
-}
-
-/* ---------------------------------------------------------
-   03. HEADER AND NAVIGATION — LARGE DESKTOP
-   --------------------------------------------------------- */
-@media (min-width: 1451px) {
-    .nav-wrap {
-        min-height: 82px;
-        gap: 24px;
-    }
-
-    .brand-name {
-        font-size: clamp(1.55rem, 1.65vw, 2.22rem);
-    }
-
-    nav ul {
-        gap: clamp(12px, 1.35vw, 24px);
-    }
-
-    nav a {
-        font-size: clamp(1rem, 1vw, 1.25rem);
-    }
-
-    .appointment-trigger {
-        min-height: 44px;
-        padding: 11px 20px;
-        font-size: .92rem;
-    }
-}
-
-/* ---------------------------------------------------------
-   04. HEADER AND NAVIGATION — LAPTOP / COMPACT DESKTOP
-   --------------------------------------------------------- */
-@media (min-width: 1050px) and (max-width: 1450px) {
-    .nav-wrap {
-        display: grid;
-        grid-template-columns: minmax(185px, auto) minmax(0, 1fr) auto;
-        align-items: center;
-        gap: 12px;
-        min-height: 72px;
-    }
-
-    .brand {
-        min-width: 0;
-        max-width: 100%;
-    }
-
-    .brand img {
-        width: 44px !important;
-        height: 44px !important;
-        flex-basis: 44px;
-    }
-
-    .brand-name {
-        max-width: clamp(150px, 15vw, 245px);
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        font-size: clamp(1rem, 1.25vw, 1.65rem);
-    }
-
-    nav {
-        min-width: 0;
-        width: 100%;
-    }
-
-    nav ul {
-        width: 100%;
-        max-width: 100%;
-        gap: clamp(5px, .72vw, 13px);
-        justify-content: center;
-    }
-
-    nav a {
-        padding: 7px 1px;
-        font-size: clamp(.61rem, .67vw, .76rem);
-        letter-spacing: -.01em;
-    }
-
-    .nav-cta {
-        gap: 6px;
-    }
-
-    .appointment-trigger {
-        min-height: 42px;
-        padding: 10px 13px;
-        font-size: .84rem;
-    }
-}
-
-/* Extra compact laptop range: keep all three header columns usable. */
-@media (min-width: 1050px) and (max-width: 1199px) {
-    .container {
-        width: min(100% - 28px, 1600px);
-    }
-
-    .nav-wrap {
-        grid-template-columns: minmax(145px, 1fr) minmax(0, 2.4fr) auto;
-        gap: 8px;
-    }
-
-    .brand-name {
-        max-width: 155px;
-        font-size: 1rem;
-    }
-
-    nav ul {
-        gap: 5px;
-    }
-
-    nav a {
-        font-size: .59rem;
-    }
-
-    .appointment-trigger {
-        padding-inline: 10px;
-        font-size: .80rem;
-    }
-}
-
-/* ---------------------------------------------------------
-   05. HEADER INFORMATION BAR
-   --------------------------------------------------------- */
-@media (min-width: 1050px) {
-    .header-info {
-        font-size: clamp(.65rem, .72vw, .82rem);
-    }
-
-    .header-info-wrap {
-        min-height: 42px;
-        gap: 12px;
-    }
-}
-
-/* ---------------------------------------------------------
-   06. MOBILE / TABLET NAVIGATION
-   --------------------------------------------------------- */
-@media (max-width: 1049px) {
-    .nav-wrap {
-        min-height: 68px;
-        gap: 10px;
-    }
-
-    .brand-name {
-        max-width: 46vw;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        font-size: clamp(1rem, 3vw, 1.45rem);
-    }
-
-    .appointment-trigger {
-        min-height: 42px;
-        padding: 9px 13px;
-        font-size: .88rem;
-    }
-
-    .menu-toggle {
-        display: flex;
-    }
-
-    nav ul {
-        max-width: calc(100vw - 24px);
-    }
-}
-
-/* ---------------------------------------------------------
-   07. TABLET SECTION LAYOUTS
-   --------------------------------------------------------- */
-@media (max-width: 900px) {
-    .container {
-        width: min(100% - 40px, 760px);
-    }
-
-    .hero,
-    .about-grid,
-    .doctor-about-container,
-    .two-col,
-    .contact-grid,
-    .practice,
-    .difference-layout {
-        grid-template-columns: 1fr !important;
-    }
-
-    .hero-content,
-    .hero-text,
-    .about-text,
-    .text-block {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .hero-image,
-    .about-img,
-    .photo-card,
-    .map-wrap {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .services-grid,
-    .features-grid,
-    .cred-grid,
-    .footer-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .steps {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .arrow {
-        display: none;
-    }
-}
-
-/* ---------------------------------------------------------
-   08. MOBILE TYPOGRAPHY AND SPACING
-   --------------------------------------------------------- */
-@media (max-width: 600px) {
-    .container {
-        width: calc(100% - 32px);
-    }
-
-   .header-info-wrap {
-    min-height:34px;
-    padding-block:6px;
-
-    gap:6px;
-
-    flex-direction:row;
-    align-items:center;
-    justify-content:flex-start;
-
-    flex-wrap:nowrap;
-
-    overflow:hidden;
-
-    white-space:nowrap;
-}
-
-    .header-info {
-    font-size:clamp(.46rem, 1.8vw, .58rem);
-    line-height:1.15;
-    white-space:nowrap;
-}
-
-    .brand-name {
-        max-width: 40vw;
-        font-size: .98rem;
-    }
-
-    .brand img {
-        width: 40px !important;
-        height: 40px !important;
-    }
-
-    .appointment-trigger {
-        min-height: 38px;
-        padding: 8px 10px;
-        font-size: .78rem;
-    }
-
-    .menu-toggle {
-        width: 38px;
-        height: 38px;
-        flex-basis: 38px;
-        font-size: 21px;
-    }
-
-    nav ul {
-        right: 0;
-        width: min(320px, calc(100vw - 32px));
-    }
-
-    .services-grid,
-    .features-grid,
-    .cred-grid,
-    .footer-grid,
-    .steps {
-        grid-template-columns: 1fr;
-    }
-
-    .section,
-    section {
-        scroll-margin-top: 90px;
-    }
-
-    .hero,
-    .about,
-    .doctor-about-section,
-    .services-section,
-    .contact-section,
-    .journey,
-    .practice,
-    .cta {
-        padding-top: 60px;
-        padding-bottom: 60px;
-    }
-
-    .hero h1,
-    .section-title,
-    .about h2,
-    .doctor-about-section h2 {
-        font-size: clamp(1.8rem, 8vw, 2.7rem);
-        line-height: 1.1;
-    }
-
-    .cta,
-    .footer-bottom {
-        text-align: center;
-    }
-
-    .cta {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 22px;
-    }
-
-    .cta .btn,
-    .cta .cta-btn {
-        width: 100%;
-        justify-content: center;
-    }
-
-    input,
-    select,
-    textarea {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .map-wrap iframe {
-        min-height: 300px;
-    }
-}
-
-/* ---------------------------------------------------------
-   09. VERY SMALL MOBILE DEVICES
-   --------------------------------------------------------- */
-@media (max-width: 400px) {
-    .container {
-        width: calc(100% - 24px);
-    }
-
-    .nav-wrap {
-        gap: 5px;
-    }
-
-    .brand-name {
-        max-width: 34vw;
-        font-size: .86rem;
-    }
-
-    .appointment-trigger {
-        padding-inline: 8px;
-        font-size: .70rem;
-    }
-
-    .header-info-wrap{
-        display:flex;
-        flex-direction:row;
-
-        align-items:center;
-        justify-content:flex-start;
-
-        flex-wrap:nowrap;
-
-        gap:5px;
-
-        overflow:hidden;
-        white-space:nowrap;
-    }
-
-    .availability,
-    .header-contact{
-        flex-wrap:nowrap;
-        white-space:nowrap;
-        flex-shrink:0;
-    }
-
-    .header-info{
-        font-size:.48rem;
-        line-height:1.1;
-        white-space:nowrap;
-    }
-}
-
-/* ---------------------------------------------------------
-   10. ACCESSIBILITY AND MOTION SAFETY
-   --------------------------------------------------------- */
-:focus-visible {
-    outline: 3px solid var(--gold, #E6A900);
-    outline-offset: 3px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: .01ms !important;
-        scroll-behavior: auto !important;
-    }
-}
-
-/* =========================================================
-   FINAL COMPATIBILITY SAFETY RULES
-   These rules prevent overflow and preserve existing layouts.
-========================================================= */
-
-html,
-body {
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
-img,
-video,
-iframe {
-    max-width: 100%;
-}
-
-button,
-a,
-input,
-select,
-textarea {
-    font: inherit;
-}
-
-@media (max-width: 700px) {
-    .container {
-        width: 100%;
-        max-width: 100%;
-        padding-left: 16px;
-        padding-right: 16px;
-    }
-
-    .hero,
-    .about-grid,
-    .doctor-about-container,
-    .two-col,
-    .contact-grid,
-    .practice,
-    .difference-layout {
-        grid-template-columns: 1fr;
-    }
-
-    .services-grid,
-    .cards-grid,
-    .features-grid,
-    .credentials-grid,
-    .gallery-grid,
-    .testi-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .btn,
-    .cta-btn,
-    .appointment-trigger,
-    .preview-link {
-        max-width: 100%;
-        white-space: normal;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        scroll-behavior: auto !important;
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
-}
-

@@ -1,0 +1,1432 @@
+
+/* ========================================
+   GLOBAL STYLES
+======================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #282828;
+  background: #fff;
+}
+
+
+/* ========================================
+   PREVENTIVE PAGE
+======================================== */
+
+.prevent-page {
+  background: #fff;
+  color: #282828;
+}
+
+
+/* ========================================
+   COMMON SECTION STYLES
+======================================== */
+
+.prevent-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 75px 5%;
+}
+
+.prevent-small-label {
+  margin: 0 0 10px;
+  color: #737373;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.prevent-yellow-line {
+  width: 42px;
+  height: 4px;
+  margin: 14px 0 24px;
+  background: #e5b93d;
+}
+
+.prevent-section h2 {
+  margin: 0;
+  font-size: 38px;
+  line-height: 1.08;
+  letter-spacing: -1px;
+}
+
+.prevent-section p {
+  color: #626262;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+
+/* ========================================
+   HERO SECTION
+======================================== */
+
+.prevent-hero {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  min-height: 560px;
+  background: #f7f6f2;
+}
+
+.prevent-hero-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 90px 9%;
+}
+
+.prevent-eyebrow {
+  margin: 0;
+  color: #737373;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.prevent-hero-copy h1 {
+  max-width: 600px;
+  margin: 0 0 22px;
+  font-size: 62px;
+  line-height: 0.98;
+  letter-spacing: -3px;
+}
+
+.prevent-hero-copy h2 {
+  max-width: 560px;
+  margin: 0 0 18px;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.prevent-hero-copy > p:not(.prevent-eyebrow) {
+  max-width: 570px;
+  color: #606060;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+
+/* ========================================
+   HERO BUTTONS
+======================================== */
+
+.prevent-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.prevent-btn,
+.prevent-outline-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  padding: 14px 21px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  transition: 0.25s ease;
+}
+
+.prevent-btn {
+  background: #e5b93d;
+  color: #282828;
+}
+
+.prevent-btn:hover {
+  background: #d5a92e;
+  transform: translateY(-2px);
+}
+
+.prevent-outline-btn {
+  border: 1px solid #aaa;
+  background: #fff;
+  color: #282828;
+}
+
+.prevent-outline-btn:hover {
+  border-color: #e5b93d;
+}
+
+
+/* ========================================
+   HERO IMAGE
+======================================== */
+
+.prevent-hero-image {
+  position: relative;
+  min-height: 560px;
+  overflow: hidden;
+}
+
+.image-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  background: linear-gradient(
+    135deg,
+    #ebe8df,
+    #d9d5ca
+  );
+  color: #737373;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.image-placeholder small {
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.prevent-image-note {
+  position: absolute;
+  right: 7%;
+  bottom: 9%;
+  padding: 18px 22px;
+  border-radius: 12px;
+  background: rgba(247, 246, 242, 0.94);
+  font-family: cursive;
+  font-size: 21px;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.prevent-image-note span {
+  color: #c9a227;
+}
+
+
+/* ========================================
+   INTRODUCTION SECTION
+======================================== */
+
+.prevent-intro {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr 0.9fr;
+  align-items: center;
+  gap: 30px;
+}
+
+.prevent-photo {
+  height: 310px;
+}
+
+.prevent-photo .image-placeholder {
+  border-radius: 16px;
+}
+
+.prevent-copy {
+  padding: 10px;
+}
+
+.prevent-copy h2 {
+  font-size: 34px;
+}
+
+.prevent-copy p {
+  margin: 0 0 14px;
+}
+
+.prevent-copy strong {
+  color: #282828;
+}
+
+
+/* ========================================
+   SIMPLE PREVENTION BOX
+======================================== */
+
+.prevent-simple-box {
+  min-height: 280px;
+  padding: 30px;
+  border-radius: 18px;
+  background: #f3e6b5;
+}
+
+.prevent-box-icon {
+  margin-bottom: 10px;
+  font-size: 38px;
+}
+
+.prevent-simple-box h3 {
+  margin: 0 0 15px;
+  font-size: 21px;
+  line-height: 1.25;
+}
+
+.prevent-simple-box p {
+  font-size: 14px;
+}
+
+
+/* ========================================
+   PREVENTIVE CARE SECTION
+======================================== */
+
+.prevent-care {
+  max-width: none;
+  padding-right: 8%;
+  padding-left: 8%;
+  background: #f7f6f2;
+}
+
+.prevent-care-heading {
+  max-width: 620px;
+  margin-bottom: 38px;
+}
+
+.prevent-care-heading h2 {
+  font-size: 42px;
+}
+
+.prevent-care-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 1200px;
+  margin: auto;
+  gap: 16px;
+}
+
+
+/* ========================================
+   PREVENTIVE CARE CARDS
+======================================== */
+
+.prevent-care-card {
+  min-height: 235px;
+  padding: 28px;
+  border-radius: 15px;
+  background: #fff;
+  transition: 0.25s ease;
+}
+
+.prevent-care-card:hover {
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+  transform: translateY(-5px);
+}
+
+.prevent-care-card > span {
+  color: #c9a227;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.prevent-care-card h3 {
+  margin: 15px 0 8px;
+  font-size: 20px;
+}
+
+.prevent-care-card p {
+  margin: 0 0 18px;
+  font-size: 14px;
+}
+
+.prevent-care-card a {
+  color: #282828;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.prevent-care-card a:hover {
+  color: #b58b12;
+}
+
+
+/* ========================================
+   EVERYDAY ROUTINE SECTION
+======================================== */
+
+.prevent-routine {
+  display: grid;
+  grid-template-columns: 0.75fr 1.4fr;
+  align-items: start;
+  gap: 60px;
+}
+
+.prevent-routine-copy {
+  max-width: 390px;
+}
+
+.prevent-routine-copy h2 {
+  font-size: 36px;
+}
+
+.prevent-routine-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+
+/* ========================================
+   ROUTINE CARDS
+======================================== */
+
+.prevent-routine-card {
+  min-height: 155px;
+  padding: 23px;
+  border: 1px solid #e5e1d9;
+  border-radius: 14px;
+}
+
+.prevent-routine-card > span {
+  color: #c9a227;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.prevent-routine-card h3 {
+  margin: 12px 0 5px;
+  font-size: 18px;
+}
+
+.prevent-routine-card p {
+  margin: 0;
+  font-size: 13px;
+}
+
+
+/* ========================================
+   AGE-BASED PREVENTION SECTION
+======================================== */
+
+.prevent-age {
+  max-width: none;
+  padding-right: 8%;
+  padding-left: 8%;
+  background: #f7f6f2;
+}
+
+.prevent-age-heading {
+  max-width: 620px;
+  margin-bottom: 38px;
+}
+
+.prevent-age-heading h2 {
+  font-size: 42px;
+}
+
+.prevent-age-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 1200px;
+  margin: auto;
+  gap: 15px;
+}
+
+
+/* ========================================
+   AGE CARDS
+======================================== */
+
+.prevent-age-card {
+  min-height: 210px;
+  padding: 25px;
+  border-radius: 15px;
+  background: #fff;
+}
+
+.prevent-age-card > span {
+  color: #c9a227;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.prevent-age-card h3 {
+  margin: 14px 0 7px;
+  font-size: 19px;
+}
+
+.prevent-age-card p {
+  margin: 0;
+  font-size: 14px;
+}
+
+
+/* ========================================
+   OUR APPROACH SECTION
+======================================== */
+
+.prevent-approach {
+  display: grid;
+  grid-template-columns: 0.8fr 1.3fr;
+  align-items: start;
+  background-color: #12213F;
+  gap: 80px;
+  border-radius: 20px;
+}
+
+.prevent-approach-heading {
+  max-width: 450px;
+}
+
+.prevent-approach-heading h2 {
+  font-size: 39px;
+  color: #FFFFFF;
+}
+
+.prevent-steps {
+  max-width: 650px;
+}
+
+
+/* ========================================
+   APPROACH STEPS
+======================================== */
+
+.prevent-step {
+  display: grid;
+  grid-template-columns: 55px 1fr;
+  gap: 20px;
+  padding: 25px 0;
+  border-bottom: 1px solid #e5e1d9;
+}
+
+.prevent-step:first-child {
+  padding-top: 0;
+}
+
+.prevent-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #f3e6b5;
+  color: #8f7218;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.prevent-step h3 {
+  margin: 0 0 7px;
+  font-size: 19px;
+  color: #FFFFFF;
+}
+
+.prevent-step p {
+  margin: 0;
+  font-size: 14px;
+  color: #FFFFFFB8;
+}
+
+
+/* ========================================
+   WARNING SIGNS SECTION
+======================================== */
+
+.prevent-signs {
+  padding-top: 35px;
+}
+
+.prevent-signs-box {
+  padding: 45px;
+  border-radius: 20px;
+  background: #f3e6b5;
+}
+
+.prevent-signs-box h2 {
+  max-width: 700px;
+  font-size: 38px;
+}
+
+.prevent-signs-box > p {
+  max-width: 720px;
+}
+
+
+/* ========================================
+   WARNING SIGN POINTS
+======================================== */
+
+.prevent-sign-points {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.prevent-sign-points div {
+  padding: 18px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.prevent-sign-points strong {
+  color: #b58b12;
+  font-size: 20px;
+}
+
+.prevent-sign-points p {
+  margin: 8px 0 0;
+  font-size: 13px;
+}
+
+
+/* ========================================
+   FAQ SECTION
+======================================== */
+
+.prevent-faq-section {
+  display: grid;
+  grid-template-columns: 0.8fr 1.4fr;
+  align-items: start;
+  gap: 70px;
+}
+
+.prevent-faq-heading {
+  max-width: 370px;
+}
+
+.prevent-faq-heading h2 {
+  font-size: 38px;
+}
+
+.prevent-faq-item {
+  border-bottom: 1px solid #dedbd3;
+}
+
+
+/* ========================================
+   FAQ QUESTIONS
+======================================== */
+
+.prevent-faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 21px 0;
+  border: 0;
+  background: transparent;
+  color: #282828;
+  font-size: 17px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+
+.prevent-faq-question span {
+  color: #c9a227;
+  font-size: 25px;
+  transition: 0.2s;
+}
+
+.prevent-faq-item.active
+.prevent-faq-question span {
+  transform: rotate(45deg);
+}
+
+
+/* ========================================
+   FAQ ANSWERS
+======================================== */
+
+.prevent-faq-answer {
+  display: none;
+  padding: 0 40px 20px 0;
+}
+
+.prevent-faq-answer p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.prevent-faq-item.active
+.prevent-faq-answer {
+  display: block;
+}
+
+
+/* ========================================
+   FINAL CTA SECTION
+======================================== */
+
+.prevent-final-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 30px auto 80px;
+  padding: 45px 50px;
+  border-radius: 20px;
+  background: #282828;
+  color: #fff;
+  gap: 30px;
+}
+
+.prevent-final-cta .prevent-small-label {
+  color: #e5b93d;
+}
+
+.prevent-final-cta h2 {
+  margin: 8px 0 12px;
+  font-size: 38px;
+  line-height: 1.05;
+}
+
+.prevent-final-cta p:not(.prevent-small-label) {
+  max-width: 600px;
+  margin: 0;
+  color: #d5d5d5;
+}
+
+.prevent-cta-btn {
+  flex-shrink: 0;
+}
+
+
+/* ========================================
+   RESPONSIVE DESIGN
+   TABLET — MAX WIDTH 900px
+======================================== */
+
+@media (max-width: 900px) {
+
+  /* Hero */
+  .prevent-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .prevent-hero-copy {
+    padding: 70px 7%;
+  }
+
+  .prevent-hero-image {
+    min-height: 400px;
+  }
+
+
+  /* Grid Sections */
+  .prevent-intro,
+  .prevent-routine,
+  .prevent-approach,
+  .prevent-faq-section {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+
+  /* Text Widths */
+  .prevent-routine-copy,
+  .prevent-approach-heading,
+  .prevent-faq-heading {
+    max-width: none;
+  }
+
+
+  /* Preventive Care Cards */
+  .prevent-care-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  /* Age Cards */
+  .prevent-age-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  /* Warning Sign Points */
+  .prevent-sign-points {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+/* ========================================
+   RESPONSIVE DESIGN
+   MOBILE — MAX WIDTH 600px
+======================================== */
+
+@media (max-width: 600px) {
+
+  /* Hero */
+  .prevent-hero-copy {
+    padding: 55px 7%;
+  }
+
+  .prevent-hero-copy h1 {
+    font-size: 45px;
+    letter-spacing: -2px;
+  }
+
+  .prevent-hero-copy h2 {
+    font-size: 20px;
+  }
+
+  .prevent-hero-image {
+    min-height: 300px;
+  }
+
+
+  /* Sections */
+  .prevent-section {
+    padding: 50px 7%;
+  }
+
+  .prevent-section h2 {
+    font-size: 30px;
+  }
+
+
+  /* Single-Column Grids */
+  .prevent-care-grid,
+  .prevent-routine-grid,
+  .prevent-age-grid,
+  .prevent-sign-points {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* Full-Width Sections */
+  .prevent-care,
+  .prevent-age {
+    padding-right: 7%;
+    padding-left: 7%;
+  }
+
+
+  /* Warning Signs */
+  .prevent-signs-box {
+    padding: 30px 22px;
+  }
+
+
+  /* Final CTA */
+  .prevent-final-cta {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 20px 5% 50px;
+    padding: 35px 25px;
+  }
+
+  .prevent-final-cta h2 {
+    font-size: 30px;
+  }
+
+}
+
+
+/* =========================================================
+   PREVENTIVE CARE
+   BEFORE & AFTER CASE STUDIES
+========================================================= */
+
+.prevent-case-section {
+    width: 100%;
+    padding: 110px 6%;
+    background: #f7f6f2;
+    color: #282828;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.prevent-case-heading {
+    max-width: 780px;
+    margin: 0 auto 65px;
+    text-align: center;
+}
+
+.prevent-small-label {
+    margin-bottom: 15px;
+    color: #b08a16;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    line-height: 1.6;
+}
+
+.prevent-case-heading h2 {
+    margin: 0;
+    color: #282828;
+    font-size: clamp(30px, 4vw, 48px);
+    font-weight: 700;
+    line-height: 1.15;
+}
+
+.prevent-yellow-line {
+    width: 58px;
+    height: 4px;
+    margin: 25px auto;
+    background: #e5b93d;
+    border-radius: 50px;
+}
+
+.prevent-case-heading > p:last-child {
+    max-width: 680px;
+    margin: 0 auto;
+    color: #6c6c6c;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   CASE STUDY CARD
+========================================================= */
+
+.prevent-case-study {
+    max-width: 1250px;
+    margin: 0 auto 55px;
+    padding: 42px;
+    background: #ffffff;
+    border: 1px solid #e8e4d9;
+    border-radius: 20px;
+    box-shadow: 0 18px 50px rgba(40, 40, 40, 0.06);
+}
+
+
+/* =========================================================
+   CASE HEADER
+========================================================= */
+
+.prevent-case-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 25px;
+    margin-bottom: 35px;
+}
+
+.prevent-case-number {
+    display: block;
+    margin-bottom: 12px;
+    color: #b08a16;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.prevent-case-header h3 {
+    max-width: 650px;
+    margin: 0;
+    color: #282828;
+    font-size: clamp(23px, 3vw, 34px);
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.prevent-case-tag {
+    flex-shrink: 0;
+    padding: 10px 16px;
+    color: #6e5714;
+    background: #f8edc7;
+    border: 1px solid #ead58e;
+    border-radius: 50px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   BEFORE AND AFTER GRID
+========================================================= */
+
+.prevent-before-after-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+}
+
+
+/* =========================================================
+   COMPARISON CARD
+========================================================= */
+
+.prevent-comparison-card {
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid #e8e8e8;
+    border-radius: 14px;
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.prevent-comparison-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 35px rgba(40, 40, 40, 0.10);
+}
+
+
+/* =========================================================
+   COMPARISON IMAGE
+========================================================= */
+
+.prevent-comparison-image {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background: #efefeb;
+}
+
+.prevent-comparison-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease;
+}
+
+.prevent-comparison-card:hover
+.prevent-comparison-image img {
+    transform: scale(1.04);
+}
+
+
+/* IMAGE LABEL */
+
+.prevent-comparison-label {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 8px 15px;
+    color: #282828;
+    background: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.10);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   COMPARISON CONTENT
+========================================================= */
+
+.prevent-comparison-content {
+    padding: 25px;
+}
+
+.prevent-comparison-content h4 {
+    margin: 0 0 12px;
+    color: #282828;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.prevent-comparison-content p {
+    margin: 0;
+    color: #6d6d6d;
+    font-size: 14px;
+    line-height: 1.85;
+}
+
+
+/* =========================================================
+   DIFFERENCE SECTION
+========================================================= */
+
+.prevent-case-difference {
+    margin-top: 38px;
+    padding: 35px;
+    background: #f8f7f2;
+    border: 1px solid #ece7d8;
+    border-radius: 14px;
+}
+
+.prevent-difference-heading {
+    margin-bottom: 28px;
+}
+
+.prevent-difference-heading > span {
+    display: block;
+    margin-bottom: 10px;
+    color: #b08a16;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+}
+
+.prevent-difference-heading h4 {
+    margin: 0;
+    color: #282828;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+
+/* =========================================================
+   DIFFERENCE GRID
+========================================================= */
+
+.prevent-difference-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 35px;
+}
+
+.prevent-difference-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.prevent-difference-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 28px;
+    width: 28px;
+    height: 28px;
+    color: #282828;
+    background: #e5b93d;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.prevent-difference-item h5 {
+    margin: 0 0 8px;
+    color: #282828;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.prevent-difference-item p {
+    margin: 0;
+    color: #6d6d6d;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   CLINICAL NOTE
+========================================================= */
+
+.prevent-case-note {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 8px;
+    margin-top: 30px;
+    padding: 22px 25px;
+    background: #fffdf5;
+    border-left: 4px solid #e5b93d;
+    border-radius: 5px;
+}
+
+.prevent-case-note strong {
+    color: #282828;
+    font-size: 13px;
+    font-weight: 800;
+    line-height: 1.8;
+}
+
+.prevent-case-note p {
+    margin: 0;
+    color: #6d6d6d;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   DISCLAIMER
+========================================================= */
+
+.prevent-case-disclaimer {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 25px 30px;
+    background: #ffffff;
+    border: 1px solid #e7e2d4;
+    border-radius: 12px;
+}
+
+.prevent-case-disclaimer strong {
+    display: block;
+    margin-bottom: 8px;
+    color: #282828;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.prevent-case-disclaimer p {
+    margin: 0;
+    color: #777777;
+    font-size: 13px;
+    line-height: 1.85;
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .prevent-case-section {
+        padding: 80px 5%;
+    }
+
+    .prevent-case-study {
+        padding: 30px;
+    }
+
+    .prevent-case-header {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .prevent-case-tag {
+        align-self: flex-start;
+    }
+
+    .prevent-case-difference {
+        padding: 28px;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .prevent-case-section {
+        padding: 65px 20px;
+    }
+
+    .prevent-case-heading {
+        margin-bottom: 40px;
+    }
+
+    .prevent-case-heading h2 {
+        font-size: 30px;
+    }
+
+    .prevent-case-heading > p:last-child {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .prevent-case-study {
+        padding: 20px;
+        margin-bottom: 35px;
+        border-radius: 14px;
+    }
+
+    .prevent-case-header h3 {
+        font-size: 24px;
+    }
+
+    .prevent-before-after-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .prevent-comparison-content {
+        padding: 20px;
+    }
+
+    .prevent-comparison-content h4 {
+        font-size: 19px;
+    }
+
+    .prevent-case-difference {
+        padding: 22px;
+    }
+
+    .prevent-difference-heading h4 {
+        font-size: 22px;
+    }
+
+    .prevent-difference-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .prevent-case-note {
+        display: block;
+        padding: 18px;
+    }
+
+    .prevent-case-note strong {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .prevent-case-disclaimer {
+        padding: 22px;
+    }
+
+    .rct-case-disclaimer {
+        gap: 14px;
+        margin-top: 30px;
+        padding: 24px 20px;
+        border-left-width: 5px;
+        border-radius: 12px;
+    }
+
+    .rct-disclaimer-icon {
+        flex: 0 0 30px;
+        width: 30px;
+        height: 30px;
+
+        font-size: 18px;
+    }
+
+    .rct-disclaimer-content h4 {
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+
+    .rct-disclaimer-content p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    .prevent-case-study {
+        padding: 15px;
+    }
+
+    .prevent-case-tag {
+        font-size: 10px;
+        white-space: normal;
+    }
+
+    .prevent-comparison-label {
+        top: 10px;
+        left: 10px;
+        padding: 7px 11px;
+        font-size: 10px;
+    }
+
+    .rct-case-disclaimer {
+        display: block;
+        padding: 22px 18px;
+    }
+
+    .rct-disclaimer-icon {
+        margin-bottom: 15px;
+    }
+
+    .rct-disclaimer-content h4 {
+        font-size: 17px;
+    }
+
+    .rct-disclaimer-content p {
+        font-size: 14px;
+    }
+
+}
+
+/* =========================================================
+   SCREENING DIAGNOSIS 
+   IMPORTANT CLINICAL INFORMATION
+========================================================= */
+
+.pc-case-disclaimer {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+    max-width: 1250px;
+    margin: 40px auto 0;
+    padding: 20px 25px;
+
+    background: #fffdf5;
+    border: 1px solid #e5d5a3;
+    border-left: 6px solid #e5b93d;
+    border-radius: 14px;
+
+    box-shadow: 0 8px 25px rgba(40, 40, 40, 0.06);
+
+    color: #282828;
+}
+
+/* DISCLAIMER ICON */
+
+.pc-disclaimer-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 36px;
+    width: 36px;
+    height: 36px;
+
+    margin-top: 2px;
+
+    color: #ffffff;
+    background: #d5a62d;
+    border-radius: 50%;
+
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+
+/* DISCLAIMER CONTENT */
+
+.pc-disclaimer-content {
+    flex: 1;
+    min-width: 0;
+}
+
+
+/* DISCLAIMER HEADING */
+
+.pc-disclaimer-content h4 {
+    margin: 0 0 4px;
+
+    color: #282828;
+    font-family: inherit;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.4;
+}
+
+
+/* DISCLAIMER PARAGRAPH */
+
+.pc-disclaimer-content p {
+    margin: 0;
+
+    color: #5f5f5f;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.9;
+}

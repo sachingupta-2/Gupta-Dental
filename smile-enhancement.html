@@ -1,0 +1,1745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dental Services | Dr. Gupta's Dental Clinic</title>
+
+<meta name="description" content="Dr. Tanupriya Gupta — 20 years of precision, magnification-guided restorative dentistry in South Extension, New Delhi. Ethical care, no over-treatment.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="smile-enhancement.css">
+</head>
+
+
+<body><!-- =========================================================
+     HEADER
+     ========================================================= -->
+
+<header>
+
+  <div class="header-info">
+    <div class="container header-info-wrap">
+      <div class="availability" aria-label="Clinic availability">
+        <span><strong>Availability:</strong> <span class="availability-hours">Monday - Saturday, 10:00 AM - 7:00 PM</span></span>
+        <span class="sunday-closed">Sunday: CLOSED</span>
+      </div>
+      <div class="header-contact" aria-label="Clinic contact details">
+        <a href="tel:+919990880975">Call: +91 99908 80975</a>
+        <a href="https://wa.me/919990880975" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container nav-wrap">
+
+    <a href="index.html" class="brand" style="text-decoration:none; color:inherit;" aria-label="Dr. Gupta's Dental Clinic — Home">
+
+      <img
+        src="logos/web_logo.png"
+        alt="Dr. Gupta's Dental Clinic logo"
+        style="width:44px;height:44px;border-radius:10px;object-fit:cover;"
+      >
+
+      <div class="brand-name">
+        Dr. Gupta's Dental Clinic
+      </div>
+
+    </a>
+
+
+    <nav>
+
+      <ul id="main-navigation">
+
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+
+        <li>
+          <a href="about.html">About</a>
+        </li>
+
+        <li>
+          <a href="difference.html">Our Difference</a>
+        </li>
+
+        <li>
+          <a href="services.html" aria-current="page">Services</a>
+        </li>
+
+        <li>
+          <a href="reviews.html">Reviews</a>
+        </li>
+
+        <li>
+          <a href="faq.html">FAQ</a>
+        </li>
+
+        <li>
+          <a href="contact.html">Contact</a>
+        </li>
+
+      </ul>
+
+    </nav>
+
+
+    <div class="nav-cta">
+
+      <button
+        type="button"
+        class="appointment-trigger"
+        id="openAppointmentModal"
+      >
+        Book Appointment
+      </button>
+
+      <button
+        type="button"
+        class="menu-toggle"
+        aria-label="Menu"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >
+        &#9776;
+      </button>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- =========================================================
+     APPOINTMENT MODAL
+     ========================================================= -->
+
+<div
+  class="appointment-modal-overlay"
+  id="appointmentModal"
+  aria-hidden="true"
+>
+
+  <div
+    class="appointment-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="appointmentTitle"
+  >
+
+    <button
+      type="button"
+      class="modal-close"
+      aria-label="Close appointment form"
+    >
+      &times;
+    </button>
+
+
+    <div class="modal-head">
+
+      <h3 id="appointmentTitle">
+        Book an Appointment
+      </h3>
+
+      <p>
+        Please fill in your details and we will contact you shortly.
+      </p>
+
+    </div>
+
+
+    <form class="appointment-form" id="appointmentForm">
+      <div class="appointment-progress" aria-label="Appointment form progress">
+        <div class="step-indicator active" id="stepIndicator1">1. Patient Details</div>
+        <div class="step-indicator" id="stepIndicator2">2. Personal Details <span class="optional-note">(Optional)</span></div>
+      </div>
+
+      <div class="appointment-step active" id="appointmentStep1">
+        <div class="form-grid">
+          <div class="form-group"><label for="name">Name</label><input id="name" name="name" type="text" placeholder="Enter your name" required></div>
+          <div class="form-group"><label for="age">Age</label><input id="age" name="age" type="number" min="1" placeholder="Age" required></div>
+          <div class="form-group"><label for="phone">Phone No</label><input id="phone" name="phone" type="tel" placeholder="Your phone number" required></div>
+          <div class="form-group"><label for="email">Email</label><input id="email" name="email" type="email" placeholder="Your email address" required></div>
+          <div class="form-group full"><label for="address">Address</label><input id="address" name="address" type="text" placeholder="Your address" required></div>
+          <div class="form-group"><label for="appointmentDate">Appointment Date</label><input type="date" id="appointmentDate" name="appointmentDate" required></div>
+          <div class="form-group"><label for="appointmentTime">Available Time Slot</label><select id="appointmentTime" name="appointmentTime" required disabled><option value="">Select a date first</option></select><small class="slot-status" id="slotStatus" aria-live="polite">Choose a date to see available slots.</small></div>
+          <div class="form-group"><label for="gender">Gender</label><select id="gender" name="gender" required><option value="">Select gender</option><option>Male</option><option>Female</option><option>Other</option></select></div>
+        </div>
+        <div class="step-actions">
+          <button type="button" class="secondary-btn" id="closeAppointmentModal">Cancel</button>
+          <button type="button" class="cta-btn" id="nextAppointmentStep">Next &rarr;</button>
+        </div>
+      </div>
+
+      <div class="appointment-step" id="appointmentStep2">
+        <div class="clinical-intro"><strong>Personal details are optional.</strong> You can provide them to help the dentist understand your concern before the appointment, or skip this section and submit with your basic details.</div>
+        <div class="form-grid">
+          <div class="form-group full"><label for="reasonForVisit">Reason for Visit</label><textarea id="reasonForVisit" name="reasonForVisit" placeholder="Briefly describe the reason for your visit"></textarea></div>
+          <div class="form-group"><label for="dentalProblem">Current Dental Problem</label><select id="dentalProblem" name="dentalProblem"><option value="">Select if applicable</option><option>Tooth Pain</option><option>Sensitivity</option><option>Swelling</option><option>Bleeding Gums</option><option>Broken / Chipped Tooth</option><option>Cavity</option><option>Missing Tooth</option><option>Routine Check-up</option><option>Cleaning</option><option>Other</option></select></div>
+          <div class="form-group"><label for="painLevel">Pain / Discomfort</label><select id="painLevel" name="painLevel"><option value="">Select if applicable</option><option>None</option><option>Mild</option><option>Moderate</option><option>Severe</option></select></div>
+          <div class="form-group"><label for="previousDentalTreatment">Previous Dental Treatment</label><select id="previousDentalTreatment" name="previousDentalTreatment"><option value="">Select if applicable</option><option>No Previous Treatment</option><option>Filling</option><option>Root Canal</option><option>Extraction</option><option>Implant</option><option>Crown / Bridge</option><option>Other</option></select></div>
+          <div class="form-group"><label>Currently Taking Any Medicine?</label><div class="radio-row"><label class="radio-option"><input type="radio" name="medication" value="yes"> Yes</label><label class="radio-option"><input type="radio" name="medication" value="no" checked> No</label></div></div>
+          <div class="form-group full medication-box" id="medicationBox"><label for="medicineDetails">Medicine Details</label><textarea id="medicineDetails" name="medicineDetails" placeholder="List medicines you are currently taking"></textarea></div>
+          <div class="form-group full"><label for="allergies">Known Allergies</label><textarea id="allergies" name="allergies" placeholder="Mention any known medicine or other allergies"></textarea></div>
+          <div class="form-group full"><label for="medicalHistory">Medical History</label><textarea id="medicalHistory" name="medicalHistory" placeholder="Mention any relevant medical history"></textarea></div>
+          <div class="form-group full"><label for="additionalClinicalDetails">Additional Clinical Details</label><textarea id="additionalClinicalDetails" name="additionalClinicalDetails" placeholder="Anything else you would like the dentist to know"></textarea></div>
+        </div>
+
+        <div class="clinical-section">
+          <h4 class="clinical-section-title">Adverse Habits / Adverse Oral Habits</h4>
+          <div class="clinical-table-wrap"><table class="clinical-table"><thead><tr><th>Type</th><th>Frequency</th><th>Duration</th></tr></thead><tbody>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitSmoking" value="Smoking"> Smoking</label></td><td><select name="habitSmokingFrequency"><option value="">Select</option><option>Occasional</option><option>Once Daily</option><option>Twice Daily</option><option>More than Twice Daily</option></select></td><td><select name="habitSmokingDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitTobacco" value="Smokeless Tobacco/snuff"> Smokeless Tobacco / Snuff</label></td><td><select name="habitTobaccoFrequency"><option value="">Select</option><option>Occasional</option><option>Once Daily</option><option>Twice Daily</option><option>More than Twice Daily</option></select></td><td><select name="habitTobaccoDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitPaan" value="Paan chewing (gutka, paanmasala)"> Paan chewing (gutka, paanmasala)</label></td><td><select name="habitPaanFrequency"><option value="">Select</option><option>Occasional</option><option>Once Daily</option><option>Twice Daily</option><option>More than Twice Daily</option></select></td><td><select name="habitPaanDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitAlcohol" value="Alcohol"> Alcohol</label></td><td><select name="habitAlcoholFrequency"><option value="">Select</option><option>Occasional</option><option>Once Weekly</option><option>2-3 Times Weekly</option><option>Daily</option></select></td><td><select name="habitAlcoholDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+          </tbody></table></div>
+        </div>
+
+        <div class="clinical-section"><h4 class="clinical-section-title">Oral Hygiene Practices</h4><div class="hygiene-grid">
+          <div class="form-group full"><label>i) Type of Cleaning</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Toothbrush"> Toothbrush</label><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Finger"> Finger</label><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Stick"> Stick</label><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Others"> Others</label></div></div>
+          <div class="form-group full"><label>ii) Method of Cleaning</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="cleaningMethod" value="Vertical"> Vertical</label><label class="clinical-check"><input type="checkbox" name="cleaningMethod" value="Horizontal"> Horizontal</label><label class="clinical-check"><input type="checkbox" name="cleaningMethod" value="Circular"> Circular</label></div></div>
+          <div class="form-group full"><label>iii) Frequency of Cleaning / Brushing</label><div class="option-grid"><label class="clinical-check"><input type="radio" name="brushingFrequency" value="Once"> Once</label><label class="clinical-check"><input type="radio" name="brushingFrequency" value="Twice"> Twice</label><label class="clinical-check"><input type="radio" name="brushingFrequency" value="Thrice"> Thrice</label></div></div>
+          <div class="form-group full"><label>iv) Materials Used</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Toothpaste"> Toothpaste</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Tooth Powder"> Tooth Powder</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Charcoal"> Charcoal</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Sand"> Sand</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Brick Powder"> Brick Powder</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Any Other"> Any Other</label></div><input type="text" id="cleaningMaterialOther" name="cleaningMaterialOther" placeholder="If any other, please specify"></div>
+          <div class="form-group full"><label>v) Time of Brushing</label><div class="option-grid"><label class="clinical-check"><input type="radio" name="brushingTime" value="Before Meal"> Before Meal</label><label class="clinical-check"><input type="radio" name="brushingTime" value="After Meals"> After Meals</label></div></div>
+          <div class="form-group full"><label>vi) Frequency of Changing the Tooth Brush</label><div class="option-grid"><label class="clinical-check"><input type="radio" name="toothbrushChangeFrequency" value="Once"> Once</label><label class="clinical-check"><input type="radio" name="toothbrushChangeFrequency" value="Twice"> Twice</label><label class="clinical-check"><input type="radio" name="toothbrushChangeFrequency" value="Thrice"> Thrice</label></div></div>
+          <div class="form-group"><label for="durationOfCleaning">vii) Duration of Cleaning</label><input type="text" id="durationOfCleaning" name="durationOfCleaning" placeholder="e.g. 2 minutes"></div>
+          <div class="form-group full"><label>viii) Other Oral Hygiene Aids Used</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Flossing"> Flossing</label><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Interdental Aids"> Interdental Aids</label><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Oral Mouth Rinse"> Oral Mouth Rinse</label><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Tongue Cleaner"> Tongue Cleaner</label></div></div>
+        </div></div>
+
+        <div class="step-actions"><button type="button" class="secondary-btn" id="backAppointmentStep">&larr; Back</button><div class="right-actions"><button type="button" class="secondary-btn" id="skipClinicalStep">Skip &amp; Submit</button><button type="submit" class="cta-btn">Submit Appointment</button></div></div>
+      </div>
+    </form>
+
+  </div>
+
+</div>
+
+
+<!-- =========================================================
+     SMILE ENHANCEMENT PAGE
+========================================================= -->
+
+<main class="se-page">
+
+    <!-- =========================================================
+         HERO SECTION
+    ========================================================= -->
+
+    <section class="se-hero">
+
+        <div class="se-hero-content">
+
+            <!-- <p class="se-eyebrow">
+                SMILE ENHANCEMENT
+            </p> -->
+
+            <h1>
+                A smile that feels
+                <span>naturally yours.</span>
+            </h1>
+
+            <div class="se-yellow-line"></div>
+
+            <p class="se-hero-text">
+                Smile enhancement focuses on improving the appearance
+                of your smile while keeping the result natural,
+                balanced and appropriate for your individual teeth.
+            </p>
+
+            <!-- <a href="#se-approach" class="se-btn">
+                Explore Smile Enhancement
+                <span>→</span>
+            </a> -->
+
+        </div>
+
+
+        <div class="se-hero-image">
+
+            <img
+                src="clinic_photos_shortlist/smile-enhancement.jpg"
+                alt="Smile enhancement treatment"
+                loading="eager"
+            >
+
+            <div class="se-hero-note">
+                Natural<br>
+                smiles<br>
+                matter
+                <span>♡</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         INTRODUCTION
+    ========================================================= -->
+
+    <section class="se-intro" id="se-approach">
+
+        <div class="se-intro-image">
+
+            <img
+                src="clinic_photos_shortlist/smile-enhancement-consultation.jpg"
+                alt="Smile enhancement consultation"
+                loading="lazy"
+            >
+
+        </div>
+
+
+        <div class="se-intro-content">
+
+            <p class="se-small-label">
+                A PERSONAL APPROACH
+            </p>
+
+            <h2>
+                Your smile should look like you.
+            </h2>
+
+            <div class="se-yellow-line"></div>
+
+            <p>
+                Smile enhancement is not about making every smile
+                look the same. It is about understanding what you
+                would like to improve and considering what is
+                appropriate for your teeth, facial features and
+                overall oral health.
+            </p>
+
+            <p>
+                Depending on the individual situation, treatment may
+                involve one or more conservative aesthetic procedures.
+                The focus is on careful planning, proportion and
+                maintaining a natural appearance.
+            </p>
+
+        </div>
+
+
+        <aside class="se-intro-card">
+
+            <div class="se-card-icon">
+                ✦
+            </div>
+
+            <h3>
+                Enhancement, not exaggeration.
+            </h3>
+
+            <p>
+                We believe aesthetic dentistry should complement
+                your natural smile rather than make it look artificial.
+            </p>
+
+        </aside>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         WHAT CAN BE IMPROVED
+    ========================================================= -->
+
+    <section class="se-improvements">
+
+        <div class="se-section-heading">
+
+            <p class="se-small-label">
+                WHAT CAN BE CONSIDERED?
+            </p>
+
+            <h2>
+                Small changes can make a meaningful difference.
+            </h2>
+
+            <div class="se-yellow-line"></div>
+
+            <p>
+                Every smile is different. During consultation, we
+                assess the areas you would like to improve and
+                discuss which options may be suitable.
+            </p>
+
+        </div>
+
+
+        <div class="se-improvement-grid">
+
+            <!-- CARD 01 -->
+
+            <article class="se-improvement-card">
+
+                <span class="se-card-number">
+                    01
+                </span>
+
+                <div class="se-improvement-icon">
+                    ✦
+                </div>
+
+                <h3>
+                    Tooth Colour
+                </h3>
+
+                <p>
+                    The colour and overall appearance of teeth may
+                    be addressed where appropriate through suitable
+                    cosmetic treatment.
+                </p>
+
+            </article>
+
+
+            <!-- CARD 02 -->
+
+            <article class="se-improvement-card">
+
+                <span class="se-card-number">
+                    02
+                </span>
+
+                <div class="se-improvement-icon">
+                    ◇
+                </div>
+
+                <h3>
+                    Tooth Shape
+                </h3>
+
+                <p>
+                    Minor irregularities in tooth shape or proportions
+                    may sometimes be improved with carefully planned
+                    restorative or aesthetic procedures.
+                </p>
+
+            </article>
+
+
+            <!-- CARD 03 -->
+
+            <article class="se-improvement-card">
+
+                <span class="se-card-number">
+                    03
+                </span>
+
+                <div class="se-improvement-icon">
+                    ∿
+                </div>
+
+                <h3>
+                    Tooth Proportion
+                </h3>
+
+                <p>
+                    The relationship between tooth width, length and
+                    surrounding teeth is considered when planning
+                    aesthetic improvements.
+                </p>
+
+            </article>
+
+
+            <!-- CARD 04 -->
+
+            <article class="se-improvement-card">
+
+                <span class="se-card-number">
+                    04
+                </span>
+
+                <div class="se-improvement-icon">
+                    ♡
+                </div>
+
+                <h3>
+                    Smile Balance
+                </h3>
+
+                <p>
+                    The overall appearance of the smile is considered
+                    rather than focusing on a single tooth in isolation.
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         POSSIBLE TREATMENT OPTIONS
+    ========================================================= -->
+
+    <section class="se-options">
+
+        <div class="se-options-heading">
+
+            <p class="se-small-label">
+                POSSIBLE OPTIONS
+            </p>
+
+            <h2>
+                Treatment is selected according to your needs.
+            </h2>
+
+            <div class="se-yellow-line"></div>
+
+            <p>
+                Not every smile requires the same treatment. The
+                appropriate option depends on your teeth, existing
+                restorations, oral health and aesthetic goals.
+            </p>
+
+        </div>
+
+
+        <div class="se-options-list">
+
+            <!-- OPTION 01 -->
+
+            <div class="se-option">
+
+                <div class="se-option-number">
+                    01
+                </div>
+
+                <div class="se-option-content">
+
+                    <h3>
+                        Professional Tooth Whitening
+                    </h3>
+
+                    <p>
+                        Where appropriate, professional whitening
+                        may be considered to improve the shade of
+                        natural teeth.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- OPTION 02 -->
+
+            <div class="se-option">
+
+                <div class="se-option-number">
+                    02
+                </div>
+
+                <div class="se-option-content">
+
+                    <h3>
+                        Composite Bonding
+                    </h3>
+
+                    <p>
+                        Tooth-coloured restorative material may be
+                        used in selected cases to modify the shape,
+                        contour or appearance of a tooth.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- OPTION 03 -->
+
+            <div class="se-option">
+
+                <div class="se-option-number">
+                    03
+                </div>
+
+                <div class="se-option-content">
+
+                    <h3>
+                        Aesthetic Restorations
+                    </h3>
+
+                    <p>
+                        Existing or damaged teeth may sometimes be
+                        restored using carefully selected tooth-coloured
+                        restorative materials.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- OPTION 04 -->
+
+            <div class="se-option">
+
+                <div class="se-option-number">
+                    04
+                </div>
+
+                <div class="se-option-content">
+
+                    <h3>
+                        Other Aesthetic Solutions
+                    </h3>
+
+                    <p>
+                        Depending on the clinical situation, other
+                        cosmetic or restorative options may be discussed
+                        during your consultation.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         BEFORE & AFTER CASE STUDIES
+    ========================================================= -->
+
+    <section class="se-case-section" id="se-before-after">
+
+        <div class="se-case-heading">
+
+            <p class="se-small-label">
+                UNDERSTANDING TREATMENT
+            </p>
+
+            <h2>
+                See how smile enhancement can change the appearance
+                of a smile.
+            </h2>
+
+            <div class="se-yellow-line"></div>
+
+            <p>
+                Before-and-after photographs can help explain the
+                type of changes that may be possible. Actual results
+                depend on the individual tooth, smile and treatment plan.
+            </p>
+
+        </div>
+
+
+        <!-- =====================================================
+             CASE STUDY 
+        ===================================================== -->
+
+        <article class="se-case-study">
+
+            <div class="se-case-header">
+
+                <div>
+
+                    <span class="se-case-number">
+                        CASE STUDY
+                    </span>
+
+                    <h3>
+                        Improving the appearance of a discoloured tooth
+                    </h3>
+
+                </div>
+
+                <span class="se-case-tag">
+                    Smile Enhancement
+                </span>
+
+            </div>
+
+
+            <!-- BEFORE / AFTER -->
+
+            <div class="se-before-after-grid">
+
+                <!-- BEFORE -->
+
+                <div class="se-comparison-card">
+
+                    <div class="se-comparison-image">
+
+                        <img
+                            src="clinic_photos_shortlist/smile-before-01.jpg"
+                            alt="Smile before aesthetic treatment"
+                            loading="lazy"
+                        >
+
+                        <span class="se-comparison-label">
+                            Before
+                        </span>
+
+                    </div>
+
+                    <div class="se-comparison-content">
+
+                        <h4>
+                            Before treatment
+                        </h4>
+
+                        <p>
+                            The tooth is assessed to understand the
+                            cause of discolouration and determine
+                            which treatment options may be appropriate.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- AFTER -->
+
+                <div class="se-comparison-card">
+
+                    <div class="se-comparison-image">
+
+                        <img
+                            src="clinic_photos_shortlist/smile-after-01.jpg"
+                            alt="Smile after aesthetic treatment"
+                            loading="lazy"
+                        >
+
+                        <span class="se-comparison-label">
+                            After
+                        </span>
+
+                    </div>
+
+                    <div class="se-comparison-content">
+
+                        <h4>
+                            After treatment
+                        </h4>
+
+                        <p>
+                            The selected treatment has been completed
+                            according to the clinical requirements
+                            and agreed treatment plan.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- DISCLAIMER -->
+
+        <div class="se-case-disclaimer">
+
+            <div class="se-disclaimer-icon" aria-hidden="true">
+                !
+            </div>
+
+            <div class="se-disclaimer-content">
+
+                <h4>
+                    Important Clinical Information
+                </h4>
+
+                <p>
+                    Before-and-after photographs should be published
+                    only with appropriate patient consent and accurate
+                    clinical information. Treatment options and results
+                    vary between patients. Not every aesthetic procedure
+                    is suitable for every smile.
+                </p>
+
+            </div>
+
+        </div>
+
+
+            <!-- DIFFERENCES -->
+
+            <div class="se-case-difference">
+
+                <div class="se-difference-heading">
+
+                    <span>
+                        WHAT MAY CHANGE?
+                    </span>
+
+                    <h4>
+                        Areas considered during smile enhancement
+                    </h4>
+
+                </div>
+
+
+                <div class="se-difference-grid">
+
+                    <div class="se-difference-item">
+
+                        <span class="se-difference-icon">
+                            ✓
+                        </span>
+
+                        <div>
+
+                            <h5>
+                                Tooth colour
+                            </h5>
+
+                            <p>
+                                The visible shade of the tooth may be
+                                improved depending on the cause of
+                                discolouration and selected treatment.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="se-difference-item">
+
+                        <span class="se-difference-icon">
+                            ✓
+                        </span>
+
+                        <div>
+
+                            <h5>
+                                Tooth appearance
+                            </h5>
+
+                            <p>
+                                The overall appearance of the tooth
+                                can be considered in relation to the
+                                surrounding teeth.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="se-difference-item">
+
+                        <span class="se-difference-icon">
+                            ✓
+                        </span>
+
+                        <div>
+
+                            <h5>
+                                Smile balance
+                            </h5>
+
+                            <p>
+                                The result is considered as part of
+                                the overall smile rather than as an
+                                isolated tooth.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="se-difference-item">
+
+                        <span class="se-difference-icon">
+                            ✓
+                        </span>
+
+                        <div>
+
+                            <h5>
+                                Individual planning
+                            </h5>
+
+                            <p>
+                                The treatment approach depends on the
+                                condition and characteristics of each
+                                individual smile.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CLINICAL NOTE -->
+
+            <div class="se-case-note">
+
+                <strong>
+                    Clinical note:
+                </strong>
+
+                <p>
+                    Before-and-after photographs should represent
+                    genuine clinical cases and should be published
+                    only with appropriate patient consent.
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =====================================================
+             CASE STUDY 02
+        ===================================================== -->
+<!-- 
+        <article class="se-case-study">
+
+            <div class="se-case-header">
+
+                <div>
+
+                    <span class="se-case-number">
+                        CASE STUDY 
+                    </span>
+
+                    <h3>
+                        Improving the shape and appearance of a tooth
+                    </h3>
+
+                </div>
+
+                <span class="se-case-tag">
+                    Aesthetic Restoration
+                </span>
+
+            </div>
+
+
+
+            <div class="se-before-after-grid">
+
+
+                <div class="se-comparison-card">
+
+                    <div class="se-comparison-image">
+
+                        <img
+                            src="clinic_photos_shortlist/smile-before-02.jpg"
+                            alt="Tooth before aesthetic restoration"
+                            loading="lazy"
+                        >
+
+                        <span class="se-comparison-label">
+                            Before
+                        </span>
+
+                    </div>
+
+                    <div class="se-comparison-content">
+
+                        <h4>
+                            Before treatment
+                        </h4>
+
+                        <p>
+                            The tooth is examined to understand its
+                            shape, structure and relationship with
+                            the surrounding teeth.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="se-comparison-card">
+
+                    <div class="se-comparison-image">
+
+                        <img
+                            src="clinic_photos_shortlist/smile-after-02.jpg"
+                            alt="Tooth after aesthetic restoration"
+                            loading="lazy"
+                        >
+
+                        <span class="se-comparison-label">
+                            After
+                        </span>
+
+                    </div>
+
+                    <div class="se-comparison-content">
+
+                        <h4>
+                            After treatment
+                        </h4>
+
+                        <p>
+                            The selected restoration has been completed
+                            to improve the appearance while considering
+                            the tooth's clinical requirements.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="se-case-difference">
+
+                <div class="se-difference-heading">
+
+                    <span>
+                        UNDERSTANDING THE CHANGE
+                    </span>
+
+                    <h4>
+                        What can be considered?
+                    </h4>
+
+                </div>
+
+
+                <div class="se-difference-grid">
+
+                    <div class="se-difference-item">
+
+                        <span class="se-difference-icon">
+                            ✓
+                        </span>
+
+                        <div>
+
+                            <h5>
+                                Tooth shape
+                            </h5>
+
+                            <p>
+                                Selected restorative procedures may
+                                modify the visible shape or contour
+                                of a tooth.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="se-difference-item">
+
+                        <span class="se-difference-icon">
+                            ✓
+                        </span>
+
+                        <div>
+
+                            <h5>
+                                Tooth proportion
+                            </h5>
+
+                            <p>
+                                Tooth dimensions may be considered
+                                in relation to adjacent teeth and
+                                the overall smile.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="se-difference-item">
+
+                        <span class="se-difference-icon">
+                            ✓
+                        </span>
+
+                        <div>
+
+                            <h5>
+                                Natural appearance
+                            </h5>
+
+                            <p>
+                                The aim is to create an appearance
+                                that works naturally with the
+                                surrounding teeth.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="se-difference-item">
+
+                        <span class="se-difference-icon">
+                            ✓
+                        </span>
+
+                        <div>
+
+                            <h5>
+                                Long-term care
+                            </h5>
+
+                            <p>
+                                Regular oral hygiene and dental
+                                reviews remain important after
+                                aesthetic treatment.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="se-case-note">
+
+                <strong>
+                    Clinical note:
+                </strong>
+
+                <p>
+                    Aesthetic treatment is planned according to the
+                    condition of the tooth, surrounding tissues,
+                    functional requirements and individual needs.
+                </p>
+
+            </div>
+
+        </article> -->
+
+
+    </section>
+
+
+
+    <!-- =========================================================
+         WHEN TO CONSIDER SMILE ENHANCEMENT
+    ========================================================= -->
+
+    <section class="se-consider">
+
+        <div class="se-section-heading">
+
+            <p class="se-small-label">
+                IS IT RIGHT FOR YOU?
+            </p>
+
+            <h2>
+                A consultation helps determine what is appropriate.
+            </h2>
+
+            <div class="se-yellow-line"></div>
+
+        </div>
+
+
+        <div class="se-consider-grid">
+
+            <div class="se-consider-item">
+
+                <span>01</span>
+
+                <h3>
+                    You want to improve tooth colour
+                </h3>
+
+                <p>
+                    If you are unhappy with the shade of your
+                    natural teeth, suitable options can be discussed.
+                </p>
+
+            </div>
+
+
+            <div class="se-consider-item">
+
+                <span>02</span>
+
+                <h3>
+                    You notice uneven tooth shapes
+                </h3>
+
+                <p>
+                    Selected aesthetic restorative procedures may
+                    help address certain shape irregularities.
+                </p>
+
+            </div>
+
+
+            <div class="se-consider-item">
+
+                <span>03</span>
+
+                <h3>
+                    You want a more balanced smile
+                </h3>
+
+                <p>
+                    Your smile can be assessed as a whole before
+                    deciding whether any treatment is appropriate.
+                </p>
+
+            </div>
+
+
+            <div class="se-consider-item">
+
+                <span>04</span>
+
+                <h3>
+                    You want to understand your options
+                </h3>
+
+                <p>
+                    A consultation allows you to understand what
+                    can and cannot be achieved in your particular case.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================================================
+         OUR APPROACH
+    ========================================================= -->
+
+    <section class="se-process">
+
+        <div class="se-section-heading se-approach">
+
+            <h4 class="se-small-label" style="color: #E7CB6B;">
+                OUR APPROACH
+            </h4>
+
+            <h2 >
+                Your smile enhancement begins with understanding.
+            </h2>
+
+            <div class="se-yellow-line"></div>
+
+            <p style="color: #FFFFFFB8;">
+                We follow a structured approach so that aesthetic
+                treatment is planned around your individual smile
+                rather than a standard template.
+            </p>
+
+        </div>
+
+
+        <div class="se-process-grid">
+
+            <!-- STEP 01 -->
+
+            <div class="se-process-step">
+
+                <span class="se-process-number">
+                    01
+                </span>
+
+                <div>
+
+                    <h3>
+                        Listen
+                    </h3>
+
+                    <p>
+                        We first understand what you would like to
+                        change about your smile and what matters most
+                        to you.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- STEP 02 -->
+
+            <div class="se-process-step">
+
+                <span class="se-process-number">
+                    02
+                </span>
+
+                <div>
+
+                    <h3>
+                        Assess
+                    </h3>
+
+                    <p>
+                        Your teeth, gums, existing restorations and
+                        overall oral health are assessed before
+                        aesthetic treatment is considered.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- STEP 03 -->
+
+            <div class="se-process-step">
+
+                <span class="se-process-number">
+                    03
+                </span>
+
+                <div>
+
+                    <h3>
+                        Plan
+                    </h3>
+
+                    <p>
+                        Suitable options are discussed with attention
+                        to proportion, function, appearance and the
+                        amount of treatment required.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- STEP 04 -->
+
+            <div class="se-process-step">
+
+                <span class="se-process-number">
+                    04
+                </span>
+
+                <div>
+
+                    <h3>
+                        Enhance
+                    </h3>
+
+                    <p>
+                        Treatment is carried out according to the
+                        agreed plan and the clinical requirements
+                        of your teeth.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         FAQ
+    ========================================================= -->
+
+    <section class="se-faq-section" id="se-faq">
+
+        <div class="se-faq-heading">
+
+            <p class="se-small-label">
+                COMMON QUESTIONS
+            </p>
+
+            <h2>
+                Smile enhancement FAQs
+            </h2>
+
+            <div class="se-yellow-line"></div>
+
+        </div>
+
+
+        <div class="se-faq-list">
+
+
+            <!-- FAQ 01 -->
+
+            <div class="se-faq-item">
+
+                <button
+                    class="se-faq-question"
+                    type="button"
+                    aria-expanded="false"
+                >
+
+                    <span>
+                        Will my smile still look natural?
+                    </span>
+
+                    <b>
+                        +
+                    </b>
+
+                </button>
+
+                <div class="se-faq-answer">
+
+                    <p>
+                        Aesthetic treatment can be planned around
+                        natural tooth proportions, surrounding teeth
+                        and your individual smile. The result depends
+                        on the treatment selected and your specific
+                        clinical situation.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 02 -->
+
+            <div class="se-faq-item">
+
+                <button
+                    class="se-faq-question"
+                    type="button"
+                    aria-expanded="false"
+                >
+
+                    <span>
+                        Do I need cosmetic treatment for every tooth?
+                    </span>
+
+                    <b>
+                        +
+                    </b>
+
+                </button>
+
+                <div class="se-faq-answer">
+
+                    <p>
+                        No. Treatment is planned according to the
+                        individual situation. In some cases, a small
+                        number of teeth may be considered rather than
+                        treating the entire smile.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 03 -->
+
+            <div class="se-faq-item">
+
+                <button
+                    class="se-faq-question"
+                    type="button"
+                    aria-expanded="false"
+                >
+
+                    <span>
+                        Is smile enhancement suitable for everyone?
+                    </span>
+
+                    <b>
+                        +
+                    </b>
+
+                </button>
+
+                <div class="se-faq-answer">
+
+                    <p>
+                        Not every aesthetic procedure is suitable for
+                        every patient. Existing dental problems, gum
+                        health, tooth structure and other factors need
+                        to be considered before treatment.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 04 -->
+
+            <div class="se-faq-item">
+
+                <button
+                    class="se-faq-question"
+                    type="button"
+                    aria-expanded="false"
+                >
+
+                    <span>
+                        Can smile enhancement improve tooth shape?
+                    </span>
+
+                    <b>
+                        +
+                    </b>
+
+                </button>
+
+                <div class="se-faq-answer">
+
+                    <p>
+                        In selected cases, tooth shape or contour may
+                        be modified using appropriate restorative or
+                        aesthetic techniques.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 05 -->
+
+            <div class="se-faq-item">
+
+                <button
+                    class="se-faq-question"
+                    type="button"
+                    aria-expanded="false"
+                >
+
+                    <span>
+                        How do I know which treatment I need?
+                    </span>
+
+                    <b>
+                        +
+                    </b>
+
+                </button>
+
+                <div class="se-faq-answer">
+
+                    <p>
+                        The first step is an examination and discussion
+                        of your concerns. Suitable options can then be
+                        explained based on your teeth, oral health and
+                        aesthetic goals.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         FINAL CTA
+    ========================================================= -->
+
+    <!-- <section class="se-final-cta">
+
+        <div class="se-final-cta-content">
+
+            <p class="se-small-label">
+                YOUR SMILE, YOUR CHOICE
+            </p>
+
+            <h2>
+                Start with a conversation about your smile.
+            </h2>
+
+            <p>
+                A consultation can help you understand what is
+                possible, what is appropriate and which options
+                may suit your individual smile.
+            </p>
+
+            <a
+                href="#openAppointmentModal"
+                class="se-btn se-btn-dark"
+            >
+                Book Your Appointment
+                <span>→</span>
+            </a>
+
+        </div>
+
+    </section> -->
+
+</main>
+
+<footer>
+
+  <div class="container footer-grid">
+
+
+    <div>
+
+      <h4>
+        Dr. Gupta's Dental Clinic
+      </h4>
+
+      <p>
+        Precision, magnification-guided dentistry in South Extension, New Delhi since 2013.
+      </p>
+
+    </div>
+
+
+    <div>
+
+      <h4>
+        Quick Links
+      </h4>
+
+      <a href="about.html">
+        About
+      </a>
+      <a href="difference.html">
+        Our Difference
+      </a>
+
+      <a href="services.html">
+        Services
+      </a>
+
+      <a href="reviews.html">
+        Reviews
+      </a>
+
+      <a href="faq.html">
+        FAQ
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+    </div>
+
+
+    <div>
+
+      <h4>
+        Contact
+      </h4>
+
+      <a href="tel:+919990880975">
+        Mobile: 99908 80975
+      </a>
+
+      <a href="tel:+911142220392">
+        Landline: 011-4222-0392
+      </a>
+
+      <a href="https://wa.me/919990880975">
+        WhatsApp Us
+      </a>
+
+      <p>   H-30, South Extension Part 1, New Delhi</p>
+
+    </div>
+  </div>
+
+
+  <div class="container footer-bottom">
+    © 2026 Dr. Gupta's Dental Clinic. All rights reserved.
+  </div>
+
+</footer>
+
+
+<script>
+    /* =========================================================
+   SMILE ENHANCEMENT FAQ
+========================================================= */
+
+document.querySelectorAll(".se-faq-question").forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const item = button.closest(".se-faq-item");
+
+        const isActive = item.classList.contains("active");
+
+
+        /* Close all other FAQ items */
+
+        document
+            .querySelectorAll(".se-faq-item")
+            .forEach(other => {
+
+                other.classList.remove("active");
+
+                const otherButton =
+                    other.querySelector(".se-faq-question");
+
+                if (otherButton) {
+                    otherButton.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+                }
+
+            });
+
+
+        /* Open selected item */
+
+        if (!isActive) {
+
+            item.classList.add("active");
+
+            button.setAttribute(
+                "aria-expanded",
+                "true"
+            );
+
+        }
+
+    });
+
+});
+</script>
+
+</body>
+</html>

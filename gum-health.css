@@ -1,32 +1,32 @@
 /* =========================================================
-   TEETH EXTRACTION PAGE
-   ========================================================= */
+   GUM HEALTH & PERIODONTAL CARE PAGE
+========================================================= */
 
-.ext-page {
+.gum-page {
     width: 100%;
     color: #282828;
     background: #ffffff;
     font-family: "Inter", sans-serif;
 }
 
-.ext-page *,
-.ext-page *::before,
-.ext-page *::after {
+.gum-page *,
+.gum-page *::before,
+.gum-page *::after {
     box-sizing: border-box;
 }
 
 
 /* =========================================================
    COMMON
-   ========================================================= */
+========================================================= */
 
-.ext-section {
+.gum-section {
     width: 100%;
     padding: 90px 6%;
 }
 
-.ext-small-label,
-.ext-eyebrow {
+.gum-small-label,
+.gum-eyebrow {
     margin: 0 0 12px;
 
     color: #b18a1d;
@@ -38,7 +38,7 @@
     text-transform: uppercase;
 }
 
-.ext-yellow-line {
+.gum-yellow-line {
     width: 55px;
     height: 3px;
 
@@ -47,20 +47,20 @@
     background: #e5b93d;
 }
 
-.ext-page h1,
-.ext-page h2,
-.ext-page h3,
-.ext-page h4,
-.ext-page h5 {
+.gum-page h1,
+.gum-page h2,
+.gum-page h3,
+.gum-page h4,
+.gum-page h5 {
     font-family: "Cormorant Garamond", serif;
 }
 
 
 /* =========================================================
    HERO
-   ========================================================= */
+========================================================= */
 
-.ext-hero {
+.gum-hero {
     display: grid;
 
     grid-template-columns:
@@ -84,11 +84,11 @@
         );
 }
 
-.ext-hero-copy {
+.gum-hero-copy {
     max-width: 700px;
 }
 
-.ext-hero h1 {
+.gum-hero h1 {
     margin: 0;
 
     color: #282828;
@@ -97,10 +97,11 @@
     font-weight: 600;
 
     line-height: 0.98;
+
     letter-spacing: -1.5px;
 }
 
-.ext-hero h2 {
+.gum-hero h2 {
     margin: 28px 0 18px;
 
     color: #555555;
@@ -111,7 +112,7 @@
     line-height: 1.25;
 }
 
-.ext-hero-copy > p:not(.ext-eyebrow) {
+.gum-hero-copy > p:not(.gum-eyebrow) {
     max-width: 650px;
 
     margin: 0;
@@ -119,10 +120,16 @@
     color: #666666;
 
     font-size: 16px;
+
     line-height: 1.85;
 }
 
-.ext-hero-buttons {
+
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
+
+.gum-hero-buttons {
     display: flex;
 
     gap: 14px;
@@ -132,8 +139,8 @@
     margin-top: 35px;
 }
 
-.ext-btn,
-.ext-outline-btn {
+.gum-btn,
+.gum-outline-btn {
     display: inline-flex;
 
     align-items: center;
@@ -159,42 +166,44 @@
         border-color 0.3s ease;
 }
 
-.ext-btn {
+.gum-btn {
     color: #282828;
+
     background: #e5b93d;
 
     border: 1px solid #e5b93d;
 }
 
-.ext-btn:hover {
+.gum-btn:hover {
     transform: translateY(-2px);
 
     background: #d5a92f;
+
     border-color: #d5a92f;
 }
 
-.ext-outline-btn {
+.gum-outline-btn {
     color: #282828;
+
     background: transparent;
 
     border: 1px solid #cfc8b6;
 }
 
-.ext-outline-btn:hover {
+.gum-outline-btn:hover {
     transform: translateY(-2px);
 
-    color: #282828;
-
     background: #f7f6f2;
+
     border-color: #b18a1d;
 }
 
 
 /* =========================================================
    HERO IMAGE
-   ========================================================= */
+========================================================= */
 
-.ext-hero-image {
+.gum-hero-image {
     position: relative;
 
     min-height: 510px;
@@ -211,7 +220,7 @@
     border-radius: 2px;
 }
 
-.ext-image-placeholder {
+.gum-image-placeholder {
     width: 100%;
     height: 100%;
 
@@ -245,7 +254,7 @@
         );
 }
 
-.ext-image-placeholder small {
+.gum-image-placeholder small {
     margin-top: 20px;
 
     color: #8c887e;
@@ -258,7 +267,7 @@
     letter-spacing: 1px;
 }
 
-.ext-image-note {
+.gum-image-note {
     position: absolute;
 
     right: 25px;
@@ -278,21 +287,16 @@
 
     line-height: 1.05;
 
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
-}
-
-.ext-image-note span {
-    color: #b18a1d;
-
-    font-weight: 700;
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.08);
 }
 
 
 /* =========================================================
    INTRODUCTION
-   ========================================================= */
+========================================================= */
 
-.ext-intro {
+.gum-intro {
     display: grid;
 
     grid-template-columns:
@@ -307,7 +311,7 @@
     background: #f7f6f2;
 }
 
-.ext-photo {
+.gum-photo {
     min-height: 430px;
 
     overflow: hidden;
@@ -315,17 +319,17 @@
     background: #eceae4;
 }
 
-.ext-photo .ext-image-placeholder {
+.gum-photo .gum-image-placeholder {
     min-height: 430px;
 
     font-size: 34px;
 }
 
-.ext-copy {
+.gum-copy {
     max-width: 650px;
 }
 
-.ext-copy h2 {
+.gum-copy h2 {
     margin: 0;
 
     color: #282828;
@@ -335,7 +339,7 @@
     line-height: 1.05;
 }
 
-.ext-copy p:not(.ext-small-label) {
+.gum-copy p:not(.gum-small-label) {
     margin: 0 0 18px;
 
     color: #626262;
@@ -345,11 +349,7 @@
     line-height: 1.85;
 }
 
-.ext-copy strong {
-    color: #282828;
-}
-
-.ext-simple-box {
+.gum-simple-box {
     padding: 30px;
 
     background: #ffffff;
@@ -360,7 +360,7 @@
         0 18px 50px rgba(40, 40, 40, 0.06);
 }
 
-.ext-box-icon {
+.gum-box-icon {
     width: 52px;
     height: 52px;
 
@@ -371,14 +371,17 @@
 
     margin-bottom: 22px;
 
-    border-radius: 50%;
+    color: #282828;
 
     background: #f3e6b5;
 
-    font-size: 24px;
+    border-radius: 50%;
+
+    font-size: 27px;
+    font-weight: 500;
 }
 
-.ext-simple-box h3 {
+.gum-simple-box h3 {
     margin: 0 0 14px;
 
     color: #282828;
@@ -388,7 +391,7 @@
     line-height: 1.15;
 }
 
-.ext-simple-box p {
+.gum-simple-box p {
     margin: 0;
 
     color: #6a6a6a;
@@ -400,14 +403,14 @@
 
 
 /* =========================================================
-   TREATMENT SECTION
-   ========================================================= */
+   TREATMENT / SIGNS
+========================================================= */
 
-.ext-treatment {
+.gum-treatment {
     background: #ffffff;
 }
 
-.ext-treatment-heading {
+.gum-treatment-heading {
     max-width: 850px;
 
     margin: 0 auto 50px;
@@ -415,12 +418,12 @@
     text-align: center;
 }
 
-.ext-treatment-heading .ext-yellow-line {
+.gum-treatment-heading .gum-yellow-line {
     margin-right: auto;
     margin-left: auto;
 }
 
-.ext-treatment-heading h2 {
+.gum-treatment-heading h2 {
     margin: 0;
 
     color: #282828;
@@ -430,7 +433,7 @@
     line-height: 1.05;
 }
 
-.ext-treatment-heading > p:last-child {
+.gum-treatment-heading > p:last-child {
     max-width: 700px;
 
     margin: 0 auto;
@@ -442,7 +445,7 @@
     line-height: 1.8;
 }
 
-.ext-treatment-grid {
+.gum-treatment-grid {
     display: grid;
 
     grid-template-columns:
@@ -455,7 +458,7 @@
     margin: 0 auto;
 }
 
-.ext-treatment-card {
+.gum-treatment-card {
     position: relative;
 
     min-height: 280px;
@@ -472,7 +475,7 @@
         background 0.35s ease;
 }
 
-.ext-treatment-card:hover {
+.gum-treatment-card:hover {
     transform: translateY(-7px);
 
     background: #ffffff;
@@ -481,7 +484,7 @@
         0 18px 45px rgba(40, 40, 40, 0.09);
 }
 
-.ext-treatment-card > span {
+.gum-treatment-card > span {
     display: inline-block;
 
     margin-bottom: 28px;
@@ -494,7 +497,7 @@
     letter-spacing: 2px;
 }
 
-.ext-treatment-card h3 {
+.gum-treatment-card h3 {
     margin: 0 0 14px;
 
     color: #282828;
@@ -504,7 +507,7 @@
     line-height: 1.1;
 }
 
-.ext-treatment-card p {
+.gum-treatment-card p {
     margin: 0;
 
     color: #686868;
@@ -516,14 +519,14 @@
 
 
 /* =========================================================
-   BEFORE & AFTER
-   ========================================================= */
+   DAILY PREVENTION
+========================================================= */
 
-.ext-before-after-section {
+.gum-prevention {
     background: #f7f6f2;
 }
 
-.ext-before-after-heading {
+.gum-prevention-heading {
     max-width: 850px;
 
     margin: 0 auto 50px;
@@ -531,12 +534,12 @@
     text-align: center;
 }
 
-.ext-before-after-heading .ext-yellow-line {
+.gum-prevention-heading .gum-yellow-line {
     margin-right: auto;
     margin-left: auto;
 }
 
-.ext-before-after-heading h2 {
+.gum-prevention-heading h2 {
     margin: 0;
 
     color: #282828;
@@ -546,7 +549,119 @@
     line-height: 1.05;
 }
 
-.ext-before-after-heading > p:last-child {
+.gum-prevention-heading > p:last-child {
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    color: #666666;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+.gum-prevention-grid {
+    max-width: 1000px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 0;
+
+    margin: 0 auto;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e1d9;
+}
+
+.gum-prevention-item {
+    display: grid;
+
+    grid-template-columns: 60px 1fr;
+
+    gap: 20px;
+
+    padding: 30px;
+
+    border-right: 1px solid #e5e1d9;
+    border-bottom: 1px solid #e5e1d9;
+}
+
+.gum-prevention-item:nth-child(2n) {
+    border-right: 0;
+}
+
+.gum-prevention-item:nth-child(3),
+.gum-prevention-item:nth-child(4) {
+    border-bottom: 0;
+}
+
+.gum-prevention-number {
+    color: #b18a1d;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.gum-prevention-item h3 {
+    margin: 0 0 8px;
+
+    color: #282828;
+
+    font-size: 25px;
+
+    line-height: 1.1;
+}
+
+.gum-prevention-item p {
+    margin: 0;
+
+    color: #666666;
+
+    font-size: 14px;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   BEFORE & AFTER
+========================================================= */
+
+.gum-before-after-section {
+    background: #ffffff;
+}
+
+.gum-before-after-heading {
+    max-width: 850px;
+
+    margin: 0 auto 50px;
+
+    text-align: center;
+}
+
+.gum-before-after-heading .gum-yellow-line {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.gum-before-after-heading h2 {
+    margin: 0;
+
+    color: #282828;
+
+    font-size: 48px;
+
+    line-height: 1.05;
+}
+
+.gum-before-after-heading > p:last-child {
     max-width: 750px;
 
     margin: 0 auto;
@@ -561,9 +676,9 @@
 
 /* =========================================================
    CASE STUDY
-   ========================================================= */
+========================================================= */
 
-.ext-case-study {
+.gum-case-study {
     max-width: 1250px;
 
     margin: 0 auto;
@@ -580,7 +695,7 @@
         0 20px 60px rgba(40, 40, 40, 0.06);
 }
 
-.ext-case-header {
+.gum-case-header {
     display: flex;
 
     align-items: center;
@@ -595,7 +710,7 @@
     border-bottom: 1px solid #e5e1d9;
 }
 
-.ext-case-number {
+.gum-case-number {
     display: block;
 
     margin-bottom: 9px;
@@ -608,7 +723,7 @@
     letter-spacing: 2px;
 }
 
-.ext-case-header h3 {
+.gum-case-header h3 {
     margin: 0;
 
     color: #282828;
@@ -618,7 +733,7 @@
     line-height: 1.2;
 }
 
-.ext-case-tag {
+.gum-case-tag {
     flex-shrink: 0;
 
     padding: 9px 14px;
@@ -638,9 +753,9 @@
 
 /* =========================================================
    BEFORE / AFTER IMAGES
-   ========================================================= */
+========================================================= */
 
-.ext-before-after-images {
+.gum-before-after-images {
     display: grid;
 
     grid-template-columns:
@@ -651,7 +766,7 @@
     padding: 30px 32px 0;
 }
 
-.ext-comparison-card {
+.gum-comparison-card {
     overflow: hidden;
 
     background: #ffffff;
@@ -661,7 +776,7 @@
     border-radius: 15px;
 }
 
-.ext-comparison-image {
+.gum-comparison-image {
     position: relative;
 
     height: 330px;
@@ -671,7 +786,7 @@
     background: #f3f1eb;
 }
 
-.ext-comparison-image img {
+.gum-comparison-image img {
     display: block;
 
     width: 100%;
@@ -684,17 +799,17 @@
         transform 0.45s ease;
 }
 
-.ext-comparison-card:hover
-.ext-comparison-image img {
+.gum-comparison-card:hover
+.gum-comparison-image img {
     transform: scale(1.04);
 }
 
 
 /* =========================================================
    IMAGE LABEL
-   ========================================================= */
+========================================================= */
 
-.ext-image-label {
+.gum-image-label {
     position: absolute;
 
     top: 16px;
@@ -716,8 +831,8 @@
     text-transform: uppercase;
 }
 
-.ext-comparison-card:nth-child(2)
-.ext-image-label {
+.gum-comparison-card:nth-child(2)
+.gum-image-label {
     color: #282828;
 
     background: #e5b93d;
@@ -726,13 +841,13 @@
 
 /* =========================================================
    COMPARISON CONTENT
-   ========================================================= */
+========================================================= */
 
-.ext-comparison-content {
+.gum-comparison-content {
     padding: 22px;
 }
 
-.ext-comparison-content h4 {
+.gum-comparison-content h4 {
     margin: 0 0 8px;
 
     color: #282828;
@@ -742,7 +857,7 @@
     line-height: 1.2;
 }
 
-.ext-comparison-content p {
+.gum-comparison-content p {
     margin: 0;
 
     color: #626262;
@@ -754,10 +869,10 @@
 
 
 /* =========================================================
-   IMPORTANT CLINICAL INFORMATION
-   ========================================================= */
+   DISCLAIMER
+========================================================= */
 
-.ext-case-disclaimer {
+.gum-case-disclaimer {
     display: flex;
 
     align-items: flex-start;
@@ -779,7 +894,7 @@
     border-radius: 10px;
 }
 
-.ext-disclaimer-icon {
+.gum-disclaimer-icon {
     flex: 0 0 34px;
 
     width: 34px;
@@ -800,11 +915,11 @@
     font-weight: 800;
 }
 
-.ext-disclaimer-content {
+.gum-disclaimer-content {
     flex: 1;
 }
 
-.ext-disclaimer-content h4 {
+.gum-disclaimer-content h4 {
     margin: 0 0 8px;
 
     color: #282828;
@@ -815,7 +930,7 @@
     font-weight: 800;
 }
 
-.ext-disclaimer-content p {
+.gum-disclaimer-content p {
     margin: 0;
 
     color: #656565;
@@ -827,10 +942,10 @@
 
 
 /* =========================================================
-   DIFFERENCE SUMMARY
-   ========================================================= */
+   DIFFERENCE
+========================================================= */
 
-.ext-case-difference {
+.gum-case-difference {
     margin: 30px 32px 0;
 
     padding: 30px;
@@ -842,11 +957,11 @@
     border-radius: 12px;
 }
 
-.ext-difference-heading {
+.gum-difference-heading {
     margin-bottom: 28px;
 }
 
-.ext-difference-heading span {
+.gum-difference-heading span {
     display: block;
 
     margin-bottom: 7px;
@@ -859,7 +974,7 @@
     letter-spacing: 2px;
 }
 
-.ext-difference-heading h4 {
+.gum-difference-heading h4 {
     margin: 0;
 
     color: #282828;
@@ -869,7 +984,7 @@
     line-height: 1.15;
 }
 
-.ext-difference-grid {
+.gum-difference-grid {
     display: grid;
 
     grid-template-columns:
@@ -878,7 +993,7 @@
     gap: 28px 40px;
 }
 
-.ext-difference-item {
+.gum-difference-item {
     display: flex;
 
     align-items: flex-start;
@@ -886,7 +1001,7 @@
     gap: 15px;
 }
 
-.ext-difference-icon {
+.gum-difference-icon {
     flex: 0 0 27px;
 
     width: 27px;
@@ -909,7 +1024,7 @@
     font-weight: 800;
 }
 
-.ext-difference-item h5 {
+.gum-difference-item h5 {
     margin: 0 0 6px;
 
     color: #282828;
@@ -920,7 +1035,7 @@
     font-weight: 800;
 }
 
-.ext-difference-item p {
+.gum-difference-item p {
     margin: 0;
 
     color: #626262;
@@ -933,9 +1048,9 @@
 
 /* =========================================================
    CLINICAL NOTE
-   ========================================================= */
+========================================================= */
 
-.ext-case-note {
+.gum-case-note {
     display: flex;
 
     gap: 6px;
@@ -949,7 +1064,7 @@
     border-top: 1px solid #e5e1d9;
 }
 
-.ext-case-note strong {
+.gum-case-note strong {
     color: #282828;
 
     font-size: 12px;
@@ -957,7 +1072,7 @@
     line-height: 1.6;
 }
 
-.ext-case-note p {
+.gum-case-note p {
     flex: 1;
 
     min-width: 220px;
@@ -973,14 +1088,14 @@
 
 
 /* =========================================================
-   OUR APPROACH
-   ========================================================= */
+   APPROACH
+========================================================= */
 
-.ext-approach {
+.gum-approach {
     background: #12213F;
 }
 
-.ext-approach-heading {
+.gum-approach-heading {
     max-width: 850px;
 
     margin: 0 auto 50px;
@@ -988,12 +1103,12 @@
     text-align: center;
 }
 
-.ext-approach-heading .ext-yellow-line {
+.gum-approach-heading .gum-yellow-line {
     margin-right: auto;
     margin-left: auto;
 }
 
-.ext-approach-heading h2 {
+.gum-approach-heading h2 {
     margin: 0;
 
     color: #FFFFFF;
@@ -1003,7 +1118,7 @@
     line-height: 1.05;
 }
 
-.ext-approach-heading > p:last-child {
+.gum-approach-heading > p:last-child {
     max-width: 700px;
 
     margin: 0 auto;
@@ -1015,7 +1130,7 @@
     line-height: 1.8;
 }
 
-.ext-approach-list {
+.gum-approach-list {
     max-width: 1000px;
 
     margin: 0 auto;
@@ -1023,7 +1138,7 @@
     border-top: 1px solid #e5e1d9;
 }
 
-.ext-approach-item {
+.gum-approach-item {
     display: grid;
 
     grid-template-columns: 75px 1fr;
@@ -1035,7 +1150,7 @@
     border-bottom: 1px solid #e5e1d9;
 }
 
-.ext-number {
+.gum-number {
     color: #b18a1d;
 
     font-size: 13px;
@@ -1044,7 +1159,7 @@
     letter-spacing: 2px;
 }
 
-.ext-approach-item h3 {
+.gum-approach-item h3 {
     margin: 0 0 8px;
 
     color: #FFFFFF;
@@ -1054,7 +1169,7 @@
     line-height: 1.1;
 }
 
-.ext-approach-item p {
+.gum-approach-item p {
     max-width: 700px;
 
     margin: 0;
@@ -1069,13 +1184,13 @@
 
 /* =========================================================
    FAQ
-   ========================================================= */
+========================================================= */
 
-.ext-faq-section {
-    background: #f7f6f2;
+.gum-faq-section {
+    background: #ffffff;
 }
 
-.ext-faq-heading {
+.gum-faq-heading {
     max-width: 850px;
 
     margin: 0 auto 45px;
@@ -1083,12 +1198,12 @@
     text-align: center;
 }
 
-.ext-faq-heading .ext-yellow-line {
+.gum-faq-heading .gum-yellow-line {
     margin-right: auto;
     margin-left: auto;
 }
 
-.ext-faq-heading h2 {
+.gum-faq-heading h2 {
     margin: 0;
 
     color: #282828;
@@ -1098,13 +1213,13 @@
     line-height: 1.05;
 }
 
-.ext-faq {
+.gum-faq {
     max-width: 900px;
 
     margin: 0 auto;
 }
 
-.ext-faq-item {
+.gum-faq-item {
     background: #ffffff;
 
     border: 1px solid #e5e1d9;
@@ -1112,17 +1227,17 @@
     border-bottom: 0;
 }
 
-.ext-faq-item:first-child {
+.gum-faq-item:first-child {
     border-radius: 10px 10px 0 0;
 }
 
-.ext-faq-item:last-child {
+.gum-faq-item:last-child {
     border-bottom: 1px solid #e5e1d9;
 
     border-radius: 0 0 10px 10px;
 }
 
-.ext-faq-question {
+.gum-faq-question {
     width: 100%;
 
     display: flex;
@@ -1150,7 +1265,7 @@
     cursor: pointer;
 }
 
-.ext-faq-question span {
+.gum-faq-question span {
     flex: 0 0 auto;
 
     color: #b18a1d;
@@ -1162,13 +1277,13 @@
         transform 0.3s ease;
 }
 
-.ext-faq-answer {
+.gum-faq-answer {
     display: none;
 
     padding: 0 25px 23px;
 }
 
-.ext-faq-answer p {
+.gum-faq-answer p {
     margin: 0;
 
     color: #686868;
@@ -1178,22 +1293,22 @@
     line-height: 1.8;
 }
 
-.ext-faq-item.active
-.ext-faq-question span {
+.gum-faq-item.active
+.gum-faq-question span {
     transform: rotate(45deg);
 }
 
-.ext-faq-item.active
-.ext-faq-answer {
+.gum-faq-item.active
+.gum-faq-answer {
     display: block;
 }
 
 
 /* =========================================================
    FINAL CTA
-   ========================================================= */
+========================================================= */
 
-.ext-final-cta {
+.gum-final-cta {
     display: flex;
 
     align-items: center;
@@ -1203,25 +1318,25 @@
 
     padding: 75px 7%;
 
+    color: #ffffff;
+
     background:
         linear-gradient(
             100deg,
             #282828,
             #343434
         );
-
-    color: #ffffff;
 }
 
-.ext-final-cta > div {
+.gum-final-cta > div {
     max-width: 800px;
 }
 
-.ext-final-cta .ext-small-label {
+.gum-final-cta .gum-small-label {
     color: #e5b93d;
 }
 
-.ext-final-cta h2 {
+.gum-final-cta h2 {
     margin: 0 0 18px;
 
     color: #ffffff;
@@ -1231,7 +1346,7 @@
     line-height: 1.05;
 }
 
-.ext-final-cta p:last-child {
+.gum-final-cta p:last-child {
     max-width: 700px;
 
     margin: 0;
@@ -1243,18 +1358,18 @@
     line-height: 1.8;
 }
 
-.ext-cta-btn {
+.gum-cta-btn {
     flex-shrink: 0;
 }
 
 
 /* =========================================================
    TABLET
-   ========================================================= */
+========================================================= */
 
 @media (max-width: 1000px) {
 
-    .ext-hero {
+    .gum-hero {
         grid-template-columns: 1fr;
 
         gap: 45px;
@@ -1263,30 +1378,30 @@
         padding-bottom: 75px;
     }
 
-    .ext-hero-copy {
+    .gum-hero-copy {
         max-width: 850px;
     }
 
-    .ext-hero-image {
+    .gum-hero-image {
         min-height: 450px;
     }
 
-    .ext-image-placeholder {
+    .gum-image-placeholder {
         min-height: 450px;
     }
 
 
-    .ext-intro {
+    .gum-intro {
         grid-template-columns:
             1fr 1fr;
     }
 
-    .ext-simple-box {
+    .gum-simple-box {
         grid-column: 1 / -1;
     }
 
 
-    .ext-treatment-grid {
+    .gum-treatment-grid {
         grid-template-columns:
             repeat(2, minmax(0, 1fr));
     }
@@ -1296,48 +1411,48 @@
 
 /* =========================================================
    MOBILE
-   ========================================================= */
+========================================================= */
 
 @media (max-width: 700px) {
 
-    .ext-section {
+    .gum-section {
         padding: 60px 7%;
     }
 
 
-    .ext-hero {
+    .gum-hero {
         min-height: auto;
 
         padding:
             60px 7%;
     }
 
-    .ext-hero h1 {
+    .gum-hero h1 {
         font-size: 47px;
 
         letter-spacing: -0.8px;
     }
 
-    .ext-hero h2 {
+    .gum-hero h2 {
         font-size: 23px;
     }
 
-    .ext-hero-copy > p:not(.ext-eyebrow) {
+    .gum-hero-copy > p:not(.gum-eyebrow) {
         font-size: 14px;
     }
 
 
-    .ext-hero-image {
+    .gum-hero-image {
         min-height: 360px;
     }
 
-    .ext-image-placeholder {
+    .gum-image-placeholder {
         min-height: 360px;
 
         font-size: 38px;
     }
 
-    .ext-image-note {
+    .gum-image-note {
         right: 15px;
         bottom: 15px;
 
@@ -1347,42 +1462,57 @@
     }
 
 
-    .ext-intro {
+    .gum-intro {
         grid-template-columns: 1fr;
 
         gap: 30px;
     }
 
-    .ext-photo,
-    .ext-photo .ext-image-placeholder {
+    .gum-photo,
+    .gum-photo .gum-image-placeholder {
         min-height: 330px;
     }
 
-    .ext-copy h2 {
+    .gum-copy h2 {
         font-size: 38px;
     }
 
 
-    .ext-treatment-heading h2,
-    .ext-before-after-heading h2,
-    .ext-approach-heading h2,
-    .ext-faq-heading h2 {
+    .gum-treatment-heading h2,
+    .gum-prevention-heading h2,
+    .gum-before-after-heading h2,
+    .gum-approach-heading h2,
+    .gum-faq-heading h2 {
         font-size: 36px;
     }
 
 
-    .ext-treatment-grid {
+    .gum-treatment-grid {
         grid-template-columns: 1fr;
     }
 
-    .ext-treatment-card {
+    .gum-treatment-card {
         min-height: auto;
 
         padding: 27px;
     }
 
 
-    .ext-case-header {
+    .gum-prevention-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gum-prevention-item {
+        border-right: 0;
+        border-bottom: 1px solid #e5e1d9;
+    }
+
+    .gum-prevention-item:last-child {
+        border-bottom: 0;
+    }
+
+
+    .gum-case-header {
         align-items: flex-start;
 
         flex-direction: column;
@@ -1390,16 +1520,16 @@
         padding: 25px 22px;
     }
 
-    .ext-case-header h3 {
+    .gum-case-header h3 {
         font-size: 24px;
     }
 
-    .ext-case-tag {
+    .gum-case-tag {
         align-self: flex-start;
     }
 
 
-    .ext-before-after-images {
+    .gum-before-after-images {
         grid-template-columns: 1fr;
 
         gap: 20px;
@@ -1407,20 +1537,16 @@
         padding: 22px 18px 0;
     }
 
-    .ext-comparison-image {
+    .gum-comparison-image {
         height: 280px;
     }
 
-    .ext-comparison-content {
+    .gum-comparison-content {
         padding: 19px;
     }
 
-    .ext-comparison-content h4 {
-        font-size: 20px;
-    }
 
-
-    .ext-case-disclaimer {
+    .gum-case-disclaimer {
         width: auto;
 
         margin:
@@ -1431,27 +1557,27 @@
     }
 
 
-    .ext-case-difference {
+    .gum-case-difference {
         margin:
             25px 18px 0;
 
         padding: 22px;
     }
 
-    .ext-difference-grid {
+    .gum-difference-grid {
         grid-template-columns: 1fr;
 
         gap: 22px;
     }
 
 
-    .ext-case-note {
+    .gum-case-note {
         margin:
             22px 18px 25px;
     }
 
 
-    .ext-approach-item {
+    .gum-approach-item {
         grid-template-columns: 50px 1fr;
 
         gap: 15px;
@@ -1459,25 +1585,25 @@
         padding: 25px 0;
     }
 
-    .ext-approach-item h3 {
+    .gum-approach-item h3 {
         font-size: 23px;
     }
 
 
-    .ext-faq-question {
+    .gum-faq-question {
         padding:
             20px 18px;
 
         font-size: 14px;
     }
 
-    .ext-faq-answer {
+    .gum-faq-answer {
         padding:
             0 18px 20px;
     }
 
 
-    .ext-final-cta {
+    .gum-final-cta {
         flex-direction: column;
 
         align-items: flex-start;
@@ -1486,11 +1612,11 @@
             60px 7%;
     }
 
-    .ext-final-cta h2 {
+    .gum-final-cta h2 {
         font-size: 38px;
     }
 
-    .ext-cta-btn {
+    .gum-cta-btn {
         width: 100%;
     }
 
@@ -1499,27 +1625,27 @@
 
 /* =========================================================
    SMALL MOBILE
-   ========================================================= */
+========================================================= */
 
 @media (max-width: 400px) {
 
-    .ext-hero h1 {
+    .gum-hero h1 {
         font-size: 40px;
     }
 
-    .ext-image-placeholder {
+    .gum-image-placeholder {
         font-size: 32px;
     }
 
-    .ext-final-cta h2 {
+    .gum-final-cta h2 {
         font-size: 33px;
     }
 
-    .ext-case-disclaimer {
+    .gum-case-disclaimer {
         display: block;
     }
 
-    .ext-disclaimer-icon {
+    .gum-disclaimer-icon {
         margin-bottom: 14px;
     }
 

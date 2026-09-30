@@ -1,0 +1,1702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dental Services | Dr. Gupta's Dental Clinic</title>
+
+<meta name="description" content="Dr. Tanupriya Gupta — 20 years of precision, magnification-guided restorative dentistry in South Extension, New Delhi. Ethical care, no over-treatment.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="dental-fillings.css">
+</head>
+
+
+<body><!-- =========================================================
+     HEADER
+     ========================================================= -->
+
+<header>
+
+  <div class="header-info">
+    <div class="container header-info-wrap">
+      <div class="availability" aria-label="Clinic availability">
+        <span><strong>Availability:</strong> <span class="availability-hours">Monday - Saturday, 10:00 AM - 7:00 PM</span></span>
+        <span class="sunday-closed">Sunday: CLOSED</span>
+      </div>
+      <div class="header-contact" aria-label="Clinic contact details">
+        <a href="tel:+919990880975">Call: +91 99908 80975</a>
+        <a href="https://wa.me/919990880975" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container nav-wrap">
+
+    <a href="index.html" class="brand" style="text-decoration:none; color:inherit;" aria-label="Dr. Gupta's Dental Clinic — Home">
+
+      <img
+        src="logos/web_logo.png"
+        alt="Dr. Gupta's Dental Clinic logo"
+        style="width:44px;height:44px;border-radius:10px;object-fit:cover;"
+      >
+
+      <div class="brand-name">
+        Dr. Gupta's Dental Clinic
+      </div>
+
+    </a>
+
+
+    <nav>
+
+      <ul id="main-navigation">
+
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+
+        <li>
+          <a href="about.html">About</a>
+        </li>
+
+        <li>
+          <a href="difference.html">Our Difference</a>
+        </li>
+
+        <li>
+          <a href="services.html" aria-current="page">Services</a>
+        </li>
+
+        <li>
+          <a href="reviews.html">Reviews</a>
+        </li>
+
+        <li>
+          <a href="faq.html">FAQ</a>
+        </li>
+
+        <li>
+          <a href="contact.html">Contact</a>
+        </li>
+
+      </ul>
+
+    </nav>
+
+
+    <div class="nav-cta">
+
+      <button
+        type="button"
+        class="appointment-trigger"
+        id="openAppointmentModal"
+      >
+        Book Appointment
+      </button>
+
+      <button
+        type="button"
+        class="menu-toggle"
+        aria-label="Menu"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >
+        &#9776;
+      </button>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- =========================================================
+     APPOINTMENT MODAL
+     ========================================================= -->
+
+<div
+  class="appointment-modal-overlay"
+  id="appointmentModal"
+  aria-hidden="true"
+>
+
+  <div
+    class="appointment-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="appointmentTitle"
+  >
+
+    <button
+      type="button"
+      class="modal-close"
+      aria-label="Close appointment form"
+    >
+      &times;
+    </button>
+
+
+    <div class="modal-head">
+
+      <h3 id="appointmentTitle">
+        Book an Appointment
+      </h3>
+
+      <p>
+        Please fill in your details and we will contact you shortly.
+      </p>
+
+    </div>
+
+
+    <form class="appointment-form" id="appointmentForm">
+      <div class="appointment-progress" aria-label="Appointment form progress">
+        <div class="step-indicator active" id="stepIndicator1">1. Patient Details</div>
+        <div class="step-indicator" id="stepIndicator2">2. Personal Details <span class="optional-note">(Optional)</span></div>
+      </div>
+
+      <div class="appointment-step active" id="appointmentStep1">
+        <div class="form-grid">
+          <div class="form-group"><label for="name">Name</label><input id="name" name="name" type="text" placeholder="Enter your name" required></div>
+          <div class="form-group"><label for="age">Age</label><input id="age" name="age" type="number" min="1" placeholder="Age" required></div>
+          <div class="form-group"><label for="phone">Phone No</label><input id="phone" name="phone" type="tel" placeholder="Your phone number" required></div>
+          <div class="form-group"><label for="email">Email</label><input id="email" name="email" type="email" placeholder="Your email address" required></div>
+          <div class="form-group full"><label for="address">Address</label><input id="address" name="address" type="text" placeholder="Your address" required></div>
+          <div class="form-group"><label for="appointmentDate">Appointment Date</label><input type="date" id="appointmentDate" name="appointmentDate" required></div>
+          <div class="form-group"><label for="appointmentTime">Available Time Slot</label><select id="appointmentTime" name="appointmentTime" required disabled><option value="">Select a date first</option></select><small class="slot-status" id="slotStatus" aria-live="polite">Choose a date to see available slots.</small></div>
+          <div class="form-group"><label for="gender">Gender</label><select id="gender" name="gender" required><option value="">Select gender</option><option>Male</option><option>Female</option><option>Other</option></select></div>
+        </div>
+        <div class="step-actions">
+          <button type="button" class="secondary-btn" id="closeAppointmentModal">Cancel</button>
+          <button type="button" class="cta-btn" id="nextAppointmentStep">Next &rarr;</button>
+        </div>
+      </div>
+
+      <div class="appointment-step" id="appointmentStep2">
+        <div class="clinical-intro"><strong>Personal details are optional.</strong> You can provide them to help the dentist understand your concern before the appointment, or skip this section and submit with your basic details.</div>
+        <div class="form-grid">
+          <div class="form-group full"><label for="reasonForVisit">Reason for Visit</label><textarea id="reasonForVisit" name="reasonForVisit" placeholder="Briefly describe the reason for your visit"></textarea></div>
+          <div class="form-group"><label for="dentalProblem">Current Dental Problem</label><select id="dentalProblem" name="dentalProblem"><option value="">Select if applicable</option><option>Tooth Pain</option><option>Sensitivity</option><option>Swelling</option><option>Bleeding Gums</option><option>Broken / Chipped Tooth</option><option>Cavity</option><option>Missing Tooth</option><option>Routine Check-up</option><option>Cleaning</option><option>Other</option></select></div>
+          <div class="form-group"><label for="painLevel">Pain / Discomfort</label><select id="painLevel" name="painLevel"><option value="">Select if applicable</option><option>None</option><option>Mild</option><option>Moderate</option><option>Severe</option></select></div>
+          <div class="form-group"><label for="previousDentalTreatment">Previous Dental Treatment</label><select id="previousDentalTreatment" name="previousDentalTreatment"><option value="">Select if applicable</option><option>No Previous Treatment</option><option>Filling</option><option>Root Canal</option><option>Extraction</option><option>Implant</option><option>Crown / Bridge</option><option>Other</option></select></div>
+          <div class="form-group"><label>Currently Taking Any Medicine?</label><div class="radio-row"><label class="radio-option"><input type="radio" name="medication" value="yes"> Yes</label><label class="radio-option"><input type="radio" name="medication" value="no" checked> No</label></div></div>
+          <div class="form-group full medication-box" id="medicationBox"><label for="medicineDetails">Medicine Details</label><textarea id="medicineDetails" name="medicineDetails" placeholder="List medicines you are currently taking"></textarea></div>
+          <div class="form-group full"><label for="allergies">Known Allergies</label><textarea id="allergies" name="allergies" placeholder="Mention any known medicine or other allergies"></textarea></div>
+          <div class="form-group full"><label for="medicalHistory">Medical History</label><textarea id="medicalHistory" name="medicalHistory" placeholder="Mention any relevant medical history"></textarea></div>
+          <div class="form-group full"><label for="additionalClinicalDetails">Additional Clinical Details</label><textarea id="additionalClinicalDetails" name="additionalClinicalDetails" placeholder="Anything else you would like the dentist to know"></textarea></div>
+        </div>
+
+        <div class="clinical-section">
+          <h4 class="clinical-section-title">Adverse Habits / Adverse Oral Habits</h4>
+          <div class="clinical-table-wrap"><table class="clinical-table"><thead><tr><th>Type</th><th>Frequency</th><th>Duration</th></tr></thead><tbody>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitSmoking" value="Smoking"> Smoking</label></td><td><select name="habitSmokingFrequency"><option value="">Select</option><option>Occasional</option><option>Once Daily</option><option>Twice Daily</option><option>More than Twice Daily</option></select></td><td><select name="habitSmokingDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitTobacco" value="Smokeless Tobacco/snuff"> Smokeless Tobacco / Snuff</label></td><td><select name="habitTobaccoFrequency"><option value="">Select</option><option>Occasional</option><option>Once Daily</option><option>Twice Daily</option><option>More than Twice Daily</option></select></td><td><select name="habitTobaccoDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitPaan" value="Paan chewing (gutka, paanmasala)"> Paan chewing (gutka, paanmasala)</label></td><td><select name="habitPaanFrequency"><option value="">Select</option><option>Occasional</option><option>Once Daily</option><option>Twice Daily</option><option>More than Twice Daily</option></select></td><td><select name="habitPaanDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitAlcohol" value="Alcohol"> Alcohol</label></td><td><select name="habitAlcoholFrequency"><option value="">Select</option><option>Occasional</option><option>Once Weekly</option><option>2-3 Times Weekly</option><option>Daily</option></select></td><td><select name="habitAlcoholDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+          </tbody></table></div>
+        </div>
+
+        <div class="clinical-section"><h4 class="clinical-section-title">Oral Hygiene Practices</h4><div class="hygiene-grid">
+          <div class="form-group full"><label>i) Type of Cleaning</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Toothbrush"> Toothbrush</label><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Finger"> Finger</label><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Stick"> Stick</label><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Others"> Others</label></div></div>
+          <div class="form-group full"><label>ii) Method of Cleaning</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="cleaningMethod" value="Vertical"> Vertical</label><label class="clinical-check"><input type="checkbox" name="cleaningMethod" value="Horizontal"> Horizontal</label><label class="clinical-check"><input type="checkbox" name="cleaningMethod" value="Circular"> Circular</label></div></div>
+          <div class="form-group full"><label>iii) Frequency of Cleaning / Brushing</label><div class="option-grid"><label class="clinical-check"><input type="radio" name="brushingFrequency" value="Once"> Once</label><label class="clinical-check"><input type="radio" name="brushingFrequency" value="Twice"> Twice</label><label class="clinical-check"><input type="radio" name="brushingFrequency" value="Thrice"> Thrice</label></div></div>
+          <div class="form-group full"><label>iv) Materials Used</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Toothpaste"> Toothpaste</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Tooth Powder"> Tooth Powder</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Charcoal"> Charcoal</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Sand"> Sand</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Brick Powder"> Brick Powder</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Any Other"> Any Other</label></div><input type="text" id="cleaningMaterialOther" name="cleaningMaterialOther" placeholder="If any other, please specify"></div>
+          <div class="form-group full"><label>v) Time of Brushing</label><div class="option-grid"><label class="clinical-check"><input type="radio" name="brushingTime" value="Before Meal"> Before Meal</label><label class="clinical-check"><input type="radio" name="brushingTime" value="After Meals"> After Meals</label></div></div>
+          <div class="form-group full"><label>vi) Frequency of Changing the Tooth Brush</label><div class="option-grid"><label class="clinical-check"><input type="radio" name="toothbrushChangeFrequency" value="Once"> Once</label><label class="clinical-check"><input type="radio" name="toothbrushChangeFrequency" value="Twice"> Twice</label><label class="clinical-check"><input type="radio" name="toothbrushChangeFrequency" value="Thrice"> Thrice</label></div></div>
+          <div class="form-group"><label for="durationOfCleaning">vii) Duration of Cleaning</label><input type="text" id="durationOfCleaning" name="durationOfCleaning" placeholder="e.g. 2 minutes"></div>
+          <div class="form-group full"><label>viii) Other Oral Hygiene Aids Used</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Flossing"> Flossing</label><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Interdental Aids"> Interdental Aids</label><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Oral Mouth Rinse"> Oral Mouth Rinse</label><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Tongue Cleaner"> Tongue Cleaner</label></div></div>
+        </div></div>
+
+        <div class="step-actions"><button type="button" class="secondary-btn" id="backAppointmentStep">&larr; Back</button><div class="right-actions"><button type="button" class="secondary-btn" id="skipClinicalStep">Skip &amp; Submit</button><button type="submit" class="cta-btn">Submit Appointment</button></div></div>
+      </div>
+    </form>
+
+  </div>
+
+</div>
+
+<!-- =========================================================
+     Dental Fillings PAGE
+========================================================= -->
+
+
+<main class="rest-page">
+
+    <!-- =====================================================
+         HERO SECTION
+         ===================================================== -->
+
+    <section class="rest-hero">
+
+        <div class="rest-hero-copy">
+
+            <p class="rest-eyebrow">
+                Dental Fillings
+            </p>
+
+            <div class="rest-yellow-line"></div>
+
+            <h1>
+                Repair your teeth. Restore your smile.
+            </h1>
+
+            <h2>
+                Damaged, broken or weakened teeth can often be
+                repaired and restored.
+            </h2>
+
+            <p>
+                Restorative dentistry helps bring back the strength,
+                function and appearance of teeth affected by decay,
+                damage or wear.
+            </p>
+
+            <div class="rest-hero-buttons">
+
+                <a href="#rest-treatments" class="rest-btn">
+                    Explore Treatments <span>↓</span>
+                </a>
+
+                <a href="#rest-questions" class="rest-outline-btn">
+                    Have a Question?
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="rest-hero-image">
+
+            <div class="image-placeholder">
+                DENTAL<br>
+                FILLINGS<br>
+
+                <small>
+                    Replace with your clinic image
+                </small>
+            </div>
+
+            <div class="rest-image-note">
+                <span>Restore</span><br>
+                what your teeth<br>
+                have lost
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         INTRODUCTION SECTION
+         ===================================================== -->
+
+    <section class="rest-section rest-intro">
+
+        <div class="rest-photo">
+
+            <div class="image-placeholder">
+                YOUR<br>
+                RESTORATION<br>
+                PHOTO
+            </div>
+
+        </div>
+
+
+        <div class="rest-copy">
+
+            <p class="rest-small-label">
+                IN SIMPLE WORDS
+            </p>
+
+            <h2>
+                What is restorative dentistry?
+            </h2>
+
+            <div class="rest-yellow-line"></div>
+
+            <p>
+                Teeth can become damaged for many reasons.
+                Decay, cracks, injuries, old fillings or years
+                of wear can change the way a tooth looks and functions.
+            </p>
+
+            <p>
+                Restorative dentistry focuses on repairing these
+                teeth and helping them work properly again.
+            </p>
+
+            <p>
+                The aim is simple:
+                <strong>
+                    preserve as much of your natural tooth as possible
+                    and restore its function.
+                </strong>
+            </p>
+
+        </div>
+
+
+        <aside class="rest-simple-box">
+
+            <div class="rest-box-icon">
+                🦷
+            </div>
+
+            <h3>
+                Not every damaged tooth needs to be removed.
+            </h3>
+
+            <p>
+                Depending on the condition of the tooth,
+                there may be several ways to repair and protect it.
+            </p>
+
+        </aside>
+
+    </section>
+
+
+    <!-- =====================================================
+         TREATMENTS SECTION
+         ===================================================== -->
+
+    <section
+        class="rest-section rest-treatments"
+        id="rest-treatments"
+    >
+
+        <div class="rest-treatment-heading">
+
+            <p class="rest-small-label">
+                HOW CAN WE HELP?
+            </p>
+
+            <h2>
+                Different problems need different solutions.
+            </h2>
+
+            <div class="rest-yellow-line"></div>
+
+            <p>
+                We first understand what is happening with your tooth
+                and then discuss the treatment options that may be suitable.
+            </p>
+
+        </div>
+
+
+        <div class="rest-treatment-grid">
+
+            <!-- Treatment 01 -->
+
+            <div class="rest-treatment-card">
+
+                <span>01</span>
+
+                <h3>
+                    Tooth-coloured fillings
+                </h3>
+
+                <p>
+                    Used to repair teeth affected by cavities or
+                    small areas of damage while keeping the restoration
+                    natural-looking.
+                </p>
+
+                <a href="#">
+                    Learn more →
+                </a>
+
+            </div>
+
+
+            <!-- Treatment 02 -->
+
+            <div class="rest-treatment-card">
+
+                <span>02</span>
+
+                <h3>
+                    Crowns
+                </h3>
+
+                <p>
+                    A crown can cover and protect a weakened or
+                    extensively damaged tooth and help restore
+                    its shape and function.
+                </p>
+
+                <a href="#">
+                    Learn more →
+                </a>
+
+            </div>
+
+
+            <!-- Treatment 03 -->
+
+            <div class="rest-treatment-card">
+
+                <span>03</span>
+
+                <h3>
+                    Inlays &amp; Onlays
+                </h3>
+
+                <p>
+                    These can be used when a tooth needs more support
+                    than a filling but may not need a full crown.
+                </p>
+
+                <a href="#">
+                    Learn more →
+                </a>
+
+            </div>
+
+
+            <!-- Treatment 04 -->
+
+            <div class="rest-treatment-card">
+
+                <span>04</span>
+
+                <h3>
+                    Broken tooth repair
+                </h3>
+
+                <p>
+                    Damaged or chipped teeth may sometimes be repaired
+                    and restored depending on how much of the tooth remains.
+                </p>
+
+                <a href="#">
+                    Learn more →
+                </a>
+
+            </div>
+
+
+            <!-- Treatment 05 -->
+
+            <div class="rest-treatment-card">
+
+                <span>05</span>
+
+                <h3>
+                    Worn teeth
+                </h3>
+
+                <p>
+                    Teeth that have become worn over time can be assessed
+                    and, when appropriate, restored to improve their function.
+                </p>
+
+                <a href="#">
+                    Learn more →
+                </a>
+
+            </div>
+
+
+            <!-- Treatment 06 -->
+
+            <div class="rest-treatment-card">
+
+                <span>06</span>
+
+                <h3>
+                    Replacing old restorations
+                </h3>
+
+                <p>
+                    Old or damaged fillings and restorations can be
+                    assessed and replaced when they are no longer suitable.
+                </p>
+
+                <a href="#">
+                    Learn more →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    
+<!-- =====================================================
+     BEFORE & AFTER CASE STUDIES SECTION
+===================================================== -->
+
+<section class="rest-section rest-before-after-section" id="rest-before-after">
+
+    <div class="rest-before-after-heading">
+
+        <p class="rest-small-label">
+            TREATMENT RESULTS
+        </p>
+
+        <h2>
+            Before and after restorative treatment.
+        </h2>
+
+        <div class="rest-yellow-line"></div>
+
+        <p>
+            Every tooth is different. Treatment results depend on the
+            condition of the tooth, the treatment required and the
+            patient's individual needs.
+        </p>
+
+    </div>
+
+
+    <!-- CASE STUDY 01 -->
+
+    <article class="rest-case-study">
+
+        <div class="rest-case-header">
+
+            <div>
+                <span class="rest-case-number">
+                    CASE STUDY 
+                </span>
+
+                <h3>
+                    Restoring a damaged tooth
+                </h3>
+            </div>
+
+            <span class="rest-case-tag">
+                Restorative Dentistry
+            </span>
+
+        </div>
+
+
+        <div class="rest-before-after-images">
+
+            <!-- BEFORE IMAGE -->
+
+            <div class="rest-comparison-card">
+
+                <div class="rest-comparison-image">
+
+                    <!-- Replace this image path with your actual image -->
+
+                    <img
+                        src="clinic_photos_shortlist/before-restoration.jpg"
+                        alt="Tooth before restorative treatment"
+                        loading="lazy"
+                    >
+
+                    <span class="rest-image-label">
+                        Before
+                    </span>
+
+                </div>
+
+                <div class="rest-comparison-content">
+
+                    <h4>
+                        Before treatment
+                    </h4>
+
+                    <p>
+                        The tooth shows visible damage, wear or loss of
+                        tooth structure that requires assessment.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- AFTER IMAGE -->
+
+            <div class="rest-comparison-card">
+
+                <div class="rest-comparison-image">
+
+                    <!-- Replace this image path with your actual image -->
+
+                    <img
+                        src="clinic_photos_shortlist/after-restoration.jpg"
+                        alt="Tooth after restorative treatment"
+                        loading="lazy"
+                    >
+
+                    <span class="rest-image-label">
+                        After
+                    </span>
+
+                </div>
+
+                <div class="rest-comparison-content">
+
+                    <h4>
+                        After treatment
+                    </h4>
+
+                    <p>
+                        The tooth has been restored to improve its shape,
+                        function and appearance where clinically appropriate.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    
+<!-- =================================================
+     IMPORTANT CLINICAL INFORMATION
+================================================= -->
+
+<div class="df-case-disclaimer">
+
+    <div class="df-disclaimer-icon" aria-hidden="true">
+        !
+    </div>
+
+    <div class="df-disclaimer-content">
+
+        <h4>
+            Important Clinical Information
+        </h4>
+
+        <p>
+            Before-and-after photographs should be published only
+            with appropriate patient consent and accurate clinical
+            information. Treatment results vary between patients.
+            Dental filling treatment and its results depend on the
+            condition of the tooth and the individual treatment plan.
+        </p>
+
+    </div>
+
+</div>
+
+
+        <!-- DIFFERENCE SUMMARY -->
+
+        <div class="rest-case-difference">
+
+            <div class="rest-difference-heading">
+
+                <span>
+                    WHAT CHANGED?
+                </span>
+
+                <h4>
+                    Understanding the difference
+                </h4>
+
+            </div>
+
+
+            <div class="rest-difference-grid">
+
+                <div class="rest-difference-item">
+
+                    <span class="rest-difference-icon">
+                        ✓
+                    </span>
+
+                    <div>
+                        <h5>
+                            Tooth structure
+                        </h5>
+
+                        <p>
+                            Damaged or missing tooth structure was addressed
+                            according to the condition of the tooth.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="rest-difference-item">
+
+                    <span class="rest-difference-icon">
+                        ✓
+                    </span>
+
+                    <div>
+                        <h5>
+                            Shape and appearance
+                        </h5>
+
+                        <p>
+                            The restoration was designed to support a more
+                            natural-looking tooth shape.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="rest-difference-item">
+
+                    <span class="rest-difference-icon">
+                        ✓
+                    </span>
+
+                    <div>
+                        <h5>
+                            Function
+                        </h5>
+
+                        <p>
+                            The treatment aimed to help the tooth perform
+                            its normal function.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="rest-difference-item">
+
+                    <span class="rest-difference-icon">
+                        ✓
+                    </span>
+
+                    <div>
+                        <h5>
+                            Long-term care
+                        </h5>
+
+                        <p>
+                            Proper oral hygiene, regular check-ups and
+                            appropriate maintenance remain important.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="rest-case-note">
+
+            <strong>Clinical note:</strong>
+
+            <p>
+                Images are provided for educational purposes. Actual
+                treatment options and outcomes vary from patient to patient.
+            </p>
+
+        </div>
+
+    </article>
+
+
+    
+
+    
+
+
+    <!-- CASE STUDY 02 -->
+
+    <!-- <article class="rest-case-study">
+
+        <div class="rest-case-header">
+
+            <div>
+                <span class="rest-case-number">
+                    CASE STUDY 02
+                </span>
+
+                <h3>
+                    Improving the appearance of a worn tooth
+                </h3>
+            </div>
+
+            <span class="rest-case-tag">
+                Tooth Restoration
+            </span>
+
+        </div>
+
+
+        <div class="rest-before-after-images">
+
+           
+            <div class="rest-comparison-card">
+
+                <div class="rest-comparison-image">
+
+                    <img
+                        src="clinic_photos_shortlist/before-worn-tooth.jpg"
+                        alt="Worn tooth before restorative treatment"
+                        loading="lazy"
+                    >
+
+                    <span class="rest-image-label">
+                        Before
+                    </span>
+
+                </div>
+
+                <div class="rest-comparison-content">
+
+                    <h4>
+                        Before treatment
+                    </h4>
+
+                    <p>
+                        Tooth wear or damage may affect the tooth's
+                        appearance, shape and function.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            
+
+            <div class="rest-comparison-card">
+
+                <div class="rest-comparison-image">
+
+                    <img
+                        src="clinic_photos_shortlist/after-worn-tooth.jpg"
+                        alt="Worn tooth after restorative treatment"
+                        loading="lazy"
+                    >
+
+                    <span class="rest-image-label">
+                        After
+                    </span>
+
+                </div>
+
+                <div class="rest-comparison-content">
+
+                    <h4>
+                        After treatment
+                    </h4>
+
+                    <p>
+                        The tooth has been restored with attention to
+                        shape, function and appearance.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="rest-case-difference">
+
+            <div class="rest-difference-heading">
+
+                <span>
+                    WHAT CHANGED?
+                </span>
+
+                <h4>
+                    Main treatment differences
+                </h4>
+
+            </div>
+
+
+            <div class="rest-difference-grid">
+
+                <div class="rest-difference-item">
+
+                    <span class="rest-difference-icon">
+                        ✓
+                    </span>
+
+                    <div>
+                        <h5>
+                            Tooth contour
+                        </h5>
+
+                        <p>
+                            The tooth's shape may be improved depending
+                            on the amount of tooth structure available.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="rest-difference-item">
+
+                    <span class="rest-difference-icon">
+                        ✓
+                    </span>
+
+                    <div>
+                        <h5>
+                            Appearance
+                        </h5>
+
+                        <p>
+                            The restoration may help create a more
+                            balanced and natural-looking appearance.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="rest-difference-item">
+
+                    <span class="rest-difference-icon">
+                        ✓
+                    </span>
+
+                    <div>
+                        <h5>
+                            Tooth protection
+                        </h5>
+
+                        <p>
+                            The treatment may help protect the remaining
+                            tooth structure from further damage.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="rest-difference-item">
+
+                    <span class="rest-difference-icon">
+                        ✓
+                    </span>
+
+                    <div>
+                        <h5>
+                            Patient-specific planning
+                        </h5>
+
+                        <p>
+                            The appropriate restoration depends on the
+                            tooth condition and individual requirements.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="rest-case-note">
+
+            <strong>Clinical note:</strong>
+
+            <p>
+                Before-and-after photographs should be used only with
+                appropriate patient consent and accurate treatment details.
+            </p>
+
+        </div>
+
+    </article> -->
+
+</section>
+
+
+    <!-- =====================================================
+         SIGNS AND SYMPTOMS SECTION
+         ===================================================== -->
+
+    <!-- <section class="rest-section rest-signs">
+
+        <div class="rest-signs-copy">
+
+            <p class="rest-small-label">
+                WHEN SHOULD YOU GET IT CHECKED?
+            </p>
+
+            <h2>
+                Sometimes the signs are easy to notice.
+                Sometimes they're not.
+            </h2>
+
+            <div class="rest-yellow-line"></div>
+
+            <p>
+                A tooth may need attention even before it starts hurting.
+                A dental examination can help identify problems early.
+            </p>
+
+        </div>
+
+
+        <div class="rest-sign-grid">
+
+            <div class="rest-sign-card">
+
+                <span>01</span>
+
+                <h3>
+                    Toothache
+                </h3>
+
+                <p>
+                    Pain when eating, biting or at rest.
+                </p>
+
+            </div>
+
+
+            <div class="rest-sign-card">
+
+                <span>02</span>
+
+                <h3>
+                    Sensitivity
+                </h3>
+
+                <p>
+                    Sensitivity to hot, cold or sweet foods.
+                </p>
+
+            </div>
+
+
+            <div class="rest-sign-card">
+
+                <span>03</span>
+
+                <h3>
+                    Broken or chipped tooth
+                </h3>
+
+                <p>
+                    A tooth that has cracked, chipped or broken.
+                </p>
+
+            </div>
+
+
+            <div class="rest-sign-card">
+
+                <span>04</span>
+
+                <h3>
+                    Old filling
+                </h3>
+
+                <p>
+                    A filling that is worn, broken or causing problems.
+                </p>
+
+            </div>
+
+
+            <div class="rest-sign-card">
+
+                <span>05</span>
+
+                <h3>
+                    Food getting stuck
+                </h3>
+
+                <p>
+                    Food repeatedly getting trapped around a tooth.
+                </p>
+
+            </div>
+
+
+            <div class="rest-sign-card">
+
+                <span>06</span>
+
+                <h3>
+                    Visible damage
+                </h3>
+
+                <p>
+                    A hole, crack, dark area or change in the tooth.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section> -->
+
+
+    <!-- =====================================================
+         OUR APPROACH SECTION
+         ===================================================== -->
+
+    <section class="rest-section rest-approach">
+
+        <div class="rest-approach-heading">
+
+            <p class="rest-small-label" style="color: #E7CB6B;">
+                OUR APPROACH
+            </p>
+
+            <h2>
+                We don't just repair the tooth.
+                We look at the reason it was damaged.
+            </h2>
+
+            <div class="rest-yellow-line"></div>
+
+        </div>
+
+
+        <div class="rest-approach-content">
+
+            <!-- Approach 01 -->
+
+            <div class="rest-approach-item">
+
+                <div class="rest-number">
+                    01
+                </div>
+
+                <div>
+
+                    <h3>
+                        Understand the problem
+                    </h3>
+
+                    <p>
+                        We examine the tooth and surrounding area
+                        to understand what has caused the damage.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Approach 02 -->
+
+            <div class="rest-approach-item">
+
+                <div class="rest-number">
+                    02
+                </div>
+
+                <div>
+
+                    <h3>
+                        Discuss your options
+                    </h3>
+
+                    <p>
+                        We explain the possible ways to restore the tooth,
+                        including the advantages and limitations of each option.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Approach 03 -->
+
+            <div class="rest-approach-item">
+
+                <div class="rest-number">
+                    03
+                </div>
+
+                <div>
+
+                    <h3>
+                        Choose the right restoration
+                    </h3>
+
+                    <p>
+                        The choice depends on how much of the tooth remains,
+                        where the tooth is located and what it needs to do.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Approach 04 -->
+
+            <div class="rest-approach-item">
+
+                <div class="rest-number">
+                    04
+                </div>
+
+                <div>
+
+                    <h3>
+                        Protect it for the future
+                    </h3>
+
+                    <p>
+                        We also discuss how you can look after the restored
+                        tooth and reduce the chance of further damage.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         RESTORATION IN PRACTICE SECTION
+         ===================================================== -->
+
+    <!-- <section class="rest-section rest-results">
+
+        <div class="rest-results-heading">
+
+            <p class="rest-small-label">
+                RESTORATION IN PRACTICE
+            </p>
+
+            <h2>
+                Small repairs can make a big difference.
+            </h2>
+
+            <div class="rest-yellow-line"></div>
+
+            <p>
+                Restorative treatment can help bring back the shape,
+                strength and appearance of a damaged tooth.
+            </p>
+
+        </div>
+
+
+        <div class="rest-result-grid">
+
+            
+
+            <div class="rest-result-card">
+
+                <div class="rest-result-image">
+
+                    <div class="image-placeholder">
+                        CASE PHOTO 01
+                    </div>
+
+                </div>
+
+                <div class="rest-result-text">
+
+                    <span>
+                        CASE 01
+                    </span>
+
+                    <h3>
+                        Repairing a damaged tooth
+                    </h3>
+
+                    <p>
+                        Restoring the tooth while preserving as much
+                        natural tooth structure as possible.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+          
+
+            <div class="rest-result-card">
+
+                <div class="rest-result-image">
+
+                    <div class="image-placeholder">
+                        CASE PHOTO 02
+                    </div>
+
+                </div>
+
+                <div class="rest-result-text">
+
+                    <span>
+                        CASE 02
+                    </span>
+
+                    <h3>
+                        Restoring a worn tooth
+                    </h3>
+
+                    <p>
+                        Rebuilding the tooth to improve its shape and function.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section> -->
+
+
+    <!-- =====================================================
+         FAQ SECTION
+         ===================================================== -->
+
+    <section
+        class="rest-section rest-faq-section"
+        id="rest-questions"
+    >
+
+        <div class="rest-faq-heading">
+
+            <p class="rest-small-label">
+                YOU MAY BE WONDERING
+            </p>
+
+            <h2>
+                Restorative dentistry questions,
+                answered simply.
+            </h2>
+
+            <div class="rest-yellow-line"></div>
+
+        </div>
+
+
+        <div class="rest-faq">
+
+
+            <!-- FAQ 01 -->
+
+            <div class="rest-faq-item">
+
+                <button
+                    type="button"
+                    class="rest-faq-question"
+                >
+                    What is restorative dentistry?
+
+                    <span>+</span>
+                </button>
+
+                <div class="rest-faq-answer">
+
+                    <p>
+                        Restorative dentistry focuses on repairing
+                        damaged, decayed or weakened teeth and helping
+                        them function properly again.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 02 -->
+
+            <div class="rest-faq-item">
+
+                <button
+                    type="button"
+                    class="rest-faq-question"
+                >
+                    Does every cavity need a crown?
+
+                    <span>+</span>
+                </button>
+
+                <div class="rest-faq-answer">
+
+                    <p>
+                        No. The appropriate treatment depends on how much
+                        of the tooth is affected. Some teeth may only need
+                        a filling, while others may need more protection.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 03 -->
+
+            <div class="rest-faq-item">
+
+                <button
+                    type="button"
+                    class="rest-faq-question"
+                >
+                    Can a broken tooth be repaired?
+
+                    <span>+</span>
+                </button>
+
+                <div class="rest-faq-answer">
+
+                    <p>
+                        Sometimes. It depends on how the tooth was damaged
+                        and how much healthy tooth remains.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 04 -->
+
+            <div class="rest-faq-item">
+
+                <button
+                    type="button"
+                    class="rest-faq-question"
+                >
+                    Will my restoration look natural?
+
+                    <span>+</span>
+                </button>
+
+                <div class="rest-faq-answer">
+
+                    <p>
+                        Many modern dental restorations can be made
+                        to closely match the colour and shape of natural teeth.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 05 -->
+
+            <div class="rest-faq-item">
+
+                <button
+                    type="button"
+                    class="rest-faq-question"
+                >
+                    How long will a restoration last?
+
+                    <span>+</span>
+                </button>
+
+                <div class="rest-faq-answer">
+
+                    <p>
+                        The lifespan varies depending on the type of
+                        restoration, the tooth, your bite and how well
+                        you look after your teeth.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FINAL CALL-TO-ACTION SECTION
+         ===================================================== -->
+
+    <section class="rest-final-cta">
+
+        <div>
+
+            <p class="rest-small-label">
+                SOMETHING DOESN'T FEEL RIGHT?
+            </p>
+
+            <h2>
+                Don't wait for a small problem
+                to become a bigger one.
+            </h2>
+
+            <p>
+                If you have a damaged, sensitive, broken or painful tooth,
+                let us take a look and help you understand your options.
+            </p>
+
+        </div>
+
+
+        <a
+            href="#openAppointmentModal"
+            class="rest-btn rest-cta-btn"
+        >
+            Book an Appointment <span>→</span>
+        </a>
+
+    </section>
+
+</main>
+
+<footer>
+
+  <div class="container footer-grid">
+
+
+    <div>
+
+      <h4>
+        Dr. Gupta's Dental Clinic
+      </h4>
+
+      <p>
+        Precision, magnification-guided dentistry in South Extension, New Delhi since 2013.
+      </p>
+
+    </div>
+
+
+    <div>
+
+      <h4>
+        Quick Links
+      </h4>
+
+      <a href="about.html">
+        About
+      </a>
+      <a href="difference.html">
+        Our Difference
+      </a>
+
+      <a href="services.html">
+        Services
+      </a>
+
+      <a href="reviews.html">
+        Reviews
+      </a>
+
+      <a href="faq.html">
+        FAQ
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+    </div>
+
+
+    <div>
+
+      <h4>
+        Contact
+      </h4>
+
+      <a href="tel:+919990880975">
+        Mobile: 99908 80975
+      </a>
+
+      <a href="tel:+911142220392">
+        Landline: 011-4222-0392
+      </a>
+
+      <a href="https://wa.me/919990880975">
+        WhatsApp Us
+      </a>
+
+      <p>   H-30, South Extension Part 1, New Delhi</p>
+
+    </div>
+  </div>
+
+
+  <div class="container footer-bottom">
+    © 2026 Dr. Gupta's Dental Clinic. All rights reserved.
+  </div>
+
+</footer>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const faqButtons = document.querySelectorAll(".rest-faq-question");
+
+    faqButtons.forEach((button, index) => {
+
+        const item = button.closest(".rest-faq-item");
+
+        if (!item) return;
+
+        const answer = item.querySelector(".rest-faq-answer");
+
+        const answerId = `rest-faq-answer-${index + 1}`;
+
+        if (answer) {
+            answer.id = answerId;
+            button.setAttribute("aria-controls", answerId);
+        }
+
+        button.setAttribute("aria-expanded", "false");
+
+        button.addEventListener("click", () => {
+
+            const isActive = item.classList.contains("active");
+
+            document.querySelectorAll(".rest-faq-item").forEach(otherItem => {
+
+                otherItem.classList.remove("active");
+
+                const otherButton =
+                    otherItem.querySelector(".rest-faq-question");
+
+                if (otherButton) {
+                    otherButton.setAttribute("aria-expanded", "false");
+                }
+
+            });
+
+            if (!isActive) {
+
+                item.classList.add("active");
+
+                button.setAttribute("aria-expanded", "true");
+
+            }
+
+        });
+
+    });
+
+});
+</script>
+
+</body>
+</html>

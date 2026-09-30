@@ -1,0 +1,1467 @@
+
+/* =========================================================
+   GLOBAL STYLES
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #282828;
+    background: #ffffff;
+}
+
+.rest-page {
+    background: #ffffff;
+    color: #282828;
+}
+
+
+/* =========================================================
+   GENERAL SECTION STYLES
+   ========================================================= */
+
+.rest-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 75px 5%;
+}
+
+.rest-small-label {
+    margin: 0 0 10px;
+
+    color: #737373;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.rest-yellow-line {
+    width: 42px;
+    height: 4px;
+
+    margin: 14px 0 24px;
+
+    background: #e5b93d;
+}
+
+.rest-section h2 {
+    margin: 0;
+
+    font-size: 38px;
+    line-height: 1.08;
+    letter-spacing: -1px;
+}
+
+.rest-section p {
+    color: #626262;
+
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   HERO SECTION
+   ========================================================= */
+
+.rest-hero {
+    display: grid;
+    grid-template-columns: 1fr 1.05fr;
+
+    min-height: 560px;
+
+    background: #f7f6f2;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+   ========================================================= */
+
+.rest-hero-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 90px 9%;
+}
+
+.rest-eyebrow {
+    margin: 0;
+
+    color: #737373;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.rest-hero-copy h1 {
+    max-width: 600px;
+
+    margin: 0 0 22px;
+
+    font-size: 62px;
+    line-height: 0.98;
+    letter-spacing: -3px;
+}
+
+.rest-hero-copy h2 {
+    max-width: 560px;
+
+    margin: 0 0 18px;
+
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.rest-hero-copy > p:not(.rest-eyebrow) {
+    max-width: 570px;
+
+    color: #606060;
+
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   HERO BUTTONS
+   ========================================================= */
+
+.rest-hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    margin-top: 22px;
+}
+
+.rest-btn,
+.rest-outline-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 14px 21px;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+
+    transition: 0.25s ease;
+}
+
+.rest-btn {
+    color: #282828;
+    background: #e5b93d;
+}
+
+.rest-btn:hover {
+    background: #d5a92e;
+    transform: translateY(-2px);
+}
+
+.rest-outline-btn {
+    color: #282828;
+    background: #ffffff;
+    border: 1px solid #aaaaaa;
+}
+
+.rest-outline-btn:hover {
+    border-color: #e5b93d;
+}
+
+
+/* =========================================================
+   HERO IMAGE
+   ========================================================= */
+
+.rest-hero-image {
+    position: relative;
+
+    min-height: 560px;
+
+    overflow: hidden;
+}
+
+.image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+    min-height: 200px;
+
+    padding: 20px;
+
+    color: #737373;
+    background: linear-gradient(
+        135deg,
+        #ebe8df,
+        #d9d5ca
+    );
+
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1.5;
+
+    text-align: center;
+}
+
+.image-placeholder small {
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+.rest-image-note {
+    position: absolute;
+    right: 7%;
+    bottom: 9%;
+
+    padding: 18px 22px;
+
+    border-radius: 12px;
+
+    background: rgba(247, 246, 242, 0.94);
+
+    font-family: cursive;
+    font-size: 21px;
+    line-height: 1.15;
+
+    text-align: center;
+}
+
+.rest-image-note span {
+    color: #c9a227;
+}
+
+
+/* =========================================================
+   INTRODUCTION SECTION
+   ========================================================= */
+
+.rest-intro {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr 0.9fr;
+
+    gap: 30px;
+    align-items: center;
+}
+
+
+/* =========================================================
+   INTRODUCTION IMAGE
+   ========================================================= */
+
+.rest-photo {
+    height: 310px;
+}
+
+.rest-photo .image-placeholder {
+    height: 100%;
+
+    border-radius: 16px;
+}
+
+
+/* =========================================================
+   INTRODUCTION CONTENT
+   ========================================================= */
+
+.rest-copy {
+    padding: 10px;
+}
+
+.rest-copy h2 {
+    font-size: 34px;
+}
+
+.rest-copy p {
+    margin: 0 0 14px;
+}
+
+.rest-copy strong {
+    color: #282828;
+}
+
+
+/* =========================================================
+   SIMPLE INFORMATION BOX
+   ========================================================= */
+
+.rest-simple-box {
+    min-height: 280px;
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    background: #f3e6b5;
+}
+
+.rest-box-icon {
+    margin-bottom: 10px;
+
+    font-size: 38px;
+}
+
+.rest-simple-box h3 {
+    margin: 0 0 15px;
+
+    font-size: 21px;
+    line-height: 1.25;
+}
+
+.rest-simple-box p {
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   TREATMENTS SECTION
+   ========================================================= */
+
+.rest-treatments {
+    max-width: none;
+
+    padding-right: 8%;
+    padding-left: 8%;
+
+    background: #f7f6f2;
+}
+
+.rest-treatment-heading {
+    max-width: 620px;
+
+    margin-bottom: 38px;
+}
+
+.rest-treatment-heading h2 {
+    font-size: 42px;
+}
+
+.rest-treatment-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    max-width: 1200px;
+    margin: 0 auto;
+
+    gap: 16px;
+}
+
+
+/* =========================================================
+   TREATMENT CARDS
+   ========================================================= */
+
+.rest-treatment-card {
+    min-height: 235px;
+
+    padding: 28px;
+
+    border-radius: 15px;
+
+    background: #ffffff;
+
+    transition: 0.25s ease;
+}
+
+.rest-treatment-card:hover {
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+
+    transform: translateY(-5px);
+}
+
+.rest-treatment-card > span {
+    color: #c9a227;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.rest-treatment-card h3 {
+    margin: 15px 0 8px;
+
+    font-size: 20px;
+}
+
+.rest-treatment-card p {
+    margin: 0 0 18px;
+
+    font-size: 14px;
+}
+
+.rest-treatment-card a {
+    color: #282828;
+
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.rest-treatment-card a:hover {
+    color: #b58b12;
+}
+
+
+/* =========================================================
+   SIGNS / SYMPTOMS SECTION
+   ========================================================= */
+
+.rest-signs {
+    display: grid;
+    grid-template-columns: 0.75fr 1.4fr;
+
+    gap: 60px;
+    align-items: start;
+}
+
+.rest-signs-copy {
+    max-width: 390px;
+}
+
+.rest-signs-copy h2 {
+    font-size: 36px;
+}
+
+.rest-sign-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 14px;
+}
+
+
+/* =========================================================
+   SIGN CARDS
+   ========================================================= */
+
+.rest-sign-card {
+    min-height: 145px;
+
+    padding: 23px;
+
+    border: 1px solid #e5e1d9;
+    border-radius: 14px;
+}
+
+.rest-sign-card > span {
+    color: #c9a227;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.rest-sign-card h3 {
+    margin: 12px 0 5px;
+
+    font-size: 18px;
+}
+
+.rest-sign-card p {
+    margin: 0;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   OUR APPROACH SECTION
+   ========================================================= */
+
+.rest-approach {
+    display: grid;
+    grid-template-columns: 0.8fr 1.3fr;
+
+    max-width: none;
+
+    gap: 80px;
+    align-items: start;
+
+    padding-right: 8%;
+    padding-left: 8%;
+
+    background: #12213F;
+}
+
+.rest-approach-heading {
+    max-width: 450px;
+}
+
+.rest-approach-heading h2 {
+    font-size: 39px;
+    color: #FFFFFF;
+}
+
+.rest-approach p{
+    color: rgb(255 255 255 / 72%);
+
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+.rest-approach-content {
+    max-width: 650px;
+}
+
+
+/* =========================================================
+   APPROACH ITEMS
+   ========================================================= */
+
+.rest-approach-item {
+    display: grid;
+    grid-template-columns: 55px 1fr;
+
+    gap: 20px;
+
+    padding: 25px 0;
+
+    border-bottom: 1px solid #ddd9cf;
+}
+
+.rest-approach-item:first-child {
+    padding-top: 0;
+}
+
+.rest-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+
+    border-radius: 50%;
+
+    color: #8f7218;
+    background: #f3e6b5;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.rest-approach-item h3 {
+    margin: 0 0 7px;
+
+    font-size: 19px;
+
+    color: #FFFFFF;
+}
+
+.rest-approach-item p {
+    margin: 0;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   RESULTS SECTION
+   ========================================================= */
+
+.rest-results-heading {
+    max-width: 650px;
+
+    margin-bottom: 35px;
+}
+
+.rest-results-heading h2 {
+    font-size: 40px;
+}
+
+.rest-result-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 22px;
+}
+
+
+/* =========================================================
+   RESULT CARDS
+   ========================================================= */
+
+.rest-result-card {
+    overflow: hidden;
+
+    border: 1px solid #e5e1d9;
+    border-radius: 17px;
+
+    background: #ffffff;
+}
+
+.rest-result-image {
+    height: 320px;
+}
+
+.rest-result-image .image-placeholder {
+    height: 100%;
+}
+
+.rest-result-text {
+    padding: 22px;
+}
+
+.rest-result-text span {
+    color: #c9a227;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.rest-result-text h3 {
+    margin: 9px 0 5px;
+
+    font-size: 20px;
+}
+
+.rest-result-text p {
+    margin: 0;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   FAQ SECTION
+   ========================================================= */
+
+.rest-faq-section {
+    display: grid;
+    grid-template-columns: 0.8fr 1.4fr;
+
+    gap: 70px;
+    align-items: start;
+}
+
+.rest-faq-heading {
+    max-width: 370px;
+}
+
+.rest-faq-heading h2 {
+    font-size: 38px;
+}
+
+.rest-faq-item {
+    border-bottom: 1px solid #dedbd3;
+}
+
+
+/* =========================================================
+   FAQ QUESTIONS
+   ========================================================= */
+
+.rest-faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+
+    padding: 21px 0;
+
+    border: 0;
+
+    color: #282828;
+    background: transparent;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    text-align: left;
+
+    cursor: pointer;
+}
+
+.rest-faq-question span {
+    color: #c9a227;
+
+    font-size: 25px;
+
+    transition: 0.2s;
+}
+
+.rest-faq-item.active .rest-faq-question span {
+    transform: rotate(45deg);
+}
+
+
+/* =========================================================
+   FAQ ANSWERS
+   ========================================================= */
+
+.rest-faq-answer {
+    display: none;
+
+    padding: 0 40px 20px 0;
+}
+
+.rest-faq-answer p {
+    margin: 0;
+
+    font-size: 14px;
+}
+
+.rest-faq-item.active .rest-faq-answer {
+    display: block;
+}
+
+
+/* =========================================================
+   FINAL CALL-TO-ACTION SECTION
+   ========================================================= */
+
+.rest-final-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    max-width: 1100px;
+
+    margin: 30px auto 80px;
+    padding: 45px 50px;
+
+    gap: 30px;
+
+    border-radius: 20px;
+
+    color: #ffffff;
+    background: #282828;
+}
+
+.rest-final-cta .rest-small-label {
+    color: #e5b93d;
+}
+
+.rest-final-cta h2 {
+    margin: 8px 0 12px;
+
+    font-size: 38px;
+    line-height: 1.05;
+}
+
+.rest-final-cta p:not(.rest-small-label) {
+    max-width: 600px;
+
+    margin: 0;
+
+    color: #d5d5d5;
+}
+
+.rest-cta-btn {
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   TABLET RESPONSIVE STYLES
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    /* HERO */
+
+    .rest-hero {
+        grid-template-columns: 1fr;
+    }
+
+    .rest-hero-copy {
+        padding: 70px 7%;
+    }
+
+    .rest-hero-image {
+        min-height: 400px;
+    }
+
+
+    /* MULTI-COLUMN SECTIONS */
+
+    .rest-intro,
+    .rest-signs,
+    .rest-approach,
+    .rest-faq-section {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .rest-signs-copy,
+    .rest-approach-heading,
+    .rest-faq-heading {
+        max-width: none;
+    }
+
+
+    /* TREATMENT GRID */
+
+    .rest-treatment-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* =========================================================
+   MOBILE RESPONSIVE STYLES
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    /* HERO */
+
+    .rest-hero-copy {
+        padding: 55px 7%;
+    }
+
+    .rest-hero-copy h1 {
+        font-size: 45px;
+        letter-spacing: -2px;
+    }
+
+    .rest-hero-copy h2 {
+        font-size: 20px;
+    }
+
+    .rest-hero-image {
+        min-height: 300px;
+    }
+
+
+    /* GENERAL SECTIONS */
+
+    .rest-section {
+        padding: 50px 7%;
+    }
+
+    .rest-section h2 {
+        font-size: 30px;
+    }
+
+
+    /* GRIDS */
+
+    .rest-treatment-grid,
+    .rest-sign-grid,
+    .rest-result-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* TREATMENT CARDS */
+
+    .rest-treatment-card {
+        min-height: auto;
+    }
+
+
+    /* APPROACH SECTION */
+
+    .rest-approach {
+        padding-right: 7%;
+        padding-left: 7%;
+    }
+
+
+    /* RESULT IMAGE */
+
+    .rest-result-image {
+        height: 260px;
+    }
+
+
+    /* FINAL CTA */
+
+    .rest-final-cta {
+        flex-direction: column;
+        align-items: flex-start;
+
+        margin: 20px 5% 50px;
+        padding: 35px 25px;
+    }
+
+    .rest-final-cta h2 {
+        font-size: 30px;
+    }
+}
+
+
+/* =========================================================
+   BEFORE & AFTER CASE STUDIES SECTION
+   ========================================================= */
+
+.rest-before-after-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 5%;
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+   ========================================================= */
+
+.rest-before-after-heading {
+    max-width: 680px;
+    margin-bottom: 45px;
+}
+
+.rest-before-after-heading h2 {
+    margin: 0;
+    font-size: 42px;
+    line-height: 1.08;
+    letter-spacing: -1px;
+}
+
+.rest-before-after-heading p:not(.rest-small-label) {
+    margin: 0;
+}
+
+
+/* =========================================================
+   CASE STUDY CONTAINER
+   ========================================================= */
+
+.rest-case-study {
+    margin-bottom: 55px;
+    overflow: hidden;
+
+    border: 1px solid #e5e1d9;
+    border-radius: 20px;
+
+    background: #ffffff;
+    box-shadow: 0 12px 35px rgba(40, 40, 40, 0.045);
+}
+
+.rest-case-study:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   CASE STUDY HEADER
+   ========================================================= */
+
+.rest-case-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+
+    padding: 30px 32px;
+
+    background: #f7f6f2;
+    border-bottom: 1px solid #e5e1d9;
+}
+
+.rest-case-number {
+    display: block;
+    margin-bottom: 9px;
+
+    color: #b18a1d;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.rest-case-header h3 {
+    margin: 0;
+
+    color: #282828;
+
+    font-size: 27px;
+    line-height: 1.2;
+}
+
+.rest-case-tag {
+    flex-shrink: 0;
+
+    padding: 9px 13px;
+
+    border: 1px solid #dfc76e;
+    border-radius: 50px;
+
+    color: #8f7218;
+    background: #fff9df;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   BEFORE AND AFTER IMAGES
+   ========================================================= */
+
+.rest-before-after-images {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+
+    padding: 30px 32px 0;
+}
+
+.rest-comparison-card {
+    overflow: hidden;
+
+    border: 1px solid #e5e1d9;
+    border-radius: 15px;
+
+    background: #ffffff;
+}
+
+.rest-comparison-image {
+    position: relative;
+
+    height: 330px;
+    overflow: hidden;
+
+    background: #f3f1eb;
+}
+
+.rest-comparison-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.45s ease;
+}
+
+.rest-comparison-card:hover .rest-comparison-image img {
+    transform: scale(1.04);
+}
+
+
+/* =========================================================
+   BEFORE / AFTER IMAGE LABEL
+   ========================================================= */
+
+.rest-image-label {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+
+    padding: 8px 14px;
+
+    border-radius: 6px;
+
+    color: #ffffff;
+    background: rgba(40, 40, 40, 0.88);
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.rest-comparison-card:nth-child(2) .rest-image-label {
+    color: #282828;
+    background: #e5b93d;
+}
+
+
+/* =========================================================
+   IMAGE CONTENT
+   ========================================================= */
+
+.rest-comparison-content {
+    padding: 22px;
+}
+
+.rest-comparison-content h4 {
+    margin: 0 0 8px;
+
+    color: #282828;
+
+    font-size: 21px;
+    line-height: 1.2;
+}
+
+.rest-comparison-content p {
+    margin: 0;
+
+    color: #626262;
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   DENTAL FILLING
+   IMPORTANT CLINICAL INFORMATION
+========================================================= */
+
+.df-case-disclaimer {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+    max-width: 900px;
+    margin: 25px auto 0;
+    padding: 5px 10px;
+
+    background: #fffdf5;
+    border: 1px solid #e5d5a3;
+    border-left: 6px solid #e5b93d;
+    border-radius: 14px;
+
+    box-shadow: 0 8px 25px rgba(40, 40, 40, 0.06);
+
+    color: #282828;
+}
+
+/* DISCLAIMER ICON */
+
+.df-disclaimer-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 30px;
+    width: 20px;
+    height: 20px;
+
+    margin-top: 2px;
+
+    color: #ffffff;
+    background: #d5a62d;
+    border-radius: 50%;
+
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+
+/* DISCLAIMER CONTENT */
+
+.df-disclaimer-content {
+    flex: 1;
+    min-width: 0;
+}
+
+
+/* DISCLAIMER HEADING */
+
+.df-disclaimer-content h4 {
+    margin: 0 0 4px;
+
+    color: #282828;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 700;
+    /* line-height: 1.4; */
+}
+
+
+/* DISCLAIMER PARAGRAPH */
+
+.df-disclaimer-content p {
+    margin: 0;
+
+    color: #5f5f5f;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 400;
+    /* line-height: 1.9; */
+}
+
+/* =========================================================
+   DIFFERENCE SUMMARY
+   ========================================================= */
+
+.rest-case-difference {
+    margin: 30px 32px 0;
+    padding: 30px;
+
+    border-radius: 15px;
+
+    background: #f7f6f2;
+}
+
+.rest-difference-heading {
+    margin-bottom: 25px;
+}
+
+.rest-difference-heading > span {
+    display: block;
+    margin-bottom: 8px;
+
+    color: #b18a1d;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.rest-difference-heading h4 {
+    margin: 0;
+
+    color: #282828;
+
+    font-size: 25px;
+    line-height: 1.2;
+}
+
+
+/* =========================================================
+   DIFFERENCE GRID
+   ========================================================= */
+
+.rest-difference-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.rest-difference-item {
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    gap: 12px;
+    align-items: start;
+}
+
+.rest-difference-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 26px;
+    height: 26px;
+
+    border-radius: 50%;
+
+    color: #8f7218;
+    background: #f3e6b5;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.rest-difference-item h5 {
+    margin: 2px 0 6px;
+
+    color: #282828;
+
+    font-size: 16px;
+    line-height: 1.3;
+}
+
+.rest-difference-item p {
+    margin: 0;
+
+    color: #626262;
+
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   CLINICAL NOTE
+   ========================================================= */
+
+.rest-case-note {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+
+    margin: 25px 32px 30px;
+    padding-top: 20px;
+
+    border-top: 1px solid #e5e1d9;
+}
+
+.rest-case-note strong {
+    color: #282828;
+
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.rest-case-note p {
+    flex: 1;
+    min-width: 200px;
+
+    margin: 0;
+
+    color: #737373;
+
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   BEFORE & AFTER TABLET RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .rest-before-after-section {
+        padding-right: 7%;
+        padding-left: 7%;
+    }
+
+    .rest-before-after-heading h2 {
+        font-size: 36px;
+    }
+
+    .rest-case-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .rest-case-tag {
+        align-self: flex-start;
+    }
+
+    .rest-before-after-images {
+        padding-right: 25px;
+        padding-left: 25px;
+    }
+
+    .rest-case-difference {
+        margin-right: 25px;
+        margin-left: 25px;
+    }
+
+    .rest-case-note {
+        margin-right: 25px;
+        margin-left: 25px;
+    }
+}
+
+
+/* =========================================================
+   BEFORE & AFTER MOBILE RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .rest-before-after-section {
+        padding: 50px 7%;
+    }
+
+    .rest-before-after-heading h2 {
+        font-size: 30px;
+        letter-spacing: -0.5px;
+    }
+
+    .rest-before-after-images {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+        padding: 22px 18px 0;
+    }
+
+    .rest-case-header {
+        padding: 25px 22px;
+    }
+
+    .rest-case-header h3 {
+        font-size: 23px;
+    }
+
+    .rest-comparison-image {
+        height: 260px;
+    }
+
+    .rest-comparison-content {
+        padding: 18px;
+    }
+
+    .rest-comparison-content h4 {
+        font-size: 19px;
+    }
+
+    .rest-case-difference {
+        margin: 25px 18px 0;
+        padding: 22px;
+    }
+
+    .rest-difference-heading h4 {
+        font-size: 22px;
+    }
+
+    .rest-difference-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .rest-case-note {
+        margin: 22px 18px 25px;
+    }
+
+    .df-case-disclaimer {
+        gap: 14px;
+        margin-top: 30px;
+        padding: 24px 20px;
+        border-left-width: 5px;
+        border-radius: 12px;
+    }
+
+    .df-disclaimer-icon {
+        flex: 0 0 30px;
+        width: 30px;
+        height: 30px;
+
+        font-size: 18px;
+    }
+
+    .df-disclaimer-content h4 {
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+
+    .df-disclaimer-content p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+}
+
+@media (max-width: 400px) {
+
+    .df-case-disclaimer {
+        display: block;
+        padding: 22px 18px;
+    }
+
+    .df-disclaimer-icon {
+        margin-bottom: 15px;
+    }
+
+    .df-disclaimer-content h4 {
+        font-size: 17px;
+    }
+
+    .df-disclaimer-content p {
+        font-size: 14px;
+    }
+
+}
