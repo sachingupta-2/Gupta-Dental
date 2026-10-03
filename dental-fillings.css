@@ -189,7 +189,7 @@ body {
    HERO IMAGE
    ========================================================= */
 
-.rest-hero-image {
+/* .rest-hero-image {
     position: relative;
 
     min-height: 560px;
@@ -247,8 +247,77 @@ body {
 
 .rest-image-note span {
     color: #c9a227;
+} */
+
+/* =========================================================
+   RESPONSIVE HERO IMAGE — NO CROPPING, NO BLACK SPACE
+   ========================================================= */
+
+.rest-hero-image {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f7f6f2; /* Prevent black gaps */
 }
 
+/* Main hero image */
+.rest-hero-image img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+    min-width: 0;
+    min-height: 0;
+    max-width: 100%;
+
+    object-fit: contain;
+    object-position: center;
+
+    background: #f7f6f2;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .rest-hero-image {
+        height: auto;
+        min-height: 0;
+    }
+
+    .rest-hero-image img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .rest-hero-image {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        padding: 0;
+        background: #f7f6f2;
+    }
+
+    .rest-hero-image img {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        min-height: 0;
+
+        object-fit: contain;
+        object-position: center;
+    }
+}
 
 /* =========================================================
    INTRODUCTION SECTION
