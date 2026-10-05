@@ -225,7 +225,7 @@
 .se-intro-image img {
     display: block;
     width: 100%;
-    aspect-ratio: 4 / 5;
+
     object-fit: cover;
     transition: transform .7s ease;
 }
