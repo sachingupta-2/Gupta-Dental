@@ -1284,3 +1284,26 @@
     }
 
 }
+
+
+.smile-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  padding: 14px 21px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  transition: 0.25s ease;
+}
+
+.smile-btn {
+  background: #e5b93d;
+  color: #282828;
+}
+
+.smile-btn:hover {
+  background: #d5a92e;
+  transform: translateY(-2px);
+}
