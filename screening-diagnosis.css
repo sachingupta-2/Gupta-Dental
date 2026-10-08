@@ -315,68 +315,62 @@ body {
 
 .check-look {
   max-width: none;
-
   padding-right: 8%;
   padding-left: 8%;
-
   background: #f7f6f2;
 }
 
 .check-look-heading {
   max-width: 620px;
-
-  margin-bottom: 38px;
+  margin: 0 auto 38px;
+  text-align: center;
 }
 
 .check-look-heading h2 {
   font-size: 42px;
 }
 
+.check-yellow-line {
+  width: 40px;
+  height: 3px;
+  background: #c9a227;
+  margin: 15px auto 20px;
+}
+
 .check-look-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-
   max-width: 1200px;
-
   margin: auto;
-
   gap: 16px;
 }
 
 .check-look-card {
   min-height: 205px;
-
   padding: 28px;
-
   border-radius: 15px;
-
   background: #ffffff;
-
   transition: 0.25s ease;
 }
 
 .check-look-card:hover {
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
-
   transform: translateY(-5px);
 }
 
 .check-look-card > span {
   color: #c9a227;
-
   font-size: 13px;
   font-weight: 700;
 }
 
 .check-look-card h3 {
   margin: 15px 0 8px;
-
   font-size: 20px;
 }
 
 .check-look-card p {
   margin: 0;
-
   font-size: 14px;
 }
 
@@ -1458,4 +1452,582 @@ color: #FFFFFFB8;
     font-size: 13px;
     font-weight: 500;
     line-height: 1.9;
+}
+
+
+
+/* =========================================================
+   PULP DIAGNOSTIC TESTING
+   Dr. Gupta's Dental Clinic theme
+   ========================================================= */
+
+.pulp-testing-section {
+  --pulp-navy: #12213F;
+  --pulp-navy-dark: #0d1a31;
+
+  --pulp-gold: #e6a900;
+  --pulp-gold-soft: #f5c62d;
+  --pulp-gold-light: #fff4c9;
+
+  --pulp-paper: #faf9f5;
+  --pulp-white: #fffefa;
+
+  --pulp-text: #292a2d;
+  --pulp-muted: #666a70;
+
+  --pulp-line: #e6e2d8;
+
+  width: 100%;
+  padding: 105px 5% 95px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #faf9f5 0%,
+      #fffefa 100%
+    );
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   INNER
+   ========================================================= */
+
+.pulp-testing-inner {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+.pulp-testing-heading {
+  max-width: 760px;
+  margin: 0 auto 58px;
+  text-align: center;
+}
+
+
+.pulp-testing-eyebrow {
+  display: inline-block;
+
+  color: #8b6b13;
+
+  font-size: 15px;
+  font-weight: 800;
+
+  letter-spacing: 2.5px;
+  line-height: 1.6;
+}
+
+
+.pulp-testing-line {
+  width: 36px;
+  height: 3px;
+
+  margin: 14px auto 22px;
+
+  background: var(--pulp-gold);
+}
+
+
+.pulp-testing-heading h2 {
+  margin: 0;
+
+  color: var(--pulp-text);
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: clamp(43px, 5.5vw, 70px);
+  font-weight: 500;
+
+  letter-spacing: -1.8px;
+  line-height: .94;
+}
+
+
+.pulp-testing-heading h2 em {
+  color: #b99122;
+  font-style: italic;
+  font-weight: 500;
+}
+
+
+.pulp-testing-heading p {
+  max-width: 620px;
+
+  margin: 24px auto 0;
+
+  color: var(--pulp-muted);
+
+  font-family:
+    Inter,
+    Arial,
+    sans-serif;
+
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+
+/* =========================================================
+   CARDS GRID
+   ========================================================= */
+
+.pulp-testing-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+
+/* =========================================================
+   CARD
+   ========================================================= */
+
+.pulp-test-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 430px;
+
+  padding: 30px 28px 28px;
+
+  border: 1px solid var(--pulp-line);
+  border-radius: 18px;
+
+  background: var(--pulp-white);
+
+  box-shadow:
+    0 16px 40px rgba(18, 33, 63, 0.055);
+
+  overflow: hidden;
+
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease,
+    border-color .35s ease;
+}
+
+
+.pulp-test-card::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: 4px;
+
+  background: var(--pulp-gold);
+
+  transform: scaleX(0);
+
+  transform-origin: left;
+
+  transition: transform .4s ease;
+}
+
+
+.pulp-test-card:hover {
+  transform: translateY(-8px);
+
+  border-color: #d9c67f;
+
+  box-shadow:
+    0 24px 50px rgba(18, 33, 63, 0.10);
+}
+
+
+.pulp-test-card:hover::before {
+  transform: scaleX(1);
+}
+
+
+/* =========================================================
+   FEATURED CARD
+   ========================================================= */
+
+.pulp-test-card-featured {
+  background:
+    linear-gradient(
+      180deg,
+      #fffdf5 0%,
+      #fffefa 100%
+    );
+}
+
+
+/* =========================================================
+   CARD TOP
+   ========================================================= */
+
+.pulp-test-top {
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: space-between;
+
+  margin-bottom: 34px;
+}
+
+
+.pulp-test-number {
+  color: #a99560;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 32px;
+  line-height: 1;
+
+  letter-spacing: -1px;
+}
+
+
+.pulp-test-icon {
+  width: 57px;
+  height: 57px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius:
+    47% 53% 49% 51%;
+
+  background: var(--pulp-gold-light);
+
+  color: #a77b00;
+
+  transition:
+    transform .35s ease,
+    background .35s ease;
+}
+
+
+.pulp-test-icon svg {
+  width: 30px;
+  height: 30px;
+}
+
+
+.pulp-test-card:hover .pulp-test-icon {
+  transform: rotate(-6deg) scale(1.08);
+
+  background: #ffe9a0;
+}
+
+
+/* =========================================================
+   LABEL
+   ========================================================= */
+
+.pulp-test-label {
+  display: inline-block;
+
+  margin-bottom: 10px;
+
+  color: #a27c18;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  letter-spacing: 1.8px;
+}
+
+
+/* =========================================================
+   CARD HEADING
+   ========================================================= */
+
+.pulp-test-card h3 {
+  margin: 0 0 16px;
+
+  color: var(--pulp-navy);
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 34px;
+  font-weight: 500;
+
+  letter-spacing: -.7px;
+
+  line-height: 1.02;
+}
+
+
+/* =========================================================
+   CARD TEXT
+   ========================================================= */
+
+.pulp-test-card p {
+  margin: 0;
+
+  color: var(--pulp-muted);
+
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+
+/* =========================================================
+   CARD BOTTOM NOTE
+   ========================================================= */
+
+.pulp-test-note {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-top: auto;
+  padding-top: 26px;
+
+  color: #58695b;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: .2px;
+}
+
+
+.pulp-test-note span {
+  display: grid;
+
+  flex: 0 0 21px;
+
+  width: 21px;
+  height: 21px;
+
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: #edf2eb;
+
+  color: #4f6953;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   FOOTER MESSAGE
+   ========================================================= */
+
+.pulp-testing-footer {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  max-width: 880px;
+
+  margin: 48px auto 0;
+  padding: 23px 27px;
+
+  border: 1px solid #e4dfd2;
+  border-radius: 14px;
+
+  background: #fffdf6;
+}
+
+
+.pulp-testing-footer-mark {
+  display: grid;
+
+  flex: 0 0 40px;
+
+  width: 40px;
+  height: 40px;
+
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: var(--pulp-navy);
+
+  color: #f4d46b;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 24px;
+}
+
+
+.pulp-testing-footer strong {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: var(--pulp-navy);
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 21px;
+  font-weight: 600;
+}
+
+
+.pulp-testing-footer p {
+  margin: 0;
+
+  color: #73756f;
+
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 950px) {
+
+  .pulp-testing-section {
+    padding: 85px 5% 80px;
+  }
+
+
+  .pulp-testing-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .pulp-test-card {
+    min-height: auto;
+  }
+
+
+  .pulp-test-top {
+    margin-bottom: 25px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .pulp-testing-section {
+    padding: 70px 18px 65px;
+  }
+
+
+  .pulp-testing-heading {
+    margin-bottom: 42px;
+  }
+
+
+  .pulp-testing-heading h2 {
+    font-size: 45px;
+  }
+
+
+  .pulp-testing-heading p {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+
+  .pulp-test-card {
+    padding: 26px 23px 24px;
+
+    border-radius: 15px;
+  }
+
+
+  .pulp-test-number {
+    font-size: 28px;
+  }
+
+
+  .pulp-test-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+
+  .pulp-test-card h3 {
+    font-size: 31px;
+  }
+
+
+  .pulp-test-card p {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+
+  .pulp-testing-footer {
+    align-items: flex-start;
+
+    padding: 20px;
+
+    gap: 13px;
+  }
+
+
+  .pulp-testing-footer-mark {
+    flex-basis: 34px;
+
+    width: 34px;
+    height: 34px;
+
+    font-size: 20px;
+  }
+
+
+  .pulp-testing-footer strong {
+    font-size: 19px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .pulp-testing-section *,
+  .pulp-testing-section *::before,
+  .pulp-testing-section *::after {
+    animation: none !important;
+    transition-duration: .01ms !important;
+  }
+
 }

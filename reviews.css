@@ -844,7 +844,7 @@
 /* SCROLL REVEALS */
 
 .clinic-reviews .cr-reveal {
-  opacity: 0;
+  opacity: 1;
   transform: translateY(26px);
   transition: opacity .75s ease, transform .75s cubic-bezier(.2,.75,.25,1);
 }
@@ -1651,7 +1651,7 @@
 /* Reveal on scroll: JavaScript adds .pv-reveal to cards */
 
 .pv-card.pv-reveal {
-  opacity: 0;
+  opacity: 1;
   transform: translateY(18px);
   transition:
     opacity 0.55s ease,
@@ -2115,5 +2115,42 @@
 
   .clinic-reviews .cr-review-section {
     padding: 60px 6% 68px;
+  }
+}
+
+/* =========================================================
+   SOCIABLEKIT FREE GOOGLE REVIEWS
+   Review area only — existing site design stays intact.
+   ========================================================= */
+
+.clinic-reviews .cr-review-grid {
+  display: block;
+  width: 100%;
+}
+
+.clinic-reviews .cr-review-grid .sk-ww-google-reviews {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: 360px;
+}
+
+.clinic-reviews .cr-review-grid .sk-ww-google-reviews iframe {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.clinic-reviews .cr-review-grid .sk-ww-google-reviews,
+.clinic-reviews .cr-review-grid .sk-ww-google-reviews * {
+  box-sizing: border-box;
+}
+
+.clinic-reviews .cr-results-note {
+  margin-top: 22px;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .clinic-reviews .cr-review-grid .sk-ww-google-reviews {
+    min-height: 320px;
   }
 }

@@ -489,11 +489,6 @@
 
   <div class="container stats-grid">
 
-
-
-
-
-
   <div class="stat-item">
     <div class="stat-icon">
       <!-- Award Icon -->
@@ -1086,7 +1081,7 @@
             href="personalised-care.html"
             class="difference-feature"
             data-title="Personalised Care"
-            data-image="clinic_photos_shortlist/personalised care.png"
+            data-image="clinic_photos_shortlist/Personalised Care index.png"
             data-description="Treatment planning is adapted to each patient's concerns, needs, preferences, and clinical requirements."
             data-points="Individualised treatment planning|Clear communication|Care based on patient needs"
         >
@@ -1094,7 +1089,7 @@
             <div class="feature-image">
 
                 <img
-                    src="clinic_photos_shortlist/personalised care.png"
+                    src="clinic_photos_shortlist/Personalised Care index.png"
                     alt="Personalised dental care"
                     loading="lazy"
                 >
@@ -1496,7 +1491,7 @@
             <!-- SLIDER -->
             <div class="services-slider">
                 <!-- CARD 1 -->
-                <article class="service-card">
+                <article class="service-card" data-link="screening-diagnosis.html">
 
                     <div class="service-card-image">
 
@@ -1527,7 +1522,7 @@
                 </article>
 
                 <!-- CARD 2 -->
-                <article class="service-card">
+                <article class="service-card" data-link="dental-fillings.html">
 
                     <div class="service-card-image">
 
@@ -1559,7 +1554,7 @@
 
 
                 <!-- CARD 3 -->
-                <article class="service-card">
+                <article class="service-card" data-link="root-canal.html">
 
                     <div class="service-card-image">
 
@@ -1591,7 +1586,7 @@
 
 
                 <!-- CARD 4 -->
-                <article class="service-card">
+                <article class="service-card" data-link="teeth-extraction.html">
 
                     <div class="service-card-image">
 
@@ -1621,7 +1616,7 @@
 
                 </article>
                 <!-- CARD 5 -->
-                <article class="service-card">
+                <article class="service-card" data-link="smile-enhancement.html">
 
                     <div class="service-card-image">
 
@@ -1653,7 +1648,7 @@
 
 
                 <!-- CARD 6 -->
-                <article class="service-card">
+                <article class="service-card" data-link="preventive-care.html">
 
                     <div class="service-card-image">
 
@@ -1684,7 +1679,7 @@
                 </article>
 
                  <!-- CARD 7 -->
-                <article class="service-card">
+                <article class="service-card" data-link="missing-teeth.html">
 
                     <div class="service-card-image">
 
@@ -1715,7 +1710,7 @@
                 </article>
 
                 <!-- CARD 8 -->
-                <article class="service-card">
+                <article class="service-card" data-link="gum-health.html">
 
                     <div class="service-card-image">
 
@@ -1746,7 +1741,7 @@
 
 
                 <!-- CARD 9 -->
-                <article class="service-card">
+                <article class="service-card" data-link="emergency-care.html">
 
                     <div class="service-card-image">
 
@@ -2803,6 +2798,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
+});
+
+
+
+
+document.querySelectorAll('.service-card[data-link]').forEach(card => {
+    card.style.cursor = 'pointer';
+
+    card.addEventListener('click', () => {
+        window.location.href = card.dataset.link;
+    });
 });
 </script>
 
