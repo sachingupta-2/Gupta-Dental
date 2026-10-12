@@ -8452,17 +8452,17 @@ footer {
         gap: 24px;
     }
 
-    .brand-name {
+    /* .brand-name {
         font-size: clamp(1.55rem, 1.65vw, 2.22rem);
-    }
+    } */
 
     nav ul {
         gap: clamp(12px, 1.35vw, 24px);
     }
 
-    nav a {
-        font-size: clamp(1rem, 1vw, 1.25rem);
-    }
+     nav a {
+        font-size: clamp(1rem, 1.15rem, 1.25rem);
+    } 
 
     .appointment-trigger {
         min-height: 44px;
@@ -8494,13 +8494,14 @@ footer {
         flex-basis: 44px;
     }
 
-    .brand-name {
+    /* .brand-name {
         max-width: clamp(150px, 15vw, 245px);
         overflow: hidden;
         text-overflow: ellipsis;
+    
         white-space: nowrap;
-        font-size: clamp(1.15rem, 1.25vw, 1.65rem);
-    }
+        font-size: clamp(1.25rem, 1.45vw, 1.65rem);
+    } */
 
     nav {
         /* min-width: 0;
@@ -8533,7 +8534,8 @@ footer {
 
     nav a {
         /* padding: 7px 1px;*/
-        font-size: clamp(.65rem, .75vw, .84rem); 
+        /* font-size: clamp(.65rem, .75vw, .84rem);  */
+        font-size: clamp(.85rem, .95rem, 1.15rem); 
         /* letter-spacing: -.01em; */
         padding-left: 8px;
         padding-right: 8px;
@@ -8565,10 +8567,10 @@ footer {
         gap: 8px;
     }
 
-    .brand-name {
+    /* .brand-name {
         max-width: 155px;
         font-size: 1rem;
-    }
+    } */
 
     nav ul {
         gap: 5px;
@@ -8607,13 +8609,13 @@ footer {
         gap: 10px;
     }
 
-    .brand-name {
+    /* .brand-name {
         max-width: 46vw;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
         font-size: clamp(1rem, 3vw, 1.45rem);
-    }
+    } */
 
     .appointment-trigger {
         min-height: 42px;
@@ -8711,10 +8713,10 @@ footer {
     white-space:nowrap;
 }
 
-    .brand-name {
+    /* .brand-name {
         max-width: 40vw;
         font-size: .98rem;
-    }
+    } */
 
     .brand img {
         width: 40px !important;
@@ -8813,10 +8815,10 @@ footer {
         gap: 5px;
     }
 
-    .brand-name {
+    /* .brand-name {
         max-width: 34vw;
         font-size: .86rem;
-    }
+    } */
 
     .appointment-trigger {
         padding-inline: 8px;
