@@ -211,7 +211,7 @@
 
     overflow: hidden;
 
-    background: var(--cde-dark);
+    /* background: var(--cde-dark); */
 }
 
 .cde-hero-photo img {
@@ -225,9 +225,9 @@
     transition: transform 0.7s ease;
 }
 
-.cde-hero-photo:hover img {
+/* .cde-hero-photo:hover img {
     transform: scale(1.025);
-}
+} */
 
 
 /* HERO HANDWRITTEN NOTE */

@@ -8499,25 +8499,48 @@ footer {
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        font-size: clamp(1rem, 1.25vw, 1.65rem);
+        font-size: clamp(1.15rem, 1.25vw, 1.65rem);
     }
 
     nav {
-        min-width: 0;
-        width: 100%;
-    }
-
-    nav ul {
-        width: 100%;
+        /* min-width: 0;
+        width: 100%; */
+        /* width: fit-content; */
         max-width: 100%;
-        gap: clamp(5px, .72vw, 13px);
+        /* flex: 0 1 auto; */
+        min-width: 0;
         justify-content: center;
     }
 
+    nav ul {
+        /* width: 100%;
+        max-width: 100%;
+        gap: clamp(5px, .72vw, 13px);
+        justify-content: center; */
+        display: flex;
+        width: max-content;
+        max-width: 100%;
+
+        margin: 0;
+        padding: 0;
+
+        gap: clamp(12px, 1.2vw, 20px);
+        justify-content: center;
+        align-items: center;
+
+        list-style: none;
+    }
+
     nav a {
-        padding: 7px 1px;
-        font-size: clamp(.61rem, .67vw, .76rem);
-        letter-spacing: -.01em;
+        /* padding: 7px 1px;*/
+        font-size: clamp(.65rem, .75vw, .84rem); 
+        /* letter-spacing: -.01em; */
+        padding-left: 8px;
+        padding-right: 8px;
+        white-space: nowrap;
+    }
+    nav ul li {
+        flex: 0 0 auto;
     }
 
     .nav-cta {
