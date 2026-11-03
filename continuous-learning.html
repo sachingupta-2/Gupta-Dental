@@ -263,8 +263,8 @@
             <div class="cde-line"></div>
 
             <h1>
-                Continuing<br>
-                Dental Education
+                20+ Years Experience<br>
+                Continuous Learning
             </h1>
 
             <h2>
@@ -273,9 +273,10 @@
             </h2>
 
             <p>
-                We regularly update our knowledge and skills through
-                courses, conferences and hands-on training, so we can
-                offer you the most up-to-date and evidence-based care.
+               Established in 2013, with a focus on thoughtful, precision-focused care, 
+               Dr. Gupta's Dental Clinic has always prioritised continuous learning and professional development.
+               We regularly attend recognised courses, 
+               conferences and workshops to enhance our knowledge and skills.
             </p>
 
             <!-- <a href="#cde-journey" class="cde-btn">
@@ -422,6 +423,162 @@
 
     </section>
 
+
+<!-- =====================================================
+     PROFESSIONAL DEVELOPMENT & RECOGNITION SLIDER
+===================================================== -->
+
+<section class="achievement-section" id="professional-achievements">
+
+    <div class="achievement-container">
+
+        <div class="achievement-heading">
+            <span class="achievement-eyebrow">
+                PROFESSIONAL JOURNEY
+            </span>
+
+            <h2>
+                Learning that continues.
+                <span>Knowledge that grows.</span>
+            </h2>
+
+            <p>
+                A commitment to continued learning, professional
+                development and advancing dental knowledge.
+            </p>
+        </div>
+
+        <div class="achievement-carousel" data-achievement-carousel>
+
+            <!-- SLIDE 1: DENTAL CONFERENCE -->
+            <article class="achievement-slide is-active"
+                     aria-hidden="false">
+
+                <div class="achievement-photo">
+                    <img
+                        src="certificates/IDA Conference Certificate.png"
+                        alt="Certificate presentation at a dental conference"
+                        loading="eager"
+                    >
+                </div>
+
+                <div class="achievement-content">
+
+                    <span class="achievement-number">
+                        RECOGNITION · 01
+                    </span>
+
+                    <div class="achievement-accent"></div>
+
+                    <h3>
+                        Professional Dental Conferences
+                    </h3>
+
+                    <p>
+                        Opportunities to engage with the wider
+                        dental community, exchange knowledge and
+                        stay connected with developments in dentistry.
+                    </p>
+
+                    <div class="achievement-footer">
+                        <span class="achievement-footer-icon">✦</span>
+                        <span>Continuing Professional Development</span>
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- SLIDE 2: CLINIC CERTIFICATE -->
+            <article class="achievement-slide"
+                     aria-hidden="true">
+
+                <div class="achievement-photo">
+                    <img
+                        src="certificates/Certificate Presentation Pune.png"
+                        alt="Certificate presentation in a dental clinic"
+                        loading="lazy"
+                    >
+                </div>
+
+                <div class="achievement-content">
+
+                    <span class="achievement-number">
+                        LEARNING · 02
+                    </span>
+
+                    <div class="achievement-accent"></div>
+
+                    <h3>
+                        Learning Through Clinical Experience
+                    </h3>
+
+                    <p>
+                        Professional development and clinical learning
+                        contribute to a thoughtful approach to dental
+                        diagnosis, treatment planning and patient care.
+                    </p>
+
+                    <div class="achievement-footer">
+                        <span class="achievement-footer-icon">✦</span>
+                        <span>A Commitment to Clinical Excellence</span>
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- SLIDER CONTROLS -->
+            <div class="achievement-controls">
+
+                <div class="achievement-dots"
+                     role="group"
+                     aria-label="Choose an achievement">
+
+                    <button
+                        class="achievement-dot is-active"
+                        type="button"
+                        aria-label="Show dental conference photo"
+                        aria-pressed="true">
+                    </button>
+
+                    <button
+                        class="achievement-dot"
+                        type="button"
+                        aria-label="Show clinical learning photo"
+                        aria-pressed="false">
+                    </button>
+
+                </div>
+
+                <div class="achievement-arrows">
+
+                    <button
+                        class="achievement-arrow achievement-prev"
+                        type="button"
+                        aria-label="Previous achievement">
+                        &#8592;
+                    </button>
+
+                    <button
+                        class="achievement-arrow achievement-next"
+                        type="button"
+                        aria-label="Next achievement">
+                        &#8594;
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
     <!-- =========================================================
      CONTINUOUS CERTIFICATE SLIDER
      ========================================================= -->
@@ -433,6 +590,7 @@
         <div class="certificate-marquee-track">
 
             <!-- ORIGINAL CERTIFICATES -->
+
 
             <div class="certificate-card">
                 <img
@@ -479,6 +637,23 @@
                     src="certificates/Certificate_36.jpg"
                     alt="Dental certificate"
                     loading="lazy"
+                >
+            </div>
+
+
+                        <div class="certificate-card">
+                <img
+                    src="certificates/Certificate Presentation Pune.png"
+                    alt=""
+                    aria-hidden="true"
+                >
+            </div>
+
+            <div class="certificate-card">
+                <img
+                    src="certificates/IDA Conference Certificate.png"
+                    alt=""
+                    aria-hidden="true"
                 >
             </div>
 
@@ -1330,6 +1505,109 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 });
+
+
+// other archivement section 
+document.querySelectorAll("[data-achievement-carousel]").forEach((carousel) => {
+    const slides = Array.from(
+        carousel.querySelectorAll(".achievement-slide")
+    );
+
+    const dots = Array.from(
+        carousel.querySelectorAll(".achievement-dot")
+    );
+
+    const previousButton = carousel.querySelector(".achievement-prev");
+    const nextButton = carousel.querySelector(".achievement-next");
+
+    if (slides.length < 2) return;
+
+    let currentIndex = Math.max(
+        0,
+        slides.findIndex((slide) => slide.classList.contains("is-active"))
+    );
+
+    let timer = null;
+
+    const reducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    );
+
+    function showSlide(index) {
+        currentIndex = (index + slides.length) % slides.length;
+
+        slides.forEach((slide, i) => {
+            const isActive = i === currentIndex;
+
+            slide.classList.toggle("is-active", isActive);
+            slide.setAttribute("aria-hidden", String(!isActive));
+        });
+
+        dots.forEach((dot, i) => {
+            const isActive = i === currentIndex;
+
+            dot.classList.toggle("is-active", isActive);
+            dot.setAttribute("aria-pressed", String(isActive));
+        });
+    }
+
+    function stopAutoplay() {
+        if (timer !== null) {
+            window.clearInterval(timer);
+            timer = null;
+        }
+    }
+
+    function startAutoplay() {
+        stopAutoplay();
+
+        if (reducedMotion.matches || document.hidden) return;
+
+        timer = window.setInterval(() => {
+            showSlide(currentIndex + 1);
+        }, 6000);
+    }
+
+    previousButton?.addEventListener("click", () => {
+        showSlide(currentIndex - 1);
+        startAutoplay();
+    });
+
+    nextButton?.addEventListener("click", () => {
+        showSlide(currentIndex + 1);
+        startAutoplay();
+    });
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+            showSlide(index);
+            startAutoplay();
+        });
+    });
+
+    carousel.addEventListener("mouseenter", stopAutoplay);
+    carousel.addEventListener("mouseleave", startAutoplay);
+    carousel.addEventListener("focusin", stopAutoplay);
+    carousel.addEventListener("focusout", (event) => {
+        if (!carousel.contains(event.relatedTarget)) {
+            startAutoplay();
+        }
+    });
+
+    document.addEventListener("visibilitychange", () => {
+        if (document.hidden) {
+            stopAutoplay();
+        } else {
+            startAutoplay();
+        }
+    });
+
+    reducedMotion.addEventListener?.("change", startAutoplay);
+
+    showSlide(currentIndex);
+    startAutoplay();
+});
+
 
 </script>
 </body>

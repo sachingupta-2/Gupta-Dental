@@ -169,190 +169,110 @@ body {
 
 
 /* =========================================================
-   HERO
+   MAGNIFICATION PAGE — HERO
+   Namespaced to avoid affecting other pages
    ========================================================= */
 
-.hero {
+.magnification-hero {
     display: grid;
-
-    grid-template-columns: 1fr 1.08fr;
-
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr);
     min-height: 440px;
-
-    background: #0c172d;
-
+    background: #faf9f6;
     overflow: hidden;
 }
 
-
-/* =========================================================
-   HERO LEFT CONTENT
-   ========================================================= */
-
-.hero-copy {
+/* Left content */
+.magnification-hero-copy {
+    min-width: 0;
     padding: 70px 8% 55px;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
-
     position: relative;
-
     z-index: 2;
 }
 
-.eyebrow_hero {
-    font-size: 12px;
-
-    font-weight: 800;
-
-    letter-spacing: 1.8px;
-
+.magnification-eyebrow {
     margin: 0;
+    color: #000000;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    line-height: 1.5;
 }
 
-.yellow-line {
+/* Hero-only gold divider; .yellow-line remains for the other sections */
+.magnification-yellow-line {
     width: 38px;
-
     height: 4px;
-
+    flex: 0 0 auto;
     background: #f5c62d;
-
     margin: 12px 0 22px;
 }
 
-
-/* HERO HEADING */
-
-.hero h1 {
-    font-size: 54px;
-
-    line-height: 1.02;
-
-    letter-spacing: -2px;
-
+.magnification-hero h1 {
     margin: 0 0 20px;
-
-    color: #FFFFFF;
+    color: #202223;
+    font-size: 54px;
+    line-height: 1.02;
+    letter-spacing: -2px;
 }
 
-.hero h2 {
-    font-size: 24px;
-
-    line-height: 1.15;
-
-    font-weight: 400;
-
+.magnification-hero h2 {
     margin: 0 0 18px;
-
-    color: #e7cb6b;
+    color: #151b24;
+    font-size: 24px;
+    line-height: 1.15;
+    font-weight: 400;
 }
 
-.hero p:not(.eyebrow) {
-    font-size: 17px;
-
-    line-height: 1.5;
-
+.magnification-hero-description {
     max-width: 580px;
-
-    color: rgba(255, 255, 255, 0.76);
-
-    margin-top: 0;
+    margin: 0;
+    color: #333;
+    font-size: 17px;
+    line-height: 1.5;
 }
 
-
-/* =========================================================
-   HERO IMAGE
-   ========================================================= */
-
-/*
-   SINGLE BACKGROUND IMAGE
-
-   Change ONLY this path if you want to use another image.
-
-   Example:
-   assets/hero.jpg
-
-   If your image is inside:
-   our-difference/magnification.jpg
-
-   use:
-   ../our-difference/magnification.jpg
-
-   depending on where this CSS file is located.
-*/
-
-.hero-image {
+/* Right-side hero image */
+.magnification-hero-image {
+    min-width: 0;
     min-height: 440px;
-
     position: relative;
-
     overflow: hidden;
-
     background-image:
         linear-gradient(
             rgba(0, 0, 0, 0.08),
             rgba(0, 0, 0, 0.08)
         ),
-        url("clinic_photos_shortlist/header\ img\ magnification.png");
-
+        url("clinic_photos_shortlist/header img magnification.png");
     background-size: cover;
-
     background-position: center;
-
     background-repeat: no-repeat;
 }
 
-
-/*
-   IMPORTANT:
-
-   If your CSS file is in the SAME folder as the HTML file
-   and "assets" is next to the HTML, use:
-
-   url("assets/hero.jpg")
-
-   If your CSS file is inside:
-
-   css/magnification.css
-
-   and your assets folder is:
-
-   assets/hero.jpg
-
-   then use:
-
-   url("../assets/hero.jpg")
-*/
-
-
-/* =========================================================
-   HANDWRITTEN NOTE
-   ========================================================= */
-
-.hand-note {
+/* Optional handwritten note (currently commented out in HTML) */
+.magnification-hand-note {
     position: absolute;
-
     right: 7%;
-
     top: 20%;
-
-    font-size: 25px;
-
-    line-height: 1.2;
-
-    font-style: italic;
-
-    font-family: cursive;
-
-    text-align: center;
-
-    color: #151b24;
-
-    text-shadow:
-        0 1px 2px rgba(255, 255, 255, .45);
-
     z-index: 2;
+    font-size: 25px;
+    line-height: 1.2;
+    font-style: italic;
+    font-family: cursive;
+    text-align: center;
+    color: #151b24;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, .45);
+}
+
+
+/* Shared yellow divider for the content sections below the hero */
+.yellow-line {
+    width: 38px;
+    height: 4px;
+    background: #f5c62d;
+    margin: 12px 0 22px;
 }
 
 
@@ -704,63 +624,56 @@ body {
 
 
 /* =========================================================
-   RCT IMAGE
-   ========================================================= */
+   RCT IMAGE — RESPONSIVE CIRCLE
+========================================================= */
 
 .rct-image {
-    height: 220px;
-
     position: relative;
+
+    width: min(100%, 320px);
+    aspect-ratio: 1 / 1;
+    height: auto;
+
+    justify-self: center;
+
+    overflow: hidden;
+    border-radius: 50%;
+
+    background: #ffffff;
 }
 
+/* Automatically fit portrait, landscape or square images */
+.rct-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 50%;
+}
+
+/* MB2 label */
 .rct-image strong {
     position: absolute;
 
-    right: 4%;
-
-    top: 5%;
-
-    background: #f7c934;
+    top: 6%;
+    right: 6%;
+    z-index: 2;
 
     padding: 7px 10px;
 
+    background: #f7c934;
+    color: #12213F;
+
     border-radius: 8px;
-
     font-size: 13px;
+    font-weight: 700;
 }
 
 
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
-footer {
-    background: #303238;
-
-    color: #fff;
-
-    padding: 55px 8%;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 30px;
-}
-
-footer h2 {
-    margin: 0;
-
-    font-size: 28px;
-}
-
-footer p {
-    color: #ddd;
-
-    margin: 10px 0 0;
-}
 
 
 /* =========================================================
@@ -788,17 +701,17 @@ footer p {
 
     /* HERO */
 
-    .hero {
+    .magnification-hero {
         grid-template-columns: 1fr 1fr;
 
         min-height: 520px;
     }
 
-    .hero-copy {
+    .magnification-hero-copy {
         padding: 55px 7%;
     }
 
-    .hero-image {
+    .magnification-hero-image {
         min-height: 520px;
 
         background-position: center;
@@ -808,9 +721,16 @@ footer p {
     /* OTHER SECTIONS */
 
     .intro,
-    .everyday,
-    .rct {
+    .everyday {
         grid-template-columns: 1fr;
+    }
+    .rct{
+        
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+    .rct-image {
+        width: min(75vw, 280px);
     }
 
     .compare {
@@ -861,7 +781,7 @@ footer p {
 
     /* HERO */
 
-    .hero {
+    .magnification-hero {
         display: flex;
 
         flex-direction: column;
@@ -869,28 +789,28 @@ footer p {
         min-height: auto;
     }
 
-    .hero-copy {
+    .magnification-hero-copy {
         padding: 55px 7% 45px;
     }
 
-    .hero h1 {
+    .magnification-hero h1 {
         font-size: 42px;
 
         letter-spacing: -1.5px;
     }
 
-    .hero h2 {
+    .magnification-hero h2 {
         font-size: 22px;
     }
 
-    .hero p:not(.eyebrow) {
+    .magnification-hero-description {
         font-size: 16px;
     }
 
 
     /* IMAGE */
 
-    .hero-image {
+    .magnification-hero-image {
         min-height: 360px;
 
         height: 360px;
@@ -898,7 +818,7 @@ footer p {
         background-position: center;
     }
 
-    .hand-note {
+    .magnification-hand-note {
         right: 7%;
 
         top: 18%;
@@ -932,5 +852,8 @@ footer p {
         height: 170px;
 
         margin-bottom: 15px;
+    }
+    .rct-image {
+        width: min(80vw, 240px);
     }
 }

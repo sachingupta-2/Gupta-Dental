@@ -259,12 +259,51 @@
        ROOT CANAL HERO
        ===================================================== -->
 
-  <section class="rct-hero">
+    <section class="rct-hero rct-hero--premium">
+
+    <!-- Decorative background artwork; no photograph is used in this hero. -->
+    <div class="rct-hero-decoration" aria-hidden="true">
+      <span class="rct-hero-ring rct-hero-ring--outer"></span>
+      <span class="rct-hero-ring rct-hero-ring--inner"></span>
+
+      <svg class="rct-hero-tooth" viewBox="0 0 180 200" fill="none">
+        <path
+          d="M46 26
+             C31 32 23 47 26 67
+             C29 85 39 96 43 113
+             C48 133 49 166 62 169
+             C74 172 77 133 90 133
+             C103 133 106 172 118 169
+             C131 166 132 133 137 113
+             C141 96 151 85 154 67
+             C157 47 149 32 134 26
+             C118 20 105 30 90 30
+             C75 30 62 20 46 26Z"
+          stroke="currentColor"
+          stroke-width="2.2"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M53 49 C65 41 78 45 90 45 C102 45 115 41 127 49"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+        />
+        <path
+          d="M90 46V117"
+          stroke="currentColor"
+          stroke-width="1.6"
+          stroke-linecap="round"
+          stroke-dasharray="4 6"
+        />
+      </svg>
+    </div>
 
     <div class="rct-hero-content">
 
-      <!-- <p class="rct-eyebrow">OUR DIFFERENCE</p> -->
-      <div class="rct-yellow-line"></div>
+      <p class="rct-hero-eyebrow">TOOTH-PRESERVING DENTISTRY</p>
+
+      <div class="rct-yellow-line" aria-hidden="true"></div>
 
       <h1>Root Canal Treatment</h1>
 
@@ -272,36 +311,55 @@
         Saving your natural tooth with precision, care and comfort.
       </h2>
 
-      <p>
+      <p class="rct-hero-description">
         Root canal treatment helps remove infection from inside a tooth,
         relieve pain and preserve your natural smile. Our approach focuses
         on careful diagnosis, precise treatment and long-term tooth health.
       </p>
 
-      <a 
-  href="Pdfs/Root_Canal_.pdf" 
-  class="rct-btn rct-appointment-btn"
-  target="_blank" rel="noopener"
->
-  Read About RCT <span>→</span>
-</a>
+      <div class="rct-hero-actions">
 
-    </div>
+        <a
+          href="Pdfs/Root_Canal_.pdf"
+          class="rct-btn rct-guide-btn"
+          target="_blank"
+          rel="noopener"
+        >
+          Read About RCT <span aria-hidden="true">→</span>
+        </a>
 
-    <div class="rct-hero-image">
+        <button
+          type="button"
+          class="rct-btn rct-btn--outline rct-appointment-btn"
+        >
+          Discuss Your Dental Concern
+          <span aria-hidden="true">→</span>
+        </button>
 
-      <img
-        src="clinic_photos_shortlist/Before and After Root Canal Treatment.png"
-        alt="Root canal treatment dental procedure"
-        loading="eager"
-      >
-
-      <div class="rct-hand-note">
-        Save your<br>
-        natural tooth<br>
-        whenever possible<br>
-        ♡
       </div>
+
+      <div class="rct-hero-assurance" aria-label="Our treatment approach">
+
+        <div class="rct-hero-assurance-item">
+          <span class="rct-hero-assurance-number">01</span>
+          <span class="rct-hero-assurance-label">Careful diagnosis</span>
+        </div>
+
+        <div class="rct-hero-assurance-item">
+          <span class="rct-hero-assurance-number">02</span>
+          <span class="rct-hero-assurance-label">Precise treatment</span>
+        </div>
+
+        <div class="rct-hero-assurance-item">
+          <span class="rct-hero-assurance-number">03</span>
+          <span class="rct-hero-assurance-label">Tooth restoration</span>
+        </div>
+
+      </div>
+
+      <!-- <p class="rct-hero-note">
+        Treatment recommendations are based on individual clinical findings.
+      </p> -->
 
     </div>
 

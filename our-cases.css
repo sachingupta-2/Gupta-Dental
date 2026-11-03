@@ -1,0 +1,1539 @@
+/* ================================================================
+   OUR CASES — PAGE-SCOPED COMPONENT STYLES
+
+   Header and footer are supplied by the existing site layout.
+   Palette: warm cream, charcoal, navy and muted gold.
+================================================================ */
+
+/* ================================================================
+   1. BASE STYLES
+================================================================ */
+
+.oc-page {
+    --oc-ink: #252a32;
+    --oc-navy: #172642;
+    --oc-navy-deep: #101a2d;
+    --oc-gold: #f2c94c;
+    --oc-gold-dark: #9b781e;
+    --oc-cream: #f8f6ef;
+    --oc-cream-deep: #f0ece2;
+    --oc-white: #fff;
+    --oc-muted: #6b6d72;
+    --oc-border: #e5dfd2;
+
+    color: var(--oc-ink);
+    background: var(--oc-white);
+    font-family: Inter, Arial, sans-serif;
+    overflow: clip;
+}
+
+.oc-page *,
+.oc-page *::before,
+.oc-page *::after {
+    box-sizing: border-box;
+}
+
+.oc-page img {
+    max-width: 100%;
+}
+
+.oc-wrap {
+    width: min(1180px, calc(100% - 48px));
+    margin-inline: auto;
+}
+
+.oc-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+
+    color: #f2d77a;
+
+    font-size: 10px;
+    font-weight: 800;
+    line-height: 1.5;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.oc-eyebrow::before {
+    content: "";
+    display: inline-block;
+
+    width: 28px;
+    height: 1px;
+
+    background: currentColor;
+}
+
+.oc-eyebrow--dark {
+    color: var(--oc-gold-dark);
+}
+
+.oc-gold-rule {
+    display: block;
+
+    width: 44px;
+    height: 3px;
+    margin: 24px 0;
+
+    background: var(--oc-gold);
+}
+
+.oc-page h1,
+.oc-page h2,
+.oc-page h3 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    letter-spacing: -0.025em;
+}
+
+.oc-page p {
+    text-wrap: pretty;
+}
+
+
+/* ================================================================
+   2. SHARED BUTTONS AND LINKS
+================================================================ */
+
+.oc-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+
+    min-height: 47px;
+    padding: 13px 19px;
+
+    border: 1px solid transparent;
+    border-radius: 3px;
+
+    font: 700 12px/1.2 Inter, Arial, sans-serif;
+    text-decoration: none;
+
+    transition:
+        transform 0.22s ease,
+        background 0.22s ease,
+        border-color 0.22s ease,
+        box-shadow 0.22s ease;
+}
+
+.oc-button:hover {
+    transform: translateY(-2px);
+}
+
+.oc-button--gold {
+    color: #202632;
+    background: var(--oc-gold);
+    border-color: var(--oc-gold);
+}
+
+.oc-button--gold:hover {
+    background: #ffdc68;
+    border-color: #ffdc68;
+    box-shadow: 0 8px 20px #00000015;
+}
+
+.oc-button--light {
+    color: #fff;
+    border-color: #ffffff55;
+    background: #ffffff08;
+}
+
+.oc-button--light:hover {
+    background: #ffffff12;
+    border-color: #ffffffa0;
+}
+
+.oc-button--dark {
+    color: #fff;
+    border-color: var(--oc-navy);
+    background: var(--oc-navy);
+}
+
+.oc-button--dark:hover {
+    background: #273b5d;
+}
+
+.oc-text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    color: var(--oc-gold-dark);
+
+    font-size: 12px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.oc-text-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+
+/* ================================================================
+   3. DIRECTORY HERO
+================================================================ */
+
+.oc-hero {
+    position: relative;
+    isolation: isolate;
+
+    color: #fff;
+    background: var(--oc-navy);
+
+    overflow: hidden;
+}
+
+.oc-hero::before {
+    content: "";
+
+    position: absolute;
+    z-index: -1;
+
+    width: 620px;
+    height: 620px;
+
+    right: -210px;
+    top: -260px;
+
+    border: 1px solid #f2d77a25;
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 0 52px #f2d77a08,
+        0 0 0 104px #f2d77a05;
+}
+
+.oc-hero__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+    align-items: center;
+    gap: 55px;
+
+    min-height: 485px;
+    padding-block: 70px;
+}
+
+.oc-hero__content {
+    max-width: 730px;
+}
+
+.oc-hero h1 {
+    margin: 22px 0 0;
+
+    font-size: clamp(46px, 6vw, 76px);
+    font-weight: 500;
+    line-height: 0.98;
+    letter-spacing: -0.045em;
+}
+
+.oc-hero h1 em,
+.oc-section-heading h2 em,
+.oc-contact-band h2 em,
+.oc-category-hero h1 em,
+.oc-related-area h2 em {
+    color: var(--oc-gold);
+    font-weight: 500;
+}
+
+.oc-hero__content > p {
+    max-width: 650px;
+    margin: 0;
+
+    color: #ffffffb9;
+
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.oc-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    margin-top: 28px;
+}
+
+.oc-hero__note {
+    margin-top: 21px !important;
+
+    color: #ffffff78 !important;
+
+    font-size: 10px !important;
+    line-height: 1.7 !important;
+}
+
+
+/* Hero illustration */
+
+.oc-hero__art {
+    position: relative;
+
+    display: grid;
+    place-items: center;
+
+    min-height: 320px;
+
+    color: var(--oc-gold);
+}
+
+.oc-art-orbit {
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    border: 1px solid #f2d77a38;
+    border-radius: 50%;
+}
+
+.oc-art-orbit--two {
+    width: 250px;
+    height: 250px;
+
+    border-style: dashed;
+
+    transform: rotate(24deg);
+}
+
+.oc-art-tooth {
+    display: grid;
+    place-items: center;
+
+    width: 178px;
+    height: 178px;
+
+    border: 1px solid #f2d77a80;
+    border-radius: 50%;
+
+    background: #ffffff06;
+
+    box-shadow:
+        0 0 0 16px #ffffff05,
+        0 0 0 35px #ffffff03;
+}
+
+.oc-art-tooth svg {
+    width: 92px;
+    height: 98px;
+}
+
+.oc-art-caption {
+    position: absolute;
+    bottom: 0;
+
+    color: #ffffff72;
+
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-align: center;
+}
+
+
+/* ================================================================
+   4. DIRECTORY SECTION AND FILTERS
+================================================================ */
+
+.oc-directory {
+    padding: 86px 0 95px;
+
+    background: var(--oc-cream);
+}
+
+.oc-section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 35px;
+
+    margin-bottom: 35px;
+}
+
+.oc-section-heading > div {
+    min-width: 0;
+}
+
+.oc-section-heading h2,
+.oc-related-area h2 {
+    margin: 13px 0 0;
+
+    color: var(--oc-ink);
+
+    font-size: clamp(36px, 4.4vw, 51px);
+    font-weight: 600;
+    line-height: 1;
+}
+
+.oc-section-heading h2 em,
+.oc-related-area h2 em {
+    color: var(--oc-gold-dark);
+}
+
+.oc-section-heading > p {
+    max-width: 430px;
+    margin: 0;
+
+    color: var(--oc-muted);
+
+    font-size: 12px;
+    line-height: 1.85;
+}
+
+.oc-directory-tools {
+    display: grid;
+    gap: 16px;
+
+    margin-bottom: 21px;
+}
+
+
+/* Search bar */
+
+.oc-search {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    width: min(530px, 100%);
+    min-height: 51px;
+    padding: 0 15px;
+
+    background: #fff;
+    border: 1px solid var(--oc-border);
+    border-radius: 3px;
+
+    box-shadow: 0 5px 18px #17264207;
+}
+
+.oc-search > span {
+    color: var(--oc-gold-dark);
+
+    font-size: 25px;
+    line-height: 1;
+}
+
+.oc-search input {
+    flex: 1;
+
+    min-width: 0;
+    width: 100%;
+    height: 49px;
+
+    border: 0;
+    outline: 0;
+
+    color: var(--oc-ink);
+    background: transparent;
+
+    font: 12px Inter, Arial, sans-serif;
+}
+
+.oc-search input::placeholder {
+    color: #93939a;
+}
+
+.oc-search:focus-within {
+    border-color: var(--oc-gold-dark);
+    box-shadow: 0 0 0 3px #f2c94c2b;
+}
+
+.oc-search button {
+    width: 26px;
+    height: 26px;
+
+    border: 0;
+    border-radius: 50%;
+
+    color: var(--oc-muted);
+    background: transparent;
+
+    font-size: 21px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    opacity: 0;
+    pointer-events: none;
+}
+
+.oc-search button.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+/* Category filters */
+
+.oc-filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.oc-filter {
+    padding: 8px 12px;
+
+    border: 1px solid #dbd5c8;
+    border-radius: 20px;
+
+    color: #686a70;
+    background: #ffffff8c;
+
+    font: 700 10px/1.3 Inter, Arial, sans-serif;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.oc-filter:hover {
+    border-color: var(--oc-gold-dark);
+    color: var(--oc-navy);
+}
+
+.oc-filter.is-active {
+    border-color: var(--oc-navy);
+
+    color: #fff;
+    background: var(--oc-navy);
+}
+
+.oc-result-count {
+    margin: 0 0 14px;
+
+    color: var(--oc-muted);
+
+    font-size: 10px;
+}
+
+
+/* ================================================================
+   5. CATEGORY CARDS
+================================================================ */
+
+.oc-category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    align-items: stretch;
+}
+
+.oc-category-card {
+    display: flex;
+
+    min-width: 0;
+    overflow: hidden;
+
+    background: #fff;
+    border: 1px solid #e6e0d5;
+    border-radius: 4px;
+
+    transition:
+        transform 0.28s ease,
+        box-shadow 0.28s ease,
+        border-color 0.28s ease;
+}
+
+.oc-category-card:hover,
+.oc-category-card:focus-within {
+    transform: translateY(-4px);
+
+    border-color: #d4c7a4;
+
+    box-shadow: 0 15px 35px #17264210;
+}
+
+.oc-category-card[hidden] {
+    display: none !important;
+}
+
+.oc-category-card__link {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    min-width: 0;
+
+    color: inherit;
+    text-decoration: none;
+}
+
+.oc-category-card__image {
+    position: relative;
+
+    aspect-ratio: 1.55 / 1;
+    overflow: hidden;
+
+    background: var(--oc-navy);
+}
+
+.oc-category-card__image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.oc-category-card:hover .oc-category-card__image img {
+    transform: scale(1.035);
+}
+
+.oc-category-card__tag {
+    position: absolute;
+    left: 13px;
+    bottom: 12px;
+
+    max-width: calc(100% - 26px);
+    padding: 7px 9px;
+
+    color: var(--oc-navy);
+    background: #faf7f0f2;
+
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+}
+
+.oc-category-card__body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 21px 20px 22px;
+}
+
+.oc-category-card__body h3 {
+    margin: 0 0 10px;
+
+    color: var(--oc-ink);
+
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 1.04;
+}
+
+.oc-category-card__body p {
+    margin: 0 0 22px;
+
+    color: var(--oc-muted);
+
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+.oc-category-card__body .oc-text-link {
+    margin-top: auto;
+
+    font-size: 10px;
+}
+
+
+/* ================================================================
+   6. NO-RESULTS MESSAGE
+================================================================ */
+
+.oc-no-results {
+    padding: 45px 20px;
+
+    border: 1px dashed #d4cdbf;
+
+    background: #ffffff75;
+
+    text-align: center;
+}
+
+.oc-no-results[hidden] {
+    display: none !important;
+}
+
+.oc-no-results h3 {
+    margin: 0 0 8px;
+
+    font-size: 26px;
+}
+
+.oc-no-results p {
+    margin: 0 0 20px;
+
+    color: var(--oc-muted);
+
+    font-size: 12px;
+}
+
+
+/* ================================================================
+   7. CLINICAL DISCLAIMER
+================================================================ */
+
+.oc-clinical-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+
+    margin-top: 32px;
+    padding: 17px 19px;
+
+    background: #f0ece3;
+
+    border-left: 3px solid var(--oc-gold-dark);
+}
+
+.oc-clinical-note__mark {
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+
+    width: 22px;
+    height: 22px;
+
+    border-radius: 50%;
+
+    color: var(--oc-navy);
+    background: #e2d2a1;
+
+    font-family: Georgia, serif;
+    font-weight: 700;
+}
+
+.oc-clinical-note p {
+    margin: 0;
+
+    color: var(--oc-muted);
+
+    font-size: 10px;
+    line-height: 1.8;
+}
+
+.oc-clinical-note strong {
+    color: var(--oc-ink);
+}
+
+
+/* ================================================================
+   8. CONTACT BAND
+================================================================ */
+
+.oc-contact-band {
+    padding: 65px 0;
+
+    background: var(--oc-navy);
+    color: #fff;
+}
+
+.oc-contact-band__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 45px;
+}
+
+.oc-contact-band h2 {
+    margin: 15px 0 14px;
+
+    font-size: clamp(34px, 4vw, 48px);
+    font-weight: 500;
+    line-height: 1.02;
+}
+
+.oc-contact-band__inner > div:first-child > p {
+    max-width: 580px;
+    margin: 0;
+
+    color: #ffffffa8;
+
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.oc-contact-band__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+
+    min-width: 190px;
+}
+
+.oc-contact-phone {
+    color: #f3d976;
+
+    font-size: 10px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+}
+
+.oc-contact-phone:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+
+/* ================================================================
+   9. CATEGORY DETAIL PAGE
+================================================================ */
+
+.oc-category-hero {
+    padding: 32px 0 55px;
+
+    background: var(--oc-cream);
+}
+
+.oc-breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 27px;
+
+    color: #898781;
+
+    font-size: 10px;
+}
+
+.oc-breadcrumbs a {
+    color: var(--oc-gold-dark);
+
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.oc-breadcrumbs a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.oc-category-hero__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 0.7fr);
+    align-items: center;
+    gap: 55px;
+}
+
+.oc-category-hero__content {
+    padding-block: 20px;
+}
+
+.oc-category-hero h1 {
+    max-width: 720px;
+    margin: 17px 0 0;
+
+    color: var(--oc-ink);
+
+    font-size: clamp(43px, 5vw, 66px);
+    font-weight: 500;
+    line-height: 0.99;
+}
+
+.oc-category-hero h1 em {
+    display: block;
+
+    color: var(--oc-gold-dark);
+}
+
+.oc-category-hero__content > p {
+    max-width: 670px;
+    margin: 0;
+
+    color: var(--oc-muted);
+
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.oc-category-hero__actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 23px;
+
+    margin-top: 27px;
+}
+
+.oc-category-hero__art {
+    overflow: hidden;
+
+    border: 1px solid #e1dacd;
+
+    background: var(--oc-navy);
+
+    box-shadow: 12px 12px 0 #e9e2d3;
+}
+
+.oc-category-hero__art img {
+    display: block;
+
+    width: 100%;
+    aspect-ratio: 1.45 / 1;
+
+    object-fit: cover;
+}
+
+
+/* ================================================================
+   10. CASE LIST
+================================================================ */
+
+.oc-case-section {
+    padding: 70px 0 90px;
+
+    background: #fff;
+}
+
+.oc-case-list {
+    display: grid;
+    gap: 32px;
+}
+
+.oc-empty-state {
+    padding: 52px 28px;
+
+    border: 1px solid var(--oc-border);
+
+    background: var(--oc-cream);
+
+    text-align: center;
+}
+
+.oc-empty-state__index {
+    display: inline-block;
+
+    margin-bottom: 15px;
+
+    color: var(--oc-gold-dark);
+
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+}
+
+.oc-empty-state h3 {
+    margin: 0 0 10px;
+
+    color: var(--oc-ink);
+
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 1.05;
+}
+
+.oc-empty-state p {
+    max-width: 600px;
+    margin: 0 auto 22px;
+
+    color: var(--oc-muted);
+
+    font-size: 12px;
+    line-height: 1.85;
+}
+
+.oc-empty-state__actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+
+/* Individual case card */
+
+.oc-case-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
+    gap: 34px;
+
+    padding: 32px 0 40px;
+
+    border-bottom: 1px solid var(--oc-border);
+}
+
+.oc-case-card:first-child {
+    padding-top: 0;
+}
+
+.oc-case-card:last-child {
+    border-bottom: 0;
+}
+
+.oc-case-card__media {
+    min-width: 0;
+}
+
+.oc-case-card__feature-image {
+    display: block;
+
+    width: 100%;
+    aspect-ratio: 4 / 3;
+
+    object-fit: contain;
+    object-position: center;
+
+    background: #ede9df;
+}
+
+.oc-image-missing {
+    object-fit: contain !important;
+
+    background: #ede9df;
+}
+
+.oc-case-card__eyebrow {
+    display: block;
+
+    margin-bottom: 13px;
+
+    color: var(--oc-gold-dark);
+
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.oc-case-card__content h3 {
+    margin: 0 0 13px;
+
+    color: var(--oc-ink);
+
+    font-size: 34px;
+    font-weight: 600;
+    line-height: 1.03;
+}
+
+.oc-case-card__summary {
+    margin: 0 0 24px;
+
+    color: var(--oc-muted);
+
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+.oc-case-card__details {
+    display: grid;
+    gap: 15px;
+}
+
+.oc-case-card__detail {
+    padding-left: 14px;
+
+    border-left: 2px solid var(--oc-gold);
+}
+
+.oc-case-card__detail h4 {
+    margin: 0 0 5px;
+
+    color: var(--oc-ink);
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.oc-case-card__detail p {
+    margin: 0;
+
+    color: var(--oc-muted);
+
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+
+/* ================================================================
+   11. BEFORE-AND-AFTER COMPARISON SLIDER
+================================================================ */
+
+.oc-comparison {
+    --oc-position: 50%;
+
+    position: relative;
+    isolation: isolate;
+
+    aspect-ratio: 4 / 3;
+    min-width: 0;
+    overflow: hidden;
+
+    background: #ede9df;
+
+    touch-action: pan-y;
+}
+
+.oc-comparison__image {
+    position: absolute;
+    inset: 0;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center;
+
+    background: #ede9df;
+
+    pointer-events: none;
+}
+
+.oc-comparison__image--before {
+    z-index: 1;
+}
+
+.oc-comparison__image--after {
+    z-index: 2;
+
+    clip-path: inset(
+        0 calc(100% - var(--oc-position)) 0 0
+    );
+}
+
+.oc-comparison__divider {
+    position: absolute;
+    z-index: 3;
+
+    top: 0;
+    bottom: 0;
+    left: var(--oc-position);
+
+    width: 2px;
+
+    transform: translateX(-50%);
+
+    background: #fff;
+
+    box-shadow: 0 0 6px #0004;
+
+    pointer-events: none;
+}
+
+.oc-comparison__handle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    display: grid;
+    place-items: center;
+
+    width: 38px;
+    height: 38px;
+
+    transform: translate(-50%, -50%);
+
+    border: 2px solid var(--oc-gold);
+    border-radius: 50%;
+
+    color: var(--oc-ink);
+    background: #fff;
+
+    box-shadow: 0 3px 12px #0003;
+
+    font-size: 19px;
+}
+
+.oc-comparison__label {
+    position: absolute;
+    z-index: 4;
+
+    top: 11px;
+
+    padding: 6px 9px;
+
+    color: #fff;
+    background: #172642db;
+
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+
+    pointer-events: none;
+}
+
+.oc-comparison__label--after {
+    left: 11px;
+}
+
+.oc-comparison__label--before {
+    right: 11px;
+}
+
+.oc-comparison__range {
+    position: absolute;
+    z-index: 5;
+    inset: 0;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+    margin: 0;
+
+    opacity: 0;
+
+    cursor: ew-resize;
+}
+
+.oc-comparison__range:focus-visible {
+    outline: 3px solid var(--oc-gold);
+    outline-offset: -4px;
+
+    opacity: 0.02;
+}
+
+.oc-comparison__hint {
+    margin: 9px 0 0;
+
+    color: #85827a;
+
+    font-size: 9px;
+    text-align: center;
+}
+
+
+/* ================================================================
+   12. RELATED TREATMENT AREAS
+================================================================ */
+
+.oc-related-area {
+    margin-top: 74px;
+    padding-top: 35px;
+
+    border-top: 1px solid var(--oc-border);
+}
+
+.oc-related-area h2 {
+    margin-bottom: 27px;
+}
+
+.oc-related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.oc-related-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    padding: 16px 17px;
+
+    border: 1px solid var(--oc-border);
+
+    color: var(--oc-ink);
+    background: var(--oc-cream);
+
+    text-decoration: none;
+
+    transition:
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.oc-related-card:hover {
+    border-color: var(--oc-gold-dark);
+
+    transform: translateY(-2px);
+}
+
+.oc-related-card span {
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.oc-related-card b {
+    color: var(--oc-gold-dark);
+
+    font-size: 17px;
+    font-weight: 500;
+}
+
+
+/* ================================================================
+   13. JAVASCRIPT WARNING AND HIDDEN ELEMENTS
+================================================================ */
+
+.oc-js-warning {
+    margin: 20px 0;
+    padding: 16px;
+
+    color: #6e4f00;
+    background: #fff4cd;
+
+    font-size: 12px;
+}
+
+.oc-page [hidden] {
+    display: none !important;
+}
+
+
+/* ================================================================
+   14. TABLET RESPONSIVE STYLES
+================================================================ */
+
+@media (max-width: 1000px) {
+
+    .oc-hero__grid {
+        grid-template-columns: minmax(0, 1fr) 280px;
+        gap: 28px;
+    }
+
+    .oc-art-orbit--one {
+        width: 255px;
+        height: 255px;
+    }
+
+    .oc-art-orbit--two {
+        width: 215px;
+        height: 215px;
+    }
+
+    .oc-art-tooth {
+        width: 150px;
+        height: 150px;
+    }
+
+    .oc-category-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .oc-section-heading {
+        align-items: start;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .oc-section-heading > p {
+        max-width: 650px;
+    }
+}
+
+
+/* ================================================================
+   15. MEDIUM SCREENS
+================================================================ */
+
+@media (max-width: 820px) {
+
+    .oc-hero__grid {
+        grid-template-columns: 1fr;
+
+        padding-block: 58px;
+    }
+
+    .oc-hero__art {
+        display: none;
+    }
+
+    .oc-contact-band__inner {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .oc-contact-band__actions {
+        align-items: flex-start;
+    }
+
+    .oc-contact-phone {
+        text-align: left;
+    }
+
+    .oc-category-hero__grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .oc-category-hero__art {
+        width: min(520px, 100%);
+    }
+
+    .oc-case-card {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .oc-related-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* ================================================================
+   16. MOBILE RESPONSIVE STYLES
+================================================================ */
+
+@media (max-width: 650px) {
+
+    .oc-wrap {
+        width: calc(100% - 32px);
+    }
+
+    /* Hero */
+
+    .oc-hero__grid {
+        min-height: 0;
+
+        padding-block: 52px 58px;
+    }
+
+    .oc-hero h1 {
+        font-size: clamp(43px, 12vw, 60px);
+    }
+
+    .oc-hero__content > p {
+        font-size: 12px;
+    }
+
+    .oc-hero__actions {
+        align-items: stretch;
+        flex-direction: column;
+
+        max-width: 280px;
+    }
+
+    .oc-hero__note {
+        font-size: 9px !important;
+    }
+
+
+    /* Directory */
+
+    .oc-directory {
+        padding: 58px 0 65px;
+    }
+
+    .oc-section-heading h2,
+    .oc-related-area h2 {
+        font-size: 39px;
+    }
+
+    .oc-category-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .oc-category-card {
+        border-radius: 3px;
+    }
+
+    .oc-category-card__image {
+        aspect-ratio: 1.7 / 1;
+    }
+
+    .oc-category-card__body {
+        padding: 19px 18px 20px;
+    }
+
+    .oc-category-card__body h3 {
+        font-size: 26px;
+    }
+
+
+    /* Category filters */
+
+    .oc-filter-row {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+
+        padding-bottom: 7px;
+
+        scrollbar-width: thin;
+    }
+
+    .oc-filter {
+        flex: 0 0 auto;
+
+        white-space: nowrap;
+    }
+
+
+    /* Contact band */
+
+    .oc-contact-band {
+        padding: 48px 0;
+    }
+
+    .oc-contact-band h2 {
+        font-size: 37px;
+    }
+
+
+    /* Category detail */
+
+    .oc-category-hero {
+        padding: 22px 0 38px;
+    }
+
+    .oc-category-hero h1 {
+        font-size: clamp(42px, 11vw, 54px);
+    }
+
+    .oc-category-hero__actions {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+
+    /* Case list */
+
+    .oc-case-section {
+        padding: 48px 0 65px;
+    }
+
+    .oc-empty-state {
+        padding: 35px 20px;
+    }
+
+    .oc-empty-state h3 {
+        font-size: 30px;
+    }
+
+    .oc-case-card__content h3 {
+        font-size: 31px;
+    }
+
+
+    /* Related categories */
+
+    .oc-related-area {
+        margin-top: 52px;
+        padding-top: 28px;
+    }
+
+    .oc-related-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ================================================================
+   17. REDUCED MOTION ACCESSIBILITY
+================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .oc-page *,
+    .oc-page *::before,
+    .oc-page *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}

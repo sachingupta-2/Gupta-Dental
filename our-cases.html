@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<!-- Clinic favicon: browser tab and bookmarks -->
+<link rel="icon" type="image/png" href="/logos/dr-gupta-favicon.png" >
+<link rel="shortcut icon" type="image/png" href="/logos/dr-gupta-favicon.png">
+<link rel="apple-touch-icon" href="/logos/dr-gupta-favicon.png">
+
+<title>Patient Reviews | Dr. Gupta's Dental Clinic </title>
+<meta name="description" content="Read patient feedback about experiences at Dr. Gupta's Dental Clinic in South Extension, New Delhi, and learn what patients say about the clinic's dental care.">
+<link rel="canonical" href="https://www.theguptadentalclinic.com/reviews.html">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Dr. Gupta's Dental Clinic">
+<meta property="og:title" content="Patient Reviews | Dr. Gupta's Dental Clinic">
+<meta property="og:description" content="Read patient feedback about dental care at Dr. Gupta's Dental Clinic in South Extension, New Delhi.">
+<meta property="og:url" content="https://www.theguptadentalclinic.com/reviews.html">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Patient Reviews | Dr. Gupta's Dental Clinic">
+<meta name="twitter:description" content="Explore patient feedback about their clinic experiences in South Extension, New Delhi.">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="our-cases.css">
+
+</head>     
+
+
+<body><!-- =========================================================
+     HEADER
+     ========================================================= -->
+
+<header>
+
+  <div class="header-info">
+    <div class="container header-info-wrap">
+      <div class="availability" aria-label="Clinic availability">
+        <span><strong>Availability:</strong> <span class="availability-hours">Monday - Saturday, 10:00 AM - 7:00 PM</span></span>
+        <span class="sunday-closed">Sunday: CLOSED</span>
+      </div>
+      <div class="header-contact" aria-label="Clinic contact details">
+        <a href="tel:+919990880975">Call: +91 99908 80975</a>
+        <a href="https://wa.me/919990880975" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container nav-wrap">
+
+    <a href="index.html" class="brand" style="text-decoration:none; color:inherit;" aria-label="Dr. Gupta's Dental Clinic — Home">
+
+      <img
+        src="logos/web_logo.png"
+        alt="Dr. Gupta's Dental Clinic logo"
+        style="width:44px;height:44px;border-radius:10px;object-fit:cover;"
+      >
+
+      <div class="brand-name">
+        Dr. Gupta's Dental Clinic
+      </div>
+
+    </a>
+
+
+    <nav>
+
+      <ul id="main-navigation">
+
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+
+        <li>
+          <a href="about.html">About</a>
+        </li>
+
+        <li>
+          <a href="difference.html">Our Difference</a>
+        </li>
+
+        <li>
+          <a href="services.html">Services</a>
+        </li>
+
+        <li>
+          <a href="reviews.html" aria-current="page">Reviews</a>
+        </li>
+
+        <li>
+          <a href="faq.html">FAQ</a>
+        </li>
+
+        <li>
+          <a href="contact.html">Contact</a>
+        </li>
+
+      </ul>
+
+    </nav>
+
+
+    <div class="nav-cta">
+
+      <button
+        type="button"
+        class="appointment-trigger"
+        id="openAppointmentModal"
+      >
+        Book Appointment
+      </button>
+
+      <button
+        type="button"
+        class="menu-toggle"
+        aria-label="Menu"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >
+        &#9776;
+      </button>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- =========================================================
+     APPOINTMENT MODAL
+     ========================================================= -->
+
+<div
+  class="appointment-modal-overlay"
+  id="appointmentModal"
+  aria-hidden="true"
+>
+
+  <div
+    class="appointment-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="appointmentTitle"
+  >
+
+    <button
+      type="button"
+      class="modal-close"
+      aria-label="Close appointment form"
+    >
+      &times;
+    </button>
+
+
+    <div class="modal-head">
+
+      <h3 id="appointmentTitle">
+        Book an Appointment
+      </h3>
+
+      <p>
+        Please fill in your details and we will contact you shortly.
+      </p>
+
+    </div>
+
+
+    <form class="appointment-form" id="appointmentForm">
+      <div class="appointment-progress" aria-label="Appointment form progress">
+        <div class="step-indicator active" id="stepIndicator1">1. Patient Details</div>
+        <div class="step-indicator" id="stepIndicator2">2. Personal Details <span class="optional-note">(Optional)</span></div>
+      </div>
+
+      <div class="appointment-step active" id="appointmentStep1">
+        <div class="form-grid">
+          <div class="form-group"><label for="name">Name</label><input id="name" name="name" type="text" placeholder="Enter your name" required></div>
+          <div class="form-group"><label for="age">Age</label><input id="age" name="age" type="number" min="1" placeholder="Age" required></div>
+          <div class="form-group"><label for="phone">Phone No</label><input id="phone" name="phone" type="tel" placeholder="Your phone number" required></div>
+          <div class="form-group"><label for="email">Email</label><input id="email" name="email" type="email" placeholder="Your email address" required></div>
+          <div class="form-group full"><label for="address">Address</label><input id="address" name="address" type="text" placeholder="Your address" required></div>
+          <div class="form-group"><label for="appointmentDate">Appointment Date</label><input type="date" id="appointmentDate" name="appointmentDate" required></div>
+          <div class="form-group"><label for="appointmentTime">Available Time Slot</label><select id="appointmentTime" name="appointmentTime" required disabled><option value="">Select a date first</option></select><small class="slot-status" id="slotStatus" aria-live="polite">Choose a date to see available slots.</small></div>
+          <div class="form-group"><label for="gender">Gender</label><select id="gender" name="gender" required><option value="">Select gender</option><option>Male</option><option>Female</option><option>Other</option></select></div>
+        </div>
+        <div class="step-actions">
+          <button type="button" class="secondary-btn" id="closeAppointmentModal">Cancel</button>
+          <button type="button" class="cta-btn" id="nextAppointmentStep">Next &rarr;</button>
+        </div>
+      </div>
+
+      <div class="appointment-step" id="appointmentStep2">
+        <div class="clinical-intro"><strong>Personal details are optional.</strong> You can provide them to help the dentist understand your concern before the appointment, or skip this section and submit with your basic details.</div>
+        <div class="form-grid">
+          <div class="form-group full"><label for="reasonForVisit">Reason for Visit</label><textarea id="reasonForVisit" name="reasonForVisit" placeholder="Briefly describe the reason for your visit"></textarea></div>
+          <div class="form-group"><label for="dentalProblem">Current Dental Problem</label><select id="dentalProblem" name="dentalProblem"><option value="">Select if applicable</option><option>Tooth Pain</option><option>Sensitivity</option><option>Swelling</option><option>Bleeding Gums</option><option>Broken / Chipped Tooth</option><option>Cavity</option><option>Missing Tooth</option><option>Routine Check-up</option><option>Cleaning</option><option>Other</option></select></div>
+          <div class="form-group"><label for="painLevel">Pain / Discomfort</label><select id="painLevel" name="painLevel"><option value="">Select if applicable</option><option>None</option><option>Mild</option><option>Moderate</option><option>Severe</option></select></div>
+          <div class="form-group"><label for="previousDentalTreatment">Previous Dental Treatment</label><select id="previousDentalTreatment" name="previousDentalTreatment"><option value="">Select if applicable</option><option>No Previous Treatment</option><option>Filling</option><option>Root Canal</option><option>Extraction</option><option>Implant</option><option>Crown / Bridge</option><option>Other</option></select></div>
+          <div class="form-group"><label>Currently Taking Any Medicine?</label><div class="radio-row"><label class="radio-option"><input type="radio" name="medication" value="yes"> Yes</label><label class="radio-option"><input type="radio" name="medication" value="no" checked> No</label></div></div>
+          <div class="form-group full medication-box" id="medicationBox"><label for="medicineDetails">Medicine Details</label><textarea id="medicineDetails" name="medicineDetails" placeholder="List medicines you are currently taking"></textarea></div>
+          <div class="form-group full"><label for="allergies">Known Allergies</label><textarea id="allergies" name="allergies" placeholder="Mention any known medicine or other allergies"></textarea></div>
+          <div class="form-group full"><label for="medicalHistory">Medical History</label><textarea id="medicalHistory" name="medicalHistory" placeholder="Mention any relevant medical history"></textarea></div>
+          <div class="form-group full"><label for="additionalClinicalDetails">Additional Clinical Details</label><textarea id="additionalClinicalDetails" name="additionalClinicalDetails" placeholder="Anything else you would like the dentist to know"></textarea></div>
+        </div>
+
+        <div class="clinical-section">
+          <h4 class="clinical-section-title">Adverse Habits / Adverse Oral Habits</h4>
+          <div class="clinical-table-wrap"><table class="clinical-table"><thead><tr><th>Type</th><th>Frequency</th><th>Duration</th></tr></thead><tbody>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitSmoking" value="Smoking"> Smoking</label></td><td><select name="habitSmokingFrequency"><option value="">Select</option><option>Occasional</option><option>Once Daily</option><option>Twice Daily</option><option>More than Twice Daily</option></select></td><td><select name="habitSmokingDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitTobacco" value="Smokeless Tobacco/snuff"> Smokeless Tobacco / Snuff</label></td><td><select name="habitTobaccoFrequency"><option value="">Select</option><option>Occasional</option><option>Once Daily</option><option>Twice Daily</option><option>More than Twice Daily</option></select></td><td><select name="habitTobaccoDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitPaan" value="Paan chewing (gutka, paanmasala)"> Paan chewing (gutka, paanmasala)</label></td><td><select name="habitPaanFrequency"><option value="">Select</option><option>Occasional</option><option>Once Daily</option><option>Twice Daily</option><option>More than Twice Daily</option></select></td><td><select name="habitPaanDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+            <tr><td><label class="clinical-check"><input type="checkbox" name="habitAlcohol" value="Alcohol"> Alcohol</label></td><td><select name="habitAlcoholFrequency"><option value="">Select</option><option>Occasional</option><option>Once Weekly</option><option>2-3 Times Weekly</option><option>Daily</option></select></td><td><select name="habitAlcoholDuration"><option value="">Select</option><option>Less than 1 year</option><option>1-5 years</option><option>5-10 years</option><option>More than 10 years</option></select></td></tr>
+          </tbody></table></div>
+        </div>
+
+        <div class="clinical-section"><h4 class="clinical-section-title">Oral Hygiene Practices</h4><div class="hygiene-grid">
+          <div class="form-group full"><label>i) Type of Cleaning</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Toothbrush"> Toothbrush</label><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Finger"> Finger</label><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Stick"> Stick</label><label class="clinical-check"><input type="checkbox" name="cleaningType" value="Others"> Others</label></div></div>
+          <div class="form-group full"><label>ii) Method of Cleaning</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="cleaningMethod" value="Vertical"> Vertical</label><label class="clinical-check"><input type="checkbox" name="cleaningMethod" value="Horizontal"> Horizontal</label><label class="clinical-check"><input type="checkbox" name="cleaningMethod" value="Circular"> Circular</label></div></div>
+          <div class="form-group full"><label>iii) Frequency of Cleaning / Brushing</label><div class="option-grid"><label class="clinical-check"><input type="radio" name="brushingFrequency" value="Once"> Once</label><label class="clinical-check"><input type="radio" name="brushingFrequency" value="Twice"> Twice</label><label class="clinical-check"><input type="radio" name="brushingFrequency" value="Thrice"> Thrice</label></div></div>
+          <div class="form-group full"><label>iv) Materials Used</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Toothpaste"> Toothpaste</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Tooth Powder"> Tooth Powder</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Charcoal"> Charcoal</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Sand"> Sand</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Brick Powder"> Brick Powder</label><label class="clinical-check"><input type="checkbox" name="cleaningMaterial" value="Any Other"> Any Other</label></div><input type="text" id="cleaningMaterialOther" name="cleaningMaterialOther" placeholder="If any other, please specify"></div>
+          <div class="form-group full"><label>v) Time of Brushing</label><div class="option-grid"><label class="clinical-check"><input type="radio" name="brushingTime" value="Before Meal"> Before Meal</label><label class="clinical-check"><input type="radio" name="brushingTime" value="After Meals"> After Meals</label></div></div>
+          <div class="form-group full"><label>vi) Frequency of Changing the Tooth Brush</label><div class="option-grid"><label class="clinical-check"><input type="radio" name="toothbrushChangeFrequency" value="Once"> Once</label><label class="clinical-check"><input type="radio" name="toothbrushChangeFrequency" value="Twice"> Twice</label><label class="clinical-check"><input type="radio" name="toothbrushChangeFrequency" value="Thrice"> Thrice</label></div></div>
+          <div class="form-group"><label for="durationOfCleaning">vii) Duration of Cleaning</label><input type="text" id="durationOfCleaning" name="durationOfCleaning" placeholder="e.g. 2 minutes"></div>
+          <div class="form-group full"><label>viii) Other Oral Hygiene Aids Used</label><div class="option-grid"><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Flossing"> Flossing</label><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Interdental Aids"> Interdental Aids</label><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Oral Mouth Rinse"> Oral Mouth Rinse</label><label class="clinical-check"><input type="checkbox" name="oralHygieneAid" value="Tongue Cleaner"> Tongue Cleaner</label></div></div>
+        </div></div>
+
+        <div class="step-actions"><button type="button" class="secondary-btn" id="backAppointmentStep">&larr; Back</button><div class="right-actions"><button type="button" class="secondary-btn" id="skipClinicalStep">Skip &amp; Submit</button><button type="submit" class="cta-btn">Submit Appointment</button></div></div>
+      </div>
+    </form>
+
+  </div>
+
+</div>
+
+
+<!-- =========================================================
+     OUR CASES — MAIN CONTENT
+========================================================= -->
+
+<main class="oc-page">
+
+    <!-- HERO SECTION -->
+    <section class="oc-hero">
+        <div class="oc-wrap oc-hero__grid">
+
+            <div class="oc-hero__content">
+
+                <span class="oc-eyebrow">
+                    DR. GUPTA'S DENTAL CLINIC · OUR CASES
+                </span>
+
+                <h1>
+                    Real questions.
+                    <br>
+                    <em>Carefully considered</em> treatment.
+                </h1>
+
+                <span
+                    class="oc-gold-rule"
+                    aria-hidden="true">
+                </span>
+
+                <p>
+                    Explore treatment areas and, where case studies
+                    have been reviewed for publication, learn about
+                    the clinical context, treatment approach and
+                    documented follow-up. Every treatment plan is
+                    individual.
+                </p>
+
+                <div class="oc-hero__actions">
+
+                    <a
+                        class="oc-button oc-button--gold"
+                        href="#treatment-areas">
+                        Explore treatment areas
+                        <span aria-hidden="true">↓</span>
+                    </a>
+
+                    <a
+                        class="oc-button oc-button--light"
+                        href="contact.html">
+                        Contact the clinic
+                        <span aria-hidden="true">→</span>
+                    </a>
+
+                </div>
+
+                <p class="oc-hero__note">
+                    Patient photographs and clinical details are
+                    published only after review and appropriate
+                    consent.
+                </p>
+
+            </div>
+
+            <!-- DECORATIVE DENTAL ILLUSTRATION -->
+            <div class="oc-hero__art" aria-hidden="true">
+
+                <div class="oc-art-orbit oc-art-orbit--one"></div>
+                <div class="oc-art-orbit oc-art-orbit--two"></div>
+
+                <div class="oc-art-tooth">
+
+                    <svg viewBox="0 0 180 190" role="presentation">
+                        <path
+                            d="M49 17C33 16 19 30 20 54c1 30 14 42 19 65 4 18 9 48 22 48 12 0 14-25 22-38 3-5 10-5 13 0 8 13 10 38 22 38 13 0 18-30 22-48 5-23 18-35 19-65 1-24-13-38-29-37-13 1-22 10-32 10S62 18 49 17Z"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="3.2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+
+                        <path
+                            d="M62 60c8-9 15-12 24-12m14 0c9 0 17 3 24 12"
+                            fill="none"
+                            stroke="#f5c62d"
+                            stroke-width="3"
+                            stroke-linecap="round"
+                        />
+                    </svg>
+
+                </div>
+
+                <span class="oc-art-caption">
+                    CLINICAL CONTEXT · INDIVIDUAL CARE
+                </span>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- TREATMENT CATEGORY DIRECTORY -->
+    <section
+        class="oc-directory"
+        id="treatment-areas">
+
+        <div class="oc-wrap">
+
+            <div class="oc-section-heading">
+
+                <div>
+                    <span class="oc-eyebrow oc-eyebrow--dark">
+                        EXPLORE BY TREATMENT
+                    </span>
+
+                    <h2>
+                        Choose a treatment
+                        <em>area.</em>
+                    </h2>
+                </div>
+
+                <p>
+                    Browse the category that matches your interest.
+                    Case studies appear here once the clinical
+                    information and images are ready for publication.
+                </p>
+
+            </div>
+
+
+            <!-- SEARCH AND FILTER CONTROLS -->
+            <div class="oc-directory-tools">
+
+                <label class="oc-search" for="ocCategorySearch">
+
+                    <span aria-hidden="true">⌕</span>
+
+                    <input
+                        id="ocCategorySearch"
+                        type="search"
+                        placeholder="Search treatment areas…"
+                        autocomplete="off"
+                    >
+
+                    <button
+                        type="button"
+                        id="ocClearSearch"
+                        aria-label="Clear search">
+                        ×
+                    </button>
+
+                </label>
+
+
+                <div
+                    class="oc-filter-row"
+                    role="group"
+                    aria-label="Filter treatment areas">
+
+                    <button
+                        type="button"
+                        class="oc-filter is-active"
+                        data-group-filter="all"
+                        aria-pressed="true">
+                        All areas
+                    </button>
+
+                    <button
+                        type="button"
+                        class="oc-filter"
+                        data-group-filter="Endodontics"
+                        aria-pressed="false">
+                        Endodontics
+                    </button>
+
+                    <button
+                        type="button"
+                        class="oc-filter"
+                        data-group-filter="Restorative Dentistry"
+                        aria-pressed="false">
+                        Restorative
+                    </button>
+
+                    <button
+                        type="button"
+                        class="oc-filter"
+                        data-group-filter="Oral Surgery"
+                        aria-pressed="false">
+                        Oral surgery
+                    </button>
+
+                    <button
+                        type="button"
+                        class="oc-filter"
+                        data-group-filter="Tooth Replacement"
+                        aria-pressed="false">
+                        Replacement
+                    </button>
+
+                    <button
+                        type="button"
+                        class="oc-filter"
+                        data-group-filter="Gum Health"
+                        aria-pressed="false">
+                        Gum health
+                    </button>
+
+                    <button
+                        type="button"
+                        class="oc-filter"
+                        data-group-filter="Aesthetic Dentistry"
+                        aria-pressed="false">
+                        Aesthetic
+                    </button>
+
+                    <button
+                        type="button"
+                        class="oc-filter"
+                        data-group-filter="Preventive Care"
+                        aria-pressed="false">
+                        Preventive
+                    </button>
+
+                    <button
+                        type="button"
+                        class="oc-filter"
+                        data-group-filter="Children"
+                        aria-pressed="false">
+                        Children
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- RESULT COUNT -->
+            <p
+                class="oc-result-count"
+                id="ocCategoryCount"
+                aria-live="polite">
+                10 treatment areas
+            </p>
+
+
+            <!-- CATEGORY CARDS -->
+            <div
+                class="oc-category-grid"
+                id="ocCategoryGrid">
+
+                <!-- 01: ROOT CANAL TREATMENT -->
+                <article
+                    class="oc-category-card"
+                    data-category-card
+                    data-group="Endodontics"
+                    data-search="Root Canal Treatment Endodontics endodontic care root canal RCT pulp tooth pain infection">
+
+                    <a
+                        class="oc-category-card__link"
+                        href="cases/rct_case.html"
+                        aria-label="Explore Root Canal Treatment cases">
+
+                        <div class="oc-category-card__image">
+
+                            <img
+                                src="assets/images/categories/rct-cover.svg"
+                                alt="Illustrative artwork for Root Canal Treatment category"
+                                loading="lazy"
+                            >
+
+                            <span class="oc-category-card__tag">
+                                Endodontics
+                            </span>
+
+                        </div>
+
+                        <div class="oc-category-card__body">
+
+                            <h3>Root Canal Treatment</h3>
+
+                            <p>
+                                Endodontic care focused on assessment
+                                and treatment of disease affecting the
+                                dental pulp, with tooth preservation
+                                considered when appropriate.
+                            </p>
+
+                            <span class="oc-text-link">
+                                Explore category
+                                <span aria-hidden="true">→</span>
+                            </span>
+
+                        </div>
+
+                    </a>
+
+                </article>
+
+
+                <!-- 02: DENTAL FILLINGS -->
+                <article
+                    class="oc-category-card"
+                    data-category-card
+                    data-group="Restorative Dentistry"
+                    data-search="Dental Fillings Restorations restorative dentistry dental filling composite cavity tooth decay">
+
+                    <a
+                        class="oc-category-card__link"
+                        href="cases/dental_filling_cases.html"
+                        aria-label="Explore Dental Fillings and Restorations cases">
+
+                        <div class="oc-category-card__image">
+
+                            <img
+                                src="assets/images/categories/fillings-cover.svg"
+                                alt="Illustrative artwork for Dental Fillings and Restorations category"
+                                loading="lazy"
+                            >
+
+                            <span class="oc-category-card__tag">
+                                Restorative dentistry
+                            </span>
+
+                        </div>
+
+                        <div class="oc-category-card__body">
+
+                            <h3>Dental Fillings &amp; Restorations</h3>
+
+                            <p>
+                                Tooth restoration cases involving decay,
+                                localised defects or damaged tooth
+                                structure, with the goal of preserving
+                                healthy structure where appropriate.
+                            </p>
+
+                            <span class="oc-text-link">
+                                Explore category
+                                <span aria-hidden="true">→</span>
+                            </span>
+
+                        </div>
+
+                    </a>
+
+                </article>
+
+
+                <!-- 03: TOOTH EXTRACTION -->
+                <article
+                    class="oc-category-card"
+                    data-category-card
+                    data-group="Oral Surgery"
+                    data-search="Tooth Extraction oral surgery tooth removal wisdom tooth">
+
+                    <a
+                        class="oc-category-card__link"
+                        href="cases/tooth_extraction_case.html"
+                        aria-label="Explore Tooth Extraction cases">
+
+                        <div class="oc-category-card__image">
+
+                            <img
+                                src="assets/images/categories/extraction-cover.svg"
+                                alt="Illustrative artwork for Tooth Extraction category"
+                                loading="lazy"
+                            >
+
+                            <span class="oc-category-card__tag">
+                                Oral surgery
+                            </span>
+
+                        </div>
+
+                        <div class="oc-category-card__body">
+
+                            <h3>Tooth Extraction</h3>
+
+                            <p>
+                                Cases where extraction was considered
+                                or performed after an individual
+                                clinical assessment of the tooth and
+                                surrounding tissues.
+                            </p>
+
+                            <span class="oc-text-link">
+                                Explore category
+                                <span aria-hidden="true">→</span>
+                            </span>
+
+                        </div>
+
+                    </a>
+
+                </article>
+
+
+                <!-- 04: MISSING TEETH AND REPLACEMENT -->
+                <article
+                    class="oc-category-card"
+                    data-category-card
+                    data-group="Tooth Replacement"
+                    data-search="Missing Teeth Replacement dental implant bridge denture tooth replacement">
+
+                    <a
+                        class="oc-category-card__link"
+                        href="cases/missing-teeth-replacement.html"
+                        aria-label="Explore Missing Teeth and Replacement cases">
+
+                        <div class="oc-category-card__image">
+
+                            <img
+                                src="assets/images/categories/replacement-cover.svg"
+                                alt="Illustrative artwork for Missing Teeth and Replacement category"
+                                loading="lazy"
+                            >
+
+                            <span class="oc-category-card__tag">
+                                Tooth replacement
+                            </span>
+
+                        </div>
+
+                        <div class="oc-category-card__body">
+
+                            <h3>Missing Teeth &amp; Replacement</h3>
+
+                            <p>
+                                Case studies covering options considered
+                                for replacing missing teeth, based on
+                                the patient's oral health, needs and
+                                clinical findings.
+                            </p>
+
+                            <span class="oc-text-link">
+                                Explore category
+                                <span aria-hidden="true">→</span>
+                            </span>
+
+                        </div>
+
+                    </a>
+
+                </article>
+
+
+                <!-- 05: CROWNS AND BRIDGES -->
+                <article
+                    class="oc-category-card"
+                    data-category-card
+                    data-group="Restorative Dentistry"
+                    data-search="Crowns Bridges crown bridge restorative dentistry prosthodontic cap">
+
+                    <a
+                        class="oc-category-card__link"
+                        href="cases/crowns-bridges.html"
+                        aria-label="Explore Crowns and Bridges cases">
+
+                        <div class="oc-category-card__image">
+
+                            <img
+                                src="assets/images/categories/crowns-bridges-cover.svg"
+                                alt="Illustrative artwork for Crowns and Bridges category"
+                                loading="lazy"
+                            >
+
+                            <span class="oc-category-card__tag">
+                                Restorative dentistry
+                            </span>
+
+                        </div>
+
+                        <div class="oc-category-card__body">
+
+                            <h3>Crowns &amp; Bridges</h3>
+
+                            <p>
+                                Restorative cases where a crown or
+                                bridge was considered to protect,
+                                restore or replace tooth structure
+                                as clinically appropriate.
+                            </p>
+
+                            <span class="oc-text-link">
+                                Explore category
+                                <span aria-hidden="true">→</span>
+                            </span>
+
+                        </div>
+
+                    </a>
+
+                </article>
+
+
+                <!-- 06: GUM TREATMENT -->
+                <article
+                    class="oc-category-card"
+                    data-category-card
+                    data-group="Gum Health"
+                    data-search="Gum Treatment gum health gum disease bleeding gums periodontal cleaning scaling">
+
+                    <a
+                        class="oc-category-card__link"
+                        href="cases/gum-treatment.html"
+                        aria-label="Explore Gum Treatment cases">
+
+                        <div class="oc-category-card__image">
+
+                            <img
+                                src="assets/images/categories/gum-treatment-cover.svg"
+                                alt="Illustrative artwork for Gum Treatment category"
+                                loading="lazy"
+                            >
+
+                            <span class="oc-category-card__tag">
+                                Gum health
+                            </span>
+
+                        </div>
+
+                        <div class="oc-category-card__body">
+
+                            <h3>Gum Treatment</h3>
+
+                            <p>
+                                Gum-health cases that may include
+                                assessment of inflammation, bleeding,
+                                periodontal condition and supportive care.
+                            </p>
+
+                            <span class="oc-text-link">
+                                Explore category
+                                <span aria-hidden="true">→</span>
+                            </span>
+
+                        </div>
+
+                    </a>
+
+                </article>
+
+
+                <!-- 07: SMILE ENHANCEMENT -->
+                <article
+                    class="oc-category-card"
+                    data-category-card
+                    data-group="Aesthetic Dentistry"
+                    data-search="Smile Enhancement aesthetic dentistry cosmetic dentistry smile design">
+
+                    <a
+                        class="oc-category-card__link"
+                        href="cases/smile-enhancement.html"
+                        aria-label="Explore Smile Enhancement cases">
+
+                        <div class="oc-category-card__image">
+
+                            <img
+                                src="assets/images/categories/smile-enhancement-cover.svg"
+                                alt="Illustrative artwork for Smile Enhancement category"
+                                loading="lazy"
+                            >
+
+                            <span class="oc-category-card__tag">
+                                Aesthetic dentistry
+                            </span>
+
+                        </div>
+
+                        <div class="oc-category-card__body">
+
+                            <h3>Smile Enhancement</h3>
+
+                            <p>
+                                Aesthetic dental cases presented in
+                                context, with treatment choices based
+                                on clinical findings and individual goals.
+                            </p>
+
+                            <span class="oc-text-link">
+                                Explore category
+                                <span aria-hidden="true">→</span>
+                            </span>
+
+                        </div>
+
+                    </a>
+
+                </article>
+
+
+                <!-- 08: BROKEN OR CHIPPED TEETH -->
+                <article
+                    class="oc-category-card"
+                    data-category-card
+                    data-group="Restorative Dentistry"
+                    data-search="Broken Chipped Teeth fractured tooth damage trauma restoration">
+
+                    <a
+                        class="oc-category-card__link"
+                        href="cases/broken-chipped-teeth.html"
+                        aria-label="Explore Broken or Chipped Teeth cases">
+
+                        <div class="oc-category-card__image">
+
+                            <img
+                                src="assets/images/categories/broken-teeth-cover.svg"
+                                alt="Illustrative artwork for Broken or Chipped Teeth category"
+                                loading="lazy"
+                            >
+
+                            <span class="oc-category-card__tag">
+                                Tooth restoration
+                            </span>
+
+                        </div>
+
+                        <div class="oc-category-card__body">
+
+                            <h3>Broken or Chipped Teeth</h3>
+
+                            <p>
+                                Cases involving chipped, fractured
+                                or damaged teeth, with options chosen
+                                according to the extent and location
+                                of the damage.
+                            </p>
+
+                            <span class="oc-text-link">
+                                Explore category
+                                <span aria-hidden="true">→</span>
+                            </span>
+
+                        </div>
+
+                    </a>
+
+                </article>
+
+
+                <!-- 09: PREVENTIVE AND GENERAL DENTISTRY -->
+                <article
+                    class="oc-category-card"
+                    data-category-card
+                    data-group="Preventive Care"
+                    data-search="Preventive General Dentistry dental checkup examination oral hygiene cleaning preventive care">
+
+                    <a
+                        class="oc-category-card__link"
+                        href="cases/preventive-general-dentistry.html"
+                        aria-label="Explore Preventive and General Dentistry cases">
+
+                        <div class="oc-category-card__image">
+
+                            <img
+                                src="assets/images/categories/preventive-dentistry-cover.svg"
+                                alt="Illustrative artwork for Preventive and General Dentistry category"
+                                loading="lazy"
+                            >
+
+                            <span class="oc-category-card__tag">
+                                Preventive care
+                            </span>
+
+                        </div>
+
+                        <div class="oc-category-card__body">
+
+                            <h3>Preventive &amp; General Dentistry</h3>
+
+                            <p>
+                                Preventive and general care cases
+                                focused on assessment, risk factors,
+                                oral-health guidance and appropriate
+                                follow-up.
+                            </p>
+
+                            <span class="oc-text-link">
+                                Explore category
+                                <span aria-hidden="true">→</span>
+                            </span>
+
+                        </div>
+
+                    </a>
+
+                </article>
+
+            </div>
+
+
+            <!-- NO SEARCH RESULTS -->
+            <div
+                class="oc-no-results"
+                id="ocCategoryNoResults"
+                hidden>
+
+                <h3>No matching treatment area</h3>
+
+                <p>
+                    Try a different search term or choose
+                    “All areas”.
+                </p>
+
+                <button
+                    type="button"
+                    class="oc-button oc-button--dark"
+                    id="ocResetFilters">
+                    Reset filters
+                </button>
+
+            </div>
+
+
+            <!-- CLINICAL DISCLAIMER -->
+            <div class="oc-clinical-note">
+
+                <span
+                    class="oc-clinical-note__mark"
+                    aria-hidden="true">
+                    i
+                </span>
+
+                <p>
+                    <strong>About these case studies</strong>
+                    Each case should reflect documented clinical
+                    findings and treatment. Outcomes vary, and the
+                    information is educational rather than a
+                    substitute for an individual dental examination.
+                </p>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- CONTACT CTA -->
+    <section class="oc-contact-band">
+
+        <div class="oc-wrap oc-contact-band__inner">
+
+            <div>
+
+                <span class="oc-eyebrow">
+                    HAVE A QUESTION ABOUT YOUR DENTAL HEALTH?
+                </span>
+
+                <h2>
+                    Every care plan starts
+                    <em>with a conversation.</em>
+                </h2>
+
+                <p>
+                    Discuss your concerns with the clinic and
+                    arrange an appointment for individual assessment.
+                </p>
+
+            </div>
+
+            <div class="oc-contact-band__actions">
+
+                <a
+                    class="oc-button oc-button--gold"
+                    href="contact.html">
+                    Contact the clinic
+                    <span aria-hidden="true">→</span>
+                </a>
+
+                <a
+                    class="oc-contact-phone"
+                    href="https://wa.me/919990880975"
+                    target="_blank"
+                    rel="noopener">
+                    WhatsApp · 99908 80975
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer>
+
+  <div class="container footer-grid">
+
+
+    <div>
+
+      <h4>
+        Dr. Gupta's Dental Clinic
+      </h4>
+
+      <p>
+        Precision, magnification-guided dentistry in South Extension, New Delhi since 2013.
+      </p>
+
+    </div>
+
+
+    <div>
+
+      <h4>
+        Quick Links
+      </h4>
+
+      <a href="about.html">
+        About
+      </a>
+      <a href="difference.html">
+        Our Difference
+      </a>
+
+      <a href="services.html">
+        Services
+      </a>
+
+      <a href="reviews.html">
+        Reviews
+      </a>
+
+      <a href="faq.html">
+        FAQ
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+    </div>
+
+
+    <div>
+
+      <h4>
+        Contact
+      </h4>
+
+      <a href="tel:+919990880975">
+        Mobile: 99908 80975
+      </a>
+
+      <a href="tel:+911142220392">
+        Landline: 011-4222-0392
+      </a>
+
+      <a href="https://wa.me/919990880975">
+        WhatsApp Us
+      </a>
+
+      <p>   H-30, South Extension Part 1, New Delhi</p>
+
+    </div>
+  </div>
+
+
+  <div class="container footer-bottom">
+    © 2026 Dr. Gupta's Dental Clinic. All rights reserved.
+  </div>
+
+</footer>
+
+</body>
+</html>

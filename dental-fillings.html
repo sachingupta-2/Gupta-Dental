@@ -258,19 +258,30 @@
     <!-- =====================================================
          HERO SECTION
          ===================================================== -->
+<!-- Replace only the existing <section class="rest-hero">...</section> with this section. -->
+<section class="rest-hero rest-hero--premium" aria-labelledby="rest-hero-title">
 
-    <section class="rest-hero">
+    <!-- Decorative tooth outline: CSS/SVG only, no photograph -->
+    <div class="rest-hero-decoration" aria-hidden="true">
+        <svg viewBox="0 0 260 290" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M67 25C43 30 27 51 29 82C31 110 46 130 53 154C61 183 62 247 84 255C105 263 107 205 130 202C153 205 155 263 176 255C198 247 199 183 207 154C214 130 229 110 231 82C233 51 217 30 193 25C169 20 151 38 130 38C109 38 91 20 67 25Z" stroke="currentColor" stroke-width="2.2"/>
+            <path d="M65 68C84 55 104 60 130 60C156 60 176 55 195 68" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M91 80C100 73 113 74 130 74C147 74 160 73 169 80" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+    </div>
 
+    <div class="rest-hero-inner">
         <div class="rest-hero-copy">
 
             <p class="rest-eyebrow">
-                Dental Fillings
+                RESTORATIVE DENTISTRY <span aria-hidden="true">/</span> DENTAL FILLINGS
             </p>
 
-            <div class="rest-yellow-line"></div>
+            <div class="rest-yellow-line" aria-hidden="true"></div>
 
-            <h1>
-                Repair your teeth. Restore your smile.
+            <h1 id="rest-hero-title">
+                Repair your teeth.<br>
+                <span>Restore your smile.</span>
             </h1>
 
             <h2>
@@ -285,38 +296,35 @@
             </p>
 
             <div class="rest-hero-buttons">
-
                 <a href="#rest-treatments" class="rest-btn">
-                    Explore Treatments <span>→</span>
+                    Explore Treatments <span aria-hidden="true">→</span>
                 </a>
 
                 <a href="#rest-questions" class="rest-outline-btn">
                     Have a Question?
                 </a>
-
             </div>
 
         </div>
 
-
-        <div class="rest-hero-image">
-
-            <div class="image-placeholder">
-                <!-- DENTAL<br>
-                FILLINGS<br> -->
-
-                <img src="clinic_photos_shortlist/Dental-filling-page-header.png" alt="" >
+        <div class="rest-hero-details" aria-label="Our restorative care approach">
+            <div class="rest-hero-detail">
+                <span>01</span>
+                <p>Careful assessment</p>
             </div>
-
-            <!-- <div class="rest-image-note">
-                <span>Restore</span><br>
-                what your teeth<br>
-                have lost
-            </div> -->
-
+            <div class="rest-hero-detail">
+                <span>02</span>
+                <p>Suitable treatment options</p>
+            </div>
+            <div class="rest-hero-detail">
+                <span>03</span>
+                <p>Restoration and aftercare</p>
+            </div>
         </div>
+    </div>
 
-    </section>
+</section>
+
 
 
     <!-- =====================================================
@@ -1704,6 +1712,63 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+document.querySelectorAll("[data-before-after]").forEach((slider) => {
+    const range = slider.querySelector(".rest-before-after__range");
+
+    if (!range) return;
+
+    let isDragging = false;
+
+    function setPosition(value) {
+        const position = Math.max(0, Math.min(100, Number(value)));
+
+        slider.style.setProperty("--position", `${position}%`);
+        range.value = position;
+    }
+
+    function updateFromPointer(event) {
+        const rect = slider.getBoundingClientRect();
+
+        if (!rect.width) return;
+
+        const position =
+            ((event.clientX - rect.left) / rect.width) * 100;
+
+        setPosition(position);
+    }
+
+    slider.addEventListener("pointerdown", (event) => {
+        if (event.button !== undefined && event.button !== 0) return;
+
+        isDragging = true;
+        slider.setPointerCapture(event.pointerId);
+        updateFromPointer(event);
+    });
+
+    slider.addEventListener("pointermove", (event) => {
+        if (!isDragging) return;
+
+        updateFromPointer(event);
+    });
+
+    function stopDragging() {
+        isDragging = false;
+    }
+
+    slider.addEventListener("pointerup", stopDragging);
+    slider.addEventListener("pointercancel", stopDragging);
+    slider.addEventListener("lostpointercapture", stopDragging);
+
+    /* Keyboard accessibility */
+    range.addEventListener("input", () => {
+        setPosition(range.value);
+    });
+
+    /* Start at the middle */
+    setPosition(range.value || 50);
+});
+
 </script>
 
 </body>

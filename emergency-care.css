@@ -1,10 +1,14 @@
 /* =========================================================
-   PAIN RELIEF & EMERGENCY CARE
-   ========================================================= */
+   PAIN RELIEF & EMERGENCY CARE PAGE
+   Complete page stylesheet with premium, image-free hero
+========================================================= */
 
 .emergency-page {
     width: 100%;
     overflow: hidden;
+    color: #282828;
+    background: #ffffff;
+    font-family: "Inter", Arial, sans-serif;
 }
 
 .emergency-page *,
@@ -13,11 +17,7 @@
     box-sizing: border-box;
 }
 
-
-/* =========================================================
-   COMMON
-   ========================================================= */
-
+/* COMMON */
 .emergency-container {
     width: min(1250px, 92%);
     margin: 0 auto;
@@ -26,9 +26,7 @@
 .emergency-section-label {
     display: inline-block;
     margin-bottom: 18px;
-
     color: #b18a1d;
-
     font-size: 11px;
     font-weight: 800;
     letter-spacing: 2px;
@@ -45,67 +43,97 @@
 
 .emergency-page h1,
 .emergency-page h2 {
-    font-family: "Cormorant Garamond",
-                 Georgia,
-                 "Times New Roman",
-                 serif;
+    font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
 }
 
-
-/* =========================================================
-   HERO
-   ========================================================= */
-
+/* PREMIUM HERO — IMAGE-FREE */
 .emergency-hero {
-    padding: 75px 0 90px;
-    background: #f7f6f2;
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 690px;
+    padding: 105px 6% 78px;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 78% 42%, rgba(229, 185, 61, 0.10), transparent 27%),
+        linear-gradient(112deg, #ffffff 0%, #fbfaf7 58%, #f3f0e7 100%);
+}
+
+.emergency-hero::before,
+.emergency-hero::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    border: 1px solid rgba(177, 138, 29, 0.13);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.emergency-hero::before {
+    width: 690px;
+    height: 690px;
+    top: 50%;
+    right: -170px;
+    transform: translateY(-50%);
+}
+
+.emergency-hero::after {
+    width: 560px;
+    height: 560px;
+    top: 50%;
+    right: -105px;
+    transform: translateY(-50%);
 }
 
 .emergency-hero-inner {
-    /* width: min(1250px, 92%);
-    margin: 0 auto; */
-    min-height: 500px;
-    display: grid;
-    grid-template-columns: 1fr 1.08fr;
-    /* align-items: center;
-
-    gap: 70px; */
+    width: min(1100px, 100%);
+    min-height: 0;
+    display: block;
+    margin: 0 auto;
 }
 
 .emergency-hero-content {
-    max-width: 600px;
-    padding: 70px 9%;
+    width: min(850px, 100%);
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
 }
 
 .emergency-hero-eyebrow {
     display: inline-block;
-    margin-bottom: 20px;
-
-    color: #b18a1d;
-
+    margin: 0 0 5px;
+    color: #a27d18;
     font-size: 11px;
     font-weight: 800;
-    letter-spacing: 2px;
+    letter-spacing: 2.5px;
+    line-height: 1.5;
+}
+
+.emergency-hero-line {
+    width: 58px;
+    height: 3px;
+    margin: 22px auto 28px;
+    background: #e5b93d;
 }
 
 .emergency-hero-content h1 {
-    margin-bottom: 25px;
-
+    max-width: 850px;
+    margin: 0 auto 24px;
     color: #282828;
-
-    font-size: clamp(48px, 5.2vw, 72px);
-    line-height: 1.02;
-    font-weight: 500;
-
-    letter-spacing: -1.5px;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(56px, 6.2vw, 88px);
+    font-weight: 600;
+    letter-spacing: -1.8px;
+    line-height: 0.98;
 }
 
-.emergency-hero-content p {
-    max-width: 560px;
-    margin-bottom: 32px;
-
-    color: #707070;
-
+.emergency-hero-description {
+    max-width: 690px;
+    margin: 0 auto;
+    color: #666666;
     font-family: "Inter", Arial, sans-serif;
     font-size: 15px;
     line-height: 1.9;
@@ -115,81 +143,143 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
-    padding: 14px 27px;
-
+    gap: 13px;
+    min-height: 52px;
+    margin-top: 32px;
+    padding: 15px 26px;
+    border: 1px solid #e5b93d;
     background: #e5b93d;
     color: #282828;
-
     font-family: "Inter", Arial, sans-serif;
     font-size: 12px;
     font-weight: 800;
-
+    letter-spacing: 0.2px;
     text-decoration: none;
-
-    transition:
-        background .3s ease,
-        transform .3s ease;
+    transition: background .3s ease, border-color .3s ease, transform .3s ease, box-shadow .3s ease;
 }
 
 .emergency-hero-btn:hover {
-    background: #f0ca58;
     transform: translateY(-3px);
+    border-color: #d5a92f;
+    background: #d5a92f;
+    box-shadow: 0 12px 26px rgba(177, 138, 29, 0.18);
 }
 
-.emergency-hero-image {
-    position: relative;
-
-    width: 100%;
-    height: 570px;
-
-    overflow: visible;
+.emergency-hero-btn span {
+    font-size: 17px;
+    line-height: 1;
+    transition: transform .3s ease;
 }
 
-.emergency-hero-image::after {
-    content: "";
+.emergency-hero-btn:hover span {
+    transform: translateX(3px);
+}
 
+.emergency-hero-points {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: min(760px, 100%);
+    margin: 65px auto 0;
+    border-top: 1px solid #ded9cc;
+    border-bottom: 1px solid #ded9cc;
+}
+
+.emergency-hero-point {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-height: 66px;
+    padding: 12px 16px;
+}
+
+.emergency-hero-point + .emergency-hero-point {
+    border-left: 1px solid #ded9cc;
+}
+
+.emergency-hero-point span {
+    color: #a27d18;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.emergency-hero-point p {
+    margin: 0;
+    color: #555555;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+/* HERO DECORATIVE ART */
+.emergency-hero-art {
     position: absolute;
-
-    right: -12px;
-    bottom: -12px;
-
-    width: 100%;
-    height: 100%;
-
-    /* border: 1px solid #e5b93d; */
-
+    z-index: -1;
+    top: 50%;
+    right: max(2%, calc((100vw - 1400px) / 2));
+    width: min(38vw, 500px);
+    aspect-ratio: 1;
+    transform: translateY(-50%);
+    opacity: 0.68;
     pointer-events: none;
 }
 
-.emergency-hero-image img {
-    position: relative;
-    z-index: 1;
-
+.emergency-hero-art svg {
+    display: block;
     width: 100%;
     height: 100%;
-
-    display: block;
-
-    object-fit: fill;
-    object-position: center;
-
-    transition:
-        transform .8s cubic-bezier(.2, .8, .2, 1);
+    overflow: visible;
 }
 
-.emergency-hero-image:hover img {
-    transform: scale(1.04);
+.emergency-art-ring {
+    fill: none;
+    stroke: #c9b77f;
+    stroke-width: 1;
 }
 
+.emergency-art-ring--outer {
+    opacity: 0.55;
+    stroke-dasharray: 3 9;
+}
 
-/* =========================================================
-   INTRO
-   ========================================================= */
+.emergency-art-ring--inner {
+    opacity: 0.5;
+}
 
+.emergency-art-tooth {
+    fill: rgba(255, 255, 255, 0.38);
+    stroke: #b18a1d;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.emergency-art-detail,
+.emergency-art-spark {
+    fill: none;
+    stroke: #d0aa3d;
+    stroke-width: 2;
+    stroke-linecap: round;
+}
+
+.emergency-art-dot {
+    fill: #d0aa3d;
+}
+
+.emergency-art-caption {
+    position: absolute;
+    right: 3%;
+    bottom: 12%;
+    color: #a27d18;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+/* INTRO */
 .emergency-intro {
     padding: 105px 0;
-
     background: #ffffff;
 }
 
@@ -201,17 +291,13 @@
 .emergency-intro-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-
     gap: 90px;
-
     align-items: start;
 }
 
 .emergency-intro-content h2 {
     margin: 0;
-
     color: #282828;
-
     font-size: clamp(40px, 4.2vw, 58px);
     line-height: 1.08;
     font-weight: 500;
@@ -223,9 +309,7 @@
 
 .emergency-intro-text p {
     margin-bottom: 22px;
-
     color: #707070;
-
     font-family: "Inter", Arial, sans-serif;
     font-size: 15px;
     line-height: 1.9;
@@ -235,14 +319,9 @@
     margin-bottom: 0;
 }
 
-
-/* =========================================================
-   EMERGENCY TREATMENT
-   ========================================================= */
-
+/* EMERGENCY TREATMENT */
 .emergency-treatment {
     padding: 105px 0;
-
     background: #f7f6f2;
 }
 
@@ -253,9 +332,7 @@
 
 .emergency-section-heading h2 {
     margin-bottom: 20px;
-
     color: #282828;
-
     font-size: clamp(42px, 4.5vw, 60px);
     line-height: 1.06;
     font-weight: 500;
@@ -263,11 +340,8 @@
 
 .emergency-section-heading > p {
     max-width: 650px;
-
     margin-bottom: 0;
-
     color: #707070;
-
     font-family: "Inter", Arial, sans-serif;
     font-size: 15px;
     line-height: 1.9;
@@ -275,47 +349,31 @@
 
 .emergency-treatment-grid {
     display: grid;
-
-    grid-template-columns:
-        repeat(3, minmax(0, 1fr));
-
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1px;
-
     background: #ddd9ce;
-
     border: 1px solid #ddd9ce;
 }
 
 .emergency-treatment-card {
     position: relative;
-
     min-height: 280px;
     padding: 36px 34px;
-
     background: #ffffff;
-
-    transition:
-        transform .35s ease,
-        box-shadow .35s ease;
+    transition: transform .35s ease, box-shadow .35s ease;
 }
 
 .emergency-treatment-card:hover {
     position: relative;
     z-index: 2;
-
     transform: translateY(-5px);
-
-    box-shadow:
-        0 18px 40px rgba(40, 40, 40, .10);
+    box-shadow: 0 18px 40px rgba(40, 40, 40, .10);
 }
 
 .emergency-treatment-number {
     display: block;
-
     margin-bottom: 55px;
-
     color: #b18a1d;
-
     font-family: "Inter", Arial, sans-serif;
     font-size: 11px;
     font-weight: 800;
@@ -324,13 +382,8 @@
 
 .emergency-treatment-card h3 {
     margin-bottom: 15px;
-
     color: #282828;
-
-    font-family: "Cormorant Garamond",
-                 Georgia,
-                 serif;
-
+    font-family: "Cormorant Garamond", Georgia, serif;
     font-size: 28px;
     line-height: 1.1;
     font-weight: 600;
@@ -338,57 +391,40 @@
 
 .emergency-treatment-card p {
     margin: 0;
-
     color: #707070;
-
     font-family: "Inter", Arial, sans-serif;
     font-size: 14px;
     line-height: 1.8;
 }
 
-
-/* =========================================================
-   FIRST AID / WHILE WAITING
-   ========================================================= */
-
+/* FIRST AID / WHILE WAITING */
 .emergency-first-aid {
     padding: 105px 0;
-
     background: #ffffff;
 }
 
 .emergency-first-aid-grid {
     display: grid;
-
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0;
-
     border-top: 1px solid #e5e1d7;
 }
 
 .emergency-first-aid-item {
     display: grid;
-
     grid-template-columns: 55px 1fr;
-
     gap: 20px;
-
     padding: 35px 35px 35px 0;
-
     border-bottom: 1px solid #e5e1d7;
 }
 
 .emergency-first-aid-item:nth-child(even) {
     padding-left: 35px;
-
     border-left: 1px solid #e5e1d7;
 }
 
 .emergency-first-aid-item > span {
     color: #b18a1d;
-
     font-family: "Inter", Arial, sans-serif;
     font-size: 11px;
     font-weight: 800;
@@ -397,13 +433,8 @@
 
 .emergency-first-aid-item h3 {
     margin-bottom: 10px;
-
     color: #282828;
-
-    font-family: "Cormorant Garamond",
-                 Georgia,
-                 serif;
-
+    font-family: "Cormorant Garamond", Georgia, serif;
     font-size: 26px;
     line-height: 1.1;
     font-weight: 600;
@@ -411,51 +442,36 @@
 
 .emergency-first-aid-item p {
     margin: 0;
-
     color: #707070;
-
     font-family: "Inter", Arial, sans-serif;
     font-size: 14px;
     line-height: 1.8;
 }
 
-
-/* =========================================================
-   BEFORE & AFTER
-   ========================================================= */
-
+/* BEFORE & AFTER */
 .emergency-before-after-section {
     padding: 105px 0;
-
     background: #f7f6f2;
 }
 
 .emergency-case-study {
     padding: 45px;
-
     background: #ffffff;
-
     border: 1px solid #e4e0d5;
 }
 
 .emergency-case-heading {
     display: flex;
-
     justify-content: space-between;
     align-items: flex-end;
-
     gap: 30px;
-
     margin-bottom: 35px;
 }
 
 .emergency-case-number {
     display: block;
-
     margin-bottom: 10px;
-
     color: #b18a1d;
-
     font-family: "Inter", Arial, sans-serif;
     font-size: 10px;
     font-weight: 800;
@@ -464,13 +480,8 @@
 
 .emergency-case-heading h3 {
     margin: 0;
-
     color: #282828;
-
-    font-family: "Cormorant Garamond",
-                 Georgia,
-                 serif;
-
+    font-family: "Cormorant Garamond", Georgia, serif;
     font-size: 34px;
     line-height: 1.1;
     font-weight: 600;
@@ -478,13 +489,9 @@
 
 .emergency-case-tag {
     flex-shrink: 0;
-
     padding: 9px 13px;
-
     background: #f3e6b5;
-
     color: #806516;
-
     font-family: "Inter", Arial, sans-serif;
     font-size: 10px;
     font-weight: 800;
@@ -494,56 +501,40 @@
 
 .emergency-comparison-grid {
     display: grid;
-
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 25px;
 }
 
 .emergency-comparison-card {
     overflow: hidden;
-
     background: #f7f6f2;
-
     border: 1px solid #e2ded3;
 }
 
 .emergency-comparison-image {
     position: relative;
-
     width: 100%;
     height: 430px;
-
     overflow: hidden;
-
     background: #ece9e1;
 }
 
 .emergency-comparison-image img {
     width: 100%;
     height: 100%;
-
     display: block;
-
     object-fit: cover;
     object-position: center;
 }
 
 .emergency-comparison-label {
     position: absolute;
-
     top: 16px;
     left: 16px;
-
     z-index: 2;
-
     padding: 8px 12px;
-
     background: rgba(255, 255, 255, .94);
-
     color: #282828;
-
     font-family: "Inter", Arial, sans-serif;
     font-size: 10px;
     font-weight: 800;
@@ -556,13 +547,8 @@
 
 .emergency-comparison-content h4 {
     margin-bottom: 10px;
-
     color: #282828;
-
-    font-family: "Cormorant Garamond",
-                 Georgia,
-                 serif;
-
+    font-family: "Cormorant Garamond", Georgia, serif;
     font-size: 26px;
     line-height: 1.1;
     font-weight: 600;
@@ -570,101 +556,68 @@
 
 .emergency-comparison-content p {
     margin: 0;
-
     color: #707070;
-
     font-family: "Inter", Arial, sans-serif;
     font-size: 13px;
     line-height: 1.8;
 }
 
-
-/* =========================================================
-   DIFFERENCE
-   ========================================================= */
-
+/* DIFFERENCE */
 .emergency-difference {
     margin-top: 35px;
-
     padding: 30px;
-
     background: #f7f6f2;
-
     border: 1px solid #e4e0d5;
 }
 
 .emergency-difference h4 {
     margin-bottom: 25px;
-
     color: #282828;
-
-    font-family: "Cormorant Garamond",
-                 Georgia,
-                 serif;
-
+    font-family: "Cormorant Garamond", Georgia, serif;
     font-size: 26px;
     font-weight: 600;
 }
 
 .emergency-difference-grid {
     display: grid;
-
-    grid-template-columns:
-        repeat(3, minmax(0, 1fr));
-
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1px;
-
     background: #ddd8ca;
 }
 
 .emergency-difference-grid > div {
     display: flex;
     flex-direction: column;
-
     gap: 8px;
-
     padding: 22px;
-
     background: #ffffff;
 }
 
 .emergency-difference-grid strong {
     color: #b18a1d;
-
     font-family: "Inter", Arial, sans-serif;
     font-size: 11px;
 }
 
 .emergency-difference-grid span {
     color: #4c4c4c;
-
     font-family: "Inter", Arial, sans-serif;
     font-size: 13px;
     line-height: 1.5;
 }
 
-
-/* =========================================================
-   CLINICAL NOTE
-   ========================================================= */
-
+/* CLINICAL NOTE */
 .emergency-clinical-note {
     margin-top: 25px;
-
     padding: 25px 30px;
-
     background: #ffffff;
-
     border-left: 3px solid #e5b93d;
 }
 
 .emergency-clinical-note strong {
     display: block;
-
     margin-bottom: 8px;
-
     color: #282828;
-
     font-family: "Inter", Arial, sans-serif;
     font-size: 12px;
     font-weight: 800;
@@ -673,51 +626,34 @@
 
 .emergency-clinical-note p {
     margin: 0;
-
     color: #707070;
-
     font-family: "Inter", Arial, sans-serif;
     font-size: 13px;
     line-height: 1.8;
 }
 
-
-/* =========================================================
-   DISCLAIMER
-   ========================================================= */
-
+/* DISCLAIMER */
 .emergency-case-disclaimer {
     display: flex;
     align-items: flex-start;
-
     gap: 18px;
-
     margin-top: 25px;
-
     padding: 25px 28px;
-
     background: #fff9e8;
-
     border: 1px solid #ead9a5;
     border-left: 4px solid #e5b93d;
 }
 
 .emergency-disclaimer-icon {
     flex-shrink: 0;
-
     width: 28px;
     height: 28px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     border-radius: 50%;
-
     background: #e5b93d;
-
     color: #282828;
-
     font-family: Arial, sans-serif;
     font-size: 15px;
     font-weight: 800;
@@ -725,11 +661,8 @@
 
 .emergency-case-disclaimer strong {
     display: block;
-
     margin-bottom: 8px;
-
     color: #282828;
-
     font-family: "Inter", Arial, sans-serif;
     font-size: 14px;
     font-weight: 800;
@@ -737,34 +670,23 @@
 
 .emergency-case-disclaimer p {
     margin: 0;
-
     color: #66605a;
-
     font-family: "Inter", Arial, sans-serif;
     font-size: 13px;
     line-height: 1.8;
 }
 
-
-/* =========================================================
-   OUR APPROACH
-   ========================================================= */
-
+/* OUR APPROACH */
 .emergency-approach {
     padding: 105px 0;
-
     background: #12213f;
-
     color: #ffffff;
 }
 
 .emergency-approach-inner {
     display: grid;
-
     grid-template-columns: .9fr 1.1fr;
-
     gap: 100px;
-
     align-items: start;
 }
 
@@ -774,9 +696,7 @@
 
 .emergency-approach-heading h2 {
     margin-bottom: 25px;
-
     color: #ffffff;
-
     font-size: clamp(42px, 4.5vw, 60px);
     line-height: 1.05;
     font-weight: 500;
@@ -784,11 +704,8 @@
 
 .emergency-approach-heading p {
     max-width: 500px;
-
     margin: 0;
-
     color: rgba(255,255,255,.72);
-
     font-family: "Inter", Arial, sans-serif;
     font-size: 14px;
     line-height: 1.9;
@@ -800,19 +717,14 @@
 
 .emergency-approach-item {
     display: grid;
-
     grid-template-columns: 55px 1fr;
-
     gap: 20px;
-
     padding: 28px 0;
-
     border-bottom: 1px solid rgba(255,255,255,.18);
 }
 
 .emergency-approach-item > span {
     color: #e5b93d;
-
     font-family: "Inter", Arial, sans-serif;
     font-size: 11px;
     font-weight: 800;
@@ -821,13 +733,8 @@
 
 .emergency-approach-item h3 {
     margin-bottom: 8px;
-
     color: #ffffff;
-
-    font-family: "Cormorant Garamond",
-                 Georgia,
-                 serif;
-
+    font-family: "Cormorant Garamond", Georgia, serif;
     font-size: 27px;
     line-height: 1.1;
     font-weight: 600;
@@ -835,24 +742,16 @@
 
 .emergency-approach-item p {
     max-width: 550px;
-
     margin: 0;
-
     color: rgba(255,255,255,.65);
-
     font-family: "Inter", Arial, sans-serif;
     font-size: 13px;
     line-height: 1.8;
 }
 
-
-/* =========================================================
-   FAQ
-   ========================================================= */
-
+/* FAQ */
 .emergency-faq-section {
     padding: 105px 0;
-
     background: #ffffff;
 }
 
@@ -862,9 +761,7 @@
 
 .emergency-faq-heading h2 {
     margin: 0;
-
     color: #282828;
-
     font-size: clamp(42px, 4.5vw, 60px);
     line-height: 1.05;
     font-weight: 500;
@@ -872,7 +769,6 @@
 
 .emergency-faq-list {
     max-width: 1000px;
-
     border-top: 1px solid #ddd9cf;
 }
 
@@ -882,111 +778,75 @@
 
 .emergency-faq-question {
     width: 100%;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     gap: 25px;
-
     padding: 25px 0;
-
     border: 0;
     outline: 0;
-
     background: transparent;
-
     color: #282828;
-
-    font-family: "Cormorant Garamond",
-                 Georgia,
-                 serif;
-
+    font-family: "Cormorant Garamond", Georgia, serif;
     font-size: 24px;
     line-height: 1.25;
     font-weight: 600;
-
     text-align: left;
-
     cursor: pointer;
 }
 
 .emergency-faq-plus {
     flex-shrink: 0;
-
     color: #b18a1d;
-
     font-family: Arial, sans-serif;
     font-size: 25px;
     font-weight: 300;
-
     transition: transform .3s ease;
 }
 
 .emergency-faq-answer {
     max-height: 0;
-
     overflow: hidden;
-
-    transition:
-        max-height .35s ease,
-        padding .35s ease;
+    transition: max-height .35s ease, padding .35s ease;
 }
 
 .emergency-faq-answer p {
     max-width: 850px;
-
     margin: 0;
-
     padding: 0;
-
     color: #707070;
-
     font-family: "Inter", Arial, sans-serif;
     font-size: 14px;
     line-height: 1.9;
 }
 
-.emergency-faq-item.active
-.emergency-faq-answer {
+.emergency-faq-item.active .emergency-faq-answer {
     max-height: 300px;
-
     padding-bottom: 25px;
 }
 
-.emergency-faq-item.active
-.emergency-faq-plus {
+.emergency-faq-item.active .emergency-faq-plus {
     transform: rotate(45deg);
 }
 
-
-/* =========================================================
-   FINAL CTA
-   ========================================================= */
-
+/* FINAL CTA */
 .emergency-final-cta {
     padding: 85px 0;
-
     background: #f7f6f2;
 }
 
 .emergency-final-cta-inner {
     width: min(1250px, 92%);
     margin: 0 auto;
-
     display: flex;
-
     align-items: center;
     justify-content: space-between;
-
     gap: 50px;
 }
 
 .emergency-final-cta h2 {
     margin-bottom: 18px;
-
     color: #282828;
-
     font-size: clamp(42px, 4.5vw, 60px);
     line-height: 1.04;
     font-weight: 500;
@@ -994,11 +854,8 @@
 
 .emergency-final-cta p {
     max-width: 600px;
-
     margin: 0;
-
     color: #707070;
-
     font-family: "Inter", Arial, sans-serif;
     font-size: 14px;
     line-height: 1.8;
@@ -1007,9 +864,7 @@
 .emergency-final-cta-actions {
     display: flex;
     align-items: center;
-
     gap: 15px;
-
     flex-shrink: 0;
 }
 
@@ -1017,26 +872,18 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     padding: 15px 25px;
-
     background: #e5b93d;
     color: #282828;
-
     font-family: "Inter", Arial, sans-serif;
     font-size: 12px;
     font-weight: 800;
-
     text-decoration: none;
-
-    transition:
-        background .3s ease,
-        transform .3s ease;
+    transition: background .3s ease, transform .3s ease;
 }
 
 .emergency-final-btn:hover {
     background: #f0ca58;
-
     transform: translateY(-3px);
 }
 
@@ -1044,22 +891,14 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     padding: 14px 24px;
-
     border: 1px solid #282828;
-
     color: #282828;
-
     font-family: "Inter", Arial, sans-serif;
     font-size: 12px;
     font-weight: 800;
-
     text-decoration: none;
-
-    transition:
-        background .3s ease,
-        color .3s ease;
+    transition: background .3s ease, color .3s ease;
 }
 
 .emergency-phone-btn:hover {
@@ -1067,220 +906,77 @@
     color: #ffffff;
 }
 
-
-/* =========================================================
-   RESPONSIVE — 1000px
-   ========================================================= */
-
+/* RESPONSIVE — 1000px */
 @media (max-width: 1000px) {
-
-    .emergency-hero-inner {
-        gap: 45px;
-    }
-
-    .emergency-hero-image {
-        height: 500px;
-    }
-
-    .emergency-intro-content {
-        gap: 50px;
-    }
-
-    .emergency-treatment-grid {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-    }
-
-    .emergency-approach-inner {
-        gap: 55px;
-    }
-
-    .emergency-final-cta-inner {
-        align-items: flex-start;
-        flex-direction: column;
-    }
-
+    .emergency-intro-content { gap: 50px; }
+    .emergency-treatment-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .emergency-approach-inner { gap: 55px; }
+    .emergency-final-cta-inner { align-items: flex-start; flex-direction: column; }
 }
 
-
-/* =========================================================
-   RESPONSIVE — 700px
-   ========================================================= */
-
+/* RESPONSIVE — 700px */
 @media (max-width: 700px) {
-
     .emergency-hero {
-        padding: 55px 0 70px;
+        min-height: 0;
+        padding: 78px 6% 58px;
     }
 
-    .emergency-hero-inner {
-        grid-template-columns: 1fr;
-
-        gap: 45px;
-    }
-
-    .emergency-hero-content {
-        max-width: 100%;
-    }
-
-    .emergency-hero-content h1 {
-        font-size: 48px;
-    }
-
-    .emergency-hero-image {
-        height: 430px;
-    }
+    .emergency-hero-content { width: 100%; }
+    .emergency-hero-content h1 { font-size: clamp(48px, 11vw, 64px); }
+    .emergency-hero-description { font-size: 14px; }
+    .emergency-hero-points { margin-top: 48px; }
+    .emergency-hero-point { gap: 7px; padding: 12px 8px; }
+    .emergency-hero-point p { font-size: 10px; }
+    .emergency-hero-art { width: 78vw; right: -20vw; opacity: .28; }
 
     .emergency-intro,
     .emergency-treatment,
     .emergency-first-aid,
     .emergency-before-after-section,
     .emergency-approach,
-    .emergency-faq-section {
-        padding: 75px 0;
-    }
+    .emergency-faq-section { padding: 75px 0; }
 
-    .emergency-intro-content {
-        grid-template-columns: 1fr;
-
-        gap: 35px;
-    }
-
-    .emergency-treatment-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .emergency-first-aid-grid {
-        grid-template-columns: 1fr;
-    }
-
+    .emergency-intro-content { grid-template-columns: 1fr; gap: 35px; }
+    .emergency-treatment-grid { grid-template-columns: 1fr; }
+    .emergency-first-aid-grid { grid-template-columns: 1fr; }
     .emergency-first-aid-item,
     .emergency-first-aid-item:nth-child(even) {
         padding-left: 0;
         padding-right: 0;
-
         border-left: 0;
     }
-
-    .emergency-comparison-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .emergency-comparison-image {
-        height: 380px;
-    }
-
-    .emergency-case-study {
-        padding: 25px;
-    }
-
-    .emergency-case-heading {
-        align-items: flex-start;
-        flex-direction: column;
-    }
-
-    .emergency-difference-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .emergency-approach-inner {
-        grid-template-columns: 1fr;
-
-        gap: 50px;
-    }
-
-    .emergency-final-cta {
-        padding: 70px 0;
-    }
-
-    .emergency-final-cta-inner {
-        width: min(1250px, 88%);
-    }
-
-    .emergency-final-cta-actions {
-        width: 100%;
-
-        flex-direction: column;
-        align-items: stretch;
-    }
-
+    .emergency-comparison-grid { grid-template-columns: 1fr; }
+    .emergency-comparison-image { height: 380px; }
+    .emergency-case-study { padding: 25px; }
+    .emergency-case-heading { align-items: flex-start; flex-direction: column; }
+    .emergency-difference-grid { grid-template-columns: 1fr; }
+    .emergency-approach-inner { grid-template-columns: 1fr; gap: 50px; }
+    .emergency-final-cta { padding: 70px 0; }
+    .emergency-final-cta-inner { width: min(1250px, 88%); }
+    .emergency-final-cta-actions { width: 100%; flex-direction: column; align-items: stretch; }
     .emergency-final-btn,
-    .emergency-phone-btn {
-        width: 100%;
-    }
-
+    .emergency-phone-btn { width: 100%; }
 }
 
-
-/* =========================================================
-   RESPONSIVE — 500px
-   ========================================================= */
-
+/* RESPONSIVE — 500px */
 @media (max-width: 500px) {
-
-    .emergency-hero-content h1 {
-        font-size: 43px;
-    }
-
-    .emergency-hero-image {
-        height: 350px;
-    }
-
-    .emergency-hero-image::after {
-        right: -7px;
-        bottom: -7px;
-    }
-
+    .emergency-hero { padding: 68px 6% 50px; }
+    .emergency-hero-content h1 { font-size: 45px; letter-spacing: -0.8px; }
+    .emergency-hero-points { grid-template-columns: 1fr; }
+    .emergency-hero-point { justify-content: flex-start; min-height: 52px; padding: 10px 18px; }
+    .emergency-hero-point + .emergency-hero-point { border-top: 1px solid #ded9cc; border-left: 0; }
     .emergency-section-heading h2,
     .emergency-intro-content h2,
     .emergency-approach-heading h2,
     .emergency-faq-heading h2,
-    .emergency-final-cta h2 {
-        font-size: 42px;
-    }
-
-    .emergency-treatment-card {
-        min-height: auto;
-
-        padding: 30px 25px;
-    }
-
-    .emergency-treatment-number {
-        margin-bottom: 35px;
-    }
-
-    .emergency-first-aid-item {
-        grid-template-columns: 40px 1fr;
-
-        gap: 15px;
-    }
-
-    .emergency-case-study {
-        padding: 18px;
-    }
-
-    .emergency-case-heading h3 {
-        font-size: 29px;
-    }
-
-    .emergency-comparison-image {
-        height: 300px;
-    }
-
-    .emergency-difference {
-        padding: 20px;
-    }
-
-    .emergency-case-disclaimer {
-        padding: 20px;
-
-        gap: 12px;
-    }
-
-    .emergency-faq-question {
-        font-size: 21px;
-
-        gap: 15px;
-    }
-
+    .emergency-final-cta h2 { font-size: 42px; }
+    .emergency-treatment-card { min-height: auto; padding: 30px 25px; }
+    .emergency-treatment-number { margin-bottom: 35px; }
+    .emergency-first-aid-item { grid-template-columns: 40px 1fr; gap: 15px; }
+    .emergency-case-study { padding: 18px; }
+    .emergency-case-heading h3 { font-size: 29px; }
+    .emergency-comparison-image { height: 300px; }
+    .emergency-difference { padding: 20px; }
+    .emergency-case-disclaimer { padding: 20px; gap: 12px; }
+    .emergency-faq-question { font-size: 21px; gap: 15px; }
 }

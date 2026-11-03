@@ -15,7 +15,6 @@
     box-sizing: border-box;
 }
 
-
 /* =========================================================
    COMMON
 ========================================================= */
@@ -28,12 +27,9 @@
 .gum-small-label,
 .gum-eyebrow {
     margin: 0 0 12px;
-
     color: #b18a1d;
-
     font-size: 12px;
     font-weight: 800;
-
     letter-spacing: 2px;
     text-transform: uppercase;
 }
@@ -41,9 +37,7 @@
 .gum-yellow-line {
     width: 55px;
     height: 3px;
-
     margin: 18px 0 24px;
-
     background: #e5b93d;
 }
 
@@ -55,75 +49,145 @@
     font-family: "Cormorant Garamond", serif;
 }
 
-
 /* =========================================================
-   HERO
+   HERO — PREMIUM, CENTRED, IMAGE-FREE VERSION
 ========================================================= */
 
 .gum-hero {
-    display: grid;
-
-    grid-template-columns:
-        minmax(0, 1.05fr)
-        minmax(0, 0.95fr);
-
-    gap: 70px;
-
+    position: relative;
+    isolation: isolate;
+    display: flex;
     align-items: center;
-
-    min-height: 680px;
-
-    padding: 90px 7%;
-
+    justify-content: center;
+    width: 100%;
+    min-height: 650px;
+    padding: 105px 7% 92px;
+    overflow: hidden;
+    text-align: center;
     background:
-        linear-gradient(
-            110deg,
-            #ffffff 0%,
-            #ffffff 58%,
-            #f7f6f2 100%
-        );
+        radial-gradient(circle at 50% 8%, rgba(229, 185, 61, 0.13), transparent 31%),
+        linear-gradient(135deg, #ffffff 0%, #fbfaf7 52%, #f3f0e7 100%);
+}
+
+.gum-hero::before,
+.gum-hero::after {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    pointer-events: none;
+    border: 1px solid rgba(177, 138, 29, 0.16);
+    border-radius: 50%;
+}
+
+.gum-hero::before {
+    width: 590px;
+    height: 590px;
+    top: -345px;
+    left: calc(50% - 295px);
+}
+
+.gum-hero::after {
+    width: 760px;
+    height: 760px;
+    top: -430px;
+    left: calc(50% - 380px);
+    border-color: rgba(177, 138, 29, 0.09);
 }
 
 .gum-hero-copy {
-    max-width: 700px;
+    position: relative;
+    z-index: 2;
+    width: min(100%, 930px);
+    max-width: 930px;
+    margin: 0 auto;
+}
+
+.gum-hero-art {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 112px;
+    height: 112px;
+    margin: 0 auto 25px;
+    color: #9b7a22;
+    background: rgba(229, 185, 61, 0.13);
+    border: 1px solid rgba(177, 138, 29, 0.24);
+    border-radius: 50%;
+    box-shadow: 0 14px 45px rgba(40, 40, 40, 0.05);
+}
+
+.gum-hero-art::before,
+.gum-hero-art::after {
+    position: absolute;
+    content: "";
+    border: 1px solid rgba(177, 138, 29, 0.18);
+    border-radius: 50%;
+}
+
+.gum-hero-art::before {
+    inset: -10px;
+}
+
+.gum-hero-art::after {
+    inset: -20px;
+    border-color: rgba(177, 138, 29, 0.09);
+}
+
+.gum-hero-art svg {
+    display: block;
+    width: 66px;
+    height: 66px;
+}
+
+.gum-hero .gum-eyebrow {
+    margin-bottom: 12px;
+    color: #9b791b;
+    font-size: 11px;
+    letter-spacing: 2.8px;
+}
+
+.gum-hero .gum-yellow-line {
+    width: 58px;
+    height: 3px;
+    margin: 18px auto 27px;
+    border-radius: 5px;
 }
 
 .gum-hero h1 {
-    margin: 0;
-
+    max-width: 900px;
+    margin: 0 auto;
     color: #282828;
-
-    font-size: clamp(48px, 5vw, 76px);
+    font-size: clamp(49px, 6vw, 82px);
     font-weight: 600;
+    line-height: 0.99;
+    letter-spacing: -1.8px;
+    text-wrap: balance;
+}
 
-    line-height: 0.98;
-
-    letter-spacing: -1.5px;
+.gum-hero h1 span {
+    color: #a9872b;
+    font-style: italic;
+    font-weight: 500;
 }
 
 .gum-hero h2 {
-    margin: 28px 0 18px;
-
+    max-width: 760px;
+    margin: 25px auto 17px;
     color: #555555;
-
-    font-size: 27px;
+    font-size: clamp(21px, 2.3vw, 28px);
     font-weight: 500;
-
-    line-height: 1.25;
+    line-height: 1.35;
+    text-wrap: balance;
 }
 
 .gum-hero-copy > p:not(.gum-eyebrow) {
-    max-width: 650px;
-
-    margin: 0;
-
-    color: #666666;
-
-    font-size: 16px;
-
-    line-height: 1.85;
+    max-width: 730px;
+    margin: 0 auto;
+    color: #696969;
+    font-size: 15px;
+    line-height: 1.9;
 }
-
 
 /* =========================================================
    HERO BUTTONS
@@ -131,166 +195,94 @@
 
 .gum-hero-buttons {
     display: flex;
-
+    align-items: center;
+    justify-content: center;
     gap: 14px;
-
     flex-wrap: wrap;
-
-    margin-top: 35px;
+    margin-top: 34px;
 }
 
 .gum-btn,
 .gum-outline-btn {
     display: inline-flex;
-
     align-items: center;
     justify-content: center;
-
     gap: 12px;
-
     min-height: 52px;
-
     padding: 13px 23px;
-
     border-radius: 5px;
-
     font-size: 13px;
     font-weight: 700;
-
     text-decoration: none;
-
     transition:
         transform 0.3s ease,
         background 0.3s ease,
         color 0.3s ease,
-        border-color 0.3s ease;
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .gum-btn {
     color: #282828;
-
     background: #e5b93d;
-
     border: 1px solid #e5b93d;
+    box-shadow: 0 9px 22px rgba(181, 139, 25, 0.13);
 }
 
 .gum-btn:hover {
-    transform: translateY(-2px);
-
+    transform: translateY(-3px);
+    color: #282828;
     background: #d5a92f;
-
     border-color: #d5a92f;
+    box-shadow: 0 13px 28px rgba(181, 139, 25, 0.2);
 }
 
 .gum-outline-btn {
     color: #282828;
-
-    background: transparent;
-
+    background: rgba(255, 255, 255, 0.55);
     border: 1px solid #cfc8b6;
 }
 
 .gum-outline-btn:hover {
-    transform: translateY(-2px);
-
-    background: #f7f6f2;
-
+    transform: translateY(-3px);
+    color: #282828;
+    background: #ffffff;
     border-color: #b18a1d;
 }
 
-
-/* =========================================================
-   HERO IMAGE
-========================================================= */
-
-.gum-hero-image {
-    position: relative;
-
-    min-height: 510px;
-
+.gum-hero-steps {
     display: flex;
-
     align-items: center;
     justify-content: center;
-
-    overflow: hidden;
-
-    background: #f2f0ea;
-
-    border-radius: 2px;
+    gap: 0;
+    max-width: 760px;
+    margin: 56px auto 0;
+    padding-top: 24px;
+    border-top: 1px solid rgba(40, 40, 40, 0.12);
 }
 
-.gum-image-placeholder {
-    width: 100%;
-    height: 100%;
-
-    min-height: 510px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    flex-direction: column;
-
-    text-align: center;
-
-    color: #a69e8a;
-
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 48px;
-    font-weight: 600;
-
-    line-height: 0.95;
-
-    letter-spacing: 2px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #f7f6f2,
-            #ece9df
-        );
-}
-
-.gum-image-placeholder small {
-    margin-top: 20px;
-
-    color: #8c887e;
-
-    font-family: "Inter", sans-serif;
-
+.gum-hero-step {
+    flex: 1;
+    padding: 0 18px;
+    color: #696969;
     font-size: 11px;
-    font-weight: 500;
-
-    letter-spacing: 1px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    line-height: 1.5;
+    text-transform: uppercase;
 }
 
-.gum-image-note {
-    position: absolute;
-
-    right: 25px;
-    bottom: 25px;
-
-    padding: 17px 20px;
-
-    color: #282828;
-
-    background: rgba(255, 255, 255, 0.94);
-
-    border-left: 3px solid #e5b93d;
-
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 22px;
-
-    line-height: 1.05;
-
-    box-shadow:
-        0 15px 40px rgba(0, 0, 0, 0.08);
+.gum-hero-step + .gum-hero-step {
+    border-left: 1px solid rgba(40, 40, 40, 0.13);
 }
 
+.gum-hero-step strong {
+    display: block;
+    margin-bottom: 5px;
+    color: #a9872b;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
 
 /* =========================================================
    INTRODUCTION
@@ -298,30 +290,51 @@
 
 .gum-intro {
     display: grid;
-
     grid-template-columns:
         minmax(0, 0.85fr)
         minmax(0, 1.1fr)
         minmax(260px, 0.65fr);
-
     gap: 55px;
-
     align-items: center;
-
     background: #f7f6f2;
 }
 
 .gum-photo {
     min-height: 430px;
-
     overflow: hidden;
-
     background: #FFFFFF;
+}
+
+/* Retained for any image-placeholder panel used in the introduction section. */
+.gum-image-placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: 430px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    color: #a69e8a;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 0.95;
+    letter-spacing: 2px;
+    background: linear-gradient(135deg, #f7f6f2, #ece9df);
+}
+
+.gum-image-placeholder small {
+    margin-top: 20px;
+    color: #8c887e;
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1px;
 }
 
 .gum-photo .gum-image-placeholder {
     min-height: 430px;
-
     font-size: 34px;
 }
 
@@ -331,76 +344,52 @@
 
 .gum-copy h2 {
     margin: 0;
-
     color: #282828;
-
     font-size: 46px;
-
     line-height: 1.05;
 }
 
 .gum-copy p:not(.gum-small-label) {
     margin: 0 0 18px;
-
     color: #626262;
-
     font-size: 15px;
-
     line-height: 1.85;
 }
 
 .gum-simple-box {
     padding: 30px;
-
     background: #ffffff;
-
     border: 1px solid #e5e1d9;
-
-    box-shadow:
-        0 18px 50px rgba(40, 40, 40, 0.06);
+    box-shadow: 0 18px 50px rgba(40, 40, 40, 0.06);
 }
 
 .gum-box-icon {
     width: 52px;
     height: 52px;
-
     display: flex;
-
     align-items: center;
     justify-content: center;
-
     margin-bottom: 22px;
-
     color: #282828;
-
     background: #f3e6b5;
-
     border-radius: 50%;
-
     font-size: 27px;
     font-weight: 500;
 }
 
 .gum-simple-box h3 {
     margin: 0 0 14px;
-
     color: #282828;
-
     font-size: 25px;
-
     line-height: 1.15;
 }
 
 .gum-simple-box p {
     margin: 0;
-
     color: #6a6a6a;
-
     font-size: 14px;
-
     line-height: 1.75;
 }
-
 
 /* =========================================================
    TREATMENT / SIGNS
@@ -412,9 +401,7 @@
 
 .gum-treatment-heading {
     max-width: 850px;
-
     margin: 0 auto 50px;
-
     text-align: center;
 }
 
@@ -425,50 +412,33 @@
 
 .gum-treatment-heading h2 {
     margin: 0;
-
     color: #282828;
-
     font-size: 48px;
-
     line-height: 1.05;
 }
 
 .gum-treatment-heading > p:last-child {
     max-width: 700px;
-
     margin: 0 auto;
-
     color: #666666;
-
     font-size: 15px;
-
     line-height: 1.8;
 }
 
 .gum-treatment-grid {
     display: grid;
-
-    grid-template-columns:
-        repeat(3, minmax(0, 1fr));
-
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 20px;
-
     max-width: 1250px;
-
     margin: 0 auto;
 }
 
 .gum-treatment-card {
     position: relative;
-
     min-height: 280px;
-
     padding: 32px;
-
     background: #f7f6f2;
-
     border: 1px solid #e6e1d5;
-
     transition:
         transform 0.35s ease,
         box-shadow 0.35s ease,
@@ -477,46 +447,32 @@
 
 .gum-treatment-card:hover {
     transform: translateY(-7px);
-
     background: #ffffff;
-
-    box-shadow:
-        0 18px 45px rgba(40, 40, 40, 0.09);
+    box-shadow: 0 18px 45px rgba(40, 40, 40, 0.09);
 }
 
 .gum-treatment-card > span {
     display: inline-block;
-
     margin-bottom: 28px;
-
     color: #b18a1d;
-
     font-size: 12px;
     font-weight: 800;
-
     letter-spacing: 2px;
 }
 
 .gum-treatment-card h3 {
     margin: 0 0 14px;
-
     color: #282828;
-
     font-size: 27px;
-
     line-height: 1.1;
 }
 
 .gum-treatment-card p {
     margin: 0;
-
     color: #686868;
-
     font-size: 14px;
-
     line-height: 1.75;
 }
-
 
 /* =========================================================
    DAILY PREVENTION
@@ -528,9 +484,7 @@
 
 .gum-prevention-heading {
     max-width: 850px;
-
     margin: 0 auto 50px;
-
     text-align: center;
 }
 
@@ -541,52 +495,34 @@
 
 .gum-prevention-heading h2 {
     margin: 0;
-
     color: #282828;
-
     font-size: 48px;
-
     line-height: 1.05;
 }
 
 .gum-prevention-heading > p:last-child {
     max-width: 700px;
-
     margin: 0 auto;
-
     color: #666666;
-
     font-size: 15px;
-
     line-height: 1.8;
 }
 
 .gum-prevention-grid {
     max-width: 1000px;
-
     display: grid;
-
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0;
-
     margin: 0 auto;
-
     background: #ffffff;
-
     border: 1px solid #e5e1d9;
 }
 
 .gum-prevention-item {
     display: grid;
-
     grid-template-columns: 60px 1fr;
-
     gap: 20px;
-
     padding: 30px;
-
     border-right: 1px solid #e5e1d9;
     border-bottom: 1px solid #e5e1d9;
 }
@@ -602,33 +538,24 @@
 
 .gum-prevention-number {
     color: #b18a1d;
-
     font-size: 13px;
     font-weight: 800;
-
     letter-spacing: 2px;
 }
 
 .gum-prevention-item h3 {
     margin: 0 0 8px;
-
     color: #282828;
-
     font-size: 25px;
-
     line-height: 1.1;
 }
 
 .gum-prevention-item p {
     margin: 0;
-
     color: #666666;
-
     font-size: 14px;
-
     line-height: 1.75;
 }
-
 
 /* =========================================================
    BEFORE & AFTER
@@ -640,9 +567,7 @@
 
 .gum-before-after-heading {
     max-width: 850px;
-
     margin: 0 auto 50px;
-
     text-align: center;
 }
 
@@ -653,26 +578,18 @@
 
 .gum-before-after-heading h2 {
     margin: 0;
-
     color: #282828;
-
     font-size: 48px;
-
     line-height: 1.05;
 }
 
 .gum-before-after-heading > p:last-child {
     max-width: 750px;
-
     margin: 0 auto;
-
     color: #666666;
-
     font-size: 15px;
-
     line-height: 1.8;
 }
-
 
 /* =========================================================
    CASE STUDY
@@ -680,76 +597,50 @@
 
 .gum-case-study {
     max-width: 1250px;
-
     margin: 0 auto;
-
     overflow: hidden;
-
     background: #ffffff;
-
     border: 1px solid #e5e1d9;
-
     border-radius: 16px;
-
-    box-shadow:
-        0 20px 60px rgba(40, 40, 40, 0.06);
+    box-shadow: 0 20px 60px rgba(40, 40, 40, 0.06);
 }
 
 .gum-case-header {
     display: flex;
-
     align-items: center;
     justify-content: space-between;
-
     gap: 30px;
-
     padding: 30px 32px;
-
     background: #f7f6f2;
-
     border-bottom: 1px solid #e5e1d9;
 }
 
 .gum-case-number {
     display: block;
-
     margin-bottom: 9px;
-
     color: #b18a1d;
-
     font-size: 11px;
     font-weight: 700;
-
     letter-spacing: 2px;
 }
 
 .gum-case-header h3 {
     margin: 0;
-
     color: #282828;
-
     font-size: 28px;
-
     line-height: 1.2;
 }
 
 .gum-case-tag {
     flex-shrink: 0;
-
     padding: 9px 14px;
-
     color: #8f7218;
-
     background: #fff9df;
-
     border: 1px solid #dfc76e;
-
     border-radius: 50px;
-
     font-size: 11px;
     font-weight: 700;
 }
-
 
 /* =========================================================
    BEFORE / AFTER IMAGES
@@ -757,53 +648,37 @@
 
 .gum-before-after-images {
     display: grid;
-
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 22px;
-
     padding: 30px 32px 0;
 }
 
 .gum-comparison-card {
     overflow: hidden;
-
     background: #ffffff;
-
     border: 1px solid #e5e1d9;
-
     border-radius: 15px;
 }
 
 .gum-comparison-image {
     position: relative;
-
     height: 330px;
-
     overflow: hidden;
-
     background: #f3f1eb;
 }
 
 .gum-comparison-image img {
     display: block;
-
     width: 100%;
     height: 100%;
-
     object-fit: cover;
     object-position: center;
-
-    transition:
-        transform 0.45s ease;
+    transition: transform 0.45s ease;
 }
 
-.gum-comparison-card:hover
-.gum-comparison-image img {
+.gum-comparison-card:hover .gum-comparison-image img {
     transform: scale(1.04);
 }
-
 
 /* =========================================================
    IMAGE LABEL
@@ -811,33 +686,22 @@
 
 .gum-image-label {
     position: absolute;
-
     top: 16px;
     left: 16px;
-
     padding: 8px 14px;
-
     color: #ffffff;
-
     background: rgba(40, 40, 40, 0.88);
-
     border-radius: 6px;
-
     font-size: 12px;
     font-weight: 700;
-
     letter-spacing: 1px;
-
     text-transform: uppercase;
 }
 
-.gum-comparison-card:nth-child(2)
-.gum-image-label {
+.gum-comparison-card:nth-child(2) .gum-image-label {
     color: #282828;
-
     background: #e5b93d;
 }
-
 
 /* =========================================================
    COMPARISON CONTENT
@@ -849,24 +713,17 @@
 
 .gum-comparison-content h4 {
     margin: 0 0 8px;
-
     color: #282828;
-
     font-size: 21px;
-
     line-height: 1.2;
 }
 
 .gum-comparison-content p {
     margin: 0;
-
     color: #626262;
-
     font-size: 14px;
-
     line-height: 1.65;
 }
-
 
 /* =========================================================
    DISCLAIMER
@@ -874,43 +731,27 @@
 
 .gum-case-disclaimer {
     display: flex;
-
     align-items: flex-start;
-
     gap: 16px;
-
     width: calc(100% - 64px);
-
     margin: 30px 32px 0;
-
     padding: 24px 26px;
-
     background: #fffaf0;
-
     border: 1px solid #ead9a7;
-
     border-left: 5px solid #e5b93d;
-
     border-radius: 10px;
 }
 
 .gum-disclaimer-icon {
     flex: 0 0 34px;
-
     width: 34px;
     height: 34px;
-
     display: flex;
-
     align-items: center;
     justify-content: center;
-
     color: #ffffff;
-
     background: #b18a1d;
-
     border-radius: 50%;
-
     font-size: 17px;
     font-weight: 800;
 }
@@ -921,25 +762,18 @@
 
 .gum-disclaimer-content h4 {
     margin: 0 0 8px;
-
     color: #282828;
-
     font-family: "Inter", sans-serif;
-
     font-size: 16px;
     font-weight: 800;
 }
 
 .gum-disclaimer-content p {
     margin: 0;
-
     color: #656565;
-
     font-size: 14px;
-
     line-height: 1.75;
 }
-
 
 /* =========================================================
    DIFFERENCE
@@ -947,13 +781,9 @@
 
 .gum-case-difference {
     margin: 30px 32px 0;
-
     padding: 30px;
-
     background: #f7f6f2;
-
     border: 1px solid #e5e1d9;
-
     border-radius: 12px;
 }
 
@@ -963,88 +793,61 @@
 
 .gum-difference-heading span {
     display: block;
-
     margin-bottom: 7px;
-
     color: #b18a1d;
-
     font-size: 11px;
     font-weight: 800;
-
     letter-spacing: 2px;
 }
 
 .gum-difference-heading h4 {
     margin: 0;
-
     color: #282828;
-
     font-size: 27px;
-
     line-height: 1.15;
 }
 
 .gum-difference-grid {
     display: grid;
-
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 28px 40px;
 }
 
 .gum-difference-item {
     display: flex;
-
     align-items: flex-start;
-
     gap: 15px;
 }
 
 .gum-difference-icon {
     flex: 0 0 27px;
-
     width: 27px;
     height: 27px;
-
     display: flex;
-
     align-items: center;
     justify-content: center;
-
     margin-top: 2px;
-
     color: #282828;
-
     background: #e5b93d;
-
     border-radius: 50%;
-
     font-size: 13px;
     font-weight: 800;
 }
 
 .gum-difference-item h5 {
     margin: 0 0 6px;
-
     color: #282828;
-
     font-family: "Inter", sans-serif;
-
     font-size: 15px;
     font-weight: 800;
 }
 
 .gum-difference-item p {
     margin: 0;
-
     color: #626262;
-
     font-size: 13px;
-
     line-height: 1.65;
 }
-
 
 /* =========================================================
    CLINICAL NOTE
@@ -1052,40 +855,27 @@
 
 .gum-case-note {
     display: flex;
-
     gap: 6px;
-
     flex-wrap: wrap;
-
     margin: 25px 32px 30px;
-
     padding-top: 20px;
-
     border-top: 1px solid #e5e1d9;
 }
 
 .gum-case-note strong {
     color: #282828;
-
     font-size: 12px;
-
     line-height: 1.6;
 }
 
 .gum-case-note p {
     flex: 1;
-
     min-width: 220px;
-
     margin: 0;
-
     color: #737373;
-
     font-size: 12px;
-
     line-height: 1.6;
 }
-
 
 /* =========================================================
    APPROACH
@@ -1097,9 +887,7 @@
 
 .gum-approach-heading {
     max-width: 850px;
-
     margin: 0 auto 50px;
-
     text-align: center;
 }
 
@@ -1110,77 +898,54 @@
 
 .gum-approach-heading h2 {
     margin: 0;
-
     color: #FFFFFF;
-
     font-size: 48px;
-
     line-height: 1.05;
 }
 
 .gum-approach-heading > p:last-child {
     max-width: 700px;
-
     margin: 0 auto;
-
     color: #FFFFFFB8;
-
     font-size: 15px;
-
     line-height: 1.8;
 }
 
 .gum-approach-list {
     max-width: 1000px;
-
     margin: 0 auto;
-
     border-top: 1px solid #e5e1d9;
 }
 
 .gum-approach-item {
     display: grid;
-
     grid-template-columns: 75px 1fr;
-
     gap: 25px;
-
     padding: 30px 0;
-
     border-bottom: 1px solid #e5e1d9;
 }
 
 .gum-number {
     color: #b18a1d;
-
     font-size: 13px;
     font-weight: 800;
-
     letter-spacing: 2px;
 }
 
 .gum-approach-item h3 {
     margin: 0 0 8px;
-
     color: #FFFFFF;
-
     font-size: 27px;
-
     line-height: 1.1;
 }
 
 .gum-approach-item p {
     max-width: 700px;
-
     margin: 0;
-
     color: #FFFFFFB8;
-
     font-size: 14px;
-
     line-height: 1.75;
 }
-
 
 /* =========================================================
    FAQ
@@ -1192,9 +957,7 @@
 
 .gum-faq-heading {
     max-width: 850px;
-
     margin: 0 auto 45px;
-
     text-align: center;
 }
 
@@ -1205,25 +968,19 @@
 
 .gum-faq-heading h2 {
     margin: 0;
-
     color: #282828;
-
     font-size: 48px;
-
     line-height: 1.05;
 }
 
 .gum-faq {
     max-width: 900px;
-
     margin: 0 auto;
 }
 
 .gum-faq-item {
     background: #ffffff;
-
     border: 1px solid #e5e1d9;
-
     border-bottom: 0;
 }
 
@@ -1233,76 +990,53 @@
 
 .gum-faq-item:last-child {
     border-bottom: 1px solid #e5e1d9;
-
     border-radius: 0 0 10px 10px;
 }
 
 .gum-faq-question {
     width: 100%;
-
     display: flex;
-
     align-items: center;
     justify-content: space-between;
-
     gap: 20px;
-
     padding: 22px 25px;
-
     color: #282828;
-
     background: transparent;
-
     border: 0;
-
     text-align: left;
-
     font-family: "Inter", sans-serif;
-
     font-size: 15px;
     font-weight: 700;
-
     cursor: pointer;
 }
 
 .gum-faq-question span {
     flex: 0 0 auto;
-
     color: #b18a1d;
-
     font-size: 24px;
     font-weight: 400;
-
-    transition:
-        transform 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .gum-faq-answer {
     display: none;
-
     padding: 0 25px 23px;
 }
 
 .gum-faq-answer p {
     margin: 0;
-
     color: #686868;
-
     font-size: 14px;
-
     line-height: 1.8;
 }
 
-.gum-faq-item.active
-.gum-faq-question span {
+.gum-faq-item.active .gum-faq-question span {
     transform: rotate(45deg);
 }
 
-.gum-faq-item.active
-.gum-faq-answer {
+.gum-faq-item.active .gum-faq-answer {
     display: block;
 }
-
 
 /* =========================================================
    FINAL CTA
@@ -1310,22 +1044,12 @@
 
 .gum-final-cta {
     display: flex;
-
     align-items: center;
     justify-content: space-between;
-
     gap: 40px;
-
     padding: 75px 7%;
-
     color: #ffffff;
-
-    background:
-        linear-gradient(
-            100deg,
-            #282828,
-            #343434
-        );
+    background: linear-gradient(100deg, #282828, #343434);
 }
 
 .gum-final-cta > div {
@@ -1338,23 +1062,16 @@
 
 .gum-final-cta h2 {
     margin: 0 0 18px;
-
     color: #ffffff;
-
     font-size: 48px;
-
     line-height: 1.05;
 }
 
 .gum-final-cta p:last-child {
     max-width: 700px;
-
     margin: 0;
-
     color: #d5d5d5;
-
     font-size: 15px;
-
     line-height: 1.8;
 }
 
@@ -1362,109 +1079,91 @@
     flex-shrink: 0;
 }
 
-
 /* =========================================================
    TABLET
 ========================================================= */
 
 @media (max-width: 1000px) {
-
-    .gum-hero {
-        grid-template-columns: 1fr;
-
-        gap: 45px;
-
-        padding-top: 75px;
-        padding-bottom: 75px;
-    }
-
-    .gum-hero-copy {
-        max-width: 850px;
-    }
-
-    .gum-hero-image {
-        min-height: 450px;
-    }
-
-    .gum-image-placeholder {
-        min-height: 450px;
-    }
-
-
     .gum-intro {
-        grid-template-columns:
-            1fr 1fr;
+        grid-template-columns: 1fr 1fr;
     }
 
     .gum-simple-box {
         grid-column: 1 / -1;
     }
 
-
     .gum-treatment-grid {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-
 }
-
 
 /* =========================================================
    MOBILE
 ========================================================= */
 
 @media (max-width: 700px) {
-
     .gum-section {
         padding: 60px 7%;
     }
 
-
     .gum-hero {
         min-height: auto;
+        padding: 72px 7% 58px;
+    }
 
-        padding:
-            60px 7%;
+    .gum-hero-art {
+        width: 94px;
+        height: 94px;
+        margin-bottom: 24px;
+    }
+
+    .gum-hero-art svg {
+        width: 56px;
+        height: 56px;
     }
 
     .gum-hero h1 {
-        font-size: 47px;
-
+        font-size: clamp(42px, 11vw, 54px);
         letter-spacing: -0.8px;
+        line-height: 1.02;
     }
 
     .gum-hero h2 {
-        font-size: 23px;
+        margin-top: 21px;
+        font-size: 21px;
     }
 
     .gum-hero-copy > p:not(.gum-eyebrow) {
         font-size: 14px;
     }
 
-
-    .gum-hero-image {
-        min-height: 360px;
+    .gum-hero-buttons {
+        gap: 11px;
+        margin-top: 28px;
     }
 
-    .gum-image-placeholder {
-        min-height: 360px;
-
-        font-size: 38px;
+    .gum-hero-buttons a {
+        width: 100%;
     }
 
-    .gum-image-note {
-        right: 15px;
-        bottom: 15px;
-
-        padding: 13px 15px;
-
-        font-size: 19px;
+    .gum-hero-steps {
+        gap: 0;
+        margin-top: 40px;
+        padding-top: 19px;
     }
 
+    .gum-hero-step {
+        padding: 0 8px;
+        font-size: 9px;
+        letter-spacing: 0.8px;
+    }
+
+    .gum-hero-step strong {
+        font-size: 9px;
+    }
 
     .gum-intro {
         grid-template-columns: 1fr;
-
         gap: 30px;
     }
 
@@ -1477,7 +1176,6 @@
         font-size: 38px;
     }
 
-
     .gum-treatment-heading h2,
     .gum-prevention-heading h2,
     .gum-before-after-heading h2,
@@ -1486,17 +1184,14 @@
         font-size: 36px;
     }
 
-
     .gum-treatment-grid {
         grid-template-columns: 1fr;
     }
 
     .gum-treatment-card {
         min-height: auto;
-
         padding: 27px;
     }
-
 
     .gum-prevention-grid {
         grid-template-columns: 1fr;
@@ -1511,12 +1206,9 @@
         border-bottom: 0;
     }
 
-
     .gum-case-header {
         align-items: flex-start;
-
         flex-direction: column;
-
         padding: 25px 22px;
     }
 
@@ -1528,12 +1220,9 @@
         align-self: flex-start;
     }
 
-
     .gum-before-after-images {
         grid-template-columns: 1fr;
-
         gap: 20px;
-
         padding: 22px 18px 0;
     }
 
@@ -1545,43 +1234,29 @@
         padding: 19px;
     }
 
-
     .gum-case-disclaimer {
         width: auto;
-
-        margin:
-            25px 18px 0;
-
-        padding:
-            22px 20px;
+        margin: 25px 18px 0;
+        padding: 22px 20px;
     }
 
-
     .gum-case-difference {
-        margin:
-            25px 18px 0;
-
+        margin: 25px 18px 0;
         padding: 22px;
     }
 
     .gum-difference-grid {
         grid-template-columns: 1fr;
-
         gap: 22px;
     }
 
-
     .gum-case-note {
-        margin:
-            22px 18px 25px;
+        margin: 22px 18px 25px;
     }
-
 
     .gum-approach-item {
         grid-template-columns: 50px 1fr;
-
         gap: 15px;
-
         padding: 25px 0;
     }
 
@@ -1589,27 +1264,19 @@
         font-size: 23px;
     }
 
-
     .gum-faq-question {
-        padding:
-            20px 18px;
-
+        padding: 20px 18px;
         font-size: 14px;
     }
 
     .gum-faq-answer {
-        padding:
-            0 18px 20px;
+        padding: 0 18px 20px;
     }
-
 
     .gum-final-cta {
         flex-direction: column;
-
         align-items: flex-start;
-
-        padding:
-            60px 7%;
+        padding: 60px 7%;
     }
 
     .gum-final-cta h2 {
@@ -1619,22 +1286,15 @@
     .gum-cta-btn {
         width: 100%;
     }
-
 }
-
 
 /* =========================================================
    SMALL MOBILE
 ========================================================= */
 
 @media (max-width: 400px) {
-
     .gum-hero h1 {
         font-size: 40px;
-    }
-
-    .gum-image-placeholder {
-        font-size: 32px;
     }
 
     .gum-final-cta h2 {
@@ -1648,5 +1308,16 @@
     .gum-disclaimer-icon {
         margin-bottom: 14px;
     }
+}
 
+/* =========================================================
+   ACCESSIBILITY / REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .gum-btn,
+    .gum-outline-btn,
+    .gum-faq-question span {
+        transition: none;
+    }
 }

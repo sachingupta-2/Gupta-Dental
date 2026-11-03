@@ -1,5 +1,9 @@
 /* =========================================================
    SMILE ENHANCEMENT PAGE
+   COMPLETE STYLESHEET
+   Includes the premium, image-free hero and all existing
+   introduction, improvements, options, process, case study,
+   disclaimer, consideration and FAQ styles.
    PREFIX: se-
 ========================================================= */
 
@@ -75,21 +79,16 @@
     align-items: center;
     justify-content: center;
     gap: 15px;
-
     min-height: 52px;
     padding: 14px 23px;
-
     color: #282828;
     background: #e5b93d;
-
     border: 1px solid #e5b93d;
     border-radius: 5px;
-
     font-size: 13px;
     font-weight: 800;
     letter-spacing: .3px;
     text-decoration: none;
-
     transition:
         transform .3s ease,
         background .3s ease,
@@ -114,7 +113,9 @@
 
 
 /* =========================================================
-   HERO
+   ORIGINAL HERO BASE STYLES
+   Retained for compatibility with the original markup.
+   The premium hero overrides are at the end of this file.
 ========================================================= */
 
 .se-hero {
@@ -128,14 +129,12 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-
     padding: 80px 8%;
 }
 
 .se-hero-content h1 {
     max-width: 650px;
     margin: 0;
-
     color: #282828;
     font-size: clamp(42px, 5.5vw, 72px);
     font-weight: 700;
@@ -155,7 +154,6 @@
 .se-hero-text {
     max-width: 610px;
     margin: 0 0 32px;
-
     color: #626262;
     font-size: 17px;
     line-height: 1.9;
@@ -180,16 +178,11 @@
     position: absolute;
     right: 7%;
     bottom: 8%;
-
     padding: 18px 22px;
-
     color: #282828;
     background: rgba(255, 255, 255, .93);
-
     border-radius: 8px;
-
     box-shadow: 0 12px 35px rgba(0, 0, 0, .12);
-
     font-family: "Segoe Print", "Comic Sans MS", cursive;
     font-size: 17px;
     font-weight: 600;
@@ -212,7 +205,6 @@
     grid-template-columns: minmax(280px, .9fr) minmax(300px, 1.2fr) minmax(240px, .7fr);
     align-items: center;
     gap: 55px;
-
     padding: 110px 7%;
     background: #ffffff;
 }
@@ -225,7 +217,6 @@
 .se-intro-image img {
     display: block;
     width: 100%;
-
     object-fit: cover;
     transition: transform .7s ease;
 }
@@ -236,7 +227,6 @@
 
 .se-intro-content h2 {
     margin: 0;
-
     color: #282828;
     font-size: clamp(31px, 4vw, 46px);
     font-weight: 700;
@@ -249,7 +239,6 @@
 
 .se-intro-content p {
     margin: 0 0 18px;
-
     color: #666666;
     font-size: 16px;
     line-height: 1.9;
@@ -263,7 +252,6 @@
 
 .se-card-icon {
     margin-bottom: 22px;
-
     color: #b08a16;
     font-size: 32px;
     line-height: 1;
@@ -271,7 +259,6 @@
 
 .se-intro-card h3 {
     margin: 0 0 15px;
-
     color: #282828;
     font-size: 24px;
     line-height: 1.3;
@@ -279,7 +266,6 @@
 
 .se-intro-card p {
     margin: 0;
-
     color: #5e5e5e;
     font-size: 14px;
     line-height: 1.85;
@@ -299,21 +285,17 @@
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 20px;
-
     max-width: 1250px;
     margin: 0 auto;
 }
 
 .se-improvement-card {
     position: relative;
-
     min-height: 300px;
     padding: 35px 28px;
-
     background: #ffffff;
     border: 1px solid #e6e1d5;
     border-radius: 12px;
-
     transition:
         transform .35s ease,
         box-shadow .35s ease;
@@ -327,7 +309,6 @@
 .se-card-number {
     display: block;
     margin-bottom: 28px;
-
     color: #c7a027;
     font-size: 11px;
     font-weight: 800;
@@ -336,14 +317,12 @@
 
 .se-improvement-icon {
     margin-bottom: 25px;
-
     color: #d0a52c;
     font-size: 30px;
 }
 
 .se-improvement-card h3 {
     margin: 0 0 14px;
-
     color: #282828;
     font-size: 21px;
     line-height: 1.3;
@@ -351,7 +330,6 @@
 
 .se-improvement-card p {
     margin: 0;
-
     color: #6c6c6c;
     font-size: 14px;
     line-height: 1.8;
@@ -380,7 +358,6 @@
 
 .se-options-heading h2 {
     margin: 0;
-
     color: #282828;
     font-size: clamp(30px, 4vw, 45px);
     line-height: 1.15;
@@ -388,7 +365,6 @@
 
 .se-options-heading > p:last-child {
     margin: 0;
-
     color: #6d6d6d;
     font-size: 16px;
     line-height: 1.9;
@@ -403,9 +379,7 @@
     display: grid;
     grid-template-columns: 75px 1fr;
     gap: 25px;
-
     padding: 30px 0;
-
     border-bottom: 1px solid #e8e4da;
 }
 
@@ -422,7 +396,6 @@
 
 .se-option-content h3 {
     margin: 0 0 8px;
-
     color: #282828;
     font-size: 22px;
 }
@@ -430,7 +403,6 @@
 .se-option-content p {
     max-width: 760px;
     margin: 0;
-
     color: #6d6d6d;
     font-size: 15px;
     line-height: 1.8;
@@ -456,7 +428,6 @@
 .se-process-step {
     position: relative;
     padding: 25px 30px;
-
     border-right: 1px solid #ded9ca;
 }
 
@@ -467,7 +438,6 @@
 .se-process-number {
     display: block;
     margin-bottom: 35px;
-
     color: #c5a025;
     font-size: 12px;
     font-weight: 800;
@@ -476,14 +446,12 @@
 
 .se-process-step h3 {
     margin: 0 0 12px;
-
     color: #FFFFFF;
     font-size: 22px;
 }
 
 .se-process-step p {
     margin: 0;
-
     color: #FFFFFFB8;
     font-size: 14px;
     line-height: 1.85;
@@ -512,7 +480,6 @@
 
 .se-case-heading h2 {
     margin: 0;
-
     color: #282828;
     font-size: clamp(30px, 4vw, 47px);
     line-height: 1.15;
@@ -520,24 +487,19 @@
 
 .se-case-heading > p:last-child {
     margin: 0;
-
     color: #6d6d6d;
     font-size: 16px;
     line-height: 1.9;
 }
 
-
 /* CASE */
-
 .se-case-study {
     max-width: 1250px;
     margin: 0 auto 55px;
     padding: 42px;
-
     background: #ffffff;
     border: 1px solid #e6e1d7;
     border-radius: 18px;
-
     box-shadow: 0 18px 50px rgba(40, 40, 40, .06);
 }
 
@@ -545,7 +507,6 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-
     gap: 25px;
     margin-bottom: 35px;
 }
@@ -553,7 +514,6 @@
 .se-case-number {
     display: block;
     margin-bottom: 12px;
-
     color: #b08a16;
     font-size: 11px;
     font-weight: 800;
@@ -563,7 +523,6 @@
 .se-case-header h3 {
     max-width: 700px;
     margin: 0;
-
     color: #282828;
     font-size: clamp(23px, 3vw, 34px);
     line-height: 1.25;
@@ -571,23 +530,17 @@
 
 .se-case-tag {
     flex-shrink: 0;
-
     padding: 10px 16px;
-
     color: #6e5714;
     background: #f8edc7;
-
     border: 1px solid #ead58e;
     border-radius: 50px;
-
     font-size: 11px;
     font-weight: 700;
     white-space: nowrap;
 }
 
-
 /* BEFORE AFTER */
-
 .se-before-after-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -596,11 +549,9 @@
 
 .se-comparison-card {
     overflow: hidden;
-
     background: #ffffff;
     border: 1px solid #e7e7e7;
     border-radius: 14px;
-
     transition:
         transform .35s ease,
         box-shadow .35s ease;
@@ -614,22 +565,17 @@
 .se-comparison-image {
     position: relative;
     overflow: hidden;
-
     width: 100%;
     aspect-ratio: 4 / 3;
-
     background: #efefeb;
 }
 
 .se-comparison-image img {
     display: block;
-
     width: 100%;
     height: 100%;
-
     object-fit: cover;
     object-position: center;
-
     transition: transform .5s ease;
 }
 
@@ -641,16 +587,11 @@
     position: absolute;
     top: 15px;
     left: 15px;
-
     padding: 8px 15px;
-
     color: #282828;
     background: #ffffff;
-
     border-radius: 5px;
-
     box-shadow: 0 5px 18px rgba(0, 0, 0, .10);
-
     font-size: 11px;
     font-weight: 800;
     letter-spacing: 1px;
@@ -663,26 +604,21 @@
 
 .se-comparison-content h4 {
     margin: 0 0 12px;
-
     color: #282828;
     font-size: 20px;
 }
 
 .se-comparison-content p {
     margin: 0;
-
     color: #6d6d6d;
     font-size: 14px;
     line-height: 1.85;
 }
 
-
 /* DIFFERENCES */
-
 .se-case-difference {
     margin-top: 38px;
     padding: 35px;
-
     background: #f8f7f2;
     border: 1px solid #ece7d8;
     border-radius: 14px;
@@ -695,7 +631,6 @@
 .se-difference-heading span {
     display: block;
     margin-bottom: 10px;
-
     color: #b08a16;
     font-size: 10px;
     font-weight: 800;
@@ -704,7 +639,6 @@
 
 .se-difference-heading h4 {
     margin: 0;
-
     color: #282828;
     font-size: 25px;
 }
@@ -725,47 +659,36 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     flex: 0 0 28px;
-
     width: 28px;
     height: 28px;
-
     color: #282828;
     background: #e5b93d;
-
     border-radius: 50%;
-
     font-size: 14px;
     font-weight: 900;
 }
 
 .se-difference-item h5 {
     margin: 0 0 8px;
-
     color: #282828;
     font-size: 16px;
 }
 
 .se-difference-item p {
     margin: 0;
-
     color: #6d6d6d;
     font-size: 14px;
     line-height: 1.8;
 }
 
-
 /* CASE NOTE */
-
 .se-case-note {
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 8px;
-
     margin-top: 30px;
     padding: 22px 25px;
-
     background: #fffdf5;
     border-left: 4px solid #e5b93d;
     border-radius: 5px;
@@ -779,7 +702,6 @@
 
 .se-case-note p {
     margin: 0;
-
     color: #6d6d6d;
     font-size: 13px;
     line-height: 1.8;
@@ -794,23 +716,18 @@
     display: flex;
     align-items: flex-start;
     gap: 20px;
-
     width: 100%;
     max-width: 1250px;
-
     margin: 45px auto 0;
     padding: 30px 35px;
-
     background: #fffdf5;
-
     border: 1px solid #e5d5a3;
     border-left: 6px solid #e5b93d;
     border-radius: 14px;
-
     box-shadow: 0 8px 25px rgba(40, 40, 40, .06);
 }
 
-.se-approach h2{
+.se-approach h2 {
     color: #FFFFFF;
 }
 
@@ -818,17 +735,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
     flex: 0 0 36px;
-
     width: 36px;
     height: 36px;
-
     color: #ffffff;
     background: #d5a62d;
-
     border-radius: 50%;
-
     font-size: 22px;
     font-weight: 800;
 }
@@ -839,7 +751,6 @@
 
 .se-disclaimer-content h4 {
     margin: 0 0 12px;
-
     color: #282828;
     font-size: 20px;
     font-weight: 800;
@@ -847,7 +758,6 @@
 
 .se-disclaimer-content p {
     margin: 0;
-
     color: #5f5f5f;
     font-size: 16px;
     line-height: 1.9;
@@ -867,14 +777,12 @@
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 20px;
-
     max-width: 1250px;
     margin: 0 auto;
 }
 
 .se-consider-item {
     padding: 30px;
-
     background: #ffffff;
     border: 1px solid #e6e1d6;
     border-radius: 12px;
@@ -883,7 +791,6 @@
 .se-consider-item > span {
     display: block;
     margin-bottom: 25px;
-
     color: #c5a025;
     font-size: 12px;
     font-weight: 800;
@@ -892,7 +799,6 @@
 
 .se-consider-item h3 {
     margin: 0 0 12px;
-
     color: #282828;
     font-size: 20px;
     line-height: 1.35;
@@ -900,7 +806,6 @@
 
 .se-consider-item p {
     margin: 0;
-
     color: #6d6d6d;
     font-size: 14px;
     line-height: 1.8;
@@ -929,7 +834,6 @@
 
 .se-faq-heading h2 {
     margin: 0;
-
     color: #282828;
     font-size: clamp(30px, 4vw, 44px);
 }
@@ -951,20 +855,15 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     width: 100%;
     padding: 24px 5px;
-
     color: #282828;
     background: transparent;
-
     border: none;
-
     font-family: inherit;
     font-size: 17px;
     font-weight: 700;
     text-align: left;
-
     cursor: pointer;
 }
 
@@ -972,18 +871,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
     width: 28px;
     height: 28px;
-
     color: #282828;
     background: #f3e6b5;
-
     border-radius: 50%;
-
     font-size: 20px;
     font-weight: 400;
-
     transition: transform .3s ease;
 }
 
@@ -1002,7 +896,6 @@
 
 .se-faq-answer p {
     margin: 0;
-
     color: #6d6d6d;
     font-size: 15px;
     line-height: 1.9;
@@ -1015,10 +908,8 @@
 
 .se-final-cta {
     padding: 105px 7%;
-
     background: #282828;
     color: #ffffff;
-
     text-align: center;
 }
 
@@ -1033,7 +924,6 @@
 
 .se-final-cta h2 {
     margin: 0;
-
     color: #ffffff;
     font-size: clamp(32px, 4vw, 50px);
     line-height: 1.15;
@@ -1042,7 +932,6 @@
 .se-final-cta p {
     max-width: 650px;
     margin: 22px auto 30px;
-
     color: #d2d2d2;
     font-size: 16px;
     line-height: 1.9;
@@ -1055,7 +944,7 @@
 
 
 /* =========================================================
-   TABLET
+   TABLET — EXISTING CONTENT SECTIONS
 ========================================================= */
 
 @media (max-width: 1000px) {
@@ -1085,48 +974,24 @@
     .se-process-step:nth-child(2) {
         border-bottom: 1px solid #ded9ca;
     }
-
 }
 
 
 /* =========================================================
-   MOBILE
+   MOBILE — EXISTING CONTENT SECTIONS
 ========================================================= */
 
 @media (max-width: 700px) {
 
-    .se-hero {
-        grid-template-columns: 1fr;
-    }
-
-    .se-hero-content {
-        padding: 70px 25px;
-    }
-
-    .se-hero-content h1 {
-        font-size: 43px;
-    }
-
-    .se-hero-text {
-        font-size: 15px;
-    }
-
-    .se-hero-image {
-        min-height: 430px;
-    }
-
-
     .se-intro {
         grid-template-columns: 1fr;
         gap: 35px;
-
         padding: 75px 22px;
     }
 
     .se-intro-image img {
         aspect-ratio: 4 / 3;
     }
-
 
     .se-improvements,
     .se-options,
@@ -1137,17 +1002,14 @@
         padding: 75px 20px;
     }
 
-
     .se-section-heading {
         margin-bottom: 40px;
     }
-
 
     .se-improvement-grid,
     .se-consider-grid {
         grid-template-columns: 1fr;
     }
-
 
     .se-option {
         grid-template-columns: 50px 1fr;
@@ -1157,7 +1019,6 @@
     .se-option-content h3 {
         font-size: 20px;
     }
-
 
     .se-process-grid {
         grid-template-columns: 1fr;
@@ -1173,7 +1034,6 @@
         border-bottom: none;
     }
 
-
     .se-case-study {
         padding: 22px;
         border-radius: 14px;
@@ -1188,11 +1048,9 @@
         white-space: normal;
     }
 
-
     .se-before-after-grid {
         grid-template-columns: 1fr;
     }
-
 
     .se-case-difference {
         padding: 24px 20px;
@@ -1203,7 +1061,6 @@
         gap: 25px;
     }
 
-
     .se-case-note {
         display: block;
         padding: 20px;
@@ -1213,7 +1070,6 @@
         display: block;
         margin-bottom: 5px;
     }
-
 
     .se-case-disclaimer {
         display: block;
@@ -1233,7 +1089,6 @@
         line-height: 1.8;
     }
 
-
     .se-faq-question {
         gap: 15px;
         font-size: 15px;
@@ -1243,37 +1098,17 @@
         padding-right: 15px;
     }
 
-
     .se-final-cta {
         padding: 75px 22px;
     }
-
 }
 
 
 /* =========================================================
-   SMALL MOBILE
+   SMALL MOBILE — EXISTING CONTENT SECTIONS
 ========================================================= */
 
 @media (max-width: 400px) {
-
-    .se-hero-content {
-        padding: 60px 20px;
-    }
-
-    .se-hero-content h1 {
-        font-size: 37px;
-    }
-
-    .se-hero-image {
-        min-height: 350px;
-    }
-
-    .se-hero-note {
-        right: 20px;
-        bottom: 20px;
-        font-size: 14px;
-    }
 
     .se-case-study {
         padding: 16px;
@@ -1282,28 +1117,345 @@
     .se-comparison-content {
         padding: 20px;
     }
-
 }
 
 
-.smile-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 15px;
-  padding: 14px 21px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 700;
-  transition: 0.25s ease;
-}
+/* =========================================================
+   SMILE BUTTON — ORIGINAL CLASS RETAINED
+========================================================= */
 
 .smile-btn {
-  background: #e5b93d;
-  color: #282828;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    min-height: 50px;
+    padding: 14px 21px;
+    border: 1px solid #e5b93d;
+    border-radius: 4px;
+    background: #e5b93d;
+    color: #282828;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.25s ease;
 }
 
 .smile-btn:hover {
-  background: #d5a92e;
-  transform: translateY(-2px);
+    background: #d5a92e;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   PREMIUM SMILE ENHANCEMENT HERO
+   Designed for the .se-hero--premium HTML section.
+   This overrides only the old hero layout. All other
+   content-section styles above remain in use.
+========================================================= */
+
+.se-page .se-hero.se-hero--premium {
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
+    width: 100%;
+    padding: clamp(76px, 9vw, 120px) 7% clamp(48px, 6vw, 72px);
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 88% 18%, rgba(229, 185, 61, 0.13), transparent 25%),
+        radial-gradient(circle at 8% 90%, rgba(193, 169, 118, 0.10), transparent 27%),
+        linear-gradient(135deg, #fbfaf7 0%, #f7f6f2 54%, #f2efe7 100%);
+}
+
+.se-page .se-hero--premium::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -210px;
+    right: -140px;
+    width: clamp(320px, 48vw, 650px);
+    aspect-ratio: 1;
+    border: 1px solid rgba(176, 138, 22, 0.16);
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 34px rgba(176, 138, 22, 0.025),
+        0 0 0 82px rgba(176, 138, 22, 0.02);
+    pointer-events: none;
+}
+
+.se-page .se-hero--premium::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: -120px;
+    bottom: -260px;
+    width: 420px;
+    aspect-ratio: 1;
+    border: 1px solid rgba(176, 138, 22, 0.12);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.se-page .se-hero--premium .se-hero-art {
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    right: clamp(3%, 8vw, 11%);
+    width: clamp(110px, 18vw, 230px);
+    color: rgba(176, 138, 22, 0.12);
+    transform: translateY(-50%) rotate(9deg);
+    pointer-events: none;
+}
+
+.se-page .se-hero--premium .se-hero-art svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.se-page .se-hero--premium .se-hero-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    width: 100%;
+    max-width: 1120px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+}
+
+.se-page .se-hero--premium .se-eyebrow {
+    margin: 0;
+    color: #9a7629;
+    font-family: Inter, Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.20em;
+    line-height: 1.5;
+}
+
+.se-page .se-hero--premium .se-yellow-line {
+    width: 58px;
+    height: 3px;
+    margin: 22px auto 26px;
+    border-radius: 10px;
+    background: #d8ad37;
+}
+
+.se-page .se-hero--premium h1 {
+    max-width: 950px;
+    margin: 0;
+    color: #292b31;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(50px, 7vw, 88px);
+    font-weight: 600;
+    letter-spacing: -0.045em;
+    line-height: 0.98;
+}
+
+.se-page .se-hero--premium h1 span {
+    display: block;
+    color: #a78332;
+}
+
+.se-page .se-hero--premium h2 {
+    max-width: 790px;
+    margin: 26px 0 0;
+    color: #50535a;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(23px, 2.6vw, 32px);
+    font-weight: 500;
+    line-height: 1.25;
+}
+
+.se-page .se-hero--premium .se-hero-text {
+    max-width: 760px;
+    margin: 18px auto 0;
+    color: #686a70;
+    font-family: Inter, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.se-page .se-hero--premium .se-hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+    margin-top: 30px;
+}
+
+.se-page .se-hero--premium .smile-btn {
+    min-height: 50px;
+    padding: 14px 22px;
+    border: 1px solid #dfb43e;
+    border-radius: 4px;
+    background: #e5b93d;
+    color: #282828;
+    font-family: Inter, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.se-page .se-hero--premium .smile-btn:hover {
+    background: #d6a92e;
+    box-shadow: 0 9px 22px rgba(158, 119, 26, 0.16);
+    transform: translateY(-2px);
+}
+
+.se-page .se-hero--premium .se-hero-outline-btn {
+    display: inline-flex;
+    min-height: 50px;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 22px;
+    border: 1px solid #c9c2b4;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.52);
+    color: #30323a;
+    font-family: Inter, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+}
+
+.se-page .se-hero--premium .se-hero-outline-btn:hover {
+    border-color: #a78332;
+    background: #fff;
+    transform: translateY(-2px);
+}
+
+.se-page .se-hero--premium .se-hero-steps {
+    display: grid;
+    width: min(100%, 820px);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    margin-top: clamp(42px, 5vw, 62px);
+    padding-top: 22px;
+    border-top: 1px solid rgba(171, 153, 116, 0.30);
+}
+
+.se-page .se-hero--premium .se-hero-step {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    padding: 0 14px;
+}
+
+.se-page .se-hero--premium .se-hero-step + .se-hero-step {
+    border-left: 1px solid rgba(171, 153, 116, 0.30);
+}
+
+.se-page .se-hero--premium .se-hero-step span {
+    color: #a78332;
+    font-family: Inter, Arial, sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+}
+
+.se-page .se-hero--premium .se-hero-step p {
+    margin: 0;
+    color: #65666b;
+    font-family: Inter, Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+/* Hide the old image column for the image-free premium hero. */
+.se-page .se-hero--premium .se-hero-image {
+    display: none;
+}
+
+
+/* =========================================================
+   PREMIUM HERO — MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+    .se-page .se-hero.se-hero--premium {
+        min-height: 0;
+        padding: 70px 22px 42px;
+    }
+
+    .se-page .se-hero--premium .se-hero-art {
+        top: 20px;
+        right: -12px;
+        width: 110px;
+        transform: rotate(9deg);
+    }
+
+    .se-page .se-hero--premium .se-yellow-line {
+        margin: 19px auto 22px;
+    }
+
+    .se-page .se-hero--premium h1 {
+        font-size: clamp(45px, 12vw, 62px);
+        line-height: 0.99;
+    }
+
+    .se-page .se-hero--premium h2 {
+        margin-top: 20px;
+        font-size: 23px;
+    }
+
+    .se-page .se-hero--premium .se-hero-text {
+        font-size: 13px;
+        line-height: 1.8;
+    }
+
+    .se-page .se-hero--premium .se-hero-buttons {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        margin-top: 25px;
+    }
+
+    .se-page .se-hero--premium .smile-btn,
+    .se-page .se-hero--premium .se-hero-outline-btn {
+        width: 100%;
+    }
+
+    .se-page .se-hero--premium .se-hero-steps {
+        grid-template-columns: 1fr;
+        gap: 13px;
+        margin-top: 35px;
+        padding-top: 20px;
+        text-align: left;
+    }
+
+    .se-page .se-hero--premium .se-hero-step {
+        justify-content: flex-start;
+        padding: 0;
+    }
+
+    .se-page .se-hero--premium .se-hero-step + .se-hero-step {
+        border-left: 0;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY — REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .se-page .se-hero--premium *,
+    .se-page .se-hero--premium *::before,
+    .se-page .se-hero--premium *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }

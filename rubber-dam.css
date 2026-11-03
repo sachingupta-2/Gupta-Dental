@@ -179,6 +179,179 @@ body {
     position: relative;
 }
 
+/* =========================================================
+   FLOATING RUBBER DAM COUPON BADGE
+   ========================================================= */
+
+.hero-image {
+    position: relative;
+    isolation: isolate;
+}
+
+/* =========================================================
+   RUBBER DAM BADGE — TEXT SIDE ONLY
+   ========================================================= */
+
+.hero-copy {
+    position: relative;
+    min-width: 0;
+}
+
+/* Circular coupon badge */
+.rubber-dam-badge {
+    position: relative;
+    z-index: 3;
+
+    top: 18px;
+    right: 7%;
+
+    width: 126px;
+    height: 126px;
+    padding: 20px 13px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+
+    border-radius: 50%;
+    border: 3px solid #fffaf0;
+    outline: 2px dashed #d9a900;
+    outline-offset: -9px;
+
+    background: #f5c62d;
+    color: #20242a;
+
+    text-align: center;
+    overflow: hidden;
+    overflow-wrap: break-word;
+
+    box-shadow: 0 9px 24px rgba(25, 29, 35, 0.18);
+
+    transform: rotate(-7deg);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* Short, contained labels */
+.rubber-dam-badge-top,
+.rubber-dam-badge-bottom,
+.rubber-dam-badge-caption {
+    display: block;
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    text-align: center;
+
+    font-family: 'Inter', Arial, sans-serif;
+    font-weight: 800;
+    line-height: 1.15;
+}
+
+.rubber-dam-badge-top {
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+.rubber-dam-badge-number {
+    display: block;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 43px;
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: -1px;
+}
+
+.rubber-dam-badge-bottom {
+    font-size: 9px;
+    letter-spacing: 0.6px;
+}
+
+.rubber-dam-badge-line {
+    display: block;
+    flex: 0 0 auto;
+
+    width: 26px;
+    height: 2px;
+    margin: 3px 0;
+
+    background: #252a32;
+}
+
+.rubber-dam-badge-caption {
+    font-size: 7px;
+    letter-spacing: 0.4px;
+}
+
+/* Hover effect */
+.rubber-dam-badge:hover {
+    transform: rotate(0deg) scale(1.03);
+    box-shadow: 0 13px 28px rgba(25, 29, 35, 0.24);
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+    .rubber-dam-badge {
+        top: 16px;
+        right: 5%;
+
+        width: 112px;
+        height: 112px;
+        padding: 17px 11px;
+    }
+
+    .rubber-dam-badge-number {
+        font-size: 37px;
+    }
+
+    .rubber-dam-badge-top,
+    .rubber-dam-badge-bottom {
+        font-size: 8px;
+    }
+
+    .rubber-dam-badge-caption {
+        font-size: 6px;
+    }
+}
+
+/* =========================================================
+   MOBILE
+   Reserve space so the badge doesn't cover the heading
+   ========================================================= */
+
+@media (max-width: 600px) {
+    .hero-copy {
+        padding-top: 145px;
+    }
+
+    .rubber-dam-badge {
+        top: 16px;
+        right: 20px;
+
+        width: 108px;
+        height: 108px;
+        padding: 16px 10px;
+    }
+
+    .rubber-dam-badge-number {
+        font-size: 35px;
+    }
+
+    .rubber-dam-badge-top,
+    .rubber-dam-badge-bottom {
+        font-size: 7px;
+    }
+
+    .rubber-dam-badge-caption {
+        font-size: 6px;
+    }
+}
 
 /* =========================================================
    HANDWRITTEN NOTE

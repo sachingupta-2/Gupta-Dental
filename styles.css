@@ -8591,7 +8591,7 @@ footer {
    --------------------------------------------------------- */
 @media (min-width: 1050px) {
     .header-info {
-        font-size: clamp(.65rem, .72vw, .82rem);
+        font-size: clamp(.85rem, 1.05vw, 1.35rem);
     }
 
     .header-info-wrap {
@@ -8945,3 +8945,327 @@ textarea {
     }
 }
 
+
+
+/* =====================================================
+   HOMEPAGE SELECTED CASES
+   Cream · Charcoal · Gold
+===================================================== */
+
+.home-cases {
+    --home-cases-gold: #c9a227;
+    --home-cases-gold-dark: #9f7b19;
+    --home-cases-ink: #252a32;
+    --home-cases-muted: #676c73;
+    --home-cases-cream: #f8f6ef;
+    --home-cases-border: #e8e2d5;
+
+    padding: clamp(58px, 7vw, 100px) 0;
+    background: var(--home-cases-cream);
+    color: var(--home-cases-ink);
+}
+
+.home-cases,
+.home-cases * {
+    box-sizing: border-box;
+}
+
+.home-cases__container {
+    width: min(1180px, calc(100% - 44px));
+    margin-inline: auto;
+}
+
+/* Section heading */
+
+.home-cases__heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 32px;
+    margin-bottom: 36px;
+}
+
+.home-cases__heading-copy {
+    max-width: 740px;
+}
+
+.home-cases__eyebrow {
+    display: inline-block;
+    margin-bottom: 13px;
+
+    color: var(--home-cases-gold-dark);
+    font-family: Inter, Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.home-cases__heading h2 {
+    margin: 0 0 15px;
+
+    color: var(--home-cases-ink);
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(34px, 4.2vw, 51px);
+    font-weight: 600;
+    line-height: 1.08;
+    letter-spacing: -0.7px;
+}
+
+.home-cases__heading h2 em {
+    color: var(--home-cases-gold-dark);
+    font-weight: 600;
+}
+
+.home-cases__heading p {
+    max-width: 690px;
+    margin: 0;
+
+    color: var(--home-cases-muted);
+    font-family: Inter, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.85;
+}
+
+/* Text links */
+
+.home-cases__all-link,
+.home-cases__read-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    color: var(--home-cases-gold-dark);
+    font-family: Inter, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.5;
+    text-decoration: none;
+}
+
+.home-cases__all-link {
+    flex: 0 0 auto;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(159, 123, 25, 0.45);
+}
+
+.home-cases__all-link span,
+.home-cases__read-link span {
+    transition: transform 0.2s ease;
+}
+
+.home-cases__all-link:hover span,
+.home-cases__read-link:hover span {
+    transform: translateX(4px);
+}
+
+/* Three-column card layout */
+
+.home-cases__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    align-items: stretch;
+}
+
+.home-cases__card {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+    overflow: hidden;
+
+    background: #fff;
+    border: 1px solid var(--home-cases-border);
+    border-radius: 7px;
+
+    box-shadow: 0 8px 26px rgba(37, 42, 50, 0.045);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.home-cases__card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 34px rgba(37, 42, 50, 0.10);
+}
+
+/* Category image */
+
+.home-cases__image-link {
+    position: relative;
+    display: block;
+
+    width: 100%;
+    aspect-ratio: 5 / 3;
+    overflow: hidden;
+
+    background: #eee9dc;
+    text-decoration: none;
+}
+
+.home-cases__image-link img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.45s ease;
+}
+
+.home-cases__card:hover
+.home-cases__image-link img {
+    transform: scale(1.035);
+}
+
+/* Image category label */
+
+.home-cases__tag {
+    position: absolute;
+    left: 13px;
+    bottom: 13px;
+
+    max-width: calc(100% - 26px);
+    padding: 7px 9px;
+
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--home-cases-gold-dark);
+
+    font-family: Inter, Arial, sans-serif;
+    font-size: 9px;
+    font-weight: 800;
+    line-height: 1.3;
+    letter-spacing: 1px;
+}
+
+/* Card content */
+
+.home-cases__body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 23px 22px 24px;
+}
+
+.home-cases__body h3 {
+    margin: 0 0 11px;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 1.16;
+}
+
+.home-cases__body h3 a {
+    color: var(--home-cases-ink);
+    text-decoration: none;
+}
+
+.home-cases__body h3 a:hover {
+    color: var(--home-cases-gold-dark);
+}
+
+.home-cases__body p {
+    margin: 0 0 20px;
+
+    color: var(--home-cases-muted);
+    font-family: Inter, Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.home-cases__read-link {
+    margin-top: auto;
+}
+
+/* Privacy / clinical note */
+
+.home-cases__note {
+    margin: 23px 0 0;
+
+    color: #797b7d;
+    font-family: Inter, Arial, sans-serif;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+    .home-cases__heading {
+        align-items: flex-start;
+    }
+
+    .home-cases__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .home-cases__card:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+    }
+
+    .home-cases__card:last-child:nth-child(odd)
+    .home-cases__image-link {
+        aspect-ratio: 16 / 7;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 620px) {
+    .home-cases__container {
+        width: calc(100% - 32px);
+    }
+
+    .home-cases__heading {
+        display: block;
+        margin-bottom: 27px;
+    }
+
+    .home-cases__heading h2 {
+        font-size: clamp(34px, 9vw, 43px);
+    }
+
+    .home-cases__all-link {
+        margin-top: 20px;
+    }
+
+    .home-cases__grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    .home-cases__card:last-child:nth-child(odd) {
+        grid-column: auto;
+    }
+
+    .home-cases__card:last-child:nth-child(odd)
+    .home-cases__image-link,
+    .home-cases__image-link {
+        aspect-ratio: 5 / 3;
+    }
+
+    .home-cases__body {
+        padding: 21px 19px 22px;
+    }
+
+    .home-cases__body h3 {
+        font-size: 27px;
+    }
+}
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+    .home-cases__card,
+    .home-cases__image-link img,
+    .home-cases__all-link span,
+    .home-cases__read-link span {
+        transition: none;
+    }
+}
